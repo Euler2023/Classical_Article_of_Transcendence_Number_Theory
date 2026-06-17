@@ -1,0 +1,154 @@
+%# -*- coding: utf-8-unix -*-
+
+\chapter{MAHLER'S CLASSIFICATION}\label{ch:8}
+
+\section{Introduction}\label{sec:ch8_1}
+
+A classification of the set of all transcendental numbers\index{transcendental number}\index{numbers} into three disjoint aggregates, termed S-, T- and U-numbers\index{U-number}\index{U*-number}, was introduced by Mahler\index{Mahler, K.}\footnote{J.M. 166 (1932), 118--36.} in 1932, and it has proved to be of considerable value in the general development of the subject. The first classification of this kind was outlined by Maillet\index{Maillet, E.}\footnote{See Bibliography.} in 1906, and others were described by Perna\index{Perna, A.}\footnote{Giorn. Mat. Battaglini, 52 (1914), 305--65.} and Morduchai-Boltovskoj;\footnote{Mat. Sbornik, 41 (1934), 221--32.} but to Mahler\index{Mahler, K.}'s classification\index{Mahler's classification} attaches by far the most interest.
+
+As in the previous chapter, we define the height of a polynomial as the maximum of the absolute values of its coefficients, and we shall speak of the height only for polynomials with integer coefficients, not all 0. Let now  $\xi$  be any complex number, and for each pair of positive integers n, h, let P(x) be a polynomial with degree at most n and height at most h for which  $|P(\xi)|$  takes the smallest positive value; and define  $\omega(n,h)$  by the equation  $|P(\xi)| = h^{-n\omega(n,h)}$. Further define
+\[\omega_n = \limsup_{h \to \infty} \omega(n, h), \quad \omega = \limsup_{n \to \infty} \omega_n,\]
+and let  $\nu$  be the least positive integer n for which  $\omega_n = \infty$, writing  $\nu = \infty$  if, in fact,  $\omega_n < \infty$  for all n. Mahler\index{Mahler, K.} characterizes the set of all complex numbers as follows:
+\begin{align*}
+\text{A-number\index{A-number}} & \quad \omega = 0, \quad \nu = \infty, \\
+\text{S-number\index{S*-number}\index{S-number}} & \quad 0 < \omega < \infty, \quad \nu = \infty, \\
+\text{T-number\index{T-number}} & \quad \omega = \infty, \quad \nu = \infty, \\
+\text{U-number\index{U-number}\index{U*-number}} & \quad \omega = \infty, \quad \nu < \infty.
+\end{align*}
+
+We shall prove in \autoref{sec:ch8_2} that the A-numbers\index{numbers} are just the algebraic numbers\index{algebraic number}; thus a transcendental number\index{transcendental number}  $\xi$  is an S-number\index{S*-number}\index{S-number} if  $\omega(n,h)$  is uniformly bounded for all n, h, a U-number\index{U-number}\index{U*-number} if, for some n,  $\omega(n,h)$  is unbounded, and a T-number\index{T-number} otherwise. Further we have:
+
+\begin{mythm}{}{ch8_1}
+Algebraically dependent numbers\index{numbers} belong to the same class.
+\end{mythm}
+
+\begin{mythm}{}{ch8_2}
+Almost all numbers\index{numbers} are S-numbers\index{S-number}\index{S*-number}\index{numbers}.
+\end{mythm}
+
+Here 'almost all' is interpreted in the sense of Lebesgue measure theory, the linear and planar measures being taken for the real and complex numbers\index{numbers} respectively.
+
+The integer  $\nu$  defined above is called the degree of  $\xi$. It is clear that the Liouville\index{Liouville, J.} numbers\index{Liouville number}, mentioned in \autoref{ch:1}, are U-numbers\index{U-number}\index{U*-number} of degree 1, and LeVeque\index{LeVeque, W. J.}\footnote{J. London Math. Soc. 28 (1953), 220--9.} proved in 1953 the existence of U-numbers\index{U-number}\index{U*-number}\index{numbers} of each degree; we shall establish the latter in \autoref{sec:ch8_6}. For many years it was an open question whether any T-numbers\index{T-number}\index{numbers} existed but, in 1968, an affirmative answer was obtained by Schmidt\index{Schmidt, W. M.}\footnote{Symposia Math. IV (Academic Press, 1970), pp. 3--26.} on the basis of Wirsing\index{Wirsing, E.}'s early version of \autoref{thm:ch7_2}, and this will be the theme of \autoref{sec:ch8_7}. It is customary to subclassify the S-numbers\index{S-number}\index{S*-number}\index{numbers} according to 'type', defined as the supremum of the sequence  $\omega_1, \omega_2, \ldots$  We shall show in \autoref{sec:ch8_2} that, for any transcendental  $\xi$,  $\omega_n$  is at least 1 or  $\frac{1}{2}(1-1/n)$  according as  $\xi$  is real or complex, whence the type of  $\xi$  is respectively at least 1 or  $\frac{1}{2}$. In 1965, Sprindžuk\index{Sprindzhuk, V. G.}, confirming a conjecture of Mahler\index{Mahler, K.}, proved that almost all real and complex numbers\index{numbers} are S-numbers\index{S-number}\index{S*-number}\index{numbers} of type 1 and  $\frac{1}{2}$ respectively. Moreover it was recently demonstrated by a refinement of this result that there exist S-numbers\index{S-number}\index{S*-number}\index{numbers} of arbitrarily large type. Thus, apart from a small gap in the kind of T-numbers\index{T-number}\index{numbers} that have so far been exhibited, the transcendental spectrum is, in a sense, complete. The latter measure-theoretical propositions will be the topic of the next chapter.
+
+In the light of \autoref{thm:ch8_2}, one would expect any naturally defined number such as e,  $\pi$,  $e^{\pi}$  and  $\log \alpha$  for algebraic  $\alpha$  not 0 or 1 to be an S-number\index{S-number}\index{S*-number}. In 1929, Popken\index{Popken, J.} proved that indeed e is an S-number\index{S*-number}\index{S-number} of type 1, and we shall confirm the result in \autoref{ch:10}. \autoref{thm:ch3_1} shows that  $\pi$, and in fact any non-vanishing linear combination of logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number} with algebraic coefficients, is either an S- or a T-number\index{T-number}, but the latter possibility has not, as yet, been excluded. From the case n = 1 of \autoref{thm:ch7_1} one sees, for instance, that  $\sum_{n=1}^{\infty} a^{-b^n}$  is transcendental for any integers  $a \ge 2$,  $b \ge 3$, and, in the same context, Mahler\index{Mahler, K.}\footnote{N.A.W. 40 (1937), 421--8.} proved in 1937 that also the decimal  $.1234 \dots$, where the natural numbers\index{numbers} are written in ascending order, is transcendental; and here again it has been proved that these are either S- or T-numbers\index{T-number}\index{numbers}.\footnote{Acta Math. 111 (1964), 97--120.} For  $e^{\pi}$, however, the possibility that it is a Liouville\index{Liouville, J.} number\index{Liouville number} has not even been excluded at present. Note that, by virtue of \autoref{thm:ch8_1}, the above results enable one to furnish many examples of algebraically independent numbers\index{numbers}; indeed if  $\xi$  is any U-number\index{U-number}\index{U*-number}, such as for instance  $\sum 10^{-n!}$, and if  $\eta$  is, say, e or  $\pi$  or  $\sum 10^{-10^n}$  or Mahler\index{Mahler, K.}'s decimal\index{Mahler's decimal}, then certainly  $\xi$,  $\eta$  are algebraically independent.
+
+In 1939, Koksma\index{Koksma, J. F.} introduced a classification closely analogous to that of Mahler\index{Mahler, K.}, which has also proved illuminating.\footnote{For references and further discussion see Schneider\index{Schneider, Th.} (Bibliography).} Let  $\xi$  be any complex number and for each pair of positive integers n, h, let  $\alpha$  be an algebraic number\index{algebraic number} with degree at most n and height at most h such that  $|\xi - \alpha|$  takes the smallest positive value; and define  $\omega^*(n, h)$  by the equation  $|\xi - \alpha| = h^{-n\omega^*(n, h)-1}$.
+
+Koksma\index{Koksma, J. F.} classified the complex numbers\index{numbers} as  $A^{*-}$, $S^{*-}$, $T^{*-}$ or $U^{*-}$ numbers in the same way as Mahler\index{Mahler, K.}, but with  $\omega^{*}$  in place of  $\omega$. Thus a transcendental number\index{transcendental number}  $\xi$  is an  $S^{*-}$-number if  $\omega^{*}(n,h)$  is uniformly bounded, a  $U^{*-}$-number if, for some n,  $\omega^{*}(n,h)$  is unbounded, and a  $T^{*-}$-number otherwise. There is an exact correspondence between the two classifications, the  $S^{*-}$, $T^{*-}$ and $U^{*-}$-classes being in fact identical with the  $S^{-}$, $T^{-}$ and $U^{-}$-classes respectively; moreover, the functions  $\omega_{n}$  and  $\omega_{n}^{*}$  take comparable values. Indeed it is easily verified that  $\omega_{n}^{*} \leq \omega_{n}$, and simple lower bounds for  $\omega_{n}^{*}$  in terms of  $\omega_{n}$  were obtained by Wirsing\index{Wirsing, E.}.\footnote{J.M. 206 (1961), 67--77.} These imply, in particular, that  $\omega_{n}^{*} = 1$  when  $\omega_{n} = 1$, whence, in view of Sprindžuk\index{Sprindzhuk, V. G.}\index{Sprindžuk, V. G.}'s theorem, we have  $\omega_{n}^{*} = 1$  for almost all real  $\xi$. But it remains an open question whether  $\omega_{n}^{*} \geqslant 1$  for all real  $\xi$.
+
+\section{A-numbers}\label{sec:ch8_2}
+
+We prove here that the A-numbers are just the algebraic numbers\index{algebraic number}. Suppose first that  $\xi$  is a real transcendental number\index{transcendental number}. We consider the set of all numbers\index{numbers}  $Q(\xi)$, where Q denotes a polynomial, not identically 0, with degree at most n and with integer coefficients between 0 and h inclusive. The set evidently contains  $(h+1)^{n+1}-1$  elements each with absolute value at most ch for some  $c = c(n, \xi)$. If now we divide the interval  $[-ch, ch]$  into  $h^{n+1}$  disjoint subintervals each of length  $2ch^{-n}$, then there will be two distinct numbers\index{numbers}  $Q_1(\xi)$  and  $Q_2(\xi)$  in the same subinterval. Thus the polynomial  $P = Q_1 - Q_2$  satisfies  $|P(\xi)| < 2ch^{-n}$  and so  $\omega_n \ge 1$. Similarly, if  $\xi$  is complex, we divide the intervals $[-ch, ch]$ on the real and imaginary axes into at most  $h^{\frac{1}{2}(n+1)}$  disjoint subintervals each of length at most  $c'h^{-\frac{1}{2}(n-1)}$  for some  $c' = c'(n, \xi)$, and there will be two distinct numbers\index{numbers}  $Q_1(\xi)$  and  $Q_2(\xi)$  with real and imaginary parts in the same subintervals. Thus we have
+\[\omega_n \geqslant \frac{1}{2}(1-1/n).\]
+
+Now if  $\xi$  is algebraic with degree m, then for any polynomial P as above,  $P(\xi)$  is an algebraic number\index{algebraic number} with degree at most m and height at most ch for some  $c = c(n, \xi)$. Hence either  $P(\xi) = 0$  or  $|P(\xi)| > c'h^{-m}$  for some  $c' = c'(n, \xi) > 0$. It follows that  $n\omega(n, h)$  is uniformly bounded for all n, h, and this proves the assertion.
+
+\section{Algebraic dependence}\label{sec:ch8_3}
+
+Our purpose here is to prove \autoref{thm:ch8_1}. Suppose that  $\xi$, $\eta$ are algebraically dependent. Then they satisfy an equation  $Q(\xi,\eta)=0$, where Q(x,y) is a polynomial with, say, degree k in x, l in y, and with algebraic coefficients, not all 0. Without loss of generality we can suppose that  $\xi$, $\eta$ are transcendental, for otherwise they would both be algebraic and so belong to the same class; also we can suppose that the coefficients of Q are rational integers, for this can evidently be ensured by taking, in place of Q, a product of its conjugates. Moreover we can suppose that all the zeros  $\xi_1 = \xi$, $\xi_2, \ldots, \xi_k$  of  $Q(x, \eta)$  are transcendental; for if one of these were algebraic then its minimal defining polynomial\index{minimal polynomial of algebraic number}, say p(x), would divide all the coefficients of Q(x,y) regarded as a polynomial in y, and it would therefore suffice to consider Q(x,y)/p(x) in place of Q(x,y).
+
+Let now P and  $\omega(n, h)$  be defined as at the beginning of \autoref{sec:ch8_1} and put
+\[J=P(\xi_1)\dots P(\xi_k).\]
+Clearly we have
+\[|J| \leqslant c_1 h^{-n\omega(n, h)+k-1},\]
+where  $c_1$, like  $c_2$,  $c_3$  below, depends only on  $\xi$, $\eta$, n and Q. Further, J is symmetric in  $\xi_1, \ldots, \xi_k$  and so, by the fundamental theorem on symmetric functions, it can be expressed as a polynomial in the elementary symmetric functions with total degree at most n and with height at most  $c_2h^k$. Now each elementary symmetric function is given by  $\pm q_i/q_0$, where
+\[Q(x, \eta) = q_0(\eta) x^k + q_1(\eta) x^{k-1} + \ldots + q_k(\eta).\]
+Hence  $q_0^n J$  is a polynomial in  $\eta$  with degree at most ln and height at most  $h' = c_3 h^k$. If therefore  $\omega'(n, h')$, $\omega'_n$ and $\omega'$ are defined for $\eta$ in the same way as $\omega(n, h)$, $\omega_n$ and $\omega$ were defined for $\xi$, we have
+\[h'^{ln\omega'(ln,h')} \geqslant c_1 h^{n\omega(n,h)-k+1}.\]
+This gives $kln\omega'/ln > n\omega_n - k + 1$, whence $kl\omega' \ge \omega$. Similarly, on interchanging $\xi$ and $\eta$ we obtain $kl\omega \ge \omega'$ and \autoref{thm:ch8_1} follows.
+
+\section{Heights of polynomials}\label{sec:ch8_4}
+
+We establish now two lemmas which will be employed in the proof of \autoref{thm:ch8_2} and in the next chapter. The propositions will be proved for polynomials with arbitrary complex coefficients, and here no restriction will attach to the definition of the height. P(x) will denote a polynomial with degree n and height h, and constants implied by $\ll$ or $\gg$ will depend only on n.
+
+\begin{mylemma}{}{ch8_1}
+For some integer j with $0 \le j \le n$ we have
+\[h \ll |P(j)| \ll h.\]
+\end{mylemma}
+
+\begin{proof}
+It is readily verified that
+\[P(x) = \sum_{j=0}^{n} P(j) A(x)/\{(x-j) A'(j)\},\]
+where $A(x) = x(x-1)\dots(x-n)$, and $A'$ denotes the derivative of $A$. Now we have $|A'(j)| \ge 1$, and clearly also the coefficients in the polynomials $A(x)/(x-j)$ are $\ll 1$. Thus we see that $|P(j)| \gg h$ for some j, and obviously we have $|P(j)| \ll h$ for all j. This proves the lemma.
+\end{proof}
+
+\begin{mylemma}{}{ch8_2}
+If $P = P_1 \dots P_k$, where $P_i$ is a polynomial with height $h_i$, then
+\[h_1 \dots h_k \ll h \ll h_1 \dots h_k.\]
+\end{mylemma}
+
+\begin{proof}
+The right-hand estimate follows at once from the observation that every coefficient in P can be expressed as a sum of $\ll 1$ terms each given by a product of k coefficients, one from each of the $P_i$.
+
+To establish the left-hand estimate, we begin by choosing an integer j to satisfy \autoref{lem:ch8_1}, and we denote by $h_i'$ the height of the polynomial $P_i(x+j)$. It is clear, on expressing $P_i(x)$ as a polynomial in $x-j$, that $h_i \ll h_i'$. Now if $\eta$ is any zero of $P_i(x+j)$, we deduce from the mean value theorem
+\[h_i' \ll |P_i(j)| + |\eta| h_i'\]
+for some $\xi$ with $|\xi| < |\eta|$. Hence if $|\eta| < c^{-1}$ for some sufficiently large c depending only on the degree of $P_i$, we have $h_i' \ll |P_i(j)|$ and otherwise $|\eta| \ge c^{-1}$. But the zeros of $P_i(x+j)$ are included in those of $P(x+j)$, and each coefficient in $P_i(x+j)$ can be written as the product of the constant coefficient $P_i(j)$ together with an elementary symmetric function in the reciprocals of the zeros. Thus we obtain $|P_i(j)| \gg h_i'$ and the lemma follows since $P(j) = P_1(j) \dots P_k(j)$.
+\end{proof}
+
+\section{S-numbers}\label{sec:ch8_5}
+
+We proceed now to prove \autoref{thm:ch8_2} for complex numbers\index{numbers} in terms of planar Lebesgue measure; the argument for real numbers\index{numbers} is similar. Again we shall speak of the height only for polynomials with integer coefficients.
+
+We note first that if $\xi$ is any complex number and P is any irreducible polynomial with degree at most n and height at most h, then the nearest zero $\alpha$ of P to $\xi$ satisfies
+\[|P(\xi)| \gg |P'(\alpha)| |\xi - \alpha| \tag{14}\label{eq:ch8_14}\]
+for if $\alpha'$ is any other zero of P we have
+\[|\alpha-\alpha'| \le |\xi-\alpha| + |\xi-\alpha'| < 2|\xi-\alpha'|.\]
+Further we observe that $|P'(\alpha)| \gg h^{-n}$; for if p denotes the leading coefficient of P and if $\alpha_1, \dots, \alpha_m$ are any distinct conjugates of $\alpha$ then, on applying \autoref{lem:ch8_2} with $P_i$ given by $x-\alpha_i$, one sees that the algebraic integer\index{algebraic integer}\footnote{It is well known that this is an algebraic integer\index{algebraic integer}; see e.g. Hecke\index{Hecke, E.} (Bibliography).} $p^k \alpha_1 \dots \alpha_m$ is $\ll h$, whence the norm of $P'(\alpha)$ multiplied by $p^{n-1}$ is $\gg 1$, which gives the required estimate.
+
+If now $\xi$ is a T- or U-number\index{U-number}\index{U*-number} then, by \autoref{lem:ch8_2}, there exist, for some n, infinitely many polynomials P as above such that $|P(\xi)| < h^{-\omega n}$, and so the nearest zero $\alpha$ of P to $\xi$ satisfies
+\[|\xi-\alpha| \ll h^{-\omega n}.\]
+Hence every T- and U-number\index{U-number}\index{U*-number} belongs to the elements of infinitely many sets $S(n, h)$ for some n, where $S(n, h)$ consists of all discs centred on the algebraic numbers\index{algebraic number} with degree at most n and height at most h, and with radius $h^{-2n}$. But there are $\ll h^{n+1}$ elements in each $S(n, h)$ and thus their total area is $\ll h^{-2}$. Since $\sum h^{-2}$ converges, it follows that the set of all T- and U-numbers\index{U-number}\index{U*-number}\index{numbers} has measure zero, as required.
+
+\section{U-numbers}\label{sec:ch8_6}
+
+We establish here the existence of U-numbers\index{U-number}\index{U*-number}\index{numbers} of each degree. In fact we shall show that, for any positive integer n, $\xi^{1/n}$ is a U-number\index{U-number}\index{U*-number} of degree n, where $\xi = \sum_{m=1}^{\infty} 10^{-m!}$. Indeed we shall prove, more generally, that $\xi$ is a U-number\index{U-number}\index{U*-number} of degree n if there exists a sequence $\alpha_1, \alpha_2, \dots$ of distinct algebraic numbers\index{algebraic number}, with degree n, satisfying
+\[|\xi - \alpha_j| < h_j^{-\omega_j} \tag{15}\label{eq:ch8_15}\]
+where $h_j$ denotes the height of $\alpha_j$ and $\omega_j \to \infty$ as $j \to \infty$, provided that, for some $\tau > 1$, we have
+\[h_j < h_{j+1} < h_j^{\tau} \tag{16}\label{eq:ch8_16}\]
+for all sufficiently large j. Clearly $\xi = \sum 10^{-m!}$ satisfies \eqref{eq:ch8_15} and \eqref{eq:ch8_16} with $\alpha_j = p_j/q_j$, where
+\[p_j = 10^{j!} \sum_{m=1}^{j} 10^{-m!}, \quad q_j = 10^{j!}\]
+and with $\omega_j = j$, $\tau = 2$; also $\alpha_j$ has exact degree n since $q_j$ is not a perfect power.
+
+It suffices to show that if \eqref{eq:ch8_15} and \eqref{eq:ch8_16} hold then there are only finitely many algebraic numbers\index{algebraic number} $\beta$ with degree at most $n-1$ satisfying
+\[|\xi - \beta| < b^{-\omega}, \tag{17}\label{eq:ch8_17}\]
+where b denotes the height of $\beta$. For then n is the least positive integer for which there exist sequences $\alpha_1, \alpha_2, \dots$ and $\omega_1, \omega_2, \dots$ as above satisfying \eqref{eq:ch8_15}, whence $\xi$ is a $U^*$-number of degree n and so also a U-number\index{U-number}\index{U*-number} of the same degree. To verify this connexion between U- and $U^*$-numbers\index{numbers}, note that if $P_j(x)$ is the minimal defining polynomial\index{minimal polynomial of algebraic number} of $\alpha_j$ then \eqref{eq:ch8_15} gives, for all sufficiently large j,
+\[|P_j(\xi)| < h_j^{-\omega_j+1},\]
+where the implied constant depends only on $\xi$ and n, and, conversely, if there were a sequence of polynomials $P_j(x)$ ($j=1,2,\dots$) with degree at most $n-1$ and height at most $h_j$ such that $|P_j(\xi)| < h_j^{-\omega_j}$ then the nearest zero $\alpha_j$ of $P_j$ to $\xi$ would satisfy \eqref{eq:ch8_15} with $\omega_j$ replaced by $\omega_j/n$.
+
+Now suppose that $\beta$ is an algebraic number\index{algebraic number} with degree at most $n-1$ such that \eqref{eq:ch8_17} holds, and let j be the integer which, for b sufficiently large, satisfies
+\[h_j \le b^{4n} < h_{j+1}; \tag{18}\label{eq:ch8_18}\]
+in the sequel we shall write briefly $\alpha$, h, $\omega$ for $\alpha_j$, $h_j$, $\omega_j$. From \eqref{eq:ch8_15} and \eqref{eq:ch8_17} we have
+\[|\alpha - \beta| \le |\xi - \alpha| + |\xi - \beta| \le h^{-\omega} + b^{-\omega},\]
+and, from \eqref{eq:ch8_16} and \eqref{eq:ch8_18}, the terms on the right are at most $(bh)^{-\omega/(4n^2)}$, provided that $\omega > 4n^2$. On the other hand, $\alpha-\beta$ is a non-zero algebraic number\index{algebraic number} with degree at most $n^2$, and each conjugate has absolute value $\ll bh$, where the implied constant depends only on n; further, the same estimate obtains for the leading coefficient in the minimal defining polynomial\index{minimal polynomial of algebraic number}. Hence
+\[|\alpha-\beta| \gg (bh)^{-n^2},\]
+and thus we have a contradiction if b is sufficiently large; the contradiction establishes the result.
+
+We remark finally that the inequality $|\alpha-\beta| \gg (ab)^{-n^2}$ implicit in the above argument, where $\alpha$, $\beta$ denote distinct algebraic numbers\index{algebraic number} with degrees at most n and heights a, b respectively, and the implied constant depends only on n, can be much improved. Indeed, by considering the norm of $\alpha-\beta$ and using the result employed in \autoref{sec:ch8_5} on products of conjugates of algebraic numbers\index{algebraic number}, one easily obtains $|\alpha-\beta| > a^{-l}b^{-m}$, where l, m denote the degrees of the fields generated by $\beta$ over $\mathbb{Q}(\alpha)$ and $\alpha$ over $\mathbb{Q}(\beta)$ respectively. A special case of the latter inequality was discovered by A. Brauer\index{Brauer, R.}\index{Brauer, A.}\footnote{J.M. 160 (1929), 70--99.} in 1929, but, curiously, the full result was recorded only relatively recently.\footnote{For references and further work in this context see \textit{Michigan Math. J.} \textbf{8} (1961), 149--69 (R. Güting).}
+
+\section{T-numbers}\label{sec:ch8_7}
+
+These exist, as we now show. To begin with, let $\alpha_1, \alpha_2, \dots$ be any non-zero algebraic numbers\index{algebraic number} and let $\nu_1, \nu_2, \dots$ be any real numbers\index{numbers} exceeding 1. We shall prove that there exists a sequence $\gamma_1, \gamma_2, \dots$ of non-zero numbers\index{numbers} with $\gamma_j/\alpha_j$ rational such that, if $h_j$ denotes the height of $\gamma_j$, then $H_{j+1} > 2H_j$, where $H_j = h_j^{\nu_j}$, and furthermore, $\gamma_{j+1}$ lies in the interval $I_j$ consisting of all real x with
+\[|H_j|^{-3} < x - \gamma_j < |H_j|^{-2};\]
+in addition, we shall show that the sequence can be chosen so that, for some numbers\index{numbers} $\lambda_1, \lambda_2, \dots$ between 0 and 1 exclusive, we have
+\[|\gamma_j-\beta| > B^{-\lambda_j}\]
+for all algebraic numbers\index{algebraic number} $\beta$ with degree $n \le j$ distinct from $\gamma_1, \dots, \gamma_j$, where $B = \lambda_j^{-1}b^{j^2}$ and b denotes the height of $\beta$. Clearly then, $\gamma_1, \gamma_2, \dots$ tends to a limit $\xi$ which satisfies $|\xi-\beta| > B^{-\lambda_j}$ for all algebraic numbers\index{algebraic number} $\beta$ distinct from $\gamma_1, \gamma_2, \dots$, and also
+\[|\xi-\gamma_j| < |H_j|^{-2}\]
+for all j. We now take $\nu_j = (3n_j)^4$, where $n_j$ denotes the degree of $\alpha_j$, and we select $\alpha_1, \alpha_2, \dots$ so that the equation $n_j = n$ has infinitely many solutions for each positive integer n. Then $\xi$ is a $T^*$-number and hence, by observations similar to those recorded in \autoref{sec:ch8_6}, also a T-number\index{T-number}.
+
+We shall in fact construct $\gamma_1, \gamma_2, \dots$ so that four further conditions are satisfied. Let $J_j$ be the set of all x in $I_j$ such that $|x-\beta| > 2B^{-\lambda_j}$ for all algebraic numbers\index{algebraic number} $\beta$ with degree $n \le j$ which are distinct from $\gamma_1, \dots, \gamma_j$ and satisfy $B > H_j$. Then we shall ensure that (i) $\gamma_j$ is in $J_{j-1}$, (ii) the measures of $I_j$ and $J_j$ satisfy $|J_j| > \frac{1}{2}|I_j|$, (iii) we have $|\gamma_j-\beta| > 2B^{-\lambda_{j-1}}$ for all $\beta \neq \gamma_j$ with degree j, (iv) if $\gamma_j/\alpha_j = p_j/q_j$ as a fraction in its lowest terms, with $q_j > 0$, then $|\gamma_j-\beta| > q_j^{-3n}$ for all $\beta$ with degree $n < j$ and with $b^{3n} \le q_j$.
+
+To define $\gamma_1$, we note first that, for every large prime $q_1$, there are $\gg q_1$ numbers\index{numbers} y of the form $(p_1/q_1)\alpha_1$ in the interval (1,2), where the implied constant depends only on $\alpha_1$, and these have mutual distances $\gg q_1^{-1}$. Further, there are $\ll q_1^2$ rationals $\beta$ with $b^3 \le q_1$ and so there are $\ll q_1^2$ numbers\index{numbers} y satisfying $|y-\beta| < q_1^{-3}$ for at least one such $\beta$. We can therefore select $\gamma_1$ so that (iv) holds, and then, by \autoref{thm:ch7_2}, we can choose $\lambda_1$ so that the conditions concerning $|\gamma_1-\beta|$ are satisfied. We shall show in a moment that also (ii) holds in the case $j=1$ if $q_1 > 1$.
+
+Now suppose that $\gamma_1, \dots, \gamma_{j-1}$ have already been defined to satisfy the above conditions; we proceed to construct $\gamma_j$. Constants implied by $\ll$ or $\gg$ will depend only on the numbers\index{numbers} so far specified, including possibly $\lambda_1, \dots, \lambda_{j-1}$. First let $J'_j$ be defined like $J_{j-1}$ but with the additional restriction that the heights of the $\beta$ in question satisfy $b^{3n} < q_j$. Clearly the number of $\beta$ for which the latter inequality holds is $\ll q_j$, and so $J_{j-1}'$ consists of $\ll q_j$ intervals. Further, $J_{j-2}$ includes $J_{j-1}$ and so, by (ii), we have $|J_{j-1}'| > \frac{1}{2}|I_{j-1}| \gg 1$. It follows that, for any large prime $q_j$, there are $\gg q_j$ numbers\index{numbers} y in $J_{j-1}'$ of the form $(p_j/q_j)\alpha_j$, where $p_j$ is an integer $\ll q_j$ with $(p_j, q_j) = 1$. Furthermore, any such y is in fact in $J_{j-1}$, for if the height of $\beta$ satisfies $b^{3n} > q_j$ then $B > q_j^{3n/j^2}$ and thus, on noting that $(q_j/p_j)\beta$ has height $\ll q_j b$, we obtain from \autoref{thm:ch7_2}
+\[|y-\beta| \gg q_j^{-1}(q_j b)^{-j^2} \ge 2B^{-\lambda_{j-1}}.\]
+Now, as above, there are $\ll q_j^2$ numbers\index{numbers} $\beta$ satisfying the hypotheses of (iv) and hence one can select $y = \gamma_j$ in $J_{j-1}'$ so that this condition is valid. Then clearly we have $|\gamma_j-\beta| > B^{-\lambda_j}$ for all $\beta$ distinct from $\gamma_1, \dots, \gamma_{j-1}$ with degree $n \le j$ and with $B \ge H_{j-1}$; and indeed this holds also for $B < H_{j-1}$, for then, taking k as the least suffix $\ge n$ for which $B < H_k$ and appealing to (i) or (iii) with $j=k$ according as $k > n$ or $k = n$, we obtain
+\[|\gamma_j-\beta| \ge |\gamma_k-\beta| - |\gamma_j-\gamma_k| > B^{-\lambda_{j-1}} - H_k^{-2} > B^{-\lambda_j}.\]
+We now use \autoref{thm:ch7_2} and choose $\lambda_j$ so that $|\gamma_j-\beta| > 2B^{-\lambda_j}$ for all algebraic numbers\index{algebraic number} $\beta \neq \gamma_j$ with degree $n = j$.
+
+It remains only to show, as in the case $j=1$, that (ii) will be satisfied if $q_j$ is sufficiently large. Now we have $|x-\beta| > 2B^{-\lambda_j}$ for all x in $I_j$ and all $\beta \neq \gamma_j$ with degree $n \le j$ and with $H_j < B < q_j^{3n/j^2}$. For if $b^{3n} \le q_j$ then, since $H_j > q_j^3$ and $\nu_j > 1$, it follows from (iv) that
+\[|x-\beta| \ge |\gamma_j-\beta| - |x-\gamma_j| > q_j^{-3n} - H_j^{-2} > 2B^{-\lambda_j},\]
+and if $b^{3n} > q_j$ then, on appealing again to \autoref{thm:ch7_2}, we obtain
+\[|x-\beta| \ge |\gamma_j-\beta| - |x-\gamma_j| \gg q_j^{-j^2}b^{-j^2} - H_j^{-2} > 2B^{-\lambda_j}.\]
+Hence any x in the complement of $J_j$ in $I_j$ satisfies $|x-\beta| \le 2B^{-\lambda_j}$ for some $\beta$ with degree $n \le j$ and with $B \ge H_j^{\lambda_j}$. But the number of $\beta$ with degree n and height b is $\ll b^n$, and so the complement has measure $\ll \sum B^{-\lambda_j}b^n$, where the sum is over all n, b with $n \le j$ and $b \ge H_j$. This is plainly $\ll H_j^{-2} \ll |I_j|^2 \ll \frac{1}{2}|I_j|$, and the required result follows.
+
+It will be seen that the above argument allows one to construct a T-number\index{T-number} with $\omega_n$ taking any value $\ge (3n)^4$. This can easily be reduced to a bound of order $n^2$, but at present, apparently, not readily to one of order n as would be needed to fill the spectrum.

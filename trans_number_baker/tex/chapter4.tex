@@ -1,0 +1,291 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{DIOPHANTINE EQUATIONS}\label{ch:4}
+
+\section{Introduction}\label{sec:ch4_1}
+
+Diophantine analysis\index{Diophantine analysis} pertains, in general terms, to the study of the solubility of equations in integers. Although researches in this field have their roots in antiquity and a history of the subject amounts, more or less, to a history of mathematics itself, it is only in relatively recent times that there have emerged any general theories, and we shall accordingly begin our discussion in 1900 by referring again to Hilbert\index{Hilbert, D.}'s famous list of problems.
+
+The tenth of these asked for a universal algorithm for deciding whether or not a given Diophantine equation, that is, an equation $f(x_1, \dots, x_n) = 0$, where $f$ denotes a polynomial with integer coefficients, is soluble in integers $x_1, \dots, x_n$. Though Hilbert\index{Hilbert, D.} posed his question in terms of solubility, there are, of course, many other sorts of information that one might like to have in this connexion; for instance, one might enquire as to whether a particular equation has infinitely many solutions, or one might seek some description of the distribution or size of the solutions. In 1970, Matijasevic\index{Matijasevic, Y. V.},\footnote{D.A.N. 191 (1970), 279--82.} developing work of Davis\index{Davis, M.}\index{Davis, C. S.}, Robinson\index{Robinson, J.} and Putnam\index{Putnam, H.},\footnote{Ann. Math. 74 (1961), 425--36.} proved that a general algorithm of the type sought by Hilbert\index{Hilbert, D.} does not in fact exist. A more realistic problem arises, however, if one limits the number of variables, and for, in particular, polynomials in two unknowns our knowledge is now quite substantial.
+
+A full account of the early results in this field is furnished by Dickson\index{Dickson, L. E.}'s celebrated \textit{History of the theory of numbers\index{numbers}}; here references are given to a diverse multitude of Diophantine problems that were investigated by a wide variety of \textit{ad hoc} methods mainly during the last two centuries. The first major advance towards a coherent theory was made by Thue\index{Thue, A.}\footnote{J.M. 135 (1909), 284--305.} in 1909 when he proved that the equation $F(x,y) = m$, where $F$ denotes an irreducible binary form with integer coefficients and degree at least 3, possesses only a finite number of solutions in integers $x, y$. Thue\index{Thue, A.} established the result by way of his fundamental studies on rational approximations to algebraic numbers\index{rational approximations to algebraic numbers}\index{algebraic number}; on writing the equation in the form
+\[
+a(x-\alpha_1 y)\dots(x-\alpha_n y)=m,
+\]
+one sees that one of the zeros $\alpha$ of $F(x, 1)$ has a rational approximation $x/y \ (y > 0)$ with $|\alpha - x/y| < c/y^n$ for some $c$ depending only on $F$ and $m$, and Thue\index{Thue, A.} showed that this is impossible if $y$ is sufficiently large.\footnote{See \autoref{ch:7}.} Thue\index{Thue, A.}'s work was much extended by Siegel\index{Siegel, C. L.}\footnote{Abh. Preuss. Akad. Wiss. (1929), no. 1.}\footnote{Acta Math. 53 (1928), 281--315.} in 1929; Siegel\index{Siegel, C. L.} proved that the equation $f(x, y) = 0$, where $f$ denotes a polynomial with integer coefficients, has only a finite number of solutions in integers $x, y$ if the curve it represents has genus 1\index{curves of genus 1} or genus 0\index{curves of genus 0} and at least three infinite valuations; otherwise the curve can be parameterized and there are then infinitely many so-called `ganzartige' solutions, that is, algebraic solutions with constant denominators. Siegel\index{Siegel, C. L.}'s work depended upon, amongst other things, an improved version of Thue\index{Thue, A.}'s approximation result which he obtained in 1921\footnote{M.Z. 10 (1921), 173--213.}, and the famous Mordell\index{Mordell, L. J.}-Weil theorem, proved in 1928, on the finiteness of the basis of the group of rational points on the curve. The work of Thue\index{Thue, A.} and Siegel\index{Siegel, C. L.} satisfactorily settles the question as to which curves possess only finitely many integer points and, moreover, it yields an estimate for the number of points when finite. But it throws no light on the basic Hilbert\index{Hilbert, D.} problem as to whether or not such points exist and, even less therefore, does it provide an algorithm for determining their totality; for the arguments depend on an assumption, made at the outset, that the equation has at least one large solution and this is purely hypothetical. Another proof of Thue\index{Thue, A.}'s theorem, under a mild restriction, was given by Skolem\index{Skolem, Th.}\footnote{M.A. 111 (1935), 399--424.} in 1935 by means of a p-adic argument very different from the original, but here the work depends on the compactness property of the p-adic integers and so is again non-effective.
+
+Our purpose here is to apply the work of \autoref{ch:3} to effectively resolve a wide class of Diophantine equations\index{Diophantine equations}. In particular we shall treat the Thue\index{Thue, A.} equation $F(x,y)=m$ defined over any algebraic number\index{algebraic number} field, the famous Mordell\index{Mordell, L. J.} equation\index{Mordell equation} $y^2=x^3+k$, to which, incidentally, there attaches a history dating back to Bachet\index{Bachet, C. G.} in 1621, and we shall obtain an effective algorithm for determining all the integer points on an arbitrary curve of genus 1\index{curves of genus 1}. Our theorems will be proved in an essentially qualitative form, but it will be apparent that they can be adapted to yield explicit bounds for the sizes of all the solutions of the equations. A summary of quantitative aspects of the work is given in the last section.
+
+\section{The Thue equation}\label{sec:ch4_2}
+
+Let $K$ be an algebraic number\index{algebraic number} field with degree $d$, let $\alpha_1, \dots, \alpha_n$ be $n \ge 3$ distinct algebraic integers\index{algebraic integer} in $K$, and let $\mu$ be any non-zero algebraic integer\index{algebraic integer} in $K$. We prove:
+
+\begin{mythm}{}{ch4_1}
+The equation
+\[
+(X - \alpha_1 Y) \dots (X - \alpha_n Y) = \mu
+\]
+has only a finite number of solutions in algebraic integers\index{algebraic integer} $X, Y$ in $K$ and these can be effectively determined.
+\end{mythm}
+
+We define the \textit{size} of any algebraic integer\index{algebraic integer} $\theta$ in $K$ as the maximum of the absolute values of its conjugates, and we signify the size of $\theta$ by $\|\theta\|$. With this notation, we shall in fact show how one can obtain an explicit bound for $\|X\|$ and $\|Y\|$ for all $X, Y$ as above. The bound can be expressed in terms of $d$ and the maximum of the heights of $\alpha_1, \dots, \alpha_n, \mu$ and some algebraic integer\index{algebraic integer} generating $K$; we shall denote by $c_1, c_2, \dots$ positive numbers\index{numbers} that can be specified in terms of these quantities only. We shall assume that $K$ has $s$ conjugate real fields and $2t$ conjugate complex fields so that $d = s + 2t$; further we shall signify by $\theta^{(j)}$ ($1 \le j \le d$) the conjugates of any element $\theta$ of $K$, with $\theta^{(1)}, \dots, \theta^{(s)}$ real and $\theta^{(s+t+j)}$ the complex conjugates of $\theta^{(s+j)}$ respectively. The subsequent arguments rest on the well-known result, dating back to Dirichlet\index{Dirichlet, P. G. L.}, that there exist $r = s + t - 1$ units $\eta_1, \dots, \eta_r$ in $K$ such that
+\[
+\left|\log\left|\eta_i^{(j)}\right|\right| < c_1 \quad (1 \le i, j \le r)
+\]
+and $|\Delta| > c_2$, where $\Delta$ denotes the determinant of order $r$ with $\log|\eta_i^{(j)}|$ in the $i$th row and $j$th column.\footnote{Cf. Hecke\index{Hecke, E.} Bibliography}
+
+We suppose now that $X, Y$ are any algebraic integers\index{algebraic integer} in $K$ satisfying the given equation and we write, for brevity,
+\[
+\beta_i = X - \alpha_i Y \quad (1 \le i \le n).
+\]
+We denote by $N\beta_i$ the field norm of $\beta_i$ and we put $m_i = |N\beta_i|$, so that $m_1\dots m_n = |N\mu|$. We proceed first to show that an associate $\gamma_i$ of $\beta_i$ can be determined such that
+\begin{equation} \label{eq:ch4_1}\tag{1}
+\left|\log\left|\gamma_i^{(j)}\right|\right| < c_3 \quad (1 \le j \le d).
+\end{equation}
+This follows in fact from the observation that every point $P$ in $r$-dimensional Euclidean space occurs within a distance $c_4$ of some point of the lattice with basis
+\[
+(\log |\eta_i^{(1)}|, \dots, \log |\eta_i^{(r)}|) \quad (1 \le i \le r).
+\]
+On taking $P$ as the point
+\[
+(\log |\beta_i^{(1)}|, \dots, \log |\beta_i^{(r)}|),
+\]
+we deduce that there exist rational integers $b_{i1}, \dots, b_{ir}$ such that
+\begin{equation} \label{eq:ch4_2}\tag{2}
+\gamma_i = \beta_i \eta_1^{b_{i1}} \dots \eta_r^{b_{ir}}
+\end{equation}
+satisfies \eqref{eq:ch4_1} for $1 \le j \le r$, with $c_4$ in place of $c_3$, and since
+\[
+\left|\gamma_i^{(j+t)}\right| = \left|\gamma_i^{(j)}\right| \quad (s < j \le s+t),
+\]
+the same holds for $1 \le j \le d$ except possibly for $j = s + t$ and $j = s + 2t$ (only one of which exists if $t = 0$). But we have
+\[
+\left|\gamma_i^{(1)}\dots\gamma_i^{(d)}\right| = m_i, \quad 1 \le m_i \le \left|N\mu\right| \le c_5,
+\]
+whence \eqref{eq:ch4_1} holds for all $j$, as required.
+
+Now let $H_i = \max |b_{ij}|$ and let $l$ be a suffix for which $H_l = \max H_i$. The equations
+\[
+\log \left|\gamma_i^{(j)}/\beta_i^{(j)}\right| = b_{i1} \log \left|\eta_1^{(j)}\right| + \dots + b_{ir} \log \left|\eta_r^{(j)}\right| \quad (1 \le j \le r)
+\]
+serve to express each number $\Delta b_{ij}$ as a linear combination of the numbers\index{numbers} on the left with coefficients given by cofactors of $\Delta$, and thus the maximum of the absolute values of these numbers\index{numbers} exceeds $c_8H_i$. Let the maximum be given by $j=J$. Then from \eqref{eq:ch4_1} we have
+\[
+\left|\log\left|\beta_i^{(J)}\right|\right| = \left|\log\left|\beta_i^{(J)}/\gamma_i^{(J)}\right| + \log\left|\gamma_i^{(J)}\right|\right| > c_6H_i - c_3,
+\]
+and, since $|\beta_i^{(1)} \dots \beta_i^{(d)}| = m_i$, it follows that
+\[
+\log \left|\beta_i^{(h_i)}\right| < -(c_6 H_i - c_3 - \log m_i)/(d-1)
+\]
+for some $h_i$. Thus, if $H_l > c_7$, we have $|\beta_l^{(h)}| < e^{-c_9 H_l}$ for some $h$. Further, since $\beta_1^{(h)} \dots \beta_n^{(h)} = \mu^{(h)}$, we obtain $|\beta_k^{(h)}| > c_{10}$ for some $k \neq l$. We take $j$ to be any suffix other than $k$ or $l$; this exists since, by hypothesis, $n \ge 3$.
+
+We may now, for simplicity, omit the superscript $h$ and assume that $\alpha_i^{(h)} = \alpha_i$, $\beta_i^{(h)} = \beta_i$. From the identity
+\[
+(\alpha_k - \alpha_l) \beta_j + (\alpha_l - \alpha_j) \beta_k + (\alpha_j - \alpha_k) \beta_l = 0,
+\]
+we obtain
+\[
+\eta_1^{b_1} \dots \eta_r^{b_r} - \alpha = \omega,
+\]
+where
+\[
+b_s = b_{ks} - b_{js} \quad (1 \le s \le r),
+\]
+\[
+\alpha = \frac{(\alpha_j - \alpha_l) \, \gamma_k}{(\alpha_k - \alpha_l) \, \gamma_j}, \quad \omega = \frac{(\alpha_k - \alpha_j) \, \beta_l \, \gamma_k}{(\alpha_k - \alpha_l) \, \beta_k \, \gamma_j}.
+\]
+On noting that, for any complex number $z$, the inequality $|e^z - 1| < \frac{1}{4}$ implies that $|z - i b \pi| \le 4 |e^z - 1|$ for some rational integer $b$, we deduce easily, on taking
+\[
+z = b_1 \log \eta_1 + \dots + b_r \log \eta_r - \log \alpha,
+\]
+where the logarithms have their principal values, that, if $|\omega/\alpha| < \frac{1}{4}$, then $|\Lambda| \le 4 |\omega/\alpha|$, where $\Lambda = z - b \log (-1)$. Clearly $\omega \neq 0$ and so also $\Lambda \neq 0$. Further we see that $|b_j| \le 2H_l$ for all $j$, and so the imaginary part of $z$ has absolute value at most $\pi B$, where $B = 4rH_l$. Thus we have $|b| \le B$, and certainly $|b_j| \le B$. Furthermore, from the estimates for $\beta_k = \beta_k^{(h)}$ and $\beta_l = \beta_l^{(h)}$ given above, we see that, if $H_l > c_{10}$, then
+\[
+4|\omega/\alpha| < c_{11}|\beta_l/\beta_k| < e^{-c_{12}B}.
+\]
+But $\eta_1, \dots, \eta_r$ and $\alpha$ have degrees at most $d$, and their heights are bounded above by a number $c_{13}$. Hence \autoref{thm:ch3_1} gives $|\Lambda| > B^{-C}$ for some $C$ as above, and from this and our estimate $|\Lambda| < e^{-c_{12}B}$ we conclude that $B < c_{14}$, whence $H_l < c_{15}$. It follows from \eqref{eq:ch4_1} and \eqref{eq:ch4_2} that
+\[
+\|\beta_i\| < e^{c_{16}H_i} < c_{17},
+\]
+and now the equations
+\[
+X = \frac{\alpha_2 \beta_1 - \alpha_1 \beta_2}{\alpha_2 - \alpha_1}, \quad Y = \frac{\beta_1 - \beta_2}{\alpha_2 - \alpha_1}
+\]
+and their conjugates clearly imply the validity of \autoref{thm:ch4_1}.
+
+\section{The hyperelliptic equation}\label{sec:ch4_3}
+
+As in \autoref{sec:ch4_2}, we signify by $K$ an algebraic number\index{algebraic number} field with degree $d$. We suppose that $\alpha_1, \dots, \alpha_n$ are $n \ge 3$ algebraic integers\index{algebraic integer} in $K$ with, say, $\alpha_1, \alpha_2, \alpha_3$ distinct and different from $\alpha_4, \dots, \alpha_n$, and we prove:
+
+\begin{mythm}{}{ch4_2}
+The equation
+\begin{equation} \label{eq:ch4_3}\tag{3}
+Y^2 = (X - \alpha_1) \dots (X - \alpha_n)
+\end{equation}
+has only a finite number of solutions in algebraic integers\index{algebraic integer} $X, Y$ in $K$ and these can be effectively determined.
+\end{mythm}
+
+We shall establish \autoref{thm:ch4_2} from \autoref{thm:ch4_1} by a method of Siegel\index{Siegel, C. L.},\footnote{J. London Math. Soc. 1 (1926), 66--8.} and again it will be clear that the arguments enable one to furnish explicit bounds for $\|X\|$ and $\|Y\|$. The conclusion of \autoref{thm:ch4_2} plainly remains valid if a non-zero factor in $K$ is introduced on the right of \eqref{eq:ch4_3}, and thus the theorem covers, in particular, the elliptic equation\index{elliptic equation}
+\[
+y^2 = ax^3 + bx^2 + cx + d,
+\]
+where all quantities signify rational integers. In this case, however, the result can be derived from \autoref{thm:ch4_1} by a readier method, due to Mordell\index{Mordell, L. J.}, involving the theory of the reduction of binary quartic forms.\footnote{J. London Math. Soc. 43 (1968), 1--9.}
+
+Suppose now that $X, Y$ are non-zero algebraic integers\index{algebraic integer} in $K$ satisfying \eqref{eq:ch4_3}. We show first that there exist algebraic integers\index{algebraic integer} $\xi_j, \eta_j, \zeta_j \ (j=1,2,3)$ in $K$ with
+\begin{equation} \label{eq:ch4_4}\tag{4}
+\begin{gathered}
+X - \alpha_j = (\xi_j/\eta_j) \, \zeta_j^2, \\
+\max (\|\xi_j\|, \|\eta_j\|) < c_1,
+\end{gathered}
+\end{equation}
+where $c_1$, like $c_2, c_3, \dots$, denotes a positive number specified as in \autoref{sec:ch4_2}, that is, depending only on $d$ and the maximum of the heights of $\alpha_1, \dots, \alpha_n$ and some algebraic integer\index{algebraic integer} generating $K$. For simplicity we write $\alpha = \alpha_j$, and we observe that, by virtue of the ideal equation
+\[
+[Y^2] = [X - \alpha_1] \dots [X - \alpha_n],
+\]
+we have
+\[
+[X - \alpha] = \mathfrak{ab}^2
+\]
+for some ideals $\mathfrak{a, b}$ in $K$, where $\mathfrak{a}$ divides
+\[
+\prod_{i \neq j} [\alpha - \alpha_i].
+\]
+Further, there exist ideals $\mathfrak{a', b'}$ in the ideal classes inverse to those of $\mathfrak{a, b}$ respectively with norms at most $c_2$, and clearly $\mathfrak{aa'}$ and $\mathfrak{a'b'^2}$ are principal ideals; the latter are therefore generated by algebraic integers\index{algebraic integer} $\xi', \eta'$ in $K$ with
+\[
+|N\xi'| \le c_2 N\mathfrak{a}, \quad |N\eta'| \le c_2^3.
+\]
+Furthermore, since
+\[
+N\mathfrak{a} \le \prod_{i \neq j} N[\alpha - \alpha_i] < c_3,
+\]
+it follows easily, as in the derivation of \eqref{eq:ch4_1}, that there exist associates $\xi'', \eta''$ of $\xi', \eta'$ respectively satisfying
+\[
+\max(\|\xi''\|, \|\eta''\|) < c_4.
+\]
+Now $\mathfrak{bb'}$ is principal and is therefore generated by some algebraic integer\index{algebraic integer} $\zeta'$ in $K$. Hence from the equation
+\[
+(\mathfrak{a'b'^2})[X-\alpha] = (\mathfrak{aa'})(\mathfrak{bb'})^2
+\]
+we obtain
+\[
+X-\alpha=\epsilon(\xi''/\eta'')\,\zeta'^2,
+\]
+where $\epsilon$ denotes a unit in $K$. By Dirichlet\index{Dirichlet, P. G. L.}'s theorem there exists a fundamental system $\epsilon_1, \dots, \epsilon_r$ of units in $K$ satisfying
+\[
+\max \left(\left\| \epsilon_1 \right\|, \dots, \left\| \epsilon_r \right\| \right) < c_5,
+\]
+and we have
+\[
+\epsilon = \rho \epsilon_1^{j_1} \dots \epsilon_r^{j_r}
+\]
+for some rational integers $j_1, \dots, j_r$ and some root of unity $\rho$; it is now clear that the numbers\index{numbers} $\xi, \eta, \zeta$ given by
+\[
+\xi'' \rho \epsilon_1^{j'_1} \dots \epsilon_r^{j'_r}, \quad \eta'', \quad \zeta' \epsilon_1^{\frac{1}{2}(j_1-j'_1)} \dots \epsilon_r^{\frac{1}{2}(j_r-j'_r)}
+\]
+respectively, where $j'_i = 0$ or $1$ according as $j_i$ is even or odd, have the required properties.
+
+On eliminating $X$ from \eqref{eq:ch4_4} we obtain three equations of the form
+\[
+\sigma_2 \zeta_2^2 - \sigma_3 \zeta_3^2 = \alpha_3 - \alpha_2,
+\]
+where $\sigma_j = \xi_j/\eta_j \ (j = 1, 2, 3)$. Further, on writing
+\[
+\beta_1 = \sigma_2^{\frac{1}{2}} \zeta_2 - \sigma_3^{\frac{1}{2}} \zeta_3
+\]
+for any choice of the square roots, and defining $\beta_2, \beta_3$ similarly by cyclic permutation of the suffixes, we have
+\begin{equation} \label{eq:ch4_5}\tag{5}
+\beta_1 + \beta_2 + \beta_3 = 0.
+\end{equation}
+Now $\beta_1$ is a non-zero element of the field generated by $\sigma_2^{\frac{1}{2}}$ and $\sigma_3^{\frac{1}{2}}$ over $K$; further, on multiplying by $\delta = \eta_1 \eta_2 \eta_3$, one obtains an algebraic integer\index{algebraic integer} with field norm having absolute value at most $c_6$. It follows easily, as above, that $\delta \beta_1 = \beta_1' \epsilon_1'$ for some unit $\epsilon_1'$ in the field and some associate $\beta_1'$ with $\|\beta_1'\| < c_7$; and, after permutation of suffixes, the same holds for $\beta_2, \beta_3$. Thus \eqref{eq:ch4_5} gives
+\[
+\beta_1' \epsilon_1'^3 + \beta_2' \epsilon_2'^3 + \beta_3' \epsilon_3'^3 = 0,
+\]
+and, on multiplying by $\beta_1'^2 / \epsilon_3'^3$, this becomes a Thue\index{Thue, A.} equation
+\[
+x^3 - \lambda y^3 = \mu,
+\]
+where
+\[
+x = \beta_2' \epsilon_2' / \epsilon_3', \quad y = \epsilon_1' / \epsilon_3'.
+\]
+Hence, by \autoref{thm:ch4_1}, $\|x\|$ and $\|y\|$ are at most $c_8$, and it remains only to show that $\|X\|$ and $\|Y\|$ are likewise bounded.
+
+Fixing the choice of the sign of $\sigma_2^{\frac{1}{2}}$, one can plainly select the sign of $\sigma_2^{\frac{1}{2}}$ in $\beta_3$ so that $|\epsilon_3'| < c_9$. Then the bound $\|y\| < c_8$ established above gives $\|\epsilon_1'\| < c_{10}$, whence, since $\|\beta_1'\| > c_{11}$, we obtain $\|\delta \beta_1\| < c_{12}$. But this holds for either choice of the sign of $\sigma_3^{\frac{1}{2}}$ and thus we conclude that both $|\zeta_2|$ and $|\zeta_3|$ are at most $c_{13}$. It is now apparent from \eqref{eq:ch4_4} that $|X| < c_{14}$; on commencing with the equations conjugate to \eqref{eq:ch4_3} we derive the same bound for each conjugate of $X$, and the theorem follows.
+
+\section{Curves of genus 1}\label{sec:ch4_4}
+
+Let $f(x,y)$ be an absolutely irreducible polynomial with integer coefficients such that the curve $f(x, y) = 0$ has genus 1\index{curves of genus 1}. We prove:
+
+\begin{mythm}{}{ch4_3}
+The equation $f(x,y) = 0$ has only a finite number of solutions in integers $x, y$ and these can be effectively determined.
+\end{mythm}
+
+As mentioned in \autoref{sec:ch4_1}, the first part of the theorem was initially established by Siegel\index{Siegel, C. L.} in 1929, but his method of proof was ineffective. The argument we shall give here, which is based on a birational transformation that reduces the equation to the canonical form considered in \autoref{thm:ch4_2}, provides an effective and simpler proof of Siegel\index{Siegel, C. L.}'s theorem in the case of curves of genus\index{curves of genus} 1; but it does not seem to extend easily to curves of higher genus.
+
+We shall denote by $\mathbb{Q}, \mathbb{Q}(x)$ and $K$ respectively the field of all algebraic numbers\index{algebraic number}, the field of rational functions in $x$ with coefficients in $\mathbb{Q}$, and the finite algebraic extension of $\mathbb{Q}(x)$ formed by adjoining a root of $f(x, y) = 0$. By the Riemann-Roch theorem\index{Riemann-Roch theorem}, there exist rational functions $X_1, X_2$ on the curve with orders $-2, -3$ respectively at some fixed infinite valuation, say $\mathfrak{Q}$, of $K$, and with non-negative orders at all other valuations of $K$; moreover, one can effectively determine the algebraic coefficients in their Puiseux expansions. We now observe, following Chevalley\index{Chevalley, C.}, that the seven functions $1, X_1, X_2, X_1^2, X_1 X_2, X_1^3, X_2^2$ have poles of order at most 6 at $\mathfrak{Q}$ and so, by the Riemann-Roch theorem\index{Riemann-Roch theorem} again, they are linearly dependent over $\mathbb{Q}$.
+
+Let $p_1, \dots, p_7$ be the respective coefficients in the linear equation relating them; clearly we have $p_6 \neq 0$, for the six functions excluding $X_1^3$ have distinct orders at $\mathfrak{Q}$. On writing
+\[
+X = X_1, \quad Y = 2p_5 X_2 + p_7 X_1 + p_3,
+\]
+we obtain
+\[
+Y^2 = aX^3 + bX^2 + cX + d,
+\]
+where $a, b, c, d$ are polynomials in $p_1, \dots, p_7$ with integer coefficients. The cubic on the right has distinct zeros, for if the equation reduced to
+\[
+\{Y/(X-\alpha)\}^2=a(X-\beta),
+\]
+then $Y/(X - \alpha)$ could possess a pole only at $\mathfrak{Q}$; but, since $X_1, X_2$ have orders $-2, -3$ respectively at $\mathfrak{Q}$ and $p_6 \neq 0$, the function has in fact a pole of order 1 at $\mathfrak{Q}$, contrary to the Riemann-Roch theorem\index{Riemann-Roch theorem}.
+
+We observe now that, since $X_1, X_2$ are rational functions of $x, y$ with coefficients in a fixed field, the functions $X, Y$ become algebraic numbers\index{algebraic number} in a fixed field when $x, y$ are rational integers. Moreover, there exists a non-zero rational integer $q$, independent of $x$ and $y$, such that $qX$ and $qY$ are algebraic integers\index{algebraic integer}; for the function $X = X_1$ has a pole only at the infinite valuation $\mathfrak{Q}$ and thus the equation satisfied by $X$ over $\mathbb{Q}(x)$ has the form
+\[
+X^m + P_1(x) X^{m-1} + \dots + P_m(x) = 0,
+\]
+where $m$ is the degree of $f$ in $y$ and $P_1, \dots, P_m$ are polynomials in $x$ with algebraic coefficients and degree at most 2. We conclude from \autoref{thm:ch4_2} that $X, Y$ can take only finitely many values when $x, y$ are rational integers. On noting again that $X$ has a pole at $\mathfrak{Q}$, it follows at once that there are only finitely many $x$, and, in view of the initial equation $f(x, y) = 0$, so also finitely many $y$. Further, it is readily confirmed that all the arguments employed above are, in principle, effective, and this proves \autoref{thm:ch4_3}.
+
+The method of proof can easily be extended to treat curves of genus\index{curves of genus} 0 when there exist at least three infinite valuations, and this together with the above result enables one to resolve effectively the general cubic equation $f(x, y) = 0$; the latter can, however, be reduced more directly to the form considered in \autoref{thm:ch4_2}.
+
+\section{Quantitative bounds}\label{sec:ch4_5}
+
+As remarked earlier, the arguments employed here enable one to furnish explicit upper bounds for the size of all the solutions of the above equations. To calculate these bounds one needs first a quantitative version of \autoref{thm:ch3_1}, and, in this connexion, the most useful result\footnote{Mathematika, 15 (1968), 204--16.} so far established reads:
+
+If $\alpha_1, \dots, \alpha_n$ are $n \ge 2$ non-zero algebraic numbers\index{algebraic number} with degrees and heights at most $d \ (\ge 4)$ and $A \ (\ge 4)$ respectively, and if rational integers $b_1, \dots, b_n$ exist with absolute values at most $B$ such that
+\[
+0 < |b_1 \log \alpha_1 + \dots + b_n \log \alpha_n| < e^{-\delta B},
+\]
+where $0 < \delta \le 1$, and the logarithms have their principal values, then
+\[
+B < (4^{n^2} \delta^{-1} d^{2n} \log A)^{(2n+1)^2}.
+\]
+
+By applying this together with certain estimates for units in algebraic number\index{algebraic number} fields, it has been shown that all solutions $X, Y$ of the Thue\index{Thue, A.} equation referred to in \autoref{thm:ch4_1} satisfy
+\[
+\max(\|X\|, \|Y\|) < \exp\{(dH)^{(10d)^5}\},
+\]
+where $H$ denotes the maximum of the heights of $\alpha_1, \dots, \alpha_n, \mu$ and some algebraic integer\index{algebraic integer} generating $K$.\footnote{Phil. Trans. Roy. Soc. London, A 263 (1968), 173--91; P.C.P.S. 65 (1969), 439--44.}   This leads to the bound
+\[
+\exp \exp \left(d^{10d^2}H^{d^2}\right)
+\]
+for the sizes of all solutions $X, Y$ of the hyperelliptic equation\index{hyperelliptic equation} discussed in \autoref{thm:ch4_2}. Further, employing the latter estimate and an effective construction for rational functions\footnote{P.C.P.S. 68 (1970), 105--23 (J. Coates\index{Coates, J.}).}, it has been proved that all integer points $x, y$ on the curve $f(x,y) = 0$ of \autoref{thm:ch4_3} satisfy
+\[
+\max(|x|,|y|) < \exp\exp\{(2H)^{10^{n/2}}\},
+\]
+where $H$ denotes the maximum of the absolute values of the coefficients of $f$ and $n$ denotes its degree.\footnote{P.C.P.S. 67 (1970), 595--602.}
+
+In special cases one has stronger bounds. For instance, for the elliptic equation\index{elliptic equation} mentioned after the enunciation of \autoref{thm:ch4_2}, the estimate
+\[
+\max (|x|, |y|) < \exp \{(10^6 H)^{10^6}\}
+\]
+has been established, where $a, b, c, d$ are assumed to have absolute values at most $H$; and for the Mordell\index{Mordell, L. J.} equation\index{Mordell equation} $y^2 = x^3 + k$, it has been shown, by way of an expression for $C$ in terms of $\Omega$ similar to that recorded after \autoref{thm:ch3_1}, that the bound $\exp(c|k|^{1+\epsilon})$ is valid for any $\epsilon > 0$, where $c$ depends only\footnote{Acta Arith. 24 (1973), 251--9 (H. Stark\index{Stark, H. M.}).} on $\epsilon$. 
+Furthermore, techniques have been devised which, for a wide range of numerical examples, render the problem of determining the complete list of solutions in question accessible to machine computation\index{machine computation}; thus, for example, it has been proved that the only integer solutions of the pair of equations $3x^2-2=y^2$ and $8x^2-7=z^2$ are given by $x=1$ and $x=11$, and that the equation $y^2=x^3-28$ has only the solutions given by $x=4, 8, 37$ (the corresponding values of $y$ being $\pm 6, \pm 22, \pm 225$ respectively)\footnote{Quart. J. Math. Oxford Ser. (2) 20 (1969), 129--37; J. Number Th. 4 (1972), 107--17.}
+
+Much interest attaches to the size of the solutions of the original Thue\index{Thue, A.} equation $F(x,y)=m$ (see \autoref{sec:ch4_1}). As a consequence of the third inequality for $|\Lambda|$ recorded after the enunciation of \autoref{thm:ch3_1}, the arguments leading to \autoref{thm:ch4_1} show that, if $m \ge 2$, then $|x|$ and $|y|$ cannot exceed $m^C$ for some computable $C$ depending only on\footnote{I.A.N. 35 (1971), 973--90.} $F$. 
+This yields at once an improvement on Liouville\index{Liouville, J.}'s theorem\index{Liouville's theorem}; indeed, with the notation of \autoref{thm:ch1_1}, we have
+\[
+|\alpha - p/q| > c/q^{\kappa}
+\]
+for all rationals $p/q \ (q>0)$, where $c, \kappa$ are positive numbers\index{numbers}, effectively computable in terms of $\alpha$, with $\kappa < n$. The result, in slightly weaker form, was first established\footnote{Phil. Trans. Roy. Soc. London, A 263 (1968), 173--91.} in 1967,  
+particular cases, however, having been obtained a few years earlier by means of special properties of Gauss\index{Gauss, C. F.}' hypergeometric function\index{hypergeometric function}.\footnote{Proc. London Math. Soc. 4 (1964), 385--98.} 
+For instance it had been proved.\footnote{Quart. J. Math. Oxford Ser. (2) 15 (1964), 375--83.} that when $\alpha$ is the cube-root of 2 and 17 then the above inequality holds with $c=10^{-6}, \kappa=2.955$ and $c=10^{-9}, \kappa=2.4$ respectively, values in fact that are almost certainly sharper than those given by the more general techniques. But, leaving aside the effective nature of $c$, much more about rational approximations to algebraic numbers\index{rational approximations to algebraic numbers}\index{algebraic number} is known from the field of research begun by Thue\index{Thue, A.}, and this will be the theme of \autoref{ch:7}.
+
+Various other equations can be treated by the methods described here. They can be used, for instance, to give bounds for all solutions in integers $x, y$ of the equation $y^m = f(x)$, where $m \ge 2$ and $f$ denotes any polynomial with integer coefficients possessing at least two distinct zeros; in particular, they enable one to solve effectively the Catalan equation\index{Catalan equation} $x^m - y^n = 1$ for any given $m, n$.\footnote{P.C.P.S. 65 (1969), 439--44. In fact R. Tijdeman\index{Tijdeman, R.} has recently shown that they enable one to give an effective bound for all solutions $x, y, m, n$ of the Catalan equation\index{Catalan equation}.} 
+Moreover, they can be generalized by means of analysis in the p-adic domain to furnish all rational solutions of the equations $F(x,y) = m$ and $y^2 = x^3 + k$ whose denominators are comprised solely of powers of fixed sets of primes; thus, more especially, they yield an effective determination of all elliptic curves\index{elliptic curve} with a given conductor.\footnote{Acta Arith. 15 (1969), 279--305; 16 (1970), 399--412, 425--35 (J. Coates\index{Coates, J.}).}

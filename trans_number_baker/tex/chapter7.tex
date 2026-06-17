@@ -1,0 +1,344 @@
+%# -*- coding: utf-8-unix -*-
+
+\chapter{RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS\index{numbers}}\label{ch:7}
+
+\section{Introduction}\label{sec:ch7_1}
+
+In 1909, a remarkable improvement on Liouville\index{Liouville, J.}'s theorem\index{Liouville's theorem} was obtained by the Norwegian mathematician Axel Thue\index{Thue, A.}.\footnote{J.M. 135 (1909), 284--305.} He proved that for any algebraic number\index{algebraic number}  $\alpha$  with degree n > 1 and for any  $\kappa > \frac{1}{2}n + 1$  there exists  $c = c(\alpha, \kappa) > 0$  such that  $|\alpha - p/q| > c/q^{\kappa}$  for all rationals p/q (q>0). His work rested on the construction of an auxiliary polynomial in two variables possessing zeros to a high order, and it can be regarded as the source of many of our modern transcendence techniques. The condition on  $\kappa$  was relaxed by Siegel\index{Siegel, C. L.}\footnote{M.Z. 10 (1921), 173--213.} in 1921 to  $\kappa > s + n/(s+1)$  for any positive integer s, thus, in particular, to  $\kappa > 2\sqrt{n}$, and it was further relaxed by Dyson\index{Dyson, F.}\footnote{Acta Math. 79 (1947), 225--40.} and Gelfond\index{Gelfond, A. O.}\footnote{See Bibliography.} independently in 1947 to  $\kappa > \sqrt{2n}$. The latter expositions continued to involve polynomials in two variables and further progress seemed to require some extension of the arguments relating to polynomials in many variables; in fact special results in this connexion had already been obtained by Schneider\index{Schneider, Th.}\footnote{J. M. 175 (1936), 182--92.} in 1936. A generalization of the desired kind was discovered by Roth\index{Roth, K. F.}\footnote{Mathematika, 2 (1955), 1--20.} in 1955; he showed indeed that the above proposition holds for any  $\kappa > 2$, a condition which, in view of the introductory remarks of \autoref{ch:1}, is essentially best possible.
+
+Roth\index{Roth, K. F.}'s work, however, gave rise to a number of further problems. Siegel\index{Siegel, C. L.} had initiated studies on the approximation of algebraic numbers\index{algebraic number} by algebraic numbers\index{algebraic number} in a fixed field, and also by algebraic numbers\index{algebraic number} with bounded degree, and although Roth\index{Roth, K. F.}'s arguments could be readily generalized to furnish a best possible result in connexion with the first topic,\footnote{See LeVeque\index{LeVeque, W. J.} (Bibliography).} they did not seem to admit a similar extension in connexion with the second. Even less, therefore, did they appear capable of dealing with the wider question concerning the simultaneous approximation of algebraic numbers\index{algebraic number} by rationals. The whole subject was resolved by Schmidt\index{Schmidt, W. M.}\footnote{See Bibliography.} in 1970; building upon Roth\index{Roth, K. F.}'s foundations but introducing several new ideas, in particular from the Geometry of Numbers\index{Geometry of Numbers}, he proved:
+
+\begin{mythm}{}{ch7_1}
+For any algebraic numbers\index{algebraic number}  $\alpha_1, ..., \alpha_n$  with  $1, \alpha_1, ..., \alpha_n$  linearly independent over the rationals, and for any  $\epsilon > 0$, there are only finitely many positive integers q such that
+\[q^{1+\epsilon}\|q\alpha_1\|\dots\|q\alpha_n\|<1.\]
+\end{mythm}
+
+Here ||x|| denotes the distance of x from the nearest integer taken positively. The theorem implies, by a classical transference principle,\footnote{See Cassels\index{Cassels, J. W. S.}' Diophantine approximation (Bibliography).} that there are only finitely many non-zero integers  $q_1, ..., q_n$  with
+\[|q_1 \dots q_n|^{1+\epsilon} ||q_1 \alpha_1 + \dots + q_n \alpha_n|| < 1.\]
+
+Further, as immediate corollaries, we see that there are only finitely many integers $p_1, \ldots, p_n, q \ (q > 0)$  satisfying
+\[|\alpha_j - p_j/q| < q^{-1-(1/n)-\epsilon} \quad (1 \leqslant j \leqslant n),\]
+and also only finitely many integers $p, q_1, ..., q_n$  satisfying
+\[|q_1\alpha_1+\ldots+q_n\alpha_n-p|< q^{-n-\epsilon},\]
+where  $q = \max |q_j|$. Furthermore we have:
+
+\begin{mythm}{}{ch7_2}
+For any algebraic number\index{algebraic number}  $\alpha$  with degree exceeding n and any  $\epsilon > 0$, there are only finitely many algebraic numbers\index{algebraic number}  $\beta$  with degree at most n such that  $|\alpha - \beta| < B^{-n-1-\epsilon}$, where B denotes the height of  $\beta$.
+\end{mythm}
+
+The theorem follows from the inequality just above with  $\alpha_j = \alpha^j$, on noting that, if P(x) is the minimal polynomial\index{minimal polynomial of algebraic number} for  $\beta$, then
+\[|P(\alpha)| < BC|\alpha - \beta|\]
+for some C depending only on  $\alpha$. The exponent of B is essentially best possible, as has been demonstrated by Wirsing\index{Wirsing, E.}. In fact, Wirsing\index{Wirsing, E.} obtained \autoref{thm:ch7_2} in 1965 before the work of Schmidt\index{Schmidt, W. M.}, but with the less precise exponent  $-2n - \epsilon$.\footnote{J.M. 206 (1961), 67--77.}
+
+One of the main applications of the methods of this chapter has concerned Diophantine equations\index{Diophantine equations} of norm form in several variables, which generalize the Thue\index{Thue, A.} equation discussed in \autoref{ch:4}; indeed the work has led to a complete description of all such equations that possess only finitely many solutions.\footnote{Proc. Symposia Pure Math. (Amer. Math. Soc.), 20 (1971), 213--47.}
+
+\begin{mythm}{}{ch7_3}
+Let K be an algebraic number\index{algebraic number} field and let M be a module in K. A necessary and sufficient condition for there to exist an integer m such that the equation  $N\mu = m$  has infinitely many solutions  $\mu$  in M is that M be a full module in some subfield of K which is neither the rational nor an imaginary quadratic field.
+\end{mythm}
+
+The necessity follows at once from the fact that the subfield, if it exists, contains at least one fundamental unit, and the sufficiency is a consequence of a generalized version of \autoref{thm:ch7_1} relating to products of linear forms;\footnote{M.A. 191 (1971), 1--20.}  it is in fact a direct corollary in the case when the dimension of M is small compared with the degree of K. As examples, one sees that the equation
+\[N(x_1 + x_2\sqrt{2} + x_3\sqrt{3}) = 1\]
+has infinitely many solutions in integers  $x_1$, $x_2$, $x_3$  given by
+\[x_1 + x_2\sqrt{2} = \pm (1 + \sqrt{2})^n, \quad \text{and by} \quad x_1 + x_3\sqrt{3} = \pm (2 + \sqrt{3})^n,\]
+where n = 0, 1, 2, ...; and the equation
+\[N(x_1+q^{1/p}x_2+\ldots+q^{(p-2)/p}x_{p-1})=m,\]
+where p, q are primes and m is any integer, has only a finite number of solutions in integers  $x_1, ..., x_{p-1}$; for clearly the field generated by  $q^{1/p}$  over the rationals has only trivial subfields. It should be noted, however, that, in contrast to the work of \autoref{ch:4}, the arguments here are not effective and cannot lead to a determination of the totality of solutions. In fact, apart from a few special results of Skolem\index{Skolem, Th.},\footnote{See Bibliography.} the only effective theorems established to date on equations of norm form in three or more variables derive from the work on the hypergeometric function\index{hypergeometric function} referred to in \S~5 of \autoref{ch:4}.
+
+A generalization of Roth\index{Roth, K. F.}'s theorem\index{Roth's theorem} in the p-adic domain was obtained by Ridout\index{Ridout, D.}\footnote{Mathematika, 4 (1957), 125--31; 5 (1958), 40--8; see also Mahler\index{Mahler, K.} (Bibliography).} in 1957; in particular he proved that for any algebraic number\index{algebraic number}  $\alpha$  and any  $\epsilon > 0$, there exist only finitely many integers p, q, comprised solely of powers of fixed sets of primes, such that  $|\alpha - p/q| < q^{-\epsilon}$. In this case, however, \autoref{thm:ch3_1}\footnote{P.C.P.S. 63 (1967), 693--702.} gives rather more; in fact, on taking  $\alpha_1 = \alpha$  and the remaining  $\alpha$'s as the given primes, one sees at once that  $q^{-\epsilon}$  can be replaced by  $(\log q)^{-c}$  for some c depending only on  $\alpha$  and the primes, a result moreover that is fully effective. Further theorems in the context of p-adic approximations follow from the other inequalities for  $|\Lambda|$  recorded in \autoref{ch:3}.
+
+\section{Wronskians}\label{sec:ch7_2}
+
+The Wronskian of polynomials  $\phi_1(x), \ldots, \phi_k(x)$  of one variable is defined as the determinant of order k with  $(j!)^{-1}\phi_i^{(j)}(x)$  in the ith row and (j+1)th column, where  $1 \leq i \leq k, \ 0 \leq j < k$, and  $\phi^{(j)}$  denotes the jth derivative of  $\phi$. Such Wronskians\index{Wronskians} occurred in the original work of Thue\index{Thue, A.}, and they sufficed for the expositions of Siegel\index{Siegel, C. L.}, Dyson\index{Dyson, F.} and Gelfond\index{Gelfond, A. O.}; the arguments of Roth\index{Roth, K. F.} and Schmidt\index{Schmidt, W. M.}, however, involved the concept of a generalized Wronskian. Suppose that  $\phi_1, \ldots, \phi_k$  are polynomials in n variables  $x_1, \ldots, x_n$  and let  $\Delta^{(j)}$  denote a differential operator of the form
+\[(j_1!\ldots j_n!)^{-1}(\partial/\partial x_1)^{j_1}\ldots(\partial/\partial x_n)^{j_n},\]
+where  $j_1 + \ldots + j_n = j$. Then any determinant of order k with some  $\Delta^{(j)}\phi_i$  in the ith row and (j+1)th column is called a generalized Wronskian of  $\phi_1, \ldots, \phi_k$. There are clearly only finitely many generalized Wronskians\index{Wronskians} of  $\phi_1, \ldots, \phi_k$, and when n=1 the set reduces to the original Wronskian. We shall require later the result that if  $\phi_1, \ldots, \phi_k$  are linearly independent over their field of coefficients then some generalized Wronskian does not vanish identically; proofs are given, for instance, in the tracts of Cassels\index{Cassels, J. W. S.} and Mahler\index{Mahler, K.}.
+
+\section{The index}\label{sec:ch7_3}
+
+The proof of \autoref{thm:ch7_1} involves polynomials P in kn variables  $x_{lm}$  ( $1 \le l \le k$,  $1 \le m \le n$ ), homogeneous in  $x_{1m}, \ldots, x_{km}$  for each m. Suppose that P has real coefficients and let  $L_m$  ( $1 \le m \le n$ ) be real linear forms in  $x_{1m}, \ldots, x_{km}$. Then the index of P with respect to  $L_1, \ldots, L_n$  and positive integers  $r_1, \ldots, r_n$  is defined as the largest value of  $\theta$  such that P can be expressed as a linear combination of the polynomials  $L_1^{j_1} \ldots L_n^{j_n}$  with
+\[(j_1/r_1) + \ldots + (j_n/r_n) \geq \theta,\]
+and with real polynomials in the  $x_{lm}$  as coefficients. It is easily verified that, for any polynomials P, Q as above, the index, for brevity, ind, with respect to the  $L_m$  and  $r_m$  satisfies ind  $(P+Q) \ge \min (\operatorname{ind} P, \operatorname{ind} Q)$,
+\[\operatorname{ind} PQ = \operatorname{ind} P + \operatorname{ind} Q.\]
+
+We shall require also the related concept of the index of a real polynomial  $P(x_1, ..., x_n)$  with respect to rationals  $p_m/q_m$   $(q_m > 0)$  and integers  $r_m > 0$   $(1 \le m \le n)$; this is defined as the index of the polynomial  $x_{01}^{d_1} \dots x_{0n}^{d_n} P(x_{11}/x_{21}, \dots, x_{1n}/x_{2n})$  in the 2n variables  $x_{lm}$  (l = 1, 2) with respect to the linear forms
+\[L_m = q_m x_{1m} - p_m x_{2m}\]
+and the  $r_m$, where  $d_m$  denotes the degree of P in  $x_m$. The index in the latter sense occurred first in the work of Roth\index{Roth, K. F.}, and the generalized concept was introduced by Schmidt\index{Schmidt, W. M.}.
+
+In analogy with the notation of earlier chapters, we define the height ||P|| of a polynomial P as the maximum of the absolute values of its coefficients; we shall speak of the height only for polynomials with rational integer coefficients, not identically 0. The same definition will of course apply in the special case of linear forms.
+
+Suppose now that P is a polynomial in kn variables as indicated at the beginning of the section. Let  $L_1, \dots, L_n$  be linear forms as there, with relatively prime integer coefficients, and let  $q_m = \|L_m\|$. Further let  $r_1, \dots, r_n$  be positive integers such that  $\delta r_m > r_{m+1}$   $(1 \le m < n)$, where  $\delta = (\epsilon/32)^{2^n}$  and  $0 < \epsilon < 1$. We have
+
+\begin{mylemma}{}{ch7_1}
+If  $q_m^{r_m} > q_1^{r_{m+1}} \ (1 \le m < n)$  and  $q_1^{\delta \eta} > 8^{nk^2}$, where  $0 < \eta \le k$, and if also P has height at most  $q_1^{\delta \eta r_1/k^2}$  and degree at most  $r_m$  in  $x_{1m}, \ldots, x_{km}$, then the index of P with respect to the  $L_m$  and  $r_m$  is at most  $\epsilon$.
+\end{mylemma}
+
+This is an extension, due to Schmidt\index{Schmidt, W. M.}, of the most fundamental part of Roth\index{Roth, K. F.}'s work, sometimes called Roth's lemma\index{Roth's lemma}. The result follows easily in fact from the case considered by Roth\index{Roth, K. F.}, as we now show.
+
+We assume, as we may without loss of generality, that  $q_m = |a_{1m}|$, where
+\[L_m = \sum_{l=1}^k a_{lm} x_{lm} \quad (1 \leqslant m \leqslant n).\]
+
+We shall further assume that $(a_{1m}, a_{2m})$\footnote{(a, b) denotes the greatest common divisor of a, b.} is at most $q_m^{(k-2)/(k-1)}$; this also involves no loss of generality, since a prime $p$ can divide at most $k-2$ of the integers $(a_{1m}, a_{lm})$ with $1 < l \le k$, whence their product divides $q_m^{k-2}$. Let now $P'$ be the polynomial obtained from $P$ by successively removing, in some order, the highest power of
+\[x_{lm} \quad (3 \leqslant l \leqslant k, 1 \leqslant m \leqslant n)\]
+that divides $P$ and then setting the variable to 0; further let $P''$ be the polynomial obtained by setting $x_{2m} = 1$ in $P'$ for each $m$. Then clearly the index of $P$ with respect to the $L_m$ and $r_m$ is at most the index of $P''$ with respect to $-a_{2m}/a_{1m}$ and $r_m$. Also, by assumption, the denominator of $a_{2m}/a_{1m}$, when expressed in lowest terms, namely $q_m/(a_{1m}, a_{2m})$, is at least $q_m^{1/k}$. Hence we see that it suffices to prove the following modified version of \autoref{lem:ch7_1}.
+
+For any integers $r_m$ $(1 \leq m \leq n)$ as above and any rationals
+\[p_m/q_m \quad (q_m > 0)\]
+in their lowest terms such that $q_m^{r_m} > q_1^{r_{m+1}}$ and $q_1^{\delta \eta} > 8^n$, where $0 < \eta \leqslant 1$, the index with respect to the $p_m/q_m$ and $r_m$ of any polynomial $P(x_1,\dots,x_n)$ with height at most $q_1^{\delta \eta r_1/k^2}$ and degree at most $r_m$ in $x_m$ is at most $\epsilon$.
+
+Proofs of this proposition, possibly in slightly adapted form, in particular with $\eta=1$, are given in several of the texts cited in the Bibliography, and our exposition can therefore be relatively brief. The result plainly holds for $n=1$, for if $j_1$ is the exponent to which $x_1-p_1/q_1$ divides $P(x_1)$ then, by Gauss\index{Gauss, C. F.}' lemma\index{Gauss' lemma}, we have
+\[P(x_1) = (q_1x_1 - p_1)^{j_1}Q(x_1),\]
+where $Q$ is a polynomial with integer coefficients; thus the leading coefficient of $P$ is at least $q_1^{j_1}$, whence $j_1/r_1 < \delta \eta < \epsilon$, as required. We now assume the validity of the proposition with $n$ replaced by $n-1$ and we proceed to establish the assertion for $n \ (\geq 2)$.
+
+We begin by writing $P$ in the form
+\[\phi_0 \psi_0 + \dots + \phi_{s-1} \psi_{s-1}\]
+where the $\phi$'s and $\psi$'s are polynomials in the variables $x_1, \dots, x_{n-1}$ and $x_n$ respectively with rational coefficients, and we choose one such representation for which $s \ (\leq r_n + 1)$ is minimal. Then there exist Wronskians\index{Wronskians} $U'$, $V'$ of the $\phi$'s and $\psi$'s respectively which do not vanish identically, and clearly $W = U'V'$ can be expressed as a determinant of order $s$ with $\Delta^{(j)}(i!)^{-1} (\partial/\partial x_n)^i P(x_1, \dots, x_n)$ in the $(i+1)$-th row and $(j+1)$-th column, where the $\Delta^{(j)}$ are operators as in \S~2 with $j_n = 0$. Hence $W$ is a polynomial with degree at most $s r_j$ in $x_j$ and with $\|W\| \leq (8^{rn} \|P\|)^s \leq q_1^{2\delta\eta r_1 s}$, where $r=r_1=\max r_m$; here we are using the hypothesis $q_1^{\delta\eta}>8^n$ and the observations that $\Delta^{(j)}$ acting on any monomial in $P$ introduces a factor not exceeding $2^{rn}$, that there are at most $2^{rn}$ such monomials, and that the number of terms obtained on expanding the determinant for $W$ is $s!\leqslant 2^{rs}$. Now, again by Gauss\index{Gauss, C. F.}' lemma\index{Gauss' lemma}, we have $W=UV$, where $U,V$ are polynomials with integer coefficients in the variables $x_1,\dots,x_{n-1}$ and $x_n$ respectively, given by some rational multiples of $U',V'$; and clearly the bound for $\|W\|$ obtains also for $\|U\|$ and $\|V\|$. Thus, by our inductive hypothesis, it follows, on taking $2\delta$ in place of $delta$, that the index of $U$ with respect to the $p_m/q_m$ and $r_m$ is at most $2^{-5+1/2^{n-1}} \epsilon^2 s$. Further, by the case $n=1$ of the proposition together with the hypothesis $q_n^{r_n}\geqslant q_1^{n r_1}$, the same bound applies for the index of $V$. We conclude therefore that the index of $W$ is at most $\frac{1}{8} \epsilon^2 s$.
+
+On the other hand, the index of the general element in the determinant for $W$ is at least
+\[\phi_i - \sum_{m=1}^{n-1} j_m / r_m\]
+where $\phi_i = \theta - i/r_n$, $\theta$ denotes the index of $P$, and
+\[j_1+\dots+j_{n-1}=j\leqslant s-1\leqslant r_n;\]
+further, by hypothesis, we have  $\delta r_m > r_{m+1}$ and so the above sum is at most $\delta$. Hence the index of $W$ is at least
+\[\sum_{i=0}^{s-1} \max (\phi_i - \delta, 0) \geqslant \sum_{i=0}^{s-1} \max (\phi_i, 0) - s\delta.\]
+But if $\theta r_n < s-1$ then the last sum is
+\[([\theta r_n]+1)\left(\theta-[\theta r_n]/(2r_n)\right)\geqslant \tfrac{1}{4}\theta^2 s,\]
+and if $\theta r_n \geqslant s-1$ then it is
+\[\theta s - \tfrac{1}{2} s(s-1)/r_n \, \geqslant \, \tfrac{1}{2} \theta s.\]
+On comparing estimates, we obtain
+\[\max(\tfrac{1}{2}\theta, \tfrac{1}{4}\theta^2) \leqslant \frac{1}{8}\epsilon^2 + \delta \leqslant \frac{1}{4}\epsilon^2\]
+whence $\theta \leqslant \epsilon$, as required.
+
+\section{A combinatorial lemma}\label{sec:ch7_4}
+
+We prove now a lemma of a combinatorial nature relating to the law of large numbers\index{law of large numbers}.\footnote{Cf. the paper of Wirsing\index{Wirsing, E.} cited earlier: Proc. Symposia Pure Math. (Amer. Math. Soc.), 20 (1971), 213--47.} A result of this kind occurred first in the work of Schneider\index{Schneider, Th.}, and it was utilized later by Roth\index{Roth, K. F.} who gave a simplified proof due to Davenport\index{Davenport, H.}. Another proof, attributed to Reuter\index{Reuter, G. E. H.}, and furnishing a slightly stronger theorem, was given by Mahler\index{Mahler, K.} in his tract, and Schmidt\index{Schmidt, W. M.} subsequently obtained the generalization we establish here.
+
+\begin{mylemma}{}{ch7_2}
+Suppose that  $r_1, ..., r_n$  and k are positive integers and that  $0 < \epsilon < 1$. Then the number of non-negative integers
+\[j_{lm} \quad (1 \leqslant l \leqslant k, 1 \leqslant m \leqslant n)\]
+satisfying
+\[\sum_{l=1}^k j_{lm} = r_m \quad (1 \leqslant m \leqslant n), \qquad \sum_{m=1}^n j_{1m}/r_m < n/k - \epsilon n,\]
+is at most
+\[\binom{r_1+k-1}{r_1}\cdots\binom{r_n+k-1}{r_n}e^{-\frac{1}{4}\epsilon^2n}.\]
+\end{mylemma}
+
+\begin{proof}
+We commence the proof by observing that the required number N of integers  $j_{lm}$  is given by  $\sum_{\nu_1(j_{11})\dots\nu_n(j_{1n})} \sum \nu_n(j_{2n})$ where the sum is over all non-negative integers  $j_1, ..., j_{1n}$  satisfying the given inequality, and  $\nu_m(j)$  denotes the number of solutions of the equation
+\[\sum_{l=2}^{k} j_{lm} = r_m - j\]
+in non-negative integers  $j_{2m},...,j_{km}$, that is
+\[\nu_m(j) = \binom{r_m-j+k-2}{k-2}.\]
+Hence we see that the multiple sum
+\[\sum_{j_1=0}^{r_1} \dots \sum_{j_m=0}^{r_m} \nu_1(j_1) \dots \nu_m(j_m) \exp \left\{ \frac{1}{2} \varepsilon \left( n/k - \sum_{m=1}^n j_m/r_m \right) \right\}\]
+is at least  $Ne^{\frac{1}{2}\epsilon^2n}$. Now the sum can be written alternatively in the form
+\[\prod_{m=1}^{n} \left\{ \sum_{j_{m}=0}^{r_{m}} \nu_{m}(j_{m}) \exp\left(\frac{1}{2}\epsilon \rho_{m}\right) \right\},\]
+where  $\rho_m = 1/k - j_m/r_m$, and clearly  $|\rho_m| \le 1$. But if  $|x| \le 1$  then  $e^x < 1 + x + x^2$, and so
+\[\exp\left(\frac{1}{2}\epsilon\rho_m\right) < \frac{1}{2}\epsilon\rho_m + \exp\left(\frac{1}{4}\epsilon^2\right).\]
+Further we have
+\[\sum_{i=0}^{r_m} \nu_m(j_m) \rho_m = 0;\]
+for  $\rho_m$  can plainly be expressed as
+\[(r_m - j_m)/r_m - (1 - 1/k),\]
+and it is easily verified by induction on r that
+\[\sum_{j=0}^{r} \binom{r-j+k-2}{k-2} = \binom{r+k-1}{r},\]
+\[\sum_{j=0}^r j \binom{j+k-2}{k-2} = r \left(1-\frac{1}{k}\right) \binom{r+k-1}{r}.\]
+Thus, on appealing again to the first of the above binomial identities, we obtain
+\[ \prod_{m=1}^{n} \left\{ \binom{r_m + k - 1}{r_m} e^{\frac{1}{4}\epsilon^2} \right\} \geqslant N e^{\frac{1}{4}\epsilon^2 n}, \]
+and this gives the asserted estimate.
+\end{proof}
+
+\section{Grids}\label{sec:ch7_5}
+
+Let T be a subspace of k-dimensional Euclidean space spanned by linearly independent vectors  $\mathbf{u}_1, ..., \mathbf{u}_{k-1}$. By a grid\index{grid} of size s on T we shall mean the finite set of vectors of the form
+\[w_1\mathbf{u}_1+\ldots+w_{k-1}\mathbf{u}_{k-1},\]
+where  $w_1, ..., w_{k-1}$  run through all rational integers with  $1 \le w_l \le s$.
+
+Now let  $T_m$   $(1 \le m \le n)$  be any subspaces as above, and let  $\Gamma_m$  be a grid\index{grid} of size  $s_m$  on  $T_m$. Further let T,  $\Gamma$  signify the cartesian products  $T_1 \times \ldots \times T_n$  and  $\Gamma_1 \times \ldots \times \Gamma_n$  respectively. We shall denote by P a polynomial as indicated at the beginning of \S~3 with degree  $r_m$  in  $x_{1m}, \ldots, x_{km}$, and we shall signify by  $\Delta_m^{(j)}$  a differential operator as in \S~2, acting on  $x_{1m}, \ldots, x_{km}$. The following simple lemma, due to Schmidt\index{Schmidt, W. M.}, is fundamental to the proof of \autoref{thm:ch7_1}.
+
+\begin{mylemma}{}{ch7_3}
+If, for some integers  $t_m$   $(1 \le m \le n)$  with  $s_m(t_m+1) > r_m$, all polynomials  $\Delta_1^{(j_1)} \dots \Delta_n^{(j_n)} P$  with  $j_m \le t_m$  vanish everywhere on  $\Gamma$, then P vanishes identically on T.
+\end{mylemma}
+
+\begin{proof}
+It is clear that the lemma follows at once by induction from the case n=1, and it will suffice therefore to prove the latter. Further, one can obviously assume, by applying a linear transformation, that  $T_m$  is the plane  $x_{km}=0$, with basis consisting of the first k-1 rows of the unit matrix of order k. Thus, omitting the suffix m, we see that it is enough to prove:
+
+A polynomial  $P(x_1, ..., x_{k-1})$  with degree r vanishes identically if all  $\Delta^{(j)}P$  with  $j \leq t$  vanish at all integer points  $(w_1, ..., w_{k-1})$  with  $1 \leq w_l \leq s$, where s(t+1) > r.
+
+Here  $\Delta^{(j)}$  denotes a differential operator on  $x_1, \ldots, x_{k-1}$  of order j. The assertion is clearly valid for k=2, since a polynomial in one variable with degree r cannot have more than r zeros, and we shall assume the proposition when k is replaced by k-1. If now P does not vanish identically then there is a largest integer q such that the rational function
+\[ Q = (x_1 - 1)^{-q} \dots (x_1 - s)^{-q} P \]
+is in fact a polynomial, and since, by hypothesis, s(t+1) > r, we have  $q \le t$. Further, by choice of q, one at least of the polynomials  $Q(w_1, x_2, ..., x_{k-1})$  with  $1 \le w_1 \le s$  does not vanish identically; let this be R. Then  $\Delta^{(j)}R$  vanishes at all integer points  $(w_2, ..., w_{k-1})$  with  $1 \le w_l \le s$, where  $\Delta^{(j)}$  is any differential operator on  $x_2, ..., x_{k-1}$ with order  $j \le t-q$. But R has degree at most r-sq < (t-q+1)s, and this is plainly contrary to the inductive hypothesis. The contradiction establishes the assertion.
+\end{proof}
+
+\section{The auxiliary polynomial}\label{sec:ch7_6}
+
+For each m with  $1 \le m \le n$  we shall denote by  $L_{lm}$  ( $1 \le l \le k$ ) linear forms in  $x_{1m}, \ldots, x_{km}$  with real algebraic integer\index{algebraic integer} coefficients. Further we shall denote by d the degree of the field K generated by all the coefficients over the rationals, and we shall signify by  $c_1, c_2, \ldots$  numbers\index{numbers} greater than 1 which depend on these coefficients only.
+
+Let now  $r_1, ..., r_n$  be any positive integers, and let  $r = \max r_m$. Further suppose that  $0 < \epsilon < 1$  and that  $e^{\frac{1}{4}\epsilon^2n} > 2kd$. Adopting the notation of \autoref{sec:ch7_3}, we have
+
+\begin{mylemma}{}{ch7_4}
+There is a polynomial P with degree at most  $r_m$  in  $x_{1m}, \ldots, x_{km}$  and with height at most  $c_1^r$  such that, for each l with  $1 \le l \le k$, the index of P with respect to the  $L_{lm}$  and  $r_m$  is at least  $n/k - \varepsilon n$.
+\end{mylemma}
+
+\begin{proof}
+It can be assumed, without loss of generality, that, for all l, m, the coefficient of  $x_{1m}$  in  $L_{lm}$, say  $\alpha_{lm}$, is not 0. Then P has to be determined such that, for all l and all non-negative integers  $j_1, \ldots, j_n$  with
+\[\sum_{m=1}^{n} j_m/r_m < n/k - \epsilon n,\]
+the polynomials
+\[(j_1! \dots j_n!)^{-1} (\partial/\partial x_{11})^{j_1} \dots (\partial/\partial x_{1n})^{j_n} P\]
+vanish identically when  $-L_{lm}$, with  $x_{1m}$  equated to 0, is substituted for  $x_{1m}$, and the factor  $\alpha_{lm}$  is included to multiply each of  $x_{2m}, \ldots, x_{km}$. Now these polynomials are homogeneous in  $x_{2m}, \ldots, x_{km}$  with degree  $r_m - j_m$  and hence, by \autoref{lem:ch7_2}, they have, in total, at most  $kNe^{-\frac{1}{4}e^2n}$  coefficients, where N denotes the product of binomial factors occurring in the enunciation of the lemma. Each coefficient is a linear form in the coefficients of P, and there are precisely N of the latter. Furthermore, the coefficients in the linear forms are algebraic integers\index{algebraic integer} in K with sizes at most  $c_2^r$  (cf. the estimates in \autoref{sec:ch7_3}). It follows, on utilizing an integral basis for K and recalling the hypothesis  $e^{\frac{1}{4}e^2n} > 2kd$, that one has to satisfy at most  $\frac{1}{2}N$  linear equations\index{linear equations} with rational integer coefficients each having absolute value at most  $c_3^r$  (cf. \S~3, \autoref{ch:6}). The required result is now obtained from \autoref{lem:ch6_1} of \autoref{ch:6}.
+\end{proof}
+
+\section{Successive minima}\label{sec:ch7_7}
+
+We recall from the Geometry of Numbers\index{Geometry of Numbers}\index{numbers} that if R is any convex body in k-dimensional Euclidean space, then the numbers\index{numbers}  $\lambda_l$   $(1 \le l \le k)$, given by the infimum of all  $\lambda > 0$  such that  $\lambda R$  contains l linearly independent integer points, are termed the successive minima\index{successive minima} of R, and they have the property that  $\lambda_1 \dots \lambda_k V$, where V denotes the volume of R, is bounded above and below by positive numbers\index{numbers} depending only on k.
+
+We now combine the preceding lemmas to obtain a proposition on the penultimate minimum of a certain parallelepiped, which will be the main instrument in the proof of \autoref{thm:ch7_1}. We shall denote by  $M_1, \ldots, M_k$  linear forms in  $x_1, \ldots, x_k$  with real algebraic integer\index{algebraic integer} coefficients constituting a non-singular matrix A, and we shall signify by  $M'_1, \ldots, M'_k$  the adjoint linear forms with coefficients given by the columns of  $A^{-1}$. Further we shall signify by S some non-empty set of suffixes i such that  $M'_i$  does not represent zero for any integral values, not all 0, of the variables; the assumption that S exists involves, of course, some loss of generality. We prove:
+
+\begin{mylemma}{}{ch7_5}
+For any  $\zeta > 0$  there exists c > 0 such that for all positive  $\mu_1, \ldots, \mu_k$  satisfying  $\mu_1 \ldots \mu_k = 1$  and  $\mu_i \ge 1$  for i in S, the penultimate minimum  $\lambda_{k-1}$  of the parallelepiped  $|M_i| \le \mu_i$   $(1 \le l \le k)$  exceeds  $\mu^{-l}$, where  $\mu$  denotes the maximum of  $\mu_1, \ldots, \mu_k$  and c.
+\end{mylemma}
+
+\begin{proof}
+It will be seen that the lemma immediately implies Roth\index{Roth, K. F.}'s theorem\index{Roth's theorem}, that is the case n = 1 of \autoref{thm:ch7_1}; this follows on taking
+\[M_1 = \alpha_1 x_1 - x_2, \quad M_2 = x_2\]
+and S to consist just of the suffix 2, as is possible since  $\alpha_1$  is irrational.
+
+We show first that it suffices to prove a modified version of \autoref{lem:ch7_5}. Suppose that  $Q \geqslant \mu^k$  and let  $\omega_1, \ldots, \omega_k$  be defined by  $\mu_l = Q^{\omega_l}$. Then since  $\mu_1 \ldots \mu_k = 1$  we have  $\omega_1 + \ldots + \omega_k = 0$  and clearly  $\omega_i \geqslant 0$  for i in S. Clearly also  $\omega_l \leqslant 1$  for all l and, since again  $\mu_1 \ldots \mu_k = 1$  we have  $\mu_l \geqslant Q^{-1}$, whence  $\omega_l \geqslant -1$. Now for any positive integer N there are rationals  $\omega_1', \ldots, \omega_n'$  with denominator N satisfying  $|\omega_l - \omega_l'| < 1/N$  and  $|\omega_l'| \leqslant 1$  for all l, and also  $\omega_1' + \ldots + \omega_k' = 0$; indeed one has merely to take  $N\omega_1' = [N\omega_1]$  and, having defined  $\omega_1', \ldots, \omega_{l-1}'$, to take  $N\omega_l'$  as  $[N\omega_l]$  or  $-[-N\omega_l]$  according as  $\omega_1' + \ldots + \omega_{l-1}'$  does or does not exceed  $\omega_1 + \ldots + \omega_{l-1}$. Plainly the  $\omega_1', \ldots, \omega_k'$  belong to a finite set of rationals independent of Q, and the minimum  $\lambda_{k-1}'$  of the parallelepiped  $|M_l| \leqslant Q^{\omega_l'}$  ( $1 \leqslant l \leqslant k$ ) exceeds  $Q^{-1/N}\lambda_{k-1}$. Hence it is enough to prove:
+
+For any real  $\omega_1, \dots, \omega_k$  with  $\omega_1 + \dots + \omega_k = 0$,  $|\omega_l| \le 1$   $(1 \le l \le k)$  and  $\omega_i \ge 0$  for all i in S, and for any  $\zeta > 0$, there exists C > 0 such that, for all Q > C, the minimum  $\lambda_{k-1}$  of the parallelepiped
+\[|M_l| \leqslant Q^{\omega_l} \quad (1 \leqslant l \leqslant k)\]
+exceeds  $Q^{-\zeta}$.
+
+We shall suppose that  $\zeta \leq 1$, as obviously we may, and we shall signify by d the degree of the field generated by the elements of A over the rationals. Let  $\varepsilon$  be any positive number less than  $\zeta/(8k)^2$, let n be any integer satisfying the condition preceding \autoref{lem:ch7_4}, and let  $\delta$  be defined as in \autoref{lem:ch7_1}. We shall assume that there is an unbounded set of values of Q such that  $\lambda_{k-1} \leq Q^{-\zeta}$, and we shall ultimately derive a contradiction. We select a sufficiently large  $Q_1$  in this set, that is  $Q_1 > c_1$, where  $c_1$, like  $c_2$,  $c_3$  below, depends only on A, k, n, d,  $\varepsilon$,  $\delta$,  $\zeta$  and the  $\omega$'s. We then select further elements  $Q_2, \ldots, Q_n$  in the set such that  $Q_m^{\frac{1}{2}\delta} > Q_{m-1}$   $(1 < m \leq n)$, whence clearly  $Q_1 < \dots < Q_n$. Finally we choose positive integers  $r_1, \ldots, r_n$  such that  $Q_1^{\text{tr}_1} > Q_n$  and
+\[Q_1^{r_1}\leqslant Q_m^{r_m}\leqslant Q_1^{(1+\epsilon)r_1}\quad (1\leqslant m\leqslant n);\]
+then plainly the condition preceding \autoref{lem:ch7_1} is satisfied.
+
+We observe now that the hypotheses of \autoref{lem:ch7_4} hold when $Ifa =$ $M_{lm}(x_m)$, where $x_m$ denotes the vector $(x_{1m},\dots,x_{km})$; let P be the polynomial constructed there. Further we note that, for any Q as above, there exist linearly independent integer points $\mathbf{u}_1, \dots, \mathbf{u}_k$ with $\mathbf{u}_l$ in $\lambda_l R$, where R denotes the given parallelepiped and $\lambda_1, \dots, \lambda_k$ its successive minima\index{successive minima}. Moreover, there is a linear form L with relatively prime integer coefficients, unique except for a factor + 1, which vanishes at $\mathbf{u}_1, \dots, \mathbf{u}_{k-1}$; we take $\mathbf{u}_{lm}$ and $L_m$ to be these $\mathbf{u}_l$ and L respectively when $Q = Q_m$. We shall verify later that, if Q is sufficiently large, then q = ||L|| satisfies $Q^c < q < Q^{c'}$, where c, c' are positive numbers\index{numbers} depending only on $\zeta$ and d. Assuming this for the present, it follows that all the hypotheses of \autoref{lem:ch7_1} are satisfied with $v = c/c'$, provided that $c_1$, and so also $q^1$ and $Q_1$ are large enough. Hence we conclude that the index of P with respect to the $L_m$ and $r_m$ is at most $\varepsilon$.
+
+We proceed to prove that, with the notation of \autoref{sec:ch7_5}, all polynomials $\Delta P$ with
+\[\Delta = \Delta_1^{(j_1)} \dots \Delta_n^{(j_n)}, \quad \sum_{m=1}^n j_m/r_m < 2\epsilon n\]
+vanish everywhere on $\Gamma$, where $\Gamma_m$ is the grid\index{grid} of size $[\epsilon^{-1}] + 1$ on the space $T_m$ spanned by $\mathbf{u}_{lm}$ ($1 < l < k$). This implies, by \autoref{lem:ch7_3}, on taking $t_m = [\epsilon r_m]$, that all polynomials $\Delta P$, with $\sum j_m/r_m < \epsilon n$, vanish identically on the $n(k-1)$-dimensional space of solutions of
+\[L_1 = \dots = L_n = 0.\]
+But the latter contradicts the above conclusion concerning the index of P, and the contradiction establishes the lemma. To prove the proposition, let $\Delta P$ be any of the polynomials in question and let P' be the polynomial in new variables $y_{lm}$ obtained from $\Delta P$ by the linear substitution $y_{lm} = X_{jm}$. Then it is readily verified that P' has height at most $c_1^r$, where $r = \max r_m$. Further, since, by assumption, $\lambda_{k-1} < Q^{-\zeta}$, we have for any $x_m$ on $\Gamma_m$
+\[|y_{lm}| < k(\epsilon^{-1}+1) Q_m^{\omega_l-\zeta} < Q_m^{\omega_l-\frac{1}{2}\zeta}.\]
+Thus, by \autoref{lem:ch7_4}, it follows that, for all points on $\Gamma$, we have $|\Delta P| < c_2^r e^s$, where
+\[s = \sum_{l=1}^{k} \sum_{m=1}^{n} (\omega_{l} - \frac{1}{2}\zeta) j_{lm} \log Q_{m},\]
+and $j_{lm}$ are some non-negative integers with
+\[\sum_{l=1}^{k} j_{lm} \leqslant r_{m} \quad (1 \leqslant m \leqslant n), \quad n/k - \sum_{m=1}^{n} j_{lm}/r_{m} < 3\epsilon n \quad (1 \leqslant l \leqslant k).\]
+Denoting, for brevity, the left-hand side of the last inequality by  $h_l$, we see that, by the first inequality,  $h_1 + \ldots + h_k \ge 0$, and so both inequalities together imply that  $|h_l| < 3kne\epsilon$. Further, since  $|\omega_l| \le 1$, we obtain, in view of the initial choice of  $r_1, \ldots, r_n$,
+\[s\leqslant r_1\log Q_1\sum_{l=1}^k\sum_{m=1}^n\{(\omega_l-\tfrac12\zeta)j_{lm}/r_m+2\epsilon\}.\]
+But now, by virtue of our estimate for  $h_l$  and the hypothesis
+\[\omega_1 + \ldots + \omega_k = 0,\]
+the double sum here differs from  $-\frac{1}{2}\zeta n$  by at most  $8k^2n\epsilon$. Since, by definition,  $\epsilon < \zeta/(8k)^2$, it follows that  $|\Delta P| < Q_1^{-\frac{1}{4}\zeta nr} < 1$, provided  $Q_1$  is sufficiently large. On the other hand,  $\Delta P$  is a rational integer for all points on  $\Gamma$, and hence  $\Delta P = 0$, as required.
+
+It remains only to prove the assertion concerning q = ||L||. Let U be the matrix with columns  $\mathbf{u}_1, ..., \mathbf{u}_k$  and let  $\mathbf{v}_1, ..., \mathbf{v}_k$  be the rows of  $U^{-1}$. Then clearly  $\rho \mathbf{v}_k$  is the coefficient vector of L for some rational  $\rho$. Since  $L(\mathbf{u}_k)$  is an integer and  $\mathbf{v}_k \mathbf{u}_k = 1$,  $\rho$  is in fact an integer. Further  $\rho$ divides det U, for plainly  $U^{-1} = \operatorname{adj} U/\operatorname{det} U$. Furthermore we have det  $U \leq 1$, where the implied constant depends only on A, for certainly R has volume  $\gg 1$  and hence, by the property of successive minima\index{successive minima} quoted at the beginning,  $\det(AU) \leqslant 1$. It follows that each element of  $(\det \mathbf{U}) \mathbf{v}_k$  is a rational integer  $\leqslant q$. Hence the element in the kth row and lth column of adj (AU), namely  $(\det(AU)) M'_{l}(\mathbf{v}_{k})$, is an algebraic integer\index{algebraic integer} with size  $\leq q$. But by hypothesis we have  $\lambda_{k-1} < Q^{-\zeta}$  and  $\omega_1 + \ldots + \omega_k = 0$, and thus the element is also  $\ll Q^{-\omega_l-(k-1)\zeta}$. We conclude that, for l in S, the element is both  $\Rightarrow q^{-d}$\footnote{We are using Vinogradov\index{Vinogradov, A. I.}’s notation; by $a \ll b$ or $a \leqslant b$ one means $|a| < cb$ for some constant c, and similarly for $\gg$.} and  $\leqslant Q^{-(k-1)\zeta}$, and, since S is assumed non-empty, this gives the required lower bound for q. The upper bound follows from the identity  $U^{-1} = (AU)^{-1} A$, on observing, as above, that the elements in the kth row of  $(AU)^{-1}$  are  $\leqslant Q$.
+\end{proof}
+
+\section{Comparison of minima}\label{sec:ch7_8}
+
+We prove first a general lemma of Davenport\index{Davenport, H.}, and we proceed then to show that, with some proviso, the minima  $\lambda_{k-1}$  and  $\lambda_k$  of the parallelepiped of \autoref{lem:ch7_5} differ only by a small factor. Constants implied by  $\leqslant$  will depend only on k.
+
+\begin{mylemma}{}{ch7_6}
+Let  $L_1, ..., L_k$  be real linear forms with determinant 1 and let  $\lambda_1, ..., \lambda_k$  be the successive minima\index{successive minima} of the parallelepiped
+\[|L_l| \leqslant 1 \quad (1 \leqslant l \leqslant k).\]
+Suppose that  $\rho_1 \ge ... \ge \rho_k > 0$  and that
+\[\rho_1 \lambda_1 \leqslant \ldots \leqslant \rho_k \lambda_k, \quad \rho_1 \ldots \rho_k = 1.\]
+Then for some permutation  $\rho'_1, \ldots, \rho'_k$  of  $\rho_1, \ldots, \rho_k$, the successive minima\index{successive minima}  $\lambda'_1, \ldots, \lambda'_k$  of the parallelepiped  $\rho'_l | L_l | \leq 1$   $(1 \leq l \leq k)$  satisfy
+\[\rho'_l \lambda_l \leqslant \lambda'_l \leqslant \rho'_l \lambda_l \quad (1 \leqslant l \leqslant k).\]
+\end{mylemma}
+
+\begin{proof}
+There certainly exist linearly independent integer points  $\mathbf{x}_1, \ldots, \mathbf{x}_k$  such that one at least of  $|L_1|, \ldots, |L_k|$  assumes the value  $\lambda_l$  at  $\mathbf{x}_l$, and we denote by  $S_l$  the space spanned by  $\mathbf{x}_1, \ldots, \mathbf{x}_l$. Further, for each  $l \geq 2$, there is a non-trivial linear relation  $a_1 L_1 + \ldots + a_l L_l = 0$  satisfied identically on  $S_{l-1}$, and  $L_1, \dots, L_k$  can be permuted so that  $|a_l|$  is maximal; this gives
+\[|L_1| + \ldots + |L_{l-1}| > \frac{1}{2}(|L_1| + \ldots + |L_l|)\]
+identically on $S_l$ for $l = 1, 2, \dots, k$. Now for any j it is clear that every point in $S_l$ not in $S_{j-1}$ satisfies
+\[\max (|L_1|, \dots, |L_l|) > \lambda_l,\]
+and thus, in view of the inequality obtained above, it satisfies also
+\[\max (\rho_1 |L_1|, \dots, \rho_k |L_k|) > \rho_j \lambda_l.\]
+By hypothesis, $\rho_j \lambda_j \le \rho_l \lambda_l$ for $j > l$, and the required lower bound for $\lambda'_l$ follows on taking $\rho'_1, \dots, \rho'_k$ to be the permutation of $\rho_1, \dots, \rho_k$ inverse to that associated with $L_1, \dots, L_k$. The upper bound is a consequence of the equation $\rho'_1 \dots \rho'_k = 1$ together with the property, noted earlier, that $\lambda_1 \dots \lambda_k$ and $\lambda'_1 \dots \lambda'_k$ are both $\ll 1$ and $\gg 1$.
+\end{proof}
+
+\begin{mylemma}{}{ch7_7}
+The last two minima of the parallelepiped of \autoref{lem:ch7_5} satisfy $\lambda_{k-1} > \lambda_k \mu^{-k^2\epsilon}$, provided that $\lambda_1 \mu^4 > \mu^{-\epsilon}$ for all i in S.
+\end{mylemma}
+
+\begin{proof}
+The hypotheses of \autoref{lem:ch7_6} hold with $L_l$ ($1 \le l \le k$) given by $M_l/\mu_l$ and $\rho_l$ given by $\mu_l \mu^{-1/k}$ ($1 \le l \le k$), where $\mu$ is defined by the equation $\mu_1 \dots \mu_k = 1$. Let $\rho'_1, \dots, \rho'_k$ be the permutation of $\rho_1, \dots, \rho_k$ indicated in the lemma, and let $\mu'_l = \mu_l \mu^{-1/k}/\rho'_l$. Assume first that $\mu'_i > 1$ for all i in S. Then from \autoref{lem:ch7_5} with $\mu_l$ replaced by $\mu'_l$, we infer that, for any $\epsilon' > 0$, there exists $c' > 0$ such that $\lambda'_{k-1} > \mu'^{-\epsilon'}$, where $\mu'$ denotes the maximum of $\mu'_1, \dots, \mu'_k$ and $c'$. On the other hand, from \autoref{lem:ch7_6}, $\lambda'_{k-1} < \rho'_{k-1} \lambda_{k-1}$ and clearly, since $\lambda_1 \dots \lambda_k \ll 1$, we have $\rho'_{k-1} \ll \lambda_{k-1}/\lambda_k$. Thus it suffices to prove that $\mu'^{\epsilon'} \ll \mu^\epsilon$ if $\epsilon'$ is chosen sufficiently small. But by hypothesis, since S is assumed non-empty, we have $\lambda_1 \mu > \mu^{-\epsilon}$; further, since $\lambda_l > \lambda_1$ for all l, we see that $\mu > \lambda_1$ and $\mu_l^{-1} \lambda_{k-1} < 1$. Hence we obtain
+\[\mu'_l < \lambda_{k-1}\mu < \mu^{k^2\epsilon+1},\]
+and the required result follows. If, contrary to the above assumption, $\mu'_i < 1$ for some i in S, then, on observing that by hypothesis we obtain $\mu > \mu^{-\epsilon}$ and the required result again follows.
+\end{proof}
+
+\section{Exterior algebra}\label{sec:ch7_9}
+
+For any vectors $\mathbf{x}_1, \dots, \mathbf{x}_l$ in $R^k$ with $1 < l < k$, one denotes by $\mathbf{x}_1 \wedge \dots \wedge \mathbf{x}_l$ the vector in $R^m$ whose elements are the $m = \binom{k}{l}$ subdeterminants of order l formed from the k by l matrix with columns $\mathbf{x}_1, \dots, \mathbf{x}_l$. We shall utilize some well-known properties of this product; in particular, we shall require Laplace's identity\index{Laplace's identity}
+\[( \mathbf{x}_1 \wedge \dots \wedge \mathbf{x}_l ) \cdot ( \mathbf{y}_1 \wedge \dots \wedge \mathbf{y}_l ) = \operatorname{det}(\mathbf{x}_i \cdot \mathbf{y}_j),\]
+where on the left one has the usual vector dot product, and also the relation
+\[\operatorname{det} M_\sigma = (\operatorname{det} A)^{m-1},\]
+which holds for any matrix A of order k with column vectors $\mathbf{a}_1, \dots, \mathbf{a}_k$, say, where $M_\sigma = \mathbf{a}_{i_1} \wedge \dots \wedge \mathbf{a}_{i_l}$, and $\sigma$ runs through all sets of l distinct integers $i_1, \dots, i_l$ from $1, \dots, k$.\footnote{Short proofs are given in Schmidt\index{Schmidt, W. M.}'s tract (Bibliography).}
+
+We shall need, in addition, the following lemma, due to Mahler\index{Mahler, K.}, on compound convex bodies. A will signify a matrix as above with det A = 1, and, as in \autoref{sec:ch7_8}, constants implied by $\ll$ will depend only on A. Further we shall denote by $\mathbf{a}\mathbf{x}$ the linear form in the elements of $\mathbf{x}$ with coefficient vector $\mathbf{a}$.
+
+\begin{mylemma}{}{ch7_8}
+The successive minima\index{successive minima} $\lambda_1, \dots, \lambda_k$ and $\nu_1, \dots, \nu_m$ of the parallelepipeds $|\mathbf{a}_i \mathbf{x}| \le 1$ ($1 \le i \le k$) and $|M_\sigma \mathbf{X}| \le 1$ respectively, where $\sigma$ runs through all sets $\sigma$ as above, satisfy $\nu_\sigma \ll \lambda_\sigma$, where $\lambda_\sigma = \prod \lambda_j$, the product being taken over all j in $\sigma$, and $\nu_1 \le \nu_2 \le \dots \le \nu_m$.
+\end{mylemma}
+
+\begin{proof}
+Let $\mathbf{x}_1, \dots, \mathbf{x}_k$ be linearly independent integer points such that $|\mathbf{a}_i \mathbf{x}_j| \le \lambda_j$ ($1 \le j \le k$), and let $\mathbf{X}_\sigma$ be defined like $\lambda_\sigma$ above, with $\mathbf{x}$ in place of $\mathbf{a}$. By Laplace's identity\index{Laplace's identity} we have
+\[|M_\sigma \mathbf{X}_\tau| = |\operatorname{det}(\mathbf{a}_i \mathbf{x}_j)| \leqslant m \lambda_\sigma,\]
+where i, j run through all elements of $\sigma$, $\tau$ respectively. Hence, for each i with $1 \leqslant i \leqslant m$, we have $|M_\sigma \mathbf{X}_i| \ll \lambda_\sigma$ and so $\nu_i \ll \lambda_\sigma$. But since, by hypothesis, det A = 1, we have det $M_\sigma = 1$, and thus the volume of the parallelepiped $|M_\sigma \mathbf{X}| \leqslant 1$ is $2^m$. Thus $\nu_1 \dots \nu_m \gg 1$ and since $\lambda_{\sigma_1} \dots \lambda_{\sigma_m} \ll 1$ it follows that $\nu_i \gg \lambda_\sigma$, as required.
+\end{proof}
+
+\section{Proof of main theorem}\label{sec:ch7_10}
+
+It will suffice to prove \autoref{thm:ch7_1} under the assumption that $\alpha_1, \dots, \alpha_n$ are real algebraic integers\index{algebraic integer}, for clearly the general result then follows on multiplying each $\alpha_i$ by the leading coefficient in its minimal polynomial\index{minimal polynomial of algebraic number}. We shall signify by $\mathbf{a}_j$ ($1 \leqslant j \leqslant n$) the vector in $R^{n+1}$ given by $(\mathbf{e}_j, \alpha_j)$, where $\mathbf{e}_1, \dots, \mathbf{e}_n$ denote the rows of the unit matrix of order n. Further, for brevity, we shall write k = n + 1, and we shall denote by $\mathbf{a}_k$ the vector (0, ..., 0, 1) in $R^k$. Constants implied by $\ll$ or $\gg$ will depend only on $\alpha_1, \dots, \alpha_n$ and the quantities $\epsilon, \zeta$ to be defined below.
+
+We show first that the theorem is a consequence of the following proposition.
+
+For any $\zeta > 0$ and any positive numbers\index{numbers} $\mu_1, \dots, \mu_k$ with $\mu_1 \dots \mu_k = 1$ and $\mu_j \le 1$ ($1 < j < k$), the first minimum $\lambda_1$ of the parallelepiped $|\mathbf{a}_j \mathbf{x}| \le \mu_j$ ($1 < j < k$) exceeds $\mu^{-1}$ if $\mu > \mu_k$ and $\mu \gg 1$.
+
+The proof proceeds by induction on n; we have already remarked that the case n = 1 is an immediate consequence of \autoref{lem:ch7_5}, and we assume now that the theorem holds when n is replaced by n — 1. Let q be a positive integer satisfying the inequality occurring in the enunciation, and let $\mu_j = q^{-1-1/n-\epsilon}$ ($1 \le j \le n$). Further let $\mu_k = (\mu_1 \dots \mu_n)^{-1}$, where k = n + 1 as above. Then clearly $\mu_k > q^{1+\epsilon'}$ and moreover the first minimum $\lambda_1$ of the parallelepiped $|\mathbf{a}_j \mathbf{x}| < \mu_j$ ($1 < j < k$) is at most $q^{-\epsilon'/n}$. But, on appealing again to the given inequality and applying the inductive hypothesis, we see that, if $q \gg 1$, then $\mu_j < 1$ for all $j < k$. Hence the proposition above shows that $\lambda_1 > \mu^{-\epsilon}$ for any $\epsilon > 0$ and any $\mu$ with $\mu \gg 1$ and $\mu \ge \mu_k$. Furthermore, by the case n = 1 of the theorem, we have $\mu_j > q^{-1}$ ($1 \leqslant j < n$), whence $\mu_k < q^n$. Plainly the estimates for $\lambda_1$ are inconsistent if $\epsilon$ is sufficiently small, and the contradiction proves the theorem.
+
+Preliminary to the proof of the proposition, 
+we observe that, with the notation of \autoref{sec:ch7_9}, the linear forms $M_\sigma = M_\sigma \mathbf{X}$ satisfy the hypotheses of \autoref{sec:ch7_7} with S given by those sets $\sigma$ which include k. For it is easily verified from the Laplace expansions of A that, as $\sigma$ runs through the complement of $\sigma$ in $1, \dots, k$, the forms $M'_\sigma \mathbf{X}$ constitute the set adjoint to the $M_\sigma$, except possibly for a sign change; further, if $\sigma$ does not include k, we have
+\[M'_\sigma \mathbf{X} = \mathbf{X}_\sigma + \sum ( \pm \alpha_j ) \mathbf{X}_{\sigma-j+k},\]
+where the summation is over all j in $\sigma$, on the right there occur the co-ordinates of \textbf{X}, and $\sigma-j+k$ denotes the set $\sigma$ with k in place of j. By hypothesis $1, \alpha_1, \dots, \alpha_n$ are linearly independent over the rationals, and thus we see that $M'_\sigma \mathbf{X} \neq 0$ for all integer vectors $\mathbf{X} \neq 0$, as required.
+
+The proof of the proposition proceeds by induction on k; 
+the result plainly holds for $k = 2$ by \autoref{lem:ch7_5}, 
+and we assume now that it has been verified for all values up to $k — 1$. 
+Let $l$ be any integer with $1 \le l < k$ and, 
+for any set $\tau$ of $l$ distinct integers from $1, \dots, k$, 
+let $\mu_\tau = \prod \mu_j$, where the product is over all j in $\tau$. 
+By \autoref{lem:ch7_7} we see that the successive minima\index{successive minima} $\nu_1, \dots, \nu_m$ of the 
+parallelepiped $|M_\tau| < \mu_\tau$ satisfy $\nu_{m-1} \gg \nu_m \mu^{-k\zeta}$ for any $\tau>0$, 
+provided that $\mu \gg 1$, $\mu \gg \mu_\tau$ for all $\tau$ 
+and $\nu_1 \mu_\tau > \mu^{-\zeta}$ for $\tau$ in S. 
+Further, with the notation of \autoref{lem:ch7_8}, 
+it is clear that $\tau_{m}$ and $\tau_{m-1}$ consist of the integers $k — l+1, k - l + 2, ..., k$ and $k — l, k — l + 2, ..., k$ respectively. 
+Thus, under the above conditions, 
+we have 
+\[
+    \lambda_{k-1}\lambda_{k-l+2}\cdots\lambda_k \gg \lambda_{k-l+1}\cdots\lambda_k \mu^{-k^2\epsilon}\mu^{-k\zeta} 
+\] 
+
+that is $\lambda_{k-l} \gg \lambda_{k-l+1} \mu^{-k\zeta}$. 
+The required inequality $\lambda_1 > \mu^{-\zeta}$ follows on applying the latter with $l = 1, 2, ..., k — 1$, 
+noting that $\lambda_k \gg 1$, and taking $\zeta$ sufficiently small.
+
+Since evidently $\mu_\tau \le \mu_k$ for all $\tau$, 
+it remains only to prove that, for $\tau$ in S, 
+$\nu_1 \mu_\tau > \mu^{-\zeta}$ for any $\mu$ with $\mu \gg 1$ 
+and $\mu > \mu_k$. In fact it suffices to show that $\lambda_\sigma \mu_\sigma > \mu^{-\zeta}$, 
+for, again from \autoref{lem:ch7_8}, we have $\nu_1 \gg \lambda_1 \dots \lambda_l \geqslant \lambda_1^{l}$. 
+Now, by the definition of $\lambda_l$, 
+the parallelepiped $|\mathbf{a}_j \mathbf{x}| < \lambda_l/\mu_j$ ($1 \leqslant j \leqslant k$) contains an 
+integer point $\mathbf{x} \neq 0$; 
+in fact the $k$th co-ordinate of \textbf{x} is not 0 since $\lambda_1 \leqslant 1$ 
+by Minkowski's linear forms theorem\index{Minkowski's linear forms theorem}, 
+whence 
+$\lambda_1\mu_j <  1(1\leqslant j \leqslant k)$, 
+
+and $\mathbf{a}_j \mathbf{x}$ is simply the jth co-ordinate of \textbf{x} when the $k$th co-ordinate vanishes. 
+It follows that, if $\tau$ is any element of S, 
+then the parallelepiped in $R^l$ given by $|\mathbf{a}_i \mathbf{x}| \leqslant \lambda_l/\mu_i$, 
+where $i$ is restricted to $\tau$ and the co-ordinates of \textbf{x} with suffixes not in $\tau$ 
+are disregarded, also contains an integer point $\mathbf{x} \neq 0$. 
+Hence the first minimum $\lambda_1'$ of the parallelepiped $|\mathbf{a}_i \mathbf{x}| \le \mu_i'$ in $R^l$, 
+where $\mu_i' = \mu_i/\lambda_l$, 
+is at most $\lambda_l/\mu_\tau^{1/l}$. 
+It is therefore enough to prove that $\lambda_1' > \mu^{-\zeta}$; 
+but this follows from the inductive hypothesis since clearly $\prod \mu_i' = 1$ and $\mu'_\sigma > 1$. 
+The theorem is herewith established.

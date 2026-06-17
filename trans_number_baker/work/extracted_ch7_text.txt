@@ -1,0 +1,859 @@
+
+
+===== PDF PAGE 76 =====
+RATIONAL APPROXIMATIONS TO
+ALGEBRAIC NUMBERS
+1. Introduction
+In 1909, a remarkable improvement on Liouville's theorem was
+obtained by the Norwegian mathematician Axel Thue.* He proved
+that for any algebraic number a with degree n > 1 and for any
+K > \n+l 
+there exists c = c(a,/c) > 0 such that \a-p/q\ > c/q" for
+all rationals p/q (q > 0). His work rested on the construction of an
+auxiliary polynomial in two variables possessing zeros to a high order,
+and it can be regarded as the source of many of our modern transcen-
+dence techniques. The condition on K was relaxed by Siegel* in 1921
+to K > 3 + n/(s + l) for any positive integer s, thus, in particular, to
+K > 2^/n, and it was further relaxed by Dyson1 and Gelfond' inde-
+pendently in 1947 to K > *J{2n). The latter expositions continued to
+involve polynomials in two variables and further progress seemed to
+require some extension of the arguments relating to polynomials in
+many variables; in fact special results in this connexion had already
+been obtained by Schneider11 in 1936. A generalization of the desired
+kind was discovered by Rothft in 1955; he showed indeed that the
+above proposition holds for any K > 2, a condition which, in view of
+the introductory remarks of Chapter 1, is essentially best possible.
+Roth's work, however, gave rise to a number of further problems.
+Siegel had initiated studies on the approximation of algebraic numbers
+by algebraic numbers in a fixed field, and also by algebraic numbers
+with bounded degree, and although Roth's arguments could be readily
+generalized to furnish a best possible result in connexion with the first
+topic, *J they did not seem to admit a similar extension in connexion
+with the second. Even less, therefore, did they appear capable of
+dealing with the wider question concerning the simultaneous approxi-
+mation of algebraic numbers by rationals. The whole subject was
+resolved by Schmidt11 in 1970; building upon Roth's foundations but
+t J.M. 135 (1909), 284-305. 
+J M.Z. 10 (1921), 173-213.
+{ Ada Math. 79 (1947), 226-40. 
+|| Bibliography.
+ji J. M. 175 (1936), 182-92. 
+tt Mathematika, 2 (1955), 1-20.
+XX See LeVeque (Bibliography). 
+§§ Bibliography.
+T66]
+
+
+===== PDF PAGE 77 =====
+INTRODUCTION 
+67
+introducing several new ideas, in particular from the Geometry of
+Numbers, he proved:
+Theorem 7.1. For any algebraic numbers <xx,...,an with 1, ax,..., an
+linearly independent over the rationals, and for any e > 0, there are only
+finitely many positive integers q such that
+<71+1<7<*ill - llflaj < I-
+Here |x|| denotes the distance of x from the nearest integer taken
+positively. The theorem implies, by a classical transference principle,1
+that there are only finitely many non-zero integers qlt ...,qn with
+Further, as immediate corollaries, we see that there are only finitely
+many integersplt...,pn,q (q > 0) satisfying
+and also only finitely many integersp,qx,...,qn satisfying
+\q1ocl+...+qnan-p\ 
+< q-*-,
+where q = max \q}\. Furthermore we have:
+Theorem 7.2. For any algebraic number a with degree exceeding n
+and any e > 0, there are only finitely -many algebraic numbers fi tvith
+degree at most n such that \a — fl\ < B~n~1-e, where B denotes the height
+of?-
+The theorem follows from the inequality just above with at = a), on
+noting that, if P(x) is the minimal polynomial for fi, then
+\P(ct)\<BC\a-0\
+for some C depending only on a. The exponent of B is essentially best
+possible, as has been demonstrated by Wirsing.* In fact, Wirsing
+obtained Theorem 7.2 in 1965 before the work of Schmidt, but with
+the less precise exponent — 2n — e. •
+One of the main applications of the methods of this chapter has
+concerned Diophantine equations of norm form in several variables,
+which generalize the Thue equation discussed in Chapter 4; indeed the
+f See Cassels' Diophantine approximation (Bibliography).
+t J.M. 206 (1961), 67-77.
+i Proc. Sympona Pun Math. {Amer. Math. Soc.), 20 (1971), 213-47.
+
+
+===== PDF PAGE 78 =====
+68 
+RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+work has led to a complete description of all such equations that
+possess only finitely many solutions. *
+Theorem 7.3. Let K be an algebraic number field and let M be a
+module in K. A necessary and sufficient condition for there to exist an
+integer m such that the equation N/i = m has infinitely many solutions /i
+in M is that M be a full module in some svbfield of K which is neither the
+rational nor an imaginary quadratic field.
+The necessity follows at once from the fact that the subfield, if it
+exists, contains at least one fundamental unit, and the sufficiency is a
+consequence of a generalized version of Theorem 7.1 relating to
+products of linear forms;1 it is in fact a direct corollary in the case
+when the dimension of M is small compared with the degree of K. As
+examples, one sees that the equation
+has infinitely many solutions in integers xu x2, x3 given by
+xx + xtj2 = ±(1+V2)n> and by xx + x3j3 =
+where n = 0,1,2,...; and theequation
+-V">xp_1) = m,
+where p, q are primes and m is any integer, has only a finite number of
+solutions in integers xx, ...,xp_x; for clearly the field generated by
+qVp Over the rationals has only trivial subfields. It should be noted,
+however, that, in contrast to the work of Chapter 4, the arguments
+here are not effective and cannot lead to a determination of the
+totality of solutions. In fact, apart from a few special results of
+Skolem,' the only effective theorems established to date on equations
+of norm form in three or more variables derive from the work on the
+hypergeometric function referred to in § 5 of Chapter 4. *
+A generalization of Roth's theorem in the p-adic domain was
+obtained by Ridout11 in 1957; in particular he proved that for any
+algebraic number a and any e > 0, there exist only finitely many
+integers p, q, comprised solely of powers of fixed sets of primes, such
+that \ct—p/q\ < q~e. In this case, however, Theorem 3.1 gives rather
+more; in fact, on taking ax = a and the remaining a's as the given
+t M.A. 191 (1971), 1-20.
+I For an account of this and associated topics one may refer to the excellent survey
+of Schmidt; Enseignement Math. 17 (1971), 187-2S3.
+f Bibliography. 
+|| P.C.P.S. 63 (1967), 693-702.
+f Mathematika, 4 (1957), 125-31; 5 (1968), 40-8; gee also Mahler (Bibliography).
+
+
+===== PDF PAGE 79 =====
+INTRODUCTION 
+69
+primes, one sees at once that q~' can be replaced by (log q)~° for some c
+depending only on a and the primes, a result moreover that is fully
+effective. Further theorems in the context of p-adic approximations
+follow from the other inequalities for |A| recorded in Chapter 3.
+2. Wronskians
+The Wronskian of polynomials 4>x{x),..., <j>k{x) of one variable is defined
+as the determinant of order k with (s\)~1 (^(x) in the ith row and
+(j+ l)th column, where 1 < i < k, 0 ^ j < k, and 0tf) denotes thejth
+derivative of 0. Such Wronskians occurred in the original work of
+Thue, and they sufficed for the expositions of Siegel, Dyson and
+Gelfond; the arguments of Roth and Schmidt, however, involved the
+concept of a generalized Wronskian. Suppose that <j>x 
+<j>k a r e
+polynomials in n variables xlt...,xn 
+and let A'*' denote a differential
+operator of the form
+where j x +... +jn = j . Then any determinant of order k with some
+A(J)0< in the tth row and (,; + l)th column is called a generalized
+Wronskian of ^>t 
+<pk. There are clearly only finitely many
+generalized Wronskians of <f>v..., <pk, and when n = 1 the set reduces
+to the original Wronskian. We shall require later the result that if
+<f>lt •••,4>k are linearly independent over their field of coefficients then
+some generalized Wronskian does not vanish identically; proofs are
+given, for instance, in the tracts of Cassels and Mahler.
+3. The index
+The proof of Theorem 7.1 involves polynomials P in kn variables
+xlm (1 < I < k, 1 ^m 4<n), homogeneous in xtm, •••,xkm for each m.
+Suppose that P has real coefficients and let Lm (1 ^m ^n) be real
+linear forms in xlm 
+x^,. Then the index of P with respect to
+Llt...,Ln 
+and positive integers rv ..., rn is defined as the largest value of
+0 such that P can be expressed as a linear combination of the poly-
+nomials L('... L]? with
+O'l/fl) + ••• + (j
+and with real polynomials in the xim as coefficients. It is easily verified
+that, for any polynomials
+
+
+===== PDF PAGE 80 =====
+70 
+RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+P, Q as above, the index, for brevity, ind, with respect to the Lm and
+rm satisfies 
+^ 
+( p + Q) > m m ( i n d p 
+i
+indPQ = indP + indQ.
+We shall require also the related concept of the index of a real
+polynomial P(xv ...,xn) with respect to rationals pmjqm {qm > 0) and
+integers rm > 0 (1 < m s$ n); this is defined as the index of the
+polynomial 
+** . . . ^ ( z ^ 
+xlB/*2n)
+in the 2ra variables xlm (I = 1,2) with respect to the linear forms
+im = 9mxlm-Pmx2m
+and the rm, where dm denotes the degree of P in xm. The index in the
+latter sense occurred first in the work of Roth, and the generalized
+concept was introduced by Schmidt.
+In analogy with the notation of earlier chapters, we define the
+height ||P|| of a polynomial P as the maximum of the absolute values
+of its coefficients; we shall speak of the height only for polynomials with
+rational integer coefficients, not identically 0. The same definition will
+of course apply in the special case of linear forms.
+Suppose now that P is a polynomial in kn variables as indicated at
+the beginning of the section. Let Llt ...,Ln be linear forms as there,
+with relatively prime integer coefficients, and let qm = ||Z/m||. Further
+let rx 
+rn be positive integers such that Srm > rm+1 (1 < m < n),
+where* = (c/32)2"and0 < e < 1. We have
+Lemma 1. Ifq% > qf' (1 ^ m < n) andqf" > 8nk\ where 0 < rj ^ k,
+and if also P has height at most gj^i'*1 and degree at most rm in
+xlm,..., Xkn, then the index of P with respect to the Lm and rm is at most e.
+This is an extension, due to Schmidt, of the most fundamental
+part of Roth's work, sometimes called Roth's lemma. The result
+follows easily in fact from the case considered by Roth, as we now
+show.
+We assume, as we may without loss of generality, that qm = |alm|,
+where 
+k
+a,mxlm 
+(1 < m < n).
+I
+We shall further assume that (olm, a^) 1 is at most g^"2'"*"1'; this
+also involves no loss of generality, since a prime p can divide at most
+t (<>> b) denotes the greatest common divisor of a, b.
+
+
+===== PDF PAGE 81 =====
+THE INDEX 
+71
+k — 2 of the integers (alm, alm) with 1 < I ^ k, whence their product
+divides g&~*. Let now P' be the polynomial obtained from P by
+successively removing, in some order, the highest power of
+*im (3 < I «S k, 1 < m < n)
+that divides P and then setting the variable to 0; further let P" be the
+polynomial obtained by setting x%m = 1 in P' for each m. Then clearly
+the index of P with respect to the Lm and rm is at most the index of P"
+with respect to — atm/alm and rOT. Also, by assumption, the denominator
+of atmlalm, when expressed in lowest terms, namely qm/(alm, a^), is at
+least q)j*. Hence we see that it suffices to prove the following modified
+version of Lemma 1.
+For any integers rm(l < m 4, n) as above and any rationals
+PmlQm (3m > °)
+in their lowest terms such that q%> > q*x and q^1 > 8n, where 0 < TJ < 1,
+the index icith respect to the pm/qm and rm of any polynomial P(x1(..., xn)
+with height at most q^ and degree at most rm in xmis at most e.
+Proofs of this proposition, possibly in slightly adapted form, in
+particular with n = 1, are given in several of the texts cited in the
+Bibliography, and our exposition can therefore be relatively brief. The
+result plainly holds for n = 1, for ifj x is the exponent to which xt—pjqx
+divides P(xx) then, by Gauss' lemma, we have
+P(xx) = 
+(qlxl-pl)\Q(xl),
+where Q is a polynomial with integer coefficients; thus the leading
+coefficient of P is at least q{1, whence jjrt < Sn < e, as required. We
+now assume the validity of the proposition with n replaced by n — 1
+and we proceed to establish the assertion for n (> 2).
+We begin by writing P in the form
+where the 0's and ifr's are polynomials in the variables xv..., xn_x and
+xn respectively with rational coefficients, and we choose one such
+representation for which «(< rn+i) is minimal. Then there exist
+Wronskians U', V of the 0's and ^'s respectively which do not vanish
+identically, and clearly W = U'V can be expressed as a determinant
+oforder*with
+in the (t + l)th row and (j + l)th column, where the A(*' are operators
+
+
+===== PDF PAGE 82 =====
+72 
+RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+as in § 2 with j n = 0. Hence W is a polynomial with degree at most
+trying and with 
+| T f | | ^ ( 8 r n | | p | | ). ^ 
+^
+where r = rx = maxrm; here we are using the hypothesis q{n > 8" and
+the observations that A(*> acting on any monomial in P introduces
+a factor not exceeding 2rm, that there are at most 2rn such monomials,
+and that the number of terms obtained on expanding the determinant,
+for W is «! < 2r*. Now, again by Gauss' lemma, we have W = UV,
+where U, V are polynomials with integer coefficients in the variables
+xx 
+xn_! and xn respectively, given by some rational multiples of
+U', V; and clearly the bound for | W\\ obtains also for | U\\ and || F||.
+Thus, by our inductive hypothesis, it follows, on taking 28 in place of S,
+that the index of U with respect to the pmlqm and rm is at most
+2~5+1'2"~1ae*. Further, by the case n = 1 of the proposition together
+with the hypothesis q% > gjr», the same bound applies for the index of V.
+We conclude therefore that the index of W is at most \se2.
+On the other hand, the index of the general element in the deter-
+minant for W is at least 
+n_ j
+<t>4- 2 
+3ml
+rm>
+m-1
+where ^ = 8 — i/rn, 6 denotes the index of P, and
+further, by hypothesis, we have Srm > rm+1 and so the above sum is at
+most S. Hence the index of W is at least
+2 max (0< - S, 0) > 2 max (<f>{, 0) - sS.
+<-0 
+i-0
+But if 6rn < 8 — 1 then the last sum is
+([drn]+l)(d-[drn]l(2rn)) 
+> \6*8,
+and if 8rn > « — 1 then it is
+On comparing estimates, we obtain
+max(i<
+whence 8 < e, as required.
+
+
+===== PDF PAGE 83 =====
+A COMBINATORIAL LEMMA 
+73
+4. A combinatorial lemma
+We prove now a lemma of a combinatorial nature relating to the
+law of large numbers. * A result of this kind occurred first in the work of
+Schneider, and it was utilized later by Roth who gave a simplified
+proof due to Davenport. Another proof, attributed to Reuter, and
+furnishing a slightly stronger theorem, was given by Mahler in his
+tract, and Schmidt subsequently obtained the generalization we
+establish here.
+Lemma 2. Suppose that rx,..., rn and k are positive integers and
+that 0 < e < 1. Then the number of non-negative integers
+Jim (UUi,U«Kii)
+satisfying
+k 
+n
+S Jim = rm (! < m < »). 
+S 3xJrm < n/k-en,
+is at most
+We commence the proof by observing that the required number N of
+integersilm is given by 
+^ ( i n ) . - ^ J .
+where the sum is over all non-negative integers j u 
+j l n satisfying
+the given inequality, and vm( j) denotes the number of solutions of the
+equation 
+k
+in non-negative integers j ^ , ...,jkm, that is
+k-2
+Hence we see that the multiple sum
+S - S "i(ix)-^(im)exp(je(n/*- I, jjrm)\
+is at least Nele*n. Now the sum can be written alternatively in the form
+n 
+I rm
+n s
+m-1 Um-0
+f Cf. the paper of Wining cited earlier: Proc. Symposia Pure Math. (Amer. Math. Soc.),
+30 (1971), 213-47.
+
+
+===== PDF PAGE 84 =====
+74 RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+where pm = 1/fc— jm/rm, 
+and clearly \pm\ < 1. But if |x| s£ 1 then
+e* < 1 + x + xa, and so
+Further we have 
+£ vm(jm)pm = 0;
+i.-o
+for /Jm can plainly be expressed as
+and it is easily verified by induction on r that
+r fr_j 
++ k_2\ 
+(r + k-l
+M 
+k-2 
+){
+k-l\
+r 
+) '
+Thus, on appealing again to the first of the above binomial identities,
+we obtain 
+nit 
+& r
+n \\m+ 
+\
+and this gives the asserted estimate.
+5. Grids
+Let T be a subspace of fc-dimensional Euclidean space spanned by
+linearly independent vectors uv ..., uk_v By a grid of size s on T we
+shall mean the finite set of vectors of the form
+u»lu1 + ...+wJt_1uJfc_I,
+where wt 
+wk_x run through all rational integers with 1 ^ w, ^ s.
+Now let Tm (1 ^ m < n) be any subspaces as above, and let Fm be
+a grid of size 8m on Tm. Further let T, V signify the cartesian products
+Tx x ... x Tn and Fx x ... x FB respectively. We shall denote by P
+a polynomial as indicated at the beginning of §3 with degree rm in
+xlm 
+zlem, and we shall signify by A$ a differential operator as in § 2,
+acting on xlm,..., xkm. The following simple lemma, due to Schmidt, is
+fundamental to the proof of Theorem 7.1.
+Lemma 3. //, for some integers tm (1 < m < n) with 8m(tm +1) > rm,
+all polynomials &\f J ...A^n)Pvnthjm 
+< tm vanish everywhere on V, then
+P vanishes identically on T.
+
+
+===== PDF PAGE 85 =====
+GRIDS 
+75
+It is clear that the lemma follows at once by induction from the case
+n = 1, and it will suffice therefore to prove the latter. Further, one can
+obviously assume, by applying a linear transformation, that Tm is the
+plane xkm = C, with basis consisting of the first k — 1 rows of the unit
+matrix of order k. Thus, omitting the suffix m, we see that it is enough
+to prove:
+A polynomial P(xv ...,xk_1) urith degree r vanishes identically if all
+A(*IP with j ^ t vanish at all integer points (wlt ...,wk_^) with 1 ^ wt < s,
+where s(t +1) > r.
+Here A(;) denotes a differential operator on xlt ...,zk_1 of order j . The
+assertion is clearly valid for k = 2, since a polynomial in one variable
+with degree r cannot have more than r zeros, and we shall assume the
+proposition when k is replaced by k — 1. If now P does not vanish
+identically then there is a largest integer q such that the rational
+function 
+Q = 
+{Xl-l)-,...{Xl.8)-,p
+is in fact a polynomial, and since, by hypothesis, s(t + 1) > r, we have
+q ^ t. Further, by choice of q, one at least of the polynomials
+Q(wvx2, ...,xk_1) with 1 < wt ^ s does not vanish identically; let
+this be R. Then A(J>R vanishes at all integer points (w2, ...,wk_i) with
+1 ^ wt 4: s, where A<J) is any differential operator on x2, ••-,xk_1 with
+order j < t-q. But R has degree at most r — sq < (t — q+ 1) s, and this
+is plainly contrary to the inductive hypothesis. The contradiction
+establishes the assertion.
+6. The auxiliary polynomial
+For each m with U m ^ n we shall denote by Llm (1 ^ I < k] linear
+forms in xlm, •••,xkm with real algebraic integer coefficients. Further
+we shall denote by d the degree of the field K generated by all the
+coefficients over the rationals, and we shall signify by ct, c2,... numbers
+greater than 1 which depend on these coefficients only.
+Let now rv...,rn 
+be any positive integers, and let r = maxrm.
+Further suppose that 0 < e < 1 and that ele*n > 2kd. Adopting the
+notation of § 3, we have
+Lemma 4. There is a polynomial P with degree at most rm in
+xlm,..., x^, and with height at most cj such that, for each I with 1 < I < k,
+the index of P with respect to the Llm and rm is at least njk — en.
+
+
+===== PDF PAGE 86 =====
+76 
+RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+It can be assumed, without loss of generality, that, for all I, m, the
+coefficient of xlm in Z|m, say atm, is not 0. Then P has to be determined
+such that, for all I and all non-negative integers j l t ...,jn with
+< njk-en,
+the polynomials
+vanish identically when — L^, with xlm equated to 0, is substituted for
+xlm, and the factor alm is included to multiply each of xtm 
+xkm.
+Now these polynomials are homogeneous in xim, ....Zjtm w i t n degree
+rm—jm and hence, by Lemma 2, they have, in total, at most kNe~lc*n
+coefficients, where N denotes the product of binomial factors occurring
+in the enunciation of the lemma. Each coefficient is a linear form in the
+coefficients of P, and there are precisely N of the latter. Furthermore,
+the coefficients in the linear forms are algebraic integers in K with
+sizes at most c\ (cf. the estimates in §3). It follows, on utilizing an
+integral basis for K and recalling the hypothesis ei'tn > 2kd, that one
+has to satisfy at most £2V linear equations with rational integer
+coefficients each having absolute value at most cj (cf. § 3, Chapter 6).
+The required result is now obtained from Lemma 1 of Chapter 2.
+7. Successive minima
+We recall from the Geometry of Numbers that if R is any convex body
+in ifc-dimensional Euclidean space, then the numbers A, (1 < I < k),
+given by the infimum of all A > 0 such that AR contains I linearly
+independent integer points, are termed the successive minima of R,
+and they have the property that Al...AkV, where V denotes the
+volume of R, is bounded above and below by positive numbers
+depending only on k.
+We now combine the preceding lemmas to obtain a proposition on
+the penultimate minimum of a certain parallelepiped, which will be the
+main instrument in the proof of Theorem 7.1. We shall denote by
+M1 
+Mk linear forms in xv ...,xk with real algebraic integer coeffi-
+cients constituting a non-singular matrix A, and we shall signify by
+M[,...,Mk the adjoint linear forms with coefficients given by the
+columns of A"1. Further we shall signify by 8 some non-empty set of
+suffixes i such that M\ does not represent zero for any integral values,
+not all 0, of the variables; the assumption that S exists involves, of
+course, some loss of generality. We prove:
+
+
+===== PDF PAGE 87 =====
+SUCCESSIVE MINIMA 
+77
+Lemma 5. For any £ > 0 there exists c > 0 such that for all positive
+fiv...,fck 
+satisfying /i1.../ik 
+= 1 and fi{ > 1 for i in S, the penultimate
+minimum Afc_t of the parallelepiped \Mt\ < /*, (1 < I < k) exceeds fi~l,
+where ft denotes the maximum of /ix 
+/ik and c.
+It will be seen that the lemma immediately implies Roth's theorem,
+that is the case n = 1 of Theorem 7.1; this follows on taking
+Mx = a1x1—xa, 
+M2 = x2
+and $ to consist just of the suffix 2, as is possible since ccx is irrational.
+We show first that it suffices to prove a modified version of Lemma 5.
+Suppose that Q ^ fik and let w1(...,o>k be defined by /*, = Q"'. Then
+since/^... fik = 1 we have d>1 +... +o>k = 0 and clearly (o( > 0 for i in 8.
+Clearly also w, < 1 for all I and, since again /il...fik= 
+1 we have
+fit 3* Q~x, whence w, > — 1. Now for any positive integer N there are
+rationals at'lt...,(o'n with denominator N satisfying |w, — wj| < IJN and
+\h)i\ ^ 1 for all I, and also o)[ +... +a)'k = 0; indeed one has merely to
+take N(i)[ = [Ncjj] and, having defined wj, ...,wj_x, to take 2V«{ as
+[iVwj] or — [ — N<ot] according &so)'1 +...+ (O'I^ does or does not exceed
+o)l +... + Wj_i- Plainly the (!)[,..., 0)'k belong to a finite set of rationals
+independent of Q, and the minimum Aj_x of the parallelepiped
+|Jtf,| < 0*1 (1 < I < k) exceeds Q~llN^ic-v Hence it is enough to prove:
+For any real o)lt ...,o)k with wx +... +wfc = 0, |w,| < 1 (1 < I < k)
+and a)i > Ofor all i in 8, and for any g > 0, there exists C > 0 such that,
+for allQ > C, the minimum Aft_x of the parallelepiped
+exceeds Q~t.
+We shall suppose that £ < 1, as obviously we may, and we shall
+signify by d the degree of the field generated by the elements of A over
+the rationals. Let e be any positive number less than £/(8ifc)2, let n be
+any integer satisfying the condition preceding Lemma 4, and iet S be
+defined as in Lemma 1. We shall assume that there is an unbounded set
+of values of Q such that Ak_j < Q~t, and we shall ultimately derive a
+contradiction. We select a sufficiently large Qx in this set, that is
+Qt > cv where cv like c8, c3 below, depends only on A, k, n, d, e, S, £ and
+the w's. We then select further elements Qt 
+Qn in the set such that
+Qm > Qm-i (1 < w» < n), whence clearly Qx< ... < Qn. Finally we
+choose positive integers rv...,rn such that Qfi > Qn and
+then plainly the condition preceding Lemma 1 is satisfied.
+
+
+===== PDF PAGE 88 =====
+78 
+RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+We observe now that the hypotheses of Lemma 4 hold when
+Ifa = JMjfXn,), where x^ denotes the vector (xXm,...,x^); 
+let P be the
+polynomial constructed there. Further we note that, for any Q as
+above, there exist linearly independent integer points ux 
+uk with
+U| in AtB, where R denotes the given parallelepiped and Av ..., Afc its
+successive minima. Moreover, there is a linear form L with relatively
+prime integer coefficients, unique except for a factor + 1, which
+vanishes at ult ...,ufc_x; we take uIm and Lm to be these u, and L
+respectively when Q = Qm. We shall verify later that, if Q is sufficiently
+large, then q — \\L\\ satisfies Q° < q < Qc', where c, c' are positive
+numbers depending only on £ and d. Assuming this for the present, it
+follows that all the hypotheses of Lemma 1 are satisfied with v = cjc',
+provided that clt and so also qt and Qu are large enough. Hence we
+conclude that the index of P with respect to the Lm and rm is at most e.
+We proceed to prove that, with the notation of § 5, all polynomials
+AP with 
+B
+vanish everywhere on T, where Tm is the grid of size [e-1] + 1 on the
+space Tm spanned by u(m (1 < I < k). This implies, by Lemma 3, on
+taking tm = [erm], that all polynomials AP, with £jm/rm < en, vanish
+identically on the n(k— 1)-dimensional space of solutions of
+/ * = . . . =£„ = <>.
+But the latter contradicts the above conclusion concerning the index
+of P, and the contradiction establishes the lemma. To prove the pro-
+position, let AP be any of the polynomials in question and let P' be the
+polynomial in new variables ylm obtained from AP by the linear
+substitution ylm = Xjm. Then it is readily verified that P' has height at
+most c£, where r = max rm. Further, since, by assumption, AJk_1 < Q~t,
+we have for any xm on T
+m
+Thus, by Lemma 4, it follows that, for all points on F, we have
+|AP| < c^e*, where
+*- S S te-Kta-iogC.
+{-1 
+m-i
+and j l m are some non-negative integers with
+2 Jim <rm (1 < m < n), 
+n/k- £ jjrm < ten (1 < U *).
+J - l 
+m - l
+
+
+===== PDF PAGE 89 =====
+SUCCESSIVE MINIMA 
+79
+Denoting, for brevity, the left-hand side of the last inequality by \ ,
+we see that, by the first inequality, hx +... + hk > 0, and so both
+inequalities together imply that |A,| < 3kne. Further, since |w,| < 1,
+we obtain, in view of the initial choice of rlt..., rn,
+s ^ r1logQ1 £ S {{oh-K)j*Jrm + 2e}.
+I=lm=l
+But now, by virtue of our estimate for A, and the hypothesis
+«x + ... + O)k = 0,
+the double sum here differs from — §£n by at most Richie. Since, by
+definition, e < £/(8&)2, »* follows that |AP| < Q^nr 
+< 1, provided Qx
+is sufficiently large. On the other hand, AP is a rational integer for all
+points on F, and hence AP = 0, as required.
+It remains only to prove the assertion concerning q = ||L||. Let U be
+the matrix with columns ult...,uk 
+and let vv...,vk 
+be the rows of
+U"1. Then clearly pvk is the coefficient vector of L for some rational p.
+Since L(uk) is an integer and vk uk = 1, p is in fact an integer. Further p
+divides detU, for plainly U"1 = adj U/detU.* Furthermore we have
+det U <^ 1, where the implied constant depends only on A,J for
+certainly R has volume > 1 and hence, by the property of successive
+minima quoted at the beginning, det(AU) < 1. It follows that each
+element of (det U) v^ is a rational integer <£ q. Hence the element in
+the kth row and Ith column of adj (AU), namely (det (AU)) itf^v^), is
+an algebraic integer with size <^ q. But by hypothesis we have
+\k_1 < Q~£ and u>x +... + cok = 0, and thus the element is also
+^ Q-"j-<*-i>C. We conclude that, for I in S, the element ia both
+p q~d and <^ Q~*k~vt, and, since S is assumed non-empty, this gives
+the required lower bound for q. The upper bound follows from the
+identity U - 1 = (AU)"1 A, on observing, as above, that the elements in
+the jfcth row of (AU)-1 are < Q.
+8. Comparison of minima
+We prove first a general lemma of Davenport, and we proceed then
+to show that, with some proviso, the minima Xk_x and Xk of the
+parallelepiped of Lemma 5 differ only by a small factor. Constants
+implied by <^ will depend only on k.
+f 'det' and 'adj' are abbreviations for determinant and adjoint respectively.
+t We are using Vinogradov's notation; by a <g. 6 one means |a| < 6c for some constant
+c, and similarly for >.
+
+
+===== PDF PAGE 90 =====
+80 RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+Lemma 6. Let Lv...,Lk 
+be real linear forma with determinant 1 and
+let Alf..., Xk be the successive minima of the parallelepiped
+|Z,| < 1 (1 < I < k).
+Suppose that px > ... > pk > 0 and that
+Then for some permutation p'x 
+p'kofpx,..., 
+pk, the successive minima
+AJ, ...,X'kofthe parallelepiped p'i\L,\ < 1 (1 < I < k) satisfy
+Proof. There certainly exist linearly independent integer points
+xv ..., xft such that one at least of [L^,..., \Lk\ assumes the value A, at
+x,, and we denote by £, the space spanned by xx,...,x,. Further, for
+each 1^2, there is a non-trivial linear relation a1L1+... +alLl = 0
+satisfied identically on *S^_1> and Lx 
+Lk can be permuted so that |a,|
+is maximal; this gives
+identically on ^_x, whence by induction
+identically on 8j for I — 1,2,..., k. Now for any j it is clear that every
+point in 8t not in 8^ satisfies
+max (1^1 
+\Lk\)>Xi,
+and thus, in view of the inequality obtained above, it satisfies also
+m&x{pl\L)\,...,pk\Lk\)>pjXi.
+By hypothesis, p}Xj ^ p,X, for j > I, and the required lower bound for
+A| follows on taking p[,...,pk to be the permutation of 
+pv...,pk
+inverse to that associated with Lv ...,Lk. The upper bound is a conse-
+quence of the equation pl...pk= 
+I together with the property, noted
+earlier, that X1...Xk and X[... X'k are both <^ 1 and > 1.
+Lemma 7. The last two minima of the parallelepiped of Lemma 5
+satisfy Xk_1 > Xkfi~k^, provided that Aj/t4 > p-lfor all i in 8.
+Proof. The hypotheses of Lemma 6 hold with Lj (1 < I < k) given by
+^ 
+{l<l<k)> 
+Pk
+
+
+===== PDF PAGE 91 =====
+COMPARISON OF MINIMA 
+81
+where p is defined by the equation p1...pk 
+= 1. Let p'lt.,.,p'k 
+be the
+permutation of pv ...,pk indicated in the lemma , and let /i\ = /t7//9J.
+Assume first that /*< > 1 for all i in S. Then from Lemma 5 with fit
+replaced by fi\, we infer that, for any £' > 0, there exists c' > 0 such
+that X'k_t > ji'-l'', where /i' denotes the maximum of /*,[, ...,/i'k and c'.
+On the other hand, from Lemma 6, X'k_x < Pk-i^k-i = P> a n <i clearly,
+since Ax... Afc <^ 1, we have pk < AA._1/Afc. Thus it suffices to prove that
+/t'C <^ /£ if £' is chosen sufficiently small. But by hypothesis, since S is
+assumed non-empty, we have Ax/i > ft~£; further, since A, > Ax for
+all I, we see that p > Ax and Af"1 Afc_1 < 1. Hence we obtain
+/ <Mk-Jp<Mi" </»*«+1>+1,
+and the required result follows. If, contrary to the above assumption,
+Hi < 1 for some i in S, then, on observing that by hypothesis
+we obtain p > fi~^ and the required result again follows.
+9. Exterior algebra
+For any vectors xlt..., x, in Rk with 1 < I < k, one denotes by xr A... A x,
+the vector in R™ whose elements are the m = I J subdeterminants of
+order I formed from the k by I matrix with columns xx,..., x,. We shall
+utilize some well-known properties of this product; in particular, we
+shall require Laplace's identity
+(xt A ... A x,) (yx A ... A y,) = det(x4yy),
+where on the left one has the usual vector dot product, and also the
+relation 
+, , . 
+., . , vi_,i,
+detAff = (detA)'"1*,
+which holds for any matrix A of order k with column vectors ax 
+ak,
+say, where A,, = a4i A ... A al( and <r runs through all sets of I distinct
+integers ilt..., i, from 1,..., k.*
+We shall need, in addition, the following lemma, due to Mahler, on
+compound convex bodies. A will signify a matrix as above with
+detA = 1, and, as in § 8, constants implied by <^ will depend only on 4.
+Further we shall denote by ax the linear form in the elements of x with
+coefficient vector a.
+f Short proofs are given in Schmidt's tract (Bibliography).
+
+
+===== PDF PAGE 92 =====
+82 
+RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+L e m m a 8. The successive 
+minima 
+Alt ...,Ak 
+and vl,...,vm 
+of the
+parallelepipeds 
+| a < x | < l ( l < i < A ; ) 
+and 
+\A.aX\ < 1, 
+respectively,
+where r runs through all sets a as above, AT = II Ay, the product being taken
+over all j in T, and A. < A. ^ ... ^ A. .
+** 
+'
+1
+*
+1 
+T W l
+Proof. Let xx 
+x t be linearly independent integer points such that
+|a<Xy| < Aj (1 < j < k), and let XT be defined like A, above, with x in
+place of a. By Laplace's identity we have
+|AffXT| = |det(aiX;.)| <m\AT,
+where i, j run through all elements of a, j respectively. Hence, for
+each i with 1 ^ i; ^ TO, we have lA^X^I < AT| and so v( <£ ATj. But
+since, by hypothesis, det A = 1, we have det \ a = 1, and thus the
+volume of the parallelepiped |AffX| ^ 1 is 2m. Thus vt... vm > 1 and
+since ATl... ATm < 1 it follows that vl > AT, as required.
+10. Proof of main theorem
+It will suffice to prove Theorem 7.1 under the assumption that
+a1(..., an are real algebraic integers, for clearly the general result then
+follows on multiplying each a,- by the leading coefficient in its minimal
+polynomial. We shall signify by a,- (1 ^ j < n) the vector in i?n+1 given
+by (e^, a.j), where elt..., en denote the rows of the unit matrix of order n.
+Further, for brevity, we shall write k = n + 1, and we shall denote by
+afc the vector (0, ..., 0, 1) in Rk. Constants implied by ^ or > will
+depend only ona, 
+an,it,e and the quantities £, £ to be defined below.
+We show first that the theorem is a consequence of the following
+proposition.
+For any £ > 0 and any positive numbers /ilt ••-,/** with /ii--.uk= 
+1
+and /tj < 1 (1 < j < k), the first minimum 
+Ax of the parallelepiped
+\atx\ s£ /if (1 < j < k) exceeds p-l if /i > fik and fi p 1.
+The proof proceeds by induction on n; we have already remarked
+that the case n = 1 is an immediate consequence of Lemma 5, and we
+assume now that the theorem holds when n is replaced by n — 1. Let
+q be a positive integer satisfying the inequality occurring in the
+enunciation, and let
+
+
+===== PDF PAGE 93 =====
+PROOF OF MAIN THEOREM 
+83
+Further let fik = (jix .../tj- 1, where k = n+ 1 as above. Then clearly
+jik > ql+i' and moreover the first minimum Aj of the parallelepiped
+|a,-x| < fit (1 < j < k) is at most g-«'«"). But, on appealing again to the
+given inequality and applying the inductive hypothesis, we see that,
+if q %> 1, then /it < 1 for all j < k. Hence the proposition above shows
+that Xx > fi~i for any £ > 0 and any fi with /i p 1 and /ip fik. Further-
+more, by the case n = 1 of the theorem, we have /ij > q~x (1 ^ j < n),
+whence fik < qn. Plainly the estimates for Ax are inconsistent if £ is
+sufficiently small, and the contradiction proves the theorem.
+Preliminary to the proof of the proposition, we observe that, with
+the notation of § 9, the linear forms Mr = AT X satisfy the hypotheses of
+§ 7 with S given by those sets T which include k. For it is easily verified
+from the Laplace expansions of A that, as cr runs through the comple-
+ment of T in 1, ...,k, the forms AffX constitute the set adjoint to the
+Mr, except possibly for a sign change; further, if cr does not include k,
+we have 
+* -v 
+-v- . v/ , \ v
+AffX = Xa + S( ± a}) Xa_J+k,
+ff
+where the summation is over all j in cr, on the right there occur the
+co-ordinates of X, and <r—j + k denotes the set cr with k in place of j .
+By hypothesis \,ax,...,an 
+are linearly independent over the rationals,
+and thus we see that A aX + 0 for all integer vectors X + 0, as required.
+The proof of the proposition proceeds by induction on k; the result
+plainly holds for k = 2 by Lemma 5, and we assume now that it has
+been verified for all values up to k — 1. Let I be any integer with
+1 ^ I < k and, for any set T of I distinct integers from 1 ,...,&, let
+fiT = Hfij, where the product is over all j in r. By Lemma 7 we see that
+the successive minima vv ...,vmof 
+the parallelepiped | Mr\ < fiT satisfy
+vm-i ^ vm/l~k<° f° r a n y C > 0. provided that fi > 1, fi > /iT for all T and
+v1/iT > fi~t for T in S. Further, with the notation of Lemma 8, it is clear
+that rm and Tm_x consist of the integers k — l+l,k-l 
++ 2, ...,k and k — I,
+k — l + 2,...,krespectively. 
+Thus, under the above conditions, we have
+that is Xk_i > Afc_I+1/<-*t. The required inequality Ax > fi'Z follows on
+applying the latter with I = 1,2 
+k— 1, noting that Afc p 1, and
+taking £ sufficiently small.
+Since evidently /ir < juk for all r, it remains only to prove that, for T in
+8, vxfiT > /i~t for any fi with fi p'l and/t > /ik. In fact it suffices to show
+that X.i/i\n > /t~f, for, again from Lemma 8, we have vx > \x... A, ^ A'x.
+Now, by the definition of Alf the parallelepiped | a^x | < Aj/^(1 < j ^ ifc)
+
+
+===== PDF PAGE 94 =====
+84 RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS
+contains an integer point x =f= 0; in fact the kth co-ordinate of x is not
+0 since Ax < 1 by Minkowski's linear forms theorem, whence
+and a^x is simply thejth co-ordinate of x when the kth co-ordinate
+vanishes. It follows that, if T is any element of S, then the parallel-
+epiped in Rl given by |a4x| ^ A ^ , where i is restricted to r and the
+co-ordinates of x with suffixes not in T are disregarded, also contains an
+integer point x 4= 0. Hence the first minimum AJ of the parallelepiped
+|a4x| < n\ in i?, where n\ = /ij/il", is at most AI;KJ". It is therefore
+enough to prove that A^ > ji-l; but this follows from the inductive
+hypothesis since clearly Il/t^ = 1 and/*T > 1. The theorem is herewith
+established.
+
+
+===== PDF PAGE 95 =====
+8
+MAHLER'S CLASSIFICATION
+1. Introduction
+A classification of the set of all transcendental numbers into three
+disjoint aggregates, termed S-, T- and C/-numbers, was introduced by
+Mahler* in 1932, and it has proved to be of considerable value in the
+general development of the subject. The first classification of this
+kind was outlined by Maillet* in 1906, and others were described by
+Perna' and Morduchai-Boltovskoj;' but to Mahler's classification
+attaches by far the most interest.
+As in the previous chapter, we define the height of a polynomial as
+the maximum of the absolute values of its coefficients, and we shall
+speak of the height only for polynomials with integer coefficients, not
+all 0. Let now £ be any complex number, and for each pair of positive
+integers n, h, let P(x) be a polynomial with degree at most n and height
+at most h for which |-P(£) | takes the smallest positive value; and define
+<o(n,h) by the equation \P(£)\ = ft-"*".*). Further define
+wn = lim sup w(n, h), w = lim sup wn,
+A-+ oo 
+n—• as
+and let v be the least positive integer n for which con = oo, writing i* = oo
+if, in fact, wn < oo for all n. Mahler characterizes the set of all complex
+numbers as follows:
+A -number 
+w = 0, v = oo,
+^-number 
+0 < co < oo, v = oo,
+T-number 
+W = oo, y = oo,
+^/-number 
+w = oo, v < oo.
+We shall prove in §2 that the A -numbers are just the algebraic
+numbers; thus a transcendental number £ is an &-number if (o(n, h) is
+uniformly bounded for all n, h, a ?7-number if, for some n, (o(n, h) is
+unbounded, and a T-number otherwise. Further we have:
+t J.M. 166(1932), 118-36.
+% Bibliography.
+§ (Horn, Mat. BaOaglini, 52 (1914), 305-65.
+|| Mat. Sbornik, 41 (1934), 221-32.
+[ 8 6 ]

@@ -1,0 +1,427 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{LINEAR FORMS IN LOGARITHMS}\label{ch:2}
+
+\section{Introduction}
+
+In 1900, at the International Congress of Mathematicians held in Paris, Hilbert\index{Hilbert, D.} raised, as the seventh of his famous list of 23 problems, the question whether an irrational logarithm of an algebraic number\index{algebraic number} to an algebraic base is transcendental. The question is capable of various alternative formulations; thus one can ask whether an irrational quotient of natural logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number} is transcendental, or whether $\alpha^{\beta}$ is transcendental for any algebraic number\index{algebraic number} $\alpha \neq 0, 1$ and any algebraic irrational $\beta$. A special case relating to logarithms of rational numbers can be traced to the writings of Euler\index{Euler, L.} more than a century before, but no apparent progress had been made towards its solution. Indeed, Hilbert\index{Hilbert, D.} expressed the opinion that the resolution of the problem lay farther in the future than a proof of the Riemann hypothesis\index{Riemann hypothesis} or Fermat's last theorem\index{Fermat's last theorem}.
+
+The first significant advance was made by Gelfond\index{Gelfond, A. O.} in 1929. Employing interpolation techniques of the kind that he had utilized previously in researches on integral integer-valued functions\index{integral integer-valued functions},\footnote{C.R. 189 (1929), 1224--8.} Gelfond\index{Gelfond, A. O.} showed that the logarithm of an algebraic number\index{algebraic number} to an algebraic base cannot be an imaginary quadratic irrational, that is, $\alpha^{\beta}$ is transcendental for any algebraic number\index{algebraic number} $\alpha \neq 0, 1$ and any imaginary quadratic irrational $\beta$; in particular, this implies that $e^{\pi} = (-1)^{-i}$ is transcendental. The result was extended to real quadratic irrationals $\beta$ by Kuzmin\index{Kuzmin, R. O.}\footnote{I.A.N. 3 (1930), 583--97.} in 1930. But it was clear that direct appeal to an interpolation series for $e^{\beta z}$, on which the Gelfond\index{Gelfond, A. O.}-Kuzmin\index{Kuzmin, R. O.} work was based, was not appropriate for more general $\beta$, and further progress awaited a new idea. The search for the latter was concluded successfully by Gelfond\index{Gelfond, A. O.}\footnote{D.A.N. 2 (1934), 1--6; I.A.N. 7 (1934), 623--4.} and Schneider\index{Schneider, Th.}\footnote{J.M. 172 (1934), 65--9.} independently in 1934. The arguments they discovered were applicable for any irrational $\beta$ and, though differing in detail, both depended on the construction of an auxiliary function\index{auxiliary function} that vanished at certain selected points. A similar technique had been used a few years earlier by Siegel\index{Siegel, C. L.} in the course of investigations on the Bessel functions\index{Bessel function}.\footnote{Abh. Preuss Akad. Wiss. (1929), No. 1; cf. \autoref{ch:11}.} Herewith Hilbert\index{Hilbert, D.}'s seventh problem\index{Hilbert's seventh problem} was finally solved.
+
+The Gelfond\index{Gelfond, A. O.}-Schneider\index{Schneider, Th.} theorem shows that for any non-zero algebraic numbers\index{algebraic number} $\alpha_1$, $\alpha_2$, $\beta_1$, $\beta_2$, with $\log \alpha_1$, $\log \alpha_2$ linearly independent over the rationals, we have\footnote{Here the logarithms can take any fixed values.}
+\[
+\beta_1 \log \alpha_1 + \beta_2 \log \alpha_2 \neq 0.
+\]
+
+It was natural to conjecture that an analogous theorem would hold for arbitrarily many logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number}, and, moreover, it was soon realized that such a result would be capable of wide application. The conjecture was proved by the author\footnote{Mathematika, 13 (1966), 204--16; 14 (1967), 102--7, 220--8.} in 1966, and the demonstration will be the subject of the present chapter.
+
+\begin{mythm}{}{ch2_1}
+If $\alpha_1, \dots, \alpha_n$ are non-zero algebraic numbers\index{algebraic number} such that $\log \alpha_1, \dots, \log \alpha_n$ are linearly independent over the rationals, then $1, \log \alpha_1, \dots, \log \alpha_n$ are linearly independent over the field of all algebraic numbers\index{algebraic number}.
+\end{mythm}
+
+The proof depends on the construction of an auxiliary function\index{auxiliary function} of several complex variables which generalizes the function of a single variable employed originally by Gelfond\index{Gelfond, A. O.}. Functions of several variables were utilized by Schneider\index{Schneider, Th.} in his studies concerning Abelian integrals\index{Abelian integral}\footnote{J.M. 183 (1941), 110--28.} but, for many years, there appeared to be severe limitations to their serviceability in wider settings. The main difficulty concerned the basic interpolation techniques. Work in this connexion had hitherto always involved an extension in the order of the derivatives while leaving the points of interpolation fixed; however, when dealing with functions of several variables, this type of argument requires that the points in question form a cartesian product, a condition that can apparently be satisfied only with respect to particular multiplyperiodic functions. The proof of \autoref{thm:ch2_1} involves an extrapolation procedure, special to the present context, in which the range of interpolation is now extended while the order of the derivatives is reduced. Refinements and generalizations will be discussed in the next chapter and applications of the results to various branches of number theory will be the theme of Chapters \ref{ch:4} and \ref{ch:5}.
+
+\section{Corollaries}
+
+Before proceeding to the proof of \autoref{thm:ch2_1}, we record a few immediate corollaries.
+
+\begin{mythm}{}{ch2_2}
+Any non-vanishing linear combination of logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number} with algebraic coefficients is transcendental.
+\end{mythm}
+
+In other words, for any non-zero algebraic numbers\index{algebraic number} $\alpha_1, \dots, \alpha_n$ and any algebraic numbers\index{algebraic number} $\beta_0, \beta_1, \dots, \beta_n$ with $\beta_0 \neq 0$ we have
+\[
+\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n \neq 0.
+\]
+This plainly holds for $n = 0$. We assume the validity for $n < m$, where $m$ is a positive integer, and proceed to prove the proposition for $n = m$. Now if $\log \alpha_1, \dots, \log \alpha_m$ are linearly independent over the rationals then the result follows from \autoref{thm:ch2_1}. Thus we can suppose that there exist rationals $\rho_1, \dots, \rho_m$, with say $\rho_r \neq 0$, such that
+\[
+\rho_1 \log \alpha_1 + \dots + \rho_m \log \alpha_m = 0.
+\]
+Clearly we have
+\[
+\rho_r(\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_m \log \alpha_m) = \beta'_0 + \beta'_1 \log \alpha_1 + \dots + \beta'_m \log \alpha_m,
+\]
+where
+\[
+\beta'_0 = \rho_r \beta_0, \quad \beta'_j = \rho_r \beta_j - \rho_j \beta_r \quad (1 \le j \le m),
+\]
+and also $\beta'_0 \neq 0$, $\beta'_r = 0$; the required result follows by induction.
+
+\begin{mythm}{}{ch2_3}
+$e^{\beta_0} \alpha_1^{\beta_1} \dots \alpha_n^{\beta_n}$ is transcendental for any non-zero algebraic numbers\index{algebraic number} $\alpha_1, \dots, \alpha_n, \beta_0, \beta_1, \dots, \beta_n$.
+\end{mythm}
+
+Indeed, if $\alpha_{n+1} = e^{\beta_0} \alpha_1^{\beta_1} \dots \alpha_n^{\beta_n}$ were algebraic, then
+\[
+\beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n - \log \alpha_{n+1} \quad (= -\beta_0)
+\]
+would be algebraic and non-vanishing, contrary to \autoref{thm:ch2_2}. There is a natural analogue to \autoref{thm:ch2_3} in the case $\beta_0 = 0$:
+
+\begin{mythm}{}{ch2_4}
+$\alpha_1^{\beta_1} \dots \alpha_n^{\beta_n}$ is transcendental for any algebraic numbers\index{algebraic number} $\alpha_1, \dots, \alpha_n$, other than $0$ or $1$, and any algebraic numbers\index{algebraic number} $1, \beta_1, \dots, \beta_n$ linearly independent over the rationals.
+\end{mythm}
+
+For the proof, it suffices to show that for any algebraic numbers\index{algebraic number} $\alpha_1, \dots, \alpha_n$, other than $0$ or $1$, and any algebraic numbers\index{algebraic number} $\beta_1, \dots, \beta_n$, linearly independent over the rationals, we have
+\[
+\beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n \neq 0;
+\]
+in fact the theorem follows on applying this with $n$ replaced by $n+1$ and $\beta_{n+1}=-1$. The proposition plainly holds for $n=1$; we assume the validity for $n < m$, where $m$ is a positive integer, and proceed to prove the assertion for $n=m$. The result is an immediate consequence of \autoref{thm:ch2_1} if $\log \alpha_1, \dots, \log \alpha_n$ are linearly independent over the rationals; thus we can suppose that there exist rationals $\rho_1, \dots, \rho_m$ and numbers\index{numbers} $\beta'_j$ as in the proof of \autoref{thm:ch2_2}, with now $\beta_0 = \beta'_0 = 0$. It is clear that if $\beta_1, \dots, \beta_m$ are linearly independent over the rationals, then so also are the $\beta'_j$, with $j$ not $0$ or $r$, and the theorem follows by induction.
+
+Finally, from particular cases of the above theorems, it is evident that $\pi + \log \alpha$ is transcendental for any algebraic number\index{algebraic number} $\alpha \neq 0$ (which includes the transcendence of $\pi\index{transcendence of  $\pi$}$) and that $e^{\alpha\pi+\beta}$ is transcendental for any algebraic numbers\index{algebraic number} $\alpha, \beta$ with $\beta \neq 0$ (which includes the transcendence of $e\index{transcendence of e}$).
+
+\section{Notation}
+
+The remainder of the chapter is devoted to a proof of \autoref{thm:ch2_1}. We suppose that the theorem is false, so that there exist algebraic numbers\index{algebraic number} $\beta_0, \beta_1, \dots, \beta_n$, not all $0$, such that
+\[
+\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n = 0,
+\]
+and we ultimately derive a contradiction. Clearly one at least of $\beta_1, \dots, \beta_n$ is not $0$ and, without loss of generality, we can suppose that $\beta_n \neq 0$. Since the above equation continues to hold with $\beta'_j = -\beta_j/\beta_n$ in place of $\beta_j$, we can further suppose, without loss of generality, that $\beta_n = -1$; we have then
+\begin{equation} \label{eq:ch2_1}\tag{1}
+e^{\beta_0}\alpha_1^{\beta_1}\dots\alpha_{n-1}^{\beta_{n-1}}=\alpha_n.
+\end{equation}
+
+We denote by $c, c_1, c_2, \dots$ positive numbers\index{numbers} which depend only on the $\alpha$'s, $\beta$'s and the original determinations of the logarithms. By $h$ we signify a positive integer which exceeds a sufficiently large number $c$ as above.
+
+We note, for later reference, that if $\alpha$ is any algebraic number\index{algebraic number} satisfying
+\[
+A_0 \alpha^d + A_1 \alpha^{d-1} + \dots + A_d = 0,
+\]
+where $A_0, \dots, A_d$ are rational integers with absolute values at most $A$, then, for each non-negative integer $j$, we have
+\[
+(A_0\alpha)^j = A_0^{(j)} + A_1^{(j)}\alpha + \dots + A_{d-1}^{(j)}\alpha^{d-1}
+\]
+for some rational integers $A_m^{(j)}$ with absolute values at most $(2A)^j$; this is an obvious consequence of the recurrence relations
+\[
+A_m^{(j)} = A_0 A_{m-1}^{(j-1)} - A_{d-m} A_{d-1}^{(j-1)} \quad (0 \le m < d, j \ge d),
+\]
+where $A_{-1}^{(j-1)}=0$. It follows that if $d$ is the maximum of the degrees of $\alpha_1, \dots, \alpha_n, \beta_0, \dots, \beta_{n-1}$ and if $a_1, \dots, a_n, b_0, \dots, b_{n-1}$ are the leading coefficients in their respective minimal polynomials\index{minimal polynomial of algebraic number}, then
+\begin{equation} \label{eq:ch2_2}\tag{2}
+(a_r \alpha_r)^j = \sum_{s=0}^{d-1} a_{rs}^{(j)} \alpha_r^s, \quad (b_r \beta_r)^j = \sum_{t=0}^{d-1} b_{rt}^{(j)} \beta_r^t,
+\end{equation}
+where the $a_{rs}^{(j)}, b_{rt}^{(j)}$ are rational integers with absolute values at most $c_1^j$. For brevity we shall put
+\[
+f_{m_0, \dots, m_{n-1}}(z_0, \dots, z_{n-1}) = \left(\frac{\partial}{\partial z_0}\right)^{m_0} \dots \left(\frac{\partial}{\partial z_{n-1}}\right)^{m_{n-1}} f(z_0, \dots, z_{n-1}),
+\]
+where $f$ denotes an integral function and $m_0, \dots, m_{n-1}$ are non-negative integers.
+
+\section{The auxiliary function}
+
+Our purpose now is to describe the auxiliary function\index{auxiliary function} $\Phi$ that is fundamental to the proof of \autoref{thm:ch2_1}; it is constructed in \autoref{lem:ch2_2} below after a preliminary result on linear equations\index{linear equations} obtained by Dirichlet\index{Dirichlet, P. G. L.}'s box principle\index{Dirichlet's box principle}. Basic estimates relating to $\Phi$ are established in \autoref{lem:ch2_3} and these are then employed for the extrapolation algorithm. Two further supplementary results are given by Lemmas \ref{lem:ch2_6} and \ref{lem:ch2_7}; the former exhibits a simple, but useful, lower bound for a linear form in logarithms, and the latter furnishes a special augmentative polynomial. It will be seen that the inclusion of the $1$ in the enunciation of \autoref{thm:ch2_1}, which yields the algebraic powers of $e$ in the corollaries, entails a relatively large amount of additional complexity in the proof; in particular the final lemma is required essentially to deal with this feature.
+
+\begin{mylemma}{}{ch2_1}
+Let $M, N$ denote integers with $N > M > 0$ and let
+\[
+u_{ij} \quad (1 \le i \le M, 1 \le j \le N)
+\]
+denote integers with absolute values at most $U (\ge 1)$. Then there exist integers $x_1, \dots, x_N$ not all $0$, with absolute values at most $(NU)^{M/(N-M)}$ such that
+\begin{equation} \label{eq:ch2_3}\tag{3}
+\sum_{j=1}^N u_{ij} x_j = 0 \quad (1 \le i \le M).
+\end{equation}
+\end{mylemma}
+
+\begin{proof}
+We put $B = [(NU)^{M/(N-M)}]$, where, as later, $[x]$ denotes the integral part of $x$. There are $(B+1)^N$ different sets of integers $x_1, \dots, x_N$ with $0 \le x_j \le B$ $(1 \le j \le N)$, and for each such set we have
+\[
+-V_i B \le y_i \le W_i B \quad (1 \le i \le M),
+\]
+where $y_i$ denotes the left-hand side of \eqref{eq:ch2_3}, and $-V_i, W_i$ denote the sum of the negative and positive $u_{ij}$ $(1 \le j \le N)$ respectively. Since $V_i + W_i \le NU$, there are at most $(NUB+1)^M$ different sets $y_1, \dots, y_M$. Now $(B+1)^{N-M} > (NU)^M$ and so $(B+1)^N > (NUB+1)^M$. Hence there are two distinct sets $x_1, \dots, x_N$ which correspond to the same set $y_1, \dots, y_M$, and their difference gives the required solution of \eqref{eq:ch2_3}.
+\end{proof}
+
+\begin{mylemma}{}{ch2_2}
+There are integers $p(\lambda_0, \dots, \lambda_n)$, not all $0$, with absolute values at most $e^{h^3}$, such that the function
+\[
+\Phi(z_0, \dots, z_{n-1}) = \sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L p(\lambda_0, \dots, \lambda_n) z_0^{\lambda_0} e^{\lambda_n \beta_0 z_0} \alpha_1^{\gamma_1 z_1} \dots \alpha_{n-1}^{\gamma_{n-1} z_{n-1}},
+\]
+where $\gamma_r = \lambda_r + \lambda_n \beta_r$ ($1 \le r < n$) and $L = [h^{2-1/(4n)}]$, satisfies
+\begin{equation} \label{eq:ch2_4}\tag{4}
+\Phi_{m_0, \dots, m_{n-1}}(l, \dots, l) = 0
+\end{equation}
+for all integers $l$ with $1 \le l \le h$ and all non-negative integers $m_0, \dots, m_{n-1}$ with $m_0 + \dots + m_{n-1} \le h^2$.
+\end{mylemma}
+
+\begin{proof}
+It suffices, in view of \eqref{eq:ch2_1}, to determine the $p(\lambda_0, \dots, \lambda_n)$ such that
+\begin{equation} \label{eq:ch2_5}\tag{5}
+\sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L p(\lambda_0, \dots, \lambda_n) q(\lambda_0, \lambda_n, l) \alpha_1^{\lambda_1 l} \dots \alpha_n^{\lambda_n l} \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}} = 0
+\end{equation}
+for the above ranges of $l, m_0, \dots, m_{n-1}$, where
+\[
+q(\lambda_0, \lambda_n, z) = \sum_{\mu_0=0}^{m_0} \binom{m_0}{\mu_0} \lambda_0(\lambda_0 - 1) \dots (\lambda_0 - \mu_0 + 1) (\lambda_n \beta_0)^{m_0 - \mu_0} z^{\lambda_0 - \mu_0}.
+\]
+On multiplying \eqref{eq:ch2_5} by
+\begin{equation} \label{eq:ch2_6}\tag{6}
+P' = (a_1 \dots a_n)^{Ll} b_0^{m_0} \dots b_{n-1}^{m_{n-1}},
+\end{equation}
+writing
+\[
+\gamma_r^{m_r} = \sum_{\mu_r=0}^{m_r} \binom{m_r}{\mu_r} \lambda_r^{m_r-\mu_r} (\lambda_n \beta_r)^{\mu_r},
+\]
+and substituting from \eqref{eq:ch2_2} for the powers of $a_r \alpha_r$ and $b_r \beta_r$ which result, we obtain
+\[
+\sum_{s_1=0}^{d-1} \dots \sum_{s_n=0}^{d-1} \sum_{t_0=0}^{d-1} \dots \sum_{t_{n-1}=0}^{d-1} A(s,t) \alpha_1^{s_1} \dots \alpha_n^{s_n} \beta_0^{t_0} \dots \beta_{n-1}^{t_{n-1}} = 0,
+\]
+where
+\[
+A(s,t) = \sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L \sum_{\mu_0=0}^{m_0} \dots \sum_{\mu_{n-1}=0}^{m_{n-1}} p(\lambda_0, \dots, \lambda_n) q' q'' q''',
+\]
+and $q', q'', q'''$ are given by
+\begin{align*}
+q' &= \prod_{r=1}^n \left\{ a_r^{(L-\lambda_r)l} a_{r,s_r}^{(\lambda_r l)} \right\}, \\
+q'' &= \prod_{r=1}^{n-1} \left\{ \binom{m_r}{\mu_r} (b_r \lambda_r)^{m_r-\mu_r} \lambda_n^{\mu_r} b_{r,t_r}^{(\mu_r)} \right\}, \\
+q''' &= \binom{m_0}{\mu_0} \lambda_0(\lambda_0-1) \dots (\lambda_0-\mu_0+1) \lambda_n^{m_0-\mu_0} b_n^{\mu_0} l^{\lambda_0-\mu_0} b_{0,t_0}^{(m_0-\mu_0)}.
+\end{align*}
+Thus \eqref{eq:ch2_4} will be satisfied if the $d^{2n}$ equations $A(s,t)=0$ hold. Now these represent linear equations\index{linear equations} in the $p(\lambda_0, \dots, \lambda_n)$ with integer coefficients.
+Since $l \le h$ and $\binom{m_r}{\mu_r} \le 2^{m_r}$, we have
+\begin{align*}
+|q'| &\le \prod_{r=1}^n \left\{ a_r^{(L-\lambda_r)l} c_1^{\lambda_r l} \right\} \le c_2^{Lh}, \\
+|q''| &\le \prod_{r=1}^{n-1} (c_3 L)^{m_r}, \\
+|q'''| &\le 2^{m_0} (\lambda_0 b_n)^{\mu_0} (c_1 \lambda_n)^{m_0 - \mu_0} l^{\lambda_0 - \mu_0} \le (c_3 L)^{m_0} h^L,
+\end{align*}
+and, by virtue of the inequalities
+\[
+(m_0+1)\dots(m_{n-1}+1) \le 2^{m_0+\dots+m_{n-1}} \le 2^{h^2},
+\]
+it follows easily that the coefficient of $p(\lambda_0, \dots, \lambda_n)$ in the linear form $A(s,t)$, namely
+\[
+\sum_{\mu_0=0}^{m_0} \dots \sum_{\mu_{n-1}=0}^{m_{n-1}} q' q'' q''',
+\]
+has absolute value at most $U = (2c_3 L)^{h^2} c_4^{Lh}$. Further, there are at most $h(h^2+1)^n$ distinct sets of integers $l, m_0, \dots, m_{n-1}$, and hence there are $M \le d^{2n} h(h^2+1)^n$ equations $A(s,t)=0$ corresponding to them. Furthermore, there are $N=(L+1)^{n+1}$ unknowns $p(\lambda_0, \dots, \lambda_n)$ and we have $N > h^{(2-1/(4n))(n+1)} > h^{2n+3/2} > 2d^{2n} h(h^2+1)^n \ge 2M$.
+
+Thus, by \autoref{lem:ch2_1}, the equations can be solved non-trivially and the integers $p(\lambda_0, \dots, \lambda_n)$ can be chosen to have absolute values at most
+\[
+NU \le h^{2n+2} (2c_3 L)^{h^2} c_4^{Lh} \le e^{h^3}
+\]
+if $h$ is sufficiently large, as required.
+\end{proof}
+
+\begin{mylemma}{}{ch2_3}
+Let $m_0, \dots, m_{n-1}$ be any non-negative integers with
+\[
+m_0 + \dots + m_{n-1} \le h^2,
+\]
+and let
+\begin{equation} \label{eq:ch2_7}\tag{7}
+f(z) = \Phi_{m_0, \dots, m_{n-1}}(z, \dots, z).
+\end{equation}
+Then, for any number $z$, we have $|f(z)| \le c_5^{h^2+L|z|}$. Further, for any positive integer $l$, either $f(l) = 0$ or $|f(l)| > c_6^{-h^2-Ll}$.
+\end{mylemma}
+
+\begin{proof}
+The function $f(z)$ is given by
+\[
+P \sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L p(\lambda_0, \dots, \lambda_n) q(\lambda_0, \lambda_n, z) \alpha_1^{\lambda_1 z} \dots \alpha_n^{\lambda_n z} \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}},
+\]
+where $q(\lambda_0, \lambda_n, z)$ is defined in \autoref{lem:ch2_2} and
+\[
+P = (\log \alpha_1)^{m_1} \dots (\log \alpha_{n-1})^{m_{n-1}}.
+\]
+We have
+\begin{align*}
+|q(\lambda_0, \lambda_n, z)| &\le (c_7 L)^{m_0} (|z| + 1)^L \sum_{\mu_0=0}^{m_0} \binom{m_0}{\mu_0} = (2c_7 L)^{m_0} (|z| + 1)^L, \\
+\left|\alpha_1^{\lambda_1 z} \dots \alpha_n^{\lambda_n z}\right| &\le c_8^{L|z|}, \quad \left|P \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}}\right| \le (c_9 L)^{m_1+\dots+m_{n-1}},
+\end{align*}
+and the number of terms in the above multiple sum is at most $h^{2n+2}$; the required estimate for $|f(z)|$ now follows by virtue of the inequalities
+\[
+L \le h^2, \quad m_0 + \dots + m_{n-1} \le h^2, \quad |p(\lambda_0, \dots, \lambda_n)| \le e^{h^3}.
+\]
+
+To prove the second assertion, we begin by noting that the number $f' = (P'/P)f(l)$, where $P'$ is defined by \eqref{eq:ch2_6}, is an algebraic integer\index{algebraic integer} with degree at most $d^{2n}$. Further, by estimates as above, we see that any conjugate of $f'$, obtained by substituting arbitrary conjugates for the $\alpha_r, \beta_r$, has absolute value at most $c_{10}^{h^2+Ll}$; and clearly the same bound obtains for $P'/P$. But if $f' \neq 0$, then the norm\footnote{The product of the conjugates; it is plainly a rational integer.} of $f'$ has absolute value at least $1$ and so
+\[
+|f'| \ge c_{10}^{-(h^2+Ll)d^{2n}}.
+\]
+This gives the required result.
+\end{proof}
+
+\begin{mylemma}{}{ch2_4}
+Let $J$ be any integer satisfying $0 \le J \le (8n)^2$. Then \eqref{eq:ch2_4} holds for all integers $l$ with $1 \le l \le h^{1+J/(8n)}$ and all non-negative integers $m_0, \dots, m_{n-1}$ with $m_0 + \dots + m_{n-1} \le h^2/2^J$.
+\end{mylemma}
+
+\begin{proof}
+The result holds for $J = 0$ by \autoref{lem:ch2_2}. Let $K$ be an integer with $0 \le K < (8n)^2$ and assume that the lemma is valid for
+\[
+J = 0, 1, \dots, K.
+\]
+We proceed to prove the proposition for $J = K + 1$.
+It suffices to show that for any integer $l$ with $R_K < l \le R_{K+1}$ and any set of non-negative integers $m_0, \dots, m_{n-1}$ with
+\[
+m_0 + \dots + m_{n-1} \le S_{K+1}
+\]
+we have $f(l) = 0$, where $f(z)$ is defined by \eqref{eq:ch2_7} and
+\[
+R_J = \left[h^{1+J/(8n)}\right], \quad S_J = \left[h^2/2^J\right] \quad (J = 0, 1, \dots).
+\]
+By the inductive hypothesis we see that $f_m(r) = 0$ for all integers $r, m$ with $1 \le r \le R_K$, $0 \le m \le S_{K+1}$; for clearly $f_m(r)$ is given by
+\[
+\left(\frac{\partial}{\partial z_0} + \dots + \frac{\partial}{\partial z_{n-1}}\right)^m \Phi_{m_0, \dots, m_{n-1}}(z_0, \dots, z_{n-1}),
+\]
+evaluated at the point $z_0 = \dots = z_{n-1} = r$, that is by
+\[
+\sum m! (j_0! \dots j_{n-1}!)^{-1} \Phi_{m_0+j_0, \dots, m_{n-1}+j_{n-1}}(r, \dots, r),
+\]
+where the sum is over all non-negative integers $j_0, \dots, j_{n-1}$ with $j_0 + \dots + j_{n-1} = m$, and the derivatives here are $0$ since
+\[
+m_0 + \dots + m_{n-1} + j_0 + \dots + j_{n-1} \le 2S_{K+1} \le S_K.
+\]
+Thus $f(z)/F(z)$, where
+\[
+F(z) = \{(z-1) \dots (z-R_K)\}^{S_{K+1}},
+\]
+is regular within and on the circle $C$ with centre the origin and radius $R = R_{K+1} h^{1/(8n)}$, and hence, by the maximum-modulus principle\index{maximum-modulus principle},
+\begin{equation} \label{eq:ch2_8}\tag{8}
+\theta |F(l)| \ge \Theta |f(l)|,
+\end{equation}
+where $\theta, \Theta$ denote respectively the upper bound of $|f(z)|$ and the lower bound of $|F(z)|$ with $z$ on $C$. Now clearly $\Theta \ge (\frac{1}{2}R)^{R_K S_{K+1}}$ and, by \autoref{lem:ch2_3}, $\theta \le c_5^{h^3+LR}$. Further, we have $|F(l)| \le R_{K+1}^{R_K S_{K+1}}$ and, by \autoref{lem:ch2_3} again, either $f(l) = 0$ or $|f(l)| > c_6^{-h^3-LR}$. But, in view of \eqref{eq:ch2_8}, the latter possibility gives
+\[
+(c_5 c_6)^{h^3+LR} \ge \left(\frac{1}{2} h^{1/(8n)}\right)^{R_K S_{K+1}},
+\]
+and, since $K < (8n)^2$ and
+\[
+LR \le h^{3+K/(8n)} \le 2^{K+3} R_K S_{K+1},
+\]
+the inequality is untenable if $h$ is sufficiently large. Hence $f(l) = 0$, and the lemma follows by induction.
+\end{proof}
+
+\begin{mylemma}{}{ch2_5}
+Writing $\phi(z) = \Phi(z, \dots, z)$, we have
+\begin{equation} \label{eq:ch2_9}\tag{9}
+|\phi_j(0)| < \exp(-h^{8n}) \quad (0 \le j \le h^{8n}).
+\end{equation}
+\end{mylemma}
+
+\begin{proof}
+From \autoref{lem:ch2_4} we see that \eqref{eq:ch2_4} holds for all integers $l$ and non-negative integers $m_0, \dots, m_{n-1}$ satisfying $1 \le l \le X$ and
+\[
+m_0 + \dots + m_{n-1} \le Y
+\]
+where $X = h^{8n}$ and $Y = \left[h^2/2^{(8n)^2}\right]$. Hence, as in the proof of \autoref{lem:ch2_4}, we obtain $\phi_m(r) = 0$ for all integers $r, m$ with $1 \le r \le X$, $0 \le m \le Y$. It follows that $\phi(z)/E(z)$, where
+\[
+E(z) = \{(z-1) \dots (z-X)\}^Y,
+\]
+is regular within and on the circle $\Gamma$ with centre the origin and radius $R = X h^{1/(8n)}$, and so, by the maximum-modulus principle\index{maximum-modulus principle}, we have, for any $w$ with $|w| \le X$,
+\[
+|\phi(w)| \le \xi \Xi^{-1} |E(w)|,
+\]
+where $\xi$ and $\Xi$ denote respectively the upper bound of $|\phi(z)|$ and the lower bound of $|E(z)|$ with $z$ on $\Gamma$. Now clearly
+\[
+|E(w)| \le (2X)^{XY}, \quad |\Xi| \ge \left(\frac{1}{2}R\right)^{XY},
+\]
+and, by \autoref{lem:ch2_3}, $\xi \le c_5^{h^3+LR}$. Hence we obtain
+\[
+|\phi(w)| \le c_5^{h^3+LR} \left(\frac{1}{4} h^{1/(8n)}\right)^{-XY},
+\]
+and since
+\[
+LR \le h^{8n+2} \le 2^{(8n)^2+1} XY,
+\]
+it follows that $|\phi(w)| < e^{-XY}$. Further, by Cauchy's formulae, we have
+\[
+\phi_j(0) = \frac{j!}{2\pi i} \int_{\Lambda} \frac{\phi(w)}{w^{j+1}} \, dw,
+\]
+where $\Lambda$ denotes the circle $|w|=1$ described in the positive sense, and the expression on the right has absolute value at most $j^j e^{-XY}$. The required estimate \eqref{eq:ch2_9} follows at once.
+\end{proof}
+
+\begin{mylemma}{}{ch2_6}
+For any integers $t_1, \dots, t_n$, not all $0$, and with absolute values at most $T$, we have
+\[
+|t_1 \log \alpha_1 + \dots + t_n \log \alpha_n| > c_{11}^{-T}.
+\]
+\end{mylemma}
+
+\begin{proof}
+Let $a_i$ ($1 \le i \le n$) be the leading coefficient in the minimal defining polynomial\index{minimal polynomial of algebraic number} of $\alpha_i$ or $\alpha_i^{-1}$ according as $t_i \ge 0$ or $t_i < 0$. Then
+\[
+\omega = a_1^{|t_1|} \dots a_n^{|t_n|} (\alpha_1^{t_1} \dots \alpha_n^{t_n} - 1)
+\]
+is an algebraic integer\index{algebraic integer} with degree at most $d^n$, and any conjugate of $\omega$, obtained by substituting arbitrary conjugates for $\alpha_1, \dots, \alpha_n$, has absolute value at most $c_{12}^T$. If $\omega = 0$ then
+\[
+\Omega = t_1 \log \alpha_1 + \dots + t_n \log \alpha_n
+\]
+is a multiple of $2\pi i$, and in fact a non-zero multiple since $\log \alpha_1, \dots, \log \alpha_n$ are, by hypothesis, linearly independent over the rationals; hence, in this case, the lemma is valid trivially. Otherwise the norm of $\omega$ has absolute value at least $1$ and thus $|\omega| \ge c_{13}^{-T d^n}$. But since, for any $z$, $|e^z - 1| \le |z| e^{|z|}$, we obtain $|\omega| < |\Omega| e^{|\Omega|} c_{14}^T$ and hence, assuming, as we may, that $|\Omega| \le 1$, the lemma follows.
+\end{proof}
+
+\begin{mylemma}{}{ch2_7}
+Let $R, S$ be positive integers and let $\sigma_0, \dots, \sigma_{R-1}$ be distinct complex numbers\index{numbers}. Define $\sigma$ as the maximum of $1, |\sigma_0|, \dots, |\sigma_{R-1}|$ and define $\rho$ as the minimum of $1$ and the $|\sigma_i - \sigma_j|$ with $0 \le i < j < R$. Then, for any integers $r, s$ with $0 \le r < R, 0 \le s < S$, there exist complex numbers\index{numbers} $w_j$ ($0 \le j < RS$) with absolute values at most $(8\sigma/\rho)^{RS}$ such that the polynomial
+\[
+W(z) = \sum_{j=0}^{RS-1} w_j z^j
+\]
+satisfies $W_j(\sigma_i) = 0$ for all $i, j$ with $0 \le i < R, 0 \le j < S$ other than $i=r, j=s$, and $W_s(\sigma_r) = 1$.
+\end{mylemma}
+
+\begin{proof}
+The required polynomial is given by
+\[
+W(z) = \left(\frac{-1}{s!}\right) \frac{1}{2\pi i} \int_{C_r} \frac{(\zeta - \sigma_r)^s U(z)}{(\zeta - z) U(\zeta)} \, d\zeta,
+\]
+where
+\[
+U(z) = \{(z - \sigma_0) \dots (z - \sigma_{R-1})\}^S
+\]
+and $C_r$ denotes a circle described in the positive sense with centre $\sigma_r$ and sufficiently small radius, less than, say, $\rho$ and $|z - \sigma_r|$ for $z \neq \sigma_r$. The proof depends on two alternative expressions for $W(z)$. First, since the absolute value of the integrand multiplied by $|\zeta|$ decreases to $0$ as $|\zeta| \to \infty$ we have, by Cauchy's residue theorem\index{Cauchy's residue theorem},
+\[
+W(z) = \frac{(z-\sigma_r)^s}{s!} + \frac{U(z)}{s!} \frac{1}{2\pi i} \sum_{\substack{j=0\\j\neq r}}^{R-1} \int_{C_j} \frac{(\zeta-\sigma_r)^s}{(\zeta-z) \, U(\zeta)} \, d\zeta
+\]
+where $C_j$, like $C_r$ above, is a circle about $\sigma_j$ with sufficiently small radius. Clearly the sum over $j$ is a rational function of $z$, regular at $z = \sigma_r$ and, since $U(z)$ has a zero at $z = \sigma_i$ of order $S$, it follows that $W_j(\sigma_i) = 1$ if $i = r$ and $j = s$, and $0$ otherwise for all $0 \le j < S$.
+
+On the other hand, from Cauchy's formulae we obtain
+\[
+W(z) = \frac{-1}{s!\,t!} \left[ \frac{d^t}{d\zeta^t} \frac{(\zeta - \sigma_r)^S \, U(z)}{(\zeta - z) \, U(\zeta)} \right]_{\zeta = \sigma_r},
+\]
+where $t = S - s - 1$, and thus
+\[
+W(z) = (-1)^{t-1} (s!)^{-1} U(z) \sum v(j_0, \dots, j_{R-1}) (\sigma_r - z)^{-j_r - 1},
+\]
+where the sum is over all non-negative integers $j_0, \dots, j_{R-1}$ with $j_0 + \dots + j_{R-1} = t$, and
+\[
+v(j_0, \dots, j_{R-1}) = \prod_{\substack{i=0\\i\neq r}}^{R-1} \binom{S+j_i-1}{j_i} (\sigma_r - \sigma_i)^{-S-j_i}.
+\]
+Now $j_r + 1$ lies between $1$ and $S$ inclusive and so obviously $W(z)$ is a polynomial with degree at most $RS - 1$. Further, we see that $W(z)$, like $U(z)$, has a zero at $z = \sigma_i$ ($i \neq r$) of order $S$, and so $W_j(\sigma_i) = 0$ for all $j < S$. Furthermore, it is clear that the typical factor in the product defining $v$ has absolute value at most $2^{S+j_i-1}\rho^{-S-j_i}$, and thus
+\[
+|v(j_0, \dots, j_{R-1})| \le (2/\rho)^{(R-1)S+j_0+\dots+j_{R-1}} \le (2/\rho)^{RS}.
+\]
+On noting that the coefficients of $(\sigma_r - z)^{-j_r - 1} U(z)$ have absolute values at most $(\sigma + 1)^{RS}$ and observing, in addition, that the number of terms in the above sum does not exceed $S^R$, it follows easily that the coefficients of $W(z)$ have absolute values at most
+\[
+S^R(\sigma+1)^{RS} (2/\rho)^{RS} \le (8\sigma/\rho)^{RS}
+\]
+and this completes the proof of the lemma.
+\end{proof}
+
+\section{Proof of main theorem}
+
+We proceed to show that the inequalities \eqref{eq:ch2_9} obtained in \autoref{lem:ch2_5} cannot all be valid, and the contradiction will establish \autoref{thm:ch2_1}.
+
+We begin by writing $S = L + 1$, $R = S^n$, and noting that any integer $i$ with $0 \le i < RS$ can be expressed uniquely in the form
+\[
+i = \lambda_0 + \lambda_1 S + \dots + \lambda_n S^n,
+\]
+where $\lambda_0, \dots, \lambda_n$ denote integers between $0$ and $L$ inclusive. For each such $i$ we define
+\[
+\nu_i = \lambda_0, \quad p_i = p(\lambda_0, \dots, \lambda_n),
+\]
+and we put $\psi_i = \lambda_1 \log \alpha_1 + \dots + \lambda_n \log \alpha_n$.
+Then clearly
+\begin{equation} \label{eq:ch2_10}\tag{10}
+\phi(z) = \sum_{i=0}^{RS-1} p_i z^{\nu_i} e^{\psi_i z}.
+\end{equation}
+Further, from \autoref{lem:ch2_6}, any two $\psi_i$ which correspond to distinct sets $\lambda_1, \dots, \lambda_n$ differ by at least $c_{11}^{-L}$; in particular, exactly $R$ of the $\psi_i$ are distinct, and we denote the different values, in some order, by $\sigma_0, \dots, \sigma_{R-1}$. If $\sigma, \rho$ are defined as in \autoref{lem:ch2_7}, we have then $\sigma \le c_{14} L$ and $\rho \ge c_{15}^{-L}$.
+
+Let now $t$ be any suffix such that $p_t \neq 0$, let $s = \nu_t$, let $r$ be that suffix for which $\psi_t = \sigma_r$, and let $W(z)$ denote the polynomial given by \autoref{lem:ch2_7}. By the properties of $W(z)$ specified in the lemma, we see that
+\[
+p_t = \sum_{i=0}^{RS-1} p_i W_{\nu_i}(\psi_i).
+\]
+Further, by Leibnitz's theorem\index{Leibnitz's theorem}, we have
+\[
+W_{\nu_i}(\psi_i) = \sum_{j=0}^{RS-1} j(j-1) \dots (j-\nu_i+1) \, w_j \, \psi_i^{j-\nu_i} = \sum_{j=0}^{RS-1} w_j \left[ \frac{d^j}{dz^j} (z^{\nu_i} e^{\psi_i z}) \right]_{z=0},
+\]
+and thus from \eqref{eq:ch2_10} we obtain
+\[
+p_t = \sum_{j=0}^{RS-1} w_j \phi_j(0).
+\]
+Now $RS \le h^{2n+2}$ and so, from \autoref{lem:ch2_5}, it follows that \eqref{eq:ch2_9} holds for all $j$ with $0 \le j \le RS$. Further, by \autoref{lem:ch2_7}, we have
+\[
+|w_j| \le (8\sigma/\rho)^{RS} \le (8c_{14}Lc_{15}^L)^{RS} \le c_{16}^{h^{2n+4}}.
+\]
+Hence, since $|p_t| \ge 1$, we conclude that
+\[
+0 \le \log RS + c_{17}h^{2n+4} - h^{8n}.
+\]
+The inequality is plainly impossible if $h$ is sufficiently large and the contradiction proves the theorem.

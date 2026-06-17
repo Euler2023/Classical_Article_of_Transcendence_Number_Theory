@@ -1,0 +1,198 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{THE ORIGINS}\label{ch:1}
+
+\section{Liouville's theorem}
+
+The theory of transcendental numbers\index{transcendental number} was originated by Liouville\index{Liouville, J.} in his famous memoir\footnote{C.R. 18 (1844), 883--5, 910--11; J. Math. pures appl. 16 (1851), 133--42. For abbreviations see page 130.} of 1844 in which he obtained, for the first time, a class, \textit{tr\`es-\'etendue}, as it was described in the title of the paper, of numbers\index{numbers} that satisfy no algebraic equation with integer coefficients. Some isolated problems pertaining to the subject, however, had been formulated long before this date, and the closely related study of irrational numbers\index{numbers} had constituted a major focus of attention for at least a century preceding. Indeed, by 1744, Euler\index{Euler, L.} had already established the irrationality of $e$, and, by 1761, Lambert\index{Lambert, J. H.} had confirmed the irrationality of $\pi$. Moreover, the early studies of continued fractions\index{continued fractions} had revealed several basic features concerning the approximation of irrational numbers\index{numbers} by rationals. It was known, for instance, that for any irrational $\alpha$ there exists an infinite sequence of rationals $p/q$ ($q>0$) such that\footnote{This is in fact easily verified; for any integer $Q > 1$, two of the $Q+1$ numbers\index{numbers} $1, \{q\alpha\}$ ($0 \le q < Q$), where $\{q\alpha\}$ denotes the fractional part of $q\alpha$, lie in one of the $Q$ subintervals of length $1/Q$ into which $[0, 1]$ can be divided, and their difference has the form $q\alpha - p$.} $|\alpha-p/q|<1/q^2$, and it was known also that the continued fraction of a quadratic irrational is ultimately periodic, whence there exists $c = c(\alpha) > 0$ such that  $|\alpha - p/q| > c/q^2$ for all rationals $p/q$ ($q > 0$). Liouville\index{Liouville, J.} observed that a result of the latter kind holds more generally, and that there exists in fact a limit to the accuracy with which any algebraic number\index{algebraic number}, not itself rational, can be approximated by rationals. It was this observation that provided the first practical criterion whereby transcendental numbers\index{transcendental number}\index{numbers} could be constructed.
+
+\begin{mythm}{Liouville\index{Liouville, J.}'s Theorem\index{Liouville's theorem}}{ch1_1}
+For any algebraic number\index{algebraic number} $\alpha$ with degree $n > 1$, there exists $c = c(\alpha) > 0$ such that
+\[
+|\alpha - p/q| > \frac{c}{q^n}
+\]
+for all rationals $p/q$ ($q > 0$).
+\end{mythm}
+
+The theorem follows almost at once from the definition of an algebraic number\index{algebraic number}. A real or complex number is said to be algebraic if it is a zero of a polynomial with integer coefficients; every algebraic number\index{algebraic number} $\alpha$ is the zero of some such irreducible\footnote{That is, does not factorize over the integers or, equivalently, by Gauss\index{Gauss, C. F.}' lemma\index{Gauss' lemma}, over the rationals.} polynomial, say $P(x)$, unique up to a constant multiple, and the degree of $\alpha$ is defined as the degree of $P(x)$. It suffices to prove the theorem when $\alpha$ is real; in this case, for any rational $p/q$ ($q > 0$), we have by the mean value theorem:
+\[
+-P(p/q) = P(\alpha) - P(p/q) = (\alpha - p/q) P'(\xi)
+\]
+for some $\xi$ between $p/q$ and $\alpha$. Clearly one can assume that $|\alpha - p/q| < 1$, for the result would otherwise be valid trivially; then  $|\xi| < 1 + |\alpha|$ and thus \[|P'(\xi)| < 1/c\] for some $c = c(\alpha) > 0$; hence
+\[
+|\alpha - p/q| > c |P(p/q)|.
+\]
+But, since $P$ is irreducible, we have \[P(p/q) \neq 0\], and the integer $|q^n P(p/q)|$ is therefore at least $1$; the theorem follows. Note that one can easily give an explicit value for $c$; in fact one can take
+\[
+c^{-1} = n^2(1+|\alpha|)^{n-1} H,
+\]
+where $H$ denotes the height of $\alpha$, that is, the maximum of the absolute values of the coefficients of $P(x)$.
+
+A real or complex number that is not algebraic is said to be transcendental. In view of \autoref{thm:ch1_1}, an obvious instance of such a number is given by Liouville\index{Liouville, J.}'s constant $\xi = \sum_{n=1}^{\infty} 10^{-n!}$. For if we write
+\[
+p_j = 10^{j!} \sum_{n=1}^{j} 10^{-n!}, \qquad q_j = 10^{j!} \quad (j = 1, 2, \dots),
+\]
+then $p_j, q_j$ are relatively prime rational integers and we have
+\begin{align*}
+|\xi - p_j/q_j| &= \sum_{n=j+1}^{\infty} 10^{-n!} \\
+&< 10^{-(j+1)!} (1 + 10^{-1} + 10^{-2} + \dots) \\
+&= \frac{10}{9} q_j^{-j-1} < q_j^{-j}.
+\end{align*}
+Many other transcendental numbers\index{transcendental number} can be specified on the basis of Liouville\index{Liouville, J.}'s theorem\index{Liouville's theorem}; indeed any non-terminating decimal in which there occur sufficiently long blocks of zeros, or any continued fraction in which the partial quotients increase sufficiently rapidly, provides an example. Numbers\index{numbers} of this kind, that is real $\xi$ which possess a sequence of distinct rational approximations $p_n/q_n$ ($n=1,2,\dots$) such that $|\xi - p_n/q_n| < 1/q_n^{\omega_n}$, where $\limsup \omega_n = \infty$, have been termed Liouville\index{Liouville, J.} numbers\index{Liouville number}; and, of course, these are transcendental. But other, less obvious, applications of Liouville\index{Liouville, J.}'s idea to the construction of transcendental numbers\index{transcendental number}\index{numbers} have been described; in particular, Maillet\index{Maillet, E.}\footnote{See Bibliography.} used an extension of \autoref{thm:ch1_1} concerning approximations by quadratic irrationals to establish the transcendence of a remarkable class of quasi-periodic continued fractions\index{continued fractions}.
+
+In 1874, Cantor\index{Cantor, G.} introduced the concept of countability and this leads at once to the observation that `almost all` numbers are transcendental. Cantor\index{Cantor, G.}'s work may be regarded as the forerunner of some important metrical theory\index{metrical theory} about which we shall speak in \autoref{ch:9}.
+
+
+\section{Transcendence of e}
+
+In 1873, there appeared Hermite\index{Hermite, Ch.}'s epoch-making memoir entitled \textit{Sur la fonction exponentielle} in which he established the transcendence of $e\index{transcendence of e}$, the natural base for logarithms. The irrationality of $e$ had been demonstrated, as remarked earlier, by Euler\index{Euler, L.} in 1744, and Liouville\index{Liouville, J.} had shown in 1840, directly from the defining series, that in fact neither $e$ nor $e^2$ could be rational or a quadratic irrational; but Hermite\index{Hermite, Ch.}'s work began a new era. In particular, within a decade, Lindemann\index{Lindemann, F.} succeeded in generalizing Hermite\index{Hermite, Ch.}'s methods and, in a classic paper, he proved that $\pi$ is transcendental and solved thereby the ancient Greek problem concerning the quadrature of the circle\index{quadrature of the circle}. The Greeks had sought to construct, with ruler and compasses only, a square with area equal to that of a given circle. This plainly amounts to constructing two points in the plane at a distance $\sqrt{\pi}$ apart, assuming that a unit length is prescribed. But, since all points capable of construction are defined by the intersection of lines and circles, it follows easily that their co-ordinates in a suitable frame of reference are given by algebraic numbers\index{algebraic number}. Thus the transcendence of $\pi$\index{transcendence of  $\pi$} implies that the quadrature of the circle\index{quadrature of the circle} is impossible.
+
+The work of Hermite\index{Hermite, Ch.} and Lindemann\index{Lindemann, F.} was simplified by Weierstrass\index{Weierstrass, K.} in 1885, and further simplified by Hilbert\index{Hilbert, D.}, Hurwitz\index{Hurwitz, A.} and Gordan\index{Gordan, P.} in 1893. We proceed now to demonstrate the transcendence of $e\index{transcendence of e}$ and $\pi\index{transcendence of  $\pi$}$ in a style suggested by these later writers.
+
+\begin{mythm}{Transcendence of $e\index{transcendence of e}$}{ch1_2}
+$e$ is transcendental.
+\end{mythm}
+
+\begin{proof}
+Preliminary to the proof, we observe that if $f(x)$ is any real polynomial with degree $m$, say, and if
+\[
+I(t) = \int_0^t e^{t-u} f(u) \, du,
+\]
+where $t$ is an arbitrary complex number and the integral is taken over the line joining $0$ and $t$, then, by repeated integration by parts, we have\footnote{$f^{(j)}(x)$ denotes the $j$th derivative of $f(x)$.}
+\begin{equation} \label{eq:ch1_1}\tag{1}
+I(t) = e^t \sum_{j=0}^m f^{(j)}(0) - \sum_{j=0}^m f^{(j)}(t).
+\end{equation}
+Further, if $\bar{f}(x)$ denotes the polynomial obtained from $f(x)$ by replacing each coefficient with its absolute value, then
+\begin{equation} \label{eq:ch1_2}\tag{2}
+|I(t)| \le \int_0^t |e^{t-u} f(u)| \, du \le |t| e^{|t|} \bar{f}(|t|).
+\end{equation}
+
+Suppose now that $e$ is algebraic, so that
+\begin{equation} \label{eq:ch1_3}\tag{3}
+q_0 + q_1 e + \dots + q_n e^n = 0
+\end{equation}
+for some integers $n>0$, $q_0 \neq 0$, $q_1, \dots, q_n$. We shall compare estimates for
+\[
+J = q_0 I(0) + q_1 I(1) + \dots + q_n I(n),
+\]
+where $I(t)$ is defined as above with
+\[
+f(x) = x^{p-1} (x-1)^p \dots (x-n)^p,
+\]
+$p$ denoting a large prime. From \eqref{eq:ch1_1} and \eqref{eq:ch1_3} we have
+\[
+J = -\sum_{j=0}^{m} \sum_{k=0}^{n} q_k f^{(j)}(k),
+\]
+where $m = (n+1)p - 1$. Now clearly $f^{(j)}(k) = 0$ if $j < p$, $k > 0$ and if $j < p-1$, $k = 0$, and thus for all $j$, $k$ other than $j = p-1$, $k = 0$, $f^{(j)}(k)$ is an integer divisible by $p!$; further we have
+\[
+f^{(p-1)}(0) = (p-1)! (-1)^{np} (n!)^p,
+\]
+whence, if $p > n$, $f^{(p-1)}(0)$ is an integer divisible by $(p-1)!$ but not by $p!$. It follows that, if also $p > |q_0|$, then $J$ is a non-zero integer divisible by $(p-1)!$ and thus $|J| \ge (p-1)!$. But the trivial estimate $\bar{f}(k) \le (2n)^m$ together with \eqref{eq:ch1_2} gives
+\[
+|J| \le |q_1| e \bar{f}(1) + \dots + |q_n| n e^n \bar{f}(n) \le c^p
+\]
+for some $c$ independent of $p$. The estimates are inconsistent if $p$ is sufficiently large and the contradiction proves the theorem.
+\end{proof}
+
+
+\begin{mythm}{Transcendence of $\pi\index{transcendence of  $\pi$}$}{ch1_3}
+$\pi$ is transcendental.
+\end{mythm}
+
+\begin{proof}
+Suppose the contrary, that $\pi$ is algebraic; then also $\theta = i\pi$ is algebraic. Let $\theta$ have degree $d$, let $\theta_1 \,(=\theta), \theta_2, \dots, \theta_d$ denote the conjugates of $\theta$ and let $l$ signify the leading coefficient in the minimal polynomial\index{minimal polynomial of algebraic number}\footnote{That is, the irreducible polynomial indicated earlier with relatively prime integer coefficients; the coefficient of $x^d$ is called the leading coefficient, and it is assumed positive. The conjugates are the zeros of the polynomial.} defining $\theta$. From Euler\index{Euler, L.}'s equation\index{Euler's equation} $e^{i\pi} = -1$, we obtain
+\[
+(1+e^{\theta_1})(1+e^{\theta_2})\dots(1+e^{\theta_d})=0.
+\]
+The product on the left can be written as a sum of $2^d$ terms $e^{\Theta}$, where
+\[
+\Theta = \epsilon_1 \theta_1 + \dots + \epsilon_d \theta_d,
+\]
+and $\epsilon_j = 0$ or $1$; we suppose that precisely $n$ of the numbers\index{numbers}
+\[
+\epsilon_1 \theta_1 + \dots + \epsilon_d \theta_d
+\]
+are non-zero, and we denote these by $\alpha_1, \dots, \alpha_n$. We have then
+\begin{equation} \label{eq:ch1_4}\tag{4}
+q + e^{\alpha_1} + \dots + e^{\alpha_n} = 0,
+\end{equation}
+where $q$ is the positive integer $2^d - n$.
+
+We shall compare estimates for
+\[
+J = I(\alpha_1) + \dots + I(\alpha_n),
+\]
+where $I(t)$ is defined as in the proof of \autoref{thm:ch1_2} with
+\[
+f(x) = l^{np} x^{p-1} (x-\alpha_1)^p \dots (x-\alpha_n)^p,
+\]
+$p$ again denoting a large prime. From \eqref{eq:ch1_1} and \eqref{eq:ch1_4} we have
+\[
+J = -q \sum_{j=0}^{m} f^{(j)}(0) - \sum_{j=0}^{m} \sum_{k=1}^{n} f^{(j)}(\alpha_k),
+\]
+where $m = (n+1)p - 1$. Now the sum over $k$ is a symmetric polynomial in $l\alpha_1, \dots, l\alpha_n$ with integer coefficients, and it follows from two applications of the fundamental theorem on symmetric functions together with the observation that each elementary symmetric function in $l\alpha_1, \dots, l\alpha_n$ is also an elementary symmetric function in the $2^d$ numbers\index{numbers} $l\Theta$, that it represents a rational integer. Further, since $f^{(j)}(\alpha_k)=0$ when $j < p$, the latter is plainly divisible by $p!$. Clearly also $f^{(j)}(0)$ is a rational integer divisible by $p!$ when $j \neq p-1$, and
+\[
+f^{(p-1)}(0) = (p-1)! (-l)^{np} (\alpha_1 \dots \alpha_n)^p
+\]
+is a rational integer divisible by $(p-1)!$ but not by $p!$ if $p$ is sufficiently large. Hence, if $p > q$, we have $|J| \ge (p-1)!$. But from \eqref{eq:ch1_2} we obtain
+\[
+|J| \le |\alpha_1| e^{|\alpha_1|} \bar{f}(|\alpha_1|) + \dots + |\alpha_n| e^{|\alpha_n|} \bar{f}(|\alpha_n|) \le c^p
+\]
+for some $c$ independent of $p$. The estimates are inconsistent for $p$ sufficiently large, and the contradiction proves the theorem.
+\end{proof}
+
+
+\section{Lindemann's theorem}
+
+The two preceding theorems, that is the transcendence of $e\index{transcendence of e}$ and $\pi\index{transcendence of  $\pi$}$, are special cases of a much more general result which Lindemann\index{Lindemann, F.} sketched in his original memoir of 1882, and which was later rigorously demonstrated by Weierstrass\index{Weierstrass, K.}.
+
+\begin{mythm}{Lindemann\index{Lindemann, F.}'s Theorem\index{Lindemann's theorem}}{ch1_4}
+For any distinct algebraic numbers\index{algebraic number} $\alpha_1, \dots, \alpha_n$ and any non-zero algebraic numbers\index{algebraic number} $\beta_1, \dots, \beta_n$ we have
+\begin{equation*} 
+\beta_1 e^{\alpha_1} + \dots + \beta_n e^{\alpha_n} \neq 0.
+\end{equation*}
+\end{mythm}
+
+It follows at once from \autoref{thm:ch1_4} that $e^{\alpha_1}, \dots, e^{\alpha_n}$ are algebraically independent for all algebraic $\alpha_1, \dots, \alpha_n$ linearly independent over the rationals; this form of the result is generally known as Lindemann\index{Lindemann, F.}'s theorem\index{Lindemann's theorem}. As further immediate corollaries of \autoref{thm:ch1_4}, one sees that $\cos \alpha$, $\sin \alpha$ and $\tan \alpha$ are transcendental for all algebraic $\alpha \neq 0$, and moreover $\log \alpha$ is transcendental for algebraic $\alpha$ not $0$ or $1$.
+
+Suppose now that the theorem is false, so that
+\begin{equation} \label{eq:ch1_5}\tag{5}
+\beta_1 e^{\alpha_1} + \dots + \beta_n e^{\alpha_n} = 0.
+\end{equation}
+One can clearly assume, without loss of generality, that the $\beta$'s are rational integers, for this can be ensured by multiplying \eqref{eq:ch1_5} by all the expressions obtained on allowing $\beta_1, \dots, \beta_n$ on the left to run independently through their respective conjugates and then further multiplying by a common denominator. Furthermore, one can assume that there exist integers $0 = n_0 < n_1 < \dots < n_r = n$, such that $\alpha_{n_t+1}, \dots, \alpha_{n_{t+1}}$ is a complete set of conjugates for each $t$, and
+\[
+\beta_{n_t+1} = \dots = \beta_{n_{t+1}}.
+\]
+For certainly $\alpha_1, \dots, \alpha_n$ are zeros of some polynomial with integer coefficients and degree $N$, say, and if $\alpha_{n+1}, \dots, \alpha_N$ denote the remaining zeros, we have
+\[
+\prod (\beta_1 e^{\alpha_{k_1}} + \dots + \beta_N e^{\alpha_{k_N}}) = 0,
+\]
+where the product is over all permutations $k_1, \dots, k_N$ of $1, \dots, N$ and $\beta_{n+1} = \dots = \beta_N = 0$. The left-hand side can be expressed as an aggregate of terms $\exp(h_1 \alpha_1 + \dots + h_N \alpha_N)$ with integer coefficients, where $h_1, \dots, h_N$ are integers with sum $N!$, and clearly $h_1 \alpha_{k_1} + \dots + h_N \alpha_{k_N}$ taken over all permutations $k_1, \dots, k_N$ of $1, \dots, N$ is a complete set of conjugates; the condition concerning the equality of the $\beta$'s follows by symmetry. Note also that, after collecting terms with the same exponents, one at least of the new coefficients $\beta$ will be non-zero; this is readily confirmed by considering the coefficient of the term with exponent that is highest according to the ordering of the complex numbers\index{numbers} $z = x + iy$ given by $z_1 < z_2$ if $x_1 < x_2$ or $x_1 = x_2$ and $y_1 < y_2$.
+
+Let now $l$ be any positive integer such that $l\alpha_1, \dots, l\alpha_n$ and $l\beta_1, \dots, l\beta_n$ are algebraic integers\index{algebraic integer},\footnote{An algebraic number\index{algebraic number} is said to be an algebraic integer\index{algebraic integer} if the leading coefficient in its minimal defining polynomial\index{minimal polynomial of algebraic number} is $1$; if $\alpha$ is an algebraic number\index{algebraic number} and $l$ is the leading coefficient in its minimal polynomial\index{minimal polynomial of algebraic number}, then $l\alpha$ is an algebraic integer\index{algebraic integer}.} and let
+\[
+f_i(x) = l^{np} \{(x-\alpha_1)\dots(x-\alpha_n)\}^p/(x-\alpha_i) \quad (1 \le i \le n),
+\]
+where $p$ denotes a large prime. We shall compare estimates for $|J_1 \dots J_n|$, where
+\[
+J_{i} = \beta_{1} I_{i}(\alpha_{1}) + \dots + \beta_{n} I_{i}(\alpha_{n}) \quad (1 \le i \le n),
+\]
+and $I_i(t)$ is defined as in the proof of \autoref{thm:ch1_2}, with $f = f_i$. From \eqref{eq:ch1_1} and the target algebraic relation we have
+\[
+J_i = -\sum_{j=0}^m \sum_{k=1}^n \beta_k f_i^{(j)}(\alpha_k),
+\]
+where $m = np - 1$. Further, $f_i^{(j)}(\alpha_k)$ is an algebraic integer\index{algebraic integer} divisible\footnote{That is, the quotient is an algebraic integer\index{algebraic integer}.} by $p!$ unless $j = p - 1$, $k = i$; and in the latter case we have
+\[
+f_i^{(p-1)}(\alpha_i) = l^{np}(p-1)! \prod_{\substack{k=1 \\ k \neq i}}^n (\alpha_i - \alpha_k)^p,
+\]
+so that it is an algebraic integer\index{algebraic integer} divisible by $(p-1)!$ but not by $p!$ if $p$ is sufficiently large. It follows that $J_i$ is a non-zero algebraic integer\index{algebraic integer} divisible by $(p-1)!$. Further, by the initial assumptions, we have
+\[
+J_{i} = -\sum_{j=0}^{m} \sum_{t=0}^{r-1} \beta_{n_{t+1}} \{ f_{i}^{(j)}(\alpha_{n_t+1}) + \dots + f_{i}^{(j)}(\alpha_{n_{t+1}}) \},
+\]
+and here each sum over $t$ can be expressed as a polynomial in $\alpha_i$ with rational coefficients independent of $i$; for clearly, since $\alpha_1, \dots, \alpha_n$ is a complete set of conjugates, the coefficients of $f_i^{(j)}(x)$ can be expressed in this form. Thus $J_1 \dots J_n$ is rational, and so in fact a rational integer divisible by $((p-1)!)^n$. Hence we have $|J_1 \dots J_n| \ge ((p-1)!)^n$. But \eqref{eq:ch1_2} gives
+\[
+|J_i| \le \sum_{k=1}^n |\beta_k| |\alpha_k| e^{|\alpha_k|} \bar{f}_i(|\alpha_k|) \le c^p
+\]
+for some $c$ independent of $p$, and the inequalities are inconsistent if $p$ is sufficiently large. The contradiction proves the theorem.
+
+The above proofs are simplified versions of the original arguments of Hermite\index{Hermite, Ch.} and Lindemann\index{Lindemann, F.} and their motivation may seem obscure; indeed there is no explanation \textit{a priori} for the introduction of the functions $I$ and $f$. A deeper insight can best be obtained by studying the basic memoir of Hermite\index{Hermite, Ch.} where, in modified form, the functions first occurred, but it may be said that they relate to generalizations, concerning simultaneous approximation, of the convergents in the continued fraction expansion of $e^x$. Further light on the topic will be shed by Chapters \ref{ch:10} and \ref{ch:11}. Lindemann\index{Lindemann, F.}'s theorem\index{Lindemann's theorem} formed the summit of the accomplishments of the last century, and our survey of the period is herewith concluded.

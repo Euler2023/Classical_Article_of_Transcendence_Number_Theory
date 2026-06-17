@@ -1,0 +1,123 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{METRICAL THEORY}\label{ch:9}
+
+\section{Introduction}\label{sec:ch9_1}
+
+As remarked previously, Mahler\index{Mahler, K.} conjectured in 1932 that almost all real numbers\index{numbers} are $S$-numbers\index{numbers} of type 1 and almost all complex numbers\index{numbers} are $S$-numbers\index{numbers} of type $\frac{1}{2}$.\footnote{M.A. 106 (1932), 131--9.} He originally proved that, certainly, they are both of type at most 4, and 4 was reduced to 3 and $\frac{5}{2}$ in the real and complex cases respectively by Koksma\index{Koksma, J. F.} in 1939. LeVeque\index{LeVeque, W. J.} improved these in 1953 to 2 and $\frac{5}{3}$, and Volkmann\index{Volkmann, B.} further reduced them in 1964 to $\frac{4}{3}$ and $\frac{2}{3}$. Moreover, proofs of Mahler\index{Mahler, K.}'s conjecture\index{Mahler's conjecture} in the special cases with $n=2$ and $n=3$ were given by Kubilyus\index{Kubilyus, I. P.}, Kasch\index{Kasch, F.} and Volkmann\index{Volkmann, B.}.\footnote{Bibliography; this contains references to the earlier works.} Finally, in 1965, Sprind\v{z}uk\index{Sprindzhuk, V. G.} obtained a complete proof of Mahler\index{Mahler, K.}'s conjecture\index{Mahler's conjecture} for all $n$, and indeed with the best possible value of $\omega_n$.
+
+We shall establish here a refinement of Sprind\v{z}uk\index{Sprindzhuk, V. G.}'s result which was derived by the author in 1966.\footnote{Proc. Roy. Soc. London, A 292 (1966), 92--104.} Denoting by $\psi(h)$ a positive monotonic decreasing function of the integer variable $h>0$ such that $\sum \psi(h)$ converges, we prove:
+
+\begin{mythm}{}{ch9_1}
+For almost all real $\theta$ and any positive integer $n$ there exist only finitely many polynomials $P$ with degree $n$ and integer coefficients such that $|P(\theta)| < (\psi(h))^n$, where $h$ denotes the height of $P$.
+\end{mythm}
+
+A similar result holds for almost all complex numbers\index{numbers} $\theta$ with the exponent $n$ replaced by $\frac{1}{2}(n-1)$. It is clear from, for instance, Minkowski's linear forms theorem\index{Minkowski's linear forms theorem}, that the assertion would not remain valid with $\psi(h) = 1/h$, and indeed it is easily verified that almost no $\theta$ would have the properties required in the case $n = 1$ if $\sum \psi(h)$ were divergent. But it seems likely that the function $(\psi(h))^n$ can be replaced by $h^{-n+1}\psi(h)$, and this conjecture has in fact been established for $n \leq 3$.
+
+The theorem has recently been applied to evaluate the Hausdorff dimension\index{Hausdorff dimension} of certain sets; in particular, it has been employed to show that, for any $\lambda \geq 1$ and any positive integer $n$, the set of all real $\xi$ such that, for any $\lambda' < \lambda$, there exist infinitely many algebraic numbers\index{algebraic number} $\beta$ with degree at most $n$ satisfying $|\xi - \beta| < b^{-(n+1)\lambda'}$, where $b$ denotes the height of $\beta$, has dimension $1/\lambda$.\footnote{Proc. London Math. Soc. 21 (1970), 1--11 (A. Baker\index{Baker, R. C.}\index{Baker, A.} and W. M. Schmidt\index{Schmidt, W. M.}).} This generalizes a well-known theorem of Jarn\'{i}k and Besicovitch\index{Besicovitch, A. S.}; and it immediately implies the result mentioned in the last chapter on the existence of $S$-numbers\index{numbers} of arbitrarily large type.
+
+Various avenues for further investigation are suggested by the work here. For instance it would be of interest to obtain results analogous to \autoref{thm:ch9_1} for polynomials in several variables, and in fact some progress in this connexion, more especially for cubic polynomials in two unknowns, has been made by R. Slesoraitene\index{Slesoraitene, R.}.\footnote{See various papers in Litovsk. Mat. Sb. since 1969; see also Sprind\v{z}uk\index{Sprindzhuk, V. G.}'s address in Actes, Congr\`{e}s international math. (1970).} In another direction, it follows from \autoref{thm:ch9_1}, by a classical transference principle, that, for any $\epsilon > 0$ and any positive integer $n$, there exist, for almost all real $\theta$, only finitely many positive integers $q$ such that
+\[\max \|q\theta^j\| < q^{-(1/n)-\epsilon} \quad (1 \leqslant j \leqslant n),\]
+and this raises the problem of confirming the stronger proposition in which the above inequality is replaced by
+\[q^{1+\epsilon}\|q\theta\|\ldots\|q\theta^n\|<1,\]
+where the notation is that of \autoref{thm:ch7_1}. The problem seems quite difficult.
+
+\section{Zeros of polynomials}\label{sec:ch9_2}
+
+We record here, for later reference, some simple inequalities concerning the distances between the zeros of polynomials. Let $P(x)$ be a polynomial with degree $n$ and distinct zeros $\kappa_1, \ldots, \kappa_n$. We note first that if $\theta$ is any real number with $|\theta - \kappa_1| \leq |\theta - \kappa_j|$ for all $j$ then
+\[|P(\theta)| \geqslant 2^{-n} |P'(\kappa_1)| |\theta - \kappa_1|, \tag{1}\label{eq:ch9_1}\]
+where $P'$ denotes the derivative of $P$. For clearly $|\kappa_1 - \kappa_j| \leq 2 |\theta - \kappa_j|$, and we have $P'(\kappa_1) = a(\kappa_1 - \kappa_2) \dots (\kappa_1 - \kappa_n),$ where $a$ denotes the leading coefficient of $P$. Similarly we obtain
+\[|P(\theta)| |\kappa_1 - \kappa_2| \ge 2^{-n} |P'(\kappa_1)| |\theta - \kappa_1|^2. \tag{2}\label{eq:ch9_2}\]
+Further we observe that if $|\theta - \kappa_1| \leq |\kappa_1 - \kappa_j|$ for all $j \geq 2$ then $|\theta - \kappa_j| \leq 2|\kappa_1 - \kappa_j|$ and so
+\[|P(\theta)| \leq 2^n |P'(\kappa_1)| |\theta - \kappa_1|. \tag{3}\label{eq:ch9_3}\]
+
+Now suppose that $P(x), Q(x)$ are polynomials with integer coefficients and degree $n \ge 2$; let their leading coefficients be $a, b$ and their zeros be $\kappa_1, \ldots, \kappa_n$ and $\lambda_1, \ldots, \lambda_n$ respectively, all of which are supposed to be distinct and have absolute values at most $K$. We shall write, for brevity,
+\[p = |a^{n-1}(\kappa_1 - \kappa_2) \dots (\kappa_1 - \kappa_n)|,\]
+and we shall denote by $q$ the analogous function of $Q$. Our purpose is to prove that if $|\kappa_1 - \kappa_2| \leq |\kappa_1 - \kappa_j|$ for all $j \geq 2$, if $|\kappa_1 - \kappa_2| < p^{-\frac{1}{2}}$, and if also the analogous inequalities hold for $Q$, then
+\[|\kappa_1 - \lambda_1| \gg \min(p^{-\frac{1}{2}}, q^{-\frac{1}{2}}), \tag{4}\label{eq:ch9_4}\]
+where the implied constant depends only on $n$ and $K$.
+
+For the proof, we suppose that \eqref{eq:ch9_4} does not hold and we shall obtain a contradiction if the implied constant is sufficiently large. First we observe that $|\kappa_1 - \kappa_j| \gg p^{-\frac{1}{2}}$ for all $j \geqslant 3$. This is a consequence of the fact that the discriminant of $P$, namely
+\[a^{2n-2}\prod_{i< j}(\kappa_i-\kappa_j)^2,\]
+has absolute value at least 1; for, in view of the inequality $|\kappa_i - \kappa_j| \le 2K$ valid for all $i, j$, it follows that
+\[\left|(\kappa_1-\kappa_2)(\kappa_2-\kappa_j)\right|\gg p^{-1}\quad (j\geqslant 3),\]
+and, by hypothesis, we have $|\kappa_2 - \kappa_j| \leq 2 |\kappa_1 - \kappa_j|$ and $|\kappa_1 - \kappa_2| < p^{-\frac{1}{2}}$.
+Hence, from the converse of \eqref{eq:ch9_4}, we obtain $|\kappa_1 - \kappa_j| \gg |\kappa_1 - \lambda_1|$ and so
+\[|\kappa_j - \lambda_1| \leq |\kappa_j - \kappa_1| + |\kappa_1 - \lambda_1| \ll |\kappa_j - \kappa_1|\]
+for all $j \ge 3$. This gives
+\[\left|a^{n-1}P(\lambda_1)\right| \ll p\left|(\kappa_1 - \lambda_1)(\kappa_2 - \lambda_1)\right|, \tag{5}\label{eq:ch9_5}\]
+and, plainly, an analogous inequality holds for $Q$.
+
+We now use the fact that the absolute value of the resultant of $P$ and $Q$, namely $|ab|^n \prod |\kappa_i - \lambda_j|$, is at least 1. Since $|\kappa_i - \lambda_j| \ll 1$ this gives $|ab|^{n-1} |P(\lambda_1) Q(\kappa_1) (\kappa_2 - \lambda_2) (\kappa_1 - \lambda_1)^{-1}| \gg 1$ and so, from \eqref{eq:ch9_5} and its analogue for $Q$, we obtain
+\[\left| (\kappa_1 - \lambda_1) (\kappa_1 - \lambda_2) (\kappa_2 - \lambda_1) (\kappa_2 - \lambda_2) \right| \geqslant (pq)^{-1}. \tag{6}\label{eq:ch9_6}\]
+Further, by the converse of \eqref{eq:ch9_4} and the hypothesis $|\kappa_1 - \kappa_2| \leq p^{-\frac{1}{2}}$ we have $|\kappa_1 - \lambda_1| \ll p^{-\frac{1}{2}}$ and similarly $|\kappa_1 - \lambda_2| \ll q^{-\frac{1}{2}}$. Furthermore we see that, since $p \gg 1, q \gg 1$, we have
+\[|\kappa_2 - \lambda_1| \leq |\kappa_1 - \kappa_2| + |\kappa_1 - \lambda_1| \ll p^{-\frac{1}{2}}\]
+and similarly $|\kappa_2 - \lambda_2| \ll q^{-\frac{1}{2}}$. But this together with \eqref{eq:ch9_6} implies the validity of \eqref{eq:ch9_4}, contrary to supposition. The contradiction proves the assertion.
+
+\section{Null sets}\label{sec:ch9_3}
+
+Let now $\psi$ be any function as in \autoref{sec:ch9_1} and, 
+for any positive integer $n$ and any real $\theta$, let $\mathscr{P}(n, \psi, \theta)$ be the set of all polynomials $P$ satisfying the hypotheses of \autoref{thm:ch9_1}. The theorem asserts that the set $\mathscr{R}(n, \psi)$ of all $\theta$ for which $\mathscr{P}(n, \psi, \theta)$ contains infinitely many elements has measure zero. We shall show here that it suffices to establish the following modified result.
+
+\emph{The set $\mathscr{S}(n, \psi)$ of all $\theta$ for which $\mathscr{P}(n, \psi, \theta)$ contains infinitely many polynomials $P$ that are (i) irreducible and (ii) have leading coefficients which exceed the absolute values of the remaining coefficients, has measure zero.}
+
+We begin by observing that, for any $\theta$ in $\mathscr{R}(n, \psi)$, there exists, by Lemma 1 of Chapter 8, an integer $j$ with $0 \le j \le n$ such that infinitely many polynomials $P$ in $\mathscr{P}(n, \psi, \theta)$ satisfy $|P(j)| \le h$, where $h$ is the height of $P$; and by taking $-P$ in place of $P$ if necessary we can suppose that $P(j) > 0$. It clearly suffices to show that the set of $\theta$ in $\mathscr{R}(n, \psi)$ which corresponds to a fixed integer $j$ has measure zero, and this is equivalent to proving that the translate, consisting of all numbers\index{numbers} $\xi = \theta - j$, has measure zero. Now $\xi$ satisfies $|P(\xi+j)| < (\psi(h))^n$ for all $P$ in $\mathscr{P}(n, \psi, \theta)$, and $P(x+j)$ is a polynomial in $x$ with height at most $Ch$ for some $C$ depending only on $n$. Further, there is a positive monotonic decreasing function $\sigma(h)$ such that $\sum \sigma(h)$ converges, $\sigma(h) > \psi(h)$ and $\sigma(h)/\sigma(Ch) \le 2C^n$; indeed one can take $\sigma(1) = 2\psi(1)$ and
+\[h(h-1) \sigma(h) = \sum_{k=2}^{h} (2k-2) \psi(k) \quad (h \geqslant 2),\]
+whence
+\[\sum_{h=1}^{n} \sigma(h) = 2n^{-1} \sum_{m=1}^{n} \sum_{h=1}^{m} \psi(h),\]
+and so $\sum \sigma(h) = 2\sum \psi(h)$. Hence $\xi$ is an element of $\mathscr{R}(n, \phi)$, where $\phi = 2C^n\sigma$, and infinitely many polynomials $P$ in $\mathscr{P}(n, \phi, \xi)$ have constant coefficients exceeding $ch$ for some $c > 0$, depending only on $n$. For any such $P$, the polynomial $Q(x) = x^n P(1/x)$ has leading coefficient exceeding $ch$ and hence $R(x) = Q(c^{-1}z)$ satisfies (ii), assuming that $c < 1$. Moreover, $R(x)$ has height at most $c^{-n}h$, and also integer coefficients if $c^{-1}$ is an integer. Furthermore, for any positive integer $k$ and any $\xi$ as above with $|\xi| > k^{-1}$, the number $\eta = c\xi^{-1}$ satisfies
+\[|R(\eta)| < (k\phi(h))^n.\]
+
+It is plainly enough to prove that the set of all such $\eta$ has measure zero; for given a covering of the $\eta$'s by intervals $I_1, I_2, \ldots$, we obtain a covering $I'_1, I'_2, \ldots$ of the $\xi$'s, where $I'_j$ consists of all $cx^{-1}$ with $x$ in $I_j$ and with $|x| > k^{-1}$, and clearly we have $|I'_j| \leq k^2 |I_j|$. Thus, on utilizing again the above construction of $\sigma$, we see that it is necessary now only to show that the set $\mathscr{T}(n, \psi)$ of all $\theta$ for which $\mathscr{P}(n, \psi, \theta)$ contains infinitely many polynomials which satisfy (ii) but not necessarily (i), has measure zero.
+
+Here we use induction. 
+Clearly the sets $\mathscr{S}(1,\psi)$ and $\mathscr{T}(1,\psi)$ are identical and so the required result holds for $n = 1$. We assume that, for any $\psi$, the sets $\mathscr{R}(m, \psi)$ with $m < n$ are null and that also $\mathscr{S}(n, \psi)$ is null, 
+and we proceed to prove that then each $\mathscr{T}(n, \psi)$ is null. 
+For every $\theta$ in $\mathscr{T}(n, \psi)$, infinitely many $P$ in $\mathscr{P}(n, \psi, \theta)$ satisfy (ii), 
+and if infinitely many of these were irreducible then $\theta$ would be in $\mathscr{S}(n, \psi)$ and the required result would follow. Hence we shall suppose that all the $P$ are reducible. 
+Then each contains as a factor at least one polynomial $Q$ with integer coefficients and degree $m < n$ satisfying $|Q(\theta)| < (\psi(h))^n$; 
+further, infinitely many of the $P$ correspond to a fixed integer $m$ and, 
+unless $\theta$ is algebraic,
+there will be infinitely many distinct polynomials among the associated $Q$.
+Now appealing to \autoref{lem:ch8_2} of \autoref{ch:8} and employing for a third time an averaging construction as above, 
+we conclude that a function $\phi$ exists such that every $\theta$ in $\mathscr{F}(n,\psi)$ is in one at least of the sets $\mathscr{R}(m,\phi)$ with $m < n$. 
+Each of these is null by the inductive hypothesis and so $\mathscr{T}(n, \psi)$ is null, as required.
+
+\section{Intersections of intervals}\label{sec:ch9_4}
+
+We establish here a further simple measure-theoretical result needed for the proof of \autoref{thm:ch9_1}.
+
+For each positive integer $h$, let $\mathscr{U}(h)$ be a finite set of real closed intervals, and let $\mathscr{V}(h)$ be a subset of $\mathscr{U}(h)$ such that for each $I$ in $\mathscr{V}(h)$ there is a $J \neq I$ in $\mathscr{U}(h)$ with $|I \cap J| \geq \frac{1}{2}|I|$. Further let $W$ and $w$ be the set of points contained in infinitely many $V(h)$ and in infinitely many $v(h)$ respectively, where $V(h)$ is the union of the points of the intervals $I$ of $\mathscr{V}(h)$, and $v(h)$ is that of the intervals $I \cap J$ with $I$ in $\mathscr{V}(h)$ and $J \neq I$ in $\mathscr{U}(h)$. Our purpose is to prove that if $w$ is null then so also is $W$. We have
+\[w = \bigcap_{1 \leq m < \infty} \bigcup_{h \geq m} v(h),\]
+and thus, if $w$ is null, then, for any $\varepsilon > 0$, there is an integer $m$ such that, for all $n \ge m$, the union of the $v(h)$, taken over all $h$ with $m \le h \le n$, has measure at most $\varepsilon$. Now this union consists of a finite set of disjoint intervals and, by the definition of $\mathscr{V}$, we see that the set obtained on expanding each of these intervals symmetrically about its centre to three times its length will cover all the $V(h)$ taken over the same range of $h$. Thus, for every $n \ge m$, the latter set has measure at most $3\varepsilon$, and, on noting that $W$ can be expressed like $w$ above with $V$ in place of $v$, the assertion follows.
+
+\section{Proof of main theorem}\label{sec:ch9_5}
+
+By virtue of \autoref{sec:ch9_3}, it suffices to show that every set $\mathscr{S}(n, \psi)$ has measure zero. It is easily verified that $\mathscr{S}(1, \psi)$ is null and we shall assume that $\mathscr{S}(m, \psi)$ is null for $m < n$; we proceed to establish the result for $m = n \ge 2$.
+
+Let $\mathscr{Q}(n,h)$ be the set of all polynomials with degree $n$, integer coefficients and height $h$ satisfying (i) and (ii) of \autoref{sec:ch9_3}. Further let $\kappa_1, \ldots, \kappa_n$ be the zeros of any element $P$ of $\mathscr{Q}(n,h)$, and let
+\[\tau_j = \min |\kappa_i - \kappa_j|,\]
+where the minimum is taken over all $i \neq j$. By (i) we have $\tau_j > 0$ and from (ii) we obtain $|\kappa_j| \leq n$, since clearly
+\[|P(x)-hx^n|\leqslant nh\max(1,|x|^{n-1}).\]
+
+Suppose now that $\psi$ is any function as in \S~1, let
+\[\nu_j=2^n\left|P'(\kappa_j)\right|^{-1}(\psi(h))^n\quad (1\leqslant j\leqslant n),\]
+and let $I_j = I_j(P)$ be the interval (possibly empty) formed by the intersection of the real axis with the closed disc in the complex plane with centre $\kappa_j$ and radius
+\[\mu_j = \min \{ \nu_j, (\tau_j \nu_j)^{\frac{1}{2}} \}.\]
+From \eqref{eq:ch9_1} and \eqref{eq:ch9_2} we see that every element of $\mathscr{S}(n,\psi)$ is contained in infinitely many $\mathscr{J}_j(h)$ for some $j$, where $\mathscr{J}_j(h)$ denotes the set of all $I_j(P)$ as $P$ runs through the elements of $\mathscr{Q}(n,h)$. We proceed to prove that the set of points contained in infinitely many $\mathscr{J}_1(h)$ has measure zero; the proof when $j > 1$ is similar and this will therefore suffice to establish the theorem. There is now no loss of generality in assuming that the zeros of $P$ are so ordered that $\tau_1 = |\kappa_1 - \kappa_2|$.
+
+We divide the polynomials $P$ in $\mathscr{Q}(n,h)$ into two disjoint classes, placing $P$ in $\mathscr{A}(n,h)$ if $\tau_1 \geq p^{-\frac{1}{2}}$ and in $\mathscr{B}(n,h)$ otherwise, where $p$ is defined as in \autoref{sec:ch9_2}, with $a=h$. We denote by $\mathscr{K}(h)$ and $\mathscr{L}(h)$ the union of all $I_1(P)$ as $P$ runs through the elements of $\mathscr{A}(n,h)$ and $\mathscr{B}(n,h)$ respectively. Then clearly the union of $\mathscr{K}(h)$ and $\mathscr{L}(h)$ is just $\mathscr{J}_1(h)$ and it suffices to prove that the set $\mathscr{K}$ of points contained in infinitely many $\mathscr{K}(h)$ and likewise the set $\mathscr{L}$ of points contained in infinitely many $\mathscr{L}(h)$ have measure zero.
+
+We prove first that $\mathscr{K}$ is null. Since $\psi(h)$ is positive monotonic decreasing and $\sum \psi(h)$ converges, we have $h\psi(h) \to 0$ as $h \to \infty$ and so there is no loss of generality in assuming that $\psi(h) < h^{-1}$ for all $h$. For each $P$ in $\mathscr{A}(n,h)$, let $I=I(P)$ be the interval formed by the intersection of the real axis with the closed disc in the complex plane with centre $\kappa_1$ and radius $(\psi(h))^{-1}\mu_1$. Clearly $I_1 \subset I$ and $|I_1| \leq \psi(h) |I|$. We denote by $\mathscr{U}(h)$ the set of all $I(P)$ and by $\mathscr{V}(h)$ the maximal subset of $\mathscr{U}(h)$ possessing the property specified in \autoref{sec:ch9_4}. Retaining the notation of that section, we proceed now to show that $w$ is null. First we observe that every $\theta$ in $I(P)$ satisfies
+\[\left|\theta - \kappa_{1}\right| \leq (\psi(h))^{-1} \nu_{1} \leq h^{-n+1} |P'(\kappa_{1})|^{-1} = \left|(\kappa_{1} - \kappa_{2}) p\right|^{-1}, \tag{7}\label{eq:ch9_7}\]
+provided that $h$ is sufficiently large; and the number on the right is at most $|\kappa_1 - \kappa_2|$ by the definition of $\mathscr{A}(n, h)$. Hence \eqref{eq:ch9_3} holds and so
+\[\big|P(\theta)\big|\leqslant 2^n\, \big|P'(\kappa_1)\big|\, (\psi(h))^{-1}\, \nu_1=\, 2^{2n}(\psi(h))^{n-1}.\]
+Now if $\theta$ were also a point of $I(Q)$ for some $Q \neq P$ in $\mathscr{A}(n,h)$ then the polynomial $R = P - Q$ would satisfy $|R(\theta)| \leq 2^{2n+1} (\psi(h))^{n-1}$. Further, from (ii), we see that $R$ has degree at most $n-1$ and height at most $2h$. But, for every $\theta$ in $w$, there exist infinitely many distinct $R$ with these properties and thus, on appealing again to the construction in \autoref{sec:ch9_3}, it follows that $w$ is contained in the union of sets $\mathscr{R}(m,\phi)$ for a suitable function $\phi$, where $1 \leq m < n$. Our inductive hypothesis together with the result of \autoref{sec:ch9_3} shows that $\mathscr{R}(m,\phi)$ is null for each $m$, and hence $w$ is null, as required.
+
+We conclude from \autoref{sec:ch9_4} that $W$ is null and thus to complete the proof that $\mathscr{K}$ is null it is necessary only to verify that the set of points in infinitely many $\mathscr{K}(h)$ (with those $I_1(P)$ excluded for which the corresponding $I$ is in $\mathscr{V}(h)$) has measure zero. Now if $I(P)$ and $I(Q)$ are distinct elements not contained in $\mathscr{V}(h)$ then
+\[|I(P) \cap I(Q)| < \frac{1}{2} \min(|I(P)|, |I(Q)|).\]
+This implies, as one readily verifies, that no point can be contained in three distinct intervals $I(P)$ not in $\mathscr{V}(h)$. Further, all $I(P)$ are included in $[-3n,3n]$, for we have $|\kappa_j| \leq n$ and, as above, $|\theta-\kappa_1| \leq \tau_1$ for every $\theta$ in $I(P)$. Hence the total length of all $I(P)$ not in $\mathscr{V}(h)$ is at most $12n$. The corresponding $I_1(P)$ have therefore total length at most $12n\psi(h)$, and that $\mathscr{K}$ is null follows immediately since $\sum \psi(h)$ converges.
+
+It remains to prove that $\mathscr{L}$ is null. For each positive integer $k$, let $\mathscr{C}(n,k)$ be the union of the sets $\mathscr{B}(n,h)$ with $4^{k-1} \leq h < 4^k$, and, for each integer $l$, let $\mathscr{C}(n,k,l)$ be the subset of $\mathscr{C}(n,k)$ consisting of all polynomials $P$ with $4^{l-1} \leq p < 4^l$. Then, by \eqref{eq:ch9_7}, for each $P$ in $\mathscr{C}(n,k,l)$, $I_1(P)$ has length at most
+\[2\mu_1 \leq 2(\tau_1 \nu_1)^{\frac{1}{2}} \ll (4^{-l+1}\psi(4^{k-1}))^{\frac{1}{2}} \ll 2^{-l-k},\]
+where the implied constants depend only on $n$. Further, if $I_1(P)$ is not empty then the imaginary part of $\kappa_1$ is at most $\mu_1$. It follows from \eqref{eq:ch9_4}, on applying a simple box argument to the interval $[-n,n]$, that, if $k \gg 1$, then the number of polynomials $P$ in $\mathscr{C}(n,k,l)$ for which $I_1(P)$ is not empty is $\leqslant 2^l+1$. Hence the total length of all $I_1(P)$ with $P$ in $\mathscr{C}(n,k,l)$ is $\leqslant 2^{-k}(2^{-l}+1)$. But from the estimates in \autoref{sec:ch9_2} relating to the discriminant of $P$ we see that $p \gg 1$, and clearly also $p \leqslant 4^{nk}$. Thus, for any $n$ and $k$, the number of non-empty sets $\mathscr{C}(n,k,l)$ is $\leqslant k$, and, for such sets, we have $2^{-l} \leqslant 1$. We conclude that the total length of all $I_1(P)$ with $P$ in $\mathscr{C}(n,k)$ is $\leqslant k2^{-k}$, and that $\mathscr{L}$ is null follows from the convergence of $\sum k2^{-k}$. This completes the proof of the theorem.

@@ -1,0 +1,81 @@
+\let \CTEX@spaceChar \relax 
+\contentsline {chapter}{PREFACE}{i}{chapter*.1}%
+\contentsline {chapter}{\numberline {Chapter 1}THE ORIGINS}{1}{chapter.1}%
+\contentsline {section}{\numberline {1}Liouville's theorem}{1}{section.1.1}%
+\contentsline {section}{\numberline {2}Transcendence of e}{3}{section.1.2}%
+\contentsline {section}{\numberline {3}Lindemann's theorem}{6}{section.1.3}%
+\contentsline {chapter}{\numberline {Chapter 2}LINEAR FORMS IN LOGARITHMS}{9}{chapter.2}%
+\contentsline {section}{\numberline {1}Introduction}{9}{section.2.1}%
+\contentsline {section}{\numberline {2}Corollaries}{10}{section.2.2}%
+\contentsline {section}{\numberline {3}Notation}{12}{section.2.3}%
+\contentsline {section}{\numberline {4}The auxiliary function}{13}{section.2.4}%
+\contentsline {section}{\numberline {5}Proof of main theorem}{20}{section.2.5}%
+\contentsline {chapter}{\numberline {Chapter 3}LOWER BOUNDS FOR LINEAR FORMS}{23}{chapter.3}%
+\contentsline {section}{\numberline {1}Introduction}{23}{section.3.1}%
+\contentsline {section}{\numberline {2}Preliminaries}{25}{section.3.2}%
+\contentsline {section}{\numberline {3}The auxiliary function}{28}{section.3.3}%
+\contentsline {section}{\numberline {4}Proof of main theorem}{35}{section.3.4}%
+\contentsline {chapter}{\numberline {Chapter 4}DIOPHANTINE EQUATIONS}{37}{chapter.4}%
+\contentsline {section}{\numberline {1}Introduction}{37}{section.4.1}%
+\contentsline {section}{\numberline {2}The Thue equation}{38}{section.4.2}%
+\contentsline {section}{\numberline {3}The hyperelliptic equation}{41}{section.4.3}%
+\contentsline {section}{\numberline {4}Curves of genus 1}{43}{section.4.4}%
+\contentsline {section}{\numberline {5}Quantitative bounds}{45}{section.4.5}%
+\contentsline {chapter}{\numberline {Chapter 5}CLASS NUMBERS OF IMAGINARY QUADRATIC FIELDS}{49}{chapter.5}%
+\contentsline {section}{\numberline {1}Introduction}{49}{section.5.1}%
+\contentsline {section}{\numberline {2}L-functions}{50}{section.5.2}%
+\contentsline {section}{\numberline {3}Limit formula}{52}{section.5.3}%
+\contentsline {section}{\numberline {4}Class number 1}{53}{section.5.4}%
+\contentsline {section}{\numberline {5}Class number 2}{54}{section.5.5}%
+\contentsline {chapter}{\numberline {Chapter 6}ELLIPTIC FUNCTIONS}{57}{chapter.6}%
+\contentsline {section}{\numberline {1}Introduction}{57}{section.6.1}%
+\contentsline {section}{\numberline {2}Corollaries}{58}{section.6.2}%
+\contentsline {section}{\numberline {3}Linear equations}{60}{section.6.3}%
+\contentsline {section}{\numberline {4}The auxiliary function}{61}{section.6.4}%
+\contentsline {section}{\numberline {5}Proof of main theorem}{62}{section.6.5}%
+\contentsline {section}{\numberline {6}Periods and quasi-periods}{63}{section.6.6}%
+\contentsline {chapter}{\numberline {Chapter 7}RATIONAL APPROXIMATIONS TO ALGEBRAIC NUMBERS}{67}{chapter.7}%
+\contentsline {section}{\numberline {1}Introduction}{67}{section.7.1}%
+\contentsline {section}{\numberline {2}Wronskians}{70}{section.7.2}%
+\contentsline {section}{\numberline {3}The index}{70}{section.7.3}%
+\contentsline {section}{\numberline {4}A combinatorial lemma}{73}{section.7.4}%
+\contentsline {section}{\numberline {5}Grids}{74}{section.7.5}%
+\contentsline {section}{\numberline {6}The auxiliary polynomial}{75}{section.7.6}%
+\contentsline {section}{\numberline {7}Successive minima}{76}{section.7.7}%
+\contentsline {section}{\numberline {8}Comparison of minima}{79}{section.7.8}%
+\contentsline {section}{\numberline {9}Exterior algebra}{80}{section.7.9}%
+\contentsline {section}{\numberline {10}Proof of main theorem}{81}{section.7.10}%
+\contentsline {chapter}{\numberline {Chapter 8}MAHLER'S CLASSIFICATION}{85}{chapter.8}%
+\contentsline {section}{\numberline {1}Introduction}{85}{section.8.1}%
+\contentsline {section}{\numberline {2}A-numbers}{87}{section.8.2}%
+\contentsline {section}{\numberline {3}Algebraic dependence}{88}{section.8.3}%
+\contentsline {section}{\numberline {4}Heights of polynomials}{88}{section.8.4}%
+\contentsline {section}{\numberline {5}S-numbers}{89}{section.8.5}%
+\contentsline {section}{\numberline {6}U-numbers}{90}{section.8.6}%
+\contentsline {section}{\numberline {7}T-numbers}{91}{section.8.7}%
+\contentsline {chapter}{\numberline {Chapter 9}METRICAL THEORY}{95}{chapter.9}%
+\contentsline {section}{\numberline {1}Introduction}{95}{section.9.1}%
+\contentsline {section}{\numberline {2}Zeros of polynomials}{96}{section.9.2}%
+\contentsline {section}{\numberline {3}Null sets}{98}{section.9.3}%
+\contentsline {section}{\numberline {4}Intersections of intervals}{99}{section.9.4}%
+\contentsline {section}{\numberline {5}Proof of main theorem}{99}{section.9.5}%
+\contentsline {chapter}{\numberline {Chapter 10}THE EXPONENTIAL FUNCTION}{103}{chapter.10}%
+\contentsline {section}{\numberline {1}Introduction}{103}{section.10.1}%
+\contentsline {section}{\numberline {2}Fundamental polynomials}{104}{section.10.2}%
+\contentsline {section}{\numberline {3}Proof of main theorem}{108}{section.10.3}%
+\contentsline {chapter}{\numberline {Chapter 11}THE SIEGEL-SHIDLOVSKY THEOREMS}{109}{chapter.11}%
+\contentsline {section}{\numberline {1}Introduction}{109}{section.11.1}%
+\contentsline {section}{\numberline {2}Basic construction}{111}{section.11.2}%
+\contentsline {section}{\numberline {3}Further lemmas}{113}{section.11.3}%
+\contentsline {section}{\numberline {4}Proof of main theorem}{115}{section.11.4}%
+\contentsline {chapter}{\numberline {Chapter 12}ALGEBRAIC INDEPENDENCE}{117}{chapter.12}%
+\contentsline {section}{\numberline {1}Introduction}{117}{section.12.1}%
+\contentsline {section}{\numberline {2}Exponential polynomials}{119}{section.12.2}%
+\contentsline {section}{\numberline {3}Heights}{121}{section.12.3}%
+\contentsline {section}{\numberline {4}Algebraic criterion}{123}{section.12.4}%
+\contentsline {section}{\numberline {5}Main arguments}{124}{section.12.5}%
+\contentsline {chapter}{Bibliography}{127}{section*.61}%
+\contentsline {chapter}{Original Papers}{129}{chapter*.63}%
+\contentsline {chapter}{Further Publications}{149}{chapter*.64}%
+\contentsline {chapter}{New Developments}{161}{chapter*.65}%
+\contentsline {chapter}{Index}{167}{section*.66}%

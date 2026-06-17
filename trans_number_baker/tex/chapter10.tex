@@ -1,0 +1,119 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{THE EXPONENTIAL FUNCTION}\label{ch:10}
+
+\section{Introduction}\label{sec:ch10_1}
+
+In a classic memoir of 1899, Borel\index{Borel, E.}\footnote{C.R. 128 (1899), 596--9.} obtained a refinement of Hermite\index{Hermite, Ch.}'s theorem on the exponential function\index{exponential function} and thereby established the first measure of transcendence\index{measure of transcendence} for $e$. He proved that, for any positive integer $n$, there are only finitely many polynomials $P$ with integer coefficients and degree $n$ satisfying $|P(e)| < h^{-\phi(h)}$, where $h$ denotes the height of $P$ and $\phi(h) = c \log \log h$ for some $c = c(n) > 0$. Borel\index{Borel, E.}'s result was much improved by Popken\index{Popken, J.}\footnote{M.Z. 29 (1929), 526-41.} in 1929; Popken\index{Popken, J.} showed that $\phi(h)$ can be replaced by $n + \epsilon(h)$, where $\epsilon(h) = c/\log \log h$ with $c = c(n) > 0$, and this plainly implies that $e$ is an $S$-number of type 1. Mahler\index{Mahler, K.}\footnote{J.M. 166 (1932), 118-50} later derived an explicit expression for $c$ of the form $c'n^2\log(n+1)$, where now $c'$ is absolute.
+
+In 1965, a generalization of Popken\index{Popken, J.}'s result similar to \autoref{thm:ch7_1} was established by the author, and this will be the subject of the present chapter.\footnote{Canadian J. Math. 17 (1965). 616-26}
+
+\begin{mythm}{}{ch10_1}
+For any distinct, non-zero rationals $\theta_1, \ldots, \theta_n$ and any $\epsilon > 0$ there are only finitely many positive integers $q$ such that
+\[q^{1+\epsilon} \|q e^{\theta_1}\| \dots \|q e^{\theta_n}\| < 1.\]
+\end{mythm}
+
+The theorem plainly yields all the corollaries recorded after \autoref{thm:ch7_1} with $\alpha_1, \ldots, \alpha_n$ replaced by $e^{\theta_1}, \ldots, e^{\theta_n}$, and indeed \autoref{thm:ch7_2} holds with $\alpha$ replaced by $e^{\theta}$ for any non-zero rational $\theta$. Furthermore, in contrast to the work of \autoref{ch:7}, the arguments here enable one to replace $\epsilon$ by a function $\epsilon(q)$ tending to 0 as $q \to \infty$, namely $c(\log \log q)^{-\frac{1}{2}}$ where $c = c(\theta_1, \ldots, \theta_n) > 0$.
+
+The proof of the theorem involves techniques similar to those introduced by Siegel\index{Siegel, C. L.} in his studies on the Bessel functions\index{Bessel function}, which will be discussed in \autoref{ch:11}. In particular, Dirichlet\index{Dirichlet, P. G. L.}'s box principle\index{Dirichlet's box principle} will be employed to construct certain linear forms in $e^{\theta_1 x}, \ldots, e^{\theta_n x}$ with polynomial coefficients that vanish to a high order at the origin. Linear forms of this kind occurred in the works of Popken\index{Popken, J.} and Mahler\index{Mahler, K.}, but there they were derived explicitly by means of analytic integrals. Clearly \autoref{thm:ch10_1} improves upon the Popken\index{Popken, J.}-Mahler\index{Mahler, K.} theorem except when the polynomial $P$ has coefficients that are, in absolute value, nearly all equal, and then the earlier work is slightly stronger in view of the more rapidly decreasing function $\epsilon$. Feldman\index{Feldman, N. I.}\footnote{V.M. 2 (1967), 63--72.} has shown that the techniques used here furnish a function $\epsilon(q)$ of order $(\log \log q)^{-1}$ for certain series closely related to the exponential function\index{exponential function}.
+
+The arguments of this chapter do not extend easily to furnish \autoref{thm:ch10_1} for algebraic $\theta_1, \dots, \theta_n$. Some results in this context were obtained in the original paper of Mahler\index{Mahler, K.}, but they would seem to be far from best possible. In fact, even in the most precise analogue of \autoref{thm:ch7_2} established to date, taking $\alpha = e^{\theta}$ with $\theta$ algebraic, the exponent of $B$ tends rapidly to $-\infty$ as the degree of $\theta$ increases\footnote{ Cf. Ann. Univ. 3d. Budapest, 9 (1966), 3-14 (Luise-Charlotte Kappe).}. Nevertheless, a construction similar to that employed in \autoref{sec:ch10_2} below yields at once a negative answer to the power series analogue of a well-known problem of Littlewood.\footnote{Michigan Math. J. 11 (1964), 247--50.} Littlewood asked whether, for any real $\theta$, $\phi$ and any $\epsilon > 0$, there exists a positive integer $q$ such that
+\[q\|q\theta\|\|q\phi\|<\epsilon;\]
+the series $\theta = e^{1/x}$, $\phi = e^{2/x}$ provide a counter-example to the analogue, but the problem itself remains unsolved. And the latter recalls to mind another outstanding question in Diophantine approximation, namely whether every continued fraction with unbounded partial quotients is necessarily transcendental; this too seems very difficult.
+
+\section{Fundamental polynomials}\label{sec:ch10_2}
+
+We suppose that $\theta_1, \ldots, \theta_n$ are distinct rationals and that $0 < \epsilon < 1$. Constants implied by $\leqslant$ or $\gg$ will depend on these quantities only. As before, whenever we speak of the height of a polynomial it will be understood that its coefficients are integers. We shall denote by $f^{(j)}$ the $j$th derivative of a function $f$, or $f'$ in the case of the first derivative.
+
+\begin{mylemma}{}{ch10_1}
+For any positive integers $r_1, \ldots, r_n$ with maximum $r \gg 1$, there exist polynomials $P_i(x)$ $(1 \leq i \leq n)$, not all identically 0, with degrees at most $r$ and heights at most $r_i! r^{cr}$, such that $P_i^{(j)}(0) = 0$ for $j < r - r_i$, and
+\[\sum_{i=1}^{n} P_i(x) e^{\theta_i x} = \sum_{m=M}^{\infty} \rho_m x^m, \tag{1}\label{eq:ch10_1}\]
+where $|\rho_m| < (r!/m!) r^{c(r+m)}$ and
+\[M = r_1 + \ldots + r_n + n - 1 - [\epsilon r].\]
+\end{mylemma}
+
+\begin{proof}
+Let $L$ be the maximum of the absolute values of $\theta_1, \ldots, \theta_n$ and let $l$ be the least common multiple of their denominators. We take $p_{ij}$ to be 0 for all integers $i, j$ other than the $N = r_1 + \ldots + r_n + n$ pairs given by $1 \le i \le n$ and $r - r_i \le j \le r$, and we then define $p_{ij}$ for these remaining values as integers, not all 0, satisfying
+\[\sum_{i=1}^{n} \sum_{j=0}^{m} \binom{m}{j} \theta_{i}^{m-j} l^{m} p_{ij} = 0 \quad (0 \leq m < M). \tag{2}\label{eq:ch10_2}\]
+Such integers exist by virtue of \autoref{lem:ch2_1} of \autoref{ch:2}, and indeed they can be selected to have absolute values at most
+\[H = \{N(2lL)^{M}\}^{M/(N-M)}.\]
+We proceed to prove that the polynomials
+\[P_{i}(x) = r! \sum_{j=0}^{r} p_{ij}(j!)^{-1} x^{j} \quad (1 \leq i \leq n)\]
+have the required properties.
+
+First we observe that, on expanding $e^{\theta_i x}$ as a power series in $x$, we obtain
+\[\sum_{i=1}^n P_i(x)\,e^{\theta_i\,x} = r! \sum_{m=0}^\infty \sigma_m(m!)^{-1}\,x^m,\]
+where, for each $m$, $l^m \sigma_m$ is given by the left-hand side of \eqref{eq:ch10_2}. Hence \eqref{eq:ch10_1} holds with $\rho_m = (r!/m!) \sigma_m$. Further we have $M < N < 2nr$ and $N - M > \epsilon r$, whence
+\[H < \{2nr(2lL)^{2nr}\}^{2n/\epsilon} < r^{\frac{1}{2}\epsilon r}.\]
+Since $p_{ij} = 0$ for $j < r - r_i$ it follows that the coefficients of the $P_i(x)$ have absolute values at most
+\[\frac{r!\,H}{(r-r_i)!} = r_i!\,H\binom{r}{r_i}\leqslant r_i!\,r^{\epsilon r}.\]
+Also it is clear that
+\[\left|\sigma_{m}\right| < n(m+1) \, (2lL)^{m} \, H < r^{\epsilon(r+m)},\]
+and this proves the lemma.
+\end{proof}
+
+\begin{mylemma}{}{ch10_2}
+Let $P_{ij}(x)$ $(1 \le i \le n, j \ge 1)$ be defined recursively by
+\[P_{i1}(x) = P_{i}(x), \quad P_{i,j+1}(x) = P'_{ij}(x) + \theta_i P_{ij}(x).\]
+If $r_i > 2s$ for all $i$, where $s = [\epsilon r] + (n-1)^2$, then the determinant $\Delta(x)$ of order $n$ with $P_{ij}(x)$ in the $i$th row and $j$th column cannot have a zero at $x = 1$ with order greater than $s$.
+\end{mylemma}
+
+\begin{proof}
+We shall show in a moment that none of the $P_i(x)$ is identically 0; at first we assume this. Then each $P_i$ has a non-zero leading coefficient $p_i$ say. Since clearly $P_{ij}(x)$ has degree at most $r$ and leading coefficient $p_i \theta_i^{j-1}$, it follows that $\Delta(x)$ is a polynomial with degree at most $nr$ and with leading coefficient $p_1 \dots p_n \psi$, where $\psi$ is a Vandermonde determinant of order $n$ formed from the powers of the $\theta_i$. By hypothesis, the $\theta_i$ are distinct and so $\Delta(x)$ is not identically 0.
+
+We suppose now, as we may without loss of generality, that $r = r_1$. Denoting the left-hand side of \eqref{eq:ch10_1} by $\Phi(x)$, we clearly have
+\[\Phi^{(j-1)}(x) = \sum_{i=1}^{n} P_{ij}(x) e^{\theta_i x}.\]
+Hence $\Delta(x)$ remains unaltered if the first row is replaced by $e^{-\theta_1 x} \Phi^{(j-1)}(x)$ with $j=1,2,\ldots,n$. On differentiating \eqref{eq:ch10_1}, we see that $\Phi^{(j)}(x)$ has a zero at $x=0$ with order at least $M-j$; and clearly $P_{ij}(x)$ has a zero at $x=0$ with order at least $r-r_i-j+1$. Hence $\Delta(x)$ has a zero at $x=0$ with order at least
+\[M-n+1+\sum_{i=2}^{n}(r-r_{i}-n+1)=nr-s,\]
+and the lemma follows since $\Delta(x)$ has degree at most $nr$.
+
+It remains only to prove the original supposition. We suppose that exactly $k$ of the polynomials $P_i(x)$ do not vanish identically and, without loss of generality, that these are given by $i=1,2,\dots,k$. Also we assume, as clearly we may, that $r=r_i$ for some $i$ with $k \le i \le n$. Now, as above, we see that the minor in $\Delta(x)$ formed from the first $k$ rows and columns is a polynomial, not identically 0, with degree at most $kr$. On the other hand, on taking a linear combination of rows, it is clear that it has a zero at $x=0$ with order at least
+\[M-k+1+\sum_{i=1}^{k-1}(r-r_i-k+1) \ge (k-1)r-s+\sum_{i=k}^n r_i.\]
+By virtue of the hypothesis $r_i > 2s$ for all $i$, it follows that $k = n$, and this completes the proof of the lemma.
+\end{proof}
+
+\begin{mylemma}{}{ch10_3}
+There are $n$ distinct suffixes $J(j)$ $(1 \le j \le n)$ between $1$ and $n+s$ inclusive such that the determinant of order $n$ with $P_{i,J(j)}(x)$ in the $i$th row and $j$th column does not vanish at $x=1$.
+\end{mylemma}
+
+\begin{proof}
+We introduce linear forms in $w_1, \ldots, w_n$ by the equations
+\[W_{j} = \sum_{i=1}^{n} P_{ij}(x) w_{i} \quad (j = 1, 2, \ldots). \tag{3}\label{eq:ch10_3}\]
+If $\Delta_{ij}(x)$ is the minor in $\Delta(x)$ formed by omitting the $i$th row and $j$th column then
+\[w_{i}\Delta(x) = \sum_{j=1}^{n} (-1)^{i+j} W_{j}\Delta_{ij}(x) \quad (1 \leq i \leq n). \tag{4}\label{eq:ch10_4}\]
+By \autoref{lem:ch10_2}, there is an integer $t \leq s$ such that $\Delta^{(t)}(1) \neq 0$ and we suppose that $t$ is the least such non-negative integer. Now regarding the $w_i$ as differentiable functions of $x$ and differentiating \eqref{eq:ch10_4} $t$ times, replacing the $w_i'$ occurring at each stage by $w_i\theta_i$ (as we may since the resulting equations hold identically in the $w_i$ and $w_i'$) we obtain
+\[w_i \left\{ \sum_{j=0}^t \binom{t}{j} \theta_i^{t-j} \Delta^{(j)}(x) \right\} = \sum_{j=1}^{n+t} W_j F_{ij}(x) \quad (1 \leq i \leq n),\]
+where the $F_{ij}(x)$ are polynomials given by linear combinations of the $\Delta_{ij}(x)$ and their derivatives. Hence the linear forms defined by \eqref{eq:ch10_3} with $x = 1$ and with $1 \le j \le n + t$, include a set of $n$ linearly independent forms, and the lemma follows with $J(j)$ $(1 \le j \le n)$ given by the associated suffixes.
+\end{proof}
+
+\begin{mylemma}{}{ch10_4}
+There are integers $q_{ij}$ $(1 \le i, j \le n)$, forming a non-zero determinant, such that $|q_{ij}| < r_i! r^{4cr}$ and
+\[\left| \sum_{i=1}^{n} q_{ij} e^{\theta_i} \right| < r! r^{4\epsilon n r} \left( \prod_{i=1}^{n} r_i! \right)^{-1}. \tag{5}\label{eq:ch10_5}\]
+\end{mylemma}
+
+\begin{proof}
+In fact the integers $q_{ij} = l^{n+s}P_{i,J(j)}(1)$ have the required properties. Indeed the first assertion follows from \autoref{lem:ch10_3} and the second from the obvious upper estimate $r_i! (r+L)^j r^{cr}$ for the absolute values of the coefficients of $P_{ij}$. Further, with the notation of \autoref{lem:ch10_2}, the sum on the left of \eqref{eq:ch10_5} is given by $l^{n+s}\Phi^{J(j)-1}(1)$, and, on differentiating \eqref{eq:ch10_1} $h \leq n+s-1$ times, we obtain
+\[|\Phi^{(h)}(1)| < r! r^{\epsilon r} \sum_{m=M}^{\infty} r^{\epsilon m} ((m-h)!)^{-1}.\]
+But the sum on the right multiplied by $(M-h)!$ is clearly at most $e^r r^{\epsilon M}$, and we have
+\[(M-h)! \geqslant (r_1 + \ldots + r_n - 2s)! \geqslant (nr)^{-2s} (r_1 + \ldots + r_n)!.\]
+Since $M \leq \frac{5}{4} nr$ and $s \leq \frac{5}{4} \epsilon r$, this gives \eqref{eq:ch10_5}.
+\end{proof}
+
+\section{Proof of main theorem}\label{sec:ch10_3}
+
+The proof can now be completed readily by means of the Geometry of Numbers\index{Geometry of Numbers}\footnote{For an alternative argument see the author's memoir in Canadian J. Math. 17
+(1965).}. Let $\theta_1, \ldots, \theta_n$ be distinct non-zero rationals and suppose that $\xi > 0$. Constants implied by $\leqslant$ or $\geqslant$ will depend on these quantities only. For brevity we put $k = n + 1$, and we signify by $\mathbf{A}_k$ the vector $(e^{\theta_1}, \ldots, e^{\theta_n}, 1)$ in $R^k$. Further we signify by $\mathbf{A}_j$ $(1 \leqslant j \leqslant n)$ the $j$th row of the unit matrix of order $k$. We proceed to show that, for any numbers\index{numbers} $\mu_1, \ldots, \mu_k$ with $\mu_1 \ldots \mu_k = 1$ and $\mu_j > 1$ $(1 \leqslant j \leqslant k)$, the first minimum $\lambda_1$ of the parallelepiped $|\mathbf{A}_j \mathbf{x}| < \mu_j$ $(1 \leqslant j \leqslant k)$ exceeds $\mu^{-\xi}$ if $\mu_j \leqslant \mu$ for all $j$ and $\mu \geqslant 1$.
+
+In fact it suffices to show that the last minimum $\lambda_k$ of the parallelepiped is $\ll \mu^{\xi/n}$, for we have $\lambda_1 \dots \lambda_k \gg 1$ and so $\lambda_1 \gg \lambda_k^{-n}$. We shall apply \autoref{lem:ch10_4} with $n$ replaced by $k$ and with $\theta_k = 0$. We take $r = r_k$ to be the least positive integer for which $\mu < r! r^{-4\epsilon r}$, and we then take $r_1, \dots, r_n$ to be the integers satisfying
+\[(r_j-1)!\leqslant \mu_j r^{4\epsilon r}< r_j!.\]
+Clearly $r$ is the maximum of $r_1, \ldots, r_k$ and we have $r \gg 1$ and $r_i > 4\epsilon r$ for all $i$; in particular, the hypothesis of \autoref{lem:ch10_2} is satisfied. Further, from Stirling's formula we see that
+\[\mu > (r-1)! r^{-4\epsilon r} > r^{\frac{1}{4}r}\]
+and so, by \autoref{lem:ch10_4},
+\[|q_{ij}| < \mu_i r^{8\epsilon r + 1} < \mu_i \mu^{20\epsilon}\]
+Further, the right-hand side of \eqref{eq:ch10_5} is at most
+\[r^{4\epsilon r}(\mu_1\dots\mu_n)^{-1}\leqslant \mu_k\mu^{20\epsilon},\]
+and since the determinant of the $q_{ij}$ is not 0, it follows that $\lambda_k \leq \mu^{20\epsilon}$. This gives $\lambda_1 > \mu^{-\epsilon}$ if $\epsilon$ is sufficiently small, as required.
+
+Finally, we apply \autoref{lem:ch7_8} of \autoref{ch:7} with $l = n = k - 1$. Denoting by $\mathbf{a}_j$ ($1 \le j \le k$) the vectors defined at the beginning of \autoref{sec:ch7_10} of \autoref{ch:7} with $e^{\theta_j}$ in place of $\alpha_j$, we conclude that the first minimum $\nu_1$ of the parallelepiped $|\mathbf{a}_j \mathbf{x}| < \mu_j^{-1}$ ($1 \le j \le k$) satisfies
+\[\nu_1 \gg \lambda_1 \dots \lambda_l \geqslant \lambda_1^l\]
+and so $\nu_1 \gg \mu^{-k}$. Hence the main proposition of \autoref{sec:ch7_10} of \autoref{ch:7} holds, and \autoref{thm:ch10_1} now follows by the argument immediately succeeding.

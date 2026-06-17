@@ -1,0 +1,166 @@
+%# -*- coding: utf-8-unix -*-
+%======================================================================
+% trans_number_baker.tex for Alan Baker's Transcendental Number Theory
+%======================================================================
+\documentclass{qbook}
+
+% Enable makeidx for generating dynamic index corresponding to new page numbers
+\usepackage{makeidx}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\makeindex
+
+% ==================================================================
+% Custom Academic Footnote Symbols (Baker Style: Page-by-page starting with †)
+% ==================================================================
+\usepackage[perpage]{footmisc}
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \ddagger\or \S\or \P\or \|\or \dagger\dagger\or \ddagger\ddagger\or \S\S\or \P\P\else *\fi}}
+\makeatother
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% ==================================================================
+% Academic Section, Theorem, and Equation Numbering (Baker Style)
+% ==================================================================
+% 1. Section numbering without Chapter prefix (e.g., "1" instead of "1.1")
+\renewcommand{\thesection}{\arabic{section}}
+
+% 2. Theorem and Lemma numbering
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\renewcommand{\thelemma}{\arabic{lemma}}
+
+% 3. Equation numbering resetting per chapter and without Chapter prefix (e.g., "(1)" instead of "(1.1)")
+\makeatletter
+\@addtoreset{equation}{chapter}
+\makeatother
+\renewcommand{\theequation}{\arabic{equation}}
+
+% ==================================================================
+% Custom hanglist environment for appendices (Original Papers / Further Publications)
+% ==================================================================
+\newenvironment{hanglist}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.5em}%
+    \setlength{\itemindent}{-1.5em}%
+    \setlength{\itemsep}{3pt}%
+    \setlength{\parsep}{0pt}%
+  }%
+}{\end{list}}
+
+% 4. Autoref names (English)
+\AtBeginDocument{%
+  \def\chapterautorefname{Chapter}%
+  \def\sectionautorefname{\S}%
+  \def\subsectionautorefname{\S}%
+  \def\equationautorefname{Equation}%
+  \def\theoremautorefname{Theorem}%
+  \def\lemmaautorefname{Lemma}%
+  \def\definitionautorefname{Definition}%
+}
+
+% 5. Redefine theindex to prepend the author's intro note spanning full-width above the two columns
+\makeatletter
+\renewenvironment{theindex}{%
+  \chapter*{\indexname}%
+  \@mkboth{\MakeUppercase\indexname}{\MakeUppercase\indexname}%
+  \thispagestyle{plain}%
+  \vspace{1.5em}%
+  \noindent\textmd{Entries for authors refer to places where either their name or one of their publications has been cited.}\vspace{1.5em}%
+  \parindent\z@%
+  \parskip\z@\@plus.3\p@\relax%
+  \columnsep 35\p@%
+  \columnseprule\z@%
+  \let\item\@idxitem%
+  \begin{multicols}{2}%
+}{%
+  \end{multicols}%
+}
+\makeatother
+
+\begin{document}
+\begin{sloppypar}	
+	\pagestyle{empty}
+	
+	% ==================================================================
+	% Cover Page
+	% ==================================================================
+	\begin{center}
+		\vspace*{5cm}
+		{\Huge\sffamily\bfseries TRANSCENDENTAL \\ NUMBER THEORY} \\
+		\vspace{2em}
+		{\Large\sffamily\bfseries ALAN BAKER F.R.S.} \\
+		\vspace{1em}
+		{\small Fellow of Trinity College, Cambridge \\ Professor of Pure Mathematics, University of Cambridge} \\
+		\vfill
+		{\large\sffamily\bfseries CAMBRIDGE UNIVERSITY PRESS}
+	\end{center} 
+	\thispagestyle{empty}
+	\cleardoublepage
+
+	% ==================================================================
+	% Front Matter
+	% ==================================================================
+	\frontmatter
+	\pagestyle{empty}
+	
+	% Include Preface (from original 1974 edition, Cambridge)
+	\include{tex/preface}
+	
+	% Automatically generated dynamic Table of Contents
+	\tableofcontents
+	\cleardoublepage
+	
+	% ==================================================================
+	% Main Matter
+	% ==================================================================
+	\mainmatter
+	\pagestyle{fancy}
+	
+	\include{tex/chapter1}
+	\include{tex/chapter2}
+	\include{tex/chapter3}
+	\include{tex/chapter4}
+	\include{tex/chapter5}
+	\include{tex/chapter6}
+	\include{tex/chapter7}
+	\include{tex/chapter8}
+	\include{tex/chapter9}
+	\include{tex/chapter10}
+	\include{tex/chapter11}
+	\include{tex/chapter12}
+	
+	% ==================================================================
+	% Back Matter & Bibliography
+	% ==================================================================
+	\renewcommand{\bibname}{Bibliography}
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Bibliography}
+	
+	% Output dynamic bibliography generated from BibTeX database
+	\include{tex/ref}
+	
+	% ==================================================================
+	% Appendices & Further Additions (Baker's Definitve Editions)
+	% ==================================================================
+	% Include list of classical Original Papers
+	\include{tex/original_papers}
+	
+	% Include list of modern Further Publications
+	\include{tex/further_publications}
+	
+	% Include the historical New Developments chapter (up to 1990)
+	\include{tex/new_developments}
+	
+	% ==================================================================
+	% Dynamic Index
+	% ==================================================================
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Index}
+	\printindex
+	
+	\backmatter	
+\end{sloppypar}
+\end{document}

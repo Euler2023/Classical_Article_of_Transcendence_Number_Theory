@@ -1,0 +1,217 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{ALGEBRAIC INDEPENDENCE}\label{ch:12}
+
+\section{Introduction}
+
+Few theorems have been established to date on algebraic, as opposed to linear, independence of transcendental numbers\index{transcendental number}\index{numbers}. Indeed, apart from the results on $E$-functions discussed in the last chapter, which in fact follow at once from their linear analogues, and the examples mentioned in \autoref{ch:8} that arise from the properties of Mahler\index{Mahler, K.}'s classification\index{Mahler's classification}, the only work in this context of a general nature is based on studies of Gelfond\index{Gelfond, A. O.}\footnote{Bibliography.} carried out in 1949. Recently a number of authors have obtained important improvements in this connexion, and these latest developments will be the theme of the present chapter.
+
+The essential character of the results is well-illustrated by:
+
+\begin{mythm}{}{ch12_1}
+If both $\xi_1, \xi_2, \xi_3$ and $\eta_1, \eta_2, \eta_3$ are linearly independent over the rationals, then two at least of the numbers\index{numbers}
+\[\xi_i, \quad e^{\xi_i \eta_j} \quad (1 \leq i, j \leq 3)\]
+are algebraically independent.
+\end{mythm}
+
+Gelfond\index{Gelfond, A. O.} proved the theorem originally subject to certain supplementary conditions, and the formulation here is due to Tijdeman\index{Tijdeman, R.}.\footnote{I.M. 33 (1971), 146--162.} As an immediate consequence one sees that if $\alpha$ is an algebraic number\index{algebraic number} other than 0 or 1 and $\beta$ is a cubic irrational then $\alpha^{\beta}, \alpha^{\beta^2}$ are algebraically independent; this follows in fact on taking $\xi_j = \beta^{j-1}$ and $\eta_j = \xi_j \log \alpha$. Tijdeman\index{Tijdeman, R.} also derived two variants of \autoref{thm:ch12_1}; he proved that if $\xi_1, \xi_2, \xi_3, \xi_4$ and $\eta_1, \eta_2$ are linearly independent over the rationals, then two at least of $\xi_i, e^{\xi_i \eta_j}$ are algebraically independent, and moreover that if $\xi_1, \xi_2, \xi_3$ and $\eta_1, \eta_2$ are linearly independent over the rationals, then two at least of $\xi_i, \eta_j, e^{\xi_i \eta_j}$ are algebraically independent. These results include some earlier theorems of \v{S}melev.\footnote{Mat. Zametki, 3 (1968), 61--68; 4 (1968), 626--632.}
+
+Very recently, Brownawell\index{Brownawell, W.}\footnote{J. Number Th. 6 (1974), 11--31.} and Waldschmidt\index{Waldschmidt, M.}\footnote{J. Number Th. 5 (1973), 191--202.} succeeded independently in obtaining a new version of the latter result which sufficed to solve a well-known problem of Schneider\index{Schneider, Th.}. They proved:
+
+\begin{mythm}{}{ch12_2}
+If both $\xi_1, \xi_2$ and $\eta_1, \eta_2$ are linearly independent over the rationals and if $e^{\xi_1\eta_2}$ and $e^{\xi_2\eta_2}$ are algebraic, then two at least of $\xi_i, \eta_j, e^{\xi_i\eta_j}$ are algebraically independent.
+\end{mythm}
+
+This implies, more especially, that if $\xi_1, \xi_2$ and $\eta_1, \eta_2$ are linearly independent over the rationals then at least two different numbers\index{numbers} amongst $\xi_i, \eta_j, e^{\xi_i\eta_j}$ are transcendental. It follows at once, on taking $\xi_1 = \eta_1 = 1$, $\xi_2 = \eta_2 = e$, that one at least of $e^e$ and $e^{e^2}$ is transcendental. Furthermore, from \autoref{thm:ch12_2}, one sees, for instance, that at least one of $\alpha^{\log \alpha}$ and $\alpha^{(\log \alpha)^2}$ is transcendental for any algebraic number\index{algebraic number} $\alpha$ other than 0 or 1. These results represent the nearest approach we have to date towards a confirmation of the transcendence of numbers\index{numbers} of the type $\log \pi$ and $e^{\pi^2}$.
+
+In another direction, Lang\index{Lang, S.}\footnote{Bibliography, first work.} has proved:
+
+\begin{mythm}{}{ch12_3}
+If $\xi_1, \xi_2, \xi_3$ and $\eta_1, \eta_2$ are linearly independent over the rationals then one at least of the numbers\index{numbers} $e^{\xi_i\eta_j}$ is transcendental.
+\end{mythm}
+
+Surprisingly, the demonstration of \autoref{thm:ch12_3} is much simpler than that of \autoref{thm:ch12_1} and \autoref{thm:ch12_2}, and yet the result admits several notable corollaries. In particular, it follows that, for any algebraic number\index{algebraic number} $\alpha$, not 0 or 1, and any transcendental $\beta$, one at least of $\alpha^{\beta}, \alpha^{\beta^2}$ is transcendental; and in fact this result holds for any irrational $\beta$ in view of the Gelfond\index{Gelfond, A. O.}-Schneider\index{Schneider, Th.} theorem. As a further example, the theorem plainly shows that for any real irrational $\beta$, the function $x^{\beta}$ cannot assume algebraic values at more than two consecutive integral values of $x \ge 2$. More general results of this nature, involving, for instance, the Weierstrass\index{Weierstrass, K.} $\wp$-function\index{Weierstrass $\wp$-function}, were obtained by Ramachandra\index{Ramachandra, K.}\footnote{Acta Arith. 14 (1968), 83--88.}, who apparently discovered \autoref{thm:ch12_3} independently. The theorem also throws some light on the problem raised by Schneider\index{Schneider, Th.} as to the untenability of the equation
+\[\log \alpha \log \beta = \log \gamma \log \delta\]
+in algebraic numbers\index{algebraic number} $\alpha, \beta, \gamma, \delta$, having logarithms linearly independent over the rationals; it shows in fact that, given $\alpha, \gamma$, there cannot be two solutions $\beta, \delta$ such that all six logarithms are linearly independent. The problem is, of course, only a special case of the wider open question as to a verification of the algebraic independence of the logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number}.
+
+We remark finally that most of our expectations in connexion with the transcendence properties of the exponential and logarithmic functions are covered by a general conjecture, attributed to Schanuel, to the effect that if $\xi_1, \ldots, \xi_n$ are linearly independent over the rationals, then the transcendence degree\index{transcendence degree} of the field generated by $\xi_1, \ldots, \xi_n, e^{\xi_1}, \ldots, e^{\xi_n}$ over the rationals is at least $n$. The conjecture includes \autoref{thm:ch1_4} and \autoref{thm:ch2_1}, and moreover it implies the algebraic independence of $e$ and $\pi$. The power series analogue has been proved by Ax\index{Ax, J.}.\footnote{Ann. Math. 93 (1971), 252--268.}
+
+\section{Exponential polynomials}
+
+Our object here is to establish a theorem of Tijdeman\index{Tijdeman, R.}\footnote{I.M. 33 (1971), 1--7.} on the zeros of functions of the form
+\[F(z) = \sum_{k=0}^{K-1} \sum_{l=1}^{L} f(k,l) z^{k} e^{\sigma_{l} z}.\]
+We shall assume that $\sigma_1, \ldots, \sigma_L$ are complex numbers\index{numbers} with absolute values at most $S$, and that the $f$'s are arbitrary complex numbers\index{numbers} for which $F$ does not vanish identically. Constants implied by $\ll$ will be absolute. We prove:
+
+\begin{mylemma}{}{ch12_1}
+The number of zeros of $F$ in any closed disc, with radius $R$, counted with multiplicities, is $\ll KL + RS$.
+\end{mylemma}
+
+Tijdeman\index{Tijdeman, R.} actually obtained the estimate $3KL + 4RS$, but the constants are not important for our purpose here. The main interest of the result lies in the fact that, in contrast to all previous theorems of its kind, there is no dependence on the differences between the $\sigma$'s, and it is this strengthening that leads to the improvements in Gelfond\index{Gelfond, A. O.}'s results mentioned earlier.
+
+\begin{proof}
+To commence the proof, let $C$ be the circle centre the origin\footnote{Plainly, this choice involves no loss of generality.} with radius $R$, and let $M(R)$ be the maximum of $|F|$ on $C$. Further, let
+\[W(z) = (z - \omega_1) \dots (z - \omega_h),\]
+where $\omega_1, \ldots, \omega_h$ run through the zeros of $F$, taken with multiplicities, within and on $C$. Then $F/W$ is regular within and on any concentric circle with larger radius, and so, by the maximum-modulus principle\index{maximum-modulus principle},
+\[|W(v)|M(R) \leq |W(u)|M(4R),\]
+where $u, v$ are some numbers\index{numbers} with $|u| = R$ and $|v| = 4R$. Now clearly
+\[|W(u)| \leq (2R)^h, \quad |W(v)| \geq (3R)^h,\]
+and thus
+\[h \leqslant \log (M(4R)/M(R)).\]
+It remains therefore to show that the number on the right is $\ll KL + RS$.
+
+Let the sequence $\sigma_1, \ldots, \sigma_1, \ldots, \sigma_L, \ldots, \sigma_L$ of $N = KL$ numbers\index{numbers}, where each $\sigma$ is repeated $K$ times, be written as $\eta_1, \ldots, \eta_N$. By Newton's interpolation formula\index{Newton's interpolation formula} we have, for any $w, z$,
+\[e^{zw} = \sum_{n=0}^{N} a_n P_n(w),\]
+where
+\[P_n(w) = (w - \eta_1) \dots (w - \eta_n) \quad (1 \le n \le N),\]
+and
+\[a_n = \frac{1}{2\pi i} \int_{\Gamma} \frac{e^{z\zeta}}{P_{n+1}(\zeta)} \left( \frac{\zeta - \eta_{n+1}}{\zeta - w} \right)^{\delta_n} d\zeta,\]
+$\Gamma$ denoting a circle with centre the origin, described in the positive sense, including the $\eta$'s and $w$, and $\delta_n = 0$ if $n < N$, $\delta_N = 1$. Clearly $a_n$ is independent of $w$ for $n < N$ and $a_N$ is an integral function of $w$. We put
+\[P(w) = \sum_{n=0}^{N-1} a_n P_n(w) = \sum_{n=0}^{N-1} p_n w^n,\]
+and then it is readily verified that
+\[F(z) = \sum_{k=0}^{K-1} \sum_{l=1}^{L} f(k,l) P^{(k)}(\sigma_l) = \sum_{n=0}^{N-1} p_n F^{(n)}(0).\]
+We proceed now to employ the latter formula to obtain an upper bound for $|F|$.
+
+By Cauchy's theorem we have
+\[F^{(n)}(0) = \frac{n!}{2\pi i} \int_C \frac{F(\zeta) d\zeta}{\zeta^{n+1}},\]
+and thus
+\[\left|F^{(n)}(0)\right| \leqslant n! \, M(R)/R^n.\]
+This gives
+\[|F(z)| \leqslant M(R) \sum_{n=0}^{N-1} n! |p_n|/R^n.\]
+To estimate the latter sum, let
+\[b_n = \frac{1}{2\pi i} \int_{\Gamma} \frac{e^{|z|\zeta}}{Q_{n+1}(\zeta)} d\zeta,\]
+where $Q_n(w) = (w-S)^n$ and $\Gamma$ denotes a circle as above including $S$. On comparing the coefficients in $(P_n(\zeta))^{-1}$ and $(Q_n(\zeta))^{-1}$ when these are expressed as series in decreasing powers of $\zeta$, we obtain $|a_n| \leq b_n$ for all $n < N$. But plainly $b_n = e^{|z|S} |z|^n/n!$ and so, in view of the formula
+\[n! p_n = \sum_{r=n}^{N-1} a_r P_r^{(n)}(0),\]
+we have
+\[n! \, \big| \, p_n \big| \, \leqslant \, n! \, \sum_{r \, = \, n}^{N \, - \, 1} \binom{r}{n} \, S^{r - n} \, b_r \, = \, e^{|z| S} \sum_{r \, = \, n}^{N \, - \, 1} \big| z \big|^r \, S^{r - n} / (r - n)! \, \leqslant \, \big| z \big|^n \, \, e^{2|z|S},\]
+whence
+\[|F(z)| \leq M(R) e^{2|z|S} \sum_{n=0}^{N-1} (|z|/R)^n.\]
+On taking $|z| = 4R$, we conclude that
+\[M(4R) \leqslant M(R) e^{8RS} 4^N,\]
+and the lemma follows at once.
+\end{proof}
+
+\section{Heights}
+
+We shall require a more explicit version of Lemma~2 of Chapter~8. The result is due to Gelfond\index{Gelfond, A. O.}, who in fact obtained the proposition in a generalized form relating to polynomials in several variables.
+
+\begin{mylemma}{}{ch12_2}
+If $P(x)$ is a polynomial with degree $n$ and height $h$, and if $P = P_1 P_2 \dots P_k$, where $P_i(x)$ is a polynomial with height $h_i$, then
+\[h \geqslant e^{-n} h_1 h_2 \dots h_k.\]
+\end{mylemma}
+
+\begin{proof}
+We assume without loss of generality that $P(0) \neq 0$. For any zero $\rho$ of $P$ and any complex number $z$ with $|z| = 1$, let $w$ be the projection of $\rho$ on the line through $z$ and $-\rho/|\rho|$, taking $w = z$ if $z = \pm \rho/|\rho|$. Then, by simple geometry,
+\[|z-\rho| \ge |w-\rho| = \frac{1}{2}(1+|\rho|)|z-\rho/|\rho||.\]
+Thus, if $\rho_1, \ldots, \rho_n$ are all the zeros of $P$, then
+\[|P(z)| \geqslant 2^{-n} M_1 \dots M_k R(z),\]
+where $M_i$ denotes the maximum of $P_i$ on the unit circle and
+\[R(z) = \prod_{j=1}^{n} |z - \rho_j/|\rho_j||.\]
+Now for any polynomial
+\[Q(x) = q_0 + q_1 x + \dots + q_m x^m\]
+we have
+\[\int_0^1 |Q(e^{2\pi i\phi})|^2 d\phi = \sum_{j=0}^m |q_j|^2.\]
+Hence taking $Q = R$ and noting that $R$ has leading coefficient 1 and constant coefficient with absolute value 1, we obtain
+\[\int_0^1 |P(e^{2\pi i\phi})|^2 d\phi \geqslant 2^{1-2n} (M_1 \dots M_k)^2.\]
+But, on taking $Q = P$, we see that the number on the left is at most $2nh^2$, and clearly also
+\[M_j^2 \geqslant \int_0^1 |P_j(e^{2\pi i\phi})|^2 d\phi \geqslant h_j^2.\]
+Since $e^n \ge n^{\frac{1}{2}} 2^n$, this proves the lemma.
+\end{proof}
+
+We shall require also a lemma closely related to the inequality
+$|\alpha - \beta| \gg a^{-l}b^{-m}$ mentioned in \autoref{sec:ch8_6} of \autoref{ch:8}. Again we shall adopt
+the convention that when one refers to the height of a polynomial it is
+implied that the coefficients are rational integers, not all $0$.
+
+\begin{mylemma}{}{ch12_3}
+If $P_1(x), P_2(x)$ are polynomials with degrees $n_1, n_2$ and heights $h_1, h_2$ respectively and if $P_1, P_2$ have no common factor then, for any complex number $z$,
+\[\max(|P_1(z)|, |P_2(z)|) \ge (n_1 + n_2)^{-\frac{1}{2}(n_1 + n_2 + 1)} h_1^{-n_2} h_2^{-n_1}.\]
+\end{mylemma}
+
+\begin{proof}
+The proof depends on the observation that since $P_1, P_2$ have no common factor, their resultant $R$ is not 0. Now $R$ can be expressed as the familiar Sylvester determinant\index{Sylvester determinant} of order $n_1 + n_2$ formed by eliminating $x$ from the equations
+\[x^i P_1(x) = 0 \quad (0 \leqslant i < n_2), \qquad x^j P_2(x) = 0 \quad (0 \leqslant j < n_1).\]
+Thus $R$ is a rational integer and so $|R| \ge 1$. On the other hand, $R$ is unaltered if one replaces the element in the first column and $i$th row by $z^{i-1}P_1(z)$ for $i \le n_2$ and by $z^{i-n_2-1}P_2(z)$ for $i > n_2$. Hence, if $|z| \le 1$, the lemma follows from the upper estimates for the cofactors of these elements furnished by Hadamard's inequality\index{Hadamard's inequality}. If $|z| > 1$ one argues similarly, replacing now the elements in the last column by numbers\index{numbers} as above multiplied by $z^{-n_1-n_2+1}$.
+\end{proof}
+
+\section{Algebraic criterion}
+
+We now establish a lemma giving a sufficient condition for a number to be algebraic; it was derived in its original form by Gelfond\index{Gelfond, A. O.} and later sharpened by Brownawell\index{Brownawell, W.} and Waldschmidt\index{Waldschmidt, M.}. It shows that, in a sense, a number cannot be too well approximated by algebraic numbers\index{algebraic number} unless it is itself algebraic and all the terms in the sequence beyond a certain point are equal. We shall actually prove the proposition in a form relating to polynomial sequences since this is more useful for applications.
+
+First we need a preliminary lemma. Let $P(x)$ be a polynomial with degree $n$ and height $h$, and let $z$ be any complex number.
+
+\begin{mylemma}{}{ch12_4}
+If $|P(z)| \le 1$ then $P$ has a factor $Q$, a power of an irreducible polynomial with integer coefficients, such that
+\[|Q(z)| \leq |P(z)| \exp(8n(n + \log h)).\]
+\end{mylemma}
+
+\begin{proof}
+We write $P$ as a product $P_1 \dots P_k$ of powers of distinct irreducible polynomials and, for brevity, we put $p_j = |P_j(z)|$. Then, by hypothesis, $p_1 \dots p_k \le 1$ and so there exists a suffix $l$, possibly $1$ or $k$, such that
+\[p_1 \dots p_{l-1} \geqslant p_l \dots p_k, \quad p_1 \dots p_l \leqslant p_{l+1} \dots p_k.\]
+Now $P_1 \dots P_{l-1}$ and $P_l \dots P_k$ have degrees at most $n$, no common factor and, in view of \autoref{lem:ch12_2}, heights at most $e^n h$. Hence from \autoref{lem:ch12_3} and the first inequality above we see that
+\[p_1 \dots p_{l-1} \geqslant \exp(-4n(n + \log h)).\]
+Similarly, by virtue of the second inequality above, this estimate obtains also for $p_{l+1} \dots p_k$. Thus we have
+\[p_l \leq p_1 \dots p_k \exp(8n(n + \log h)),\]
+and the assertion follows with $Q = P_l$.
+\end{proof}
+
+\begin{mylemma}{}{ch12_5}
+If $\omega$ is a transcendental number\index{transcendental number} and if $P_j(x)$ ($j = 1, 2, \ldots$) is a sequence of polynomials with degrees and heights at most $n_j$ and $h_j$ respectively such that
+\[n_j < n_{j+1} \ll n_j, \quad \log h_j \leqslant \log h_{j+1} \ll \log h_j,\]
+then, for some infinite sequence of values of $j$,
+\[\log |P_j(\omega)| \gg -n_j(n_j + \log h_j).\]
+\end{mylemma}
+
+\begin{proof}
+Here the implied constants are again absolute. For the proof we assume that the latter inequality does not hold for $j$ sufficiently large, and we derive a contradiction if the implied constant is large enough. By \autoref{lem:ch12_4}, $P_j$ has a factor $Q_j$, a power of an irreducible polynomial, such that $|Q_j(\omega)| \le |P_j(\omega)| \exp(8n_j(n_j + \log h_j))$, and, by \autoref{lem:ch12_2}, $Q_j$ has height at most $e^{n_j} h_j$. It follows from \autoref{lem:ch12_3} that, for all sufficiently large $j$, $Q_j$ is a power of some irreducible polynomial $Q$, say, independent of $j$; for if $Q_j$ and $Q_{j+1}$ have no common factor then
+\[\max(|Q_j(\omega)|, |Q_{j+1}(\omega)|) > e^{-4n_j^2+1} h_j^{-n_{j+1}} h_{j+1}^{-n_j}\]
+and, in view of the hypotheses concerning $n_{j+1}$ and $h_{j+1}$, this plainly contradicts either the previous inequality or its analogue with $j$ replaced by $j+1$. Since obviously $Q_j$ is at most the $n_j$th power of $Q$, we obtain $|Q(\omega)| \le |Q_j(\omega)|^{1/n_j}$, and since also $n_j \to \infty$ as $j \to \infty$, it follows that $Q(\omega) = 0$. But this contradicts the hypothesis that $\omega$ is transcendental.
+\end{proof}
+
+\section{Main arguments}
+
+The proofs of Theorems~\ref{thm:ch12_1}, \ref{thm:ch12_2} and \ref{thm:ch12_3} are similar to demonstrations of earlier chapters and it will suffice therefore to describe them in outline.
+
+For \autoref{thm:ch12_1}, we assume that the field generated by the $\xi_i$ and $e^{\xi_i \eta_j}$ ($1 \le i, j \le 3$) over the rationals $\mathbb{Q}$ has transcendence degree\index{transcendence degree} 1 and we derive a contradiction. The field is then generated by a transcendental number\index{transcendental number} $\omega$ together with a number $\Omega$ algebraic over $\mathbb{Q}(\omega)$; and one can assume that $\Omega$ is integral over $\mathbb{Q}[\omega]$. It will be enough to treat here the case when the $\xi_i$ and $e^{\xi_i \eta_j}$ are integral over $\mathbb{Q}[\omega]$; the general result follows similarly on introducing appropriate denominators. Constants implied by $\ll$ and $\gg$, and by $c, c_1, c_2, \dots$ will depend on the $\xi$'s, $\eta$'s and $\omega$, $\Omega$ only.
+
+One begins by constructing, for any integer $k \gg 1$, an auxiliary function\index{auxiliary function}
+\[\Phi(z) = \sum_{\lambda_0=0}^{L_0} \dots \sum_{\lambda_3=0}^{L} p(\lambda_0, \dots, \lambda_3) \, \omega^{\lambda_0} \, e^{(\lambda_1 \xi_1 + \lambda_2 \xi_2 + \lambda_3 \xi_3) z}\]
+satisfying $\Phi^{(j)}(\eta) = 0$ ($0 \le j < k$) for each
+\[\eta = l_1 \eta_1 + l_2 \eta_2 + l_3 \eta_3 \quad (1 \leq l_1, l_2, l_3 \leq m),\]
+where
+\[m = [k^{\frac{1}{2}}(\log k)^{\frac{1}{2}}], \quad L_0 = [k \log k], \quad L_1 = L_2 = L_3 = L = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}],\]
+and the $p(\lambda_0, \dots, \lambda_3)$ are rational integers, not all 0, with absolute values at most $k^{c_1 k}$. Such a construction is possible, for clearly $\Phi^{(j)}(\eta)$ can be expressed as a linear form in the $p$'s with coefficients given by polynomials in $\omega, \Omega$; the latter have degrees $\ll L_0$ in $\omega, \ll 1$ in $\Omega$ and heights at most $k^{c_1 k}$. Thus one has to solve $M \ll m^3 k$ linear equations\index{linear equations} in $\gg L^3 L_0 > 2M$ unknowns, and Lemma~1 of Chapter~2 is therefore applicable.
+
+Let now $c, \Gamma$ be the circles centre the origin described in the positive sense with radii $k$ and $k^{\frac{1}{2}}$ respectively. Then, for any $z$ on $\Gamma$,
+\[\Phi(z) = \frac{1}{2\pi i} \int_{c} \left(\frac{A(z)}{A(\zeta)}\right)^k \frac{\Phi(\zeta)}{\zeta - z} d\zeta,\]
+where $A(z)$ denotes the monic polynomial with $m^3$ zeros $\eta$. Hence we see that $\log |\Phi(z)| \ll -m^3 k \log k$. And since, by Cauchy's theorem,
+\[\Phi^{(j)}(\eta) = \frac{j!}{2\pi i} \int_{\Gamma} \frac{\Phi(z)}{(z-\eta)^{j+1}} dz,\]
+it follows that, if $j \leq k(\log k)^{\frac{1}{4}}$, then the same estimate obtains with $\Phi(z)$ replaced by $\Phi^{(j)}(\eta)$. But, by \autoref{lem:ch12_1}, $\Phi$ has $\ll L^3$ zeros within and on $c$, and so $\Phi^{(j)}(\eta) \neq 0$ for some $\eta$ and some $j$ as above. Further, $\Phi^{(j)}(\eta)$ is a polynomial in $\omega, \Omega$ with rational integer coefficients, and, on taking the product of its conjugates over $\mathbb{Q}(\omega)$, we derive a polynomial $P(x)$ with degree $n$ and height $h$ satisfying
+\[n \leqslant k \log k, \quad \log h \leqslant k(\log k)^{\frac{1}{4}}, \quad \log |P(\omega)| \leqslant -m^3 k \log k \leqslant -k^2 (\log k)^{\frac{5}{4}}.\]
+As $k$ increases we obtain a sequence of such polynomials $P$ and, plainly, this contradicts \autoref{lem:ch12_5}. The contradiction proves the theorem.
+
+The proof of \autoref{thm:ch12_2} is similar. Under analogous initial assumptions, one constructs, for any integer $k \gg 1$, an auxiliary function\index{auxiliary function}
+\[\Phi(z) = \sum_{\lambda_0=0}^{L_0} \dots \sum_{\lambda_3=0}^{L_3} p(\lambda_0, \dots, \lambda_3) \, \omega^{\lambda_0} z^{\lambda_3} e^{(\lambda_1 \xi_1 + \lambda_2 \xi_2) z}\]
+satisfying $\Phi^{(j)}(\eta) = 0 \ (0 \le j < k)$ for each
+\[\eta = l_1 \eta_1 + l_2 \eta_2 \quad (1 \leqslant l_1 \leqslant m_1, \, 1 \leqslant l_2 \leqslant m_2),\]
+where
+\[m_1 = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}], \quad m_2 = [(k \log k)^{\frac{1}{2}}],\]
+\[L_0 = L_3 = k, \quad L_1 = L_2 = L = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}],\]
+and the $p(\lambda_0, \dots, \lambda_3)$ are again rational integers, not all 0, with absolute values at most $k^{c_2 k}$. The construction is certainly possible, for, in view of the hypothesis that $e^{\xi_1\eta_2}$ and $e^{\xi_2\eta_2}$ are algebraic, the coefficients in the linear forms have the same properties as in the previous argument, whence one has only to solve $M \ll m_1 m_2 k$ linear equations\index{linear equations} in $\gg L^2 L_0 L_3 > 2M$ unknowns. Now by the first integral formula above with $A$ denoting here the monic polynomial with $m_1 m_2$ zeros $\eta$, one has
+\[\log |\Phi(z)| \ll -m_1 m_2 k \log k\]
+for all $z$ on $\Gamma$, and, by the second integral formula, we see that the same estimate obtains with $\Phi(z)$ replaced by $\Phi^{(j)}(\eta')$ for all $j \le k(\log k)^{\frac{1}{4}}$ and all
+\[\eta' = l_1' \eta_1 + l_2' \eta_2 \quad (1 \leqslant l_1' \leqslant m_1', \ 1 \leqslant l_2' \leqslant m_2'),\]
+where
+\[m_1' = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}], \quad m_2' = [k^{\frac{1}{2}}(\log k)^{\frac{3}{2}}].\]
+But, by \autoref{lem:ch12_1}, $\Phi$ has $\ll L^2 L_3$ zeros within and on $c$, and so $\Phi^{(j)}(\eta') \neq 0$ for some $\eta'$ and some $j$ as above. Thus, on taking conjugates over $\mathbb{Q}(\omega)$ and appealing again to the hypothesis, we derive a polynomial $P(x)$ with degree $n$ and height $h$ satisfying
+\[n \leqslant k(\log k)^{\frac{1}{2}}, \quad \log h \leqslant k \log k, \quad \log |P(\omega)| \ll -m_1 m_2 k \log k \ll -k^2 (\log k)^{\frac{5}{4}}.\]
+This contradicts \autoref{lem:ch12_5} and the required result follows.
+
+Finally, for the proof of \autoref{thm:ch12_3}, one assumes that all the $e^{\xi_i\eta_j}$ are algebraic and, adopting a notation as above, one constructs, for any integer $k \gg 1$, an auxiliary function\index{auxiliary function}
+\[\Phi(z) = \sum_{\lambda_1=0}^{L} \sum_{\lambda_2=0}^{L} \sum_{\lambda_3=0}^{L} p(\lambda_1, \lambda_2, \lambda_3) e^{(\lambda_1 \xi_1 + \lambda_2 \xi_2 + \lambda_3 \xi_3) z}\]
+satisfying $\Phi^{(j)}(\eta) = 0$ for each
+\[\eta = l_1 \eta_1 + l_2 \eta_2 \quad (1 \leqslant l_1, l_2 \leqslant k),\]
+where $L = [k^{\frac{1}{3}}]$, and the $p(\lambda_1, \lambda_2, \lambda_3)$ are rational integers, not all 0, with absolute values at most $k^{c_3 k}$. If now $m$ is any integer $\ge k$ and if $\Phi^{(j)}(\eta) = 0$ for all $\eta$ with $1 \le l_1, l_2 \le m$ then also $\Phi^{(j)}(\eta') = 0$ for all
+\[\eta' = l'_1 \eta_1 + l'_2 \eta_2 \quad (1 \leqslant l'_1, l'_2 \leqslant m+1).\]
+Indeed, the function $\Phi/A^k$, where $A$ denotes the monic polynomial with $m^2$ zeros $\eta$, is clearly regular within and on the circle $c$ centre the origin and radius $m'$, and so, by the maximum-modulus principle\index{maximum-modulus principle} or, alternatively, the first integral formula above, we have
+\[\log |\Phi(\eta')| \ll -m^2 \log m;\]
+on the other hand, on multiplying $\Phi(\eta')$ by a suitable denominator, one obtains an algebraic integer\index{algebraic integer} in a fixed field with size $s$ satisfying $\log s \ll m k$, and the assertion now follows on considering the norm of $\Phi(\eta')$. We conclude that $\Phi^{(j)}(\eta) = 0$ for all positive integral values of $l_1, l_2$, and hence $\Phi(z)$ vanishes identically. But this contradicts the hypothesis that $\xi_1, \xi_2, \xi_3$ are linearly independent over the rationals, and the contradiction proves the theorem.

@@ -1,0 +1,132 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{THE SIEGEL-SHIDLOVSKY THEOREMS}\label{ch:11}
+
+\section{Introduction}\label{sec:ch11_1}
+
+In 1929 Siegel\index{Siegel, C. L.}\footnote{Abh. Preuss. Akad. Wiss. 1929, No. 1.} obtained a general method for establishing the algebraic independence of the values of a certain class of power series satisfying systems of linear differential equations. Siegel\index{Siegel, C. L.} called the power series in question $E$-functions. By this he meant series of the form
+\[\sum_{n=0}^{\infty} a_n x^n / n!,\]
+with $a_0, a_1, \ldots$ elements of an algebraic number\index{algebraic number} field such that, for some sequence $b_0, b_1, \ldots$ of positive integers and for any $\epsilon > 0$, $b_n a_0, \ldots, b_n a_n$ and $b_n$ are all algebraic integers\index{algebraic integer} with size $\leqslant n^{\epsilon n}$, where the implied constant depends only on $\epsilon$; here the size denotes, as in \autoref{ch:4}, the maximum of the absolute values of the conjugates. It is clear that the exponential function\index{exponential function} is an $E$-function, and indeed so is the normalized Bessel function\index{Bessel function}
+\[K_{\lambda}(x) = \Gamma(\lambda+1) (\frac{1}{2}x)^{-\lambda} J_{\lambda}(x) = \sum_{n=0}^{\infty} \frac{(-1)^n (\frac{1}{2}x)^{2n}}{n! (\lambda+1) \dots (\lambda+n)}\]
+for all rational values of $\lambda$ other than the negative integers. More generally, any hypergeometric function\index{hypergeometric function}
+\[\sum_{n=0}^{\infty} \frac{[\alpha_1, n] \dots [\alpha_l, n]}{[\beta_1, n] \dots [\beta_m, n]} x^{kn}\]
+is an $E$-function, where $k = m - l > 0$,
+\[[\gamma, n] = \gamma(\gamma+1) \dots (\gamma+n-1),\]
+and the $\alpha$'s and $\beta$'s are rationals other than negative integers. The latter assertion follows in fact from the observation that, for any rational $\alpha = p/q$, the integer $q^n[\alpha, n]$ divides $n! \nu$, where $\nu$ denotes the least common multiple of all the positive integers up to
+\[m = (|p| + |q|) n;\]
+and from the prime-number theorem we have $\nu < c^m$ for some absolute constant $c$. Furthermore, it is readily verified that sums, products, derivatives and integrals of $E$-functions are again $E$-functions.
+
+Siegel\index{Siegel, C. L.}'s work related to differential equations of the first and second orders only, and it was an outstanding question for many years to devise a means of extending the arguments to higher order equations. The problem was solved by Shidlovsky\index{Shidlovsky, A. B.}\footnote{I.A.N. 23 (1959), 35--66.} in 1954 and many notable applications have followed. The basic result concerns $E$-functions $E_1(x), \dots, E_n(x)$ satisfying a system of homogeneous linear differential equations
+\[y'_{i} = \sum_{j=1}^{n} f_{ij}(x) y_{j} \quad (1 \leq i \leq n), \tag{1}\label{eq:ch11_1}\]
+where the $f_{ij}$ are rational functions of $x$, and the coefficients of all the $E$'s and $f$'s are supposed to be elements of an algebraic number\index{algebraic number} field $K$. We have then:
+
+\begin{mythm}{}{ch11_1}
+If $E_1(x), \dots, E_n(x)$ are algebraically independent over $K(x)$ then, for any non-zero algebraic number\index{algebraic number} $\alpha$ distinct from the poles of the $f_{ij}$, $E_1(\alpha), \dots, E_n(\alpha)$ are algebraically independent.
+\end{mythm}
+
+The theorem can easily be extended to yield an assertion to the effect that the maximum number of algebraically independent elements among $E_1(x), \ldots, E_n(x)$ is the same as that among $E_1(\alpha), \ldots, E_n(\alpha)$,\footnote{Cf. the survey of Feldman\index{Feldman, N. I.} and Shidlovsky\index{Shidlovsky, A. B.} (Bibliography).} and moreover there is no difficulty in generalizing the latter result to inhomogeneous equations where an additional rational function is present on the right of \eqref{eq:ch11_1}. As an immediate application of \autoref{thm:ch11_1}, we see that if $\lambda$ is rational, but not a negative integer or half an odd integer, then $K_{\lambda}(\alpha)$ and $K'_{\lambda}(\alpha)$ are algebraically independent for every non-zero algebraic number\index{algebraic number} $\alpha$; for it is well known\footnote{Cf. Siegel\index{Siegel, C. L.} (Bibliography).} that $K_{\lambda}(x)$ and $K'_{\lambda}(x)$ are algebraically independent over $\mathbb{Q}(x)$. This further implies, for example, that the continued fraction with partial quotients 1, 2, 3, \ldots{} is transcendental; for $J_0(\sqrt{-4x})$ [$= K_0(\sqrt{-4x})$] satisfies the differential equation $xy'' + y' = y$, and the continued fraction in question is given by $y/y'$ evaluated at $x = 1$. Oleinikov\index{Oleinikov, V. A.}\footnote{D.A.N. 166 (1966), 540--3.} has obtained some similar theorems for third order linear differential equations; for instance he has shown that if
+\[F(x) = \sum_{n=0}^{\infty} \frac{(x/3)^{3n}}{n! [\lambda, n] [\mu, n]},\]
+where $\lambda$, $\mu$ are rationals such that none of $\lambda + \mu$, $\lambda - 2\mu$, $\mu - 2\lambda$ are integers, then $F(x)$, $F'(x)$, $F''(x)$ satisfy the hypothesis of \autoref{thm:ch11_1}, whence $F(\alpha)$, $F'(\alpha)$, $F''(\alpha)$ are algebraically independent for every non-zero algebraic number\index{algebraic number} $\alpha$. And Shidlovsky\index{Shidlovsky, A. B.}\footnote{Trudy Moskov. 18 (1968), 55--64.} has proved a striking theorem to the effect that if
+\[\Phi_k(x) = \sum_{n=0}^{\infty} x^{kn}/(n!)^k,\]
+then, for any non-zero algebraic $\alpha$ and any $r$, the numbers\index{numbers} $\Phi_k^{(l)}(\alpha/k)$, with $1 \leq l < k$, $1 \leq k \leq r$, are algebraically independent. Plainly also \autoref{thm:ch11_1} includes Lindemann\index{Lindemann, F.}'s theorem\index{Lindemann's theorem}.
+
+\section{Basic construction}\label{sec:ch11_2}
+
+The proof of \autoref{thm:ch11_1} follows closely the arguments of the preceding chapter, but it is no longer a simple matter to confirm that $\Delta(x)$ does not vanish identically. The verification, which is Shidlovsky\index{Shidlovsky, A. B.}'s major discovery in the subject, will be given in \autoref{lem:ch11_2} below.
+
+We shall signify by $E_1(x), \dots, E_n(x)$ $E$-functions as above, linearly independent over $K(x)$ and we shall suppose that $0 < \epsilon < 1$. Constants implied by $\leqslant$ or $\gg$ will depend on the coefficients in the $E$'s, $f$'s and on $\epsilon$ only. By $f(x)$ we signify a polynomial, not identically 0, with coefficients in $K$, such that $f f_{ij}$ is a polynomial for all $f_{ij}$ in \eqref{eq:ch11_1}.
+
+\begin{mylemma}{}{ch11_1}
+For any integer $r \gg 1$, there are polynomials $P_i(x)$ $(1 \leqslant i \leqslant n)$, not all identically 0, with degrees at most $r$ and algebraic integer\index{algebraic integer} coefficients in $K$ with sizes at most $(r!)^{1+\epsilon}$, such that
+\[\sum_{i=1}^{n} P_i(x) E_i(x) = \sum_{m=M}^{\infty} \rho_m x^m, \tag{2}\label{eq:ch11_2}\]
+where $|\rho_m| < r! (m!)^{-1+\epsilon}$ and
+\[M = n(r+1) - 1 - [\epsilon r].\]
+\end{mylemma}
+
+\begin{proof}
+Let $a_{ij}$ be the coefficient of $x^j/j!$ in $E_i(x)$ and let $b_{i0}, b_{i1}, \ldots$ be the sequence of integers associated with $E_i$ as in \autoref{sec:ch11_1}. By \autoref{lem:ch6_1} of \autoref{ch:6}, there exist algebraic integers\index{algebraic integer} $p_{ij}$ $(1 \le i \le n, 0 \le j \le r)$ in $K$, not all 0, such that
+\[\sum_{i=1}^{n} \sum_{j=0}^{\min(r, m)} \binom{m}{j} a_{i, m-j} p_{ij} = 0 \quad (0 \le m < M), \tag{3}\label{eq:ch11_3}\]
+and indeed they can be selected to have sizes at most $N^{\delta NM/(N-M)}$, where $N=n(r+1)$ and $\delta=(\epsilon/4n)^2$; for, on multiplying \eqref{eq:ch11_3} by $b_{1m}\dots b_{nm}$, the coefficients become algebraic integers\index{algebraic integer} in $K$ with sizes $\leq 2^M M^{\frac{1}{2}\delta M}$, as is clear on taking $\delta/(2n)$ in place of $\epsilon$ in the defining property of the $b$'s. We conclude, as in the proof of Lemma 1 of Chapter 10, that the polynomials
+\[P_i(x) = r! \sum_{j=0}^{r} p_{ij}(j!)^{-1} x^j \quad (1 \le i \le n)\]
+have the asserted properties. In fact \eqref{eq:ch11_2} plainly holds with $\rho_m = (r!/m!)\sigma_m$, where $\sigma_m$ denotes the left-hand side of \eqref{eq:ch11_3}, and since $M < N < 2nr$ and $N - M > \epsilon r$, we see that the $p_{ij}$ have sizes at most $r^{\frac{1}{2}\epsilon r}$, whence $|\sigma_m| < (m!)^{\epsilon}$ for $m \ge M$, as required.
+\end{proof}
+
+\begin{mylemma}{}{ch11_2}
+Let $P_{ij}(x)$ $(1 \le i \le n, j \ge 1)$ be defined recursively by
+\[P_{i1} = P_i, \quad P_{i,j+1} = f P'_{ij} + f \sum_{h=1}^{n} f_{hi} P_{hj}.\]
+Then the determinant $\Delta(x)$ of order $n$ with $P_{ij}(x)$ in the $i$th row and $j$th column is not identically 0.
+\end{mylemma}
+
+\begin{proof}
+Suppose, on the contrary, that $\Delta(x)$ vanishes identically. Let $k$ be the integer such that the first $k$ columns of $\Delta(x)$ are linearly independent over $K(x)$ but the $(k+1)$th column is linearly dependent on these. We signify by $\mathbf{Q}$ the matrix formed by the first $k$ columns of $\Delta(x)$, and by $\mathbf{R}$ and $\mathbf{S}$ the matrices formed from the first $k$ rows of $\mathbf{Q}$ and last $n-k$ rows respectively. We assume, as clearly we may, that the notation is such that $\mathbf{R}$ is non-singular, and we proceed to prove that the degrees of the numerators and denominators of the rational function elements of $\mathbf{S}\mathbf{R}^{-1}$ are $\ll 1$, where in fact the implied constant depends only on the $f$'s. This will suffice to establish the lemma; for denoting by $\mathbf{L}$ the row vector with $j$th element
+\[L_{j} = \sum_{i=1}^{n} P_{ij} E_{i} \quad (1 \leq j \leq k),\]
+and putting $\mathbf{A} = (E_1, \dots, E_k)$, $\mathbf{B} = (E_{k+1}, \dots, E_n)$, we have $\mathbf{L} = \mathbf{A}\mathbf{R} + \mathbf{B}\mathbf{S}$ whence
+\[\mathbf{L}\mathbf{R}^{-1} = \mathbf{A} + \mathbf{B}\mathbf{S}\mathbf{R}^{-1}. \tag{4}\label{eq:ch11_4}\]
+But $L_j$ satisfies the differential equation $L_{j+1} = f L'_j$ and so each element of $\mathbf{L}$ has a zero at $x=0$ with order at least $M-n$. Further, each element of $\mathbf{R}^{-1}$ can be expressed as a rational function in $K(x)$ with denominator $\det\mathbf{R}$, and since the latter is a polynomial with degree at most $kr+c$, where $c \leqslant 1$, it follows that each element of $\mathbf{L}\mathbf{R}^{-1}$ has a zero at $x=0$ with order at least $M-kr-n-c$. On the other hand, the vector on the right of \eqref{eq:ch11_4} cannot vanish identically in view of the assumed linear independence of $E_1, \ldots, E_n$, and the order of the zeros of its elements at $x=0$, if any, are bounded independently of the coefficients of the elements of $\mathbf{S}\mathbf{R}^{-1}$, and so, in particular, of $r$. Now $k < n$, and so $M-kr$ tends to infinity with $r$; hence we have a contradiction if $r$ is sufficiently large.
+
+To prove the assertion concerning $\mathbf{S}\mathbf{R}^{-1}$, we observe first that there is a square matrix $F$ of order $k$, with elements in $K(x)$, such that, for any solution $\mathbf{y}$ of \eqref{eq:ch11_1}, the vector $\mathbf{Y} = \mathbf{y}\mathbf{Q}$ satisfies the differential equation $\mathbf{Y}' = \mathbf{Y}F$. Indeed if $Y_j$ denotes the $j$th element of $\mathbf{Y}$, then $Y_{j+1} = f Y'_j$ for all $j < k$ and, by the definition of $k$, $f Y'_k$ is expressible as a linear combination of $Y_1, \ldots, Y_k$ with coefficients in $K(x)$. Let now $\mathbf{w}_1, \dots, \mathbf{w}_n$ be power series solutions of \eqref{eq:ch11_1} linearly independent over $K$ and let $\mathbf{W}$ be the square matrix of order $n$ with $j$th row $\mathbf{w}_j$. Then each row of $\mathbf{W}\mathbf{Q}$ is a solution of $\mathbf{Y}' = \mathbf{Y}F$; but this has at most $k$ solutions linearly independent over $K$ and thus there exists an $n-k$ by $n$ matrix $\mathbf{M}$ with coefficients in $K$ and rank $n-k$ satisfying $\mathbf{M}\mathbf{W}\mathbf{Q} = 0$. Denoting by $\mathbf{U}$ and $\mathbf{V}$ the matrices formed from the first $k$ columns of $\mathbf{M}\mathbf{W}$ and the last $n-k$ columns respectively, we have $\mathbf{U}\mathbf{R} + \mathbf{V}\mathbf{S} = 0$. Since $\mathbf{R}$ is non-singular and $\mathbf{M}\mathbf{W}$ has rank $n-k$ it follows that $\mathbf{V}$ is non-singular and so $\mathbf{S}\mathbf{R}^{-1} = -\mathbf{V}^{-1}\mathbf{U}$. Clearly the elements of $\mathbf{V}^{-1}\mathbf{U}$ are rational functions in the elements of $\mathbf{W}$ with coefficients in $K$ and with the degrees of the numerators and denominators bounded independently of $r$. Hence they can be expressed as quotients of linear forms in certain monomials in the elements of $\mathbf{W}$, linearly independent over $K(x)$, the coefficients in the linear forms being rational functions in $K(x)$ for which again the degrees of the numerators and denominators are bounded independently of $r$. Since the elements of $\mathbf{S}\mathbf{R}^{-1}$ and so also of $\mathbf{V}^{-1}\mathbf{U}$ are in fact in $K(x)$, they must be given by quotients of such coefficients, and the assertion follows.
+\end{proof}
+
+\section{Further lemmas}\label{sec:ch11_3}
+
+We now obtain analogues of Lemmas 3 and 4 of Chapter 10. The arguments here will follow closely their earlier counterparts and so we shall be relatively brief.
+
+By $\alpha$ we shall signify an element of $K$ with $\alpha f(\alpha) \neq 0$. By $c_1, c_2, \ldots$ we denote positive numbers\index{numbers} which may depend on $\alpha, \epsilon$ and the coefficients in the $E$'s and $f$'s only.
+
+\begin{mylemma}{}{ch11_3}
+There are distinct suffixes $J(j)$ $(1 \le j \le n)$ not exceeding $\epsilon r + c_1$ such that the determinant with $P_{i, J(j)}(x)$ in the $i$th row and $j$th column does not vanish at $x = \alpha$.
+\end{mylemma}
+
+\begin{proof}
+We begin by noting that $\Delta(x)$ remains unaltered if the first row is replaced by $E_1^{-1}L_j$ with $j=1,2,\ldots,n$, where $L_j$ is defined as in the proof of \autoref{lem:ch11_2}. Hence $\Delta(x)$ has a zero at $x=0$ with order at least $M-c_2$, and since it is a polynomial with degree at most $nr+c_3$, it follows that a non-negative integer $t$ exists, not exceeding
+\[nr + c_3 - (M - c_2) \leqslant \epsilon r + c_4\]
+such that $\Delta^{(t)}(\alpha) \neq 0$; we suppose that $t$ is chosen minimally.
+
+We now introduce linear forms in $w_1, \ldots, w_n$ by (3) of Chapter 10. On applying the operator $f d/dx$ to (4) of that chapter $t$ times, replacing $w'_i$ occurring at each stage by the right-hand side of \eqref{eq:ch11_1} with $y_j = w_j$, we obtain
+\[w_i(f(\alpha))^t \Delta^{(t)}(\alpha) = \sum_{j=1}^{n+t} W_j F_{ij}(\alpha) \quad (1 \leq i \leq n),\]
+where the $F_{ij}$ denote polynomials in $x$ given by linear combinations of the $f$'s, $\Delta$'s and their derivatives. Hence the linear forms
+\[W_j \quad (1 \leqslant j \leqslant n+t)\]
+with $x = \alpha$ include a set of $n$ linearly independent forms and the lemma follows with $J(j)$ given by the associated suffixes.
+\end{proof}
+
+\begin{mylemma}{}{ch11_4}
+There are algebraic integers\index{algebraic integer} $q_{ij}$ $(1 \le i, j \le n)$ in $K$ with sizes at most $(r!)^{1+18\epsilon}$ forming a non-zero determinant and satisfying
+\[\left|\sum_{i=1}^{n} q_{ij} E_i(\alpha)\right| < (r!)^{-n+1+16\epsilon n} \quad (1 \leq j \leq n). \tag{5}\label{eq:ch11_5}\]
+\end{mylemma}
+
+\begin{proof}
+Let $l$ be a positive integer such that $l\alpha$ and the coefficients in $l f$ and all $l f f_{ij}$ are algebraic integers\index{algebraic integer}. We proceed to prove that the numbers\index{numbers}
+\[q_{ij} = l^{r+(m+1)J(j)} P_{i, J(j)}(\alpha) \quad (1 \leq i, j \leq n),\]
+where $m$ denotes the maximum of the degrees of the $f f_{ij}$ and $f$, have the required properties. First it is clear that $l^j P_{ij}$ has algebraic integer\index{algebraic integer} coefficients and degree at most $r+mj$. Thus the $q$'s are algebraic integers\index{algebraic integer} and, by \autoref{lem:ch11_3}, they form a non-zero determinant. Further, it is easily verified by induction that the sizes of the coefficients of $l^j P_{ij}$ are at most $(r+mj)^{2j} c_5^j (r!)^{1+\epsilon}$, and since the $J(j)$ do not exceed $\epsilon r+c_1$, this gives the required estimate for the sizes of the $q$'s.
+
+It remains to prove \eqref{eq:ch11_5}. Denoting by $\Phi(x)$ the left-hand side of \eqref{eq:ch11_2}, it is clear that the sum on the left of \eqref{eq:ch11_5} is given, apart from a factor $l^{r+(m+1)J}$, by $(f d/dx)^{J-1}\Phi$ evaluated at $x=\alpha$, where $J=J(j)$. But, again by induction, we see that this is a linear form in the $\Phi^{(h)}(\alpha)$, where $h=0,1,\dots,J-1$, having coefficients with absolute values at most $(c_6 J)^{2J}$. Hence it suffices to prove that
+\[|\Phi^{(h)}(\alpha)| < (r!)^{-n+1+8\epsilon n} \quad (0 \le h < J).\]
+Now from \autoref{lem:ch11_1} we obtain
+\[|\Phi^{(h)}(\alpha)| < r! \sum_{m=M}^{\infty} (m!)^{-1+\epsilon} ((m-h)!)^{-1} |\alpha|^{m-h},\]
+and the sum on the right is at most
+\[h! \sum_{m=M}^{\infty} (m!)^{-1+\epsilon} 2^m |\alpha|^{m-h} \leqslant h! c_7^M (M!)^{-1+\epsilon}.\]
+Since $h < \epsilon r + c_1$ and $M \leq 2nr$ we have $h! \leq (r!)^{3\epsilon}$ and
+\[M! \geqslant (2nr)^{-\epsilon r} (r!)^n \geqslant (r!)^{n-3\epsilon}.\]
+The required estimate follows at once.
+\end{proof}
+
+\section{Proof of main theorem}\label{sec:ch11_4}
+
+Suppose that $E_1(\alpha), \ldots, E_n(\alpha)$ are algebraically dependent. Then they satisfy an equation $P(E_1, \ldots, E_n) = 0$, where $P$ is a polynomial with algebraic coefficients, not all 0. We shall denote by $c$ the degree of $P$, and we shall assume, as we may without loss of generality, that the coefficients in $P$ are algebraic integers\index{algebraic integer} in $K$. The degree of $K$ will be denoted by $d$, and we shall suppose that $0 < \epsilon < 1$. Further we shall signify by $m$ an integer such that the binomial coefficients
+\[k = \binom{m+n+c}{n}, \quad l = \binom{m+n}{n}\]
+satisfy $k - l < l/(2d)$; the latter inequality certainly holds for all sufficiently large $m$ since $k$ and $l$ are asymptotic to $m^n/n!$ as $m \to \infty$, as is easily seen by expressing them as polynomials in $m$ with degree $n$. In the sequel, constants implied by $\ll$ or $\gg$ will depend on $\alpha, \epsilon, m$ and the coefficients in the $E$'s, $f$'s and $P$ only.
+
+Let now $\mathscr{E}_1, \ldots, \mathscr{E}_k$ be the $E$-functions $E_1^{j_1} \dots E_n^{j_n}$, where $j_1, \ldots, j_n$ run through all non-negative integers with $j_1 + \ldots + j_n < m + c$. Then clearly $\mathscr{E}_1, \ldots, \mathscr{E}_k$ satisfy a further system of linear differential equations of the form \eqref{eq:ch11_1}, where the new coefficients are given by linear combinations of the $f$'s; furthermore, $\mathscr{E}_1, \ldots, \mathscr{E}_k$ are linearly independent over $K(x)$ by virtue of the hypothesis regarding the algebraic independence of $E_1(x), \ldots, E_n(x)$. We conclude from \autoref{sec:ch11_2} and \autoref{sec:ch11_3} that, for any integer $r \gg 1$, there exist algebraic integers\index{algebraic integer} $q_{ij}$ ($1 \le i, j \le k$) in $K$ possessing the properties cited in \autoref{lem:ch11_4} with $\mathscr{E}_1, \dots, \mathscr{E}_k$ in place of $E_1, \dots, E_n$. For each set of non-negative integers $j_1, \dots, j_n$ with $j_1 + \ldots + j_n < m$ we write
+\[E_1^{j_1} \dots E_n^{j_n} P(E_1, \dots, E_n) = \sum_{i=1}^k p_{ij} \mathscr{E}_i,\]
+where the $p_{ij}$ are either coefficients in $P$ or 0, and $j = j(j_1, \ldots, j_n)$ takes the values $1, 2, \ldots, l$. Then on the right we have $l$ linear forms in $\mathscr{E}_1, \dots, \mathscr{E}_k$ linearly independent over $K$, all of which vanish at $x = \alpha$. Since the determinant of the $q_{ij}$ is not 0, it follows that there exist $k - l$ of the forms
+\[\Phi_j = \sum_{i=1}^k q_{ij} \mathscr{E}_i \quad (1 \leqslant j \leqslant k)\]
+which together with the latter make up a linearly independent set; without loss of generality we can suppose that they are given by $\Phi_{l+1}, \ldots, \Phi_k$. We shall suppose also, as clearly we may, that $\mathscr{E}_1(\alpha) \neq 0$.
+
+We now compare estimates for the determinant $D$ of order $k$ with $p_{ij}$ in the $i$th row and $j$th column for $j \le l$ and $q_{ij}$ in that position for $j > l$. Plainly $D$ is a non-zero algebraic integer\index{algebraic integer} in $K$, and, since $p_{ij} \ll 1$, it has size $\ll (r!)^{(1+18\epsilon)(k-l)}$; hence
+\[|D| \gg (r!)^{-(1+18\epsilon)(k-l)d} \geqslant (r!)^{-(1+18\epsilon)l/2}.\]
+On the other hand, $D$ is unaltered if the first row is replaced by 0 for $j \le l$ and by $\mathscr{E}_1^{-1}(\alpha)\Phi_j$ for $j > l$. Further, by \autoref{lem:ch11_4}, the latter elements are $\ll (r!)^{-k+1+16\epsilon k}$; thus
+\[|D| \ll (r!)^{(1+18\epsilon)(k-l-1)-k+1+18\epsilon k} \leqslant (r!)^{-l+32\epsilon k}.\]
+But $k < \frac{3}{2} l$ and so, if $\epsilon < 1/(100k)$ and $r$ is sufficiently large, we have a contradiction. This proves the theorem.
+
+Subsequent to the fundamental discovery of Shidlovsky\index{Shidlovsky, A. B.}, researches in this field have largely centred on establishing the function-theoretic hypotheses of \autoref{thm:ch11_1} and its extensions for particular classes of $E$-functions, and, as indicated in \S~1, this has in fact been accomplished in many striking cases. Studies have also been carried out in connexion with obtaining positive lower bounds for expressions of the type $P(E_1, \ldots, E_n)$ as above, and in fact an estimate of the form $C h^{-c}$ has been established, where $h$ denotes the maximum of the sizes of the coefficients of $P$ and $C, c$ are positive numbers\index{numbers} which do not depend on $h$; 
+but $c$ here increases rapidly with\footnote{Cf. Lang\index{Lang, S.} (Bibliography, first work).} $n$. The main outstanding problem in the subject is to generalize the theory to wider classes of analytic functions than $E$-functions, and any progress here would be of much interest.

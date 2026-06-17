@@ -1,0 +1,457 @@
+
+
+===== PDF PAGE 95 =====
+8
+MAHLER'S CLASSIFICATION
+1. Introduction
+A classification of the set of all transcendental numbers into three
+disjoint aggregates, termed S-, T- and C/-numbers, was introduced by
+Mahler* in 1932, and it has proved to be of considerable value in the
+general development of the subject. The first classification of this
+kind was outlined by Maillet* in 1906, and others were described by
+Perna' and Morduchai-Boltovskoj;' but to Mahler's classification
+attaches by far the most interest.
+As in the previous chapter, we define the height of a polynomial as
+the maximum of the absolute values of its coefficients, and we shall
+speak of the height only for polynomials with integer coefficients, not
+all 0. Let now £ be any complex number, and for each pair of positive
+integers n, h, let P(x) be a polynomial with degree at most n and height
+at most h for which |-P(£) | takes the smallest positive value; and define
+<o(n,h) by the equation \P(£)\ = ft-"*".*). Further define
+wn = lim sup w(n, h), w = lim sup wn,
+A-+ oo 
+n—• as
+and let v be the least positive integer n for which con = oo, writing i* = oo
+if, in fact, wn < oo for all n. Mahler characterizes the set of all complex
+numbers as follows:
+A -number 
+w = 0, v = oo,
+^-number 
+0 < co < oo, v = oo,
+T-number 
+W = oo, y = oo,
+^/-number 
+w = oo, v < oo.
+We shall prove in §2 that the A -numbers are just the algebraic
+numbers; thus a transcendental number £ is an &-number if (o(n, h) is
+uniformly bounded for all n, h, a ?7-number if, for some n, (o(n, h) is
+unbounded, and a T-number otherwise. Further we have:
+t J.M. 166(1932), 118-36.
+% Bibliography.
+§ (Horn, Mat. BaOaglini, 52 (1914), 305-65.
+|| Mat. Sbornik, 41 (1934), 221-32.
+[ 8 6 ]
+
+
+===== PDF PAGE 96 =====
+86 
+MAHLER'S CLASSIFICATION
+Theorem 8.1. Algebraically dependent numbers belong to the same
+class.
+Theorem 8.2. Almost all numbers are S-numbers.
+Here ' almost all' is interpreted in the sense of Lebesgue measure
+theory, the linear and planar measures being taken for the real and
+complex numbers respectively.
+The integer v defined above is called the degree of £. It is clear that
+the Liouville numbers, mentioned in Chapter 1, are [/-numbers of
+degree 1, and LeVeque* proved in 1953 the existence of [/-numbers of
+each degree; we shall establish the latter in § 6. For many years it was
+an open question whether any T-numbers existed but, in 1968, an
+affirmative answer was obtained by Schmidt1 on the basis of Wirsing's
+early version of Theorem 7.2, and this will be the theme of § 7. It is
+customary to subclassify the *S-numbers according to 'type', defined
+as the supremum of the sequence u)u w2 
+We shall show in § 2 that,
+for any transcendental £, &>„ is at least 1 or £(1 - Ijn) according as £ is
+real or complex, whence the type of £, is respectively at least 1 or |. In
+1965, Sprindzuk, confirming a conjecture of Mahler, proved that
+almost all real and complex numbers are (S-numbers of type 1 and J
+respectively. Moreover it was recently demonstrated by a refinement
+of this result that there exist *S-numbers of arbitrarily large type. Thus,
+apart from a small gap in the kind of T-numbers that have so far been
+exhibited, the transcendental spectrum is, in a sense, complete. The
+latter measure-theoretical propositions will be the topic of the next
+chapter.
+In the light of Theorem 8.2, one would expect any naturally defined
+number such as e, n, e" and log a for algebraic a not 0 or 1 to be an
+/S-number. In 1929, Popken proved that indeed e is an <S-n umber of type
+1, and we shall confirm the result in Chapter 10. Theorem 3.1 shows
+that n, and in fact any non-vanishing linear combination of logarithms
+of algebraic numbers with algebraic coefficients, is either an S- or a
+T-number, but the latter possibility has not, as yet, been excluded.
+From the case n = 1 of Theorem 7.1 one sees, for instance, that
+CO
+2 a"6" is transcendental for any integers a > 2, b > 3, and, in the
+n - l
+same context, Mahler1 proved in 1937 that also the decimal -1234...,
+f J. London Math. Soc. 28 (1953), 220-9.
+j Symposia Math. IV (Academic Press, 1970), pp. 3-26.
+§ N.A.W. 40 (1937), 421-8.
+
+
+===== PDF PAGE 97 =====
+INTRODUCTION 
+87
+where the natural numbers are written in ascending order, is tran-
+scendental; and here again it has been proved that these are either 8-
+or T-numbers.t For e", however, the possibility that it is a Liouville
+number has not even been excluded at present. Note that, by virtue
+of Theorem 8.1, the above results enable one to furnish many examples
+of algebraically independent numbers; indeed if £ is any {/-number,
+such as for instance £ 10~n!, and if rj is, say, e or n or £ 10~10" or Mahler's
+decimal, then certainly £, ij are algebraically independent.
+In 1939, Koksma introduced a classification closely analogous to
+that of Mahler, which has also proved illuminating.1 Let £ be any
+complex number and for each pair of positive integers n, h, let a be an
+algebraic number with degree at most n and height at most h such
+that |£ — a| takes the smallest positive value; and define w*(n, h) by
+the equation 
+, _ 
+, 
+, 
+.,_ M ,
+|£—<z| = ^~ 
+l 
+•
+Koksma classified the complex numbers as A*-, S*-, T*- or {/*-
+numbers in the same way as Mahler, but with w* in place of o>. Thus
+a transcendental number £ is an /S*-number if oj*(n, h) is uniformly
+bounded, a U*-number if, for some n, (o*(n,h) is unbounded, and
+a T'-number otherwise. There is an exact correspondence between the
+two classifications, the 8*-, T*- and {/"-classes being in fact identical
+with the S-, T- and {/-classes respectively; moreover, the functions
+wn and w* take comparable values. Indeed it is easily verified that
+<D* < u)n, and simple lower bounds for w* in terms of wn were obtained
+by Wirsing.1 These imply, in particular, that o>* = 1 when wB = 1,
+whence, in view of Sprindzuk's theorem, we have w* = 1 for almost all
+real £. But it remains an open question whether w* > 1 for all real £.
+2. ^-numbers
+We prove here that the A -numbers are just the algebraic numbers.
+Suppose first that g is a real transcendental number. We consider the
+setof all numbers Q(£), where Q denotes a polynomial, not identically 0,
+with degree at most n and with integer coefficients between 0 and h
+inclusive. The set evidently contains (h + l)n+1 — 1 elements each with
+absolute value at most ch for some c = c(n, £,). If now we divide the
+interval [—ch,ch] into hn+1 disjoint subintervals each of length 2ch~n,
+then there will be two distinct numbers Qx(i) and Qt(i) in the same
+t Ada Math. Ill (1964), 97-120.
+X For references and further diacugsion see Schneider (Bibliography).
+{ J.M. 306 (1961), 67-77.
+
+
+===== PDF PAGE 98 =====
+88 
+MAHLER'S CLASSIFICATION
+subinterval. Thus the polynomial P = Qx-Qt satisfies |P(£)| < 2ch~n
+and so wn ^ 1. Similarly, if £ is complex, we divide the intervals
+[ — ch, ch] on the real and imaginary axes into at most h^n+1) disjoint
+subintervals each of length at most c'A-K"-1' for some c' = c'(n, £,), and
+there will be two distinct numbers Qx(i) and Q%{£) with real and
+imaginary parts in the same subintervals. Thus we have
+«„> J(l-l/n).
+Now if £ is algebraic with degree m, then for any polynomial P as
+above, P(£) is an algebraic number with degree at most TO and height at
+most ch for some c = c(n, £). Hence either P(§) = 0 or \P(£)\ > c'h~m
+for some c' = c'(w, £) > 0. It follows that nw(», h) is uniformly bounded
+for all n, h, and this proves the assertion.
+3. Algebraic dependence
+Our purpose here is to prove Theorem 8.1. Suppose that £, rj are
+algebraically dependent. Then they satisfy an equation Q(£, rj) = 0,
+where Q(x, y) is a polynomial with, say, degree k in x, I in y, and with
+algebraic coefficients, not all 0. Without loss of generality we can
+suppose that £,, t\ are transcendental, for otherwise they would both
+be algebraic and so belong to the same class; also we can suppose that
+the coefficients of Q are rational integers, for this can evidently be
+ensured by taking, in place of Q, a product of its conjugates. Moreover
+we can suppose that all the zeros £x = £,, £2> •••»£& of Q(x,r/) are tran-
+scendental; for if one of these were algebraic then its minimal defining
+polynomial, say p(x), would divide all the coefficients of Q(x, y)
+regarded as a polynomial in y, and it would therefore suffice to con-
+sider Q(x, y)/p(x) in place of Q(x, y).
+Let now P and u>{n, h) be defined as at the beginning of § 1 and put
+Clearly we have 
+| J\ < clh~n^n- «+*-*,
+where clt like c2, c3 below, depends only on £, TJ, n and Q. Further, J is
+symmetric in §lt..., E,k and so, by the fundamental theorem on sym-
+metric functions, it can be expressed as a polynomial in the elementary
+symmetric functions with total degree at most n and with height at
+most c2hk. Now each elementary symmetric function is given by
+, where
+Q(*. v) = qo(n) *"+Sifo) **"* + •
+
+
+===== PDF PAGE 99 =====
+ALGEBRAIC DEPENDENCE 
+89
+Hence q$J is a polynomial in y with degree at most In and height at
+most h' = c3hk. If therefore w'(n, h'), <o'n and w' are defined for ij in the
+same way as (o(n, h), o»n and co were defined for £, we have
+This gives klnu/ln > n w n - & + 1, whence A/w' ^ w. Similarly, on inter-
+changing £ and y we obtain Ww > w' and Theorem 8.1 follows.
+4. Heights of polynomials
+We establish now two lemmas which will be employed in the proof of
+Theorem 8.2 and in the next chapter. The propositions will be proved
+for polynomials with arbitrary complex coefficients, and here no
+restriction will attach to the definition of the height. P(x) will denote
+a polynomial with degree n and height h, and constants implied by
+<^ or > will depend only on n.
+Lemma 1. For some integer j with, 0 ^j < n we have
+h < \P(j)\ < h.
+Proof. It is readily verified that
+where A(x) — x(x— 1)... (x — n), and A' denotes the derivative of A.
+Now we have |^4'(i)| > 1, and clearly also the coefficients in the poly-
+nomials A{x)j(x-j) are <^ 1. Thus we see that \P(j)\ > h for some j ,
+and obviously we have |-P(j)| <^ h, for all j . This proves the lemma.
+hit then
+L e m m a 2. If P = P^ 
+••• Pk, where Pi is a polynomial 
+with height
+n.^2...h k <^ h <^ A J A J . . . h k .
+Proof. The right-hand estimate follows at once from the observation
+that every coefficient in P can be expressed as a sum of <^ 1 terms each
+given by a product of ifejjoefficients, one from each of the Pt.
+To establish the left-hand estimate, we begin by choosing an integer
+j to satisfy Lemma 1, and we denote by Ht the height of the polynomial
+Pf(x+j). It is clear, on expressing P^x) as a polynomial in x -j, that
+hf < /7(. Now if y is any zero ofP(x +j), we deduce from the mean value
+theorem 
+h
+
+
+===== PDF PAGE 100 =====
+90 
+MAHLER'S CLASSIFICATION
+for some § with |£| < \T/\. Hence if \i]\ < 1, we have h <^ \J)\ h, that is
+|^| > 1. But the zeros of P{(x+j) are included in those of P(x+j), and
+each coefficient in P^x +j) can be written as the product of the con-
+stant coefficient Pt(j) together with an elementary symmetric function
+in the reciprocals of the zeros. Thus we obtain |Pj(i)| > Hit and the
+lemma follows since P(j) — Px(j) ...Pk(j).
+5. S-numbers
+We proceed now to prove Theorem 8.2 for complex numbers in terms
+of planar Lebesgue measure; the argument for real numbers is similar.
+Again we shall speak of the height only for polynomials with integer
+coefficients.
+We note first that if £ is any complex number and P is any irreducible
+polynomial with degree at most n and height at most h, then the
+nearest zero a of P to £ satisfies
+for if a' is any other zero of P we have
+\a-a'\ < | £ - a | + |£-a'|<2|£-a'|.
+Further we observe that |P'(a)| > h~n; for if p denotes the leading
+coefficient of P and if alt..., am are any distinct conjugates of a then,
+on applying Lemma 2 with P{ given by x — a{, one sees that the
+algebraic integer*^!... am is <^ A, whence the norm of P'(a) multiplied
+hypn~1ia ^ AB|P'(a)|.Ifnow£isaT-or £T-numberthen, by Lemma 2,
+there exist, for some n, infinitely many polynomials P as above such
+that |P(£)| < h~*n, and so the nearest zero a of P to £ satisfies
+|g—a| <^ h~an. Hence every T- and t7-number belongs to the elements
+of infinitely many sets S{n, h) for some n, where S(n, h) consists of all
+discs centred on the algebraic numbers with degree at most n and
+height at most h, and with radius A~2n. But there are < hn+1 elements
+in each 8(n, h) and thus their total area is ^ A~*. Since £A~2 converges,
+it follows that the set of all T- and [/-numbers has measure zero, as
+required.
+6. (/-numbers
+We establish here the existence of {/-numbers of each degree. In fact
+we shall show that, for any positive integer n, £lln is a f/-number of
+CO
+degree n, where £ = i + 2 10-ml. Indeed we shall prove, more
+m - l
+t It U well known that this is an algebraic integer; see e.g. Hecke (Bibliography).
+
+
+===== PDF PAGE 101 =====
+(/-NUMBERS 
+91
+generally, that £ is a {/-number of degree n if there exists a sequence
+av <zt,... of distinct algebraic numbers, with degree n, satisfying
+\l-a,\ 
+< hf% 
+(1)
+where h} denotes the height of at and (i)t -*• oo as j -*• oo, provided that,
+for some r > i. we have 
+hj<hj+i<hp 
+(2)
+for all sufficiently large j . Clearly § = £*'" satisfies (1) and (2) with
+'". where
+p,= 10" (l+ 3 S 10-™'), g-y
+\ 
+m-l 
+/
+and with o>y = j , r = 2; also ay has exact degree n since g^ is not a perfect
+power.
+It suffices to show that if (1) and (2) hold then there are only finitely
+many algebraic numbers ft with degree at most n — 1 satisfying
+\g-fi\ < b-**, 
+(3)
+where b denotes the height of/?. For then n is the least positive integer
+for which there exist sequences avat,... 
+and 6^,a>2,... as above
+satisfying (1), whence § is a ?7*-number of degree n and so also a
+^/-number of the same degree. To verify this connexion between U- and
+[/•-numbers, note that if P^x) is the minimal defining polynomial of at
+then (1) gives, for all sufficiently large j ,
+where the implied constant depends only on £ and n, and, conversely,
+if there were a sequence of polynomials Pt(x) (j= 1,2,...) with degree
+at most n— 1 and height at most ht such that |3(£)| < hfui then the
+nearest zero ctj of Pf to £ would satisfy (1) with o»^ replaced by w^/n.
+Now suppose that /? is an algebraic number with degree at most n — 1
+such that (3) holds, and let j be the integer which, for b sufficiently
+large, satisfies 
+*, < ft** < *,+1; 
+(4)
+in the sequel we shall write briefly a, A, to for a,, Ay, wr From (1) and
+(3) we have 
+^_^ 
+^ | g _ a | + | | _ / ? | <
+and, from (2) and (4), the terms on the right are at most (bh)-*n*,
+provided that u> > 4n*. On the other hand, a—ft is a non-zero algebraic
+number with degree at most n1, and each conjugate has absolute value
+< bh, where the implied constant depends only on n; further, the
+
+
+===== PDF PAGE 102 =====
+92 
+MAHLER'S CLASSIFICATION
+same estimate obtains for the leading coefficient in the minimal
+denning polynomial. Hence
+\<t-fi\ > (&A)—,
+and thus we have a contradiction if b is sufficiently large; the contra-
+diction establishes the result.
+We remark finally that the inequality |a-/?| > (ab)~nt implicit in
+the above argument, where a, /? denote distinct algebraic numbers
+with degrees at most n and heights a, b respectively, and the implied
+constant depends only on n, can be much improved. Indeed, by
+considering the norm of a — /? and using the result employed in § 5 on
+products of conjugates of algebraic numbers, one easily obtains
+\a — /?| > a~lb~m, where I, m denote the degrees of the fields generated
+by ft over Q(oc) and a over Q{fi) respectively. A special case of the
+latter inequality was discovered by A. Brauer* in 1929, but, curiously,
+the full result was recorded only relatively recently.*
+7. r-numbers
+These exist, as we now show. To begin with, let ax, a2,... be any non-
+zero algebraic numbers and let J^, v2, ... be any real numbers exceeding
+1. We shall prove that there exists a sequence yvy2, ••• of non-zero
+numbers with y^ctj rational such that, if hj denotes the height of yf>
+then Hi+1 > 2Hp where Ht = tyi, and furthermore, yJ+1 lies in the
+interval I] consisting of all real x with
+\Hj* <x-y}< \HTi;
+in addition, we shall show that the sequence can be chosen so that, for
+some numbers A1( A2,... between 0 and 1 exclusive, we have
+\yi-fi\>B-*
+for all algebraic numbers fi with degree n ^ j distinct from yv ...,%,
+where B = A"1^3"'* and b denotes the height of ft. Clearly then,
+ylt y2, • • • tends to a limit £ which satisfies | £ — /# | > B~x for all algebraic
+numbers /3 distinct from y1, y2 
+and also
+for all j . We now take v^ = (3w^)4, where n^ denotes the degree of a},
+t J.M. 160 (1929), 70-99.
+\ For references and further work in this context see Michigan Math. J. 8 (1961),
+149-69 (R. GUting).
+
+
+===== PDF PAGE 103 =====
+J-NUMBERS 
+93
+and we select av a,,... so that the equation n} = n has infinitely many
+solutions for each positive integer n. Then £ is a T*-number and hence,
+by observations similar to those recorded in § 6, also a ^-number.
+We shall in fact construct yx, y2,... so that four further conditions
+are satisfied. Let J} be the set of all x in /y such that \x—fi\ > 2B~X
+for all algebraic numbers fi with degree n ^j which are distinct from
+yi,-..,"/j and satisfy B > Ht. Then we shall ensure that (i) yt is in
+Jj-x> (u) * n e measures of It and Jj satisfy |Jy| > J|/^|, (iii) we have
+\"Yf ~ fi\ > 2 ^ - 1 f°r a ^ fi + ~Yi wfth degree j , (iv) if yj/oc} = Pjlqt as a
+fraction in its lowest terms, with g, > 0, then \yj—fi\ > qf1 for all fi
+with degree n < j and with 63n ^ qy
+To define -ft, we note first that, for every large prime qv there are
+> qx numbers y of the form (pjqi) ax in the interval (1,2), where the
+implied constant depends only on alt and these have mutual distances
+> qi1. Further, there are ^ q\ rationals /? with 6s < qx and so there are
+< q\ numbers y satisfying \y—fi\ < q^1 for at least one such fi. We can
+therefore select yx so that (iv) holds, and then, by Theorem 7.2, we can
+choose Ax so that the conditions concerning |-yx — /?j are satisfied. We
+shall show in a moment that also (ii) holds in the case,?' = 1 if qx > 1.
+Now suppose that yv ...,yy_1 have already been defined to satisfy
+the above conditions; we proceed to construct y^. Constants implied
+by <^ or > will depend only on the numbers so far specified, including
+possibly AL...,Ay_x. First let J'^ be defined like J}_x but with the
+additional restriction that the heights of the fi in question satisfy
+b3n < <fy. Clearly the number of fi for whieh the latter inequality holds
+is <^ qi and so J\_x consists of <^ q) intervals. Further, Jj_2 includes
+Jj_t and so, by (ii), we have \J'j-x\ > £|^-i| P 1. I* follows that, for
+any large prime qt, there are > qt numbers y in J,_x of the form
+iPfl(lj)aj> where pt is an integer <^ q^ with (ppqj) = 1. Furthermore,
+any such y is in fact in Jj_lt for if the height of fi satisfies 63n > qt then
+B > qfn)* and thus, on noting that (ify/py) fi has height < qfb, we obtain
+from Theorem 7.2
+\y-fi\>qjHq?b)-*»>2B-\
+Now, as above, there arc < g| numbers fi satisfying the hypotheses of
+(iv) and hence one can select y = y} in Jj_x so that this condition is
+valid. Then clearly we have |y^ — fi\ > B~x for all fi distinct from
+yx 
+yj_x with degree n <j and with B > Hj^; and indeed this holds
+also for B ^ -flj_i, for then, taking k as the least suffix ^ n for which
+B < Hk and appealing to (i) or (iii) with j = k according as k > n or
+
+
+===== PDF PAGE 104 =====
+94 
+MAHLER'S CLASSIFICATION
+k = n, we obtain
+We now use Theorem 7.2 and choose Xt so that \yt—fi\ > 2B~l for all
+algebraic numbers /3 + J) with degree TO = j .
+It remains only to show, as in the case j = 1, that (ii) will be satisfied
+if q} is sufficiently large. Now we have \x — /J| > 2B~l for all x in I} and
+all/? 4= yy with degree TO < j and with//y < B < ^.Forif6 S n < ^then,
+since fl^ > gp and vt > 1, it follows from (iv) that
+and if 63n > qi then, on appealing again to Theorem 7.2, we obtain
+Hence any x in the complement of Jt in I j satisfies \x — /?| < 2B~* for
+some fi with degree TO < j and with B > H^. But the number of /? with
+degree TO and height 6 is < 6n, and so the complement has measure
+•< SB-ty", where the sum is over all TO, b with TO < j and 5 > Hz
+r This
+is plainly < Hj2 < \H^, and the required result follows.
+It will be seen that the above argument allows one to construct a
+T-number with wn taking any value ^ (3TO)4. This can easily be
+reduced to a bound of order TO2, but at present, apparently, not readily
+to one of order TO as would be needed to fill the spectrum.
+
+
+===== PDF PAGE 105 =====
+9
+METRICAL THEORY
+1. Introduction
+As remarked previously, Mahler conjectured in 1932 that almost all
+real numbers are S-numbers of type 1 and almost all complex numbers
+are S-numbers of type $.* He originally proved that, certainly, they are
+both of type at most 4, and 4 was reduced to 3 and f in the real and
+complex cases respectively by Koksma in 1939. LeVeque improved
+these in 1953 to 2 and f, and Volkmann further reduced them in 1964
+to | and §. Moreover, proofs of Mahler's conjecture in the special cases
+with n = 2 and n = 3 were given by Kubilyus, Kasch and Volkmann.
+Finally, in 1965, Sprindzuk* obtained a complete proof of Mahler's
+conjecture for all n, and indeed with the best possible value of o>B.
+We shall establish here a refinement of Sprindzuk's result which was
+derived by the author in 1966.' Denoting by i]r(h) a positive monotonic
+decreasing function of the integer variable h > 0 such that 2,i/r(h)
+converges, we prove:
+Theorem 9.1. For almost all real 6 and any positive integer n there
+exist only finitely many polynomials P vrith degree n and integer coefficients
+such that \P(d)\ < (f(h))n, where h denotes-the height of P.
+A similar result holds for almost all complex numbers 8 with the
+exponent n replaced by \(n— 1). It is clear from, for instance,
+Minkowski's linear forms theorem, that the assertion would not
+remain valid with ijr(h) = ijh, and indeed it is easily verified that
+almost no 6 would have the properties required in the case TO = 1 if
+S^(A) were divergent. But it seems likely that the function (fr(h))n
+can be replaced by A~"+1v!r(A), and this conjecture has in fact been
+established for n < 3.
+The theorem has recently been applied to evaluate the Hausdorflf
+dimension of certain sets; in particular, it has been employed to show
+that, for any A > 1 and any positive integer », the set of all real £ such
+that, for any A' < A, there exist infinitely many algebraic numbers fi
+t M.A. 106 (1932), 131-9.
+% Bibliography; this oontaina references to the earlier works.
+i Proe. Boy. Soc. London, A 292 (1966), 92-104.
+[96]

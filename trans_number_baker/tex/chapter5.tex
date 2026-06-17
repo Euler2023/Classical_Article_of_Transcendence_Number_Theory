@@ -1,0 +1,214 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{CLASS NUMBERS OF IMAGINARY QUADRATIC FIELDS}\label{ch:5}
+
+
+\section{Introduction}\label{sec:ch5_1}
+
+The foundations of the theory of binary quadratic forms, the forerunner of our modern theory of quadratic fields, were laid by Gauss\index{Gauss, C. F.} in his famous \textit{Disquisitiones Arithmeticae}. Gauss\index{Gauss, C. F.} showed, amongst other things, how one could divide the set of all binary quadratic forms into classes such that two forms belong to the same class if and only if there exists an integral unimodular substitution relating them, and he showed also how one could combine the classes into genera\index{genera} so that two forms are in the same genus if and only if they are rationally equivalent. He also raised a number of notorious problems; in particular, in Article 303, he conjectured that there are only finitely many negative discriminants associated with any given class number, and moreover that the tables of discriminants which he had drawn up in the cases of relatively small class numbers\index{numbers} were in fact complete. The first part of the conjecture was proved, after earlier work of Hecke\index{Hecke, E.}, Mordell\index{Mordell, L. J.} and Deuring\index{Deuring, M.}, by Heilbronn\index{Heilbronn, H.}\footnote{Quart. J. Math. Oxford Ser. 5 (1934), 150--60.} in 1934, and the techniques were later much developed by Siegel\index{Siegel, C. L.} and Brauer\index{Brauer, R.}\index{Brauer, A.} to give a general asymptotic class number formula; but the arguments are non-effective and cannot lead to a verification of the class number tables as sought by Gauss\index{Gauss, C. F.}. In 1966, two distinct algorithms were discovered for determining all the imaginary quadratic fields with class number 1, which amounts to a confirmation of the simplest case of the second part of the conjecture.
+
+\begin{mythm}{}{ch5_1}
+The only imaginary quadratic fields $Q(\sqrt{-d})$ with class number 1, 
+where $d$ is a square-free positive integer, are given by $d = 1, 2, 3, 7, 11, 19, 43, 67, 163$.
+\end{mythm}
+
+One of the original methods of proof, and that which we shall adopt here, is based on the work of Chapters \ref{ch:2} and \ref{ch:3} together with an idea of Gelfond\index{Gelfond, A. O.} and Linnik\index{Linnik, Yu. V.};\footnote{D.A.N. 61 (1948), 773--6.} the other is due to Stark\index{Stark, H. M.}\footnote{Michigan Math. J. 14 (1967), 1--27.} and is motivated by an earlier paper of Heegner\index{Heegner, K.}\footnote{M.Z. 56 (1952), 227--53.} which related the problem to the study of elliptic modular functions\index{elliptic modular function} and the solution of certain Diophantine equations\index{Diophantine equations}. The former method has recently been extended to resolve the analogous problem for class number 2, and we shall describe the solution in \S~5. Neither method, however, would seem to generalize readily to higher class numbers\index{numbers}.
+
+Nevertheless, transcendental number\index{transcendental number} theory has led to new results in several associated subjects. For instance, it has been used by Anferteva\index{Anferteva, E. A.} and Chudakov\index{Chudakov, N. G.}\footnote{Mat. Sb. 82 (1970), 55--66; = 11 (1970), 47--58.} to make effective certain theorems of Linnik\index{Linnik, Yu. V.} on the average of the minimum of the norm function over ideals in a given class, and it has been employed by Schinzel\index{Schinzel, A.} and the author in studies relating to the \textit{\lq numeri idonei\index{numeri idonei}\rq} of Euler\index{Euler, L.}.\footnote{Acta Arith. 18 (1971), 137--144.} Furthermore, it has been applied to resolve in the negative a well-known problem of Chowla\index{Chowla, S.}\index{Chowla, P.} as to whether there exists a rational-valued function $f(n)$, periodic with prime period $p,$ such that $\sum f(n)/n = 0$.\footnote{J. Number Th. 5 (1973), 224--36.} In fact it has provided a description of all such functions $f$ that take algebraic values and are periodic with any modulus $q$; thus, in particular, it has revealed that the numbers\index{numbers} $L(1,\chi)$ taken over all non-principal characters $\chi \pmod q$ are linearly independent over the rationals, provided only that $(q, \phi(q)) = 1$, and this plainly generalizes Dirichlet\index{Dirichlet, P. G. L.}'s famous result on the non-vanishing of $L(1,\chi)$. It would be of interest to know whether the theorem remains valid when
+
+\[(q,\phi(q))>1.\]
+
+Some further results will be mentioned in \autoref{sec:ch5_5}.
+
+\section{L-functions}\label{sec:ch5_2}
+
+We record here some preliminary observations on products of Dirichlet\index{Dirichlet, P. G. L.}'s L-functions\index{L-functions}\index{L-function}.
+
+Let $-d < 0$ and $k > 0$ denote the discriminants of the quadratic fields $Q(\sqrt{-d})$ and $Q(\sqrt{k})$ respectively, and suppose that $(k,d) = 1$. Let
+
+\[ \chi(n) = \left(\frac{k}{n}\right), \quad \chi'(n) = \left(\frac{-d}{n}\right) \]
+be the usual Kronecker\index{Kronecker, L.} symbols. Then, for any $s > 1$, we have
+
+\begin{equation}\tag{1}\label{eq:ch5_eq1}
+L(s,\chi)L(s,\chi\chi') = \frac{1}{2}\sum_{f}\sum_{x,y}\chi(f)f^{-s},
+\end{equation}
+
+where $x, y$ run through all integers, not both 0, and
+
+\[f = f(x, y) = ax^2 + bxy + cy^2\]
+
+runs through a complete set of inequivalent quadratic forms with discriminant $-d$.\footnote{See Landau\index{Landau, E.}'s \textit{Vorlesungen über Zahlentheorie} (Leipzig, 1927), Satz 204.} To verify this assertion, we observe that the left-hand side of \eqref{eq:ch5_eq1} is given by
+
+\[\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left(\frac{k}{m}\right)\left(\frac{-kd}{n}\right)(mn)^{-s}=\sum_{l=1}^{\infty}\left(\frac{k}{l}\right)l^{-s}\sum_{n|l}\left(\frac{-d}{n}\right),\]
+
+and the last sum is one half the number of representations of $l$ by the forms $f$.
+
+Now the right-hand side of \eqref{eq:ch5_eq1} can be written
+
+\[\sum_{f} \sum_{x=1}^{\infty} \chi(ax^2) (ax^2)^{-s} + \sum_{f} \sum_{y=1}^{\infty} \sum_{x=-\infty}^{\infty} \chi(f) f^{-s}.\]
+
+The first term here is
+
+\[\zeta(2s) \prod_{p|k} (1-p^{-2s}) \sum_{f} \chi(a) a^{-s},\]
+
+and the second term can be expanded as a Fourier series\index{Fourier series}
+
+\[\sum_{f} \sum_{r=-\infty}^{\infty} A_r(s) e^{\pi i r b/(ka)},\]
+
+where
+
+\[A_r(s) = k^{-1} \int_0^k \sum_{y=1}^{\infty} \sum_{x=-\infty}^{\infty} \chi(f) g^{-s} e^{-2\pi i r v/k} dv,\]
+
+and
+
+\[g = g(v) = a(x+vy)^2 + (d/4a)y^2\]
+
+so that $f = g(b/(2a))$. On substituting $u$ for $v$ by the equation
+
+\[x+vy=uy(\sqrt{d}/(2a)),\]
+
+writing $x = m + kyn$, where $0 \le m < ky$, and interchanging the order of integration and summation, as one may by dominated convergence, one obtains
+
+\[ A_r(s) = k^{-1} a^{-s} (\sqrt{d}/(2a))^{1-2s} I_r(s) \sum_{y=1}^{\infty} \sigma(y) \, y^{-2s}, \]
+where
+\[ I_r(s) = \int_{-\infty}^{\infty} \frac{e^{-\pi i u r \sqrt{d}/(ka)}}{(u^2+1)^s} \, du \]
+and
+\[\sigma(y) = \sum_{m=0}^{ky-1} \chi(f(m,y)) e^{2\pi i r m/(ky)};\]
+
+the integral in fact arises from summation over $n$ of the partial integrals from $c_n$ to $c_{n+1}$, where
+
+\[c_n = 2a(m + kyn)/(y\sqrt{d}).\]
+
+On putting $m = j + kl$, where $1 \le j \le k$, one sees that
+
+\[\sigma(y) = y \sum_{j=1}^{k} \chi(f(j,y)) e^{2\pi i r j/(ky)}\]
+
+if $y$ divides $r$, and $\sigma(y) = 0$ otherwise, and this completes the preliminary observations.
+
+\section{Limit formula}\label{sec:ch5_3}
+
+All solutions to date of the class number 1 problem depend on an analogue for products of L-functions\index{L-functions}\index{L-function} of the classical Kronecker\index{Kronecker, L.} limit formula\index{limit formula}. On writing, with the notation of the previous section,
+
+\[A_0 = \lim_{s \to 1} A_0(s), \quad A_r = A_r(1) \quad (r \neq 0),\]
+
+and taking limits as $s \to 1$, we obtain
+
+\begin{equation}\tag{2}\label{eq:ch5_eq2}
+L(1,\chi)L(1,\chi\chi') = \frac{\pi^2}{6} \prod_{p|k} \left(1 - \frac{1}{p^2}\right) \sum_{f} \frac{\chi(a)}{a} + \sum_{f} \sum_{r=-\infty}^{\infty} A_r e^{\pi i r b/(ka)}.
+\end{equation}
+
+Our purpose here is to prove that
+
+\[\left|A_r\right|\le \frac{2\pi}{\sqrt{d}}\left|r\right|e^{-\pi|r|\sqrt{d}/(ka)}\]
+
+for $r \neq 0$, and
+
+\[A_0 = \frac{-2\pi}{k\sqrt{d}} \chi(a) \log p\]
+
+if $k$ is the power of a prime $p$, $A_0 = 0$ otherwise.
+
+To begin with, we observe that, for $r \neq 0$,
+
+\[A_r = (\frac{1}{2}k\sqrt{d})^{-1}I_r(1)\sum_{y}\sum_{j=1}^k y^{-1}\chi(f(j,y))e^{2\pi i r j/(ky)},\]
+
+where $y$ runs through all positive divisors of $r$. It is easily confirmed that
+
+\[ I_r(1) = \pi e^{-\pi |r| \sqrt{d}/(ka)}, \]
+
+and clearly the sum over $y$ in $A_r$ has absolute value at most $k|r|$. The first assertion follows at once. To establish the second assertion, we note that
+
+\[A_0(s) = k^{-1}a^{s-1}(\tfrac{1}{2}\sqrt{d})^{1-2s}I_0(s)\sum_{y=1}^{\infty}y^{1-2s}\sum_{j=1}^k\chi(f(j,y)),\]
+
+and
+
+\[I_0(s) = \sqrt{\pi} \, \Gamma(s - \frac{1}{2}) / \Gamma(s).\]
+
+Further, by well-known estimates for the Gaussian sums, we obtain, for any positive integer $y$ and any odd $k,$
+
+\[\sum_{j=1}^{k} \chi(f(j,y)) = \chi(a) \sum_{j=1}^{k} \chi(j^{2}) e^{2\pi i j y/k};\]
+
+we shall be concerned in the sequel only with odd values of $k,$ but the equation in fact holds also for even $k,$ as has been shown by Stark\index{Stark, H. M.}.\footnote{Acta Arith. 14 (1968), 36--60.} The sum over $j$ on the right can be expressed alternatively as a sum of terms $d \mu(k/d)$ over all common divisors\footnote{See Hardy and Wright', \textit{An introduction to the theory of number} (Oxford, 1960),
+Theorem 271.} $d$ of $k$ and $y$, and hence we see that the sum over $y$ in the above expression for $A_0(s)$ is given by
+
+\[\chi(a) \zeta(2s-1) k^{2-2s} \prod_{p|k} (1-p^{2s-2}).\]
+
+The required result is now readily verified.
+
+\section{Class number 1}\label{sec:ch5_4}
+
+Suppose that $Q(\sqrt{-d})$ has class number 1. Then, by the theory of genera\index{genera}, $d$ is a prime congruent to 3 (mod 4), and there is just one form $f$ which can be taken as
+
+\[x^2 + xy + \frac{1}{4}(1+d)y^2.\]
+
+We select $k = 21$ and we note that $Q(\sqrt{k})$ has class number 1 and fundamental unit $\epsilon = \frac{1}{2}(5 + \sqrt{21})$. Further we note that $(k,d) = 1$ for $d > k$, and that $A_0 = 0$. Hence the double sum on the right of \eqref{eq:ch5_eq2} has absolute value at most
+
+\[(4\pi/\sqrt{d})\sum_{r=1}^{\infty}r\eta^{r},\]
+
+where $\eta = e^{-\pi\sqrt{d}/k}$. The sum over $r$ is precisely $\eta/(1-\eta)^2$, and $\eta < \frac{1}{2}$ if $\sqrt{d} > k$; thus the above expression is at most
+
+\[ 16\pi \eta / \sqrt{d}. \]
+
+Now classical results of Dirichlet\index{Dirichlet, P. G. L.} give
+
+\[L(1,\chi) = 2\log \epsilon/\sqrt{k}, \quad L(1,\chi\chi') = h\pi/\sqrt{kd},\]
+
+where $h$ denotes the class number of $Q(\sqrt{-kd})$, and, on substituting into \eqref{eq:ch5_eq2}, we readily derive the inequality
+
+\[\left|h\log\epsilon - \frac{32}{21}\pi\sqrt{d}\right| < e^{-\pi\sqrt{d}/100},\]
+
+assuming that $d > 10^{20}$, say. But $\pi = -2i\log i$ and so we have on the left a linear form $\Lambda$ in two logarithms of the kind considered in \autoref{thm:ch3_1}; since clearly $h < 4\sqrt{d}$ and $\log \epsilon$, $\log i$ are linearly independent, we conclude that the inequality is untenable if $d$ is larger than some effectively computable number. To calculate the latter, it is convenient to take a second inequality arising from \eqref{eq:ch5_eq2} with $k = 33$, namely
+
+\[ |h'\log\epsilon' - \frac{80}{33}\pi\sqrt{d}| < e^{-\pi\sqrt{d}/100}, \]
+
+where $h'$, $\epsilon'$ are defined like $h$, $\epsilon$ above with the new value of $k$. By subtraction we obtain
+
+\[|b\log\epsilon + b'\log\epsilon'| < e^{-\delta B},\]
+
+where $\delta^{-1} = 14 \times 10^3, B = 140\sqrt{d}, b = 35h, b' = -22h'$, and clearly $b, b'$ have absolute values at most $B$. Since, furthermore, $\epsilon$, $\epsilon'$ are multiplicatively independent, one can apply the result quoted in \S~5 of \autoref{ch:4}, with $n=2, d=4, A=46$, to obtain $B<10^{250}$. This gives $d<10^{500}$, and a determination of the solutions of the above inequality below this figure is quite feasible. But the computation is in fact not needed here, for it was proved by Heilbronn\index{Heilbronn, H.} and Linfoot\index{Linfoot, E. H.}\footnote{Quart. J. Math. Oxford Ser. 5 (1934), 293--301.} in 1934 that, apart from the nine discriminants listed in \autoref{thm:ch5_1}, there could be at most one more, and calculations\footnote{Trans. Amer. Math. Soc. 122 (1966), 112--19 (H. M. Stark\index{Stark, H. M.}).} had shown that the tenth $d$, if it existed, would exceed $\exp(10^7)$.
+
+The above argument is similar to that described by Gelfond\index{Gelfond, A. O.} and Linnik\index{Linnik, Yu. V.} in 1949, but they had access to the formulae of \autoref{sec:ch5_3} only for prime values of $k$, and in this case $A_0$ is not 0; thus they were led to an inequality involving three logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number} which could not be dealt with effectively at that time. It is a remarkable coincidence that both the formulae for composite $k$ and the desired effective inequality involving three logarithms became available simultaneously in 1966.
+
+\section{Class number 2}\label{sec:ch5_5}
+
+We now indicate briefly how the above arguments can be extended to treat the analogous problem for class number 2\footnote{For the original solutions see Ann. Math. 94 (1971), 139-62 (A. Baker\index{Baker, R. C.}\index{Baker, A.}); 163-73
+(H. M. Stark\index{Stark, H. M.}).}.
+
+If $Q(\sqrt{-d})$ has class number 2 and $d > 15$ then $d$ is congruent to 3 or $4 \pmod 8$; for if $d \equiv 7 \pmod 8$ there are three inequivalent quadratic forms with discriminant $-d$, namely
+
+\[ x^2 + xy + \frac{1}{4}(1+d)y^2, \quad 2x^2 \pm xy + \frac{1}{8}(1+d)y^2. \]
+
+When $d \equiv 4 \pmod 8$, two inequivalent quadratic forms with discriminant $-d$ are given by $x^2 + \frac{1}{2}dy^2$, and either
+
+\[ 2x^2 + 2xy + \frac{1}{8}(4+d)y^2 \quad \text{or} \quad 2x^2 + \frac{1}{2}dy^2, \]
+
+according as $\frac{1}{8}d \equiv 1$ or $2 \pmod 4$, and the method of proof of \autoref{thm:ch5_1} is applicable with only simple modifications.\footnote{See Bull. Lond. Math. Soc. 1 (1969), 98--102.} There remains the case $d \equiv 3 \pmod 8$. The theory of genera\index{genera} shows that then $d = pq$, where $p, q$ are primes congruent to 1 and $3 \pmod 4$ respectively. On signifying by $\chi'(n)$ one of the generic characters\index{generic character} associated with forms of discriminant $-d$ and writing
+
+\[\chi_{pq}(n) = \left(\frac{-pq}{n}\right), \quad \chi_p(n) = \left(\frac{p}{n}\right), \quad \chi_q(n) = \left(\frac{-q}{n}\right), \quad \chi(n) = \left(\frac{k}{n}\right),\]
+
+where $k \equiv 1 \pmod 4$ and $(k, pq) = 1$, we deduce from classical results of Dirichlet\index{Dirichlet, P. G. L.} and Kronecker\index{Kronecker, L.} that
+
+\[ L(1,\chi)L(1,\chi\chi_{pq}) + L(1,\chi\chi_p)L(1,\chi\chi_q) = \frac{1}{2} \sum_F \sum_{x,y} (\chi(F) + \chi\chi'(F))(F(x,y))^{-1}, \]
+
+where $F$ runs through a pair $f, f'$ of inequivalent quadratic forms with discriminant $-d$ and $x, y$ take all integer values, not both 0. We can assume that $f$ is the principal form, whence $\chi'(f) = 1, \chi'(f') = -1$ for all $x, y$. On appealing to Dirichlet\index{Dirichlet, P. G. L.}'s formulae we thus obtain
+
+\[(k/2\pi)\sqrt{pq}\sum_{x,y}\chi(f)/f=h(k)h(-kpq)\log\epsilon+h(kp)h(-kq)\log\eta,\]
+
+where $h(l)$ denotes the class number of $Q(\sqrt{l})$ and $\epsilon, \eta$ denote the fundamental units in $Q(\sqrt{k})$, $Q(\sqrt{kp})$ respectively. Finally taking $k=21$ and employing arguments similar to those applied in the proof of \autoref{thm:ch5_1}, we reach the inequality
+
+\[|h(-21d)\log \epsilon + h(21p)h(-21q)\log \eta - \frac{64}{21}\pi\sqrt{d}| < e^{-(1/10)\sqrt{d}}.\]
+
+This has the form
+
+\[\left|\beta\log\alpha+\beta'\log\alpha'+\beta''\log\alpha''\right|< e^{-\delta B},\]
+
+where the $\beta$'s denote algebraic numbers\index{algebraic number} with degrees at most 2, and $\alpha = \eta, \alpha' = \epsilon, \alpha'' = -1, B = \sqrt{d}, \delta = \frac{1}{10}$. Clearly the heights of the $\beta$'s are bounded above by an absolute power of $B$ and the height $A$ of $\alpha$ is bounded above by $p^{c\sqrt{p}}$ for some absolute constant $c$. If $q \le d^{\frac{1}{4}}$ then we can take $f'$ as
+
+\[ qx^2 + qxy + \frac{1}{4}(p+q)y^2, \]
+
+and again the method of proof of \autoref{thm:ch5_1} is applicable. Thus we can assume that $q > d^{\frac{1}{4}}$ whence $p < d^{\frac{1}{4}}$. We now appeal to the first inequality for $|\Lambda|$ recorded after the enunciation of \autoref{thm:ch3_1} and, on noting that the maximum $A'$ of the heights of $\alpha', \alpha''$ is absolutely bounded, we conclude that $B < C(\log A)^{1+\zeta}$ for any $\zeta > 0$, where $C = C(\zeta)$ is effectively computable. Hence we have
+
+\[\sqrt{d} < C(c\sqrt{p}\log p)^{1+\zeta}\]
+
+and, recalling that $p < d^{\frac{1}{4}}$, this plainly gives an effective upper estimate for $d$ when $\zeta < \frac{1}{3}$. In practice\footnote{Ann. Math. 96 (1972), 174--209 (H. M. Stark\index{Stark, H. M.}).} the bound for $d$ turns out to be a little over $10^{1000}$, and computational work on the zeros of the $\zeta$-function has yielded all $d$ in question below this figure; thus it has been checked that the largest $d$ for which $Q(\sqrt{-d})$ has class number 2 is 427.
+
+Progress in this and other fields of application of the theory of linear forms in the logarithms of algebraic numbers\index{logarithms of algebraic numbers}\index{algebraic number} is continuing, and, before leaving the topic, we record five further results that have been obtained with its aid. First it has been utilized by E. E. Whitacker\index{Whittaker, E. E.}\footnote{Ph.D. Thesis, University of Maryland, 1972.} to determine certain imaginary quadratic fields with the Klein four-group\index{Klein four-group} as class group. Secondly it has been employed by K. Ramachandra\index{Ramachandra, K.} and T. N. Shorey\index{Shorey, T. N.}\footnote{Acta Arith. 24 (1973), 99--111; 25 (1974), 365--373.} in researches on a problem of Erdős in prime-number theory; in particular, they have shown that if $k$ is a natural number and if $n_1, n_2, \dots$ is the sequence, in ascending order, of all natural numbers\index{numbers} which have at least one prime factor exceeding $k$, then the maximum $f(k)$ of $n_{i+1} - n_i$ ($i = 1, 2, \dots$) satisfies $f(k) \log k/k \to 0$ as $k \to \infty$. Thirdly, in a similar context, R. Tijdeman\index{Tijdeman, R.}\footnote{P.C.P.S. 68 (1970), 105--123 (J. Coates\index{Coates, J.}).} has used an inequality for $|\Lambda|$ of the kind appearing after \autoref{thm:ch3_1} to resolve in the affirmative a question of Wintner\index{Wintner, question of} as to whether there exists a sequence of primes such that the sequence $n_1, n_2, \dots$ of all natural numbers\index{numbers} formed from their power products satisfies $n_{i+1} - n_i \to \infty$ as $i \to \infty$. Fourthly, A. Schinzel\index{Schinzel, A.}\footnote{P.C.P.S. 67 (1970), 595--602.} has applied the second inequality for $|\Lambda|$ recorded after \autoref{thm:ch3_1} to settle an old problem concerning primitive prime factors\index{primitive prime factors} of $\alpha^n - \beta^n$. And, finally, we mention that in 1967, A. Brumer\index{Brumer, A.}\footnote{Mathematika, 14 (1967), 121--124.} obtained a natural $p$-adic analogue of an early version of \autoref{thm:ch3_1} which, in combination with work of Ax\index{Ax, J.},\footnote{Illinois J. Math. 9 (1965), 584--589.} resolved a well-known problem of Leopoldt\index{Leopoldt, problem of} on the non-vanishing of the $p$-adic regulator of an Abelian number field.
