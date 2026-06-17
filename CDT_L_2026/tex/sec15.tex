@@ -1,0 +1,421 @@
+\section{补充与进一步问题}\label{sec:15}
+
+我们以对我们方法自然提出的一些进一步开放问题的讨论来结束本论文. 
+但首先, 我们更紧密地讨论我们的一些结果与更成熟方法之间的关系.
+
+\subsection{与 Siegel--Bombieri--Chudnovsky 理论的比较}\label{sec:15.1}
+
+定理 C 是一个关于两个参数（受到某些阿基米德约束）的无理性结果. 
+在本节中, 我们将定理 C 与此前可通过 G-函数特殊值的通用算术理论获得的结果进行比较. 
+我们首先回顾 Siegel 关于 G-函数的定义, 
+为此固定一个域嵌入 \(\mathbf{Q} \hookrightarrow \mathbf{C}\):
+
+\begin{definition}[G-function]\label{def:15.1.1}
+一个幂级数 \(f(x) = \sum_{n=0}^{\infty} a_n x^n \in \mathbf{Q}[\![x]\!]\) 是一个 G-函数, 
+如果它满足以下两个性质:
+\begin{itemize}
+  \item[(1)] \(f(x)\) 是 holonomic 的：它满足一个系数属于 \(\mathbf{Q}[x]\) 的线性 ODE.
+  \item[(2)] \(a_n\) 以及 \(a_n\) 的分母都具有温和的增长速度, 
+  具体而言, \(a_0, \dots, a_n\) 的公分母至多关于 n 呈指数增长, 
+  并且 \(a_n \in \mathbf{Q} \hookrightarrow \mathbf{C}\) 的最大 Galois 共轭值也至多关于 n 呈指数增长.
+\end{itemize}
+\end{definition}
+
+由条件 (1) 紧接着有 \(f(x) \in K[\![x]\!]\) 对于某个数域 \(K/\mathbf{Q}\) 成立. 
+正如在第 2.2 节中回顾的那样, 
+人们期望（参见 \cite{FR17}）对于此类 \(f(x)\), 存在 \(A \in \mathbf{N}_{>0}, b \in \mathbf{Q}_{>0}\) 以及 \(\sigma \in \mathbf{N}\) 使得:
+\begin{equation}\label{eq:15.1.2}
+a_n A^{n+1} [1, \dots, bn]^{\sigma} \in \mathcal{O}_K \qquad \forall n \in \mathbf{N},
+\end{equation}
+并且此外, 在 \(f(x)\) 源于几何的附加（猜想上是不必要的）假设下, 
+这已经是无条件已知的（参见 \cite[第 V 节附录]{And89}）. 
+在任何情况下, 本论文中所有的 holonomic 函数都确实具有被 \eqref{eq:15.1.2} 所包含的分母； 
+它们显然是 G-函数.
+
+G-函数算术理论的基本范式由以下定理所刻画:
+
+\begin{theorem}\label{thm:15.1.3}
+对于具有有理系数的 G-函数的任意 \(\mathbf{Q}(x)\)-线性无关集合 \(f_1, \dots, f_h \in \mathbf{Q}[\![x]\!]\), 
+存在一个可由所有 \(f_i\) 的极小 ODE 有效计算的常数 \(N_0 = N_0(f)\), 
+使得集合:
+\begin{equation}\label{eq:15.1.4}
+\{n \in \mathbf{Z} : f_i(1/n) \text{ 在 } \mathbf{Q} \text{ 上线性相关或包含一发散值}\} \subset [-N_0, N_0].
+\end{equation}
+\end{theorem}
+
+该结果在 Siegel 1929 年的论文 \cite[第 VII 节]{Zan14} 中得到了展望, 
+并由 David 以及 Gregory Chudnovsky \cite{CC85a} 在我们在此陈述的抽象程度上予以了证明, 
+这是在 Galo{\v{c}}kin \cite{Gal74} （他不得不假设“因子抵消性质”, 
+这反映在可积联络的全局幂零性上； 
+Siegel 本人也已经注意到了这一困难）以及 Bombieri \cite{Bom81} （他在与 Galo{\v{c}}kin 最终等价的、但更容易验证的“微分系统是算术 Fuchs 型”的附加假设下证明了一个通用的阿代尔定理） 
+的奠基性工作之后完成的. 
+Chudnovsky 兄弟的主要成果 \cite[定理 III]{CC85a}（亦见 \cite[定理 VIII.1.5]{DGS94}, \cite[第 VI 节]{And89}, \cite{DV01}） 
+正是对于所有至少承认一个 G-级数形式解的不可约 ODE 证明了全局幂零性性质.
+
+\begin{remark}\label{rem:15.1.5}
+与第 3.3.3 节的讨论相一致, 关于 Siegel 计划的定量结果当然强于从 Galo{\v{c}}kin, Bombieri 以及 Chudnovsky 兄弟的工作中提取的这一最基本形式. 
+关于其他具有密切相关结果的讨论, 参见 Bombieri 在 \cite[第 49 页]{Bom81} 中的主定理\setcounter{footnote}{38}\footnote{注意 Andr{\'e} 的评注 \cite[第 79 页]{And89}：在 Bombieri 主定理的项 $c_{24}$ 中，应在求和式 $\sum_{\zeta \in \operatorname{sing}_0(L)}$ 前增加一个标量系数“2”。}, 
+以及 \cite[定理 I 以及 II]{CC85a}, \cite[第 1.2 节主定理]{Deb86}, \cite[第 VII 节]{And89}. 
+关于 1997 年之前该学科状况的一幅极佳画卷见于 \cite[第 5 章第 7 节]{PS98}. 
+对于更近期的综述, 我们参考 \cite[第 5.6 节]{Riv19}, 
+以及 \cite{FR18} 的进一步发展. 
+通过根据微分算子使 \(N_0\) 显式化（遵循 \cite{Bom81}）, 
+许多标准的放宽形式, 例如允许具有 \(|a/n| < c_1 \exp\left(-c_2\sqrt{\log n \cdot \log\log n}\right)\) 
+的显然更一般的代数自变量 \(x = a/n \in \mathbf{Q}\), 
+都可以被包含在形式 \eqref{eq:15.1.4} 中. 
+但 \eqref{eq:15.1.4} 也是一种直接将有理点与仿射代数曲线以及我们在特定情况下的框架（参见第 15.2 节）联系起来的形式. 
+我们将在下一段中评论前一种联系.
+
+虽然 Bombieri 的一般不等式是在任意数域上的阿代尔形式下给出的, 
+但定理 15.1.3 中关于有理系数的条件是根本算术性质的, 
+并且这对于关于 \(N_0\) 的有效性条款是至关重要的. 
+例如, 如果在 \(\{f_1,\ldots,f_h\}:=\{1,f\}\) 的情况下, 
+人们希望像注记 8.2.42 中那样处理代数数系数 \(f \in \overline{\mathbb{Q}}[\![x]\!]\)，
+基于对称幂的 \cite[第 7 节]{CC85a} 中 Siegel--Shidlovsky 式证明逻辑要求，将假定 \(f(x) \notin \overline{\mathbf{Q}}(x)\)（非有理函数）加强为 \(f(x) \notin \overline{\mathbf{Q}(x)}\)（超越函数）。
+事实上，Siegel 关于非有理仿射代数曲线上的整点的有限性定理，至今尚未能给解的高度确定一个有效的上界\footnote{这正是 Hilbert 第十问题在两个变量下的情况的内容。}，但它可以被证明等价于声明 \eqref{eq:15.1.4} 中的 \(f(x) \in \overline{\mathbf{Q}(x)}, \{f_1, \dots, f_h\} = \{1, f\}\) 并且将 \(f \in \mathbf{Q}[\![x]\!]\)（有理系数）的前提放宽为数域系数的情形。 
+因此, 对于除 \(\mathbf{Q}\) 或虚二次域之外的数域系数的代数幂级数情况, 
+像 \eqref{eq:15.1.4} 这样的声明仍然是一个以及开放\setcounter{footnote}{41}\footnote{同样地，例外的是代数情形 $f_i(x) \in \overline{\mathbf{Q}(x)} \cap \mathbf{Q}[\![x]\!]$，在这种情况下，至少在理论上，有限的计算机搜索就足以在有限的计算时间内解决该问题。}的问题. 
+定理 15.1.3 中处理的有理系数情况, 在代数函数 \(f(x) \in \mathbf{Q}(x) \cap \mathbf{Q}[\![x]\!]\) 的情况下, 
+被简化为了 Bombieri 对经典 Runge 定理的推广 \cite[定理 9.6.6]{BG06}（亦见 \cite[第 IV 节]{Bom83}）： 
+即在 \(\mathbf{Q}\) 上不可约双变量 Diophantine 方程 F(x,y)=0 的最高阶齐次部分在 \(\mathbf{Q}\) 上不与不可约多项式的方幂成比例的前提下, 
+在 \((x,y) \in \mathbf{Z} \times \mathbf{Q}\) 上的有效求解. 
+（更本质地, 在 Runge 分裂条件下：用于给出 \(\mathbf{C}\)-整点以及 \(\mathbf{Q}\)-有理点概念的“无穷远因子”在 \(\mathbf{Q}\) 上分裂为至少两个不交部分.） \end{remark}
+
+在这些透视下, 我们的定理 C 可以被视为关于特定双变量 G-函数
+\begin{equation}\label{eq:15.1.6}
+F(x,y) := \log(1-x)\log(1-y)
+\end{equation}
+在 \((x, y) = (1/n, 1/m)\) 处的特殊值的对应物. 
+此类型的至少一些基本结果（参见例如 \cite{Gal74}\cite{Gal75}\cite{Gal96}\cite{Hat98}\cite{Lys18}） 
+当然也被包含在单变量定理 15.1.3 中, 
+例如人们可以在点 x = 1/n 处评估单变量 G-函数 f(x) = log(1-x) log(1+x). 
+在甚至像这般简单的例子上, 
+源自通用理论的门槛项 \(N_0\) 是以及巨大的； 
+在 \cite{Hat98} 中, 这在当前例子中被估计为处于 \(e^{170}\) 数量级上. 
+根据我们的了解, 证明无理性 \(\log(1 - 1/n) \log(1 + 1/n) \notin \mathbf{Q}\) 的记录最低门槛是 Lysov 在 \cite{Lys18} 中通过显式（特殊的！）Hermite--Pad{\'e} 构造获得的 \(n \geq 33\). 
+在本节中, 我们研究通用 G-函数方法在我们的定理 C 上的应用范围.
+
+\subsubsection{单变量理论的范围}\label{sec:15.1.7}
+
+为了应用单变量理论, 我们应当将 \(k := m - n\) 视为一参数, 
+并考虑在 \(\mathbf{Q}[\![x]\!]\) 中的 G-函数:
+\begin{equation}\label{eq:15.1.8}
+f(x) := \log(1-x)\log\left(1-\frac{x}{1+kx}\right); \qquad k := m-n \in \mathbf{Z},
+\end{equation}
+其在 x = 1/n 处的值给出了所需的两个对数的乘积:
+\[ f(1/n) = \log(1 - 1/n)\log(1 - 1/m) = F(1/n, 1/m). \]
+仅仅为了记号的简单起见，我们在此仅关心乘积 \(\log(1 - 1/n) \log(1 - 1/m)\) 的无理性，
+而不关心其与单个因子之间的线性无关性； 
+为了展示通用 G-函数特殊值理论的局限性，这当然是足够的。 
+因此我们取 \(\{f_1, \dots, f_h\} := \{1, f\}\) 来应用定理 15.1.3。 
+那么我们需要将定理 15.1.3 中的 \(N_0 = N_0(k) = N_0(m - n)\) 量化为 k 的函数, 
+这本质上是线性 ODE 的高度。
+
+我们断言，对于函数 \(f_k\) 的极小 ODE，根据我们在注记 15.1.5 中列出的、关于通用算术 G-函数理论的任何参考文献中的方法，都有 \(\log N_0(k) \asymp \log |k|\) 成立。\setcounter{footnote}{40}\footnote{我们省略了具体细节，但有进取心的读者可以在该论文发布在 arXiv 上的 LaTeX 源码中找到它们。}
+给定这一断言，保证由 \eqref{eq:15.1.4} 给出 \(f(1/n) \notin \mathbf{Q}\) 的条件变为了对于某个绝对常数 \(c \in \mathbf{R}_{>0}\) 有 \(|n| > |k|^c\), 
+即条件:
+\[ |1 - m/n| < |k/n| < |n|^{1 - 1/c}. \]
+这意味着, 定理 C 中可通过通用 G-函数理论推导的情况都在具有如下形式的条件：
+\[ 0 < |1 - m/n| \ll |n|^{-\kappa}, \qquad \text{对于某个 } \kappa \in (0, 1) \]
+下； 
+这一条件是这些通用方法得以应用的充要条件； 
+但这一条件明显强于我们的 \(0 < |1 - m/n| < 10^{-6}\).
+
+\subsubsection{多变量 G-函数理论}\label{sec:15.1.9}
+
+多变量 G-函数的算术理论仍然处于其起步阶段； 
+我们参考 \cite{AB97} 以获取几何基础, 
+并参考 \cite{Nag97}（针对二维）以及 \cite{DV01}（针对任意维数）以获取 Chudnovsky 兄弟基本定理的推广. 
+极有可能的是, 由 Bombieri 在 \cite{Bom81} 中执行的、自动机形式方案的二维版本, 
+可以与关于在特殊点处的 Diophantine 辅助构造的、标准的非消逝方法相组合, 
+以便给出双变量 G-函数 \(f(x,y) \in \mathbf{Q}[\![x,y]\!] \setminus \mathbf{Q}(x,y)\) 在形如 x=1/n, y=1/m 
+（伴随着满足 \(\log |n| \gg_f 1\) 以及 \(\log |m|/\log |n| \gg_f 1\) 的 \(n,m \in \mathbf{Z} \setminus \{0\}\)） 
+的自变量处特殊化值的无理性结果 \(f(1/n,1/m) \notin \mathbf{Q}\)； 
+根据我们的了解, 此类计划在文献中尚未被研究过. 
+我们为 \eqref{eq:15.1.6} 从 Ap{\'e}ry 极限方法获得的范围 \(|1-m/n| < 10^{-6}\) 与此是完全正交的！
+
+\subsubsection{来自 Hermite--Pad{\'e} 构造的途径}\label{sec:15.1.10}
+
+正如我们在第 3.3.7 以及 3.3.13 节中解释的, 
+我们在第 14 节中对定理 C 的证明可以概念性地与对数函数的 Hermite--Pad{\'e} 逼近以及第 14.1 节中 Hadamard 乘积构造的使用联系起来. 
+虽然三个或更多对数的乘积由于数值关系 \(e^3 > 16\) 似乎无法通过我们的方法触及, 
+但尝试起步于在 \cite{RT86} 以及 \cite{DHKK22} 中显式研究的、关于若干对数的联立 Hermite--Pad{\'e} 逼近理论, 
+来证明多于一对的两个对数乘积的线性无关性, 将会是非常有价值的.
+
+一种更一般的方案, 正如我们在第 3.3.3 以及 3.3.7 节中在最基本的例子上指出的那样, 
+可以通过形成由对一基本函数评估一正规形式的 Hermite--Pad{\'e} 逼近序列而获得的特殊线性形式的生成函数来予以寻求. 
+Beukers \cite{Beu81}\cite{Beu84} （利用多重对数）以及 Pr{\'e}vost \cite{Pre96} （具有 \(\zeta(3, 1+1/y)\) 作为要在形如 y=1/n 处评估的基本函数）, 
+各自都能够在这样的方案内解释 Ap{\'e}ry 序列. 
+前一种类型被 Fischler 以及 Rivoal \cite{FR03} 极大地推广了. 
+在我们在第 11 节中利用的、在 \(\zeta(2)\) 以及 \(L(2,\chi_{-3})\) 上的联立线性形式的语境下, 
+寻找类似的 Hermite--Pad{\'e} 逼近解释也将会是非常有趣的. 
+然而, 我们评述：即使开始于 Hermite--Pad{\'e} 逼近的函数是代数的, 
+此类生成级数程序也远非总是产生 G-函数 \cite{BC97b}； 
+对于 Pr{\'e}vost 类型, 与 zeta 值相关的一些反例见于 \cite[第 8 节]{PR21}.
+
+我们以及在此处省略（部分是由于空间原因）的另外两个课题是： 
+向关于两个对数的非有理代数自变量的应用, 
+以及 p-进对数. 
+省略后一应用的另一个原因是在本论文中, 
+我们在涉及超收敛性时强调了阿基米德地方作为特殊地方的地位. 
+在 \cite{CDT24} 中, 我们计划在全局域上的更一般的 Arakelov 阿代尔形式下写出我们的 holonomicity 边界.
+
+最后, 更广泛地讨论任何方法下的 holonomic 显式构造, 
+我们评述：在文献中许多更复杂的构造中——例如在 Zudilin 关于 \(\zeta(2)\) 以及 \(\zeta(3)\) 联立逼近的工作 \cite{Zud14} 中, 
+以及在 Brown 以及 Zudilin 关于 \(\zeta(5)\) 的工作 \cite{BZ22} 中——向尚未达到的无理性目标的进展是通过设置一个复杂的参数集来极大化卓越指数 \(\limsup \left\{-\frac{\log |\eta - p/q|}{\log q}\right\}\) 
+来衡量的. 
+后者远非能忠实地衡量作为在我们有理 holonomy 边界框架内应用潜在性的卓越程度.
+
+\subsection{整 holonomic 模}\label{sec:15.2}
+
+尽管定理 15.1.3 中的 \(N_0\) 是有效的, 
+但精确（在原理上）确定 \eqref{eq:15.1.4} 中的左手边集合仍然是一个以及开放\footnote{再一次，例外是一个$f(x)\in \overline{\mathbf{Q}(x)} \Cap \mathbf{Q}[x]\ $，并且是理论上可以通过在有限时间通过计算机穷举得到}的问题. 
+此外, 正如我们在像 \cite{Hat98} 这样简单的案例中看到的那样, 
+在一般性质 \eqref{eq:15.1.4} 中关于 \(N_0\) 的边界在实践中是非常巨大的. 
+我们在第 2.7 以及 2.8 节中关于 \(\mathbf{Q}\left[x, \frac{1}{1-x}\right]\)-整性精细化（特别是参见注记 2.7.6 以及 2.8.2）的发现, 
+似乎指向了一种完全不同于那些其 holonomicity 被 Andr{\'e} 算术准则（推论 2.6.1）所识别的、关于 \eqref{eq:15.1.4} 情况的方法. 
+我们出于在相似的其他潜在线性无关性设定（其中许多仍是未证明的猜想）中应用的目的而希望逆转注记 2.7.6 中证明逻辑的启示, 
+源于 B{\'e}zivin 以及 Robba \cite{BR89} 的想法, 
+他们利用这些想法作为 Bertrandias 算术有理性准则 \cite[定理 5.4.6]{Ami75} 的应用重刷了 Hermite--Lindemann--Weierstrass 定理（见 \cite{BBR90} 以获取该证明的历史解剖）； 
+以及归根结底, 源于 Andr{\'e} \cite{And00a}\cite{And00b} 以及 Beukers \cite{Beu06} 对这些想法的精细化, 
+他们利用 Chudnovsky 兄弟定理以及在 E- 以及 G-函数之间的 Fourier--Laplace 对偶性, 
+重刷（以及进一步精细化）了关于 E-函数特殊值的定性 Siegel--Shidlovsky 定理.
+
+设 \(\partial := x \cdot (d/dx)\) 是乘法不变导数. 
+考虑（为了在此处的简单起见）一个满足 \(\varphi(0) = 0\) 的 {\'e}tale\footnote{换句话说：导数 $\varphi'$ 在 $\mathbf{D}$ 上处处非零。}全纯映射 \(\varphi : \mathbf{D} \to \mathbf{C}\), 
+以及一个向量 \(\mathbf{b} := (b_1, \dots, b_r) \in [0, \infty)^r\) 
+满足 \(|\varphi'(0)| > e^{b_1 + \dots + b_r}\). 
+考虑由满足如下形状的形式幂级数组成的集合 \(\mathcal{D}\):
+\begin{equation}\label{eq:15.2.1}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{\prod_{i=1}^r [1,\dots,b_i \cdot n]}, \quad a_n \in \mathbf{Z} \quad \forall n \in \mathbf{N}
+\end{equation}
+使得 \(\varphi^* f \in \mathcal{O}(\mathbf{D})\) 是圆盘上的全纯函数。这是一个在非交换环 \(\mathbf{Z}[x,\partial]\) 上的模：
+求导作用于单项式为 \(\partial(x^n) = nx^n\)，这保持了 \eqref{eq:15.2.1} 中的整性类型，而复合函数求导法则结合 \(\varphi\) 的 étaleness 表明，如果 \(f(\varphi(z))\) 是全纯的，那么下式也是全纯的：
+\[ \frac{\varphi(z)}{\varphi'(z)} \left( f(\varphi(z)) \right)' = \varphi(z) f'(\varphi(z)) = (\partial f)(\varphi(z)). \]
+根据构造，\(\mathbf{Z}[x,\partial]\)-模 \(\mathcal{D}\) 嵌入为环 \(\mathbf{Q}[\![x]\!]\) 的子模。在这个环境环中，\(\mathcal{D}\) 包含了由满足 \(\varphi^*\alpha \in \mathcal{O}(\mathbf{D})\) 的 \(\alpha \in \mathbf{Z}[\![x]\!]\) 组成的子环。为了与 \cite{BC22} 和我们的注记 7.3.2 保持一致，我们将该环记为 \(\mathcal{O}(\widetilde{\mathcal{V}})\)（在此我们将其视作形式解析\footnote{如果 $\varphi$ 可以延拓为闭圆盘 $\overline{\mathbf{D}}$ 的某个开邻域上的全纯函数，这与 \cite{BC22} 中的约定相符。为了应用有限性定理 \cite[定理 9.1.1]{BC22}，通过考虑 $\widetilde{\varphi}(z) := \varphi((1-\varepsilon)z)$（其中 $\varepsilon > 0$ 足够小以至于仍然满足 $|\widetilde{\varphi}'(0)| > e^{b_1 + \cdots + b_r} > 1$），这并不是一个限制。}算术表面 \(\widetilde{\mathcal{V}} := \widetilde{\mathcal{V}}(\varphi)\) 上的正则函数环）。那么 \(\mathcal{D}\) 是一个在环 \(\mathcal{O}(\widetilde{\mathcal{V}})\) 上的模。
+
+由 Andr{\'e} 准则（推论 2.6.1），分数域 \(\operatorname{Frac}(\mathcal{O}(\widetilde{\mathcal{V}}))\) 是 \(\mathbf{Q}(x)\) 的有限域扩张，并且 \(\mathcal{D} \otimes_{\mathcal{O}(\widetilde{\mathcal{V}})} \operatorname{Frac}(\mathcal{O}(\widetilde{\mathcal{V}}))\) 是该域上的有限维向量空间。由于此外 \(\mathcal{D}\) 在求导 \(\partial\) 的作用下是保持不变的，因此存在一个有限且 \(\operatorname{Gal}(\overline{\mathbf{Q}}/\mathbf{Q})\)-稳定的复代数点集 \(\Sigma \subset \overline{\mathbf{Q}} \hookrightarrow \mathbf{C}\)，使得 \(\mathcal{D} \otimes_{\mathcal{O}(\widetilde{\mathcal{V}})} \operatorname{Frac}(\mathcal{O}(\widetilde{\mathcal{V}}))\) 的所有元素（从而尤其是 \(\operatorname{Frac}(\mathcal{O}(\widetilde{\mathcal{V}}))\) 的所有元素）都可以解析延拓为 \(\mathbf{C} \setminus \Sigma\) 中沿着所有路径的亚纯函数。
+
+然而，Bost 和 Charles 证明了一个更深层次的有限性定理 \cite[定理 9.1.1]{BC22}：环 \(\mathcal{O}(\widetilde{\mathcal{V}})\) 是一个有限生成的 \(\mathbf{Z}\)-代数。此外，他们的证明在原理上给出了一种有效算法，用于列出该 \(\mathbf{Z}\)-代数的有限生成元集。另一方面，正如在 \(\mathbf{b} = (1)\) 且 \(\varphi(z) = 4z/(1+z)^2\) 的例子中注记 2.7.5 所展示的那样（此时 \(\mathcal{O}(\mathcal{V}) = \mathbf{Z}[x,1/(1-x)]\)），\(\mathcal{O}(\widetilde{\mathcal{V}})\)-模 \(\mathcal{D}\) 一般是无限的。因此，我们将其与 \(\mathbf{Q}\) 作张量积并考虑 \(\mathcal{D}_{\mathbf{Q}} := \mathcal{D} \otimes_{\mathbf{Z}} \mathbf{Q}\)，它是环 \(\mathcal{O}(\mathcal{V}_{\mathbf{Q}}) := \mathcal{O}(\mathcal{V}) \otimes_{\mathbf{Z}} \mathbf{Q}\) 上的一个无扭模。后一个环\footnote{这是我们在此处的特有记号，并不出现在 \cite{Bos20} 或 \cite{BC22} 中。}是一个有限生成的 \(\mathbf{Q}\)-代数，但同时，由于它的 Krull 维数为 1 且在其分数域中是整闭的，它还具有作为一个 Dedekind 整环的额外便利。在 Dedekind 整环上的一个模是有限且无扭的，当且仅当它是有限秩局部自由的，当且仅当它是投射且一般有限的（其中后者意味着诱导的分数域上向量空间具有有限维数）。定理 2.7.2 的内容是，在之前 \(\mathbf{b} = (1)\) 和 \(\varphi(z) = 4z/(1+z)^2\) 的例子中，\(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}})\)-模 \(\mathcal{D}_{\mathbf{Q}}\) 是一个以 \(\{1, \log(1-x)\}\) 为基的 2 秩自由模。然而，注记 2.7.4 的内容是，在稍加修改的例子 \(\mathbf{b} = (1 + 1/100)\) 和 \(\varphi(z) = 4z/(1+z)^2\) 中（仍然满足 \(\mathcal{O}(\widetilde{\mathcal{V}}) = \mathbf{Z}[x, 1/(1-x)]\) 和 \(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}}) = \mathbf{Q}[x, 1/(1-x)]\)），\(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}})\)-模 \(\mathcal{D}_{\mathbf{Q}}\) 是无限生成的。
+
+\begin{question}\label{qu:15.2.2}
+是否可以有效构造一个 \(h \in \mathcal{O}(\widetilde{\mathcal{V}}) \setminus \{0\}\)，使得：
+\begin{itemize}
+  \item[(\(*\))] 模 \(\mathcal{D}_{\mathbf{Q}}[1/h]\) 在环 \(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}})[1/h]\) 上是局部自由的？
+\end{itemize}
+是否存在一些自然的可验证条件，使得上述结论即使在 \(h = x\) 时也成立？
+\end{question}
+
+如上所述，环 \(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}})\) 及其局部化是 Dedekind 整环，因此，由于 \(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}})[1/h]\)-模 \(\mathcal{D}_{\mathbf{Q}}[1/h]\) 是无扭且一般有限的，\((\star)\) 中的局部自由性等价于该模是有限的，也等价于该模是投射的。我们将会看到，为什么坚持有效性对于从 holonomic 模 \(\mathcal{D}\) 导出某些函数在 \(x=1/n\) 处的特殊值的无理性证明至关重要。这种联系的原因与 Andr{\'e}--Beukers 关于 Siegel--Shidlovsky 定令的（定性）精细化 \cite{And00a, And00b, Beu06} 最终源自一个在形式上类似于 \((\star)\) 的交换代数命题完全相同：
+
+\begin{fact}\label{fact:15.2.3}
+具有有理系数的 E-函数环 \(\mathbf{E} \subset \mathbf{Q}[\![x]\!]\) 在 Laurent 多项式环 \(\mathbf{Q}[x,x^{-1}]\) 上生成了一个无限自由的 \(\mathbf{Q}[x,x^{-1}]\)-模 \(\mathbf{E}[1/x] = \mathbf{E} \otimes_{\mathbf{Q}[x]} \mathbf{Q}[x,x^{-1}]\)。
+\end{fact}
+
+关于此声明参见 \cite[定理 1.5]{Beu06}\footnote{Kaplansky 的一个定理（参见 \cite[第 4.1.2 节]{Bos20}）表明，在一个 Dedekind 整环上，任何投射且可数生成、但非有限生成的模都是自由模。因此，\(\mathbf{E}[1/x]\) 的 \(\mathbf{Q}[x,x^{-1}]\)-自由性简化为了其所有有限生成 \(\mathbf{Q}[x,x^{-1}]\)-子模的自由性，即 \cite[定理 1.5]{Beu06}。}，关于其机制参见 \cite[推论 2.2 的证明]{Beu06}。这里对 \(x\) 求逆也是必需的，正如我们在例子 \(\mathbf{b} = (1+1/100)\) 和 \(\varphi(z) = 4z/(1+z)^2\) 下的 \((\star)\) 中看到的那样。在 E-函数的背景下，以
+\[ \left\{ (d/dx)^j \left\{ \frac{e^x - 1}{x} \right\} : j \in \mathbf{N} \right\} \]
+为例。该集合生成了一个无限的 \(\mathbf{Q}[x]\)-模，其局部化为一个以 \(\{1,e^x\}\) 为基的 2 秩自由 \(\mathbf{Q}[x,x^{-1}]\)-模。在 Andr{\'e}--Beukers 理论中 \(x=0\) 的特殊角色，反映了像 \(f(x)=e^x\) 这样的超越 E-函数的存在，其极小 ODE 并不以 0 为奇点，但其特殊值 \(f(0)=1\in\mathbf{Q}\) 却是有理数。
+
+如果问题 15.2.2 具有肯定的回答，那么存在一个类似于 \cite{BR89, And00b, Beu06} 的形式机制来导出线性无关性证明。假设 \(h \in \mathcal{O}(\widetilde{\mathcal{V}}) \setminus \{0\}\) 使得局部化 \(\mathcal{O}(\widetilde{\mathcal{V}}_{\mathbf{Q}})[1/h]\)-模 \(\mathcal{D}_{\mathbf{Q}}[1/h]\) 是局部自由的。现在另外假设，如第 2.9 节中那样，存在一个收缩开邻域 \(0 \in \Omega \subset \mathbf{D}\)，\(\varphi\) 在该邻域上限制为一个单值映射，并且满足 \(\varphi^{-1}(\Sigma) \subset \Omega\)。考虑 \(f(x) \in \mathcal{D}_{\mathbf{Q}}\) 和一个包含 \(\Sigma\) 的、有限的、\(\operatorname{Gal}(\overline{\mathbf{Q}}/\mathbf{Q})\)-稳定的复代数点集 \(S_f \subset \overline{\mathbf{Q}} \hookrightarrow \mathbf{C}\)，使得 \(f(x)\) 沿着 \(\mathbf{C} \setminus S_f\) 中的所有路径全纯延拓。进一步假设这些不同的解析延拓最终在点 \(x = 1/n\) 处至少取得两个不同的值。
+
+现在假设 \(n \in \mathbf{Z} \setminus \{0\}\) 满足以下限制：
+\begin{enumerate}
+  \item[(1)] \(\varphi^{-1}(1/n) \subset \Omega\)；
+  \item[(2)] \(1/n \notin S_f\)；
+  \item[(3)] 元素 \(h\) 在 \(\mathbb{C}^1 \setminus \Sigma\) 中的所有解析延拓在点 \(1/n\) 处都取非零值。
+\end{enumerate}
+那么特殊\footnote{这指的是在 \(x = 1/n\) 处评估的 \(\mathbf{Q}[\![x]\!]\) 级数；因此出现了“要么是无理数，要么是发散值”的通常二分法。然而，我们在此处可以说出更精确的结论：值 \(f(1/n) \in \mathbf{C}\) 是无理数，该值通过从 \(x = 0\) 开始、保持在单值叶 \(\Omega \supset \{0, 1/n\}\) 内的解析延拓而定义良好。最近，Fischler 和 Rivoal \cite{FR21} 成功地将某些 G-函数纳入了超出收敛圆盘的特殊值的 Ball--Rivoal 框架中。}值 \(f(1/n)\) 满足类似于 \eqref{eq:15.1.4} 的无理性性质：要么 \(f(1/n) \notin \mathbf{Q}\)，要么 \(f(1/n)\) 是发散的。
+
+其论点在形式上与 \cite{Beu06} 相同。存在一个非零多项式 \(Q_f \in \mathbf{Z}[x] \setminus \{0\}\) 使得 \(\{Q_f = 0\} = S_f\) 并且 \(Q_f(x)f(x)\) 沿着 \(\mathbf{C} \setminus \Sigma\) 中的所有路径全纯延拓。如果 \(f(1/n) = p/q\) 是有理数，那么第 2.9 节中我们设定中的局部单值性性质 (1) 将适用于函数
+\[ \widetilde{f}(x) := Q_f(x) \frac{f(x) - f(1/n)}{1 - nx} \in \mathbf{Q}[\![x]\!], \]
+（其中 \(\Sigma^1 := \{s \in \Sigma : \varphi^{-1}(s) = \emptyset\}\)，而 \(\Sigma^0 := \{1/n\} \cup (\Sigma \setminus \Sigma^1)\)，并且命题 2.9.3 中的 \(\Sigma\) 扩充为 \(\Sigma \cup \{1/n\}\)），从而导出
+\begin{equation}\label{eq:15.2.4}
+\partial^{j}\left\{\widetilde{f}(x)\right\} \in \mathcal{D}_{\mathbf{Q}}, \quad \text{对于所有 } j \in \mathbf{N} \text{ 成立。}
+\end{equation}
+假设 \((\star)\)、(2) 和 (3) 意味着函数 \eqref{eq:15.2.4} 生成了一个有限的 \(\mathbf{C}(x)\)-模，同时也生成了一个有限的 \(\mathbf{C}[\![\frac{1}{1-nx}]\!]\)-模。因此，\(\mathcal{L}(\widetilde{f})=0\) 对于某个在点 \(x=1/n\) 处非奇异的、 \(\mathbf{C}(x)\) 上的非零线性微分算子 \(\mathcal{L}\) 成立。但这与我们的条件冲突：\(\widetilde{f}\) 具有某个解析延拓 \(\widetilde{F}\)（它必然也是 ODE \(\mathcal{L}(\widetilde{F})=0\) 的解），使得 \(x=1/n\) 是 \(\widetilde{F}(x)\) 的一个亚纯极点。
+
+这使得为问题 15.2.2 中的有限性性质 \((\star)\) 构造一个元素 \(h \in \mathcal{O}(\widetilde{\mathcal{V}}) \setminus \{0\}\) 具有极高的价值。作为一个简单的例子，如果 \(h=1\) 或仅仅 \(h=x\)（类似于 Andr{\'e}--Beukers 的事实 15.2.3 以及前文的讨论）对于基本注记 2.11.1 的二价映射 \(\varphi(z) = 8(z+z^3)/(1+z)^4\) 和 \([1,\ldots,n]^2\) 分母类型（\(\mathbf{b}=(1,1)\)）是允许的，那么仅凭这一点就足够了——无需在那种背景下证明可能更为困难的完整猜想 2.8.1——将注记 2.8.2 嵌入上述讨论中，并一举得出其余值 \(n \in \{-4, -3, -2, 2, 3, 4, 5\}\) 的无理性 \(\mathrm{Li}_2(1/n) \notin \mathbf{Q}\)。事实上，在这个例子中，一个简单的计算（例如参见 \cite{Rob68}）给出了 \(\mathcal{O}(\widetilde{\mathcal{V}}) = \mathbf{Z}[x, 1/(1-x)]\)，其中 \(\Sigma = \{0, 1, \infty\}\)，而对于 \(\Omega\)，我们可以取 \((-1, 1)\) 在 \(\mathbf{D}\) 中的任何足够小的开邻域，使得满足 \(\varphi^{-1}(\varphi(\Omega)) = \Omega\)。 \(\vartriangle\)
+
+\subsection{线性无关性的定量特征}\label{sec:15.3}
+
+正如在超越数论中通常\setcounter{footnote}{46}\footnote{除了 Andr{\'e} 以及著名的 transcendence sans transcendence \cite{And00a}\cite{And00b} 之外, 
+该工作应用了 G-函数的算术理论来重新获得关于 E-函数的 Siegel--Shidlovsky 定理.}所作的那样, 
+我们本文中的线性无关性证明在原理上可以被推向关于相关周期线性形式的定量下界估计. 
+然而, 在当前情况下, 这一过渡并不是平凡的, 
+并需要大量的额外工作, 我们决定不在本文中涉及这些内容. 
+第 3.3.3 节的讨论指出了做出此类过渡的第一步方法论线索. 
+我们计划在未来的工作中转向它.
+
+\subsection{结构环}\label{sec:15.4}
+
+阐明如定理 2.7.2（关于 \(\log x\)）、定理 2.8.4（关于 \(\log^2 x\)）等算术代数化定理的范围, 
+以及在 \(\mathbf{P}^1 \setminus \{0,1,\infty\}\) 上关于 \([1, \ldots, n]^2\) 
+层 G-函数的更精确猜想 2.8.1 的范围, 
+将会是非常有趣的. 
+例如, 人们可以问：第 10.3 节的多重 polylogarithm 环有多少可以被算术代数化术语所捕捉. 
+以下问题超出了我们方法论的范畴:
+
+\begin{question}\label{qu:15.4.1}
+考虑由满足如下形式的 G-函数 \(f(x)\) 
+在 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 上几何来源的、
+由 \(\mathbf{Q}(x)\)-向量空间 \(\mathcal{H}\):
+\begin{equation}\label{eq:15.4.2}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{[1, \dots, n]^3} \in \mathbf{Q}[\![x]\!], \qquad a_n \in \mathbf{Z} \quad \forall n \in \mathbf{N}
+\end{equation}
+所生成的空间. \(\mathcal{H}\) 是否为有限维的？
+\end{question}
+
+满足 \(\varphi(0)=0\) 以及 \(\varphi^{-1}(0)=\{0\}\) 的万有映射 \(\varphi: \mathbf{D} \to \mathbf{C} \setminus \{1\}\) 是 \(\lambda\). 
+由于有 \(16 < e^\pi = e^3\), 
+我们的方法对问题 15.4.1 没有任何直接可以说的内容； 
+我们甚至无法猜测答案会是什么. 
+（相比之下, 对于分母类型——例如——\([1, \ldots, n]^2[1, \dots, n/2]\) 
+或 \(\prod_{k=1}^8 [1, \dots, n/k]\), 
+推论 2.6.1 证明了在 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 上的对应 G-函数形成了一个有限维空间, 
+尽管要确定这些空间即使在猜想上可能也是相当困难的.）
+
+\text{我们强调：即使当 \(\tau = 0\) 时, 该问题也并不见得更简单；} 
+人们可以问：对于哪些 \(\alpha \in \mathbf{Q}\), 
+在 \(\mathbf{P}^1 \setminus \{0, \alpha, \infty\}\) 
+上由满足 \(\mathbf{Z}[\![x]\!]\) 
+的有理系数代数幂级数 \(f(x)\) 所生成的 \(\mathbf{Q}(x)\)-向量空间 is 无限维的. 
+该空间当 \(\alpha > 1/16\) 时是有限维的, 
+以及当 \(\alpha = 1/16\) 时是无限维的, 
+在后者情况下, 人们可以通过在同余子群上写出具有整系数的模函数并用 \(x = \lambda/16\) 
+作为自变量来构造这些函数. 
+\cite{CDT21} 的主要成果是证明了所有此类 \(f(x)\) 都是以此方式出现的. 
+但一旦有 \(\alpha < 1/16\), 我们就没有任何方法来理解这一问题, 
+甚至无法确定在 \(\mathcal{H}\) 中是否存在一个单单的非有理函数. 
+然而, 人们可以借助 \(\alpha = 1/16\) 这一例子来展示：对于某些满足 \(\tau > 0\) 
+的模板, G-函数的空间确实是无限维的.
+
+\begin{proposition}\label{prop:15.4.3}
+令 \(\mathcal{H}\) 表示在 \(\mathbf{P}^1 \setminus \{0,1,\infty\}\) 
+上由来自几何来源的、满足如下形式的 G-函数 \(f(x)\) 
+所生成的 \(\mathbf{Q}(x)\)-向量空间:
+\begin{equation}\label{eq:15.4.4}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{[1, \dots, 2n]^2} \in \mathbf{Q}[\![x]\!], \qquad a_n \in \mathbf{Z} \quad \forall n \in \mathbf{N}.
+\end{equation}
+那么 \(\mathcal{H}\) 是无限维的.
+\end{proposition}
+
+\begin{proof}
+设 \(g(q) \in \mathbf{Z}[\![q]\!]\) 是在 \(X_0(N)\) 上偏离尖点全纯的模函数. 
+那么, 将 \(g(q)\) 作为 \(x = \lambda/16\) 的函数写出来, 
+我们发现 \(g(x) \in \mathbf{Z}[\![x]\!]\) 是在 \(\mathbf{P}^1 \setminus \{0, 1/16, \infty\}\) 
+上的代数函数, 
+并且（通过取越来越大的 N）此类 \(g(x)\) 的空间在 \(\mathbf{Q}(x)\) 
+上是无限维的. 
+现在设:
+\[ h(x) = {}_{3}F_{2}\left[\begin{smallmatrix} 1/2, & 1/2, & 1 \\ & 3/2, & 3/2 \end{smallmatrix} ; \frac{x}{16}\right] = \sum \frac{x^{n}}{\binom{2n}{n}^{2}}. \]
+函数 \(h(x)\) 具有分母类型 \(\tau = [1, 2, 3, ..., 2n]^2\) 
+并且是在 \(\mathbf{P}^1 \setminus \{0, 16, \infty\}\) 上的几何来源 G-函数. 
+现在, Hadamard 乘积:
+\[ f(x) = g(x) \star h(x) \]
+位于 \(\mathcal{H}\) 中, 并在 \(\mathbf{Q}(x)\) 
+上生成了一个无限维空间.
+\end{proof}
+
+注意该情况下的数值巧合对应于 \(e^4 > 16\).
+
+\subsection{算法问题}\label{sec:15.5}
+
+给定一个几何来源的 ODE, 人们在一般情况下总是可以给出分母类型的一个上界. 
+然而, 确定分母的精确增长速度在一般情况下似乎是困难的. 
+两个启发性的例子可以给出如下. 
+在 \cite{Coo12} 中, 考虑了以下例子. 
+设
+\[ x = q \prod_{n=1}^{\infty} \left( \frac{(1-q^{7n})}{(1-q^n)} \right)^4, \]
+它是 \(X_0(7)\) 的一个 hauptmodul. 
+存在一个对应的、关于 \(X_0(7)^+\) 的统一化参数如下:
+\[ y = \frac{x}{1 + 13x + 49x^2}. \]
+如果我们现在取权重 2 的 Eisenstein 级数:
+\[
+\begin{aligned}
+E &= \frac{7E_2(\tau) - E_2(7\tau)}{1 - 7} \\
+&= 1 + 4q + 12q^2 + 16q^3 + 28q^4 + \dots
+\end{aligned}
+\]
+并且随后将其写为 y 的函数, 
+我们获得了一个在 \(\mathbf{P}^1 \setminus \{0, 1/27, -1, \infty\}\) 
+上没有奇点的一阶三线性 ODE, 该 ODE 显式地由 \(\mathcal{L}H_A(x) = 0\) 
+以及下式给出:
+\[ \mathcal{L} = x^{2}(1+x)(-1+27x)\frac{d^{3}}{dx^{3}} + 3x(-1+39x+54x^{2})\frac{d^{2}}{dx^{2}} + (-1+86x+186x^{2})\frac{d}{dx} + 4(1+6x). \]
+
+如果人们考虑非齐次版本 \(\mathcal{L}H(x) = -1\), 
+那么存在一个在尖点 1/27 之外超收敛的全纯解 H(x). 
+该解是模来源 of, 
+也就是存在一个权重 4 of 模形式, 
+其三阶（Eichler）积分写为关于参数 q of 函数形式时给出了 \(H(x)/H_A(x)\). 
+该例子中不寻常的一点是：权重 4 of 形式是亚纯而非全纯的； 
+它对于在 \(S_6(\Gamma_0(7), \mathbf{Q})\) 中的唯一 Hecke 特征形式 h 具有形式 h/E, 
+以及因此 h/E 在偏离尖点的地方具有极点. 
+但也许更令人惊讶的是, 形式 h/E 在 \cite{BZ19} 的意义下是“磁性”的（magnetic）； 
+也就是说, 如果 \(h/E = \sum a_n q^n\), 
+那么对于所有 n 均有 \(n|a_n\). 
+作为这一结果的一个结果, 
+全纯解 H(x)——从所有的外观来看（以及鉴于构建 H(x) 所需的三次积分, 人们本应该期望其具有分母类型 \(\tau = [1, 2, \dots, n]^3\)）——其实际上具有分母类型 \(\tau = [1, 2, \dots, n]^2\). 
+这从 ODE 来看是完全不明显的, 
+并且目前不清楚是否存在一个先验地计算该结论的算法. 
+作为一个奇特的、以及在我们的有理 holonomy 边界框架内应用潜在性的结果, 它也意味着：对应于 Cooper 序列的 Ap{\'e}ry 极限的无理性是可以通过我们的方法触及的； 
+然而, 由于对应的常数似乎是 \(\pi^2/42\), 我们并未转向去研究它！
+
+突出计算分母类型困难的第二个例子如下. 
+伴随 Ramanujan 的模形式 \(\Delta = \sum \tau(n)q^n\), 
+人们可以写下一个对应于 Eichler 积分 \(\sum \tau(n)n^{-11}q^n\) 的非齐次解. 
+人们期望所产生函数的分母类型将为 \([1,2,\ldots,n]^{11}\). 
+然而, 如果人们可以证明它\textit{不具有} \(A^n[1,2,\ldots,n]^{10}\) 的形式, 
+那么人们就将已经证明了对于 \(\Delta\) 存在着无限个普通素数（ordinary primes）, 
+这是一个以及著名的开放问题.
+
+\subsection{Gelfond--Schnirelman 主题}\label{sec:15.6}
+
+我们回顾定理 2.7.10 以及基础特例的命名, 
+我们基于该特例对对数函数进行了算术代数化： 
+狭缝平面区域 \(\Omega := \mathbb{C} \setminus [1, \infty)\) 
+具有满足 \(\varphi(z) = 4z/(1+z)^2\) 的 Riemann 映射共形半径 \(\rho(\Omega, 0) = 4\), 
+并且它承认超越解析函数 \(\log(1-x) = -\sum_{n=1}^{\infty} x^n/n\), 
+其分母类型可以用具有 r=1 以及 \(b_1 = 1\) 的形式 \eqref{eq:2.7.8} 来表达. 
+我们在该例中对于 \eqref{eq:2.7.9} 的右手边有 \((2/3) \log 4 = 0.924196 \dots\).
+
+这引出了另一个被 \cite[§ II]{Chu83a} 以及 \cite[第 493--494 页]{FW08} 所考虑的通俗主题, 
+这大概是由于其与我们描述的 G-函数算术理论创造者们的方法论相关性. 
+这是 Gelfond 以及 Schnirelman 在 1936 年观察到的旧想法, 
+他们指出：仅仅通过对在 \([1,\ldots,2n+1]\int_0^1 (t-t^2)^n dt \in \mathbf{N}_{>0}\) 
+内逐点 \(\leq 4^{-n}\) 的被积函数进行评述, 
+就可以一举推导出素数计数下界 \(\pi(X) > (\log 2)X/\log X\) 对所有 \(X \gg 1\) 成立. 
+利用 \(\log(1-x)\) 的 functional bad approximability 性质（第 3.3.7 节中 Hermite--Pad{\'e} 表的正则性）, 
+定理 2.7.2 证明中素数定理的使用可以被逆转, 
+以便设计出一个关于集成素数计数函数估计的有理 Gelfond--Schnirelman 风格的初等证明： 
+对所有足够大的 X, 均有 \(\int_1^X \psi(t) dt > (4/3) \log 2 \cdot X^2/2\). 
+这里的系数比 Chebyshev 的 \(\log \left(2^{1/2}3^{1/3}5^{1/5}30^{-1/30}\right) = 0.921292\ldots\) 
+稍微好一些, 并且现在的关键在于该证明其实并不是新的： 
+它是与 Bombieri、Nair 以及 Chudnovsky 
+通过在多元方法中使用判别式\setcounter{footnote}{48}\footnote{在 Bombieri 的情况下，这一探究导致了 Selberg 积分的重新发现，并且以此为真正的数学成果，带来了 Dyson--Mehta 猜想的历史性证明以及 Macdonald 猜想的部分情形。这一故事详述于 \cite[第 1.2、1.3 节]{FW08}。}多项式而获得的开端估计完全同构的论证； 
+参见 \cite[第 94 页]{Chu83a}, 
+并注意来自 \cite[定理 1 证明]{Nai82} 的 Cauchy 行列式正是应用于我们首节第 1.2.5 节的函数 \(\log(1-x)\) 的 Hankel 行列式. 
+由于素数定理的逻辑可以在我们的每一个算术 holonomy 边界中被逆转, 
+人们不能不对我们 holonomy 边界的“渐近近失”（asymptotic near-misses）中的分母算术感到好奇.
+
+\subsection{历史注记以及致谢}\label{sec:15.7}
+
+我们最初在 2020 年构想了我们的新无理性方法, 
+起步于对 \(\zeta(5)\) 的 2-进化身无理性的一个容易证明（我们最终在伴随论文 \cite{CDT24} 中予以了阐明）, 
+以及甚至在当年我们就在 \cite{Zag09} 的帮助下意识到：该方法在原理上可以应用于 \(L(2,\chi_{-3})\). 
+然而, 在当时, 我们可以遵循 \cite[§ VIII]{And89} 证明的 holonomy 边界是完全不够的, 
+这已在第 2 节中解释过. 
+我们的第一个严重改进——例如 \((2.2.3)\)——相比于 Andr{\'e} 的 holonomy 边界 \(\frac{\sup^T \log |\varphi|}{\log |\varphi'(0)| - \tau}\) 
+仍然不足以用于这一相当（如当时看来！）虚无缥缈的应用, 
+但我们发现它们仍然带有某种渐近精度, 
+该精度是对关于代数函数的无界分母猜想（\(\tau=0\) 的情况）证明 \cite{CDT21} 的关键. 
+文献 \cite{BC22} 引用 \cite{CDT21} 作为一个重要的影响. 
+反过来, 隐式地已经拥有边界 \((2.2.5)\) 的 \cite{BC22} 显然是我们本论文的一个关键灵感, 
+并且（部分地）是通过尝试将我们的想法与 \cite{BC22} 的想法融合在一起, 
+才导致了此处的最佳 holonomy 边界.
+
+整个第 8.1 节归功于 Fedor Nazarov. 
+我们感谢他向我们解释了在 Bost--Charles 积分以及重排积分之间的精确解析比较. 
+注记 6.0.16 是建立在与 Samuel Goodman 的一次讨论的基础之上的.
+
+此外, 我们希望感谢在过去四年里对与本论文相关的想法进行过讨论的一些人, 
+包括 Yves Andr{\'e}, Jean-Beno{\^i}t Bost, Alin Bostan, Fran{\c{c}}ois Charles, David 以及 Gregory Chudnovsky, Tom Hutchcroft, Javier Fr{\'e}san, Lars K{\"u}hne, Peter Sarnak, Umberto Zannier, Wadim Zudilin.

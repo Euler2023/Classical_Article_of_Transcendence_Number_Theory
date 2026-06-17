@@ -1,0 +1,470 @@
+\section{过滤评估模与函数超越性}\label{sec:3}
+
+在本节中, 我们深入研究我们在第 2.13.1 节中描述的、用于辅助多项式函数的多元评估模的消逝过滤跳跃 (vanishing filtration jumps) 结构. 它们的规范形式和基本事实收集在第 3.1 节中, 在那里我们证明了评估模的笛卡尔乘积形成与消逝过滤跳跃指数向量形成之间的交换性. 在第 3.2 节中, 我们对源自 Siegel--Shidlovsky 定理关于 $E$-函数特殊值历史证明 \cite{Shi59} 中的经典 Shidlovsky 引理的文献, 以及 Chudnovsky 和 Osgood 关于微分代数中函数 Schmidt 子空间定理 (即 Kolchin 问题) 的更深层工作进行了综述. 这些更精细的信息简化了我们算术 holonomy 边界的表述和证明, 并且对于定量线性无关性度量和丢番图不等式的任何精细化而言也是必不可少的. 不过我们仍然指出, 遵循第 7.7 节中的线索, 人们在原理上可以不使用微分代数定理来完成本文中特定的定性线性无关性证明. 最后, 仅仅为了给出一种完备感和适当的历史背景, 我们在第 3.3 节中收集了关于 holonomic 函数的 perfect Pad{\'e} 逼近的一些最基本示例, 这可以被视为第 3.2 节中收集的函数 bad approximability 定理的雏形和引言.
+
+\subsection{笛卡尔乘积的评估模}\label{sec:3.1}
+
+我们将第 2.13.1 节的讨论形式化.
+
+\subsubsection{评估模}\label{sec:3.1.1}
+
+考虑一个有界 Lebesgue 可测子集 \(\Omega \subset [0,\infty)^d\) 和一个有限索引集 I. 在实践中, 我们将 I 视为 \(\{1,\ldots,m\}^d\) 的子集, 因而我们将对索引元素使用粗体记号 \(\mathbf{i} \in I\). 我们目前固定一个由 \(\mathbf{Q}(\mathbf{x})\)-线性无关形式幂级数组成的 I-元组:
+\[ f_{\mathbf{i}}(\mathbf{x}) \in \mathbf{Q}[\![\mathbf{x}]\!], \quad \mathbf{x} := (x_1, \dots, x_d), \quad \mathbf{i} \in I. \]
+以下有限秩自由 \(\mathbf{Z}\)-模都将依赖于给定的函数 \(f_{\mathbf{i}}\), 这些函数将被视为固定的并在记号中省去.
+
+\begin{definition}\label{def:3.1.2}
+由数据
+\[ \left( (f_{\mathbf{i}})_{\mathbf{i}\in I}; D; \Omega \right) \]
+定义的评估模 \((E_{D,\Omega}^I, \psi_D)\) 是一对有限秩自由 \(\mathbf{Z}\)-模 \(E_{D,\Omega}^I\) 连同一个 \(\mathbf{Z}\)-模同态 \(\psi_D: E_{D,\Omega}^I \to \mathbf{Q}[\![\mathbf{x}]\!]\), 其构造如下. 
+对于 \(E_{D,\Omega}^I\), 取由所有满足 \(\mathbf{k}(\mathbf{i}) \in (D \cdot \Omega) \cap \mathbf{Z}^d\) (对于所有 \(\mathbf{i} \in I\)) 的单项式 \(\mathbf{x}^{\mathbf{k}(\mathbf{i})}\) 的 I-元组的 \(\mathbf{Z}\)-线性生成空间. 
+对于 \(\psi_D\), 我们取泰勒级数展开映射, 该映射在基底上由 \(\mathbf{x}^{\mathbf{k}(\mathbf{i})}f_{\mathbf{i}}(\mathbf{x})\) 的泰勒展开 \(\mathbf{Z}\)-线性生成:
+\[ \psi_D\,:\,E_{D,\Omega}^I\otimes_{\mathbf{Z}}\mathbf{Q}\hookrightarrow\mathbf{Q}[\![\mathbf{x}]\!],\qquad\mathbf{x}^{\mathbf{k}(\mathbf{i})}\mapsto\mathbf{x}^{\mathbf{k}(\mathbf{i})}f_{\mathbf{i}}(\mathbf{x})\in\mathbf{Q}[\![\mathbf{x}]\!]. \]
+评估映射 \(\psi_D\) 是一个单射同态, 这恰好是由我们对形式幂级数 I-元组 \(f_{\mathbf{i}}(\mathbf{x}) \in \mathbf{Q}[\![\mathbf{x}]\!]\) 所假设的 \(\mathbf{Q}(\mathbf{x})\)-线性无关性所保证的.
+\end{definition}
+
+\subsubsection{评估过滤}\label{sec:3.1.3}
+
+考虑由 \(d\) 个对易变量 \(\mathbf{x} := (x_1, \dots, x_d)\) 中的形式幂级数组成的无限维 \(\mathbf{Q}\)-向量空间 \(\mathbf{Q}[\![\mathbf{x}]\!]\) 的过滤, 
+该过滤首先通过总次数 \(|\mathbf{n}| := n_1 + \dots + n_d\) 对单项式基底 \(\mathbf{x}^{\mathbf{n}}\) 进行分级 (grading), 
+然后通过指数 \(\mathbf{n} = (n_1,\ldots,n_d)\) 的字典序 (lexicographical ordering) 对满足 \(|\mathbf{n}|=n\) 的 \(\binom{n+d-1}{d-1}\) 维齐次部分 \(\mathbf{Q}\)-向量空间进行过滤:
+\[ \mathbf{m} \prec \mathbf{n} \iff \text{要么 } |\mathbf{m}| < |\mathbf{n}|, \text{ 要么 } |\mathbf{m}| = |\mathbf{n}| \text{ 且 } \mathbf{m} \text{ 在字典序上先于 } \mathbf{n}. \]
+我们用 \(\mathbf{n} \mapsto \mathbf{n}^+\) 表示这一全序的后继函数. 在
+\[ \mathbf{Q}[\![\mathbf{x}]\!] =: F = \bigcup_{\mathbf{n} \in \mathbf{N}^d, \, \prec} F^{(\mathbf{n})} \]
+上产生的过滤是分裂且极大的: 后继商 \(\mathbf{Q}\)-向量空间 \(F^{(\mathbf{n})}/F^{(\mathbf{n}^+)} \cong \mathbf{Q}\) 是一维的, 且以 \(F^{(\mathbf{n})} \setminus F^{(\mathbf{n}^+)}\) 中唯一的单项式 \(\mathbf{x}^{\mathbf{n}}\) 的等价类为基底. 
+利用单同态 \(\psi_D: E^I_{D,\Omega} \hookrightarrow F\), \(F\) 上的 \((\mathbf{N}^d, \prec)\)-过滤在 \(\mathbf{Q}\)-向量空间 \(E_{D,\Omega}^I \otimes_{\mathbf{Z}} \mathbf{Q}\) 上诱导了一个 \((\mathbf{N}^d, \prec)\)-过滤:
+\[ E_{D,\Omega}^{I,(\mathbf{n})} := \psi_D^{-1} \left( F^{(\mathbf{n})} \right) \subset E_{D,\Omega}^I \otimes_{\mathbf{Z}} \mathbf{Q}. \]
+单同态 \(\psi_D: E_{D,\Omega}^I \hookrightarrow F\) 在分级后继商上诱导了一个单同态:
+\[ \psi_D^{(\mathbf{n})}: E_{D,\Omega}^{I,(\mathbf{n})}/E_{D,\Omega}^{I,(\mathbf{n}^+)} \hookrightarrow F^{(\mathbf{n})}/F^{(\mathbf{n}^+)}. \]
+由于这一单同态的值域是一维 \(\mathbf{Q}\)-向量空间 \(F^{(\mathbf{n})}/F^{(\mathbf{n}^+)}\), 因而有
+\begin{equation}\label{eq:3.1.4}
+\forall \mathbf{n} \in \mathbf{N}^d, \qquad \dim_{\mathbf{Q}} \left( E_{D,\Omega}^{I,(\mathbf{n})} / E_{D,\Omega}^{I,(\mathbf{n}^+)} \right) \in \{0,1\}.
+\end{equation}
+所有这些 \(\{0,1\}\) 维度的总和等于 \(\dim_{\mathbf{Q}}(E_{D,\Omega}^I\otimes\mathbf{Q})=\operatorname{rank}\,(E_{D,\Omega}^I)\). 
+因此, 消逝过滤跳跃集合 (vanishing filtration jumps set)
+\[ \mathcal{V}_{D,\Omega}^{I} := \left\{\mathbf{n} \in \mathbf{N}^{d} \, : \, \dim_{\mathbf{Q}}\left(E_{D,\Omega}^{I,(\mathbf{n})}/E_{D,\Omega}^{I,(\mathbf{n}^{+})}\right) = 1\right\} \subset \mathbf{N}^{d} \]
+满足
+\begin{equation}\label{eq:3.1.5}
+\#\mathcal{V}_{D,\Omega}^I = \operatorname{rank}(E_{D,\Omega}^I), \quad \text{且当 } \mathbf{n} \notin \mathcal{V}_{D,\Omega}^I \text{ 时, } E_{D,\Omega}^{I,(\mathbf{n}^+)} = E_{D,\Omega}^{I,(\mathbf{n})}.
+\end{equation}
+\(\prec\) 过滤还表明, \(\mathbf{n} \in \mathcal{V}_{D,\Omega}^{I}\) 恰好是在某个非零元素 \(G \in \psi_D\left(E_{D,\Omega}^I\right) \setminus \{0\}\) 的最低阶射线 \(|\mathbf{n}| = \operatorname{ord}_{\mathbf{x} = \mathbf{0}}(G)\) 中出现在单项式 \(\mathbf{x}^{\mathbf{n}}\) 中的指数. 我们已证明:
+
+\begin{lemma}\label{lem:3.1.6}
+在全序 \((\mathbf{N}^d, \prec)\) 且形式幂级数 \((f_{\mathbf{i}})_{\mathbf{i}\in I}\) 满足 \(\mathbf{Q}(\mathbf{x})\)-线性无关的前提下, 恰好存在 \(\operatorname{rank}(E_{D,\Omega}^I)\) 个指数向量 \(\mathbf{n} \in \mathbf{N}^d\), 使得在 \(\psi_D\left(E_{D,\Omega}^I\right)\) 中存在一个非零元素 \(G\), 其在 \(\mathbf{Q}[\![\mathbf{x}]\!]\) 中的 \(\prec\)-极小单项式为 \(c\mathbf{x}^{\mathbf{n}}\), 对于某个非零常数 \(c \in \mathbf{Q}^{\times}\).
+此外, 对于任何满足在 \(\mathbf{x} = \mathbf{0}\) 处消逝阶数为 \(n\) 的 \(G \in \psi_D(E_{D,\Omega}^I) \setminus \{0\}\), 以及对于 \(G\) 中具有极小次数 \(|\mathbf{n}| = n\) 的任何非零单项式 \(c \mathbf{x}^{\mathbf{n}}\), 在 \(\psi_D\left(E_{D,\Omega}^I\right)\) 中都存在一个其 \(\prec\)-极小单项式为 \(\mathbf{x}^{\mathbf{n}}\) 的元素 \(F\).
+\end{lemma}
+
+\subsubsection{笛卡尔乘积}\label{sec:3.1.7}
+
+考虑两个有界 Lebesgue 可测子集 \(\Omega_1 \subset [0,\infty)^{d_1}\) 和 \(\Omega_2 \subset [0,\infty)^{d_2}\), 一个正整数 \(D \in \mathbf{N}_{>0}\), 两个相应的索引集 \(I_1\) 和 \(I_2\) (如上所述), 
+并且对于每个 \(h \in \{1,2\}\), 考虑相应的由 \(\mathbf{Q}\left(x_1^{(h)},\ldots,x_{d_h}^{(h)}\right)\)-线性无关形式幂级数组成的 \(I_h\)-元组 \(\{f_{\mathbf{i}}\}_{\mathbf{i}\in I_1},\{g_{\mathbf{j}}\}_{\mathbf{j}\in I_2}\). 
+这些相应的数据定义了两个评估模 \(\psi_D^{(h)}: E_{D,\Omega_h}^{I_h} \hookrightarrow \mathbf{Q}[\![\mathbf{x}^{(h)}]\!]\), 
+以及一个由 \(\mathbf{Q}(\mathbf{x}^{(1)},\mathbf{x}^{(2)})\)-线性无关形式幂级数 I-元组 \(f_{\mathbf{i}}(\mathbf{x})g_{\mathbf{j}}(\mathbf{y})\) 定义的 \((d_1+d_2)\)-变量评估模 \(E_{D,\Omega_1\times\Omega_2}^{I_1\times I_2}\) (即笛卡尔乘积). 
+因此存在一个自明同构:
+\begin{equation}\label{eq:3.1.8}
+E_{D,\Omega_{1}}^{I_{1}} \times E_{D,\Omega_{2}}^{I_{2}} \xrightarrow{\simeq} E_{D,\Omega_{1} \times \Omega_{2}}^{I_{1} \times I_{2}}, \qquad (f_{\mathbf{i}}(\mathbf{x}), g_{\mathbf{j}}(\mathbf{y}))_{\mathbf{i} \in I_{1}, \mathbf{j} \in I_{2}} \mapsto (f_{\mathbf{i}}(\mathbf{x})g_{\mathbf{j}}(\mathbf{y}))_{(\mathbf{i}, \mathbf{j}) \in I_{1} \times I_{2}},
+\end{equation}
+在此同构下, 乘积的评估映射 \(\psi_D: E_{D,\Omega_1 \times \Omega_2}^{I_1 \times I_2} \hookrightarrow \mathbf{Q}[\![\mathbf{x}^{(1)},\mathbf{x}^{(2)}]\!]\) 与各因子评估映射的乘积相容:
+\[ (\psi_D^{(1)}, \psi_D^{(2)}) : E_{D,\Omega_1}^{I_1} \times E_{D,\Omega_2}^{I_2} \hookrightarrow \mathbf{Q}[\![\mathbf{x}^{(1)}, \mathbf{x}^{(2)}]\!]. \]
+结合\autoref{lem:3.1.6}, 这一评述引出了以下核心结果, 我们可以将其最简练地表述为: 评估模的笛卡尔乘积形成与它们的消逝过滤跳跃形成是相容 (对易) 的.
+
+\begin{lemma}\label{lem:3.1.9}
+固定 \(\mathbf{Q}(\mathbf{x}^{(1)})\)-线性无关的 \(I_1\)-元组 \((f_{\mathbf{i}}(\mathbf{x}^{(1)}))_{\mathbf{i} \in I_1}\) 以及 \(\mathbf{Q}(\mathbf{x}^{(2)})\)-线性无关的 \(I_2\)-元组 \((g_{\mathbf{j}}(\mathbf{x}^{(2)}))_{\mathbf{j} \in I_2}\). 
+在当前第 3.1 节的记号和前提下, 相关联评估模的消逝过滤跳跃满足:
+\begin{equation}\label{eq:3.1.10}
+\mathcal{V}_{D,\Omega_{1}\times\Omega_{2}}^{I_{1}\times I_{2}} = \mathcal{V}_{D,\Omega_{1}}^{I_{1}} \times \mathcal{V}_{D,\Omega_{2}}^{I_{2}},
+\end{equation}
+作为 \(\mathbf{N}^{d_1+d_2} = \mathbf{N}^{d_1} \times \mathbf{N}^{d_2}\) 的部分子集.
+\end{lemma}
+
+我们给出两证明.
+
+\begin{proof}[第一种证明]
+由 \eqref{eq:3.1.5} 和 \eqref{eq:3.1.8}, 断言等式 \eqref{eq:3.1.10} 中的两个集合都是有限的, 且具有相同的基数:
+\[ \operatorname{rank} \big( E_{D,\Omega_1 \times \Omega_2}^{I_2 \times I_2} \big) = \operatorname{rank} \big( E_{D,\Omega_1}^{I_1} \big) \operatorname{rank} \big( E_{D,\Omega_2}^{I_2} \big). \]
+因此只需证明其中一个集合包含于另一个集合. 而
+\[ \mathcal{V}_{D,\Omega_1}^{I_1} \times \mathcal{V}_{D,\Omega_2}^{I_2} \subseteq \mathcal{V}_{D,\Omega_1 \times \Omega_2}^{I_1 \times I_2} \]
+可以通过以下乘积构造说得很清楚. 对于任意一对 \(\mathbf{n}_1 \in \mathcal{V}_{D,\Omega_1}^{I_1} \subset \mathbf{N}^{d_1}\) 和 \(\mathbf{n}_2 \in \mathcal{V}_{D,\Omega_2}^{I_2} \subset \mathbf{N}^{d_2}\), 
+根据定义, 存在两个辅助函数评估 \(G_1(\mathbf{x}^{(1)}) \in \psi_D\left(E_{D,\Omega_1}^{I_1}\right) \subset \mathbf{Q}[\![\mathbf{x}^{(1)}]\!]\) 和 \(G_2(\mathbf{x}^{(2)}) \in \psi_D\left(E_{D,\Omega_2}^{I_2}\right) \subset \mathbf{Q}[\![\mathbf{x}^{(2)}]\!]\), 
+使得 \(\mathbf{n}_1\) 是 \(G_1(\mathbf{x}^{(1)}) = c_1 \cdot (\mathbf{x}^{(1)})^{\mathbf{n}_1} + \ldots\) 在全序集 \((\mathbf{N}^{d_1}, \prec)\) 中的 \(\prec\)-极小指数, 
+且 \(\mathbf{n}_2\) 是 \(G_2(\mathbf{x}^{(2)}) = c_2 \cdot (\mathbf{x}^{(2)})^{\mathbf{n}_2} + \ldots\) 在全序集 \((\mathbf{N}^{d_2}, \prec)\) 中的 \(\prec\)-极小指数. 
+接下来考虑乘积:
+\[ G(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}) := G_1(\mathbf{x}^{(1)})G_2(\mathbf{x}^{(2)}) \in \mathbf{Q}[\![\mathbf{x}^{(1)}, \mathbf{x}^{(2)}]\!]. \]
+通过笛卡尔乘积的构造, 我们看到 G 属于评估值域 \(\psi_D\left(E_{D,\Omega_1\times\Omega_2}^{I_2\times I_2}\right)\). 
+它在多重次数 \((\mathbf{n}_1, \mathbf{n}_2) \in \mathbf{N}^{d_1} \times \mathbf{N}^{d_2} = \mathbf{N}^{d_1+d_2}\) 中具有非零系数 \(c_1c_2\in\mathbf{Q}^{\times}\). 
+我们声称, 对于 \((\mathbf{N}^{d_1+d_2}, \prec)\) 全序, 这是 G 中的极小多重次数. 
+这确实是极小的可能消逝阶数 \(|\mathbf{n}_1| + |\mathbf{n}_2|\), 因为根据 \(\prec\) 的定义, 因子幂级数 \(G_1\) 和 \(G_2\) 的相应消逝阶数分别为 \(|\mathbf{n}_1|\) 和 \(|\mathbf{n}_2|\). 
+现在, G 中具有极小可能阶数 \(|\mathbf{u}| + |\mathbf{v}| = |\mathbf{n}_1| + |\mathbf{n}_2|\) 的单项式次数 \((\mathbf{u}, \mathbf{v})\) 由于满足 \(|\mathbf{u}| \geq |\mathbf{n}_1|\) 且 \(|\mathbf{v}| \geq |\mathbf{n}_2|\), 
+因而其偏次数必然满足 \(|\mathbf{u}| = |\mathbf{n}_1|\) 且 \(|\mathbf{v}| = |\mathbf{n}_2|\). 
+我们有 \(\mathbf{n}_1 \preceq \mathbf{u}\) 且 \(\mathbf{n}_2 \preceq \mathbf{v}\). 根据字典序的定义, 如果 \((\mathbf{u}, \mathbf{v}) \neq (\mathbf{n}_1, \mathbf{n}_2)\), 那么必然有 \((\mathbf{n}_1, \mathbf{n}_2) \prec (\mathbf{u}, \mathbf{v})\). 
+因此, 通过 \(G(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}) = c_1 c_2 \cdot (\mathbf{x}^{(1)})^{\mathbf{n}_1} (\mathbf{x}^{(2)})^{\mathbf{n}_2} + \ldots\) 的例子, 
+我们发现 \((\mathbf{n}_1, \mathbf{n}_2) \in \mathcal{V}_{D,\Omega_1 \times \Omega_2}^{I_1 \times I_2}\), 
+并以此方式证明了所要求的包含关系 \(\mathcal{V}_{D,\Omega_1}^{I_1} \times \mathcal{V}_{D,\Omega_2}^{I_2} \subseteq \mathcal{V}_{D,\Omega_1 \times \Omega_2}^{I_1 \times I_2}\).
+\end{proof}
+
+\begin{proof}[第二种证明]
+我们也可以直接看到反向的包含关系:
+\[ \mathcal{V}_{D,\Omega_1\times\Omega_2}^{I_1\times I_2}\subseteq\mathcal{V}_{D,\Omega_1}^{I_1}\times\mathcal{V}_{D,\Omega_2}^{I_2}. \]
+设
+\[ F(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}) = \sum_{\mathbf{i} \in I_1, \, \mathbf{j} \in I_2} Q_{\mathbf{i}, \mathbf{j}}(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}) f_{\mathbf{i}}(\mathbf{x}^{(1)}) g_{\mathbf{j}}(\mathbf{x}^{(2)}) \in \psi_D\left(E_{D, \Omega_1 \times \Omega_2}^{I_1 \times I_2}\right) \]
+是笛卡尔乘积模的任意一个辅助函数评估, 具有 \((\mathbf{N}^{d_1+d_2}, \prec)\) 极小单项式 \(\beta \cdot (\mathbf{x}^{(1)})^{\mathbf{n}_1}(\mathbf{x}^{(2)})^{\mathbf{n}_2}\). 那么
+\[ \frac{1}{\mathbf{n}_{2}!} \frac{\partial^{|\mathbf{n}_{2}|}}{(\partial \mathbf{x}^{(2)})^{\mathbf{n}_{2}}} \Big|_{\mathbf{x}^{(2)} = \mathbf{0}} \Big\{ F(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}) \Big\} = \beta \cdot (\mathbf{x}^{(1)})^{\mathbf{n}_{1}} + \dots \Big[ \prec \text{-极高阶项} \Big], \]
+因为这一特化后的单项式恰好是使得 \(\gamma \cdot (\mathbf{x}^{(1)})^{\mathbf{k}}(\mathbf{x}^{(2)})^{\mathbf{n}_2}\) 是来自 \(F(\mathbf{x}^{(1)},\mathbf{x}^{(2)})\) 的单项式的那些 \(\gamma \cdot (\mathbf{x}^{(1)})^{\mathbf{k}}\). 
+以此方式, \(\mathbf{n}_1 \in \mathcal{V}_{D,\Omega_1}^{I_1}\). 
+同理可得 \(\mathbf{n}_2 \in \mathcal{V}_{D,\Omega_2}^{I_2}\), 从而证明了所要求的包含关系 \(\mathcal{V}_{D,\Omega_1 \times \Omega_2}^{I_1 \times I_2} \subseteq \mathcal{V}_{D,\Omega_1}^{I_1} \times \mathcal{V}_{D,\Omega_2}^{I_2}\).
+\end{proof}
+
+我们记录下我们将要使用的核心推论.
+
+\begin{corollary}\label{cor:3.1.11}
+考虑一个正整数 \(D \in \mathbf{N}_{>0}\) 和一个在 \(\mathbf{C}[\![x]\!]\) 中的 \(\mathbf{C}(x)\)-线性无关形式幂级数组成的 m-元组 \(f_1, \ldots, f_m\). 
+对于这些数据, 存在一个由 mD 个非负整数组成的递增序列:
+\[ 0 \le u(1) < \dots < u(mD) \]
+使得对于每个 d = 1, 2, 3, ... 以下结论均成立:
+在每个形如下式形式的非零形式幂级数中:
+\[ F(\mathbf{x}) := \sum_{\mathbf{i} \in \{1, \dots, m\}^d} Q_{\mathbf{i}}(\mathbf{x}) f_{i_1}(x_1) \cdots f_{i_d}(x_d) \in \mathbf{C}[\![x_1, \dots, x_d]\!] \setminus \{0\}, \]
+其多项式系数 \(Q_{\mathbf{i}}(x_1, \dots, x_d) \in \mathbf{C}[x_1, \dots, x_d]\) 满足所有偏次数 \(\deg_{x_j} Q_{\mathbf{i}} < D\), 
+则具有极小总次数 \(|\mathbf{n}| = n_1 + \dots + n_d\) 的所有单项式 \(\beta \mathbf{x}^{\mathbf{n}}\) 必然满足:
+\[ \mathbf{n} \in \left\{ 0 \le u(1) < \dots < u(mD) \right\} ^d \subset \mathbf{N}^d. \]
+\end{corollary}
+
+\begin{proof}
+取由 \(\mathbf{Q}(x)\)-线性无关形式幂级数 \(f_1,\ldots,f_m \in \mathbf{Q}[\![x]\!]\) 定义的评估模 \(\psi_D: E_{D,[0,1)}^{\{1,\ldots,m\}} \hookrightarrow \mathbf{Q}[\![x]\!]\). 
+显然, 其秩满足 \(\operatorname{rank}\left(E_{D,[0,1)}^{\{1,\ldots,m\}}\right)=mD\). 我们定义
+\[ \{0 \le u(1) < \dots < u(mD)\} = \mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} \subset \mathbf{N} \]
+为这一单变量评估模的消逝过滤跳跃集合. 
+根据\autoref{lem:3.1.9}, 紧接着对于每个 \(d=1,2,3,\ldots\), 
+由 \(\mathbf{Q}(x_1,\ldots,x_d)\)-线性无关形式幂级数 \(f_{\mathbf{i}}(\mathbf{x}):=f_{i_1}(x_1)\cdots f_{i_d}(x_d)\) 
+定义的一维评估模的 d-阶笛卡尔乘积 \(\left(E_{D,[0,1)^d}^{\{1,\ldots,m\}^d},\psi_D\right)\) 
+在且仅在 d-阶笛卡尔乘积集合上具有消逝过滤跳跃:
+\[ \mathcal{V}_{D,[0,1)^d}^{\{1,\dots,m\}^d} = \{0 \le u(1) < \dots < u(mD)\}^d \subset \mathbf{N}^d. \]
+该结果现在完全由\autoref{lem:3.1.6} 推出.
+\end{proof}
+
+\subsection{函数 bad approximability 定理}\label{sec:3.2}
+
+当函数 \(f_1, \ldots, f_m \in \mathbb{Q}[\![x]\!]\) 是 holonomic 时, 我们可以几乎完全确定相应的单变量评估模 \(E_D := E_{D,[0,1)}^{\{1,\ldots,m\}}\) 的 mD 个消逝过滤跳跃. 
+这是 Chudnovsky--Osgood 定理 3.2.13 的核心内容, 它可以被视为 holonomic 函数在函数逼近论中对经典的 Roth--Schmidt 逼近定理的函数模拟. 
+所有这些的源头都可以追溯到 Hermite 关于指数函数和超越数 e 证明的历史性备忘录中 (我们将在第 3.3 节进行讨论).
+
+\begin{remark}[Basic Remark 3.2.1]\label{rem:3.2.1}
+对于由两两不同的指数函数组成的系统 \(\{f_1,\ldots,f_m\}=\{e^{\alpha_1x},\ldots,e^{\alpha_mx}\}\), 
+Hermite 在 1893 年发表的一封信中 \cite{Her1893} (在 1874 年 \cite{Her1874} 已经发表过类似公式), 
+给出了对应任意次数向量 \((D_1,\ldots,D_m)\in\mathbf{N}^m\) 具有在 x=0 处极大消逝阶数的显式 \(\mathbf{C}[x]\)-线性组合:
+\begin{equation}\label{eq:3.2.2}
+    \begin{aligned}
+        \int_{|z|=R} \frac{e^{xz} \mu_{\text{Haar}}(z)}{(z-\alpha_1)^{D_1+1} \cdots (z-\alpha_m)^{D_m+1}} 
+            &=: \sum_{i=1}^m P_i(x) e^{\alpha_i x}, \qquad R > \max_i |\alpha_i| \\
+            &= \frac{1}{(D_1 + \dots + D_m + m)!} x^{-1 + \sum_{i=1}^m (D_i + 1)} \\ 
+            &+ O\left(x^{\sum_{i=1}^m (D_i + 1)}\right)         
+    \end{aligned}
+\end{equation}
+
+
+这可以通过展开复围道积分的残留微积分并发现以此显式构造的多项式 \(P_1, \ldots, P_m\) 具有精确的次数 \(\deg P_i = D_i\) 来证明. 
+\eqref{eq:3.2.2} 的右手边是在计算围道以内区域 \(\mathbb{C} \setminus \{|z| = R\}\) 中奇点 \(z = \alpha_1, \ldots, \alpha_m\) 处的残留所得; 
+另一方面, 在 x = 0 处的精确消逝阶数展开是通过计算互补区域中唯一奇点 \(z = \infty\) 处的残留而得到的. 
+对于这些特定的多项式 (即所谓的 I 型 Hermite--Pad{\'e} 逼近) 具有精确的次数 \(\deg P_i = D_i\) (这可以被选为完全任意的) 以及这一精确消逝阶数, 
+通过类似于\autoref{lem:3.1.6} 证明的步骤证明了: 对于任意多项式 \(Q_1, \ldots, Q_m \in \mathbb{C}[x]\), 
+以下最强形式的 (有理) 函数 bad approximability 特性是成立的:
+
+\begin{equation}\label{eq:3.2.3}
+\operatorname{ord}_{x=0}(Q_1 f_1 + \ldots + Q_m f_m) \le \sum_{i=1}^{m} (\deg Q_i + 1) - 1.
+\end{equation}
+
+Mahler \cite{Mah68} 将这种系统称为 perfect (完美的) 系统, 并发现了其他几个例子 (顺便提一句, 这些例子可以通过代换和极限从 Hermite 公式中获得 \cite[page 331]{Chu83b}), 
+包括当所有 \(\alpha_i - \alpha_j \notin \mathbf{Z}\) 时的二项式系统:
+\begin{equation}\label{eq:3.2.4}
+\{(1-x)^{\alpha_1},\ldots,(1-x)^{\alpha_m}\},
+\end{equation}
+以及在附加约束 \(D_1 \le D_2 \le \cdots \le D_m\)\footnote{有时也被称为弱完美性 (weak perfection).} 下的对数系统 \cite{Lan66}\cite{Jag64}:
+\begin{equation}\label{eq:3.2.5}
+\{1, \log(1-x), \log^2(1-x), \dots, \log^{m-1}(1-x)\}.
+\end{equation}
+
+在 \cite{Mil83} 中, Mahler 利用对数系统 \eqref{eq:3.2.5} 的显式线性形式证明了对于所有正整数 \(p, q \ge 2\) 具有显式不等式 \(|\pi - p/q| > q^{-42}\). 
+Gregory Chudnovsky \cite{Chu79}\cite{Chu83b}\cite{Chu83a} 已经利用 (正如在他之前的 Thue, Siegel 和 Baker 一样, 参见第 3.3.3 节) 系统 \eqref{eq:3.2.4} 和 \eqref{eq:3.2.5} 来从有理数导出关于合适根 \(\sqrt[n]{b/a}\) 以及有理数对数的优秀有效无理数指数.
+在柯西变换和正交多项式理论中, 一个相当广泛的完美系统类是 Angelesco--Nikishin 系统 \cite{Nik80}\cite{Sor96}; 
+它们的完美性由 Fidalgo Prieto 和 L{\'o}pez-Lagomasino 证明. 
+多对数系统 \(\{f_1, \ldots, f_m\} = \{1, \operatorname{Li}_1, \operatorname{Li}_2, \ldots, \operatorname{Li}_{m-1}\}\) 的 Pad{\'e} 逼近被证明是 Angelesco--Nikishin 系统, 
+这正是 Ball 和 Rivoal 关于 zeta 值算术工作 \cite{Riv00}\cite{BR01} 的根源\footnote{作为一个起点或启发点，尽管他们最终设计了一个不同（但相关）的函数系统，参见 \cite[Th{\'e}or{\`e}me 1]{FR03} 或 \cite[§ 2.4]{Fis04}.}.
+
+在 \(D_1 = \cdots = D_m = D - 1\) 的特殊情况下, 我们可以等价地将函数 bad approximability 特性 \eqref{eq:3.2.3} 表达在第 3.1 节的框架中: 
+它恰好意味着评估模 \(E_D\) 具有如下消逝过滤跳跃集合:
+\begin{equation}\label{eq:3.2.6}
+\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} = \{0,1,\dots,mD-1\}.
+\end{equation}
+
+
+
+\end{remark}
+
+
+在微分代数中, 正如我们在第 2.13.3 节中简要指出的, Kolchin \cite{Kol59} 证明了 Liouville 丢番图不等式的一个模拟, 
+并提出了\footnote{出自 \cite{Kol59} ：“显而易见的注记是，鉴于 Liouville 定理深远的 Thue--Siegel--Roth 改进（参见 K. F. Roth, Mathematika vol. 2 (1955) pp. 1--20），在当前定理中获得类似的改进是极为可期的。”}关于 Roth 在四年前证明的关于代数数基本定理的模拟问题:
+
+\begin{question}[Kolchin's Problem]\label{prob:3.2.7}
+给定一个线性 ODE \(\mathcal{L}(f) = 0\) 在 \(\mathbf{C}(x)\) 上的非有理形式幂级数解 \(f \in \mathbf{C}[\![x]\!] \setminus \mathbf{C}(x)\), 
+如何证明在任何有理函数逼近中, 误差 \(f(x) - P(x)/Q(x)\) 具有的极大消逝阶数必然是 \((2+\varepsilon) \max(\deg P, \deg Q) + O_{\varepsilon,f}(1)\)?
+\end{question}
+
+事实上, Kolchin 的设定更一般, 并不局限于线性 ODE; 他在任意非自明赋值微分域中工作, 
+因而他的 Liouville 类型不等式 \cite[§ 5]{Kol59} 同样适用于任意 (非线性) 在 \(\mathbf{C}(x)\) 上的 ODE. 
+这方面的第一个结果 (虽然弱于 Kolchin) 似乎是 Maillet 给出的.
+
+在我们第 3.1 节的评估模语言中, Kolchin 针对 \(r\)-阶线性 ODE \(\mathcal{L}(f)=0\) 的形式幂级数解的 Liouville 型结果可以表达为: 
+由 \(\{f_1, f_2\} = \{1, f\}\) 定义的模中的 2D 消逝过滤跳跃被包含在 \(\{0, 1, \ldots, rD + O_{\mathcal{L}}(1)\}\) 中. 
+他的 (隐式) Roth 型猜想是它们实际上对于每个 \(\varepsilon > 0\) 都应当包含在 \(\{0, 1, \ldots, (2 + \varepsilon)D + O_{\varepsilon, \mathcal{L}}(1)\}\) 中.
+
+在同年, Shidlovsky \cite{Shi59} (参见 \cite[§ 3.5, Lemma 8]{Shi89}, 或 \cite[§ VII.3]{Lan66}) 
+独立发现了在 \(\mathbf{C}(x)\) 上线性 ODE 情况下更精确的函数形式, 
+并用它完成了 Siegel 关于 E-函数特殊值的代数无关性理论 \cite{Sie49} 的主要结果. 
+我们将 Shidlovsky 的引理重新表述为我们消逝过滤跳跃的语言.
+
+\begin{theorem}[Shidlovsky]\label{thm:3.2.8}
+对于一个系统 \(\{f_1, \ldots, f_m\}\), 其 \(\mathbf{Q}(x)\)-线性空间是 m 维的且在导数 d/dx 下闭合, 
+存在一个只依赖于系统的常数 \(C = C(f_1, \ldots, f_m)\), 
+使得对于每个 \(D \in \mathbf{N}_{>0}\), 评估模 \(E_{D,[0,1)}^{\{1,\ldots,m\}}\) 的消逝过滤跳跃满足:
+\begin{equation}\label{eq:3.2.9}
+\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} \subseteq \{0,1,\dots,mD+C\}, \qquad \#\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} = mD.
+\end{equation}
+\end{theorem}
+
+虽然 Shidlovsky 的原始工作并没有提供一个有效的方法来根据以 \(\mathbf{y} = (f_1, \dots, f_m)^{\mathrm{t}}\) 为解的一阶线性微分方程组 \(\mathbf{y}' = A\mathbf{y}\) 计算常数 C, 
+但这类定理最终由 Chudnovsky \cite[Corollary 11.3.10]{Chu80} 在 Fuchs 情况下获得, 
+并最终由 Bertrand, Beukers, Chirskii 和 Yebbou 在一般情况下获得 \cite{BB85}. 
+Shidlovsky 引理的一个意义深远的推广可见于 Bertrand.
+
+我们仅陈述 Fuchs 情况下 Chudnovsky 结果的一个粗糙版本. 
+关于这一显式零点估计的简要介绍也概述于 Andr{\'e} 的著作 \cite[§ III, Appendix]{And04} 中.
+
+\begin{theorem}[Chudnovsky]\label{thm:3.2.10}
+假设 \(\mathbf{Q}(x)\)-线性无关形式幂级数系统 \(\mathbf{f} := \{f_1, \dots, f_m\} \in \mathbf{Q}[\![x]\!]^m \setminus (x\mathbf{Q}[\![x]\!])^m\) 
+是某个一阶 Fuchs 微分系统 \(\mathbf{y}' = A\mathbf{y}\) (其中 \(A \in M_{m \times m}(\mathbf{Q}(x))\)) 的解 \(\mathbf{y} = \mathbf{f}^t\) 的全分量向量. 
+令 \(S \subset \mathbf{P}^1\) 是有理函数矩阵 A 中极点的集合, 并定义 \(h := \sum_{s \in S} \varepsilon_s\), 
+这里 \(\varepsilon_s\) 是在该 Fuchs 方程的正则奇异点 x = s 处任何一个函数 \(f_i(x)\) 的渐近展开中出现的指数的极小实数的相反数.
+那么, 对于所有 \(D \in \mathbf{N}_{>0}\), 评估模 \(E_{D,[0,1)}^{\{1,\ldots,m\}}\) 的 mD 个消逝过滤跳跃被包含在以下集合中:
+\begin{equation}\label{eq:3.2.11}
+\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} \subseteq \left\{0,1,2,\dots,mD + (\#S-2)\binom{m}{2} + mh\right\}; \qquad \#\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} = mD.
+\end{equation}
+\end{theorem}
+
+\begin{remark}\label{rem:3.2.12}
+多亏了 David 和 Gregory Chudnovsky 关于全球幂零性性质的工作 \cite[Prop. VIII.2.3]{DGS94}\cite[Theorem 3.1, Lemma 8.3]{CC85a}\cite[§ VI.2]{And89}, 
+以及 Honda 和 Katz 的定理, 
+我们本文所有定理中出现的形式幂级数自动属于 Fuchs 类: 它们仅具有正则奇异点 (具有有理指数). 
+因此\autoref{thm:3.2.10} 作为显式 Shidlovsky 边界适用于它们. 
+对于定理 2.5.1 及其所有推广的证明, 这一定理在补充假设下已经足够了——这一假设在我们可以设想的所有应用中都是满足的——即 \(f_1, \ldots, f_m\) 的 \(\mathbf{Q}(x)\)-线性空间在导数 d/dx 下是闭合的. 
+这一评述对于将我们定性的线性无关性结果精细化为线形无关性的定量测度项目同样具有重要意义.
+与此同时, Chudnovsky 定理的证明本身依赖于双重形式 (即现在的 II 型 Hermite--Pad{\'e} 形式) 的合适的定性 Shidlovsky 引理 \cite[Prop. VIII.2.3]{DGS94}\cite[Theorem 3.1, Lemma 8.3]{CC85a}\cite[§ VI.2]{And89}, 
+该定理允许通过 Thue--Siegel 引理提供具有控制大小的整系数的同逼近 \(f^i \approx P_i/Q, 1 \le i \le m\).
+\end{remark}
+
+所有这些定理也作为非常特殊的例子嵌入到更广泛的、关于满足一个可能非线性代数微分系统的函数的零点多重性估计的研究中. 
+这一途径由 Nesterenko \cite{Nes88} 以及 Brownawell--Masser \cite{BM80} 开创. 
+我们推荐读者参考 Binyamini \cite{Bin16} 对这篇相当广泛的文献的综述和精细化研究; 
+以及 Nesterenko \cite{Nes96}\cite{NP01} 针对代数无关性的应用. 
+在线性 ODE 的特殊语境下, 由 Kolchin 和 Shidlovsky 开创的两个不同流派在 1980 年代初期随着问题 3.2.7 的解决而融合在了一起, 
+这由 David 和 Gregory Chudnovsky \cite{CC83} 以及 Osgood \cite{Osg85} 独立完成.
+
+\begin{theorem}[Chudnovsky, Osgood]\label{thm:3.2.13}
+考虑在 \(\mathbf{Q}[\![x]\!]\) 中的 holonomic 函数的任意集合 \(\{f_1, \ldots, f_m\}\). 
+也就是说, 我们现在的唯一假设是每个形式幂级数 \(f_i(x)\) 独立地满足某个非零线性 ODE \(\mathcal{L}_i(f_i) = 0\). 
+对于任意的 \(\varepsilon > 0\), 存在一个可由 \cite[第 2 节]{CC83} 中的论证有效计算的仅依赖于参数的常数 \(C(\varepsilon) = C(\varepsilon;\mathcal{L}_1, \ldots,\mathcal{L}_m)\), 
+使得对于所有 \(D \in \mathbf{N}_{>0}\), 评估模 \(E^D = E^{\{1,\dots,m\}}_{D,[0,1)}\) 的消逝过滤跳跃满足:
+\begin{equation*}
+\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} \subseteq \{0,1,2,\dots,(m+\varepsilon)D + C(\varepsilon)\}, \qquad \#\mathcal{V}_{D,[0,1)}^{\{1,\dots,m\}} = mD.
+\end{equation*}
+\end{theorem}
+
+结合\autoref{cor:3.1.11}, 这些定理可以被总结为以下命题.
+
+\begin{lemma}\label{lem:3.2.14}
+设 \(f_1, \dots, f_m \in \mathbf{C}[\![x]\!]\) 是 \(\mathbf{C}(x)\)-线性无关的 holonomic 幂级数: 
+存在 \(\mathbf{Q}(x)\) 上的非零线性微分算子 \(\mathcal{L}_i\) 满足 \(\mathcal{L}_i(f_i) = 0\). 
+那么, 对于每个 \(\varepsilon > 0\), 存在一个在原理上可仅由数据 \((\varepsilon;\mathcal{L}_1, \ldots,\mathcal{L}_m)\) 有效计算的常数 \(C(\varepsilon) \in \mathbf{R}\), 
+使得以下结论成立.
+我们考虑一个任意的正整数 \(d \in \mathbf{N}_{>0}\), 并写出:
+\[ \mathbf{x} := (x_1, \dots, x_d), \qquad f_{\mathbf{i}}(\mathbf{x}) := \prod_{s=1}^d f_{i_s}(x_s) \quad \text{ 对于 } \mathbf{i} := (i_1, \dots, i_d) \in \{1, \dots, m\}^d. \]
+进一步考虑一个任意的正整数 \(D \in \mathbf{N}_{>0}\) 以及在 \(\mathbf{i} \in \{1, \dots, m\}^d\) 上任意一组多项式:
+\[ Q_{\mathbf{i}}(\mathbf{x}) \in \mathbf{C}[x_1, \dots, x_d], \]
+满足对于所有 \(j \in \{1, \dots, d\}\) 和 \(\mathbf{i} \in \{1, \dots, m\}^d\) 均有 \(\deg_{x_j} Q_{\mathbf{i}} < D\).
+那么, 在非零形式幂级数
+\[ F(\mathbf{x}) := \sum_{\mathbf{i} \in \{1, \dots, m\}^d} Q_{\mathbf{i}}(\mathbf{x}) f_{\mathbf{i}}(\mathbf{x}) \in \mathbf{C}[\![x_1, \dots, x_d]\!] \setminus \{0\} \]
+中, 每个最低阶的非零单项式项 \(\beta \mathbf{x}^{\mathbf{n}}\) 必然具有一个其所有分量均满足下式的指数向量 \(\mathbf{n} = (n_1, \dots, n_d)\):
+\[ n_i \le (m+\varepsilon)D + C(\varepsilon). \]
+如果此外 \(f_1, \ldots, f_m\) 的 \(\mathbf{Q}(x)\)-线性空间在导数 d/dx 下是闭合的, 那么可以取 \(\varepsilon = 0\).
+\end{lemma}
+
+\begin{remark}\label{rem:3.2.15}
+David 和 Gregory Chudnovsky 猜想 \cite[第 5161 页]{CC83} 在\autoref{thm:3.2.13} 中（并随之在\autoref{lem:3.2.14} 中）可以取 \(\varepsilon = 0\). 然而，这一猜想甚至对于代数函数的情形 \cite{Wan04} 至今也依然没有被证明.
+\end{remark}
+
+
+至此，从证明的逻辑结构来看，读者可以直接跳至第 4 节。第 3 节的其余部分主要结合历史背景，收集了一些具体实例，用以补充我们在第 3.2 节中直接引用但未予证明的定理。
+
+
+\subsection{Hermite-Pad{\'e} 逼近的一些显式构造}\label{sec:3.3}
+
+在本节的其余部分, 我们收集了一些最简单且最基本的说明性示例, 旨在对函数 bad approximability 定理（即我们在第 3.2 节中收集的定理）背后的历史种子进行一些探讨. 
+但更重要的是, 探讨算术 holonomy 边界的更广泛概念以及我们在本文中使用它们的方法. 
+在功能性的 bad approximability 性质的研究中, 
+一类代表性的关键证明想法是由源于超几何 ODE 理论的显式决定性等式 \eqref{eq:3.3.6} 给出. 
+这些等式的数论相关性最初由 Thue 在其创立非有效丢番图逼近 (non-effective Diophantine approximation) 学科时所发现. 
+我们在此对 Ap{\'e}ry 极限的逼近处理在原理上与 Thue 带有内在线性特征的范式有某些相似性. 
+然而, 我们对定理 2.5.1 显式 holonomy 边界的证明并不包含任何有效程序来输出与给定全纯映射 \(\phi\) 在分母类型控制下相对应的有限维 holonomic 模 \(\mathcal{H}(b_1,\ldots,b_r;\varphi)\) 的一组 \(\mathbf{Q}(x)\)-向量空间生成元. 
+但在极少数有利情况下, 依靠合适的锚点（如我们在第 10 节所拥有的）和杠杆（如我们在第 9 节, 第 12.1 节和第 14.2 节所拥有的）, 
+这些丢番图排斥性原理偶尔可以扭转为真正的丢番图不等式和线性无关性证明. 
+在 Thue 的方法中, 从第一步具有类似特征的显式线性形式到产生与 Gelfond--Baker 线性形式对数法相匹敌的通用理论, 历经了 70 余年的探索.
+
+但我们或许应当通过深入研究指数函数的 Hermite 经典工作（他以此证明了 e 的超越性）来开始我们的探讨.
+
+\subsubsection{Hermite 逼近}\label{sec:3.3.1}
+
+备忘录 \cite{Her1874} 对指数函数的研究基于对函数 1, \(e^x\), \(e^{2x}\),..., \(e^{rx}\) 建立的显式 Hermite--Pad{\'e} 逼近, 并以此通过特化 \(x := 1\) 来证明 e 的超越性. 
+对于 \(r = 1\), 该公式为:
+\begin{equation}\label{eq:3.3.2}
+    \begin{aligned}
+    & {}_{1}F_{1} \left[ \begin{matrix} -m \\ -m-n \end{matrix} ; x \right] - e^x \cdot {}_{1}F_{1} \left[ \begin{matrix} -n \\ -m-n \end{matrix} ; -x \right]  \\
+    &= -\frac{e^x \int_{0}^{1} e^{-tx} t^m (t-1)^n \, dt}{(m+n)!} x^{m+n+1} \\
+    &= (-1)^{n-1} \frac{m!n!}{(m+n)!(m+n+1)!} x^{m+n+1} + O(x^{m+n+2})
+    \end{aligned}
+\end{equation}
+它是唯一满足 \(\deg A \le n, \deg B \le m\) 且在 \(x = 0\) 处消逝阶数至少为 \(m + n + 1\) 的线性组合 \(B(x) - e^x A(x)\) (在乘上常数的意义下). 
+正如我们从显式公式中看到的, 消逝阶数实际上精确等于 \(m+n+1\). 
+这种规则公式阵列的存在进一步证明了, 对于具有非零偏次数 \(\deg A = n\) 和 \(\deg B = m\) 的任意多项式对 \(A(x), B(x)\), 
+组合 \(B(x) - e^x A(x)\) 在 \(x = 0\) 处的消逝阶数至多为 \(m + n + 1\), 
+且等号成立当且仅当形式 \(B(x) - e^x A(x)\) 是 \eqref{eq:3.3.2} 的标量倍数. 
+这意味着 holonomic 函数 \(e^x\) 是极难被有理函数逼近的 (即具有极强的 bad approximability). 
+Hermite 的哲学后来被 Siegel 继承, Siegel 在其 1929 年的经典论文 \cite{Zan14} 中开篇就采用了与 Hermite \cite{Her1874} 完全相似的论述: 
+概述了在阿基米德绝对值逼近意义下的数与在 \(x=0\) 消逝阶数逼近意义下的函数之间的类比. 
+其关键点在于, 函数公式可以特化于代数自变量处, 
+以此产生一组关于所关注特殊值的小系数整线性形式. 
+当这些线性形式构造得足够小时, 常常可以用来证明这些特殊值在 \(\mathbf{Q}\) 上的线性无关性. 
+这种 bad approximability 性质起到了筛选（Sieve）的作用, 
+它使得一旦我们在 holonomic 函数及其特殊值中构造出了足够小的线性形式 (如在 \eqref{eq:3.3.2} 及其代数特化中所作的), 
+就能通过它们提取并识别出一组满秩 (线性无关) 的线性形式. 
+在 Hermite 的方法中, 通过公式（如 \eqref{eq:3.3.2} 及其向包含所有方幂 \(1, e^x, e^{2x}, \dots, e^{rx}\) 形式的推广）, 
+将 \(e^x\) 的函数 bad approximability 特性特化于自变量 \(\alpha \in \overline{\mathbf{Q}}^{\times}\) 处, 
+可以推导出 Hermite--Lindemann--Weierstrass 超越性定理.
+
+Shidlovsky 引理 3.2.8 和 Chudnovsky--Osgood 定理 3.2.13 的内容大概可以描述为: 
+对于任意一组 holonomic 函数, 都在稍微放宽的意义下具有 bad approximability 性质. 
+我们在最经典的完美系统案例上说明这一点.
+
+\subsubsection{针对 \((1-x)^{\nu}\) 的 Hermite-Pad{\'e} 逼近}\label{sec:3.3.3}
+
+我们拥有 Jacobi \cite{Jac1859} 的超几何多项式等式来显式描述二项式函数的 Pad{\'e} 表 (参见 \cite[page 75]{Zan14}):
+\begin{equation}\label{eq:3.3.4}
+    \begin{aligned}
+    & {}_{2}F_{1} \left[ \begin{matrix} -\nu-n & -m \\ \multicolumn{2}{c}{-m-n} \end{matrix} ; x \right] - (1-x)^{\nu} \cdot {}_{2}F_{1} \left[ \begin{matrix} \nu-m & -n \\ \multicolumn{2}{c}{-m-n} \end{matrix} ; x \right] \\
+    &= (-1)^n \frac{\binom{m+\nu}{m+n+1}}{\binom{m+n}{n}} {}_{2}F_{1} \left[ \begin{matrix} -\nu+n+1 & m+1 \\ \multicolumn{2}{c}{m+n+2} \end{matrix} ; x \right] x^{m+n+1} \\
+    &= (-1)^n \frac{\binom{m+\nu}{m+n+1}}{\binom{m+n}{n}} x^{m+n+1} + O(x^{m+n+2}),
+\end{aligned}
+\end{equation}
+
+这可以通过验证所有三项都满足具有参数 \(\alpha = -\nu - n\), \(\beta = -m\), \(\gamma = -m - n\) 的二阶 Gauss 超几何方程来证明. 
+在此等式中, \eqref{eq:3.3.4} 左手边的超几何级数截断为次数为 m 和 n 的多项式, 
+因而对于任何 \(\nu \in \mathbb{C} \setminus \mathbb{Z}\), 它们精确给出了二项式函数 \((1-x)^{\nu}\) 的 \([m/n]\) 阶 Hermite--Pad{\'e} 逼近 \(B_{m,n}(x) - (1-x)^{\nu}A_{m,n}(x)\). 
+由于公式 \eqref{eq:3.3.4} 中的 \(x^{m+n+1}\) 系数是非零的, 我们在此处看到了另一个被有理函数 bad approximability 的显式例子.
+
+现在, 对于有理参数 \(\nu \in \mathbf{Q}\), 丢番图逼近的标准机制（无论是在 Thue 关于有理数 r-次根这一特殊情况的原始且最简单的无效证明中, 还是在少数以及有利的有效工作如 Thue, Siegel, Baker 和 Gregory Chudnovsky \cite{Chu83b} 中）, 
+是取 Pad{\'e} 表的对角线 \([n/n]\), 将 x 特化为某个有理数 \(\xi \in (0,1) \cap \mathbf{Q}\), 
+并利用随之产生的、其生成函数为下式的小线性形式:
+\begin{equation}\label{eq:3.3.5}
+    \begin{aligned}
+    & \sum_{n=0}^{\infty} \left( B_{n,n}(\xi) - (1-\xi)^{\nu} A_{n,n}(\xi) \right) z^n  \\
+    &= \sum_{n=0}^{\infty} \left( {}_{2}F_{1} \left[ \begin{matrix} -\nu-n & -n \\ \multicolumn{2}{c}{-2n} \end{matrix} ; \xi \right] - (1-\xi)^{\nu} {}_{2}F_{1} \left[ \begin{matrix} \nu-m & -n \\ \multicolumn{2}{c}{-2n} \end{matrix} ; \xi \right] \right] z^n  \\
+    &\in \bigoplus_{n=0}^{\infty} \frac{z^n}{(\operatorname{den}(\nu)\operatorname{den}(\xi))^{2n}\binom{2n}{n}} \mathbf{Z} + (1-\xi)^{\nu} \bigoplus_{n=0}^{\infty} \frac{z^n}{(\operatorname{den}(\nu)\operatorname{den}(\xi))^{2n}\binom{2n}{n}} \mathbf{Z} 
+    \end{aligned}
+\end{equation}
+
+
+这一函数在 \(\mathbb{C} \setminus \left\{ \left( \frac{1 \pm \sqrt{1 - \xi}}{2} \right)^{-2} \right\}\) 上是 holonomic 的, 
+并在较小的奇点 \(\left( \frac{1 + \sqrt{1 - \xi}}{2} \right)^{-2}\) 处超收敛. 
+因此 \eqref{eq:3.3.5} 的收敛圆盘为 \(|z| < \left( \frac{1 - \sqrt{1 - \xi}}{2} \right)^{-2}\), 
+即到下一个奇点的距离. 
+Baker \cite{Bak64} 著名地利用了具有参数 \(\nu := -1/3\) 且 \(\xi := 3/128\) (因而 \((1 - \xi)^{\nu} = (8/5)\sqrt[3]{2}\)) 的 \eqref{eq:3.3.5} 的 \(\{2, 3, \infty\}\)-进性质, 
+导出了显式的 sub-Liouville 不等式 \(|\sqrt[3]{2} - p/q| > 10^{-6}q^{-2.995}\). 
+(Chudnovsky 随后计算了精确的分母渐近性, 将粗糙的因子 \(4^n\)（来自 \(\binom{2n}{n}\)）精细化，从而将 Baker 的有效无理数测度改进到了 2.43 \cite{Chu83b}.)
+
+对于一般的 $r$-次根 \(\sqrt[r]{a/b}\), 这种分析无法提供 sub-Liouville 有效无理数测度 (除非 b 比 a 大得多). 
+但在 1907 年写出的奠基性论文中, Thue 证明了无效的无理数测度 \(1+r/2+\epsilon\), 
+他在效果上指出, 一个优秀的有理逼近 \(p/q \approx \sqrt[r]{a/b} \in \mathbf{Q}^{\times} \cap (0,1)\) 
+可以产生一个由较好有理逼近组成的无穷集合:
+\[ \frac{pB_{n,n}\left(1-aq^r/bp^r\right)}{qA_{n,n}\left(1-aq^r/bp^r\right)} \approx \sqrt[r]{\frac{a}{b}}, \]
+并且这些形式构成了一个足够稠密的、由逼近组成的网，从而——由于间隔原理（gap principle）——排除了第二个优秀逼近 \(p'/q' \approx \sqrt[r]{a/b}\) 的存在. 
+为此, Thue 在多项式等式中利用了 \(x := 1 - aq^r/bp^r\) 的特化:
+\begin{equation}\label{eq:3.3.6}
+A_{n,n}(x)B_{n+1,n+1}(x) - A_{n+1,n+1}(x)B_{n,n}(x) = (-1)^{n-1} \frac{(n!)^2}{(2n)!(2n+1)!} x^{2n+1},
+\end{equation}
+这里的非零行列式立刻证明了以下必需的不等关系:
+\[ \frac{pB_{n+1,n+1}(1 - aq^r/bp^r)}{qA_{n+1,n+1}(1 - aq^r/bp^r)} \neq \frac{pB_{n,n}(1 - aq^r/bp^r)}{qA_{n,n}(1 - aq^r/bp^r)}, \quad \text{对于所有 } n = 0, 1, 2, \dots \]
+
+对于任意的代数靶 \(\alpha \in \overline{\mathbf{Q}}\) (而不是 $r$-次根或三次无理数), Thue 无法依赖于向二项式函数 \((1-x)^{\nu}\) 的显式 Hermite--Pad{\'e} 逼近, 
+他转而在 1908 年的奠基性论文中采用 Dirichlet 抽屉原理, 
+在灵感的闪现中导出了类似的多项式等式的存在性. 
+他的核心发现是, 通过 Dirichlet 抽屉原理非构造性地发现的非显式多项式等式, 
+在大体上与显式特殊情况 \eqref{eq:3.3.4} 和 \eqref{eq:3.3.6} 具有完全相同的工作方式. 
+特别是, Thue 引入了 Wronskian 行列式来代替显式行列式 \eqref{eq:3.3.6}, 
+它现在在点 \(x = 1 - aq^r/bp^r\) 处具有极低阶的消逝.
+
+Shidlovsky 的引理是 Thue 的 Wronskian 参数的另一种推广, 
+其证明仍然可以粗略地由一个类似于 \eqref{eq:3.3.6}（后者严格来说是其一个特殊且具代表性的例子）的（更高秩的）行列式恒等式来总结, 
+它“几乎保持为单项式形式”. 
+它包括定理 3.2.8 和 3.2.10, 以及它们的各种变体, 
+例如 Bombieri 的 G-函数定理证明中的部分结果 \cite{Bom81} (我们将在第 15.1 节中进行讨论), 
+以及 Chudnovsky 基本定理证明中的零点多重性估计 \cite{And89} (这我们在注记 3.2.12 中已经提及).
+
+\subsubsection{针对 \(\log(1-x)\) 的 Hermite-Pad{\'e} 逼近}\label{sec:3.3.7}
+
+我们有 Jacobi 等式 \cite{Jac1859} (参见 \cite{Jag64}):
+\begin{equation}\label{eq:3.3.8}
+    \begin{aligned}
+    & 2\sum_{k=0}^{n} {n \choose k}^{2} (H_{n-k} - H_{k}) (1-x)^{k} + \log(1-x) \sum_{k=0}^{n} {n \choose k}^{2} (1-x)^{k}  \\
+    &= x^{2n+1} \int_{0}^{1} \frac{t^{n} (t-1)^{n}}{(tx-1)^{n+1}} dt \\
+    &= \frac{x^{2n+1}}{(2n+1){2n \choose n}} + O(x^{2n+2}),
+    \end{aligned}
+\end{equation}
+其中 \(H_r := \sum_{k=1}^r 1/k\) 是调和数.
+
+\begin{remark}[Basic Remark 3.3.9]\label{rem:3.3.9}
+在一般的 Meijer G 函数项下:
+\[ G_{p,q}^{m,n}\left(\begin{smallmatrix} a_1 & \cdots & a_p \\ b_1 & \cdots & b_q \end{smallmatrix} \middle| z\right) = \int_{\Re(s) = \sigma} \frac{\prod_{j=1}^m \Gamma(b_j - s) \prod_{j=1}^n \Gamma(1 - a_j + s)}{\prod_{j=m+1}^q \Gamma(1 - b_j + s) \prod_{j=n+1}^p \Gamma(a_j - s)} z^s \frac{ds}{2\pi i}, \]
+\eqref{eq:3.3.8} 中的余项可以写为 \(-(n!)^2 G_{2,2}^{2,0} \binom{n+1}{0} \binom{n+1}{0} (1-x)\). 
+这一作为 Barnes 积分的通用定义在所有 \(\Gamma(b_j - s)\) 的极点都在积分线 \(\Re(s) = \sigma\) 的右侧, 
+而所有 \(\Gamma(1 - a_j + s)\) 的极点都在该线左侧的假设下是良定义的.
+\end{remark}
+
+在此处,
+\begin{equation}\label{eq:3.3.10}
+\sum_{k=0}^{n} {n \choose k}^{2} (1-x)^{k} = {}_{2}F_{1} \begin{bmatrix} -n & -n \\ 1 & ; 1-x \end{bmatrix} = x^{n} P_{n} \left( \frac{2-x}{x} \right)
+\end{equation}
+采用 Legendre 多项式 \(P_n(x)\) 来表示: 
+它们是 \([-1,1]\) 在 Lebesgue 测度以及标准归一化条件 \(P_n(1) = 1\) 下的完备正交系统. 
+它们的生成级数满足:
+\begin{equation}\label{eq:3.3.11}
+\frac{1}{\sqrt{1 - 2xz + z^2}} = \sum_{n=0}^{\infty} P_n(x)z^n.
+\end{equation}
+我们将在第 14 节中利用它们的整性特征（即多项式对有理数处的估计值）.
+
+如果类似于第 3.3.3 节, 我们将 \eqref{eq:3.3.8} 乘以 \(z^n\) 并将生成级数在 \(n \in \mathbb{N}\) 上求和, 
+那么由此产生的在 \(\mathbf{Q}[x]\![\![z]\!] + \log(1-x)\mathbf{Z}[x]\![\![z]\!]\) 中的形式函数在 z 中是 holonomic 的, 
+且它的 \(\mathbf{Z}[x][\![z]\!]\) 和 \(\mathbf{Q}[x][\![z]\!]\) 分量分别满足齐次和非齐次的一阶 ODE:
+\begin{equation}\label{eq:3.3.12}
+(-1 + 4z - 2xz - x^2z^2)Y'(z) + (2 - x - x^2z)Y(z) = 0
+\end{equation}
+和
+\[ (-1 + 4z - 2xz - x^2z^2)Y'(z) + (2 - x - x^2z)Y(z) = -x. \]
+它们是在
+\[ \mathbf{C} \setminus \{p_{-}(x), p_{+}(x)\}, \qquad p_{\pm}(x) := \left(\frac{1 \pm \sqrt{1 - x}}{x}\right)^{2} \]
+上的 holonomic 函数, 这些奇点也可以直接从 \eqref{eq:3.3.10} 和 \eqref{eq:3.3.11} 中获得. 特化 \(x = 1/n\) 且 \(y = 1/m\), 我们有
+\[ p_{-}(1/n)p_{+}(1/m)/|mn| = 1 + o_{|m/n| \to 1}(1). \]
+这一渐近性与第 14.1 节中基于 Hadamard 乘积的解析机制有关, 并且可以用作定理 C 的另一种证明.
+
+\subsubsection{针对 \(\log\left(\frac{1-x}{1+x}\right)\) 的 Hermite-Pad{\'e} 逼近}\label{sec:3.3.13}
+
+通过在 \eqref{eq:3.3.8} 中进行变量代换 \(x\mapsto 2x/(1+x)\), 可以将公式改写为:
+\[ 2\sum_{k=0}^{n} {n \choose k}^2 (H_{n-k} - H_k) (1-x)^k (1+x)^{n-k} + \log\left(\frac{1-x}{1+x}\right) (2x)^n P_n(1/x) \]
+\[ = (x+x^2)^{2n+1} \int_0^1 \frac{t^n (t-1)^n}{(2tx-1-x)^{n+1}} dt = -\frac{x^{2n+1}}{(2n+1){2n \choose n}} + O(x^{2n+2}). \]
+
+在第 14 节中, 我们利用了这些公式特化于 \(x := 1/a\) (其中 a 是大奇整数) 处的生成函数.

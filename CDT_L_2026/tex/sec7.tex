@@ -1,0 +1,1376 @@
+\section{Bost 斜率方法中的凸性}\label{sec:7}
+
+我们从定理 2.5.1 的以下干净的精细化（clean refinement）开始, 本节中我们将基于 \cite[第 5 节]{BC22} 的单变量方法来证明它. 这一简单的结果本身对于我们在本文中对定理 A 和 C 的应用就已经足够, 尽管（在前者的情况下）仅有极其微弱的余量. 本节的要旨（其主要结果在简短介绍后于第 7.1 节中阐明）即我们所谓的“凸性输入”（convexity input）, 它引出了更尖锐的 holonomy 边界. 这些改进通常非常微小, 但它们已足够显著, 能够轻松越过定理 A 证明中所需数值的计算余量, 从而使通往 \(L(2, \chi_{-3})\) 无理数证明的 Arakelov 理论路径完全令人信服.
+
+\begin{theorem}\label{thm:7.0.1}
+在与定理 6.0.2 相同的常规假设下, 考虑一个全纯映射 \(\varphi: (\overline{\mathbf{D}}, 0) \to (\mathbf{C}, 0)\), 其导数（共形大小）满足以下条件：
+\begin{equation}\label{eq:7.0.2}
+\log|\varphi'(0)| > \max\{\sigma_m, \tau(\mathbf{b}; \mathbf{e})\}.
+\end{equation}
+假设存在一组 \(\mathbf{Q}(x)\)-线性无关的、形式幂级数形式为：
+\begin{equation*}
+f_i(x) = a_{i,0} + \sum_{n=1}^{\infty} a_{i,n} \frac{x^n}{n^{e_i}[1,\dots,b_{i,1} \cdot n] \cdots [1,\dots,b_{i,r} \cdot n]}, \quad a_{i,n} \in \mathbf{Z},
+\end{equation*}
+的函数 \(f_1, \ldots, f_m \in \mathbf{Q}[\![x]\!]\), 
+使得对所有 \(i = 1, \ldots, m\), \(f_i(\varphi(z)) \in \mathbf{C}[\![z]\!]\) 都是 \(|z| < 1\) 上的亚纯函数芽. 那么：
+\begin{equation}\label{eq:7.0.3}
+m \le \frac{\iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \,\mu_{\text{Haar}}(z)\mu_{\text{Haar}}(w)}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}.
+\end{equation}
+特别地, 形式函数 \(f_1, \ldots, f_m\) 都是 holonomic 的.
+
+如果此外所有函数 \(f_i\) 都先验地被假设为 holonomic, 则条件 \eqref{eq:7.0.2} 可以被放宽为 \(|\varphi'(0)| > e^{\tau(\mathbf{b}; \mathbf{e})}\).
+\end{theorem}
+
+当 \(\mathbf{e} = \mathbf{0}\) 时（正如先前在定理 6.0.2 陈述后所指出的）, \(\tau(\mathbf{b}; \mathbf{e})\) 与定理 2.5.1 中的 \(\tau(\mathbf{b})\) 重合. 因此, 定理 2.5.1 是定理 7.0.1 的直接推论.
+
+如第 2.1 节中所讨论的, \(\mathbf{Z}[x]\) 函数的 \(\mathbf{b} = \mathbf{0}\)、\(\mathbf{e} = \mathbf{0}\) 的情形是由 Bost 和 Charles 所建立的 \cite[推论 8.3.5]{BC22}. Charles 向我们解释说, 他们的方法可以被修改以将分母纳入考虑, 并获得如下作为初始边界的、较 \eqref{eq:7.0.3} 更弱的形式\footnote{与往常一样, 这取决于分母的正性.}:
+\begin{equation}\label{eq:7.0.4}
+m \le \frac{\iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w)}{\log |\varphi'(0)| - (\sigma_m + \max_{1 \le i \le m} e_i)}.
+\end{equation}
+
+定理 7.0.1 的基本想法是使用与 \cite{BC22} 中完全相同的阿基米德估计, 但在其非阿基米德评估高度的估计中引入一个更紧密的对应项, 这对于我们在本文中的目的而言, 已经足够改进初始边界 \eqref{eq:7.0.4} 的分母了. 
+值得注意的是, 尽管使用了两种表面上相当不同的方法（即在第 6 节中利用多元逼近的测度集中方法, 以及在本节中利用单变量评估高度方案的方法）, 
+但在定理 6.0.2 和本节的所有结果中, 最终的分母项是完全相同的. 
+然而, 测度集中方法在一般分母方面理论上更为精确, 尽管这对于本文所涉及的任何实际情况都没有造成任何差别. 
+在接下来的第 8 节中, 我们将通过把第 6 节的测度集中特征与本节第 7 节的 Bost--Charles 特征融合在一起, 从而表述我们最精确的 holonomy 边界.
+
+在本节和下一节中, 我们将使用 Arakelov 理论中的 Bost 斜率不等式. 
+一个实际上等价的框架是附录 B 中较为初等的动态抽屉原理; 
+我们之所以选择前者, 是为了增加我们论文的多样性, 并且因为阿基米德评估高度估计在任何情况下都需要借助 Arakelov 理论中一些相对深奥的定理. 
+然而, 我们仍然希望附录 B 中初等的评估高度安排对于某些读者在理解我们在此处采用的更为复杂的（源于 Bost）方法的基调时能够有所帮助.
+
+我们还指出, 人们可以像 \cite{Bos20}\cite{BC22} 那样, 更本质地用 Bost 的 theta 不变项 \(h_{\theta}^{0}\) 和 \(h_{\theta}^{1}\) 来表述 \eqref{eq:7.0.3} 的证明. 
+后者探讨了算术曲线上的（可数）无限维 Hermitian 向量丛的``全局截面空间''的绝对维度的概念, 
+这遵循了数域与有限基域上的代数曲线之间的经典类比. 
+我们在此不采用这种方法, 因为后续阿基米德增长项在 \eqref{eq:7.0.3} 中的``凸性改进''似乎更多是解析性质而非几何性质.
+
+\subsection{来自凸性的改进}\label{sec:7.1}
+
+在第 B.3 节中, 动态抽屉原理涉及到一个关于辅助评估映射范围内的形式幂级数 
+\(F(x) = \sum_{i=1}^{m} Q_i(x) f_i(x) \in \mathbf{Q}[x]\) 
+的每个 Taylor 系数的某个上界 (B.3.2), 
+这是在给定该形式幂级数所有先前系数的前提下得到的. 
+这一上界是通过在圆周 \(\mathbf{T}\) 上对 Cauchy 围道积分 (B.3.1) 进行估计而得到的, 
+用以表达 \(x = \varphi(z)\) 拉回（pullback）在 \(\psi_D\left(E_D^{(n)}\right) \subset x^n \cdot \mathbf{Q}[\![\mathbf{x}]\!]\) 中的一个元素的 \(z^n\) 系数. 
+正如在定理 6.0.2 中一样, 在这一组解析估计中, 没有特别的理由对于每个过滤层 \(n\) 都固守于一个单一固定的解析映射 \(\varphi\). 
+特别是, 根据 \(n/D\)、周围的映射 \(\varphi\) 以及评估模 \(E_D\) 中欧几里得格结构的选择（参见下文第 7.2 节）, 
+存在某个最优的中间半径 \(r = r(n) \in (0,1]\), 
+用以通过 \(x = \varphi(r(n)z)\) 的拉回解析估计这第 \(n\) 个阿基米德评估高度; 
+唯一的区别在于, 现在在单变量分析中, 沿着消逝阶数的积分过程是``垂直的'', 
+而不是跨越变量的``水平的''. 
+\(r(n)\) 的选择对于凸包具有几何意义; 
+顺便提一句, 这也为``斜率方法''这一名字赋予了另一层细微的色彩. 
+它与以下众所周知的事实相契合：Nevanlinna 增长特征以及各种同源量都是半径对数的凸递增函数.
+
+在本节中, 我们为评估模中的两种欧几里得度量计算这些最优选择 \(r(n)\)：
+来自 \cite{BC22} 的 Bost--Charles 度量, 
+以及一族显式的二项式度量权重 \(\lambda t^r + \mu t\), 
+它依赖于三个实参数 \((r,\lambda,\mu)\), 
+这些参数更易于进行数值计算, 并在实践中对于最佳三元组 \((r,\lambda,\mu)\) 仍然倾向于返回接近最优的边界. 
+利用这两种变体中的任何一种, 单单本节的结果（它们独立于第 4 节和第 6 节, 参见第 1.3 节）就可以推导出定理 A 和 C 的证明. 
+我们接下来分别在第 7.1.1 节和第 7.1.12 节中阐明它们, 
+并在第 7.2 节的准备工作之后, 分别在第 7.4 节和第 7.5 节中予以证明. 
+在此过程中, 更为基础的定理 7.0.1 的证明出现在第 7.3 节中. 
+在此之后, 我们在第 7.6 节中讨论进一步的改进, 
+该改进与前一节的定理 6.0.2 相一致——并在理论上\footnote{至少就我们的在实践中遇到例子而言}予以加强.
+
+\subsubsection{Bost--Charles 特征}\label{sec:7.1.1}
+
+受到 \cite[第 5 节]{BC22} 的启发, 我们引入了一个（双重的）Nevanlinna 型增长特征, 
+为了简单起见, 我们在此处仅限于研究全纯（而非亚纯）圆盘映射 \(\overline{\mathbf{D}} \to \mathbf{C}\) 的情况. 
+对于这一方法至关重要的一点是, 这一增长特征在 Bost--Charles 理论中可以被解释为一个算术相交数.
+
+\begin{definition}\label{def:7.1.2}
+对于一个非恒等全纯(nonconstant holomorphic)\footnote{在一般的亚纯情形下（本文暂不讨论），必须引入适当的极点计数项。}映射 \(\varphi : \overline{\mathbf{D}} \to \mathbf{C}\), 
+定义 \emph{Bost--Charles 特征函数} 
+\begin{equation}\label{eq:7.1.3}
+\widehat{T}(\cdot,\varphi):(0,1]\to\mathbf{R},\qquad \widehat{T}(r,\varphi):=\iint_{\mathbf{T}^2}\log|\varphi(z)-\varphi(rw)|\,\mu_{\mathrm{Haar}}(z)\mu_{\mathrm{Haar}}(w).
+\end{equation}
+\end{definition}
+
+与通常的 Nevanlinna 以及 Ahlfors--Shimizu 特征一样（参见 \cite[第 3.3.5 节]{Nev70} 或 \cite[注记 13.3.8]{BG06}）, 我们有:
+
+\begin{lemma}\label{lem:7.1.4}
+Bost--Charles 特征 \(\widehat{T}\) 是 \(\log r\) 的凸递增函数.
+\end{lemma}
+
+\begin{proof}
+Poisson--Jensen 公式允许将双重连续积分 \(\widehat{T}(r,\varphi)\) 改写为离散和的单重连续积分:
+\begin{equation}\label{eq:7.1.5}
+\widehat{T}(r,\varphi) = \int_{\mathbf{T}} \left\{ \log |\varphi(z)| + \sum_{\substack{u \in \mathbf{D} \\ \varphi(u) = \varphi(z)}} \log^{+} \frac{r}{|u|} \right\} \mu_{\text{Haar}}(z).
+\end{equation}
+在此我们代换了 \(u := rw\). 
+由于花括号中的有限和对于每个给定的 \(z \in \mathbf{T}\) 本身都是 \(\log r\) 的凸递增函数, 
+因此引理成立.
+\end{proof}
+
+我们为本节的主定理给出两种实际上等价的表述.
+
+\begin{theorem}\label{thm:7.1.6}
+假设与定理 7.0.1 相同的条件和记号. 设
+\[ 1 = r_l > r_{l-1} > \cdots > r_0 > 0 \]
+是一个子半径序列, 并考虑斜率
+\begin{equation}\label{eq:7.1.7}
+\alpha_k := \frac{\widehat{T}(r_k, \varphi) - \widehat{T}(r_{k-1}, \varphi)}{\log r_k - \log r_{k-1}}.
+\end{equation}
+假设 \(\alpha_l \in [0, m]\). 
+那么我们有以下相比于边界 (7.0.3) 的改进:
+\begin{equation}\label{eq:7.1.8}
+m \leq \frac{\iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \, \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w) - \frac{1}{m} \sum_{k=1}^l \frac{\left(\widehat{T}(r_k, \varphi) - \widehat{T}(r_{k-1}, \varphi)\right)^2}{\log r_k - \log r_{k-1}}}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}.
+\end{equation}
+\end{theorem}
+
+根据\autoref{lem:7.1.4}, 在满足斜率不等式 \(\alpha_l \leq m\) 的前提下, 
+如果人们细化子半径序列, 定理 7.1.6 的边界只会得到改进. 
+因此, 在极限下, 我们得到了该定理的一个连续版本（参见下文定理 7.1.10）. 
+根据我们的经验, 一旦选择了几等分点, 在极限下获得的额外数值节省是可以忽略不计的. 
+此外, 从计算的角度来看, 计算关于 \(\widehat{T}(r,\varphi)\) 特别值的边界, 
+比计算关于该函数的积分更具实际操作性.
+
+为了表述定理 7.1.6 的连续版本, 我们首先引入以下关于 \(r \in (0, 1]\) 的正递增函数\footnote{这实际上是一个连续函数. 我们将不会使用这一性质, 并且在此不给出关于 \(\widehat{T}(r,\varphi)\) 的 \(C^1\) 性质的证明. 为了在抽象层面（我们在本文的其它部分也不会用到）使得 \eqref{eq:7.1.9} 中的 \(d/dr\) 导数以及 \eqref{eq:7.1.11} 中的 \(r \in [0,1]\) 上的 Riemann 积分在“几乎处处”的意义下成立, 只需诉诸 Lebesgue 定理, 即区间 \([0,1] \to \mathbf{R}\) 上的单调函数是几乎处处可微的.}:
+\begin{equation}\label{eq:7.1.9}
+\widehat{A}(r,\varphi) := r \frac{d}{dr} \widehat{T}(r,\varphi),
+\end{equation}
+其记号镜像了 Ahlfors--Shimizu 理论中传统的覆盖球面面积函数
+\[ \mathring{A}(r,\varphi) := \frac{1}{\pi} \iint_{D(0,r)} \frac{|\varphi'|^2}{(1+|\varphi|)^2} \, dx dy = \iint_{D(0,r)} \varphi^* \omega_{\mathrm{FS}} =: r \frac{d}{dr} \mathring{T}(r,\varphi). \]
+
+现在, 通过将公式 \eqref{eq:7.1.8} 的分子解释为一个 Riemann 和, 在极限下（在假设对于 \(r \leq 1\) 均有 \(\widehat{A}(r,\varphi) \leq \widehat{A}(1,\varphi) \leq m\) 的前提下）, 我们得到以下结果:
+
+\begin{theorem}\label{thm:7.1.10}
+假设与定理 7.0.1 相同的条件和记号. 假设 \(\widehat{A}(1,\varphi) \leq m\). 那么
+\begin{equation}\label{eq:7.1.11}
+m \leq \frac{\iint_{\mathbf{T}^{2}} \log |\varphi(z) - \varphi(w)| \, \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w) - \frac{1}{m} \int_{0}^{1} \widehat{A}(r,\varphi)^{2} \, \frac{dr}{r}}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}
+\end{equation}
+\[ = \frac{\iint_{\mathbf{T}} \log |\varphi| \, \mu_{\mathrm{Haar}} + \int_{0}^{1} \widehat{A}(r,\varphi) \, \frac{dr}{r} - \frac{1}{m} \int_{0}^{1} \widehat{A}(r,\varphi)^{2} \, \frac{dr}{r}}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}. \]
+\end{theorem}
+
+在定理 7.6.4 中, 通过在评估模 \(E_D\) 中使用欧几里得度量的（启发式而言）最优选择, 给出了进一步的改进.
+
+\subsubsection{二项式度量}\label{sec:7.1.12}
+
+如在定理 6.0.2 中一样, 用于估计第 \(n\) 个阿基米德评估高度的解析映射 \(\varphi_n\) 的集合不需要具有 \(\varphi_n(z) = \varphi(r(n)z)\) 的特殊形式. 
+我们在此包含一个更初等且完全显式的边界, 该边界使用 \(l+1=2\) 个节点, 
+具有 \(\varphi_0(z)=Rz\) 和 \(\varphi_1(z)=\varphi(z)\), 
+但是——与第 7.1.1 节不同——采用了一族独立于映射 \(\varphi\) 的度量. 
+在实辅助多项式空间 \(E_D \otimes_{\mathbf{Z}} \mathbf{R} = \mathbf{R}[x]_{< D}\) 上, 
+度量可以描述为对单项式基底 \(\left\{x^k\right\}_{k=0}^{D-1}\) 进行对角化, 
+并赋予权重 \(\|x^k\|:=\exp\left(\lambda D(k/D)^r+\mu k\right)\). 
+该边界计算出以下显式形式, 其中二项式度量权重三元组 \(\{r,\lambda,\mu\}\) 是待优化的. 
+与我们在本节和下一节（第 8 节）中的所有其他 holonomy 边界不同, 
+这一定理的证明不需要来自 \cite{BC22} 的任何结果.
+
+\begin{theorem}\label{thm:7.1.13}
+假设与记号与定理 7.0.1 相同. 我们进一步假设 \(f_1, \ldots, f_m \in \mathbb{Q}[\![x]\!]\) 均在复圆盘 \(|x| < R\) 上收敛. 
+对于 \(r \in \mathbb{R}_{>1}, \lambda \in \mathbb{R}_{>0}, \mu \in \mathbb{R}\), 设定
+\[
+\begin{aligned}
+\Gamma(x; r, \lambda, \mu) := \min \Big\{ &(r - 1) \frac{\left( \max\{0, x - \mu\}\right)^{r/(r - 1)}}{(r^r \lambda)^{1/(r - 1)}}, \\
+&\max\{(r - 1)\lambda, x - \lambda - \mu\} \Big\},
+\end{aligned}
+\]
+\[ T(\varphi; r, \lambda, \mu) := \int_{\mathbf{T}} \Gamma(\log |\varphi(z)|; r, \lambda, \mu) \, \mu_{\text{Haar}}(z), \]
+\[ T_{r,\lambda,\mu}(\varphi) := \frac{\lambda}{r + 1} + \frac{\mu}{2} + T(\varphi; r, \lambda, \mu), \]
+\[ \chi_0 := \min \left\{ 1, \left( \frac{\max\{0, \log R - \mu\}}{\lambda r} \right)^{1/(r - 1)} \right\}. \]
+假设 \(\mu \leq \log R < \log |\varphi'(0)|\) 且
+\[
+\begin{aligned}
+\chi_0 \le \chi_1 &:= \frac{T(\varphi; r, \lambda, \mu) - \Gamma(\log R; r, \lambda, \mu)}{\log |\varphi'(0)| - \log R} \le m, \\
+\chi_0 &< 1.
+\end{aligned}
+\]
+那么
+\begin{equation}\label{eq:7.1.14}
+\begin{aligned}
+m \leq \frac{1}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} \Bigg[ &2T_{r,\lambda,\mu}(\varphi) - \frac{2}{m} \bigg(\frac{1}{2} \chi_1^2 \log \frac{|\varphi'(0)|}{R} \\
+&+ \chi_0 \Gamma(\log R; r, \lambda, \mu) - \chi_0^2 (\log R - \mu) \left(\frac{1}{2} - \frac{1}{r(r+1)}\right)\bigg)\Bigg].
+\end{aligned}
+\end{equation}
+\end{theorem}
+
+这一定理中关于 \(\log R\), \(\mu\), \(\log |\varphi'(0)|\), \(m\), \(\chi_1\), \(\chi_0\) 之间不等式的额外假设在接下来的证明中可以被绕过, 
+以便在个案基础上获得在每种情况下的某边界。 我们选择这些特定的条件, 因为它们在我们的应用中都是满足的. 
+参见示例 7.5.9.
+
+函数 \(\Gamma(x; r, \lambda, \mu)\) 作为二项式度量权重函数 \(\lambda t^r + \mu t\) 的 \emph{Legendre 变换}（参见 \cite[第 VI 节]{Ell06}）浮现出来. 
+这一基本的显式计算是下面引理的内容.
+
+\begin{lemma}\label{lem:7.1.15}
+对于任意的 \(r \in \mathbb{R}_{>1}\), \(\lambda \in \mathbb{R}_{>0}\), \(\mu \in \mathbb{R}\) 且 \(x \in \mathbb{R}\), 我们有
+\[ \max_{0 \le t \le 1} \left\{ tx - \lambda t^r - \mu t \right\} = \Gamma(x; r, \lambda, \mu). \]
+因此,
+\[ T(\varphi; r, \lambda, \mu) = \int_{\mathbf{T}} \max_{0 \le t \le 1} \left\{ t \log |\varphi(z)| - \lambda t^r - \mu t \right\} \, \mu_{\text{Haar}}(z). \]
+\end{lemma}
+
+\begin{proof}
+该证明是一个直接的计算. 
+将 \(x, \lambda\) 和 \(\mu\) 视为固定的, 设定 \(F(t) := xt - \lambda t^r - \mu t\). 
+那么 \(F'(t) = x - r\lambda t^{r-1} - \mu\), 
+因而 \(F\) 在 \(t \in \mathbf{R}_{\geq 0}\) 中承认一个临界点当且仅当 \(x - \mu \geq 0\), 
+在这种情况下, 唯一的此类临界点为
+\[ t_0 := \left(\frac{x - \mu}{r\lambda}\right)^{1/(r-1)}. \]
+因此
+\[ \max_{0 \le t \le 1} F(t) = \begin{cases} F(0) = 0 & \text{当 } x - \mu \le 0 \\ F(t_0) = (r - 1) \frac{(x - \mu)^{r/(r - 1)}}{(r^r \lambda)^{1/(r - 1)}} & \text{当 } 0 \le x - \mu \le \lambda r \\ F(1) = x - \lambda - \mu & \text{当 } x - \mu \ge \lambda r \end{cases} \]
+这就是为什么我们在定理 7.1.13 的表述中以这种方式定义 \(\Gamma(x; r, \lambda, \mu)\) 的原因.
+\end{proof}
+
+\subsection{Bost 斜率方法简述}\label{sec:7.2}
+
+我们简要回顾一下 Arakelov 理论中的 Bost 斜率方法和相关的背景材料. 
+主要参考资料是 \cite[第 4.1、4.2 节]{Bos01} 和 \cite[第 1 章]{Bos20}. 
+为简单起见, 我们仅回顾关于 \(\mathbf{Q}\) 的理论, 因为这对于我们的应用已经足够了. 
+本节中的一切内容对于任何数域都逐字成立, 参见 \cite{CDT24}.
+
+\subsubsection{Spec Z 上的 Hermitian 向量丛}\label{sec:7.2.1}
+
+\begin{definition}\label{def:7.2.2}
+欧几里得格（Euclidean lattice）是一个对 \(\overline{E} = (E, \|\cdot\|)\), 
+它由一个有限秩自由 \(\mathbf{Z}\)-模 \(E\) 和向量空间 \(E_{\mathbf{R}}\) 上的一个欧几里得范数 \(\|\cdot\|\) 组成. 
+换句话说：\(\|\cdot\|^2\) 是 \(E_{\mathbf{R}} := E \otimes_{\mathbf{Z}} \mathbf{R}\) 上的一个正定二次型.
+\end{definition}
+
+在 Arakelov 几何中, 这与 Spec \(\mathbf{Z}\) 上的 Hermitian 向量丛的概念重合. 
+因此, 我们使用定义为欧几里得格的共体积的对数的相反数的\emph{算术度}（arithmetic degree）:
+\begin{equation}\label{eq:7.2.3}
+\widehat{\operatorname{deg}}\,\overline{E} := -\log\operatorname{covol}(E, \|\cdot\|) = -\frac{1}{2}\log\big|\operatorname{det}\big(\langle e_i, e_j\rangle\big)_{i,j=1}^r\big|.
+\end{equation}
+此处, \(r := \operatorname{rank} E\),
+\[ \langle e, f \rangle := \frac{1}{2} \|e + f\|^2 - \|e\|^2 - \|f\|^2 \]
+是给出二次型 \(||e|| = \sqrt{\langle e, e \rangle}\) 的关联内积, 
+且 \(e_1, \ldots, e_r\) 是 E 的任意一组 \(\mathbf{Z}\)-模基底.
+
+设 \(M_{\mathbf{Q}}\) 表示绝对值 \(\mathbf{Q} \to [0,\infty)\) 的等价类（地方）. 
+在地方 \(v \in M_{\mathbf{Q}}\) 处, 我们选择具有常用归一化条件的代表绝对值 \(|\cdot|_v\)：
+\(|\cdot|_{\infty}\) 是阿基米德地方 \(\infty \in M_{\mathbf{Q}}\) 的普通绝对值, 
+且对于 p-进地方 \(p \in M_{\mathbf{Q}}\) 有 \(|p|_p = 1/p\). 
+因此对于所有 \(x \in \mathbf{Q}^{\times}\) 均有 \(\prod_{v \in M_{\mathbf{Q}}} |x|_v = 1\). 
+令 \(M_{\mathbf{Q}}^{\text{fin}} := M_{\mathbf{Q}} \setminus \{\infty\}\) 表示 \(\mathbf{Q}\) 的所有有限地方的集合, 
+该集合与有理素数的集合相识别.
+
+伴随 \(E_{\mathbf{R}}\) 上的二次型 \(\|\cdot\|\), 便于考虑在 \(E_{\mathbf{Q}_p}\) 上定义如下的 p-进范数 \(\|\cdot\|_p\):
+\[ \left\| \sum_{i=1}^{r} c_i e_i \right\|_p := \max_{1 \le i \le r} |c_i|_p. \]
+注意 \(\|\cdot\|_p\) 独立于 E 的基底 \(e_1,\ldots,e_r\) 的选择：
+更本质地, 我们的值群为 \(p^{\mathbf{Z}}\), 
+且 \(\|w\|_p = p^{-n}\) 当且仅当 \(w \in E \otimes_{\mathbf{Z}} p^n \mathbf{Z}_p\) 且 \(w \notin E \otimes_{\mathbf{Z}} p^{n+1} \mathbf{Z}_p\). 
+因此, 欧几里得结构与 \(\mathbf{Q}\)-向量空间 \(E_{\mathbf{Q}} := E \otimes_{\mathbf{Z}} \mathbf{Q}\) 
+的积分格 E 相结合, 定义了一个阿代尔度量 \((E_{\mathbf{Q}}, (\|\cdot\|_v)_{v \in M_{\mathbf{Q}}})\). 
+反过来, 我们可以通过对于所有素数 p 同时满足 \(\|w\|_p \leq 1\) 
+来恢复出格 \(E \subset E_{\mathbf{Q}} \subset E_{\mathbf{R}}\).
+
+在这些记号中, 算术度公式 \eqref{eq:7.2.3} 具有以下阿代尔形式:
+\[ \widehat{\operatorname{deg}} \, \overline{E} = -\frac{1}{2} \log \left| \det \left( \langle v_i, v_j \rangle \right)_{i,j=1}^r \right| - \sum_{p \in M_{\mathbf{Q}}^{\text{fin}}} \sum_{i=1}^r \log \|v_i\|_p, \]
+其中 \(\{v_1, \ldots, v_r\}\) 是 \(E_{\mathbf{Q}}\) 的任意一组 \(\mathbf{Q}\)-基底.
+
+给定两个欧几里得格 \(\overline{E}, \overline{F}\), 
+令 \(\overline{E} \oplus \overline{F}\) 表示 \(E \oplus F\) 配备子空间 \(E_{\mathbf{R}}\) 和 \(F_{\mathbf{R}}\) 
+上范数的正交直和所给出的范数. 根据定义, 我们有
+\begin{equation}\label{eq:7.2.4}
+\widehat{\operatorname{deg}}\left(\overline{E} \oplus \overline{F}\right) = \widehat{\operatorname{deg}}\left(\overline{E}\right) + \widehat{\operatorname{deg}}\left(\overline{F}\right).
+\end{equation}
+
+\subsubsection{欧几里得格的斜率与同态的高度}\label{sec:7.2.5}
+
+\begin{definition}\label{def:7.2.6}
+欧几里得格 \(\overline{E} = (E, \|\cdot\|)\) 的斜率（slope） \(\widehat{\mu}(\overline{E})\) 定义为
+\[ \widehat{\mu}(\overline{E}) := \frac{\widehat{\operatorname{deg}}\,\overline{E}}{\operatorname{rank}\,E} \in \mathbf{R}. \]
+\(\overline{E}\) 的极大斜率定义为
+\[ \widehat{\mu}_{\max}(\overline{E}) := \sup_{0 \subsetneq F \subseteq E} \widehat{\mu}(\overline{F}), \]
+其中 F 遍历 E 的所有非零 \(\mathbf{Z}\)-子模, 
+并且 \(\overline{F}\) 表示配备有从限制 \(\|\cdot\|\) 到 \(F_{\mathbf{R}}\) 得到的二次型的 F 的诱导欧几里得格.
+\end{definition}
+
+以下引理直接由定义得出.
+
+\begin{lemma}\label{lem:7.2.7}
+设 \(\overline{E}, \overline{F}\) 为两个欧几里得格. 
+令 \(\overline{E} \otimes \overline{F}\) 表示配备有张量范数的 \(E \otimes_{\mathbf{Z}} F\). 
+那么我们有
+\[ \widehat{\mu}(\overline{E} \otimes \overline{F}) = \widehat{\mu}(\overline{E}) + \widehat{\mu}(\overline{F}). \]
+\end{lemma}
+
+\begin{proof}
+根据算术度的定义, 我们有 \(\widehat{\operatorname{deg}}(\overline{E}) = \widehat{\operatorname{deg}}(\wedge^{\operatorname{rank} E}\overline{E})\), 
+且对于任意两个秩为 1 的欧几里得格 \(\overline{L}_1, \overline{L}_2\), 
+我们有 \(\widehat{\operatorname{deg}}(\overline{L}_1 \otimes \overline{L}_2) = \widehat{\operatorname{deg}}(\overline{L}_1) + \widehat{\operatorname{deg}}(\overline{L}_2)\). 
+注意
+\[ \wedge^{\operatorname{rank} E \otimes F}(\overline{E} \otimes \overline{F}) \cong (\wedge^{\operatorname{rank} E} \overline{E})^{\otimes \operatorname{rank} F} \otimes (\wedge^{\operatorname{rank} F} \overline{F})^{\otimes \operatorname{rank} E}. \]
+因此
+\[ \widehat{\operatorname{deg}}\left(\overline{E}\otimes\overline{F}\right)=(\operatorname{rank}F)\,\widehat{\operatorname{deg}}\left(\overline{E}\right)+(\operatorname{rank}E)\,\widehat{\operatorname{deg}}\left(\overline{F}\right), \]
+以此完成了引理的证明.
+\end{proof}
+
+考虑两个欧几里得格 \(\overline{E} = (E, \|\cdot\|_E)\) 与 \(\overline{F} = (F, \|\cdot\|_F)\) 以及一个\emph{单同态}（injective homomorphism） \(\psi : E_{\mathbf{Q}} \hookrightarrow F_{\mathbf{Q}}\). 
+如果 \(\psi\) 将欧几里得格 E 等距地映射为 F 的一个子格, 
+那么根据极大斜率的定义有 \(\widehat{\mu}(\overline{E}) \leq \widehat{\mu}_{\max}(\overline{F})\). 
+在一般情况下, 源格 \(\overline{E}\) 的斜率可以根据靶格 \(\overline{F}\) 的极大斜率和同态 \(\psi\) 的\emph{高度}（height）来进行上估计.
+
+\begin{definition}\label{def:7.2.8}
+单同态 \(\psi\) 在地方 \(v \in M_{\mathbf{Q}}\) 处的局部 v-进高度定义为赋范 \(\mathbf{Q}_v\)-向量空间的诱导单同态
+\[ (E_{\mathbf{Q}_v}, \|\cdot\|_{E,v}) \hookrightarrow (F_{\mathbf{Q}_v}, \|\cdot\|_{F,v}) \]
+的算子范数的对数:
+\[ h_v(\psi) := \sup_{e \in E_{\mathbf{Q}_v} \setminus \{0\}} \log \frac{\|\psi(e)\|_{F,v}}{\|e\|_{E,v}} = \sup_{e \in E \setminus \{0\}} \log \frac{\|\psi(e)\|_{F,v}}{\|e\|_{E,v}}. \]
+\(\psi\) 的全局高度是所有地方 \(v \in M_{\mathbf{Q}}\) 上的局部 v-进高度的总和:
+\[ h(\psi) := \sum_{v \in M_{\mathbf{Q}}} h_v(\psi). \]
+\end{definition}
+
+等距单射 \(E \hookrightarrow F\) 的自明不等式 \(\widehat{\mu}(\overline{E}) \leq \widehat{\mu}_{\max}(\overline{F})\) 
+随后推广到任意单同态 \(\psi : E_{\mathbf{Q}} \hookrightarrow F_{\mathbf{Q}}\), 方式如下.
+
+
+
+\begin{lemma}[{\cite[Prop.~4.5]{Bos01}}]\label{lem:7.2.9}
+对于欧几里得格 $\overline{E}$ 和 $\overline{F}$ 
+的诱导 $\mathbf{Q}$-向量空间的任意单同态 $\psi \colon E_{\mathbf{Q}} \hookrightarrow F_{\mathbf{Q}}$, 我们有
+\begin{equation}\label{eq:7.2.10}
+\widehat{\mu}(\overline{E}) \le \widehat{\mu}_{\max}(\overline{F}) + h(\psi).
+\end{equation}
+\end{lemma}
+
+\subsubsection{Bost 斜率不等式}\label{sec:7.2.11}
+
+对于过滤后的欧几里得格, 斜率不等式 \eqref{eq:7.2.10} 推广如下. 
+设 F 是一个自由 \(\mathbf{Z}\)-模, 我们不再要求它是有限秩的. 
+我们假设在 \(F_{\mathbf{Q}}\) 上存在一个过滤:
+\[ F_{\mathbf{Q}}^{\bullet}: F_{\mathbf{Q}} = F_{\mathbf{Q}}^{(0)} \supseteq F_{\mathbf{Q}}^{(1)} \supseteq F_{\mathbf{Q}}^{(2)} \supseteq \cdots \]
+其具有有限维的 graded 商空间 \(\operatorname{Gr}_n(F_{\mathbf{Q}}^{\bullet}) := F_{\mathbf{Q}}^{(n)}/F_{\mathbf{Q}}^{(n+1)}\), 
+并且满足 \(\bigcap_{n=0}^{\infty} F_{\mathbf{Q}}^{(n)} = \{0\}\).
+
+我们如第 7.2.5 节所示考虑 \(\overline{E}, \psi\). 
+特别是, 线性单同态 \(\psi: E_{\mathbf{Q}} \hookrightarrow F_{\mathbf{Q}}\) 在 E 上诱导了一个过滤:
+\[ E^{\bullet}: E = E^{(0)} \supseteq E^{(1)} \supseteq \cdots, \text{ 其中 } E^{(n)} = E \cap \psi^{-1}(F_{\mathbf{Q}}^{(n)}). \]
+注意, 由于 E 是一个有限秩自由 \(\mathbf{Z}\)-模且 \(\psi\) 是单射, 
+因此 \(\operatorname{Gr}_n(E^{\bullet})\) 是有限秩自由 \(\mathbf{Z}\)-模, 
+并且上述过滤在有限步后稳定于 \(\{0\}\). 
+此外, 将 \(\|\cdot\|_E\) 限制到 \(E^{(n)}\) 赋予了 \(E^{(n)}\) 一个欧几里得格结构, 
+并且 \(E^{(n)}/E^{(n+1)}\) 上的相应商度量配备了它一个欧几里得格结构 \(\overline{E^{(n)}/E^{(n+1)}}\).
+
+我们还假设每个 graded 商分量 \(\operatorname{Gr}_n(F_{\mathbf{Q}}^{\bullet})\) 都被赋予了欧几里得格结构. 
+更确切地说, 对于每个 n, 我们有一个欧几里得格
+\[ \overline{G^{(n)}} = \left(G^{(n)}, \|\cdot\|_{G^{(n)}}\right), \]
+其中 \(G^{(n)} \subset \operatorname{Gr}_n(F_{\mathbf{Q}}^{(n)})\) 是一个 \(\mathbf{Z}\)-子模, 
+满足 \(G_{\mathbf{Q}}^{(n)} = \operatorname{Gr}_n(F_{\mathbf{Q}}^{(n)})\). 
+映射 \(\psi\) 在 graded 商之间诱导了一个线性单同态:
+\begin{equation}\label{eq:7.2.12}
+\psi_D^{(n)}: \operatorname{Gr}_n(E^{\bullet})_{\mathbf{Q}} \hookrightarrow \operatorname{Gr}_n(F_{\mathbf{Q}}^{\bullet})
+\end{equation}
+并且其高度 \(h(\psi_D^{(n)})\) 是利用上述欧几里得格结构 \(\overline{E^{(n)}/E^{(n+1)}}\) 
+和 \(\overline{G^{(n)}}\) 定义的.
+
+\begin{lemma}\label{lem:7.2.13}
+在这种情况下,
+\begin{equation}\label{eq:7.2.14}
+\widehat{\operatorname{deg}}(\overline{E}) \leq \sum_{n=0}^{\infty} \operatorname{rank}(E^{(n)}/E^{(n+1)}) \left[\widehat{\mu}_{\max}(\overline{G^{(n)}}) + h(\psi_D^{(n)})\right].
+\end{equation}
+注意上述总和是有限和, 因为对于 \(N \gg 1\) 有 \(E^{(N)} = 0\).
+\end{lemma}
+
+\subsection{Bost--Charles 边界}\label{sec:7.3}
+
+我们遵循 \cite{Bos20}\cite{BC22} 的工作, 并进行轻微的修改以将分母考虑在内.
+
+我们为我们的应用回顾他们工作的设定. 
+考虑 \(\mathcal{X} = \mathbf{P}_{\mathbf{Z}}^1\) 以及 \(\mathcal{X}\) 上的线丛 \(\mathcal{L} := \mathcal{O}(1)\). 
+我们用 \(x := X_1/X_0\) 表示 \(\mathbf{P}_{\mathbf{Z}}^1 = \operatorname{Proj} \mathbf{Z}[X_0, X_1]\) （中仿射线）的坐标, 
+然后对于 \(D \in \mathbf{Z}_{>0}\), 我们遵循通常的识别 \(\mathcal{L} = \mathcal{O}([0])\) （此处 [0] 表示点 \(x = 0\) 的因子）和 \(\mathbf{Z}[1/x]_{\leq D} = \Gamma(\mathcal{X}, \mathcal{L}^{\otimes D})\).
+
+\subsubsection{Bost--Charles 度量}\label{sec:7.3.1}
+
+遵循 \cite[第 8.2、8.3 节]{BC22} 中的想法, 利用全纯映射 \(\varphi: (\overline{\mathbf{D}}, 0) \to (\mathbf{P}^1(\mathbf{C}), 0)\), 
+我们为 \(\mathcal{L} = \mathcal{O}(1)\) 配备如下定义的 Hermitian 度量 \(\|\cdot\|_{\overline{\mathcal{L}}}\):
+\[ \|\mathbf{1}(y)\|_{\overline{\mathcal{L}}} := \exp\left(-\sum_{z \in \varphi^{-1}(y)} \log^+ \frac{1}{|z|}\right) = \prod_{z \in \overline{\mathbf{D}}, \, \varphi(z) = y} |z|, \]
+其中 \(\mathbf{1} = \mathbf{1}_{[0]}\) 是 \(\mathcal{L} = \mathcal{O}([0])\) 对应于因子 [0] 的规范截面（``常数函数''）, 
+且 \(y \in \mathbf{P}^1(\mathbf{C})\). 
+该 Hermitian 度量在 Bost--Charles 的意义下具有 \(\mathcal{C}^{\mathrm{b}\Delta}\) 正则性（参见 \cite[第 4.1.1、4.2.1.2 节]{BC22}）. 
+我们将该 Hermitian 线丛简记为 \(\overline{\mathcal{O}(1)}\), 
+或者如果希望指出对 \(\varphi\) 的依赖性, 则记为 \(\overline{\mathcal{O}(1)}_{\varphi}\). 
+我们在算术相交理论的框架下工作, 使用此类 Hermitian 线丛以及在 Bost--Charles 意义下具有 \(\mathcal{C}^{\mathrm{b}\Delta}\) 正则性的 Arakelov 因子（参见 \cite[第 4.5 节]{BC22}）.
+
+\begin{remark}\label{rem:7.3.2}
+在 \cite{BC22} 中, 第 7.3.1 节的 Hermitian 度量由 Arakelov 因子 \(([0], \varphi_*(\log^+ |z|^{-1}))\) 给出. 
+更确切地说, 在 \cite[第 6.2.1 节使用示例 4.3.1]{BC22} 的意义下, 
+我们在 \(\mathbb{Z}\) 上的光滑形式解析（以下简称 f.-a.）算术曲面
+\[ \widetilde{\mathcal{V}}(\varphi) := (\operatorname{Spf} \mathbf{Z}[\![x]\!], (\overline{\mathbf{D}}, 0), i_{\varphi}) \]
+上拥有紧支撑的 Arakelov 因子 \(([0], \log^+ |z|^{-1})\), 
+其中 \(x \mapsto \varphi\) 定义了一个同构 \(\mathbb{C}[\![x]\!] \xrightarrow{\simeq} \mathbb{C}[\![z]\!]\) （此处 z 表示 \(\overline{\mathbf{D}}\) 上的坐标, 且我们使用了 \(\varphi'(0) \neq 0\) 的假设）, 
+因此其逆映射诱导了一个同构 \(i_{\varphi} : \operatorname{Spf} \mathbb{C}[\![x]\!] \cong \widehat{\mathbb{D}}_0\). 
+关于数域上光滑 f.-a. 算术曲面的一般定义, 参见 \cite[第 10.6.1 节]{Bos20} 或 \cite[第 6.1.1 节]{BC22}; 
+关于这一构造 \(\widetilde{\mathcal{V}}(\varphi)\), 参见文献中的第 6.4.1.1 节, 
+它还配备了一个在 f.-a. 算术曲面上的、卓越的非常数正则函数 \((\iota, \varphi) : \widetilde{\mathcal{V}}(\varphi) \to \mathbf{A}^1_{\mathbf{Z}}\); 
+参见 \cite[第 7.1.1.1 节]{BC22}. 
+此处, \(\iota : \operatorname{Spf} \mathbf{Z}[\![x]\!] \to \operatorname{Spec} \mathbf{Z}[\![x]\!] = \mathbf{A}^1_{\mathbf{Z}}\) 是自然形式浸入. 
+在 \cite[第 7.2.1 节]{BC22} 的设定中, Arakelov 因子 \(([0], \varphi_*(\log^+ |z|^{-1}))\) 是 \(([0], \log^+ |z|^{-1})\) 
+通过态射 \((\iota, \varphi) : \widetilde{\mathcal{V}}(\varphi) \to \mathbf{A}^1_{\mathbf{Z}}\) 的直接像, 
+其中 Green 函数上的推前映射 \(\varphi_*\) 定义在 \cite[第 3.4.2.1 节]{BC22} 中. 
+根据 \cite[推论 4.4.2(ii)]{BC22}, 这一推前映射保持了 Green 函数的 \(C^{\mathrm{b}\Delta}\) 正则性, 
+这对于拥有良定义的算术相交理论是至关重要的. 
+与 \(\varphi_*(\log^+ |z|^{-1})\) 相关联的 Hermitian 度量的显式公式给出在 \cite[第 5.1.2 节]{BC22} 中. \end{remark}
+
+\subsubsection{直接像与算术 Hilbert--Samuel}\label{sec:7.3.3}
+
+固定 \(\mathbf{P}^1(\mathbf{C})\) 上的一个光滑概率测度 \(\nu\), 
+例如 Fubini--Study 形式 \(\omega_{\mathrm{FS}} = \frac{\sqrt{-1}}{2\pi} \frac{dz \wedge d\bar{z}}{(1+|z|^2)^2}\); 
+\(\nu\) 的选择对于证明是无足轻重的. 
+如 \cite[第 6 节]{BC22} 中一样, \(\overline{\mathcal{L}}\) 上的 Hermitian 度量与流形 \(\mathcal{X}(\mathbf{C})\) 上的纤维向积分相结合, 
+在 \(\mathbf{Z}\)-模 \(\Gamma(\mathcal{X}, \mathcal{L}^{\otimes D})\) 上定义了一个欧几里得格结构. 
+显式地, 我们对 \(s \in \Gamma(\mathcal{X}, \mathcal{L}^{\otimes D})\) 赋予范数:
+\[ \|s\| := \sqrt{\int_{\mathcal{X}(\mathbf{C})} \|s\|_{\mathcal{L}}^2 \nu}. \]
+遵循 \cite[第 6.1.2.2 节]{BC22}, 我们用 \(\Gamma_{L^2}\left(\mathcal{X},\nu;\overline{\mathcal{L}}^{\otimes D}\right)\) 表示这一欧几里得格. 
+在 \(D\to\infty\) 渐近意义下, 略去积分度量权重 \(\nu\), 
+这本质上是 \(\overline{\mathcal{L}}=\overline{\mathcal{O}}(1)_{\varphi}\) 在结构态射 \(\widetilde{\mathcal{V}}(\varphi)\to\operatorname{Spec}\mathbf{Z}\) 下的第零直接像. 
+如 \cite[第 8 节, 定理 8.2.5]{BC22} 中一样, 我们可以将算术曲面 \(\mathcal{X}=\mathbf{P}^1_{\mathbf{Z}}\) 上的算术 Hilbert--Samuel 公式表述为以下形式:
+\begin{equation}\label{eq:7.3.4}
+\widehat{\operatorname{deg}} \, \Gamma_{L^2} \left( \mathcal{X}, \nu; \overline{\mathcal{L}}^{\otimes D} \right) = \frac{1}{2} (\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}) D^2 + o(D^2).
+\end{equation}
+
+当 \(\mathcal{L} = \mathcal{O}(1)\) 中的 Hermitian 度量是光滑的时, 
+该公式属于 Zhang \cite[定理 1.4]{Zha95}, 
+并伴随着 Bost 在 \cite[定理 10.3.2]{Bos20} 的证明中比较两种 Hermitian 度量时所作的额外输入. 
+Zhang 的定理是对 Gillet--Soul{\'e} \cite{GS92} 和 Bismut--Vasserot \cite{BV89} 工作的精细化（针对非逐点严格半正曲率（Chern 形式） \(c_1(\mathcal{L}, \|\cdot\|) \geq 0\)）; 
+另请参见 Abbes--Bouche \cite{AB95} 以获取更直接方法的概述. 
+遵循 \cite[第 5 节]{Bos99} 和 \cite[第 3--4 节]{BC22} 中将 Green 函数分离为光滑 Green 函数和 \(\mathcal{C}^{\mathrm{b}\Delta}\) 函数的想法, 
+相同的算术 Hilbert--Samuel 公式对于配备有逐点非负 Chern 形式的 \(\mathcal{C}^{\mathrm{b}\Delta}\) Hermitian 度量（定义见 \cite[第 4.2.1.2 节]{BC22}）的宽裕线丛（ample line bundles）同样成立, 
+因此该公式在我们的设定中也是有效的.
+
+在 \(\varphi\) 的项下, Bost 和 Charles \cite[定理 5.4.1 和命题 5.4.2]{BC22} 为自相交数提供了以下公式:
+\begin{equation}\label{eq:7.3.5}
+(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}) = \left(\overline{\mathcal{O}(1)}_{\varphi} \cdot \overline{\mathcal{O}(1)}_{\varphi}\right) = \iint_{\mathbf{T}^2} \log|\varphi(z) - \varphi(w)| \, \mu_{\text{Haar}}(z) \, \mu_{\text{Haar}}(w) = \widehat{T}(1, \varphi).
+\end{equation}
+我们将在下文的引理 7.4.5 中, 在我们温和的推广中回顾他们的计算.
+
+\begin{proof}[定理 7.0.1 的证明]
+注意 \(\mathbf{b}\) 的选择并不是唯一的; 我们可以在不改变 \(f_i\) 形式的前提下对 \(\mathbf{b}\) 的列进行置换. 
+因此, 经过合适的列置换后, 我们可假设 \(u_1 \leq u_2 \leq \ldots \leq u_r\). 
+我们在第 7 节的所有证明中都保持这一约定.
+
+对于 \(D \in \mathbb{N}\), 我们取以下秩为 \(m(D+1)\) 的自由 \(\mathbf{Z}\)-模作为我们的评估模:
+\begin{equation}\label{eq:7.3.6}
+E_D := \bigoplus_{h=0}^r \bigoplus_{i=u_h+1}^{u_{h+1}} \frac{[1, \dots, \xi D]^{e_i}}{[1, \dots, y_{h+1}D] \cdots [1, \dots, y_rD]} f_i \cdot \mathbf{Z}[1/x]_{\leq D},
+\end{equation}
+其中 \(u_0 := 0, u_{r+1} := m\), 且 \(\xi \in [0, m]\) 以及 \(y_h \in [0, b_h m] \subset \mathbf{R}\) 是在证明中待优化的辅助参数. 
+注意, 公式 \eqref{eq:7.3.6} 中 \(E_D\) 的索引与第 2.13.1 节的记号略有不同; 
+其差异在于考虑了次数 \(< D\) 而非 \(\le D\) 的多项式. 
+我们采用这种归一化——它在渐近上不产生任何差别, 因而最终是一种美学选择——以便我们可以在下文谈论 \(\mathcal{L}^{\otimes D}\) 的截面, 
+而不是 \(\mathcal{L}^{\otimes (D-1)}\) 的截面.
+
+为了赋予 \(E_D\) 一个欧几里得范数, 我们取以下格的正交直和 \eqref{eq:7.3.6}:
+\[ \frac{[1,\ldots,\xi D]^{e_i}}{[1,\ldots,y_{h+1}D]\cdots[1,\ldots,y_rD]}\mathbf{Z}[1/x]_{\leq D}\subset\Gamma\left(\mathcal{X},\mathcal{L}^{\otimes D}\right)_{\mathbf{R}}, \]
+其中每个加项都继承自 \(\overline{\mathcal{O}(1)}_{\varphi} = \overline{\mathcal{L}}\) 所诱导的范数. 
+我们将该欧几里得格记为 \(\overline{E}_D\).
+
+根据 \eqref{eq:7.3.4} 和 \eqref{eq:7.3.5}, 我们有:
+\begin{equation}\label{eq:7.3.7}
+\widehat{\operatorname{deg}} \overline{E}_D = \left( \frac{m}{2} \left( \overline{\mathcal{O}(1)}_{\varphi} \cdot \overline{\mathcal{O}(1)}_{\varphi} \right) + \sum_{h=1}^r u_h y_h - \xi \left( \sum_{i=1}^m e_i \right) \right) D^2 + o(D^2)
+\end{equation}
+\[ = \left( \frac{m}{2} \widehat{T}(1, \varphi) + \sum_{h=1}^r u_h y_h - \xi \left( \sum_{i=1}^m e_i \right) \right) D^2 + o(D^2). \]
+
+令 X 表示 \(\mathcal{X}_{\mathbf{Q}} = \mathbf{P}_{\mathbf{Q}}^1\). 
+我们将 \(\operatorname{Spf} \mathbf{Q}[\![x]\!] = \widehat{X}_0\) 识别为 X 在其闭子模式 0 处的形式完备化. 
+这指定了对于 \(i = 1, \ldots, m\), 有 \(f_i(x) \in \Gamma(\widehat{X}_0, \mathcal{O}_{\widehat{X}_0})\). 
+令 \(\Gamma(\widehat{X}_0, \mathcal{L}^{\otimes D})\) 表示 \(\mathcal{L}^{\otimes D}|_{\widehat{X}_0}\) 的全局截面; 
+它们被识别为
+\[ \Gamma(\widehat{X}_0, \mathcal{L}^{\otimes D}) = x^{-D} \mathbf{Q} [\![\mathbf{x}]\!] =: F_{\mathbf{Q}}. \]
+（此处, \(x^{-D}\mathbf{Q}[\![\mathbf{x}]\!]\) 表示由 \(x^k\) 组成的 \(\mathbf{Q}\)-向量空间, 其中 \(k \geq -D\).） 
+因此 \(f_i\Gamma(\mathcal{X},\mathcal{L}^{\otimes D}) \subset \Gamma(\widehat{X}_0,\mathcal{L}^{\otimes D})\), 
+并且我们有评估映射:
+\begin{equation}\label{eq:7.3.8}
+\psi_D : E_D \otimes_{\mathbf{Z}} \mathbf{Q} \hookrightarrow F_{\mathbf{Q}}, \qquad (Q_i)_{1 \le i \le m} \mapsto \sum_{i=1}^m f_i Q_i,
+\end{equation}
+其中 \(Q_i \in \Gamma(\mathcal{X}, \mathcal{L}^{\otimes D})_{\mathbf{Q}}\). 
+由于我们假设形式函数 \(f_i(x)\) 具有 \(\mathbf{Q}(x)\)-线性无关性, 
+因而这这是一个单同态（单射）.
+
+我们通过 \(\mathcal{L}^{\otimes D}|_{\widehat{X}_{0}}\) 的形式截面在 \(x=0\) 处的消逝阶数来过滤 F:
+\[ F_{\mathbf{Q}} = F_{\mathbf{Q}}^{(0)} \supseteq F_{\mathbf{Q}}^{(1)} \supseteq \cdots \supseteq F_{\mathbf{Q}}^{(n)} \supseteq \cdots \]
+具体而言, \(F_{\mathbf{Q}}^{(n)} = \operatorname{Span}_{\mathbf{Q}}\{x^{k-D} \mid k \geq n\}\). 
+Graded 分量 \(F_{\mathbf{Q}}^{(n)}/F_{\mathbf{Q}}^{(n+1)}\) 是一个一维 \(\mathbf{Q}\)-向量空间, 
+由商映射下 \(x^{n-D}\) 的像所生成. 
+我们取 graded 分量上的欧几里得格结构, 
+该结构由 \(x^{n-D}\) 的像所生成的自由秩 1 \(\mathbf{Z}\)-模以及满足 \(\|x^{n-D}\| = 1\) 的欧几里得范数所给出. 
+注意, 这些在 graded 分量上的欧几里得格结构都是由自由 \(\mathbf{Z}\)-模 \(F = x^{-D} \mathbf{Z}[x]\) 
+以及以 \(\{x^n\}_{n \in \mathbf{Z}_{\geq -D}}\) 为标准正交基的 \(x^{-D} \mathbf{R}[x]\) 上的欧几里得范数所诱导的.
+
+如第 7.2.11 节所示, 我们用 \(E_D^{(n)} := \psi_D^{-1}\left(F_{\mathbf{Q}}^{(n)}\right) \cap E_D\) 表示 \(F_{\mathbf{Q}}^{(n)}\) 在 \(E_D\) 中通过 \(\psi_D\) 的原像. 
+对于每个 \(n \in \mathbf{N}\), 评估映射 \eqref{eq:7.3.8} 诱导了一个单同态:
+\[ \psi_D^{(n)}: E_D^{(n)}/E_D^{(n+1)} \hookrightarrow F_D^{(n)}/F_D^{(n+1)} \]
+特别地, 如同在 (3.1.4) 中一样, 我们有 \(\operatorname{rank} \left(E_D^{(n)}/E_D^{(n+1)}\right) \in \{0,1\}\). 令
+\[ \mathcal{V}_D := \left\{ n \in \mathbf{N} \mid \operatorname{rank}\left(E_D^{(n)}/E_D^{(n+1)}\right) = 1 \right\}. \]
+我们有 \(\#\mathcal{V}_D = \operatorname{rank} E_D = m(D+1)\).
+
+我们现在提供关于评估高度 \(h_{\infty}(\psi_D^{(n)})\) 和 \(h_{\text{fin}}(\psi_D^{(n)})\) 的上界估计, 
+其中 \(h_{\text{fin}}(\psi_D^{(\mathbf{n})}) := \sum_{v \in M_{\mathbf{Q}}, v \nmid \infty} h_v(\psi_D^{(\mathbf{n})})\).
+
+阿基米德评估高度的边界源于 Bost 以及 Bost--Charles 的工作:
+\begin{equation}\label{eq:7.3.9}
+h_{\infty}(\psi_D^{(n)}) \le -n\log|\varphi'(0)| + \left(\overline{\mathcal{O}(1)}_{\varphi} \cdot \overline{\mathcal{O}(1)}_{\varphi}\right)D + o(D).
+\end{equation}
+针对我们特定设定的证明细节在第 7.4 节（引理 7.4.1, 特例化为 \(r=1\)）或第 8.2.11 节（特例化为 \(d=1\)）中给出, 
+在那些地方, 我们分别需要对该估计进行细化以纳入凸性并处理高维设定. 
+关于原始来源, 我们参考 \cite[第 127 页第 8.2 节之后的两段]{BC22}, 
+它们反过来总结了 \cite{Bos20} 的相关部分. 该特定边界本质上是 \cite[第 10.5.5 节, 定理 10.5.3, 推论 10.5.4]{Bos20}.
+
+接下来我们估计 \(h_{\text{fin}}(\psi_D^{(n)})\). 
+对于每个素数 p, 根据 \(h_p\) 的定义, 我们的任务是考虑任意元素 \((Q_i)_{1 \leq i \leq m} \in E_D^{(n)} \setminus E_D^{(n+1)}\), 
+并提供 \(\log |c_n|_p\) 的上界, 其中 \(c_n\) 表示在 \(\sum_{i=1}^{m} f_i Q_i = c_n x^n + \dots\) 中 \(x^n\) 的领先项系数（阶数为 n）.
+
+回顾来自定理 6.0.2 表述的指标截止值记号 \(u_j \in \{0, 1, ..., m\}\) （对于 \(1 \le j \le r\)）. 
+令 \(h_i\) 是在 \(\{0,1,\ldots,r\}\) 中由 \(u_{h_i} < i \le u_{h_i+1}\) 定义的指标. 
+关于 \(|\cdot|_p\) 的超度量三角不等式直接给出:
+\[ \frac{\log|c_n|_p}{\log p} \]
+\begin{equation}\label{eq:7.3.10}
+\leq \max_{\substack{1 \leq i \leq m \\ 0 \leq k \leq \min\{n-1,D\}}} \left\{ \operatorname{val}_{p} \left( \prod_{j=1}^{h_{i}} [1, \dots, b_{j}(n-k)] \cdot \prod_{j=h_{i}+1}^{r} [1, \dots, y_{j}D] \right) + \operatorname{val}_{p} \left( \frac{(n-k)^{e_{i}}}{[1, \dots, \xi D]^{e_{i}}} \right) \right\} 
+\end{equation}
+\[ \leq \sum_{h=1}^{r} \operatorname{val}_{p} \left( [1, \dots, b_{h} \max\{n, (y_{h}/b_{h})D\}] \right) + \left( \max_{1 \leq i \leq m} e_{i} \right) \operatorname{val}_{p} \left( \frac{[\max\{n-D, 1\}, \dots, n]}{[1, \dots, \xi D]} \right). \]
+
+注意对于 \(n^{1/2} < p \leq \xi D\), 我们有 \(\operatorname{val}_p([\max\{n - D, 1\}, . . . , n]/[1, . . . , \xi D]) \leq 0\). 
+由于 \eqref{eq:7.3.10} 中 p-进估值下的所有项都独立于 p, 因而素数定理给出:
+\[ \begin{split} h_{\text{fin}}(\psi_D^{(n)}) &\leq \sum_{h=1}^r \log([1,\dots,b_h \max\{n,(y_h/b_h)D\}]) \\ &+ \left(\max_{1 \leq i \leq m} e_i\right) \sum_{p > \max\{n^{1/2}, \xi D\}} \operatorname{val}_p([\max\{n-D,1\},\dots,n]) \log p + o(n) \\ &\leq \sum_{h=1}^r b_h \max\{n,(y_h/b_h)D\} \\ &+ \left(\max_{1 \leq i \leq m} e_i\right) \sum_{\substack{p > \max\{n^{1/2}, \xi D\}, \\ p \mid [\max\{n-D,1\},\dots,n]}} \log p + o(n+D). \end{split} \]
+
+根据引理 5.0.4, 我们有对于 \(n \geq \max\{\xi, 1\}D\):
+\begin{equation}\label{eq:7.3.11}
+    \begin{aligned}
+        h_{\text{fin}}(\psi_{D}^{(n)}) 
+        &\leq \left(\max_{1 \leq i \leq m} e_{i}\right) \left(\left(D \sum_{j=1}^{\lfloor (n/D-1)/\max(1,\xi) \rfloor} 1/j\right) 
+        \left(\frac{n}{\lfloor (n/D + (\xi - 1)^{+})/\max(1, \xi) \rfloor} - \xi D\right)^{+}\right) \\
+        &+ \sum_{h=1}^{r} b_{h} \max\{n, (y_{h}/b_{h})D\} + o(n+D)
+    \end{aligned}
+\end{equation}
+
+再次根据引理 5.0.4（取 \(k = n - 1\)）, 我们有对于 \(\min\{\xi, 1\}D \leq n < D\):
+\begin{equation}\label{eq:7.3.12}
+h_{\text{fin}}(\psi_D^{(n)}) \le \left(\max_{1 \le i \le m} e_i\right) (n - \xi D)^+ + \sum_{h=1}^r b_h \max\{n, (y_h/b_h)D\} + o(n+D);
+\end{equation}
+
+对于 \(n < \xi D\), 估计则仅为:
+\begin{equation}\label{eq:7.3.13}
+h_{\text{fin}}(\psi_D^{(n)}) \le \sum_{h=1}^r b_h \max\{n, (y_h/b_h)D\} + o(n) + o(D).
+\end{equation}
+
+Andr{\'e} 的推论 2.6.1（证明见附录 B 以及下文自恰的引理 7.3.17）, 
+允许我们应用关于形式 bad approximability 的 Chudnovsky--Osgood 定理 3.2.13. 
+在 \(D \to \infty\) 渐近下, 通过 \(v \mapsto I_v^v(w)\) 的连续性, 这导致了总评估高度上界:
+\begin{equation}\label{eq:7.3.14}
+\sum_{n \in \mathcal{V}_D} h_{\infty}(\psi_D^{(n)}) \le \left( -\frac{m^2}{2} \log |\varphi'(0)| + m(\overline{\mathcal{O}(1)} \cdot \overline{\mathcal{O}(1)}) \right) D^2 + o(D^2).
+\end{equation}
+以及
+\begin{equation}\label{eq:7.3.15}
+\sum_{n \in \mathcal{V}_D} h_{\text{fin}}(\psi_D^{(n)}) \le \left( \left( \max_{1 \le i \le m} e_i \right) I_{\xi}^m(\xi) + \sum_{h=1}^r b_h \int_0^m \max\{s, y_h/b_h\} \, ds \right) D^2 + o(D^2) 
+\end{equation}
+\[ = \left( \left( \max_{1 \le i \le m} e_i \right) I_{\xi}^m(\xi) + \frac{1}{2} \left( \sigma_m m^2 + \sum_{h=1}^r y_h^2/b_h \right) \right) D^2 + o(D^2). \]
+
+我们提供更多关于如何利用定理 3.2.13 获得 \eqref{eq:7.3.15} 的细节; 
+完全相同的推理也适用于 \eqref{eq:7.3.14} 以及本节其余部分的其他类似评估高度估计. 
+首先, 引理 7.3.17 以及我们对定理 7.0.1 的常规假设意味着 \(f_1, \ldots, f_m\) 是 holonomic 函数. 
+设 \(\varepsilon\) 以及 \(C(\varepsilon)\) 如定理 3.2.13 的表述中所述. 
+在本节中, 评估高度 \(h_{\infty}(\psi_D^{(n)})\) 和 \(h_{\text{fin}}(\psi_D^{(n)})\) 在渐近上被赋予了 \(o(D+n)\) 隐式误差项的上估计, 
+且伴随着某些显式的非负主项, 它们在所有情况下显然都满足 \(\geq -C'D\), 
+在 \(D \gg 1\) 和 \(\varepsilon\) 中是一致的; 
+在这些估计中, \(C'\) 以及误差项的 \(o(D+n)\) 中的衰减速率仅依赖于 m, \(\{f_i\}\) 和 \(\varphi\). 
+（对于当前强调的 \(h_{\text{fin}}(\psi_D^{(n)})\) 情况, 我们当然可以简单地取 \(C' = 0\); 
+我们保留 \(C'\) 以说明在其他情况下的论证.） 
+对于任何 \(\varepsilon > 0\), 定理 3.2.13 给出 \(\mathcal{V}_D \subset [0, (m+\varepsilon)(D+1)+C(\varepsilon)]\) 且满足 \(\#\mathcal{V}_D = m(D+1)\). 
+因此, 总评估高度 \(\sum_{n \in \mathcal{V}_D} h_{\text{fin}}(\psi_D^{(n)})\) 
+由 \eqref{eq:7.3.11} (或 \eqref{eq:7.3.12}, \eqref{eq:7.3.13}) 的从 \(0 \leq n \leq (m+\varepsilon)(D+1)+C(\varepsilon)\) 的求和所控制, 
+减去至多 \(\varepsilon(D+1)+C(\varepsilon)\) 项的超额计数, 对所有这些项我们应用 \(\geq -C'D\) 下界来进行补偿. 
+在当前情况下, 我们在渐近上得到:
+\[ \begin{split} &\sum_{n \in \mathcal{V}_D} h_{\text{fin}}(\psi_D^{(n)}) \\ &\leq \left( \left( \max_{1 \leq i \leq m} e_i \right) I_{\xi}^{m+\varepsilon+C(\varepsilon)/D}(\xi) + \sum_{h=1}^r b_h \int_0^{m+\varepsilon+C(\varepsilon)/D} \max\{s, y_h/b_h\} \, ds \right) D^2 \\ &+ C' D(\varepsilon(D+1) + C(\varepsilon)) + o(D^2). \end{split} \]
+利用 \(I_u^v(w)\) 在 v 处的连续性, 我们在任意 \(\varepsilon > 0\) 下导出上估计:
+\[ \lim_{D\to\infty}\frac{\sum_{n\in\mathcal{V}_D}h_{\mathrm{fin}}(\psi_D^{(n)})}{D^2}\leq \left(\left(\max_{1\leq i\leq m}e_i\right)I_\xi^{m+\varepsilon}(\xi)+\sum_{h=1}^rb_h\int_0^{m+\varepsilon}\max\{s,y_h/b_h\}\,ds\right)+C'\varepsilon. \]
+由于不等式左边独立于定理 3.2.13 中 \(\varepsilon\) 的选择, 我们可以令 \(\varepsilon \to 0\) 并获得
+\[ \lim_{D \to \infty} \frac{\sum_{n \in \mathcal{V}_D} h_{\text{fin}}(\psi_D^{(n)})}{D^2} \le \left(\max_{1 \le i \le m} e_i\right) I_{\xi}^m(\xi) + \sum_{h=1}^r b_h \int_0^m \max\{s, y_h/b_h\} \, ds. \]
+这正是 \eqref{eq:7.3.15}.
+
+现在, 在我们的设定中, Bost 斜率不等式 \eqref{eq:7.2.14} 读作:
+\begin{equation}\label{eq:7.3.16}
+\widehat{\operatorname{deg}} \, \overline{E}_D \le \sum_{n \in \mathcal{V}_D} h_{\infty}(\psi_D^{(n)}) + \sum_{n \in \mathcal{V}_D} h_{\operatorname{fin}}(\psi_D^{(n)}).
+\end{equation}
+将上界 \eqref{eq:7.3.7}, \eqref{eq:7.3.14} 和 \eqref{eq:7.3.15} 相结合, 
+并选出 \(D \to \infty\) 渐近的主导 \(D^2\) 的系数, 
+我们通过 Bost 不等式 \eqref{eq:7.2.14} 导出上界:
+\[
+\begin{aligned}
+(\log |\varphi'(0)| - \sigma_m)m^2 
+&\le m \left(\overline{\mathcal{O}(1)}_{\varphi} \cdot \overline{\mathcal{O}(1)}_{\varphi}\right) + 2\left(\xi \left(\sum_{i=1}^m e_i\right) + \left(\max_{1 \le i \le m} e_i\right) I_{\xi}^m(\xi)\right) \\
+&\quad + \left(\sum_{h=1}^r y_h^2/b_h - 2\sum_{h=1}^r u_h y_h\right).
+\end{aligned}
+\]
+当对于所有 \(1 \le h \le r\) 均有 \(y_h = u_h b_h\) 时, 二次型 \(\sum_{h=1}^{r} y_h^2/b_h - 2\sum_{h=1}^{r} u_h y_h\) 
+达到其极小值, 因此结合 \eqref{eq:7.3.5} 我们获得了所需的边界.
+\end{proof}
+
+\begin{lemma}\label{lem:7.3.17}
+如果 \(\log |\varphi'(0)| > \sigma_m\), 那么所有 \(f_i\) 都是 holonomic.
+\end{lemma}
+
+（另请参见推论 2.6.1 及其在附录 B 中的证明.）
+
+\begin{proof}
+应用微分算子 \(\left(x\frac{d}{dx}\right)^{e_i}\) 从 \(f_i\) 的系数分母中移除 \(n^{e_i}\) 项, 
+我们可能且确实假设（对于证明本引理的目标而言没有一般性的损失） \(\mathbf{e} = \mathbf{0}\). 
+以下便是与附录 B 中完全相似的熟悉计算, 
+它实际上给出了 (B.0.1) 的另一种证明, 现在是在 Bost 斜率不等式的框架下. 
+对于我们在此处的具体目的, 我们需要对于每个 i 构建导数 \(f_i, f_i', f_i'', \ldots\) 之间的一个 \(\mathbf{Q}(x)\)-线性相关性. 
+假设相反, 所有这些导数都是 \(\mathbf{Q}(x)\)-线性无关的. 
+对于任意的 \(m' \in \mathbf{N}\), 我们应用本节主论证的剥离形式, 
+现在应用于秩为 \((m'+1)D\) 的评估模:
+\[ E_D = \bigoplus_{i=0}^{m'} f_i^{(j)} \mathbf{Z}[x]_{< D}, \]
+配备有欧几里得范数, 在其中 \(\{f_i^{(j)}x^k\}\) 是 \(E_D \otimes_{\mathbf{Z}} \mathbf{R}\) 的一组标准正交基.
+
+那么 \(\widehat{\operatorname{deg}}(\overline{E_D}) = 0\), 并且对于任何 \(n \in \mathcal{V}_D\), 
+通过 Poisson--Jensen 公式（例如参见\footnote{我们在 \cite{CDT21} 中取 \(d=1\) 以及 \(p(x)=x\). 这里与 \cite{CDT21} 中的假设有一个微小的区别: 我们在 \cite{CDT21} 中假设了 \(f_i(\varphi(z))\) 在 \(|z|\leq 1\) 上是全纯的, 而在此处我们仅假设 \(f_i(\varphi(z))\) 在 \(|z|<1\) 上是亚纯的. 对于我们在第 7 节中关于阿基米德高度的所有估计, 这一区别在误差项 \(o(n+D)\) 之外是微不足道的. 关键点在于, 对于任意的 \(\varepsilon>0\), 我们有 \(f_i(\varphi((1-\varepsilon)z))\) 在 \(|z|\leq 1\) 上是亚纯的. 所有 \(f_i(\varphi((1-\varepsilon)z))\) 在 \(\overline{\mathbf{D}}\) 的某个邻域内至多有有限个亚纯极点, 并且我们可以取一个满足 \(h(0)=1\) 的多项式 \(h(z)\in \mathbf{C}[z]\), 使得 \(h(z)f_i(\varphi((1-\varepsilon)z))\) 在 \(|z|\leq 1\) 的邻域内都是全纯的. 我们观察到, 一旦我们最终令 \(\varepsilon\to 0\), 用 \(h(z)f_i(\varphi((1-\varepsilon)z))\) 替换所有的 \(f_i(\varphi(z))\) 会产生相同的阿基米德估计. 详情参见引理 7.4.1 的证明.} \cite[第 2.4 节]{CDT21}）, 我们有：
+\[ h_{\infty}(\psi_D^{(n)}) \le -n\log|\varphi'(0)| + D\int_{\mathbf{T}}\log^+|\varphi(z)|\,\mu_{\mathrm{Haar}}(z) + o(n+D) \]
+且通过素数定理:
+\[ h_{\text{fin}}(\psi_D^{(n)}) \le \sigma_m n + o(n). \]
+
+固定一个满足 \(\log |\varphi'(0)| > \sigma_m + \epsilon\) 的 \(\epsilon > 0\). 
+那么存在一个 \(N_0 \in \mathbb{N}\), 使得对于所有 \(n \geq N_0\), 我们有:
+\[ h_{\infty}(\psi_D^{(n)}) \le -n \log |\varphi'(0)| + D \int_{\mathbf{T}} \log^+ |\varphi(z)| \, \mu_{\text{Haar}}(z) + (\epsilon/2)n + o(D); \]
+\[ h_{\text{fin}}(\psi_D^{(n)}) \le (\sigma_m + \epsilon/2)n. \]
+因此对于所有 \(n \in \mathbb{N}\),
+\[ h_{\infty}(\psi_D^{(n)}) \le -n \log |\varphi'(0)| + D \int_{\mathbf{T}} \log^+ |\varphi(z)| \, \mu_{\text{Haar}}(z) + (\epsilon/2)n + o(D); \]
+\[ h_{\text{fin}}(\psi_D^{(n)}) \le (\sigma_m + \epsilon/2)n + o(D). \]
+通过斜率不等式 \eqref{eq:7.2.14} 和 \(\log |\varphi'(0)| > \sigma_m + \epsilon\), 紧接着有:
+\begin{equation}\label{eq:7.3.18}
+    \begin{aligned}
+        0 = \widehat{\deg}(\overline{E_D}) 
+        &\le \sum_{n=0}^{\infty} \operatorname{rank}(E_D^{(n)}/E_D^{(n+1)}) \cdot h(\psi_D^{(n)}) \\
+        &= \sum_{n \in \mathcal{V}_D} h(\psi_D^{(n)}) \\
+        &\le -\left(\sum_{n \in \mathcal{V}_D} n\right) (\log |\varphi'(0)| - \sigma_m - \epsilon) \\
+        &+ (m'+1)D^2 \int_{\mathbf{T}} \log^+ |\varphi(z)| \mu_{\operatorname{Haar}}(z) + o(D^2) \\
+        &\le -\left(\sum_{n=0}^{(m'+1)D-1} n\right) (\log |\varphi'(0)| - \sigma_m - \epsilon) \\
+        &+ (m'+1)D^2 \int_{\mathbf{T}} \log^+ |\varphi(z)| \mu_{\operatorname{Haar}}(z) + o(D^2) \\
+        &= -\left(\frac{(m'+1)D}{2}\right) (\log |\varphi'(0)| - \sigma_m - \epsilon) \\
+        &+ (m'+1)D^2 \int_{\mathbf{T}} \log^+ |\varphi(z)| \mu_{\operatorname{Haar}}(z) + o(D^2)
+    \end{aligned}
+\end{equation}
+
+
+
+比较领先的渐近阶数 \(D^2\) 的系数, 然后令 \(\epsilon \to 0\), 我们有
+\[ m' + 1 \le \frac{2\int_{\mathbf{T}} \log^+ |\varphi(z)| \mu_{\text{Haar}}(z)}{\log |\varphi'(0)| - \sigma_m} < \infty, \]
+这与我们的假设——\(m'\) 可以选为完全任意大——相矛盾.
+\end{proof}
+
+\begin{example}\label{ex:7.3.19}
+对于与定理 A 的证明相关的案例（参见第 13 节）, 设
+\begin{equation*}
+\mathbf{b} := \begin{pmatrix}
+0 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4
+\end{pmatrix}^{\mathrm{t}}
+\end{equation*}
+我们计算出
+\[ \tau^{\flat}(\mathbf{b}) = (2+2) - \frac{2 \cdot 1^2 + 2 \cdot 3^2}{14^2} = \frac{191}{49}. \]
+\end{example}
+
+\begin{example}\label{ex:7.3.20}
+对于与定理 C 的证明相关的案例（参见第 14.5 节）, 设
+\begin{equation*}
+\mathbf{b} := \begin{pmatrix}
+0 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4
+\end{pmatrix}^{\mathrm{t}}
+\end{equation*}
+我们也计算出
+\[ \tau^{\flat}(\mathbf{b}) = (2+2) - \frac{2 \cdot 1^2 + 2 \cdot 3^2}{17^2} = \frac{1136}{289}. \]
+\end{example}
+
+\subsection{Bost--Charles 边界的凸性增强}\label{sec:7.4}
+
+我们遵循与第 7.3 节相同的轮廓, 使用相同的评估模 \(\overline{E}_D\) 并使用相同的非阿基米德评估高度估计. 
+其改进来自在阿基米德评估高度估计的步骤中, 最优地使用膨胀映射（dilated maps） \(\varphi_r(z) := \varphi(rz)\).
+
+为了在消逝过滤跳跃 \(n \in \mathcal{V}_D\) 处估计 \(\psi_D^{(n)}\), 
+我们考虑 \(Q_i \in \mathbf{Z}[x^{-1}]_{\leq D} = \Gamma(\mathbf{P}_{\mathbf{Z}}^1, \mathcal{O}(D))\), 
+使得 \(s := \sum_{i=1}^m f_i Q_i = c_n x^n + \ldots\) 在 \(x = 0\) 处具有精确的消逝阶数 n. 
+我们可以将 s 视为 \(\mathcal{O}(D)\) 的一个形式截面, 
+然后 \(s(x) \cdot x^D\) 规范地是一个形式函数. 
+回想一下, 我们已经为 \(E_D\) 配备了一个由 Hermitian 线丛 \(\overline{\mathcal{L}} = \overline{\mathcal{O}(1)}\) 所诱导的欧几里得范数, 
+在其上 Hermitian 度度由 \(\varphi_* \log^+ |z|^{-1}\) 所诱导. 
+作为推广, 我们将 \(\overline{\mathcal{L}}_r\) 定义为配备有由 \((\varphi_r)_* \log^+ |z|^{-1}\) 所诱导的 Hermitian 度量的线丛 \(\mathcal{O}(1)\). 
+显式地:
+\[ \|\mathbf{1}(y)\|_{\overline{\mathcal{L}}_r} := \exp\left(-\sum_{z \in \varphi_r^{-1}(y)} \log^+ \frac{1}{|z|}\right) = \prod_{z \in D(0,r), \, \varphi(z) = y} |z/r|. \]
+
+作为 \eqref{eq:7.3.9} 的推广, 我们拥有以下阿基米德评估高度估计, 在其中我们可以选取最优的半径参数 \(r = r(n)\):
+
+\begin{lemma}\label{lem:7.4.1}
+对于任何 \(0 < r \le 1\), 我们有
+\[ h_{\infty}(\psi_D^{(n)}) \le -n \log |\varphi_r'(0)| + D(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r) + o(D). \]
+\end{lemma}
+
+\begin{proof}
+我们假设了函数 \(\varphi^* f_i(z) = f_i(\varphi(z))\) 在 \(|z| < 1\) 上是亚纯的. 
+让我们首先指出, 我们可以将证明简化为更强的假设：\(\varphi^* f_i \in \mathcal{M}(\overline{\mathbf{D}})\), 
+即对于所有 \(1 \le i \le m\), \(f_i(\varphi(z))\) 在 \(|z| \le 1\) 的一个开邻域上是亚纯的. 
+事实上, 在接下来的证明中, 对于 \(r < 1\), 
+我们仅使用了 \(\varphi^* f_i\) 在 \(|z| \le r\) 的一个开邻域上是亚纯的假设; 
+因此我们只需要讨论 \(r = 1\) 情况下的简化步骤. 
+当然, 这个特定的 \(r = 1\) 案例正是由 Bost 和 Charles 给出的、并在 \eqref{eq:7.3.9} 中回顾的估计. 
+尽管如此, 我们阐明了一个用于从 \(r < 1\) 情况推导 \(r = 1\) 情况的极限论证, 
+因为同样的简化也可以应用于第 7--8 节的证明中, 
+以允许我们假设 \(\varphi^* f_i \in \mathcal{M}(\overline{\mathbf{D}})\). 
+注意
+\[ \lim_{r \to 1} \log |\varphi'_r(0)| = \log |\varphi'(0)|, \qquad \lim_{r \to 1} \overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r = \overline{\mathcal{L}} \cdot \overline{\mathcal{L}}. \]
+因此, 在 \(h_\infty(\psi_D^{(n)})\) 不等式上的 \(r \to 1^-\) 极限给出:
+\[ h_{\infty}(\psi_D^{(n)}) \le -n \log |\varphi'(0)| + D(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}) + o(n+D). \]
+通过定理 3.2.13 和引理 7.3.17 有 \(o(n+D)=o(D)\), 
+这给出了所需的具有 \(r=1\) 的不等式.
+
+因此, 我们从所有拉回函数的亚纯性 \(\varphi^* f_i \in \mathcal{M}(\overline{\mathbf{D}})\) 开始. 
+选择并固定一个全纯函数 \(h \in \mathcal{O}(\overline{\mathbf{D}})\), 
+满足 \(h(0) = 1\) 且所有 \(h \cdot \varphi^* f_i \in \mathcal{O}(\overline{\mathbf{D}})\) 都是全纯的. 
+对于 \(r \in (0,1]\) 以及 \(z \in \overline{\mathbf{D}}\), 
+我们遵循记号 \(h_r(z) := h(rz)\). 
+那么对于如上所述的任何 \(s = \sum_{i=1}^m f_i Q_i = c_n x^n + \ldots\), 
+\(z^{-n} h_r(z) \cdot \varphi_r^* (s(x) \cdot x^D) \in \mathcal{O}(\overline{\mathbf{D}})\) 
+是一个全纯函数, 其在 \(z = 0\) 处的值等于 \(c_n \varphi_r'(0)^n \neq 0\). 
+因此 \(\log |z^{-n} h_r(z) \cdot \varphi_r^* (s(x) \cdot x^D)|\) 是 \(\overline{\mathbf{D}}\) 上的一个次调和函数.
+
+我们修改了 \cite[第 10.5.5 节]{Bos20} 中的计算. 
+不使用文献中所使用的 \(\varphi\), 
+我们对这个次调和函数 \(\log |z^{-n}h_r\varphi_r^*(s(x)\cdot x^D)|\) 应用 Poisson--Jensen 公式——或次调和性质. 
+这为我们提供了上界:
+\begin{equation}\label{eq:7.4.2}
+\log |c_n| \le -n \log |\varphi_r'(0)| + \int_{\mathbf{T}} \log |h_r \varphi_r^*(s(x) \cdot x^D)| \, \mu_{\text{Haar}}
+\end{equation}
+\[ = -n \log |\varphi_r'(0)| + \int_{\mathbf{T}} \log |\varphi_r^*(s(x) \cdot x^D)| \, \mu_{\text{Haar}} + O(1). \]
+
+现在我们声称存在等式:
+\begin{equation}\label{eq:7.4.3}
+D(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r) = -\int_{\mathbf{T}} \log \|\varphi_r^* x^{-D}\|_{\varphi_r^* \overline{\mathcal{L}}^{\otimes D}} \mu_{\text{Haar}}.
+\end{equation}
+为了证明它, 我们从 Poincaré--Lelong 公式开始, 该公式给出:
+\[ \frac{i}{\pi} \partial \overline{\partial} \log \|\varphi_r^*(x^{-D})\|_{\varphi_r^* \overline{\mathcal{L}}^{\otimes D}} = -c_1 \left( \varphi_r^* \overline{\mathcal{L}}^{\otimes D} \right), \]
+\[ \frac{i}{\pi} \partial \overline{\partial} \log^+ |z|^{-1} = -\delta_0 + \mu_{\text{Haar}}. \]
+因此, 根据 Green--Stokes 公式, 我们发现
+\[ -\int_{\mathbf{T}} \log \|\varphi_{r}^{*}x^{-D}\|_{\varphi_{r}^{*}\overline{\mathcal{L}}^{\otimes D}} \mu_{\text{Haar}} \]
+\[ = \int_{\overline{\mathbf{D}}} -\log \|\varphi_{r}^{*}x^{-D}\|_{\varphi_{r}^{*}\overline{\mathcal{L}}^{\otimes D}} \frac{i}{\pi} \partial \overline{\partial} \log^{+} |z|^{-1} -\log \|\varphi_{r}^{*}x^{-D}\|_{\varphi_{r}^{*}\overline{\mathcal{L}}^{\otimes D}}\Big|_{z=0} \]
+\[ = \int_{\overline{\mathbf{D}}} -\frac{i}{\pi} \partial \overline{\partial} \log \|\varphi_{r}^{*}x^{-D}\|_{\varphi_{r}^{*}\overline{\mathcal{L}}^{\otimes D}} \log^{+} |z|^{-1} + \widehat{\operatorname{deg}} \left(\varphi_{r}^{*}\overline{\mathcal{L}}^{\otimes D}\Big|_{z=0}\right) \]
+\[ = \int_{\overline{\mathbf{D}}} \log^{+} |z|^{-1} c_{1}(\varphi_{r}^{*}\overline{\mathcal{L}}^{\otimes D}) + \widehat{\operatorname{deg}} \left(\overline{\mathcal{L}}^{\otimes D}\Big|_{x=0}\right) \]
+\[ = D \cdot \left((\iota, \varphi_{r})^{*}\overline{\mathcal{L}} \cdot ([0], \log^{+} |z|^{-1})\right) \]
+\[ = D \cdot \left(\overline{\mathcal{L}} \cdot (\iota, \varphi_{r})_{*}([0], \log^{+} |z|^{-1})\right) \]
+\[ = D \cdot \left(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_{r}\right), \]
+以此证明了 \eqref{eq:7.4.3}.
+
+此时, 通过 \eqref{eq:7.4.2} 和逐点分解:
+\begin{equation}\label{eq:7.4.4}
+\log |\varphi_r^*(s(x) \cdot x^D)| = \log \|\varphi_r^* s\|_{\varphi_r^* \overline{\mathcal{L}}^{\otimes D}} - \log \|\varphi_r^* x^{-D}\|_{\varphi_r^* \overline{\mathcal{L}}^{\otimes D}}
+\end{equation}
+在 \(\mathbf{T}\) 被积函数内部, 如果我们在 \(\|s\| \le 1\) 的假设下证明第一项在 \(\mathbf{T}\) 积分上的一个 \(o(D)\) 边界, 则引理成立.
+
+如果在积分测度 \(\mu_{\text{Haar}}\) 的地方, 我们在 \(\mathbf{D}\) 上拥有一个连续测度 \(\mu\), 
+那么我们本可以拥有一个常数 C 满足 \(C\varphi^*\nu \geq \mu\), 
+然后我们本可以有
+\[ 0 \ge \log \|s\| \ge \max_{1 \le i \le m} \log \|Q_i\| = \frac{1}{2} \max_{1 \le i \le m} \log \int_{\mathcal{X}(\mathbf{C})} \|Q_i\|_{\mathcal{L}}^2 \nu \]
+\[ \ge C' + \frac{1}{2} \log \int_{\overline{\mathbf{D}}} \|\varphi^* s\|_{\varphi^* \overline{\mathcal{L}}}^2 \mu \ge C' + \int_{\mathbf{T}} \log \|\varphi^* s\|_{\varphi^* \overline{\mathcal{L}}} \mu, \]
+其中 \(C'\) 是一个仅取决于 \(m, f_i, C\) 且独立于 D 的常数. 
+我们在通过光滑 Green 函数逼近 \(\log^+ \frac{1}{|z|}\) （\(\mu_{\text{Haar}}\) 的 Green 函数）后, 
+获得了关于 \(\mu_{\text{Haar}}\) 在 \(\mu\) 处的所需边界. 参见第 8.2.11 节的细节.
+\end{proof}
+
+接下来, 我们显式地计算算术相交数 \((\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r)\):
+
+\begin{lemma}\label{lem:7.4.5}
+对于 \(0 < r < 1\), 我们有
+\[ (\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r) = \int_{\mathbf{T}^2} \log |\varphi(z) - \varphi(rw)| \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w). \]
+\end{lemma}
+
+\begin{proof}
+从上面的讨论中召回, 我们直接从定义中拥有:
+\[ (\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r) = \int_{\overline{\mathbb{D}}} \log^+ |z|^{-1} c_1(\varphi_r^* \overline{\mathcal{L}}) + \widehat{\operatorname{deg}}(\overline{\mathcal{L}}|_{x=0}). \]
+根据 \(\overline{\mathcal{L}}\) 的定义以及 Chern 形式在推下下的函子行为（参见 \cite[命题 3.4.5(2)]{BC22}）, 我们有:
+\[
+\begin{aligned}
+c_1(\varphi_r^*\overline{\mathcal{L}}) &= \varphi_r^*\varphi_*\mu_{\mathrm{Haar}}, \\
+(\overline{\mathcal{L}}\cdot\overline{\mathcal{L}}_r) &= \int_{\overline{\mathbf{D}}} \log^+|z|^{-1}\varphi_r^*\varphi_*\mu_{\mathrm{Haar}} + \widehat{\deg}(\overline{\mathcal{L}}|_{x=0}).
+\end{aligned}
+\]
+再次从上面的讨论召回, 以及从 \(\|\mathbf{1}(x)\|_{\overline{\mathcal{L}}} = \prod_{z \in \overline{\mathbf{D}}, \varphi(z) = x} |z|\) 
+并利用 Poisson--Jensen 公式有:
+\[ \widehat{\operatorname{deg}}(\overline{\mathcal{L}}|_{x=0}) = -\log ||x^{-1}||_{\overline{\mathcal{L}}} \Big|_{x=0} = -\log \left( (\varphi(z))^{-1} \prod_{z \in \overline{\mathbf{D}}, \, \varphi(z) = x} |z| \right) \Big|_{x=0} \]
+\[ = \log |\varphi'(0)| + \sum_{0 \neq z \in \overline{\mathbf{D}}, \, \varphi(z) = 0} \log |z|^{-1} \]
+\[ = \int_{\mathbf{T}} \log |\varphi(z)| \mu_{\mathrm{Haar}}(z), \]
+其中乘积和求和都带有重度计算.
+
+我们遵循与 \cite[第 5.4 节和示例 5.3.2.1]{BC22} 中完全相同的计算. 
+注意在 \(\mathbb{C}^2\) （坐标为 x, y）上, 我们有
+\[ \frac{i}{\pi} \partial \overline{\partial} \log |x - y|^{-1} = -\delta_{\Delta(\mathbf{C})}, \]
+其中 \(\Delta(\mathbf{C})\) 表示 \(\mathbf{C}^2\) 上的对角线因子.
+
+对于每个 \(z \in \mathbf{T} \subset \overline{\mathbf{D}}\), 
+我们有（在此我们也将 \(\varphi(z)\) 视为将 \(\overline{\mathbf{D}}\) 上的所有点映射到 \(\varphi(z)\) 的常数函数）:
+\[ \varphi_r^* \varphi_* \delta_z = \varphi_r^* \delta_{\varphi(z)} = (\varphi_r, \varphi(z))^* \delta_{\Delta(\mathbf{C})} \]
+\[ = (\varphi_r, \varphi(z))^* \frac{i}{\pi} \partial \overline{\partial} \log |x - y| = \frac{i}{\pi} \partial \overline{\partial} \log |\varphi_r(w) - \varphi(z)|. \]
+因此对于固定的 z, 通过使用 Green--Stokes 公式（尽管此处的 Green 函数不像 \cite{BC22} 中那样光滑, 但这也是可以的）, 我们有:
+\[ \begin{split} \int_{\overline{\mathbf{D}}} \log^{+} |w|^{-1} \varphi_{r}^{*} \varphi_{*} \delta_{z} &= \int_{\overline{\mathbf{D}}} \log^{+} |w|^{-1} \frac{i}{\pi} \partial \overline{\partial} \log |\varphi_{r}(w) - \varphi(z)| \\ &= \int_{\overline{\mathbf{D}}} \left( \frac{i}{\pi} \partial \overline{\partial} \log^{+} |w|^{-1} \right) \cdot \log |\varphi_{r}(w) - \varphi(z)| \\ &= \int_{\overline{\mathbf{D}}} \left( \mu_{\text{Haar}}(w) - \delta_{w=0} \right) \cdot \log |\varphi_{r}(w) - \varphi(z)| \\ &= \int_{\overline{\mathbf{T}}} \log |\varphi_{r}(w) - \varphi(z)| \mu_{\text{Haar}}(w) - \log |\varphi(z)|. \end{split} \]
+我们现在对 T 上的 z 进行积分, 然后我们有
+\[ \int_{\overline{\mathbf{D}}} \log^{+}|w|^{-1} \varphi_{r}^{*} \varphi_{*} \mu_{\text{Haar}} = \int_{\mathbf{T}^{2}} \log |\varphi_{r}(w) - \varphi(z)| \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w) - \int_{\mathbf{T}} \log |\varphi(z)| \mu_{\text{Haar}}(z). \]
+我们到达了声称的公式:
+\[ (\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r) = \int_{\overline{\mathbf{D}}} \log^+ |z|^{-1} \varphi_r^* \varphi_* \mu_{\text{Haar}} + \int_{\mathbf{T}} \log |\varphi(z)| \mu_{\text{Haar}}(z) \]
+\[ = \int_{\mathbf{T}^2} \log |\varphi_r(w) - \varphi(z)| \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w). \]
+\end{proof}
+
+\begin{proof}[定理 7.1.6 和 7.1.10 的证明]
+根据引理 7.1.4, 我们有 \(\widehat{T}(r,\varphi)\) 作为 \(\log r\) 的函数是非递减且凸的. 
+因此只需证明定理 7.1.6. 
+根据引理 7.4.1 和 7.4.5, 利用斜率记号 \eqref{eq:7.1.7}, 
+我们有对于 \(n/D \in [\alpha_k, \alpha_{k+1}]\), 
+对于 \(h_{\infty}(\psi_D^{(n)})\) 的最优边界是通过在 \(0 \le k \le l\) 中使用 \(r_k\) 获得的; 
+在此我们设定 \(\alpha_0 = 0, \alpha_{l+1} = m\). 
+再次注意, 根据推论 2.6.1 和定理 3.2.13, 
+我们有（对于任何 \(\varepsilon > 0\) 和 \(D \gg_{\varepsilon} 1\)）包含关系 \(\mathcal{V}_D \subset [0, (m+\varepsilon)(D+1) + C(\varepsilon)]\). 
+对于 \(n \in [mD, (m+\varepsilon)(D+1) + C(\varepsilon)]\), 
+我们使用通过完全半径 \(r_l = 1\) 获得的 \(h_{\infty}(\psi_D^{(n)})\) 的边界. 
+令 \(\varepsilon \to 0\), 通过类似于定理 7.0.1 证明的论证（参见 \eqref{eq:7.3.15} 的证明）, 
+我们从引理 7.4.1 和 7.4.5 以及直接的计算中推导出:
+\[ \sum_{n \in \mathcal{V}_{D}} h_{\text{fin}}(\psi_{D}^{(n)}) \]
+\[ \leq \left(-\frac{m^{2}}{2} \log |\varphi'(0)| + \sum_{k=0}^{l} (\alpha_{k+1} - \alpha_{k}) \widehat{T}(r_{k}, \varphi) - \frac{1}{2} (\alpha_{k+1}^{2} - \alpha_{k}^{2}) \log r_{k}\right) D^{2} + o(D^{2}) \]
+\[ = \left(-\frac{m^{2}}{2} \log |\varphi'(0)| + m\widehat{T}(1, \varphi) - \frac{1}{2} \sum_{k=1}^{l} \alpha_{k}^{2} (\log r_{k} - \log r_{k-1})\right) D^{2} + o(D^{2}). \]
+然后, 结合此估计与 \eqref{eq:7.3.15} 和 \eqref{eq:7.3.7}, 便得出所需的边界.
+\end{proof}
+
+\begin{example}\label{ex:7.4.6}
+在定理 A 的证明中, 我们如第 A.5 节那样使用 \(\varphi\), 
+在那里我们有 \((\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}) = 11.844...\) 且 \(m = 14\).
+
+我们首先应用具有 \(l=1\) 且 \(r_0=e^{-1/2}, r_1=1\) 的定理 7.1.6. 我们计算
+\[ (\overline{\mathcal{L}}_{e^{-1/2}} \cdot \overline{\mathcal{L}}) = 10.5739 \dots, \]
+和斜率
+\[ \alpha_1 = \frac{(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}) - (\overline{\mathcal{L}}_{e^{-1/2}} \cdot \overline{\mathcal{L}})}{\log r_1 - \log r_0} = 2.5410 \dots \]
+因此, 凸性节省为
+\[ \frac{\frac{1}{m}\alpha_1^2(\log r_1 - \log r_0)}{\log|\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} = 0.27243\dots \]
+换句话说, 我们通过以下矛盾不等式获得了证明:
+\begin{equation}\label{eq:7.4.7}
+\frac{\left(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}\right) - \frac{1}{m}\alpha_1^2(\log r_1 - \log r_0)}{\log|\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} = 13.99303... - 0.27243... = 13.7206... < 14.
+\end{equation}
+
+我们通过选取更多的半径来进行进一步细化:
+\[ r_0 = e^{-1}, \quad r_1 = e^{-1/2}, \quad r_2 = e^{-1/4}, \quad r_3 = 1. \]
+在这些半径处, 我们计算出相应的 Bost--Charles 特征积分:
+\[
+\begin{aligned}
+\widehat{T}(r_3, \varphi) &= (\overline{\mathcal{L}}, \overline{\mathcal{L}}) = 11.844..., \\
+\widehat{T}(r_2, \varphi) &= (\overline{\mathcal{L}}_{e^{-1/4}} \cdot \overline{\mathcal{L}}) = 11.049..., \\
+\widehat{T}(r_1, \varphi) &= (\overline{\mathcal{L}}_{e^{-1/2}} \cdot \overline{\mathcal{L}}) = 10.573..., \\
+\widehat{T}(r_0, \varphi) &= (\overline{\mathcal{L}}_{e^{-1}} \cdot \overline{\mathcal{L}}) = 9.8766...;
+\end{aligned}
+\]
+以及相应的斜率:
+\[ \alpha_1 = 1.3943..., \quad \alpha_2 = 1.9018..., \quad \alpha_3 = 3.1802... \]
+我们因此导出在 holonomy 边界中如下的凸性节省:
+\[ \frac{\frac{1}{m} \sum_{k=1}^{3} \alpha_k^2 (\log r_k - \log r_{k-1})}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} = 0.37171\dots; \]
+换句话说, 细化后的 holonomy 边界为
+\begin{equation}\label{eq:7.4.8}
+13.99303... - 0.37171... = 13.621...
+\end{equation}
+\end{example}
+
+\begin{example}\label{ex:7.4.9}
+为了证明定理 A, 正如在注记 A.5.2 中所讨论的, 
+我们可以尝试仅使用 9 个函数（而不加入积分）. 
+然后, 在上述示例中具有 \(l = 3\) 的定理 7.1.6 给出
+\[ \frac{11.844...-\frac{1}{9}\sum_{k=1}^{3}\alpha_{k}^{2}(\log r_{k}-\log r_{k-1})}{\log\left(256\cdot\frac{5448339453535586608000000000}{865883407565631122430056127}\right)-2\cdot157/81}=9.4203...<10, \]
+这更接近 9 的门槛, 但对于画出与 9 个函数的矛盾仍然是不够的. 
+这就是为什么我们必须引入积分的想法的原因. 
+\end{example}
+
+\subsection{二项式度量：定理 7.1.13 的证明}\label{sec:7.5}
+
+\begin{proof}[定理 7.1.13 的证明]
+我们召回我们关于 \(f_i\) 分母类型的假设. 设定 \(u_0 := 0\) 且 \(u_{r+1} := m\). 
+对于 \(0 \le h \le r\), 如果 \(u_h < i \le u_{h+1}\), 那么
+\[ f_i(x) = a_{i,0} + \sum_{n=1}^{\infty} a_{i,n} \frac{x^n}{n^{e_i}[1,\dots,b_1 \cdot n] \cdot \cdots [1,\dots,b_h \cdot n]}, \quad a_{i,n} \in \mathbf{Z}. \]
+我们取我们的评估模为以下秩为 \(mD\) 的自由 \(\mathbf{Z}\)-模:
+\[ E_D = \bigoplus_{h=0}^r \bigoplus_{i=u_h+1}^{u_{h+1}} \frac{[1, \dots, \xi D]^{e_i}}{[1, \dots, u_{h+1}b_{h+1}D] \cdots [1, \dots, u_rb_rD]} f_i \mathbf{Z}[x]_{< D}. \]
+我们为 \(E_D\) 配备如下欧几里得范数：该范数以 \(\{f_i x^k\}_{1\le i\le m, 0\le k<D}\) 为正交基, 
+且向量长度满足 \(\|x^k\| = e^{D(\lambda t^r+\mu t)}\), 其中 \(t = k/D\). 
+根据我们的假设, 召回 \(\lambda > 0\) 且 \(r > 1\). 我们用 \(\overline{E}_D\) 表示这一欧几里得格.
+
+将 \(\widehat{\operatorname{deg}} \, \overline{E}_D\) 的定义公式 \eqref{eq:7.2.3} 应用于 \(E_D \otimes \mathbf{Q}\) 
+的 \(\mathbf{Q}\)-基底 \(\{f_i x^k\}_{1 \leq i \leq m, 0 \leq k < D}\) 处, 
+我们计算出当 \(D \to \infty\) 时:
+\begin{equation}\label{eq:7.5.1}
+\begin{aligned}
+\widehat{\deg} \, \overline{E}_D &= -m \left( \int_0^1 \lambda t^r + \mu t \, dt \right) D^2 + \left( \sum_{h=0}^{r-1} (u_{h+1} - u_h) \sum_{j=h+1}^r u_j b_j \right) D^2 \\
+&\quad - \left( \xi \sum_{i=1}^m e_i \right) D^2 + o(D^2) \\
+&= -m \left( \frac{\lambda}{r+1} + \frac{\mu}{2} \right) D^2 + \left( \sum_{h=1}^r u_h^2 b_h - \xi \sum_{i=1}^m e_i \right) D^2 + o(D^2).
+\end{aligned}
+\end{equation}
+
+我们再次令 \(F_{\mathbf{Q}} := \mathbf{Q}[x]\), 并且通过 \(x=0\) 处的消逝阶数对其进行过滤:
+\[ F_{\mathbf{Q}} = F_{\mathbf{Q}}^{(0)} \supseteq F_{\mathbf{Q}}^{(1)} \supseteq \cdots \supseteq F_{\mathbf{Q}}^{(n)} \supseteq \cdots, \]
+其中
+\[ F_{\mathbf{Q}}^{(n)} := \operatorname{Span}_{\mathbf{Q}} \{ x^k : k \ge n \}. \]
+Graded 分量 \(F_{\mathbf{Q}}^{(n)}/F_{\mathbf{Q}}^{(n+1)}\) 是一个一维 \(\mathbf{Q}\)-向量空间, 
+由商映射下 \(x^n\) 的像所生成. 
+\(F_{\mathbf{Q}}^{(n)}/F_{\mathbf{Q}}^{(n+1)}\) 上的欧几里得格结构由商映射下 \(x^n\) 的像所生成的自由秩 1 \(\mathbf{Z}\)-模 
+以及满足 \(\|x^n\| = 1\) 的欧几里得范数所给出. 
+除了在 x 的幂次中有一个 \(-D\) 的移动之外, 这与第 7.3 节中是相同的.
+
+与第 7.3 节类似, 我们拥有自然单射评估映射 \(\psi_D: E_D \to F_{\mathbf{Q}}\), 
+这在 graded 分量上诱导了单射 \(\psi_D^{(n)}: E_D^{(n)}/E_D^{(n+1)} \to F_{\mathbf{Q}}^{(n)}/F_{\mathbf{Q}}^{(n+1)}\). 
+我们仍然有 \(\operatorname{rank} E_D^{(n)}/E_D^{(n+1)} \in \{0,1\}\), 
+并且消逝过滤跳跃集合 \(\mathcal{V}_D = \left\{n \in \mathbf{N} : \operatorname{rank} E_D^{(n)}/E_D^{(n+1)} = 1\right\}\) 的基数满足 \(\#\mathcal{V}_D = \operatorname{rank} E_D = mD\).
+
+我们现在提供关于评估高度 \(h_{\infty}(\psi_D^{(n)})\) 和 \(h_{\text{fin}}(\psi_D^{(n)})\) 的上界估计. 
+对于 \(v \in M_{\mathbf{Q}}\), 根据局部评估高度 \(h_v\) 的定义, 
+我们考虑任意 \((Q_i)_{1 \leq i \leq m} \in E_D^{(n)} \setminus E_D^{(n+1)}\), 
+我们的任务是提供 \(\log |c_n|_v - \log \|(Q_i)_{1 \leq i \leq m}\|_{E_D,v}\) 的上界, 
+其中 \(c_n\) 表示在 \(\sum_{i=1}^m f_i(x)Q_i(x)\) 中 \(x^n\) 的系数, 
+且 \(|\cdot|_v\) 是 \(\mathbf{Q}\) 上的常用 v-进范数.
+
+对于 \(v=\infty\), 我们使用 \(h_{\infty}(\psi_D^{(n)})\) 的等价解释：
+考虑任意满足 \(\|(Q_i)_{1\leq i\leq m}\|_{E_D,\infty}\leq 1\) 
+的 \((Q_i)_{1\leq i\leq m}\in E_{D,\mathbf{R}}^{(n)}\setminus E_{D,\mathbf{R}}^{(n+1)}\), 
+并提供 \(\log |c_n|_{\infty}\) 的上界, 这就是我们对于 \(h_{\infty}(\psi_D^{(n)})\) 的上界估计. 
+根据我们的二项式度量的定义, 暂且记 \(t:=k/D\), 
+单位球条件 \(\|(Q_i)_{1\leq i\leq m}\|_{E_D,\infty}\leq 1\) 
+意味着对于多项式 \(Q_i(x)=\sum_{k=0}^{D-1}\alpha_{i,k}x^k\) 的系数有边界 \(|\alpha_{i,k}|_{\infty}\leq e^{-D(\lambda t^r+\mu t)}\) （对于所有 \(1\leq i\leq m\)）. 
+为了简化记号, 我们记 \(f_i(x) = \sum_{n=0}^{\infty} a'_{i,n} x^n\). 
+根据假设, 所有 \(f_i\) 在对于所有 \(\rho < R\) 的闭圆盘 \(\overline{D(0,\rho)}\) 上收敛. 
+我们利用这一信息来导出在 \(n/D\) 的某些范围内有用的 \(h_{\infty}(\psi_D^{(n)})\) 上界. 
+在 \(\overline{\mathbf{D}}_{\rho}\) 上的解析性意味着 \(|a'_{i,k}|_{\infty} = O_{\rho}(\rho^{-k})\), 
+其中隐式常数仅依赖于 \(\rho, f_1, \ldots, f_m\), 而不依赖于 k. 
+因此, 对于任意 \(n \in \mathbf{N}\), 我们从
+\[ c_n = \sum_{i=1}^m \sum_{k=0}^{\min(n,D-1)} \alpha_{i,k} a'_{i,n-k}, \quad \text{从而} \quad |c_n|_{\infty} \leq mD \max_{\substack{1 \leq i \leq m, \\ 0 \leq k \leq \min(n,D-1)}} |\alpha_{i,k}|_{\infty} \cdot |a'_{i,n-k}|_{\infty} \]
+中推导出以下阿基米德评估高度的边界:
+\begin{equation}\label{eq:7.5.2}
+h_{\infty}(\psi_D^{(n)}) \le \left(\max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log \rho \right\} \right) D + o_{\rho}(D).
+\end{equation}
+
+在极大值之下关于 \(t \in [0, \min\{1, n/D\}]\) 的函数是凹的, 并且特别是单峰的. 
+从这里很容易证明极限 \(\rho \to R^{-}\):
+\begin{equation}\label{eq:7.5.3}
+h_{\infty}(\psi_D^{(n)}) \le \left(\max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log R \right\} \right) D + o(n + D).
+\end{equation}
+
+我们包含此极限论证的细节, 因为它还揭示了极限点 \(\rho = R^{-}\) 确实是跨越 \(\rho \in (0, R)\) 
+在 \eqref{eq:7.5.2} 中做出的最优选择. 
+让我们用 \(t = t_R\) 以及 \(t = t_\rho\) 分别表示在 \eqref{eq:7.5.3} 和 \eqref{eq:7.5.2} 
+花括号下方的单峰函数的极大值点. 我们有（注意根据定义有 \(0 \le t_R, t^{\rho} \le \min\{1, n/D\}\)）:
+\[ \max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log \rho \right\} \ge -\lambda t_R^r - \mu t_R - (n/D - t_R) \log \rho \]
+\[ = (\log R - \log \rho)(n/D - t_R) + \max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log R \right\} \]
+\[ \ge \max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log R \right\}, \]
+且同理有,
+\[ \max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log R \right\} \ge -\lambda t_\rho^r - \mu t_\rho - (n/D - t_\rho) \log R \]
+\[ = -(\log R - \log \rho)(n/D - t_\rho) + \max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log \rho \right\} \]
+\[ \ge -(\log R - \log \rho)(n/D) + \max_{0 \le t \le \min\{1, n/D\}} \left\{ -\lambda t^r - \mu t - (n/D - t) \log \rho \right\}. \]
+这证明了 \eqref{eq:7.5.3}, 并且也证明了在 \eqref{eq:7.5.2} 中取极限 \(\rho \to R^{-}\) 的最优性. 
+继续证明, 我们设定 \(s := n/D\), 并且从定理的表述中召回我们的记号
+\[ \chi_0 := \min \left\{ 1, \left( \frac{\max\{0, \log R - \mu\}}{\lambda r} \right)^{1/(r-1)} \right\}. \]
+它的含义如下. 通过与引理 7.1.15 证明中完全相同的计算, 
+以下阿基米德评估高度的边界在范围 \(s \geq \chi_0\) 内是有效的:
+\begin{equation}\label{eq:7.5.4}
+h_{\infty}(\psi_D^{(n)}) \le \left(\Gamma(\log R, r, \lambda, \mu) - s\log R\right)D + o(n+D);
+\end{equation}
+而在范围 \(0 \le s \le \chi_0\) 内, 以下改进是成立的:
+\begin{equation}\label{eq:7.5.5}
+h_{\infty}(\psi_D^{(n)}) \le (-\lambda s^r - \mu s)D + o(n) + o(D).
+\end{equation}
+说 \(s \in [0, \chi_0]\) 是 \eqref{eq:7.5.5} 相比于 \eqref{eq:7.5.4} 具有改进的定义域, 这恰好是 \(\chi_0\) 的定义.
+
+对于范围 \(s > \chi_0\), 我们转而应用 Poisson--Jensen 公式于全纯函数
+\[ h(z) \cdot \varphi^* \left( \sum_{i=1}^m f_i Q_i \right) \cdot z^{-n} \in \mathcal{O}(\overline{\mathbf{D}}) \]
+的对数, 其中一个任意的 \(h \in \mathcal{O}(\overline{\mathbf{D}})\) 被固定, 
+满足 \(h(0) = 1\) 且对于所有 \(i = 1, \dots, m\) 都有 \(h \cdot \varphi^* f_i \in \mathcal{O}(\overline{\mathbf{D}})\). 
+我们导出通常的边界（在此我们还使用 \(|\cdot|_{\infty}\) 来表示 \(\mathbf{C}\) 上的普通绝对值）:
+\[
+\begin{aligned}
+\log |c_n|_{\infty} &\le -n\log|\varphi'(0)| + \int_{\mathbf{T}} \left| h \cdot \varphi^* \left( \sum_{i=1}^m f_i Q_i \right) \right|_{\infty} \mu_{\text{Haar}} \\
+&\le -n\log|\varphi'(0)| + \int_{\mathbf{T}} \max_{\substack{1 \leq i \leq m \\ 0 \leq k \leq \min\{n, D-1\}}} (\log|\alpha_{i,k}|_{\infty} + k\log|\varphi(z)|_{\infty}) \mu_{\text{Haar}} + o(D) \\
+&\le -n\log|\varphi'(0)| + \int_{\mathbf{T}} \max_{0 \leq k \leq \min\{n, D-1\}} \Big( D(-\lambda(k/D)^r - \mu(k/D)) \\
+&\qquad\qquad\qquad\qquad\qquad\qquad + k\log|\varphi(z)|_{\infty} \Big) \mu_{\text{Haar}} + o(D).
+\end{aligned}
+\]
+因此, 根据通过二项式度量权重函数 \(\lambda t^r + \mu t\) 
+的 Legendre 变换 \(\Gamma(x; r, \lambda, \mu)\) 对 \(T(\varphi; r, \lambda, \mu)\) 的定义, 
+我们对所有阿基米德评估高度的上界导出以下估计:
+\begin{equation}\label{eq:7.5.6}
+h_{\infty}(\psi_D^{(n)}) \le -n\log|\varphi'(0)| + DT(\varphi; r, \lambda, \mu) + o(D).
+\end{equation}
+
+注意, 边界 \eqref{eq:7.5.4} 优于 \eqref{eq:7.5.6} 当且仅当
+\[ \frac{n}{D} \le \chi_1 := \frac{T(\varphi; r, \lambda, \mu) - \Gamma(\log R; r, \lambda, \mu)}{\log |\varphi'(0)| - \log R}. \]
+因此, 根据定理 3.2.13（在取 \(D \to \infty\) 之后立刻令 \(\varepsilon \to 0\)）, 我们有:
+\begin{equation}\label{eq:7.5.7}
+\begin{aligned}
+\limsup_{D \to \infty} \left\{ D^{-2} \sum_{n \in \mathcal{V}_D} h_{\infty}(\psi_D^{(n)}) \right\} \le &\int_0^{\chi_0} (-\lambda s^r - \mu s) \, ds \\
+&+ \int_{\chi_0}^{\chi_1} \left( \Gamma(\log R; r, \lambda, \mu) - s \log R \right) ds \\
+&+ \int_{\chi_1}^m \left( T(\varphi; r, \lambda, \mu) - s \log |\varphi'(0)| \right) ds \\
+= mT(\varphi; r, \lambda, \mu) - \frac{m^2}{2} \log |\varphi'(0)| &- \frac{(T(\varphi; r, \lambda, \mu) - \Gamma(\log R; r, \lambda, \mu))^2}{2(\log |\varphi'(0)| - \log R)} \\
+&- \chi_0 \Gamma(\log R; r, \lambda, \mu) \\
+&+ \chi_0^2(\log R - \mu) \left( \frac{1}{2} - \frac{1}{r(r+1)} \right).
+\end{aligned}
+\end{equation}
+
+接下来我们转向估计 \(h_{\text{fin}}(\psi_D^{(n)})\). 
+考虑一个任意的元素 \((Q_i)_{1 \leq i \leq m} \in E_D^{(n)} \setminus E_D^{(n+1)}\), 
+我们的任务是为每个素数 p 提供 \(\log |c_n|_p\) 的上界. 
+由于此处的 \(\mathbf{Z}\)-格 \(E_D\) 具有与第 7.3 节中的格本质上相同的结构, 
+因此那里的论证为总有限评估高度提供了上界估计:
+\begin{equation}\label{eq:7.5.8}
+\limsup_{D \to \infty} \left\{ D^{-2} \sum_{n \in \mathcal{V}_D} h_{\text{fin}}(\psi_D^{(n)}) \right\} \le \frac{1}{2} \left( \sigma_m m^2 + \sum_{h=1}^r u_h^2 b_h \right) + \left( \max_{1 \le i \le m} e_i \right) I_{\xi}^m(\xi).
+\end{equation}
+
+我们将 \eqref{eq:7.5.1}, \eqref{eq:7.5.7} 和 \eqref{eq:7.5.8} 代入 \eqref{eq:7.2.14} 从而导出:
+\[
+\begin{aligned}
+\frac{m^2}{2} \Bigg( \log |\varphi'(0)| - \sigma_m + \frac{1}{m^2} \bigg( \sum_{h=1}^r &u_h^2 b_h - \frac{2}{m^2} \Big(\xi \sum_{i=1}^m e_i + \left( \max_{1 \le i \le m} e_i \right) I_{\xi}^m(\xi)\Big) \bigg) \Bigg) \\
+\leq m \left( T(\varphi; r, \lambda, \mu) + \frac{\lambda}{r+1} + \frac{\mu}{2} \right) &- \frac{(T(\varphi; r, \lambda, \mu) - \Gamma(\log R; r, \lambda, \mu))^2}{2(\log |\varphi'(0)| - \log R)} \\
+&- \chi_0 \Gamma(\log R; r, \lambda, \mu) \\
+&+ \chi_0^2 (\log R - \mu) \left( \frac{1}{2} - \frac{1}{r(r+1)} \right),
+\end{aligned}
+\]
+这重新整理后就得到了所声称的关于 m 的边界.
+\end{proof}
+
+\begin{example}\label{ex:7.5.9}
+在定理 A 的证明中, 我们如第 A.5 节般使用 \(\varphi\), 并召回
+\[ m = 14, \]
+\[ \log |\varphi'(0)| = \log \left( 256 \cdot \frac{5448339453535586608000000000}{8658833407565631122430056127} \right), \]
+\[ \tau(\mathbf{b}; \mathbf{e}) = \frac{27}{80} + \frac{191}{49}, \]
+且所有的 \(f_i\) 都有至少为 \(R := 4\) 的收敛半径. 
+为二项式度量权重参数选择以下数值:
+\[ r = 4.7, \quad \lambda = 10, \quad \mu = -4.5. \]
+数值计算给出
+\[ T(\varphi; 4.7, 10, -4.5) = 6.5316..., \]
+\[ \Gamma(\log 4; 4.7, 10, -4.5) = 2.6429..., \]
+伴随着
+\[ \chi_1 = 1.0522\dots, \quad \chi_0 = 0.57035\dots, \]
+满足了我们在定理 7.1.13 中所作的特殊假设, 并提供了 holonomy 边界 \(m \leq 13.8527... < 14\). 
+这一矛盾提供了定理 A（参见第 13 节）的证明, 
+具有比我们在第 A.5 节中单单使用定理 7.0.1 更好的数值结果（在通过定理 7.1.10 进行凸性增强之前）.
+
+如果我们只像注记 A.5.2 中那样使用 9 个函数, 
+通过在上述参数中将 \(m=14, \tau\) 替换为 \(m=9, \tau(\mathbf{b}';0)=2\cdot\frac{157}{81}\), 
+我们得到定理 7.1.13 中的边界为 \(9.5234\ldots<10\), 但仍然不足以画出矛盾以推导出定理 A. \end{example}
+
+\subsection{进一步的改进}\label{sec:7.6}
+
+其设定与定理 7.1.6 类似：固定一组子半径序列 \(1 = r_l > r_{l-1} > \cdots > r_0 > 0\). 
+以下是第 6 节中精细化边界中阿基米德项的对应物——以及最终的精细化. 
+为了代替使用 Hermitian 线丛 \(\overline{\mathcal{L}} = (\iota, \varphi)_*([0], \log^+ |z|^{-1})\), 
+我们引入权重 \(s_0, \ldots, s_l \in [0, 1]\) 且其总质量满足 \(\sum_{h=0}^l s_h = 1\), 
+并使用由受限映射 \(\varphi(r_k z)\) 定义的 Hermitian 线丛的 s-加权平均:
+\[ \overline{\mathcal{L}}' := \prod_{h=0}^{l} \overline{\mathcal{L}}_{r_h}^{\otimes s_h}. \]
+在此处, 伴随着对 \(\mathbf{R}\)-线丛记号的轻微滥用, 这是 X 上的线丛 \(\mathcal{L} = \mathcal{O}(1)\), 
+其配备有如下定义的 Hermitian 度量:
+\[ \|\cdot\|_{\overline{\mathcal{L}}'}:=\prod_{h=0}^l\|\cdot\|_{\overline{\mathcal{L}}_{r_h}}^{s_h}. \]
+如第 7.4 节所示, 对于 \(1 \le k \le l\), 设定
+\begin{equation}\label{eq:7.6.1}
+\beta_k := \frac{\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_k} - \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k-1}}}{\log r_k - \log r_{k-1}} = \frac{\sum_{h=0}^l s_h(\overline{\mathcal{L}}_{r_h} \cdot \overline{\mathcal{L}}_{r_k} - \overline{\mathcal{L}}_{r_h} \cdot \overline{\mathcal{L}}_{r_{k-1}})}{\log r_k - \log r_{k-1}}.
+\end{equation}
+
+我们注意到, 通过与引理 7.4.5 中相同的论证\footnote{在将 \(\varphi(z)\) 更改为 \(\varphi(r_k z)\) 且在 \(h \le k\) 下将 \(r\) 更改为 \(r_h/r_k\) 时, 这些实际上是相同的陈述。}, 我们有:
+\[ \overline{\mathcal{L}}_{r_h} \cdot \overline{\mathcal{L}}_{r_k} = \int_{\mathbf{T}^2} \log |\varphi(r_h z) - \varphi(r_k w)| \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w). \]
+因此, 由于所有 \(s_h \geq 0\), 关于凸性的引理 7.1.4 表明:
+\[ 0 \le \beta_1 \le \beta_2 \le \dots \le \beta_l. \]
+如在定理 7.1.6 中一样, 我们假设 \(\beta_l \leq m\). （如果此条件失败, 它通常会提供一个更强的关于 m 的边界.） 
+我们通过设置 \(\beta_0 := 0\) 以及 \(\beta_{l+1} := m\) 来扩展记号. 
+对于 \(n/D \in [\beta_k, \beta_{k+1})\), 我们根据 \(\varphi_{r_k}\) 估计阿基米德评估高度. 
+也就是说, 将 \(\overline{\mathcal{L}}\) 替换为 \(\overline{\mathcal{L}}'\) 的引理 7.4.1 的证明给出:
+\[ h_{\infty}(\psi_D^{(n)}) \le -n \log |\varphi'(0)| - n \log r_k + D(\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_k}) + o(D). \]
+类似于定理 7.1.6 的证明, 使用定理 3.2.13, 我们有一旦 \(D \gg_{\epsilon} 1\) 就有 \(\mathcal{V}_D \subset [0, (m+\epsilon)D]\), 
+且对于 \(n \in [mD, (m+\epsilon)D]\), 我们继续使用从取得完全半径 \(r_l = 1\) 得到的 \(h_\infty(\psi_D^{(n)})\) 边界. 
+随着 \(D \to \infty\) 且然后 \(\epsilon \to 0\), 我们获得
+\[
+\begin{aligned}
+&\limsup_{D \to \infty} \left\{ D^{-2} \sum_{n \in \mathcal{V}_D} h_{\infty}(\psi_D^{(n)}) \right\} \\
+&\quad \le -\frac{m^2}{2} \log |\varphi'(0)| + \sum_{k=0}^{l} (\beta_{k+1} - \beta_k) \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_k} - \frac{1}{2} (\beta_{k+1}^2 - \beta_k^2) \log r_k.
+\end{aligned}
+\]
+我们拥有与 \eqref{eq:7.3.15} 中相同的关于 \(h_{\text{fin}}(\psi_D^{(n)})\) 的估计. 最后,
+\[ \widehat{\operatorname{deg}}\,\overline{E}_D = \left(\frac{m}{2}(\overline{\mathcal{L}}'.\overline{\mathcal{L}}') + \sum_{h=1}^r u_h y_h - \xi\Big(\sum_{i=1}^m e_i\Big)\right) D^2 + o(D^2). \]
+
+因此, 像以前一样通过斜率不等式 \eqref{eq:7.2.14}, 我们得到 \(m^2 (\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e}))\)
+\begin{equation}\label{eq:7.6.2}
+    \begin{aligned}
+        m^2 (\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})) 
+        &\leq -m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}' + \sum_{k=0}^{l} \left( -(\beta_{k+1}^{2} - \beta_{k}^{2}) \log r_{k} + 2(\beta_{k+1} - \beta_{k}) \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k}} \right) \\
+        &= 2m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{1} - m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}' \\
+        &- \sum_{k=1}^{l} \left( -\beta_{k}^{2} (\log r_{k} - \log r_{k-1}) + 2\beta_{k} (\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k}} - \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k-1}}) \right) \\
+        &= 2m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{1} - m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}' - \sum_{k=1}^{l} \frac{(\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k}} - \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k-1}})^{2}}{\log r_{k} - \log r_{k-1}} \\
+        &= 2m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{1} - m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}' - \sum_{k=1}^{l} \beta_{k} (\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k}} - \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k-1}}) \\
+        &= m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{1} - m\overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}' + \sum_{k=0}^{l} (\beta_{k+1} - \beta_{k}) \overline{\mathcal{L}}' \cdot \overline{\mathcal{L}}_{r_{k}}.
+    \end{aligned}
+\end{equation}
+
+注意, 对于分配 \(\mathbf{s} = \{s_h\}_{h=0}^l\) 的每个选择, \eqref{eq:7.6.2} 都给出了关于 m 的边界, 
+并且它在特例 \(\mathbf{s} = (0, 0, \dots, 0; 1)\) 下恢复了定理 7.1.6 的凸性节省.
+
+我们提出以下对于 \(\{s_h\}_{h=0}^l\) 的选择. 
+让我们在 \(l+1\) 个未知数 \(s_h\) 中假设以下由 \(l+1\) 个非齐次线性方程组成的系统:
+\begin{equation}\label{eq:7.6.3}
+s_h = \frac{1}{m}(\beta_{h+1} - \beta_h), \quad 0 \le h \le l, \quad \beta_0 = 0, \, \beta_{l+1} = m.
+\end{equation}
+这一选择在下文的注记 7.6.7 中得到了解释. 
+我们假设该线性系统的 \((l+1) \times (l+1)\) 系数矩阵具有非零行列式, 
+并且唯一解 \(\{s_h^*\}\) 具有非负的分量. 该解显然满足 \(\sum_{h=0}^{l} s_h^* = 1\), 
+且我们可以在 \eqref{eq:7.6.2} 中设定 \(s_h := s_h^*\). 
+不等式 \eqref{eq:7.6.2} 随后读作:
+\[ m^2(\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})) \le m \sum_{k=0}^l s_k^* \overline{\mathcal{L}}_{r_k} \cdot \overline{\mathcal{L}}_1. \]
+在当前情况下, 我们导出以下精细化后的 holonomy 边界:
+\[ m \leq \frac{\sum_{h=0}^{l} s_h^* \cdot \overline{\mathcal{L}}_{r_k} \cdot \overline{\mathcal{L}}_1}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}. \]
+我们将我们的发现总结为一个定理:
+
+\begin{theorem}\label{thm:7.6.4}
+假设与定理 7.0.1 相同的条件和记号. 
+固定一个子半径序列 \(1 = r_l > r_{l-1} > \cdots > r_0 > 0\). 
+假设以下由 \(l+1\) 个未知数 \(\{s_h\}_{h=0}^l\) 的 \(l+1\) 个线性非齐次方程组成的系统:
+\begin{equation}\label{eq:7.6.5}
+m\sum_{h=0}^{k-1} s_h = \frac{\sum_{h=0}^{l} s_h(\overline{\mathcal{L}}_{r_h} \cdot \overline{\mathcal{L}}_{r_k} - \overline{\mathcal{L}}_{r_h} \cdot \overline{\mathcal{L}}_{r_{k-1}})}{\log r_k - \log r_{k-1}}, \qquad k = 1, ..., l,
+\end{equation}
+\[ \sum_{h=0}^{l} s_h = 1 \]
+具有唯一解 \(\{s_h^*\} \in [0,1]^{l+1}\). 
+那么：
+\begin{equation}\label{eq:7.6.6}
+m \leq \frac{\sum_{h=0}^{l} s_{h}^{*} \overline{\mathcal{L}}_{r_{k}} \cdot \overline{\mathcal{L}}_{1}}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} = \frac{\overline{\mathcal{L}}_{1} \cdot \overline{\mathcal{L}}_{1} - \sum_{h=0}^{l-1} s_{h}^{*} (\overline{\mathcal{L}}_{1} \cdot \overline{\mathcal{L}}_{1} - \overline{\mathcal{L}}_{r_{h}} \cdot \overline{\mathcal{L}}_{1})}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}.
+\end{equation}
+\end{theorem}
+
+\begin{remark}\label{rem:7.6.7}
+关于线性系统 \eqref{eq:7.6.5} 具有带非负分量的唯一解的特殊假设在实践中似乎是成立的. 
+我们不知道这是否是一个一般特征. 
+选择这一特定 \(s_h = s_h^*\) 背后的启发式方法是在我们的上界 \eqref{eq:7.6.2} 上模仿 Euler--Lagrange 平稳作用量原理. 
+即, 我们计算该上界关于 \(s_h\) 的导数, 
+并设置这些导数为 0. \end{remark}
+
+\begin{example}\label{ex:7.6.8}
+让我们现在重新审视示例 7.4.6 中的第一个情况：\(l = 1, r_0 = e^{-1/2}\), 
+以及用于定理 A 的 14 个推定函数. 我们有:
+\[ C := \overline{\mathcal{L}}_1 \cdot \overline{\mathcal{L}}_1 = 11.844 \dots \]
+\[ B := \overline{\mathcal{L}}_1 \cdot \overline{\mathcal{L}}_{e^{-1/2}} = 10.573 \dots \]
+\[ A := \overline{\mathcal{L}}_{e^{-1/2}} \cdot \overline{\mathcal{L}}_{e^{-1/2}} = 8.3717 \dots \]
+相比于先前的边界, 这里的改进之处在于
+\[ 2\overline{\mathcal{L}}_1 \cdot \overline{\mathcal{L}}_{e^{-1/2}} > \overline{\mathcal{L}}_1 \cdot \overline{\mathcal{L}}_1 + \overline{\mathcal{L}}_{e^{-1/2}} \cdot \overline{\mathcal{L}}_{e^{-1/2}}. \]
+我们计算出
+\[ \beta_1 = \frac{s_0(B-A) + s_1(C-B)}{\log r_1 - \log r_0} = 2(s_0(B-A) + s_1(C-B)) > 2(C-B) = \alpha_1, \]
+源于
+\[ s_0^* = \frac{1}{m} \beta_1(s_0^*, s_1^*) > \alpha_1/m. \]
+新的凸性节省为 \(\frac{m}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} > \frac{\alpha_1(C-B)/m}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}\), 
+其中后者是示例 7.4.6 中先前的凸性节省. 
+显式地, 我们求得 \(s_0^*\) 以及 \(s_1^*\) 两个线性方程组的解:
+\[ s_0 = \frac{2}{m}(s_0(B-A) + s_1(C-B)), \quad s_1 = 1 - \frac{2}{m}(s_0(B-A) + s_1(C-B)). \]
+其解为
+\[ s_0^* = \frac{C - B}{m/2 + (A + C - 2B)} = 0.20936... \]
+导致了相比于示例 7.4.6 如下改进的凸性节省（与公式 \eqref{eq:7.4.7} 比较）:
+\[ \frac{s_0^*(C-B)}{\log|...| - \tau(\mathbf{b}; \mathbf{e})} = 0.31426...(> 0.27243...). \]
+换句话说, 这里关于 m 的精细化后的 holonomy 边界为
+\begin{equation}\label{eq:7.6.9}
+13.99303... - 0.31426... = 13.678...,
+\end{equation}
+这为最终得出 \(m=14\) 的矛盾提供了更舒适的数值余量. 
+（使用四个半径而非两个进行相似但更复杂的计算也将对示例 7.4.6 中的 \eqref{eq:7.4.7} 产生轻微的改进.） \end{example}
+
+此时, 对定理 A 和 C 的证明最感兴趣的读者可以在第一次阅读时直接跳到第 9 节.
+
+\subsection{关于绕过第 3.2 节中 Kolchin--Shidlovsky 类型定理的讨论}\label{sec:7.7}
+
+至少对于我们在本论文中的特定和定性应用而言, 在技术上完全可以绕过我们在第 3.2 节中收集的所有——相当技术性的——零估计. 
+由于在不使用函数 bad approximability 定理的情况下, 我们抽象 holonomy 边界的一般情况似乎在完全一般性下难以接近\footnote{我们并没有这样的证明}, 
+而在另一方面, Shidlovsky（或 Chudnovsky--Osgood）类型的输入是该学科中的黄金标准, 
+并且——更进一步且更重要的是——对于将我们的方法精细化为推导关于代数逼近对数或特殊值的不等式是必不可少的, 
+因此我们在本节中仅限于做一些简要的指示, 
+说明如何在技术上避免在证明我们 holonomy 边界的某些放宽版本时求助于第 3.2 节, 
+而这些放宽版本对于我们本文的所有应用仍然是足够用的.
+
+我们需要让读者回想，对于本节的所有证明, 我们都在分母形式 \eqref{eq:7.3.6} 中作了假定：\(0 = u_0 \le u_1 \le \cdots \le u_r < u_{r+1} = m\), 
+因为对 \(\mathbf{b}\) 的列进行置换并不会改变对于 \(f_i\) 的假设.
+
+\subsubsection{关于定理 7.0.1 的讨论}\label{sec:7.7.1}
+
+我们在用更强的正性条件 \(\log |\varphi'(0)| > \sigma_m + \max(e_i)\) 代替 (7.0.2) 的前提下, 
+勾勒出一个绕过第 3.2 节的 (7.0.3) 的证明. 
+在我们将第 13 节中关于定理 A 的应用中, 以及定理 C 的至少某种弱形式中（即 \(10^{-6}\) 被某个显式正数代替）, 
+这一条件是满足的, 因为在第 A.5 节中我们有：
+\[
+\begin{aligned}
+\log |\varphi'(0)| 
+&= \log \left(256 \cdot \frac{5448339453535586608000000000}{8658833407565631122430056127}\right) \\
+&> 5.08 > 4 + 1 = \sigma_m + \max_{i=1}^{m}(e_i).
+\end{aligned}
+\]
+
+令 \(\overline{h}_{\infty}(\psi_D^{(n)})\), \(\overline{h}_{\text{fin}}(\psi_D^{(n)})\) 
+分别表示我们在 \eqref{eq:7.3.9} 以及 \eqref{eq:7.3.11}, \eqref{eq:7.3.12}, \eqref{eq:7.3.13} 
+中证明的关于阿基米德和有限评估高度 \(h_{\infty}(\psi_D^{(n)})\), \(h_{\text{fin}}(\psi_D^{(n)})\) 的边界的主项; 
+在 \(\overline{h}_{\text{fin}}\) 中, 我们采用我们在证明结束时使用的最优参数选择 \(y_h := b_h u_h\). 
+因此, 全局评估高度的主项上界 \(\overline{h}(\psi_D^{(n)}) = \overline{h}_{\infty}(\psi_D^{(n)}) + \overline{h}_{\text{fin}}(\psi_D^{(n)})\) 由下式给出:
+\begin{equation}\label{eq:7.7.2}
+\begin{aligned}
+&- n \log |\varphi'(0)| + D\left(\overline{\mathcal{O}(1)} \cdot \overline{\mathcal{O}(1)}\right) + \left(\sum_{h=1}^{r} b_h \max\{n, u_h D\}\right) \\
+&\quad + n \chi_{[0,\xi]}(n/D) \left(\max_{1 \le i \le m} e_i\right) J_{\xi}(n/D),
+\end{aligned}
+\end{equation}
+其中 \(\xi \in [0, m]\) 是我们估计中来自 \(\tau^{\sharp}\) 定义的截止参数, 
+且我们对于 \(s \geq 1\) 设定
+\[ J_{\xi}(s) := \left(\frac{1}{s} \sum_{j=1}^{\lfloor (s-1)/\max(1,\xi) \rfloor} 1/j\right) + \left(\frac{1}{\lfloor (s+(\xi-1)^{+})/\max(1,\xi) \rfloor} - \frac{\xi}{s}\right)^{+}; \]
+并且对于 s < 1,
+\[ J_{\xi}(s) := \left(1 - \frac{\xi}{s}\right)^{+}. \]
+
+通过我们的证明, 我们只需要展示
+\begin{equation*}
+\sum_{n \in \mathcal{V}_D} \overline{h}(\psi_D^{(n)}) \le \sum_{n=0}^{mD-1} \overline{h}(\psi_D^{(n)}) + o(D^2).
+\end{equation*}
+为此, 只要证明对于 \(n \geq mD\), 有下式即为足够:
+\begin{equation}\label{eq:7.7.3}
+\overline{h}(\psi_D^{(n)}) \le \min_{0 \le n' \le mD} \overline{h}(\psi_D^{(n')}) + o(D). 
+\end{equation}
+
+我们观察到 \(J_{\xi}(s)\) 是 s 的连续函数, 
+该函数在形如 \((k\xi+1, (k+1)\xi), ((k+1)\xi, (k+1)\xi+1)\) （其中 \(k\in\mathbf{N}\)）的区间上是分段光滑的. 
+此外, 在 \(s \in (k\xi + 1, (k+1)\xi)\) 上有:
+\[ J'_{\xi}(s) = -\frac{1}{s^2} \sum_{j=1}^{k} 1/j \le 0, \]
+且在 \(s \in ((k+1)\xi, (k+1)\xi+1)\) 上有:
+\[ J'_{\xi}(s) = -\frac{1}{s^2} \left( -\xi + \sum_{j=1}^k 1/j \right) \le \xi/s^2. \]
+此外, 对于 \(s \in (0, \min\{1, \xi\}]\) 有 \(J_{\xi}(s) = 0\). 
+因此 \(J_{\xi}(s) + \xi/s\) 是 \(s \in \mathbf{R}_{>0}\) 的递减函数, 
+并且特别地, 其在 \([\xi, \infty)\) 上的极大值取在 \(s = \xi\) 处, 值为 1. 
+我们分析函数
+\[ F(s) := -s \left( \left( \log |\varphi'(0| - \sigma_m - (\max_{i=1}^m e_i) J_{\xi}(s) \right) \right). \]
+它在 \(s \in \mathbf{R}_{>0}\) 上是连续的, 并在形如 \((k\xi + 1, (k+1)\xi), ((k+1)\xi, (k+1)\xi + 1)\) 的区间上分段光滑. 
+对于 \(s \geq \xi\), 在每一个此类区间内:
+\[ F'(s) = -\left(\log |\varphi'(0)| - \sigma_m - \left(\max_{1 \le i \le m} e_i\right) J_{\xi}(s)\right) + \left(\max_{1 \le i \le m} e_i\right) s J'(s) \]
+\[ \leq -\left(\log |\varphi'(0)| - \sigma_m - \left(\max_{1 \le i \le m} e_i\right) J_{\xi}(s)\right) + \left(\max_{1 \le i \le m} e_i\right) \xi/s \]
+\[ \leq -\log |\varphi'(0)| + \sigma_m + \left(\max_{1 \le i \le m} e_i\right) < 0. \]
+
+注意, 由于 \(u_h < m\) 且 \(\xi \le m\), 我们有对于 \(n \ge mD\):
+\[ \overline{h}(\psi_D^{(n)}) = -n\log|\varphi'(0)| + D\left(\overline{\mathcal{O}(1)} \cdot \overline{\mathcal{O}(1)}\right) + \sigma_m n + n\left(\max_{1 \le i \le m} e_i\right) J_{\xi}(n/D). \]
+我们的讨论随后表明, 在所需的范围 \(n \geq mD\) 上, \(\overline{h}(\psi_D^{(n)})\) 是关于 n 的递减函数. 
+事实上, 相同的论证也适用于看到 \(\overline{h}(\psi_D^{(n)})\) 是在整个 \(n \in \mathbb{N}\) 上的递减函数. 
+更确切地说, 对于 \(n/D \geq \xi\) 且 \(n/D \in [u_h, u_{h+1}]\) 有:
+\begin{equation}\label{eq:7.7.4}
+\begin{aligned}
+\overline{h}(\psi_D^{(n)}) 
+&= -n\log|\varphi'(0)| + D\left(\overline{\mathcal{O}(1)} \cdot \overline{\mathcal{O}(1)} + \sum_{k=h+1}^r u_k b_k\right) \\
+&\quad + \left(\sum_{k=1}^h b_k\right) n + n\left(\max_{1 \le i \le m} e_i\right) J_{\xi}(n/D).
+\end{aligned}
+\end{equation}
+由于 \(\sum_{k=1}^{h} b_k \leq \sigma_m\), 上述相同的论证显示
+\[ F_h(s) := -s \left( \left( \log |\varphi'(0)| - \sum_{k=1}^h b_k - (\max_{i=1}^m e_i) J_{\xi}(s) \right) \right) \]
+具有负导数, 因而 \(\overline{h}(\psi_D^{(n)})\) 是关于 n的递减函数. 
+对于 \(n/D < \xi\) 且 \(n/D \in [u_h, u_{h+1}]\) 我们有
+\[ \overline{h}(\psi_D^{(n)}) = -n\log|\varphi'(0)| + D\left(\overline{\mathcal{O}(1)} \cdot \overline{\mathcal{O}(1)} + \sum_{k=h+1}^r u_k b_k\right) + \left(\sum_{k=1}^h b_k\right) n. \]
+由于 \(\sum_{k=1}^h b_k \leq \sigma_m < \log |\varphi'(0)|\), 
+我们断定 \(\overline{h}(\psi_D^{(n)})\) 是一个递减函数. 
+这样我们便获得了 \eqref{eq:7.7.3}, 给出了定理 7.0.1 在绕过第 3.2 节 Shidlovsky 型定理的前提下的证明, 
+但这是在更强的假设 \(\log |\varphi'(0)| > \sigma_m + \max_{i=1}^m (e_i)\) 下得出的. 
+特别是, 以绕过第 3 节中任何参考文献的方式, 
+这些评述已经足以证明定理 2.5.1, 
+除了当 \(f_i\) 先验地被假设为 holonomic 时, 条件 \(|varphi'(0)| > e^{\max(\sigma_m, \tau(\mathbf{b}))}\) 
+可以被放宽为 \(|\varphi'(0)| > e^{\sigma_m}\) 的子条款之外.
+
+\subsubsection{关于定理 7.1.6 中 \(\mathbf{e} = \mathbf{0}\) 情况的讨论}\label{sec:7.7.5}
+
+由于函数 \(J_{\xi}\) 的行为是不依赖于 holonomic 函数的 functional bad approximability 定理来设计我们一般 holonomy 边界的干净证明的主要障碍, 
+并且由于我们在逻辑上对于我们的任何应用都不需要替代证明, 
+因此对于定理 7.1.6, 我们满足于（仍然在解释如何绕过第 3.2 节的语境下）论证如何处理 \(\mathbf{e} = \mathbf{0}\) 的情况, 
+并且是在以下看似温和的额外条件下:
+\begin{equation}\label{eq:7.7.6}
+m \ge \max_{0 \le k \le l} \left\{ \frac{\left(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}\right) - \left(\overline{\mathcal{L}}_{r_k} \cdot \overline{\mathcal{L}}\right) + \alpha_k \left(\log|\varphi'_{r_k}(0)| - \sum_{j=1}^{h(k)} b_j\right) - \sum_{j=h(k)+1}^r u_j b_j}{\log|\varphi'(0)| - \sigma_m} \right\},
+\end{equation}
+其中对于给定的 k, 我们选取带有 \(\alpha_k \in [u_{h(k)}, u_{h(k)+1})\) 的 \(h(k)\), 
+且我们召回约定 \(\alpha_0 = 0\). 
+换句话说, 我们将在不诉诸第 3.2 节的前提下证明：当 \(\mathbf{e} = \mathbf{0}\) 且在定理 7.1.6 的条件下时, 
+至少维度上界 \eqref{eq:7.1.8} 或下式
+\begin{equation}\label{eq:7.7.7}
+m \leq \max_{0 \leq k \leq l} \left\{ \frac{\left(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}\right) - \left(\overline{\mathcal{L}}_{r_k} \cdot \overline{\mathcal{L}}\right) + \alpha_k \left(\log|\varphi'_{r_k}(0)| - \sum_{j=1}^{h(k)} b_j\right) - \sum_{j=h(k)+1}^r u_j b_j}{\log|\varphi'(0)| - \sigma_m} \right\}
+\end{equation}
+是成立的. 在实践中, 我们总是发现不等式 \eqref{eq:7.7.7} 已经被条件不等式 \eqref{eq:7.1.8} 的逆否命题所隐含, 
+在那种情况下, 结论 \eqref{eq:7.1.8} 显然成立.
+
+对于 \(n/D \in [\alpha_k, \alpha_{k+1}] \cap [u_h, u_{h+1}]\) （此处的 h 不需要是上文定义的 \(h(k)\)）, 
+定理 7.1.6 的证明显示:
+\begin{equation}\label{eq:7.7.8}
+\overline{h}(\psi_D^{(n)}) = -n\log|\varphi'(0)| - n\log r_k + D(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}_r) + n\sum_{j=1}^h b_j + D\sum_{j=h+1}^r u_j b_j,
+\end{equation}
+如果被视为 \(s = n/D\) 的分段线性函数, 这在 \(s \in [0, \infty)\) 上是连续的. 
+局部极小值仅能发生于形如 \(s = \alpha_k\) 的点处, 或者在一个斜率为 0 的线段上. 
+但是对于 \(n/D \ge m\) 我们使用下式作为阿基米德高度评估上界:
+\[ \overline{h}(\psi_D^{(n)}) = -n\log|\varphi'(0)| + D(\overline{\mathcal{L}} \cdot \overline{\mathcal{L}}) + n\sigma_m, \]
+这在 \(s = n/D\) 上单调递减. 
+现在, 为了展示 \eqref{eq:7.7.3}（如在第 7.7.1 节中一样, 已经足够在第 7.4 节的分析中绕过对第 3.2 节的求助）, 
+足以检查
+\[ \overline{h}(\psi_D^{(mD)}) \le \min_{0 \le k \le l} \overline{h}(\psi_D^{(\alpha_k D)}); \]
+此处由于 \(\alpha_k D\) 可能不是整数, 根据记号的轻微滥用, 
+\(\overline{h}(\psi_D^{(\alpha_k D)})\) 意味着在 \eqref{eq:7.7.8} 中用 \(\alpha_k D\) 代替 n. 
+这展开后正是条件 \eqref{eq:7.7.6} 的定义.
+
+\subsubsection{关于定理 7.1.13 的讨论}\label{sec:7.7.9}
+
+\begin{proof}
+在条件
+\begin{equation}\label{eq:7.7.10}
+\xi > u_1 \ge 1, \quad b_1 > \log R \ge 0, \quad \log |\varphi'(0)| > \sigma_m + \max_{1 \le i \le m} e_i, \quad \Gamma(\log R, r, \lambda, \mu) \ge u_1 \log R
+\end{equation}
+下, 我们独立于第 3.2 节证明了至少维度上界 \eqref{eq:7.1.14} 或下式
+\begin{equation}\label{eq:7.7.11}
+m \le \frac{T(\varphi; r, \lambda, \mu) - \sum_{j=1}^{r} u_j b_j}{\log |\varphi'(0)| - \sigma_m - (\max_{1 \le i \le m} e_i) J_{\varepsilon}(m)}
+\end{equation}
+之一是成立的. 在许多应用的实际情况下, 通常期望 \eqref{eq:7.7.11} 相比于 \eqref{eq:7.1.14} 给出更小的边界. 
+例如, 这一情况适用于我们通过示例 7.5.9 对定理 A 的证明, 
+在那里条件 \eqref{eq:7.7.10} 被满足, 并且 \eqref{eq:7.7.11} 的右手边是负的, 
+而 \eqref{eq:7.1.14} 的 holonomy 边界为 \(\sim 13.8527\).
+
+令 \(\overline{h}_{\infty}(\psi_D^{(n)})\) 和 \(\overline{h}_{\text{fin}}(\psi_D^{(n)})\) 
+分别表示我们关于高度 \(h(\psi_D^{(n)})\) 估计的主项, 
+在 \eqref{eq:7.5.5}, \eqref{eq:7.5.4} 和 \eqref{eq:7.5.6} （针对阿基米德估计）以及 \eqref{eq:7.3.13} 和 \eqref{eq:7.3.11} （针对有限估计）中给出, 
+这取决于 \(n/D\) 的各种不同情况. 在这些记号中, 我们有 \(\overline{h}(\psi_D^{(n)})\) 关于 \(s := n/D\) 是连续的, 
+因而我们再次只需要确保 \eqref{eq:7.7.3}.
+
+在当前情况下, 我们的假设意味着 \(m \ge \max\{\chi_1, \xi, u_1, \dots, u_r\}\). 
+对于 \(n \ge mD\), 我们对 \eqref{eq:7.7.3} 的左手边导出:
+\[ \overline{h}(\psi_D^{(n)}) = -n \left( \log |\varphi'(0)| - \sigma_m - \left( \max_{1 \le i \le m} e_i \right) J_{\xi}(n/D) \right) + DT(r, \lambda, \mu). \]
+通过与第 7.7.1 节中相同的分析, 我们导出 \(\overline{h}(\psi_D^{(n)})\) 是关于 n 
+在范围 \(n \ge \max\{\xi, \chi_1\}D\) 上的递减函数; 
+因此对于 \(n \ge mD\), 我们有
+\[ \overline{h}(\psi_D^{(n)}) \leq \min_{\max\{\xi,\chi_1\}D \leq n' < mD} \overline{h}(\psi_D^{(n)}). \]
+
+剩下需要考虑范围 \(n' < \max\{\xi, \chi_1\}D\). 
+如果 \(\xi > \chi_1\), 那么对于 \(s' := n'/D \in [\chi_1, \xi] \cap [u_h, u_{h+1}]\) 我们有:
+\[ \overline{h}(\psi_D^{(n)}) = -n' \left( \log |\varphi'(0)| - \sum_{j=1}^h b_j \right) + D \left( T(r, \lambda, \mu) + \sum_{j=h+1}^r u_j b_j \right), \]
+并因此 \(\overline{h}(\psi_D^{(n)})\) 是关于 \(s'\) 在范围 \([\chi_1, \xi]\) 上的递减函数; 
+连续性随后给出:
+\[ \overline{h}(\psi_D^{(n)}) \le \min_{\gamma_1 D \le n' \le mD} \overline{h}(\psi_D^{(n)}). \]
+
+接下来我们处理范围 \(\xi \leq s' < \chi_1\). 
+在此我们对于 \(s' \in [u_h, u_{h+1}]\) 有:
+\[
+\begin{aligned}
+\overline{h}(\psi_D^{(n')}) 
+&= n' \left( -\log R + \sum_{j=1}^h b_j + \left( \max_{1 \le i \le m} e_i \right) J_{\xi}(n/D) \right) \\
+&\quad + D \left( \Gamma(\log R, r, \lambda, \mu) + \sum_{j=h+1}^r u_j b_j \right).
+\end{aligned}
+\]
+由于 \(u_1 < \xi\), 我们对于这些 \(n'\) 有 \(h \ge 1\), 
+且由于我们的假设 \(\log R < b_1\), 
+此时 \(\overline{h}(\psi_D^{(n')})\) 是关于 \(s'\) 的递增函数（而根据定义, 有 \(J_{\xi} \ge 0\)）.
+
+我们继续：对于 \(u_1 \leq s' < \min\{\xi, \chi_1\}\) （如果 \(u_1 > \chi_1\), 
+则此集合为空, 并且可以跳到下文的下一个情况）, 我们有（公式中的 h 可能根据上面的 \(s'\) 而变化）:
+\[ \overline{h}(\psi_D^{(n')}) = n'(-\log R + \sum_{j=1}^h b_j) + D\left(\Gamma(\log R, r, \lambda, \mu) + \sum_{j=h+1}^r u_j b_j\right), \]
+其也是关于 \(s'\) 的递增函数.
+
+对于 \(\chi_0 \le s' < \min\{u_1, \chi_1\}\):
+\[ \overline{h}(\psi_D^{(n')}) = -n' \cdot \log R + D\left(\Gamma(\log R, r, \lambda, \mu) + \sum_{j=1}^r u_j b_j\right), \]
+由于我们的假设 \(\log R \geq 0\), 其是关于 \(s'\) 的递减函数.
+
+最后, 对于 \(0 \le s' < \chi_0\), 我们有
+\[ \overline{h}(\psi_D^{(n')}) = D\left(-\lambda(s')^r - \mu s' + \sum_{j=1}^r u_j b_j\right). \]
+回想 \(\lambda > 0\). 如果 \(\mu > 0\), 那么 \(\overline{h}(\psi_D^{(n')})\) 是递减函数. 
+如果 \(\mu \leq 0\), 临界点 \(s_0\) 满足
+\[ s_0 = \left(\frac{-\mu}{r\lambda}\right)^{1/(r-1)} \le \left(\frac{\log R - \mu}{r\lambda}\right)^{1/(r-1)} = \chi_0 \]
+在我们的假设条件下成立; 
+因此 \(\overline{h}(\psi_D^{(n')})\) 是 \([0, s_0]\) 上的递增函数, 
+并在 \([s_0, \chi_0]\) 上是递减函数.
+
+上述讨论显示:
+\[ \min_{0 \le n' \le mD} \overline{h}(\psi_D^{(n)}) = \min\{\overline{h}(\psi_D^{(0)}), \overline{h}(\psi_D^{(u_1D)}), \overline{h}(\psi_D^{(mD)})\}. \]
+由于
+\[ \overline{h}(\psi_D^{(0)}) = D \sum_{j=1}^r u_j b_j, \quad \overline{h}(\psi_D^{(u_1 D)}) = -u_1 D \log R + D \left( \Gamma(\log R, r, \lambda, \mu) + \sum_{j=1}^r u_j b_j \right), \]
+由于假设 \(\Gamma(\log R, r, \lambda, \mu) \geq u_1 \log R\), 我们有 \(\overline{h}(\psi_D^{(0)}) \leq \overline{h}(\psi_D^{(u_1D)})\). 
+最终, 所需的不等式
+\[ \overline{h}(\psi_D^{(mD)}) \le \min_{0 \le n' \le mD} \overline{h}(\psi_D^{(n')}) \]
+归结为确保 \(h(\psi_D^{(mD)}) \le D \sum_{j=1}^r u_j b_j\), 这等价于:
+\[ m \ge \frac{T(r, \lambda, \mu) - \sum_{j=1}^{r} u_j b_j}{\log |\varphi'(0)| - \sigma_m - (\max_{1 \le i \le m} e_i) J_{\xi}(m)}. \]
+换句话说, 我们要么证明了 \eqref{eq:7.7.3} 从而 \eqref{eq:7.1.14} 成立, 
+要么 \eqref{eq:7.7.11} 成立.
+\end{proof}

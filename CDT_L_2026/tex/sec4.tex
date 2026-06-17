@@ -1,0 +1,89 @@
+\section{测度的集中程度}\label{sec:4}
+
+如果我们随机且独立地在区间 $[0,1]$ 上抽取极大数量 $n-1$ 个均匀分布的点, 那么留下的 $n$ 个间距几乎必然接近于集合 $\{\log(n/j)/n : 1\le j\le n\}$ 的某种排序, 而这 $n-1$ 个样本点本身也几乎必然接近于集合 $\{j/n : 1\le j< n\}$ 的某种排序.
+这些事实是统计学中大数定律的最简单表述, 其次精细的定量衰减率由 Dvoretzky 和 Milman \cite{MS86}\cite{Mil92}\cite{Led01} 关于高维 $\ell^r$-球在 $r=1$ 和 $r=\infty$ 的各自情况下的测度集中现象所刻画.
+关于测度集中原理的一个广为人知的表述, 由 Gromov 给出 \cite[§ $3\frac{1}{2}.20$]{Gro07}, 即在维度 $n$ 趋于无穷大的渐近情况下, 单位体积 $\ell^r$-球的可观测直径仅在 $\frac{1}{\sqrt{n}}=o(1)$ 阶, 这与其作为度量空间的直径(在 $\sqrt{n}$ 阶)形成鲜明对比.
+在丢番图逼近中所进行的各种辅助多项式构造中, 相关的是可观测性质而非度量性质.
+
+这些特定的分布(以及更精细的统计特征)最好由以下事实来表达 \cite[Theorem 1]{BGMN05} (该事实在 $r=2$ 的欧几里得球情况下可追溯到 \'Emile Borel \cite[§ V]{Bor1914}\footnotemark[18];\ \footnotetext[18]{将正态分布与欧几里得球面联系起来的经典定理通常被归功于 Poincar{\'e} (1912年), 但参见 \cite[§ 6]{DF87} 以获取细致的历史研究以及对更广泛背景的讨论.} 亦可参见 \cite[Lemma 1]{SZ90} 或 \cite[§ 3]{RR91}): 即 $n$ 维 $\ell^r$ 球的归一化体积测度是由如下随机向量随机生成的:
+\[ \left(\frac{X_1}{(|X_1|^r + \dots + |X_n|^r + Z)^{1/r}}, \dots, \frac{X_n}{(|X_1|^r + \dots + |X_n|^r + Z)^{1/r}}\right), \]
+其中 $X_1, \ldots, X_n$ 是独立同分布的随机变量, 其概率密度函数为 $\frac{1}{2\Gamma(1+1/r)}e^{-|t|^r}$, 而 $Z$ 是一个联合独立的随机变量, 其概率密度函数为指数分布 $e^{-t} \cdot \chi_{[0,\infty)}(t)$.
+此外, 集中函数是高斯的.
+这些特征具有普适性, 而为了我们这里的目的, 仅使用具有 $\ell^{\infty}$-球的最简单结论.
+在这个 $r \to \infty$ 的极限情况下, 一个额外的(但仅是技术性的)简化是, 在 $\mu_{[-1,1]^n}$ 的随机生成中, 随机向量的分量是独立的, 而不仅仅是渐近独立的.
+
+在 \S\S~6 和 8 的多变量辅助丢番图构造中, 我们将使用 \S~2.13.4 中所描述的测度集中思想.
+其一个方面是限制在评估模中出现的所有单项式 $\mathbf{x}^{\mathbf{k}}$ 的高维指数向量 $\mathbf{k}$ 的分量集合 $\{k_j\}$ (我们在 \S~2.13.1 中引入并在 \S~3.1 中研究了这些评估模).
+这类应用是丢番图逼近中最标准的元方法之一, 继 Roth \cite[§ 6.3.5]{BG06}、Schmidt\footnotemark[19]\ \footnotetext[19]{在 Schmidt 子空间定理的证明中, 射影空间 $\mathbf{P}^d$ 中坏逼近性的指数 ``$d+1$'' 得到了概率论的解释, 即其为从 $d+1$ 维标准单纯形的表面边界上随机抽取的点 $\xi$ 的各个坐标的等期望值的倒数. 在 Thue--Siegel 引理的辅助多项式构造中用于参数计数的集中性质精确地指出, 由 $n \to \infty$ 个此类独立同分布的随机行 $\xi$ 组成的高为 $n \times (d+1)$ 的矩阵中, 所有的列和在概率上均收敛于期望值 $n/(d+1)$, 其渐近速率呈 $-n$ 的指数级. 参见 \cite[§ 3, Example 1]{FW94} 以获取关于渐近代数上分次辅助函数上 Harder--Narasimhan 过滤的更广泛背景. Faltings 和 W{\"u}stholz 的工作更深入地利用了概率测度, 它与直接处理辅助构造在特殊点处不消亡的 Faltings 乘积定理相结合, 最终从 Schmidt 的证明中消除了困难的数论几何部分.} \cite[§ 7.5.15]{BG06} 以及特别是 Wirsing \cite[§ 4.2]{Wir71} 的经典工作之后(亦可参见 \cite[Theorem 7.2.1]{Sto74} 以获取对 Wirsing 论证中相关内容的两种替代且更详细的探讨).
+方法论上, 我们在 \S~6 中的高维丢番图分析与 Wirsing 在证明其关于用给定次数的代数逼近元逼近固定代数目标的坏逼近性定理时所采用的多变量辅助多项式构造相当类似.
+
+\subsection{Erd\H{o}s--Tur{\'a}n 边界}\label{sec:4.1}
+
+回忆超立方体上方体偏差函数的定义;\ 参见 \cite[§ 2.5.3]{CDT21}.
+
+\begin{definition}\label{def:4.1.1}
+归一化(方体) \textbf{偏差函数} (discrepancy function) $D: [0,1]^n \to (0,1]$ 是所有闭区间 $I = [a,b] \subset [0,1]$ 上 $I$ 的长度 $\mu_{\text{Lebesgue}}(I) = b - a$ 与落入 $I$ 内部的点所占比例之差的绝对值的上确界:
+\[ D(t_1,\ldots,t_n) := \sup_{I \subset [0,1]} \left| \mu_{\text{Lebesgue}}(I) - \frac{1}{n} \#\{i : t_i \in I\} \right|. \]
+\end{definition}
+
+利用由 $e(t) := \exp(2\pi i t)$ 诱导的识别 $[0,1)^n \stackrel{\simeq}{\to} \mathbf{T}^n$, 圆周上的调和分析提供了一种上界估计偏差函数的基本方法.
+Erd\H{o}s--Tur{\'a}n 不等式指出 \cite[Theorem 1.14]{DT97}:
+\begin{equation}\label{eq:4.1.2}
+D(t_1, \dots, t_n) \le 3 \left( \frac{1}{K+1} + \sum_{k=1}^{K} \frac{1}{k} \left| \frac{e(kt_1) + \dots + e(kt_n)}{n} \right| \right) \quad \forall K \in \mathbf{N},
+\end{equation}
+该式是用群 $\mathbf{T}$ 上的特征和来表达的.
+
+\subsection{大偏差边界}\label{sec:4.2}
+
+以下估计将是至关重要的.
+
+\begin{theorem}\label{thm:4.2.1}
+存在两个绝对常数 $C, c \in \mathbf{R}$, 使得对于任意 $\varepsilon > 0$ 和任意 $n \in \mathbf{N}$, 集合
+\[ B_{\varepsilon}^n := \{ \mathbf{t} \in [0,1]^n : D(\mathbf{t}) \ge \varepsilon \} \]
+的 $n$ 维 Lebesgue 测度小于 $Ce^{-c\varepsilon^4 n}$.
+\end{theorem}
+
+例如, 证明将表明在本定理中我们可以取 $c=1/300$ 且 $C=100$.
+
+\begin{remark}\label{rem:4.2.2}
+指数(维度负数形式)渐近衰减率的存在性是大偏差理论中熵之基本概念的标志 \cite{Ell06}.
+在定理~\ref{thm:4.2.1} 中计算出的具体速率估计对我们的目的并无影响, 但其存在性在 \S\S~6, 8 中被关键性地使用.
+一条不使用调和分析和 Erd\H{o}s--Tur{\'a}n 边界的定理~\ref{thm:4.2.1} 的替代路径(且具有不同甚至更好的数值常数 $c, C$), 而是将初等的 Chebyshev 估计 \cite[Lemma 12]{Wir71} 作为基础, 可以从关于 $[0,1]^n$ 上均匀测度的集中函数界 $\leq e^{-\pi r^2}$ \cite[Prop. 2.8]{Led01} 导出来.
+在 Ledoux 的书中, 后一集中不等式是作为关于 $\mathbb{R}^n$ 上正则高斯测度集中函数的锐利估计 $\leq e^{-r^2/2}$ 的收缩结果 \cite[Cor. 2.6]{Led01} 获得的.
+而后者在传统上是欧氏球面上 L{\'e}vy 等周不等式 \cite[Theorem 2.3]{Led01} 的推论.
+\end{remark}
+
+我们对定理~\ref{thm:4.2.1} 的证明将基于 Hoeffding 集中不等式 \cite{Hoe63} 最标准的形式.
+对于取值于区间 $[-1, 1]$ 内的独立随机变量 $X_1, \ldots, X_n$ 之和, Hoeffding 不等式 \cite[Theorem 2.8]{BLM13} 将大偏差尾概率指数界定为:
+\begin{equation}\label{eq:4.2.3}
+\mathbf{P}\left(\left|X_1 + \ldots + X_n - \mathbf{E}[X_1 + \ldots + X_n]\right| \ge \varepsilon n\right) \le 2e^{-\varepsilon^2 n/2}.
+\end{equation}
+
+通过将 $\varepsilon$ 替换为 $\varepsilon/2$, 并利用三角不等式和概率的次可加性, 我们可以将此应用于取值于复单位圆 $\mathbf{T}$ 上的独立随机变量 $Z_1, \ldots, Z_n$ 的实部和虚部, 从而得到以下变体:
+
+\begin{lemma}\label{lem:4.2.4} (Hoeffding)
+取值于复单位圆 $\mathbf{T}$ 上的独立随机变量 $Z_1, \ldots, Z_n$ 之和满足如下尾概率大偏差边界:
+\begin{equation}\label{eq:4.2.5}
+\mathbf{P}\left(\left|Z_1 + \ldots + Z_n - \mathbf{E}[Z_1 + \ldots + Z_n]\right| \ge \varepsilon n\right) \le 4e^{-\varepsilon^2 n/8}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}[定理~\ref{thm:4.2.1} 的证明]
+结合 Erd\H{o}s--Tur{\'a}n 边界, 我们推导出该定理的证明, 并给出如下显式估计.
+设 $Z_1, \ldots, Z_n$ 是圆周 $\mathbf{T}$ 上独立且均匀分布的点.
+由于对所有 $k = 1, 2, \ldots$, 均有 $\mathbf{E}[Z_1^k + \ldots + Z_n^k] = 0$, 由 Hoeffding 边界~\eqref{eq:4.2.5} 统一给出:
+\begin{equation}\label{eq:4.2.6}
+\mathbf{P}\left(\frac{1}{k} \left| \frac{Z_1^k + \ldots + Z_n^k}{n} \right| \ge \varepsilon\right) \le 4e^{-\varepsilon^2 k^2 n/8}.
+\end{equation}
+
+由此可知, 对于任意 $K \in \mathbf{N}$ 和 $\varepsilon > 0$, 概率
+\[ \mathbf{P}\left(\frac{3}{K+1} + 3\sum_{k=1}^{K} \frac{1}{k} \left| \frac{Z_1^k + \ldots + Z_n^k}{n} \right| \ge \frac{3}{K+1} + 3K\varepsilon \right) \le 4Ke^{-\varepsilon^2 n/8}. \]
+
+如果我们首先将 $\varepsilon$ 替换为 $(\varepsilon/6)^2$, 然后选择 $K := \lfloor 6/\varepsilon \rfloor$, 我们得到
+\begin{equation}\label{eq:4.2.7}
+\inf_{K \in \mathbf{N}} \left\{ \mathbf{P} \left( \frac{3}{K+1} + 3 \sum_{k=1}^{K} \frac{1}{k} \left| \frac{Z_1^k + \ldots + Z_n^k}{n} \right| \ge \varepsilon \right) \right\} \le \min \left( 1, (24/\varepsilon) e^{-\varepsilon^4 n/288} \right).
+\end{equation}
+
+根据 Erd\H{o}s--Tur{\'a}n 不等式~\eqref{eq:4.1.2}, 公式~\eqref{eq:4.2.7} 的左侧是我们所要求的 $\operatorname{vol}(B_{\varepsilon}^n) = \operatorname{vol}(\{D(\mathbf{t}) \geq \varepsilon\})$ 的上界.
+而公式~\eqref{eq:4.2.7} 的右侧对于所有 $n \geq 1$ 和所有 $\varepsilon > 0$ 均被 $100 \, e^{-\varepsilon^4 n/300}$ 控制.
+\end{proof}

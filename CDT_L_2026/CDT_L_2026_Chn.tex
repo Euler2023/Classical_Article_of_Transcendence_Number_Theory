@@ -1,0 +1,273 @@
+\documentclass[12pt, UTF8, scheme=plain, twoside, notitlepage]{ctexart}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+
+
+
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[CO]{\small $1$, $\zeta(2)$ 以及 $L(2, \chi_{-3})$ 的线性无关性}
+\fancyhead[CE]{\small \leftmark}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=MidnightBlue,
+    citecolor=BrickRed,
+    urlcolor=MidnightBlue
+}
+
+\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant]
+\setCJKsansfont{Noto Sans CJK SC}
+\PassOptionsToPackage{no-math}{fontspec}
+
+% 绑定方程与定理环境到 subsection
+\numberwithin{equation}{subsection}
+\setcounter{MaxMatrixCols}{20}
+
+% 让 subsubsection 与 equation 共享计数器，实现完全连续编号
+\usepackage{xparse}
+\let\oldsubsubsection\subsubsection
+\RenewDocumentCommand{\subsubsection}{s o m}{%
+  \IfBooleanTF{#1}
+    {\oldsubsubsection*{#3}}
+    {%
+      \stepcounter{equation}%
+      \IfValueTF{#2}
+        {\oldsubsubsection[#2]{#3}}
+        {\oldsubsubsection{#3}}%
+    }%
+}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{equation}}
+
+% 让 figure 和 table 与 equation 共享内存计数器，实现完全连续编号
+\makeatletter
+\let\c@figure\c@equation
+\let\c@table\c@equation
+\makeatother
+\renewcommand{\thefigure}{\thesubsection.\arabic{figure}}
+\renewcommand{\thetable}{\thesubsection.\arabic{table}}
+
+% 1. 主定理环境 (A, B, C 全局字母编号，共享计数器)
+\theoremstyle{plain}
+\newtheorem{maintheorem}{定理}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+\newtheorem{maincorollary}[maintheorem]{推论}
+
+\providecommand*{\maintheoremautorefname}{定理}
+\providecommand*{\maincorollaryautorefname}{推论}
+
+% 2. 普通定理环境 (绑定到 equation 计数器，实现公式与定理的连续编号，并使用 aliascnt 彻底解决 autoref 共享计数器的名称混淆 bug)
+\usepackage{aliascnt}
+
+\theoremstyle{plain}
+\newaliascnt{theorem}{equation}
+\newtheorem{theorem}[theorem]{定理}
+\aliascntresetthe{theorem}
+
+\newaliascnt{proposition}{equation}
+\newtheorem{proposition}[proposition]{命题}
+\aliascntresetthe{proposition}
+
+\newaliascnt{lemma}{equation}
+\newtheorem{lemma}[lemma]{引理}
+\aliascntresetthe{lemma}
+
+\newaliascnt{corollary}{equation}
+\newtheorem{corollary}[corollary]{推论}
+\aliascntresetthe{corollary}
+
+\newaliascnt{conjecture}{equation}
+\newtheorem{conjecture}[conjecture]{猜想}
+\aliascntresetthe{conjecture}
+
+\theoremstyle{definition}
+\newaliascnt{definition}{equation}
+\newtheorem{definition}[definition]{定义}
+\aliascntresetthe{definition}
+
+\newaliascnt{example}{equation}
+\newtheorem{example}[example]{例}
+\aliascntresetthe{example}
+
+\newaliascnt{notation}{equation}
+\newtheorem{notation}[notation]{记号}
+\aliascntresetthe{notation}
+
+\newaliascnt{question}{equation}
+\newtheorem{question}[question]{问题}
+\aliascntresetthe{question}
+
+\newaliascnt{fact}{equation}
+\newtheorem{fact}[fact]{事实}
+\aliascntresetthe{fact}
+
+\newtheoremstyle{bolditalicremark}%
+  {0.5\baselineskip}% Space above
+  {0.5\baselineskip}% Space below
+  {\normalfont}% Body font
+  {}% Indent amount
+  {\bfseries\itshape}% Theorem head font
+  {.}% Punctuation after theorem head
+  {.5em}% Space after theorem head
+  {}% Theorem head spec
+
+\theoremstyle{bolditalicremark}
+\newaliascnt{remark}{equation}
+\newtheorem{remark}[remark]{注记}
+\aliascntresetthe{remark}
+
+% 自动为 remark/注记 与 example/例 环境末尾添加三角标记
+\usepackage{etoolbox}
+\AtEndEnvironment{remark}{\mbox{}\hfill$\vartriangle$}
+\AtEndEnvironment{example}{\mbox{}\hfill$\vartriangle$}
+
+% 自定义局部交叉引用宏
+\newcommand{\mylem}[1]{引理~\ref{#1}}
+\newcommand{\rremark}[1]{注记~\ref{#1}}
+\newcommand{\rthm}[1]{定理~\ref{#1}}
+\newcommand{\rdef}[1]{定义~\ref{#1}}
+
+% 兼容 Qbook 风格的定理环境定义
+\newenvironment{mylemma}[2]{\begin{lemma}[#1]\label{#2}}{\end{lemma}}
+\newenvironment{mydef}[2]{\begin{definition}[#1]\label{#2}}{\end{definition}}
+\newenvironment{mythm}[2]{\begin{theorem}[#1]\label{#2}}{\end{theorem}}
+
+% \autoref 与系统名称汉化映射 (使用 \AtBeginDocument 与 \def 确保强力覆盖)
+\AtBeginDocument{%
+  \def\refname{参考文献}%
+  \def\abstractname{摘要}%
+  \def\contentsname{目录}%
+  \def\theoremautorefname{定理}%
+  \def\propositionautorefname{命题}%
+  \def\lemmaautorefname{引理}%
+  \def\corollaryautorefname{推论}%
+  \def\conjectureautorefname{猜想}%
+  \def\definitionautorefname{定义}%
+  \def\exampleautorefname{例}%
+  \def\notationautorefname{记号}%
+  \def\questionautorefname{问题}%
+  \def\remarkautorefname{注记}%
+  \def\sectionautorefname{节}%
+  \def\subsectionautorefname{小节}%
+  \def\equationautorefname{公式}%
+  \def\figureautorefname{图}%
+  \def\tableautorefname{表}%
+}
+
+\title{\LARGE\bfseries $1$, $\zeta(2)$ 以及 $L(2, \chi_{-3})$ 的线性无关性}
+
+\author{
+  Frank Calegari\textsuperscript{1} \quad 
+  Vesselin Dimitrov\textsuperscript{2} \quad 
+  唐云清 (Yunqing Tang)\textsuperscript{3}
+}
+
+\renewcommand{\proofname}{证明}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\date{2024年9月16日}
+
+% 压缩参考文献的行间距与条目间距（黄金比例，保持呼吸感与高可读性）
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\itemsep}{0pt plus 0.5pt minus 0.5pt}%   % 适中的条目垂直间距（既紧凑又有呼吸感）
+  \setlength{\parsep}{1pt plus 0.5pt}%            % 适中的条目内折行垂直间距
+  \small%                                         % 局部字体使用 \small（学术出版标准，主次分明）
+}
+
+\begin{document}
+
+\begin{center}
+  \small\itshape arXiv:2408.15403v2 [math.NT] 16 Sep 2024
+\end{center}
+
+\maketitle
+
+\footnotetext[1]{Department of Mathematics, University of Chicago, Chicago, IL 60637, USA. Email: \href{mailto:fcale@math.uchicago.edu}{fcale@math.uchicago.edu}}
+\footnotetext[2]{Department of Mathematics, California Institute of Technology, Pasadena, CA 91125, USA. Email: \href{mailto:dimitrov@caltech.edu}{dimitrov@caltech.edu}}
+\footnotetext[3]{Department of Mathematics, University of California, Berkeley, Evans Hall, Berkeley, CA 94720, USA. Email: \href{mailto:yungqing.tang@berkeley.edu}{yungqing.tang@berkeley.edu}}
+
+\begin{abstract}
+我们证明了经典 Dirichlet $L$-值 
+\[ L(2,\chi_{-3}) = \frac{1}{1^2} - \frac{1}{2^2} + \frac{1}{4^2} - \frac{1}{5^2} + \frac{1}{7^2} - \frac{1}{8^2} + \dots \]
+的无理数性质.
+该论证将一种新型的算术 holonomy 边界应用于 Zagier \cite{Zag09} 的一个著名构造.
+事实上, 我们的工作也确立了 $1$, $\zeta(2)$ 和 $L(2, \chi_{-3})$ 的 $\mathbf{Q}$-线性无关性.
+我们还给出了该方法在其他无理数问题中的若干应用.
+\end{abstract}
+
+\tableofcontents
+
+% 引入第1节内容
+\input{tex/sec1.tex}
+
+% 引入第2节内容
+\input{tex/sec2.tex}
+
+% 引入第3节内容
+\input{tex/sec3.tex}
+
+% 引入第4节内容
+\input{tex/sec4.tex}
+
+% 引入第5节内容
+\input{tex/sec5.tex}
+
+% 引入第6节内容
+\input{tex/sec6.tex}
+
+% 引入第7节内容
+\input{tex/sec7.tex}
+
+% 引入第8节内容
+\input{tex/sec8.tex}
+
+% 引入第9节内容
+\input{tex/sec9.tex}
+
+% 引入第10节内容
+\input{tex/sec10.tex}
+
+% 引入第11节内容
+\input{tex/sec11.tex}
+
+% 引入第12节内容
+\input{tex/sec12.tex}
+
+% 引入第13节内容
+\input{tex/sec13.tex}
+
+% 引入第14节内容
+\input{tex/sec14.tex}
+
+% 引入第15节内容
+\input{tex/sec15.tex}
+
+\appendix
+% 引入附录 A 内容
+\input{tex/appA.tex}
+
+% 引入附录 B 内容
+\input{tex/appB.tex}
+
+\bibliographystyle{alpha}
+\bibliography{bib/references}
+
+\end{document}

@@ -1,0 +1,873 @@
+\begin{thebibliography}{BGMN05}
+
+\bibitem[AB95]{AB95}
+Ahmad Abbes and Thierry Bouche.
+\newblock Th{\'e}or{\`e}me de hilbert-samuel "arithm{\'e}tique".
+\newblock {\em Ann. Inst. Fourier (Grenoble)}, 45(2):375--401, 1995.
+
+\bibitem[AB97]{AB97}
+Yves Andr{\'e} and Francesco Baldassarri.
+\newblock Geometric theory of g-functions.
+\newblock In {\em Arithmetic geometry (Cortona, 1994)}, volume XXXVII of {\em Sympos. Math.}, pages 1--22. Cambridge Univ. Press, Cambridge, 1997.
+
+\bibitem[Ada87]{Ada87}
+Colin~C. Adams.
+\newblock The noncompact hyperbolic 3-manifold of minimal volume.
+\newblock {\em Proc. Amer. Math. Soc.}, 100(4):601--606, 1987.
+
+\bibitem[Ami75]{Ami75}
+Yvette Amice.
+\newblock {\em Les nombres p-adiques}, volume~14 of {\em Collection SUP: Le Math{\'e}maticien}.
+\newblock Presses Universitaires de France, Paris, 1975.
+\newblock Pr{\'e}face de Ch. Pisot.
+
+\bibitem[And89]{And89}
+Yves Andr{\'e}.
+\newblock {\em G-Functions and Geometry}, volume E13 of {\em Aspects of Mathematics}.
+\newblock Friedr. Vieweg Sohn, Braunschweig, 1989.
+
+\bibitem[And96]{And96}
+Yves Andr{\'e}.
+\newblock G-fonctions et transcendance.
+\newblock {\em J. Reine Angew. Math.}, 476:95--125, 1996.
+
+\bibitem[And00a]{And00a}
+Yves Andr{\'e}.
+\newblock S{\'e}ries gevrey de type arithm{\'e}tique. i. th{\'e}or{\`e}mes de puret{\'e} et de dualit{\'e}.
+\newblock {\em Ann. of Math. (2)}, 151(2):705--740, 2000.
+
+\bibitem[And00b]{And00b}
+Yves Andr{\'e}.
+\newblock S{\'e}ries gevrey de type arithm{\'e}tique. ii. transcendance sans transcendance.
+\newblock {\em Ann. of Math. (2)}, 151(2):741--756, 2000.
+
+\bibitem[And04]{And04}
+Yves Andr{\'e}.
+\newblock Sur la conjecture des p-courbures de grothendieck--katz et un probl{\`e}me de dwork.
+\newblock In {\em Geometric Aspects of Dwork Theory}, volume~I, pages 55--112. de Gruyter, Berlin, 2004.
+
+\bibitem[Ap{\'e}79]{Ape79}
+Roger Ap{\'e}ry.
+\newblock Irrationalit{\'e} de $\zeta(2)$ et $\zeta(3)$.
+\newblock {\em Ast{\'e}risque}, 61:11--13, 1979.
+
+\bibitem[AR79]{AR80}
+Krishna Alladi and Michael~L. Robinson.
+\newblock On certain irrational values of the logarithm.
+\newblock In {\em Number theory, Carbondale 1979}, volume 751 of {\em Lecture Notes in Math.}, pages 1--9. Springer, Berlin, 1979.
+
+\bibitem[AZ90]{AZ90}
+Gert Almkvist and Doron Zeilberger.
+\newblock The method of differentiating under the integral sign.
+\newblock {\em J. Symbolic Comput.}, 10(6):571--591, 1990.
+
+\bibitem[Bak64]{Bak64}
+Alan Baker.
+\newblock Rational approximations to $\sqrt[3]{2}$ and other algebraic numbers.
+\newblock {\em Quart. J. Math. Oxford Ser. (2)}, 15:375--383, 1964.
+
+\bibitem[BB85]{BB85}
+Daniel Bertrand and Frits Beukers.
+\newblock {\'E}quations diff{\'e}rentielles lin{\'e}aires et majorations de multiplicit{\'e}s.
+\newblock {\em Ann. Sci. {\'E}cole Norm. Sup. (4)}, 18(1):181--192, 1985.
+
+\bibitem[BB98]{BB98}
+Jonathan~M. Borwein and Peter~B. Borwein.
+\newblock {\em Pi and the {AGM}: A study in analytic number theory and computational complexity}, volume~4 of {\em Canadian Mathematical Society Series of Monographs and Advanced Texts}.
+\newblock John Wiley \& Sons, Inc., New York, 1998.
+
+\bibitem[BBR90]{BBR90}
+Frits Beukers, Jean-Paul B{\'e}zivin, and Philippe Robba.
+\newblock An alternative proof of the lindemann-weierstrass theorem.
+\newblock {\em Amer. Math. Monthly}, 97(3):193--197, 1990.
+
+\bibitem[BC97]{BC97b}
+Enrico Bombieri and Paula~B. Cohen.
+\newblock Siegel's lemma, pad{\'e} approximations and jacobians.
+\newblock {\em Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4)}, 25(1-2):155--178, 1997.
+
+\bibitem[BC22]{BC22}
+Jean-Beno{\^\i}t Bost and Fran{\c{c}}ois Charles.
+\newblock Projective and formal-analytic arithmetic surfaces, 2022.
+
+\bibitem[BCY04]{BCY04}
+Daniel Bertrand, Vladimir Chirskii, and Johan Yebbou.
+\newblock Effective estimates for global relations on {Euler-type} series.
+\newblock {\em Ann. Fac. Sci. Toulouse Math. (6)}, 13(2):241--260, 2004.
+
+\bibitem[Ber99]{Ber99}
+Daniel Bertrand.
+\newblock On {Andr{\'e}'s} proof of the {Siegel--Shidlovsky} theorem.
+\newblock In {\em Colloque {Franco-Japonais}: {Th{\'e}orie} des {Nombres} {Transcendants} (Tokyo, 1998)}, volume~27 of {\em Sem. Math. Sci.}, pages 51--63, Yokohama, 1999. Keio Univ.
+
+\bibitem[Ber12]{Ber12}
+Daniel Bertrand.
+\newblock Le th{\'e}or{\`e}me de {Siegel--Shidlovsky} revisit{\'e}.
+\newblock In {\em Number theory, analysis and geometry}, pages 51--67. Springer, New York, 2012.
+
+\bibitem[Beu79]{Beu79}
+Frits Beukers.
+\newblock A note on the irrationality of $\zeta(2)$ and $\zeta(3)$.
+\newblock {\em Bull. London Math. Soc.}, 11(3):268--272, 1979.
+
+\bibitem[Beu81]{Beu81}
+Frits Beukers.
+\newblock Pad{\'e}-approximations in number theory.
+\newblock In {\em Pad{\'e} approximation and its applications, Amsterdam 1980}, volume 888 of {\em Lecture Notes in Math.}, pages 90--99. Springer, Berlin-New York, 1981.
+
+\bibitem[Beu84]{Beu84}
+Frits Beukers.
+\newblock The values of polylogarithms.
+\newblock In {\em Topics in classical number theory, Vol. I, II (Budapest, 1981)}, volume~34 of {\em Colloq. Math. Soc. J{\'a}nos Bolyai}, pages 219--228. North-Holland, Amsterdam, 1984.
+
+\bibitem[Beu87]{Beu87}
+Frits Beukers.
+\newblock Irrationality proofs using modular forms.
+\newblock {\em Ast{\'e}risque}, 147-148:271--283, 1987.
+
+\bibitem[Beu06]{Beu06}
+Frits Beukers.
+\newblock A refined version of the siegel--shidlovskii theorem.
+\newblock {\em Ann. of Math. (2)}, 163(1):369--379, 2006.
+
+\bibitem[BG06]{BG06}
+Enrico Bombieri and Walter Gubler.
+\newblock {\em Heights in Diophantine Geometry}.
+\newblock Cambridge University Press, 2006.
+
+\bibitem[BGMN05]{BGMN05}
+Franck Barthe, Olivier Gu{\'e}don, Shahar Mendelson, and Assaf Naor.
+\newblock A probabilistic approach to the geometry of the $\ell_p^n$-ball.
+\newblock {\em Ann. Probab.}, 33(2):480--513, 2005.
+
+\bibitem[BGS94]{BGS94}
+Jean-Beno{\^\i}t Bost, Henri Gillet, and Christophe Soul{\'e}.
+\newblock Heights of projective varieties and positive green forms.
+\newblock {\em J. Amer. Math. Soc.}, 7(4):903--1027, 1994.
+
+\bibitem[Bin16]{Bin16}
+Gal Binyamini.
+\newblock Multiplicity estimates: a {Morse-theoretic} approach.
+\newblock {\em Duke Math. J.}, 165(1):95--128, 2016.
+
+\bibitem[BLM13]{BLM13}
+St{\'e}phane Boucheron, G{\'a}bor Lugosi, and Pascal Massart.
+\newblock {\em Concentration inequalities}.
+\newblock Oxford University Press, Oxford, 2013.
+
+\bibitem[BM80]{BM80}
+W.~Dale Brownawell and David~W. Masser.
+\newblock Multiplicity estimates for analytic functions. {II}.
+\newblock {\em Duke Math. J.}, 47(2):273--295, 1980.
+
+\bibitem[Bom81]{Bom81}
+Enrico Bombieri.
+\newblock On g-functions.
+\newblock In {\em Recent progress in analytic number theory, Vol. 2 (Durham, 1979)}, pages 1--67. Academic Press, London-New York, 1981.
+
+\bibitem[Bom83]{Bom83}
+Enrico Bombieri.
+\newblock On g-functions.
+\newblock {\em Recent progress in analytic number theory}, 2:1--67, 1983.
+
+\bibitem[Bor14]{Bor1914}
+{\'E}mile Borel.
+\newblock {\em Introduction g{\'e}om{\'e}trique {\`a} quelques th{\'e}ories physiques}.
+\newblock Gauthier-Villars, Paris, 1914.
+
+\bibitem[Bos99]{Bos99}
+Jean-Beno{\^i}t Bost.
+\newblock Potential theory and lefschetz theorems for arithmetic surfaces.
+\newblock {\em Ann. Sci. {\'E}cole Norm. Sup. (4)}, 32(2):241--312, 1999.
+
+\bibitem[Bos01]{Bos01}
+Jean-Beno{\^i}t Bost.
+\newblock Algebraic leaves of algebraic foliations over number fields.
+\newblock {\em Publ. Math. Inst. Hautes {\'E}tudes Sci.}, 93:161--221, 2001.
+
+\bibitem[Bos04]{Bos04}
+Jean-Beno{\^i}t Bost.
+\newblock Algebraic leaves of algebraic foliations over number fields.
+\newblock {\em Publ. Math. Inst. Hautes {\'E}tudes Sci.}, 93:161--221, 2004.
+
+\bibitem[Bos20]{Bos20}
+Jean-Beno{\^i}t Bost.
+\newblock {\em Theta invariants of Euclidean lattices and infinite-dimensional Hermitian vector bundles over arithmetic curves}, volume 334 of {\em Progress in Mathematics}.
+\newblock Birkh{\"a}user/Springer, 2020.
+
+\bibitem[Boy98]{Boy98}
+David~W. Boyd.
+\newblock Mahler's measure and special values of {L}-functions.
+\newblock {\em Experiment. Math.}, 7(1):37--82, 1998.
+
+\bibitem[BR89]{BR89}
+Jean-Paul B{\'e}zivin and Philippe Robba.
+\newblock A new p-adic method for proving irrationality and transcendence results.
+\newblock {\em Ann. of Math. (2)}, 129(1):151--160, 1989.
+
+\bibitem[BR01]{BR01}
+Keith Ball and Tanguy Rivoal.
+\newblock Irrationalit{\'e} d'une infinit{\'e} de valeurs de la fonction z{\^e}ta aux entiers impairs.
+\newblock {\em Invent. Math.}, 146(1):193--207, 2001.
+
+\bibitem[BV89]{BV89}
+Jean-Michel Bismut and {\'E}ric Vasserot.
+\newblock The asymptotics of the ray--singer analytic torsion associated with high powers of a positive line bundle.
+\newblock {\em Comm. Math. Phys.}, 125(2):355--367, 1989.
+
+\bibitem[BZ19]{BZ19}
+David Broadhurst and Wadim Zudilin.
+\newblock A magnetic double integral.
+\newblock {\em J. Aust. Math. Soc.}, 107(1):9--25, 2019.
+
+\bibitem[BZ20]{BZ20}
+Fran{\c{c}}ois Brunault and Wadim Zudilin.
+\newblock {\em Many variations of Mahler measures---a lasting symphony}, volume~28 of {\em Australian Mathematical Society Lecture Series}.
+\newblock Cambridge University Press, Cambridge, 2020.
+
+\bibitem[BZ22]{BZ22}
+Francis Brown and Wadim Zudilin.
+\newblock On cellular rational approximations to $\zeta(5)$.
+\newblock arXiv preprint arXiv:2210.03391v2, 2022.
+
+\bibitem[Car54]{Car54}
+Constantin Carath{\'e}odory.
+\newblock {\em Theory of Functions of a Complex Variable}.
+\newblock Chelsea Publishing Company, New York, 1954.
+
+\bibitem[Cat82]{Cat1882}
+Eug{\`e}ne~Charles Catalan.
+\newblock Recherches sur la constante g, et sur les int{\'e}grales eul{\'e}riennes.
+\newblock {\em M{\'e}moires de l'Acad{\'e}mie Imp{\'e}riale des Sciences de St. P{\'e}tersbourg}, 31:1--55, 1882.
+
+\bibitem[CC83]{CC83}
+David~V. Chudnovsky and Gregory~V. Chudnovsky.
+\newblock Rational approximations to solutions of linear differential equations.
+\newblock {\em Proc. Nat. Acad. Sci. U.S.A.}, 80(16):5158--5162, 1983.
+
+\bibitem[CC85a]{CC85a}
+David~V. Chudnovsky and Gregory~V. Chudnovsky.
+\newblock Applications of pad{\'e} approximations to diophantine inequalities in values of g-functions.
+\newblock In {\em Number theory (New York, 1983--84)}, volume 1135 of {\em Lecture Notes in Math.}, pages 9--51. Springer, Berlin, 1985.
+
+\bibitem[CC85b]{CC85b}
+David~V. Chudnovsky and Gregory~V. Chudnovsky.
+\newblock Applications of {Pad{\'e}} approximations to the {Grothendieck} conjecture on linear differential equations.
+\newblock In {\em Number theory (New York, 1983--84)}, volume 1135 of {\em Lecture Notes in Math.}, pages 52--100. Springer, Berlin, 1985.
+
+\bibitem[CC85c]{CC85c}
+David~V. Chudnovsky and Gregory~V. Chudnovsky.
+\newblock {Pad{\'e}} approximations and {Diophantine} geometry.
+\newblock {\em Proc. Nat. Acad. Sci. U.S.A.}, 82(8):2212--2216, 1985.
+
+\bibitem[CDT21]{CDT21}
+Frank Calegari, Vesselin Dimitrov, and Yunqing Tang.
+\newblock The unbounded denominators conjecture, 2021.
+
+\bibitem[CDT24]{CDT24}
+Frank Calegari, Vesselin Dimitrov, and Yunqing Tang.
+\newblock Arithmetic holonomy bounds and the irrationality of the 2-adic $\zeta(5)$.
+\newblock Preprint, 2024.
+
+\bibitem[Chu79]{Chu79}
+Gregory~V. Chudnovsky.
+\newblock Formules d'hermite pour les approximants de pad{\'e} de logarithmes et de fonctions bin{\^o}mes, et mesures d'irrationalit{\'e}.
+\newblock {\em C. R. Acad. Sci. Paris S{\'e}r. A-B}, 288(21):A965--A967, 1979.
+
+\bibitem[Chu80]{Chu80}
+Gregory~V. Chudnovsky.
+\newblock Rational and pad{\'e} approximations to solutions of linear differential equations and the monodromy theory.
+\newblock In {\em Complex analysis, microlocal calculus and relativistic quantum theory}, volume 126 of {\em Lecture Notes in Phys.}, pages 136--169. Springer, Berlin-New York, 1980.
+
+\bibitem[Chu83a]{Chu83a}
+Gregory~V. Chudnovsky.
+\newblock Number theoretic applications of polynomials with rational coefficients defined by extremality conditions.
+\newblock In {\em Arithmetic and geometry, Vol. I}, volume~35 of {\em Progr. Math.}, pages 61--105. Birkh{\"a}user Boston, Boston, MA, 1983.
+
+\bibitem[Chu83b]{Chu83b}
+Gregory~V. Chudnovsky.
+\newblock On the method of thue--siegel.
+\newblock {\em Ann. of Math. (2)}, 117(2):325--382, 1983.
+
+\bibitem[Coh78]{Coh78}
+Henri Cohen.
+\newblock D{\'e}monstration de l'irrationalit{\'e} de $\zeta(3)$ (d'apr{\`e}s r. ap{\'e}ry).
+\newblock {\em S{\'e}minaire de th{\'e}orie des nombres de Grenoble}, 6:1--9, 1978.
+
+\bibitem[Coo12]{Coo12}
+Shaun Cooper.
+\newblock Sporadic sequences, modular forms and new series for $1/\pi$.
+\newblock {\em Ramanujan J.}, 29(1-3):163--183, 2012.
+
+\bibitem[D{\`e}b86]{Deb86}
+Pierre D{\`e}bes.
+\newblock G-fonctions et th{\'e}or{\`e}me d'irreductibilit{\'e} de hilbert.
+\newblock {\em Acta Arith.}, 47(4):371--402, 1986.
+
+\bibitem[Den50]{Den50}
+Jacques Deny.
+\newblock Les potentiels d'{\'e}nergie finie.
+\newblock {\em Acta Math.}, 82:107--183, 1950.
+
+\bibitem[DF87]{DF87}
+Persi Diaconis and David Freedman.
+\newblock A dozen de finetti-style results in search of a theory.
+\newblock {\em Ann. Inst. H. Poincar{\'e} Probab. Statist.}, 23(2):397--423, 1987.
+
+\bibitem[DGS94]{DGS94}
+Bernard Dwork, Giovanni Gerotto, and Francis~J. Sullivan.
+\newblock {\em An introduction to G-functions}, volume 133 of {\em Annals of Mathematics Studies}.
+\newblock Princeton University Press, Princeton, NJ, 1994.
+
+\bibitem[DHKK22]{DHKK22}
+Sinnou David, Noriko Hirata-Kohno, and Makoto Kawashima.
+\newblock Linear forms in polylogarithms.
+\newblock {\em Ann. Sc. Norm. Super. Pisa Cl. Sci. (5)}, 23(5):1447--1490, 2022.
+
+\bibitem[Dir37]{Dir1837}
+Peter Gustav~Lejeune Dirichlet.
+\newblock Beweis des satzes, dass jede unbegrenzte arithmetische progression, deren erstes glied und differenz ganze zahlen ohne gemeinschaftlichen factor sind, unendlich viele primzahlen enth{\"a}lt.
+\newblock {\em Abh. K{\"o}nigl. Preuss. Akad. Wiss.}, pages 45--81, 1837.
+
+\bibitem[dlVP49]{dlVP49}
+Charles-Jean de~la Vall{\'e}e-Poussin.
+\newblock {\em Le potentiel logarithmique --- balayage et repr{\'e}sentation conforme}.
+\newblock Gauthier-Villars, Paris, 1949.
+
+\bibitem[DT97]{DT97}
+Michael Drmota and Robert~F. Tichy.
+\newblock {\em Sequences, discrepancies and applications}, volume 1651 of {\em Lecture Notes in Mathematics}.
+\newblock Springer-Verlag, Berlin, 1997.
+
+\bibitem[DZ14]{DZ14}
+Simon Dauguet and Wadim Zudilin.
+\newblock On simultaneous diophantine approximations to $\zeta(2)$ and $\zeta(3)$.
+\newblock {\em J. Number Theory}, 145:362--387, 2014.
+
+\bibitem[Ell06]{Ell06}
+Richard~S. Ellis.
+\newblock {\em Entropy, large deviations, and statistical mechanics}.
+\newblock Classics in Mathematics. Springer-Verlag, Berlin, 2006.
+
+\bibitem[Eul35]{Eul1735}
+Leonhard Euler.
+\newblock De summis serierum reciprocarum.
+\newblock {\em Comment. Acad. Sci. Petropol.}, 7:123--134, 1735.
+
+\bibitem[Fis04]{Fis04}
+St{\'e}phane Fischler.
+\newblock Irrationalit{\'e} de valeurs de z{\^e}ta (d'apr{\`e}s {Ap{\'e}ry}, {Rivoal}, \dots).
+\newblock {\em Ast{\'e}risque}, (294):vii, 27--62, 2004.
+
+\bibitem[FR03]{FR03}
+St{\'e}phane Fischler and Tanguy Rivoal.
+\newblock Approximants de pad{\'e} et s{\'e}ries hyperg{\'e}om{\'e}triques {\'e}quilibr{\'e}es.
+\newblock {\em J. Math. Pures Appl. (9)}, 82(10):1369--1394, 2003.
+
+\bibitem[FR17]{FR17}
+St{\'e}phane Fischler and Tanguy Rivoal.
+\newblock On the denominators of the taylor coefficients of g-functions.
+\newblock {\em Kyushu J. Math.}, 71(2):287--298, 2017.
+
+\bibitem[FR18]{FR18}
+St{\'e}phane Fischler and Tanguy Rivoal.
+\newblock Rational approximation to values of g-functions, and their expansions in integer bases.
+\newblock {\em Manuscripta Math.}, 155(3-4):579--595, 2018.
+
+\bibitem[FR21]{FR21}
+St{\'e}phane Fischler and Tanguy Rivoal.
+\newblock Linear independence of values of g-functions, ii: outside the disk of convergence.
+\newblock {\em Ann. Math. Qu{\'e}.}, 45(1):53--93, 2021.
+
+\bibitem[Fug60]{Fug60}
+Bent Fuglede.
+\newblock The logarithmic potential in higher dimensions.
+\newblock {\em Mat.-Fys. Medd. Danske Vid. Selsk.}, 33(1):14, 1960.
+
+\bibitem[FW94]{FW94}
+Gerd Faltings and Gisbert W{\"u}stholz.
+\newblock Diophantine approximations on projective spaces.
+\newblock {\em Invent. Math.}, 116(1-3):109--138, 1994.
+
+\bibitem[FW08]{FW08}
+Peter~J. Forrester and S.~Ole Warnaar.
+\newblock The importance of the selberg integral.
+\newblock {\em Bull. Amer. Math. Soc. (N.S.)}, 45(4):489--534, 2008.
+
+\bibitem[Gal74]{Gal74}
+Alexander~Ivanovich Galo{\v{c}}kin.
+\newblock Lower bounds of polynomials in the values of a certain class of analytic functions.
+\newblock {\em Mat. Sb. (N.S.)}, 95(137):396--417, 1974.
+
+\bibitem[Gal75]{Gal75}
+Alexander~Ivanovich Galo{\v{c}}kin.
+\newblock Lower bounds of linear forms of the values of certain g-functions.
+\newblock {\em Mat. Zametki}, 18(4):541--552, 1975.
+
+\bibitem[Gal96]{Gal96}
+Alexander~Ivanovich Galo{\v{c}}kin.
+\newblock Lower bounds for linear forms of values of g-functions.
+\newblock {\em Vestnik Moskov. Univ. Ser. I Mat. Mekh.}, (3):23--29, 1996.
+\newblock In Russian.
+
+\bibitem[Gro07]{Gro07}
+Misha Gromov.
+\newblock {\em Metric structures for Riemannian and non-Riemannian spaces}.
+\newblock Birkh{\"a}user Boston, Inc., Boston, MA, 2007.
+
+\bibitem[GS92]{GS92}
+Henri Gillet and Christophe Soul{\'e}.
+\newblock An arithmetic riemann-roch theorem.
+\newblock {\em Invent. Math.}, 110(3):473--543, 1992.
+
+\bibitem[Hat93]{Hat93}
+Masayoshi Hata.
+\newblock Rational approximations to the dilogarithm.
+\newblock {\em Trans. Amer. Math. Soc.}, 336(1):363--387, 1993.
+
+\bibitem[Hat98]{Hat98}
+Masayoshi Hata.
+\newblock The irrationality of $\log(1+1/q)\log(1-1/q)$.
+\newblock {\em Trans. Amer. Math. Soc.}, 350(6):2311--2327, 1998.
+
+\bibitem[Her74]{Her1874}
+Charles Hermite.
+\newblock {\em Sur la fonction exponentielle}.
+\newblock Gauthier-Villars, Paris, 1874.
+
+\bibitem[Her93]{Her1893}
+Charles Hermite.
+\newblock Sur la g{\'e}n{\'e}ralisation des fractions continues alg{\'e}briques.
+\newblock {\em Annali di Matematica (2)}, 21:289--308, 1893.
+
+\bibitem[Hil62]{Hil62}
+Einar Hille.
+\newblock {\em Analytic Function Theory. Vol. II}.
+\newblock Ginn and Company, Boston, MA, 1962.
+
+\bibitem[Hoe63]{Hoe63}
+Wassily Hoeffding.
+\newblock Probability inequalities for sums of bounded random variables.
+\newblock {\em J. Amer. Statist. Assoc.}, 58:13--30, 1963.
+
+\bibitem[Jac59]{Jac1859}
+Carl Gustav~Jacob Jacobi.
+\newblock Untersuchungen {\"u}ber die differentialgleichung der hypergeometrischen reihe.
+\newblock {\em J. Reine Angew. Math.}, 56:149--165, 1859.
+
+\bibitem[Jag64]{Jag64}
+Hendrik Jager.
+\newblock A multidimensional generalization of the pad{\'e} table. i--vi.
+\newblock {\em Indag. Math.}, 26:193--249, 1964.
+
+\bibitem[Kol59]{Kol59}
+Ellis~R. Kolchin.
+\newblock Rational approximation to solutions of algebraic differential equations.
+\newblock {\em Proc. Amer. Math. Soc.}, 10:238--244, 1959.
+
+\bibitem[KZ01]{KZ01}
+Maxim Kontsevich and Don Zagier.
+\newblock Periods.
+\newblock In {\em Mathematics unlimited---2001 and beyond}, pages 771--808. Springer, Berlin, 2001.
+
+\bibitem[Lan66]{Lan66}
+Serge Lang.
+\newblock {\em Introduction to Transcendental Numbers}.
+\newblock Addison-Wesley Publishing Co., Reading, Mass.-London-Don Mills, Ont., 1966.
+
+\bibitem[Lan72]{Lan72}
+Naum~S. Landkof.
+\newblock {\em Foundations of Modern Potential Theory}, volume 180 of {\em Die Grundlehren der mathematischen Wissenschaften}.
+\newblock Springer-Verlag, New York-Heidelberg, 1972.
+
+\bibitem[Led01]{Led01}
+Michel Ledoux.
+\newblock {\em The concentration of measure phenomenon}, volume~89 of {\em Mathematical Surveys and Monographs}.
+\newblock American Mathematical Society, Providence, RI, 2001.
+
+\bibitem[Leg94]{Leg1794}
+Adrien-Marie Legendre.
+\newblock {\em {\'E}l{\'e}ments de G{\'e}om{\'e}trie}.
+\newblock Firmin Didot, Paris, 1794.
+
+\bibitem[Lys18]{Lys18}
+Vladimir~Genrikhovich Lysov.
+\newblock On diophantine approximants for the product of logarithms.
+\newblock Keldysh Inst. Prepr. 158, 2018.
+
+\bibitem[Mah68]{Mah68}
+Kurt Mahler.
+\newblock Perfect systems.
+\newblock {\em Compositio Math.}, 19:95--166, 1968.
+
+\bibitem[Mah19]{Mah19a}
+Kurt Mahler.
+\newblock Ein beweis der transzendenz der $p$-adischen exponentialfunktion.
+\newblock {\em Doc. Math.}, pages 325--331, 2019.
+\newblock Reprint of the original 1933 paper.
+
+\bibitem[Mai27]{Mai27}
+Wilhelm Maier.
+\newblock Potenzreihen irrationalen grenzwertes.
+\newblock {\em J. Reine Angew. Math.}, 156:93--148, 1927.
+
+\bibitem[Mas16]{Mas16}
+David~W. Masser.
+\newblock {\em Auxiliary polynomials in number theory}, volume 207 of {\em Cambridge Tracts in Mathematics}.
+\newblock Cambridge University Press, Cambridge, 2016.
+
+\bibitem[Mat97]{Mat97}
+Lutz Mattner.
+\newblock Strict definiteness of integrals via complete monotonicity of derivatives.
+\newblock {\em Trans. Amer. Math. Soc.}, 349(8):3321--3342, 1997.
+
+\bibitem[Mat23]{Sta23}
+MathOverflow.
+\newblock In pascal's triangle without the 1s, what is the sum of squares of reciprocals?
+\newblock Mathematics Stack Exchange, \url{https://math.stackexchange.com/q/4828596}, 2023.
+
+\bibitem[Mil82]{Mil82}
+John Milnor.
+\newblock Hyperbolic geometry: the first 150 years.
+\newblock {\em Bull. Amer. Math. Soc. (N.S.)}, 6(1):9--24, 1882.
+
+\bibitem[Mil83]{Mil83}
+John Milnor.
+\newblock On polylogarithms, hurwitz zeta functions, and the kubert identities.
+\newblock {\em Enseign. Math. (2)}, 29(3-4):281--322, 1983.
+
+\bibitem[Mil92]{Mil92}
+Vitali Milman.
+\newblock Dvoretzky's theorem---thirty years later.
+\newblock {\em Geom. Funct. Anal.}, 2(4):455--479, 1992.
+
+\bibitem[MS86]{MS86}
+Vitali Milman and Gideon Schechtman.
+\newblock {\em Asymptotic theory of finite-dimensional normed spaces}, volume 1200 of {\em Lecture Notes in Mathematics}.
+\newblock Springer-Verlag, Berlin, 1986.
+
+\bibitem[Nag97]{Nag97}
+Makoto Nagata.
+\newblock Regular singularities in g-function theory.
+\newblock In {\em Analytic number theory (Kyoto, 1996)}, volume 247 of {\em London Math. Soc. Lecture Note Ser.}, pages 321--336. Cambridge Univ. Press, Cambridge, 1997.
+
+\bibitem[Nai82]{Nai82}
+Mohan Nair.
+\newblock A new method in elementary prime number theory.
+\newblock {\em J. London Math. Soc. (2)}, 25(3):385--391, 1982.
+
+\bibitem[Nes88]{Nes88}
+Yuri~V. Nesterenko.
+\newblock Estimates for the number of zeros of certain functions.
+\newblock In {\em New advances in transcendence theory (Durham, 1986)}, pages 263--269, Cambridge, 1988. Cambridge Univ. Press.
+
+\bibitem[Nes96]{Nes96}
+Yuri~V. Nesterenko.
+\newblock Modular functions and transcendence questions.
+\newblock {\em Mat. Sb.}, 187(9):65--96, 1996.
+
+\bibitem[Nes08]{Nes08}
+Yuri~V. Nesterenko.
+\newblock Algebraic independence of $p$-adic numbers.
+\newblock {\em Izv. Ross. Akad. Nauk Ser. Mat.}, 72(3):159--174, 2008.
+
+\bibitem[Nes16]{Nes16}
+Yuri~V. Nesterenko.
+\newblock On catalan's constant.
+\newblock {\em Trudy Mat. Inst. Steklova}, 292:159--176, 2016.
+
+\bibitem[Nes19]{Nes19}
+Yuri~V. Nesterenko.
+\newblock Mahler and transcendence: Effective constructions in transcendental number theory.
+\newblock {\em Doc. Math.}, pages 123--148, 2019.
+
+\bibitem[Nev70]{Nev70}
+Rolf Nevanlinna.
+\newblock {\em Analytic Functions}.
+\newblock Die Grundlehren der mathematischen Wissenschaften. Springer-Verlag, New York-Berlin, 1970.
+
+\bibitem[Nie09]{Nie1909}
+Niels Nielsen.
+\newblock Der eulersche dilogarithmus und seine verallgemeinerungen: Eine monographie.
+\newblock {\em Nova Acta Leop.}, 90:121--212, 1909.
+
+\bibitem[Nik80]{Nik80}
+Evgeny~Mikhailovich Niki{\v{s}}in.
+\newblock Simultaneous pad{\'e} approximants.
+\newblock {\em Mat. Sb. (N.S.)}, 113(155)(4(12)):499--519, 1980.
+
+\bibitem[NP01]{NP01}
+Yuri~V. Nesterenko and Patrice Philippon, editors.
+\newblock {\em Introduction to algebraic independence theory}, volume 1752 of {\em Lecture Notes in Mathematics}.
+\newblock Springer-Verlag, Berlin, 2001.
+
+\bibitem[NS91]{NS91}
+Evgeny~Mikhailovich Niki{\v{s}}in and Vladimir~Nikolaevich Sorokin.
+\newblock {\em Rational Approximations and Orthogonality}, volume~92 of {\em Translations of Mathematical Monographs}.
+\newblock American Mathematical Society, Providence, RI, 1991.
+
+\bibitem[Osg85]{Osg85}
+Charles~F. Osgood.
+\newblock Sometimes effective {Thue--Siegel-Roth--Schmidt--Nevanlinna} bounds, or better.
+\newblock {\em J. Number Theory}, 21(3):347--389, 1985.
+
+\bibitem[Phi91]{Phi91}
+Patrice Philippon.
+\newblock Sur des hauteurs alternatives. i.
+\newblock {\em Math. Ann.}, 289(2):255--283, 1991.
+
+\bibitem[P{\'o}l23]{Pol1923}
+George P{\'o}lya.
+\newblock Sur les s{\'e}ries enti{\`e}res {\`a} coefficients enti{\`e}rs.
+\newblock {\em Proc. London Math. Soc. (2)}, 21:22--38, 1923.
+
+\bibitem[P{\'o}l28]{Pol28}
+George P{\'o}lya.
+\newblock {\"U}ber gewisse notwendige determinantenkriterien f{\"u}r die fortsetzbarkeit einer potenzreihe.
+\newblock {\em Math. Ann.}, 99(1):687--706, 1928.
+
+\bibitem[Pom69]{Pom69}
+Christian Pommerenke.
+\newblock Hankel determinants and meromorphic functions.
+\newblock {\em Mathematika}, 16:158--166, 1969.
+
+\bibitem[PP11]{HPHP11}
+Khodabakhsh~Hessami Pilehrood and Tatiana~Hessami Pilehrood.
+\newblock Bivariate identities for values of the hurwitz zeta function and supercongruences.
+\newblock {\em Electron. J. Combin.}, 18(2):Paper 35, 30 pp., 2011.
+
+\bibitem[PR21]{PR21}
+Marc Pr{\'e}vost and Tanguy Rivoal.
+\newblock Diagonal convergence of the remainder pad{\'e} approximants for the hurwitz zeta function.
+\newblock {\em J. Number Theory}, 222:346--361, 2021.
+
+\bibitem[Pr{\'e}96]{Pre96}
+Marc Pr{\'e}vost.
+\newblock A new proof of the irrationality of $\zeta(2)$ and $\zeta(3)$ using pad{\'e} approximants.
+\newblock {\em J. Comput. Appl. Math.}, 67(2):219--235, 1996.
+
+\bibitem[PS98]{PS98}
+A.~N. Parshin and I.~R. Shafarevich.
+\newblock {\em Number Theory IV: Transcendental Numbers}, volume~44 of {\em Encyclopaedia of Mathematical Sciences}.
+\newblock Springer-Verlag, Berlin, 1998.
+
+\bibitem[PZ84]{PZ84}
+Alberto Perelli and Umberto Zannier.
+\newblock On recurrent mod p sequences.
+\newblock {\em J. Reine Angew. Math.}, 348:135--146, 1984.
+
+\bibitem[Rie38]{Rie38}
+Marcel Riesz.
+\newblock Int{\'e}grales de riemann--liouville et potentiels.
+\newblock {\em Acta Sci. Math. (Szeged)}, 9:1--42, 1938.
+
+\bibitem[Riv00]{Riv00}
+Tanguy Rivoal.
+\newblock La fonction z{\^e}ta de riemann prend une infinit{\'e} de valeurs irrationnelles aux entiers impairs.
+\newblock {\em C. R. Acad. Sci. Paris S{\'e}r. I Math.}, 331(4):267--270, 2000.
+
+\bibitem[Riv06]{Riv06}
+Tanguy Rivoal.
+\newblock Nombres d'euler, approximants de pad{\'e} et constante de catalan.
+\newblock {\em Ramanujan J.}, 11(2):199--214, 2006.
+
+\bibitem[Riv19]{Riv19}
+Tanguy Rivoal.
+\newblock Les e-fonctions et g-fonctions de siegel.
+\newblock Lecture notes, Institut Fourier, 2019.
+
+\bibitem[Rob68]{Rob68}
+Raphael~M. Robinson.
+\newblock An extension of p{\'o}lya's theorem on power series with integer coefficients.
+\newblock {\em Trans. Amer. Math. Soc.}, 130:532--543, 1968.
+
+\bibitem[Rot55]{Rot55}
+Klaus~F. Roth.
+\newblock Rational approximations to algebraic numbers.
+\newblock {\em Mathematika}, 2:1--20, 1955.
+\newblock corrigendum, 168.
+
+\bibitem[Roy90]{Roy90}
+Ranjan Roy.
+\newblock The discovery of the series formula for $\pi$ by leibniz, gregory and nilakantha.
+\newblock {\em Math. Mag.}, 63(5):291--306, 1990.
+
+\bibitem[RR91]{RR91}
+Svetlozar Rachev and Ludgar R{\"u}schendorf.
+\newblock Approximate independence of distributions on spheres and their stability properties.
+\newblock {\em Ann. Probab.}, 19(3):1311--1337, 1991.
+
+\bibitem[RT86]{RT86}
+Georges Rhin and Philippe Toffin.
+\newblock Approximants de pad{\'e} simultan{\'e}s de logarithmes.
+\newblock {\em J. Number Theory}, 24(3):284--297, 1986.
+
+\bibitem[RV96]{RV96}
+Georges Rhin and Carlo Viola.
+\newblock On a permutation group related to $\zeta(2)$.
+\newblock {\em Acta Arith.}, 77(1):23--56, 1996.
+
+\bibitem[RV05]{RV05}
+Georges Rhin and Carlo Viola.
+\newblock The permutation group method for the dilogarithm.
+\newblock {\em Ann. Sc. Norm. Super. Pisa Cl. Sci. (5)}, 4(3):389--437, 2005.
+
+\bibitem[RV19]{RV19}
+Georges Rhin and Carlo Viola.
+\newblock Linear independence of 1, {L}i$_1$ and {L}i$_2$.
+\newblock {\em Mosc. J. Comb. Number Theory}, 8(1):81--96, 2019.
+
+\bibitem[Sal07]{Sal07}
+Vladislav~Kh. Salikhov.
+\newblock On the irrationality measure of $\ln 3$.
+\newblock {\em Dokl. Akad. Nauk}, 417(6):753--755, 2007.
+
+\bibitem[SB85]{SB85}
+Jan Stienstra and Frits Beukers.
+\newblock On the picard--fuchs equation and the formal brauer group of certain elliptic k3-surfaces.
+\newblock {\em Math. Ann.}, 271(2):269--304, 1985.
+
+\bibitem[Sch36]{Sch36}
+Theodor Schneider.
+\newblock {\"{U}ber} die {Approximation} algebraischer {Zahlen}.
+\newblock {\em J. Reine Angew. Math.}, 175:182--192, 1936.
+
+\bibitem[Sch66]{Sch66}
+Laurent Schwartz.
+\newblock {\em Th{\'e}orie des distributions}.
+\newblock Hermann, Paris, 1966.
+
+\bibitem[Shi59]{Shi59}
+Andrei~Borisovich Shidlovskii.
+\newblock A criterion for algebraic independence of the values of a class of entire functions.
+\newblock {\em Izv. Akad. Nauk SSSR Ser. Mat.}, 23:35--66, 1959.
+
+\bibitem[Shi89]{Shi89}
+Andrei~Borisovich Shidlovskii.
+\newblock {\em Transcendental Numbers}, volume~12 of {\em De Gruyter Studies in Mathematics}.
+\newblock Walter de Gruyter \& Co., Berlin, 1989.
+
+\bibitem[Sie21]{Sie1921}
+Carl~Ludwig Siegel.
+\newblock Approximation algebraischer {Zahlen}.
+\newblock {\em Math. Z.}, 10(3-4):173--213, 1921.
+
+\bibitem[Sie49]{Sie49}
+Carl~Ludwig Siegel.
+\newblock {\em Transcendental Numbers}.
+\newblock Number~16 in Annals of Mathematics Studies. Princeton University Press, Princeton, NJ, 1949.
+
+\bibitem[Sor96]{Sor96}
+Vladimir~Nikolaevich Sorokin.
+\newblock On the measure of transcendency of the number $\pi^2$.
+\newblock {\em Mat. Sb.}, 187(12):87--120, 1996.
+
+\bibitem[Sor16]{Sor16}
+Vladimir~Nikolaevich Sorokin.
+\newblock On salikhov's integral.
+\newblock {\em Trans. Moscow Math. Soc.}, pages 107--126, 2016.
+
+\bibitem[Sto74]{Sto74}
+Kenneth Stolarsky.
+\newblock {\em Algebraic numbers and Diophantine approximation}, volume~26 of {\em Pure and Applied Mathematics}.
+\newblock Marcel Dekker, Inc., New York, 1974.
+
+\bibitem[SZ90]{SZ90}
+Gideon Schechtman and Joel Zinn.
+\newblock On the volume of the intersection of two $\ell_p^n$ balls.
+\newblock {\em Proc. Amer. Math. Soc.}, 110(1):217--224, 1990.
+
+\bibitem[Thu77]{Thu77}
+Axel Thue.
+\newblock {\em Selected mathematical papers of {Axel} {Thue}}.
+\newblock Universitetsforlaget, Oslo--Bergen--Troms{\o}, 1977.
+\newblock with an introduction by Carl Ludwig Siegel.
+
+\bibitem[Thu82]{Thu82}
+William~P. Thurston.
+\newblock Three-dimensional manifolds, kleinian groups and hyperbolic geometry.
+\newblock {\em Bull. Amer. Math. Soc. (N.S.)}, 6(3):357--381, 1982.
+
+\bibitem[Thu97]{Thu97}
+William~P. Thurston.
+\newblock {\em Three-dimensional geometry and topology. Vol. 1}.
+\newblock Princeton University Press, Princeton, NJ, 1997.
+\newblock Edited by Silvio Levy.
+
+\bibitem[vdP79]{vdP79}
+Alfred van~der Poorten.
+\newblock A proof that euler missed\dots ap{\'e}ry's proof of the irrationality of $\zeta(3)$.
+\newblock {\em Math. Intelligencer}, 1(4):195--203, 1979.
+
+\bibitem[Vio04]{Vio04}
+Carlo Viola.
+\newblock The arithmetic of euler's integrals.
+\newblock {\em Riv. Mat. Univ. Parma (7)}, 3*:119--149, 2004.
+
+\bibitem[Viz01]{DV01}
+Lucia~Di Vizio.
+\newblock Sur la th{\'e}orie g{\'e}om{\'e}trique des g-fonctions. le th{\'e}or{\`e}me de chudnovsky {\`a} plusieurs variables.
+\newblock {\em Math. Ann.}, 319(1):181--213, 2001.
+
+\bibitem[vL82]{Lin1882}
+Ferdinand von Lindemann.
+\newblock {\"U}ber die zahl $\pi$.
+\newblock {\em Math. Ann.}, 20(2):213--225, 1882.
+
+\bibitem[Wan04]{Wan04}
+Julie Tzu-Yueh Wang.
+\newblock An effective {Schmidt's} subspace theorem over function fields.
+\newblock {\em Math. Z.}, 246(4):811--844, 2004.
+
+\bibitem[Wei85]{Wei1885}
+Karl Weierstrass.
+\newblock Zu lindemann's abhandlung: ``{\"u}ber die ludolph'sche zahl''.
+\newblock {\em Sitzungsber. K{\"o}nigl. Preuss. Akad. Wiss. Berlin}, 5:1067--1085, 1885.
+
+\bibitem[Wei77]{Wei77}
+Andr{\'e} Weil.
+\newblock Remarks on hecke's lemma and its use.
+\newblock In {\em Algebraic number theory}, pages 267--274. Japan Soc. Promotion Sci., Tokyo, 1977.
+
+\bibitem[Wir71]{Wir71}
+Eduard Wirsing.
+\newblock On approximations of algebraic numbers by algebraic numbers of bounded degree.
+\newblock In {\em 1969 Number Theory Institute}, volume~XX of {\em Proc. Sympos. Pure Math.}, pages 213--247. Amer. Math. Soc., Providence, RI, 1971.
+
+\bibitem[Zag09]{Zag09}
+Don Zagier.
+\newblock Integral solutions of ap{\'e}ry-like recurrence equations.
+\newblock {\em Groups and symmetries, CRM Proc. Lecture Notes}, 47:349--366, 2009.
+
+\bibitem[Zan14]{Zan14}
+Umberto Zannier, editor.
+\newblock {\em On some applications of Diophantine approximations}, volume~2 of {\em Quaderni/Monographs}.
+\newblock Edizioni della Normale, Pisa, 2014.
+\newblock A translation of Carl Ludwig Siegel's ``{\"U}ber einige Anwendungen diophantischer Approximationen'' by Clemens Fuchs, with a commentary and the article ``Integral points on curves: Siegel's theorem after Siegel's proof'' by Fuchs and Umberto Zannier.
+
+\bibitem[Zha95]{Zha95}
+Shouwu Zhang.
+\newblock Positive line bundles on arithmetic varieties.
+\newblock {\em J. Amer. Math. Soc.}, 8(1):187--221, 1995.
+
+\bibitem[Zud01]{Zud01}
+Wadim Zudilin.
+\newblock One of the numbers $\zeta(5)$, $\zeta(7)$, $\zeta(9)$, $\zeta(11)$ is irrational.
+\newblock {\em Uspekhi Mat. Nauk}, 56(4):149--150, 2001.
+
+\bibitem[Zud03]{Zud03}
+Wadim Zudilin.
+\newblock An ap{\'e}ry-like difference equation for catalan's constant.
+\newblock {\em Electron. J. Combin.}, 10(Research Paper 14):10, 2003.
+
+\bibitem[Zud14]{Zud14}
+Wadim Zudilin.
+\newblock Two hypergeometric tales and a new irrationality measure of $\zeta(2)$.
+\newblock {\em Ann. Math. Qu{\'e}.}, 38(1):101--117, 2014.
+
+\bibitem[Zud17]{Zud17}
+Wadim Zudilin.
+\newblock A determinantal approach to irrationality.
+\newblock {\em Constr. Approx.}, 45(2):301--310, 2017.
+
+\end{thebibliography}

@@ -1,0 +1,163 @@
+\section{Zagier 序列 A 与 C}\label{sec:11}
+
+\subsection{定义与基本性质}\label{sec:11.1}
+
+在本节中，我们构造若干收敛于单位圆盘上的 holonomic 函数。它们可以解析延拓为 $\mathbf{P}^1 \setminus \{0, 1/9, -1/8, 1, \infty\}$ 普遍覆盖上的全纯函数，同时也延拓为（orbifold/stack） $\mathbf{P}^1 \setminus \{0, -1/72, 4, \infty\}$ 普遍覆盖上的全纯函数（其中 $y = 4$ 是一个 2 阶椭圆点）。在 $1$，$\zeta(2)$ 和 $L(2,\chi_{-3})$ 之间存在一个 $\mathbf{Q}$-线性关系这一假设下，这些函数将具有有理系数且分母增长是有界的。这些构造全部源自 Zagier 的一篇论文 \cite{Zag09}（其形式与此处所呈现的非常接近），但这些序列本身此前无疑在类似背景下就被考虑过，特别是包括 \cite{SB85}，并且证明所需恒等式所需的论证最初是由 Beukers 观察到的 \cite{Beu87}。它们或多或少作为与恰有四个尖点的模曲线相关联的 Picard--Fuchs 方程的解而出现。某些 $\mathbb{Q}[\![x]\!]$ 中的解的线性组合（其系数是令人感兴趣的周期）是超收敛（overconvergent）的（也就是说，它们能解析开拓跨越最接近 $x=0$ 的 ODE 奇点），这一观察被 Beukers 动用 \cite{Beu87} 来给出对 Ap{\'e}ry 原初证明 $\zeta(2)$ 与 $\zeta(3)$ 无理性的重新解释。然而，正如 Zagier 所指出的，我们考虑的这些特殊函数（用 \cite{Zag09} 的记号，与序列 A 和 C 相关联）——虽然给出了分别收敛于 $\zeta(2)$ 和 $L(2,\chi_{-3})$ 的序列——但“收敛速度不够快，无法得出极限 of the limit 的无理性”（\cite[第 360 页]{Zag09}）。确切地说，这些同时逼近 $u_n/q_n \to L(2,\chi_{-3})$，$v_n/q_n \to \zeta(2)$ 以速率 $q_n^{-c}$ 收敛，其中 $c = \log 9/(2 + \log 9) = 0.52349\dots$，而在经典的无理性方案中，我们需要 $c > 1$。
+
+以下内容是标准的，也可以从 \cite[第 357 页, 表 3]{Zag09} 中读到：
+
+\begin{mylemma}{}{lem:11.1.1}
+函数
+\begin{equation}\label{eq:11.1.2}
+x = q \prod_{n=1}^{\infty} \frac{(1-q^n)^4 (1-q^{6n})^8}{(1-q^{2n})^8 (1-q^{3n})^4} = q - 4q^2 + 10q^3 + \dots
+\end{equation}
+（其中 $q = e^{2\pi i \tau}$）定义了一个一致化映射（uniformization map）
+\[ x: Y_0(6) = \mathbf{H}/\Gamma_0(6) \to \mathbf{P}^1 \setminus \{0, 1/9, 1, \infty\} \]
+它将 $\Gamma_0(6)$ 尖点 $\tau = i\infty, 0, 1/3, 1/2$ 分别映为尖点 $x = 0, 1/9, 1, \infty$。
+\end{mylemma}
+
+注意到，我们可以正式地求该幂级数的逆，并写成：
+\begin{equation}\label{eq:11.1.3}
+q = x + 4x^2 + 22x^3 + \dots \in \mathbf{Z}[\![x]\!].
+\end{equation}
+由此可知，任何 $\mathbf{Z}[\![q]\!]$ 中的幂级数都可以正式地写为 $\mathbf{Z}[\![x]\!]$ 中的幂级数，且任何 $\mathbf{Q}[\![q]\!]$ 中的幂级数也可以正式地写为 $\mathbf{Q}[\![x]\!]$ 中的幂级数。
+
+设 $\chi_{-3}(n) = \left(\frac{-3}{n}\right)$ 为导体为 3 的唯一原始二次特征。考虑 Eisenstein 格 $\mathbf{Z}[\zeta_3]$ 的 $\theta$ 函数：
+\[ \theta_{-3}(\tau) := \sum_{m,n \in \mathbf{Z}} q^{m^2 + mn + n^2}. \]
+这是一个水平为 $\Gamma_0(3)$ 的 1 权模形式，顺便也是一个 Eisenstein 级数：
+\[ \theta_{-3}(\tau) = 1 + 6 \sum_{n=1}^{\infty} \left( \sum_{d|n} \chi_{-3}(d) \right) q^n \in M_1(\Gamma_0(3), \chi_{-3}). \]
+
+在 $\Gamma_0(6)$ 上，我们得到 1 权的 Eisenstein 级数：
+\[ A := \frac{\theta_{-3}(\tau) + \theta_{-3}(2\tau)}{2} = 1 + 3\sum_{n=1}^{\infty} \frac{\chi_{-3}(n)q^n}{1 - q^n} + 3\sum_{n=1}^{\infty} \frac{\chi_{-3}(n)q^{2n}}{1 - q^{2n}} \]
+\[ = 1 + 3q + 3q^2 + 3q^3 + \dots \in M_1(\Gamma_0(6), \chi_{-3}). \]
+此外，我们在 $M_3(\Gamma_0(6), \chi_{-3})$ 中拥有如下 3 权 Eisenstein 级数：
+\[ \sum_{n=1}^{\infty} \left( \sum_{d|n} (-1)^{d-1} \chi_{-3}(n/d) d^2 \right) q^n \]
+和
+\[ \sum_{n=1}^{\infty} \left( \sum_{d|n} \chi_{-3}(d) d^2 \right) q^n - \sum_{n=1}^{\infty} \left( \sum_{d|n} \chi_{-3}(d) d^2 \right) q^{2n}. \]
+
+让我们将它们分别写为 $\theta^2 B$ 和 $\theta^2 C$，其中 $\theta = (2\pi i)^{-1} d/d\tau = qd/dq$，而 Eichler 积分 $B$ 与 $C$ 计算如下：
+\[ B = \sum_{n=1}^{\infty} \left( \sum_{d|n} (-1)^{d-1} \chi_{-3}(n/d) d^2 \right) \frac{q^n}{n^2} = \sum_{n=1}^{\infty} \frac{\chi_{-3}(n) q^n}{n^2 (1 - q^n)} - 2 \sum_{n=1}^{\infty} \frac{\chi_{-3}(n) q^{2n}}{n^2 (1 - q^{2n})} \]
+\[ = \sum_{n=1}^{\infty} \chi_{-3}(n) n^{-2} \frac{q^n}{1 + q^n} = q - \frac{5q^2}{4} + q^3 - \frac{11q^4}{16} + \frac{44q^5}{25} + \dots, \]
+\[ C = \sum_{n=1}^{\infty} \left( \sum_{d|n} \chi_{-3}(d) d^2 \right) \frac{q^n}{n^2} - \frac{1}{4} \sum_{n=1}^{\infty} \left( \sum_{d|n} \chi_{-3}(d) d^2 \right) \frac{q^{2n}}{n^2} \]
+\[ = \frac{1}{4} \sum_{n=1}^{\infty} \chi_{-3}(n) \left( 4 \operatorname{Li}_2(q^n) - \operatorname{Li}_2(q^{2n}) \right) = q - q^2 + \frac{q^3}{9} + q^4 - \frac{24q^5}{25} + \dots \]
+
+这些公式清楚地表明\setcounter{footnote}{37}\footnote{我们有 $\operatorname{Li}_2(1) = \zeta(2)$，并且在此背景下，由部分和序列 $1, 0, 0, 1, 0, 0, 1, 0, 0, \dots$ 的平均值得到的 Ces\`aro 正则化 $\sum_{n=1}^{\infty} \chi_{-3}(n) := 1/3$ 是相关的解释。在 Abel 求和之后，这一计算和启发式方法很容易变得严谨。}，$\lim_{q\to 1} B = \frac{1}{2}L(2,\chi_{-3})$ 且 $\lim_{q\to 1} C = \frac{1}{4}\zeta(2)$。此外，通过消除相反权 1 与 $-1$（后者来自于 Eichler 积分的基本性质 \cite{Wei77}）下的模因子，形式 $A(B - \frac{1}{2}L(2,\chi_{-3}))$ 和 $A(C - \frac{1}{4}\zeta(2))$ 在 $\Gamma_0(6)$ 尖点 $\tau=0$ 周围具有 0 权对称性。在 Hauptmodul 坐标 $x$ 中表达这两个乘积，可得到 $Y_0(6) \cong \mathbf{P}^1 \setminus \{0,1/9,1,\infty\}$ 上的 holonomic 函数（例如参见 \cite[第 2.3 节]{KZ01}），它们在 $x=1/9$ 处是超收敛的，并且与 $A$ 的系数（同样被视为 $x$ 的函数）相比，$\mathbf{Q}[\![x]\!]$ 中因子 $AB$ 和 $AC$ 的系数产生同时的 Ap{\'e}ry 极限 $\frac{1}{2}L(2,\chi_{-3})$ 和 $\frac{1}{4}\zeta(2)$。这就是 Beukers 用于无理性证明的框架 \cite{Beu87}。我们的下一个引理收集了这些评述，并指出了如何从 \cite{Zag09} 中读出它们。
+
+\begin{mylemma}{}{lem:11.1.4}
+通过以下公式定义幂级数 $H_A(x)$、$H_B(x)$ 和 $H_C(x)$：
+\[ H_A(x) = A(q), \qquad \frac{H_B(x)}{H_A(x)} = B(q), \qquad \frac{H_C(x)}{H_A(x)} = C(q), \]
+其中 $x = x(q)$ 如方程 \eqref{eq:11.1.2} 所示，所以
+\[ H_A(x) = 1 + 3x + 15x^2 + 93x^3 + \dots = \sum_{n=0}^{\infty} a_n x^n, \]
+\[ H_B(x) = x + \frac{23x^2}{4} + \frac{145x^3}{4} + \frac{3993x^4}{16} + \dots = \sum_{n=0}^{\infty} b_n x^n, \]
+\[ H_C(x) = x + 6x^2 + \frac{343x^3}{9} + \frac{788x^4}{3} + \dots = \sum_{n=0}^{\infty} c_n x^n. \]
+则：
+\begin{enumerate}
+\item[(1)] 函数 $H_A(x)$、$H_B(x)$、$H_C(x)$ 是 $\mathbf{P}^1 \setminus \{0, 1/9, 1, \infty\}$ 上的多值 holonomic 函数；也就是说，它们可以延拓为普遍覆盖上的全纯函数。
+\item[(2)] 我们有 $a_n \in \mathbf{Z}$ 且 $[1, 2, \dots, n]^2 b_n, [1, 2, \dots, n]^2 c_n \in \mathbf{Z}$。
+\item[(3)] $H_A(x)$、$H_B(x)$ 和 $H_C(x)$ 的收敛半径为 $R = 1/9$。然而，以下两个函数的任何线性组合：
+\[ H_B(x) - \frac{L(2,\chi_{-3})}{2}H_A(x), \qquad H_C(x) - \frac{\zeta(2)}{4}H_A(x) \]
+的收敛半径均为 $R = 1$，其中
+\[ L(2,\chi_{-3}) = \sum_{n=1}^{\infty} \frac{\chi_{-3}(n)}{n^2}, \qquad \zeta(2) = \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}. \]
+\end{enumerate}
+\end{mylemma}
+
+\begin{proof}
+该结果由 \cite[表 3]{Zag09} 和 \cite[表 5]{Zag09} 得出（利用了 Beukers 先前使用的论证 \cite{Beu87}）。为了引导读者，请注意序列 $a_n$ 正是 \cite{Zag09} 中的 Zagier 序列 $\mathbf{C}$。也就是说，有等式：
+\[ a_n = \sum_{k=0}^n \binom{n}{k}^2 \binom{2k}{k}, \]
+并且 $a_n$ 对所有 $n$ 均满足递推关系（参见 \cite[方程 (3)]{Zag09}）：
+\begin{equation}\label{eq:11.1.5}
+(n+1)^{2}a_{n+1} - An(n+1)a_{n} + Bn^{2}a_{n-1} = \lambda a_{n}.
+\end{equation}
+此外，$b_n$ 对所有 $n \neq 0$ 均满足相同的递推关系 \eqref{eq:11.1.5}。特别地，上述关于 $H_A(x)$ 和 $H_B(x)$ 的事实在 \cite[第 6 节]{Zag09} 中得到了解释。另一方面，$c_n$ 满足以下递推关系（对所有 $n \ge 0$）：
+\begin{equation}\label{eq:11.1.6}
+(n+1)^{2}c_{n+1} - An(n+1)c_{n} + Bn^{2}c_{n-1} = 1 + \lambda c_{n}.
+\end{equation}
+虽然该序列并未显式出现在 \cite{Zag09} 中，但它是 Zagier 序列 A 的一种伪装形式。更确切地说，如果定义函数：
+\begin{equation}\label{eq:11.1.7}
+\begin{aligned}
+G_A(x) &= \frac{1}{1+x} \cdot H_A\left(\frac{x}{x+1}\right) = 1 + 2x + 10x^2 + 56x^3 + \dots, \\
+G_B(x) &= \frac{1}{1+x} \cdot H_B\left(\frac{x}{x+1}\right) = x + \frac{15x^2}{4} + 22x^3 + \dots, \\
+G_C(x) &= \frac{1}{1+x} \cdot H_C\left(\frac{x}{x+1}\right) = x + 4x^2 + \frac{208x^3}{9} + \dots,
+\end{aligned}
+\end{equation}
+那么 $G_A(x)$ 的系数正是 Zagier 序列 A，也就是说，它们满足方程 \eqref{eq:11.1.5}，但此时的参数值为 $(A, B, \lambda) = (7, -8, 2)$，而 $G_C(x)$ 的系数对 $n > 0$ 满足相同的递推关系。这可以通过表明这两个函数满足相同的常微分方程（ODE）并检查前几项系数是否一致来轻松证明。
+\end{proof}
+
+\begin{proposition}\label{prop:11.1.8}
+假设在 $1$，$\zeta(2)$ 和 $L(2, \chi_{-3})$ 之间存在一个 $\mathbf{Q}$-线性关系，即假设有
+\[ a + b \cdot L(2, \chi_{-3})/2 + c \cdot \zeta(2)/4 = 0 \]
+对于某些有理数 $a$、$b$ 和 $c$。令
+\begin{equation}\label{eq:11.1.9}
+H(x) := aH_A(x) + bH_B(x) + cH_C(x) = b\left(H_B(x) - \frac{L(2,\chi_{-3})}{2}H_A(x)\right) + c\left(H_C(x) - \frac{\zeta(2)}{4}H_A(x)\right).
+\end{equation}
+那么 $H(x) \in \mathbf{Q}[\! [x]\!]$，其分母的形式为 $[1, 2, \dots, n]^2$，并且 $H(x)$ 满足常微分方程：
+\begin{equation}\label{eq:11.1.10}
+x(1-x)(1-9x)y'' + (1-20x+27x^2)y' + 3(-1+3x)y = b + \frac{c}{1-x}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+有理性的声明已在上面确立。可以通过方程 \eqref{eq:11.1.5} 和 \eqref{eq:11.1.6}，或者更直接地利用 \cite{Beu87} 中关于 Eichler 积分的定义，验证 $y = H(x)$ 满足给定的微分方程。
+\end{proof}
+
+\begin{remark}\label{rem:11.1.11}
+在 \cite{Beu79} 中，Beukers 用多重积分给出了 $\zeta(2)$ 和 $\zeta(3)$ 无理性的替代证明。例如，Ap{\'e}ry 对 $\zeta(2)$ 的逼近被认为直接来自于以下积分在计算为 $a_n - b_n \zeta(2)$ 时的结果：
+\begin{equation}\label{eq:11.1.12}
+\iint_{[0,1]^2} \frac{t^n (1-t)^n s^n (1-s)^n}{(1-st)^{n+1}} \, ds dt.
+\end{equation}
+我们指出，此处（以及在 \cite{Zag09} 中）考虑的对 $L(2, \chi_{-3})$ 和 $\zeta(2)$ 的逼近也可以用同样的方式看待。特别是，人们可以很容易地验证（或者稍微花点力气手动计算，或者不花任何力气地使用 \cite{AZ90}）如下恒等式：
+\begin{equation}\label{eq:11.1.13}
+L(2,\chi_{-3})H_A(x) - 2H_B(x) = \sum_{n=0}^{\infty} x^n \iint_{[0,1]^2} \frac{9^n s^n t^n (1-s^3)^n (1-t^3)^n}{(1+st+s^2t^2)^{2n+1}} ds dt,
+\end{equation}
+和
+\begin{equation}\label{eq:11.1.14}
+\zeta(2)G_A(x) - 4G_C(x) = \sum_{n=0}^{\infty} x^n (-1)^n \iint_{[0,1]^2} \frac{(1-s^2)^n (1-t^2)^n}{(1-st)^{n+1}} ds dt.
+\end{equation}
+\end{remark}
+
+人们很容易发现：
+\begin{equation}\label{eq:11.1.15}
+\max_{[0,1]^2} \left| \frac{9st(1-s^3)(1-t^3)}{(1+st+s^2t^2)^2} \right| = 1, \qquad \max_{[0,1]^2} \left| \frac{(1-s^2)(1-t^2)}{1-st} \right| = 1,
+\end{equation}
+其中第一个的最大值在 $s = t = 1/2$ 处取得，第二个的最大值在 $s = t = 0$ 处取得。由此可知，这些积分都以 1 为界，这给出了一个清晰的证明：\rthm{prop:11.1.8} 中考虑的函数 $H(x)$ 超收敛到跨越 $x = 1/9$ 的奇点的整个单位圆盘上。
+
+我们还可以求几何级数的和，将积分公式 \eqref{eq:11.1.13} 表达为：
+\begin{equation}\label{eq:11.1.16}
+L(2,\chi_{-3})H_A(x) - 2H_B(x) = \iint_{[0,1]^2} \frac{1 + st + s^2t^2}{(1 + st + s^2t^2)^2 - 9st(1 - t^3)(1 - s^3)x} dsdt.
+\end{equation}
+由 \eqref{eq:11.1.15}，该公式将函数 $L(2,\chi_{-3})H_A(x) - 2H_B(x)$ 表示为一族在 $\mathbf{C} \setminus [1,\infty)$ 上全纯的（在此处恰好为有理）函数 $f_{s,t}(x) \in \mathcal{O}(\mathbf{C} \setminus [1,\infty))$ 的连续积分。在复区域上的全纯性质在对参数 $(s,t) \in [0,1]^2$ 的任意连续积分下均能得以保持，因此该积分表示同样清晰地展现了 \eqref{eq:11.1.16} 在 $\mathbf{C} \setminus [1,\infty)$ 上的解析性。这就是 Zudilin 在 \cite{Zud17} 中的观点。
+
+\begin{remark}\label{rem:11.1.17}
+这些积分表示，特别是 \eqref{eq:11.1.16}，也可以与 Zudilin 等人 \cite{Zud03}\cite{Riv06}\cite{Nes16} 给出的如下表示进行对比：
+\[ \begin{aligned} L(2,\chi_{-4})U(x) - V(x) &:= \iint_{[0,1]^2} \frac{ds\,dt}{\sqrt{(s-s^2)(t-t^2)} \cdot \left(1-st-(s-s^2)(t-t^2)x\right)} \\ &= -\sum_{n=0}^{\infty} x^n \iint_{[0,1]^2} \frac{(s-s^2)^{n-1/2}(t-t^2)^{n-1/2}}{(1-st)^{n+1}} \, ds dt \end{aligned} \]
+该公式给出了 Catalan 常数 $G = L(2, \chi_{-4})$ 的有理逼近。在此情形下，被积函数的峰值速率为：
+\[ \max_{[0,1]^2} \left| \frac{(s-s^2)(t-t^2)}{1-st} \right| = \left( \frac{1+\sqrt{5}}{2} \right)^{-5}, \]
+并且实际上，线性常微分方程（ODE）的奇点位于 $0$、$\left(\frac{1\pm\sqrt{5}}{2}\right)^5$ 和 $\infty$：这与 Ap{\'e}ry 对 $\zeta(2)$ 的逼近完全一致。遗憾的是，由于该积分表示中含有半整数指数，这些有理逼近中的分母大至 $16^n[1,\dots,2n]^2$。
+
+在 \cite{Zag09} 的情况 $\mathbf{E}$ 中给出了另一种对 $G$ 的 holonomic 有理逼近序列，其 ODE 奇点为 $\{0, 1/8; 1/4, \infty\}$（前两个是超收敛的），且分母类型为 $[1, \dots, n]^2$。
+
+由于 $e^2 > 16 \cdot (1/4)$ 且 $e^4 > \left(\frac{1+\sqrt{5}}{2}\right)^5$（且优势巨大！），除非发现完全全新的想法，否则这无疑排除了利用我们的方法、通过这两类特殊的有理逼近来解决 Catalan 常数无理性的可能性。
+\end{remark}
+
+\subsection{$H(x)$ 的对称化}\label{sec:11.2}
+
+设 $a$、$b$ 和 $c$ 为复数，满足
+\[ a + b \cdot L(2, \chi_{-3})/2 + c \cdot \zeta(2)/4 = 0. \]
+然后我们可以如方程 \eqref{eq:11.1.9} 中那样定义 $H(x) \in \mathbf{C}[\! [x]\!]$。如果另外假设 $1$、$\pi^2$ 和 $L(2,\chi_{-3})$ 在 $\mathbf{Q}$ 上线性相关，则我们可以选择 $a$、$b$ 和 $c$ 为有理数，不过本节的论证并不需要这一假设。
+
+我们设 $G(y)$ 为 $H(x)$ 的对称化：
+
+\begin{mydef}{}{def:11.2.1}
+设 $G(y) = \operatorname{Sym}^+ H(x)$，如方程 (9.0.9) 所定义，所以
+\[ G(y) = H(x) + H\left(\frac{x}{x-1}\right) \in \mathbf{C}[\! [y]\!], \]
+并设 $G_A(y) = \operatorname{Sym}^+ H_A(x)$，所以
+\[ G_A(y) = H_A(x) + H_A\left(\frac{x}{x-1}\right) \in \mathbf{Z}[\! [y]\!]. \]
+\end{mydef}
+
+注意到 $G_A(y) = 2 - 27y + 1014y^2 - 49536y^3 + \dots$；函数 $G_A(y)$ 满足一个 4 阶常微分方程（ODE）：
+\[ \sum_{i=0}^{3} c_i(y) G_A^{(i)}(y) = 0, \]
+我们稍后将在方程 \eqref{eq:12.1.5} 中显式地给出该方程。$G_A(y)$ 及其导数的生成空间在 $\mathbf{Q}(x)$ 上生成了由 $H_A(x)$ 和 $H_A(x/(x-1))$ 及其导数生成的空间（它们都是 4 维向量空间）。根据\mylem{lem:9.0.3}之 (2)，我们立刻有：
+
+\begin{mylemma}{}{lem:11.2.2}
+若 $a, b, c \in \mathbb{Q}$，则 $G(y)$ 具有分母类型 $[1, 2, \dots, 2n]^2$。
+\end{mylemma}

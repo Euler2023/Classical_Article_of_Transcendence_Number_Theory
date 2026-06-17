@@ -1,0 +1,166 @@
+\section{在 $\mathbf{P}^1 \setminus \{0,1,\infty\}$ 和 $\mathbf{P}^1 \setminus \{0,4,\infty\}$ 上的纯函数}\label{sec:10}
+
+本节的目标是写出若干在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上具有良好整性性质的 G-函数，然后利用 \S~9 中的变换讨论，同样写出在 $\mathbf{P}^1 \setminus \{0, 4, \infty\}$ 上的相应函数。这里点 $y = 4$ 应被视为 2 阶椭圆点。从 orbifold 上的局部系统来看，思考这些区域的合适方式是将其分别视为坐标 $x = \lambda$ 下的模曲线 $Y(2)$，以及坐标 $y = x^2/(x-1) = \lambda^2/(\lambda-1) = h$ 下的 $Y_0(2)$。
+
+\subsection{在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上的五个 $[1, \dots, n]^2$ 型函数}\label{sec:10.1}
+
+我们在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上可以显然地写出四个在 $\mathbf{Q}(x)$ 上线性无关的 G-函数，其分母类型为 $\tau = [1, 2, 3, \dots, n]^2$。即：
+\begin{equation}\label{eq:10.1.1}\tag{10.1.1}
+\begin{aligned}
+A_{1}(x) &= 1, \\
+A_{2}(x) &= -\log(1 - x) = \sum_{n=1}^{\infty} \frac{x^{n}}{n}, \\
+A_{3}(x) &= \log^{2}(1 - x) = \left(\sum_{n=1}^{\infty} \frac{x^{n}}{n}\right)^{2}, \\
+A_{4}(x) &= \operatorname{Li}_{2}(x) = \sum_{n=1}^{\infty} \frac{x^{n}}{n^{2}}.
+\end{aligned}
+\end{equation}
+
+显然 $A_2(x)$ 额外具有 $\tau = [1, 2, 3, \dots, n]$ 类型，而 $A_3(x)$ 具有分母类型 $[1, 2, \dots, n][1, 2, \dots, \lfloor n/2 \rfloor]$。这些函数在 $\mathbf{Q}(x)$ 上是线性无关的。利用对称化，我们也得到了在 $\mathbf{Q}(y)$ 上线性无关的 4 个函数。它们可以显式地给出如下：
+\begin{equation}\label{eq:10.1.2}\tag{10.1.2}
+\begin{aligned}
+B_{1}(y) &= 1, \\
+B_{2}(y) &= \sum_{n=2}^{\infty} 2y^{n} \cdot \frac{(n-2)!n!}{(2n)!} = 2y - 2\sqrt{y(4-y)} \arcsin\left(\frac{\sqrt{y}}{2}\right), \\
+B_{3}(y) &= \sum_{n=1}^{\infty} y^{n} \cdot \frac{(n-1)!^{2}}{(2n)!} = 2\arcsin(\sqrt{y}/2)^{2}, \\
+B_{4}(y) &= \operatorname{Sym}^{-}\operatorname{Li}_{2}(y) = \left(x - \frac{x}{x-1}\right)\left(\operatorname{Li}_{2}(x) - \operatorname{Li}_{2}\left(\frac{x}{x-1}\right)\right) \\
+&= -2\sqrt{y(4-y)} \int \frac{\arcsin\left(\frac{\sqrt{y}}{2}\right)}{y} dy \\
+&= 4 \cdot \sum_{n=0}^{\infty} \frac{y^{n+1}}{16^{n}} \left(\sum_{k=0}^{n} \binom{2k}{k} \binom{2n-2k}{n-k} \frac{1}{(2k-1)(2n-2k+1)^{2}}\right) \\
+&= -4y + \frac{4y^{2}}{9} + \frac{31y^{3}}{900} + \frac{389y^{4}}{88200} + \dots
+\end{aligned}
+\end{equation}
+
+这些函数都具有被包含在 $[1, 2, \dots, 2n]^2$ 内的分母类型（更精确的描述参见\mylem{lem:10.2.2}和\rremark{rem:10.2.3}）。
+
+我们曾花了可能令人尴尬的相当长一段时间，误以为这四个函数 $A_1(x), \dots, A_4(x)$ 生成了 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上分母类型为 $\tau = [1, 2, \dots, n]^2$ 的函数的整个 $\mathbf{Q}(x)$-向量空间。然而，其实还可以写出第五个函数。它更自然地出现在 $\mathbf{Q}(y)$-定义域中，即：
+\begin{equation}\label{eq:10.1.3}
+B_5(y) = \sum_{n=1}^{\infty} y^n \cdot \frac{(n-1)!^2}{(2n-1)! \cdot (2n-1)} = y \cdot {}_{3}F_{2} \left[ \begin{matrix} 1/2 & 1 & 1 \\ \multicolumn{3}{c}{3/2 \quad 3/2} \end{matrix} ; \frac{y}{4} \right]. \tag{10.1.3}
+\end{equation}
+
+函数 $B_5(y)$ 出现在 Nesterenko 对 Catalan 常数 $G = L(2, \chi_{-4})$ \cite{Nes16} 的逼近中（参见 \cite{Cat1882}），并与如下等式相关联：
+\begin{equation}\label{eq:10.1.4}\tag{10.1.4}
+B_5(4) = 8G
+\end{equation}
+该等式归功于 Nielsen（参见 \cite[第 166 页]{Nie1909}）。这里 $B_5(y)$ 属于 $[1, 2, 3, \dots, 2n]^2$ 型（甚至稍微更好一些，参见\mylem{lem:10.2.2}）。我们很容易在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上定义一个相应的具有分母类型 $\tau = [1, 2, 3, \dots, n]^2$ 的函数：
+\begin{equation}\label{eq:10.1.5}\tag{10.1.5}
+A_5(x) = J(x) = x \cdot {}_{3}F_{2} \left[ \begin{smallmatrix} 1/2, & 1/2, & 1 \\ & 3/2, & 3/2 \end{smallmatrix}; \frac{1}{4} \left( x + \frac{x}{x-1} \right) \right]
+\end{equation}
+这是我们最初遗漏的！若设
+\[ \mathcal{L} = 2x(1-x)^2 \frac{d^2}{dx^2} + (2-x)(1-x)\frac{d}{dx} + 1, \]
+则 $\mathcal{L}J(x) = 2 - 2x$。我们还可看到：
+\begin{equation}\label{eq:10.1.6}\tag{10.1.6}
+2x(x-1)\frac{dJ(x)}{dx} - xJ(x) = 2(1-x)\log(1-x).
+\end{equation}
+从该微分方程可以看出，J(x) 定义在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上。
+
+齐次微分方程 $\mathcal{L}(F) = 0$ 的解由下式给出：
+\[ A(x) = \sqrt{1 - x}, \]
+\[ B(x) = \sqrt{1-x} \cdot \operatorname{arctanh}(\sqrt{1-x}) = \frac{1}{2} \cdot \sqrt{1-x} \cdot \log \left( \frac{1+\sqrt{1-x}}{1-\sqrt{1-x}} \right). \]
+利用常数变易法，该常微分方程的一个显式解由如下定义的 $H(x)$ 给出：
+\[ 2\sqrt{1-x} \cdot \operatorname{arctanh}(\sqrt{1-x}) \log(-1+x) - 2\sqrt{1-x} \left( -\operatorname{Li}_2\left(-\sqrt{1-x}\right) + \operatorname{Li}_2\left(\sqrt{1-x}\right) \right), \]
+并且在对这些项的各种解析延拓做出合适选择后，可以写成：
+\[ J(x) = H(x) - 2\pi i B(x) + \frac{\pi^2}{2} A(x). \]
+
+回想起来，一种更简单（虽然等价）的、能写出一个新的且保持完全在 $\mathbf{P}^1 \setminus \{0,1,\infty\}$ 上的 $\mathbf{Q}(x)$-线性无关函数（与 J(x) 具有相同的生成空间）的方法是考虑以下积分：
+\begin{equation}\label{eq:10.1.7}\tag{10.1.7}
+\frac{1}{\sqrt{1-x}} \int_0^x \frac{\log(1-t)}{t\sqrt{1-t}} dt.
+\end{equation}
+
+在这一表述中，令人惊讶的是 \eqref{eq:10.1.7} 的泰勒级数展开分母中出人意料地没有 2 的额外幂次。虽然单独的因子 $1/\sqrt{1-x}$ 和 $\int \frac{\log(1-x)}{x\sqrt{1-x}} dx$ 在 $x=0$ 处的 2-进收敛圆盘为 $|x|_2 < 1/4$，但它们的乘积却超收敛（overconverge）到整个单位开 2-进圆盘 $|x|_2 < 1$。
+
+\setcounter{equation}{7}
+\begin{remark}\label{rem:10.1.8}
+可以证明，使得
+\begin{equation}\label{eq:10.1.9}\tag{10.1.9}
+\frac{1}{\sqrt{1-x}} \int \frac{\log^{k-1}(1-x)}{x\sqrt{1-x}} dx
+\end{equation}
+的泰勒级数在 2-进单位圆盘 $|x|_2 < 1$ 上收敛的 $k \in \mathbb{N}_{>0}$ 恰好是正偶数；且对于这些 $k$，其泰勒展开满足：
+\[ J_k(x) := \frac{1}{\sqrt{1-x}} \int_0^x \frac{\log^{k-1}(1-t)}{t\sqrt{1-t}} dt \in \sum_{n=1}^{\infty} \frac{x^n}{[1,\dots,n]^k} \mathbf{Z}. \]
+这定义了一个在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上 holonomic 的 G-函数序列 $J_2, J_4, J_6, \dots$（其中 $J_2 = J$），其分母类型为 $x^n/[1, \dots, n]^*$，且在多重聚对数环（\S~10.3）上是独立的。
+\end{remark}
+
+\subsection{添加的积分}\label{sec:10.2}
+
+我们如下定义另外两个函数 $B_6(y)$ and $B_7(y)$：
+\begin{equation}\label{eq:10.2.1}\tag{10.2.1}
+\begin{aligned}
+B_6(y) &= \int \frac{B_3(y)}{y} dy = \int \frac{2\arcsin(\sqrt{y}/2)^2}{y} dy = \sum_{n=1}^{\infty} y^n \cdot \frac{(n-1)!^2}{n(2n)!}, \\
+B_7(y) &= \int \frac{B_4(y)}{y} dy.
+\end{aligned}
+\end{equation}
+
+我们有：
+\setcounter{equation}{1}
+\begin{mylemma}{}{lem:10.2.2}
+公式 \eqref{eq:10.1.2}、\eqref{eq:10.1.3} 和 \eqref{eq:10.2.1} 中定义的 $B_i(y)$（$i = 1, \dots, 7$）的分母类型如下：
+\begin{enumerate}
+\item[(1)] $B_1(y)$ 具有平凡的分母类型。
+\item[(2)] $B_2(y)$ 具有分母类型 $[1, 2, \dots, 2n]$。
+\item[(3)] $B_3(y)$ 具有分母类型 $[1, 2, \dots, 2n]n$。
+\item[(4)] $B_4(y)$ 具有分母类型 $[1, 2, \dots, 2n]^2$。
+\item[(5)] $B_5(y)$ 具有分母类型 $[1, 2, \dots, 2n](2n-1)$，因此特别地，具有分母类型 $[1, 2, \dots, 2n]^2$。
+\item[(6)] $B_6(y)$ 具有分母类型 $[1, 2, \dots, 2n]n^2$，因此特别地，具有分母类型 $[1, \dots, n][1, \dots, 2n]n$，并且更强地，具有分母类型 $[1, 2, \dots, 2n]^2 n$。
+\item[(7)] $B_7(y)$ 具有分母类型 $[1, 2, \dots, 2n]^2 n$。
+\end{enumerate}
+\end{mylemma}
+
+\begin{proof}
+在 $B_4(y)$ 的情况下，这由\mylem{lem:9.0.3}得出；在 $B_7(y)$ 的情况下，这由自 $n=4$ 情况下的直接积分得出。对于其余情况，由于存在通项系数关于阶乘的显式表达式，这由直接计算得出。
+\end{proof}
+
+\begin{remark}\label{rem:10.2.3}
+事实上，这些函数的分母具有稍微更好的类型，即 $[1, \dots, 2n]$ 可以放宽为 $n(n-1)\binom{2n}{n}$。在实践中，这意味着素数乘积 $\prod_{2n/3 < p \le n} p$ 在这些分母的 $[1, \dots, 2n]$ 部分中是缺失的。这一注记似乎对定理 A 的框架没有带来任何改进，但在其他背景下，消除素数乘积的可能性也许是有用的。
+\end{remark}
+
+我们将在 \S~12 中证明，这七个函数 $B_i(y)$ 在 $\mathbf{Q}(y)$ 上是线性无关的。
+
+\subsection{多重聚对数环}\label{sec:10.3}
+
+（本节更多的是一个延伸的插话，初次阅读时可以忽略。）在 $\mathbf{P}^1 \setminus \{0,1,\infty\}$ 上，型为 $[1,\dots,n]^{\bullet}$ 的 G-函数的一个基本构造由单变量多重聚对数函数提供：
+\begin{equation}\label{eq:10.3.1}\tag{10.3.1}
+\operatorname{Li}_{k_1,\dots,k_d}(x) = \sum_{n_1 > n_2 > \dots > n_d} \frac{x^{n_1}}{n_1^{k_1} n_2^{k_2} \cdots n_d^{k_d}}.
+\end{equation}
+
+在这些函数中，以下八个函数构成一个型为 $n[1, \dots, n]^2$ 的极大 $\mathbf{Q}(x)$-线性无关集：
+\begin{equation}\label{eq:10.3.2}\tag{10.3.2}
+\begin{aligned}
+&1, \ \operatorname{Li}_1(x), \ \operatorname{Li}_1(x)^2, \ \operatorname{Li}_2(x), \\
+&\operatorname{Li}_{1,1}(x), \ \operatorname{Li}_1(x) \operatorname{Li}_2(x), \ \operatorname{Li}_{1,2}(x), \ \operatorname{Li}_3(x).
+\end{aligned}
+\end{equation}
+
+在\rremark{rem:10.1.8}中，我们发现多重聚对数函数并未穷尽所有在 $\mathbf{P}^1 \setminus \{0,1,\infty\}$ 上具有 $[1,\dots,n]^{\bullet}$ 型的函数。特别地，我们可以在 \eqref{eq:10.3.2} 中添加第九个独立的 $[1, \dots, n]^2$ 型函数 \eqref{eq:10.1.7}。通过对称化，这九个 $\mathbf{Q}(x)$-线性无关的函数可以对应到在 $\mathbf{P}^1 \setminus \{0,4,\infty\}$ 上的九个 $\mathbf{Q}(y)$-线性无关的函数，其在椭圆点 $y = 4$ 处具有 $\mathbf{Z}/2$ 局部单值性。然而，虽然在\mylem{lem:9.0.3}中我们证明了两个对称化操作 $F(x) \rightsquigarrow F^{\pm}(y)$ 将类型 $[1,\dots,n]^{\sigma}$ 带入到类型 $[1,\dots,2n]^{\sigma}$，但对该证明中的多项式 (9.0.7) 的检查表明：正对称化 $F^+$ 将积分型 $n[1,\dots,n]^{\sigma}$ 带入到积分型 $n[1,\dots,2n]^{\sigma}$，而负载对称化 $F^-$ 则将积分型 $n[1,\dots,n]^{\sigma}$ 破坏为 $[1,\dots,2n]^{\sigma+1}$。这就是为什么结果表明，在 $\mathbf{P}^1 \setminus \{0,1,\infty\}$ 上的九个型为 $n[1,\dots,n]^2$ 的 $\mathbf{Q}(x)$-无关函数只能对应到仅有的七个型为 $n[1,\dots,2n]^2$ 的 $\mathbf{Q}(y)$-无关函数，即上述的 $B_i(y)$。类似的评述也适用于 \S~12.1，在假设 $1$, $\zeta(2)$, $L(2, \chi_{-3})$ 之间存在 $\mathbf{Q}$-线性相关性的情况下，我们将在 $x \in \mathbf{P}^1 \setminus \{0, 1/9, -1/8, 1, \infty\}$ 上得到多达 17 个型为 $n[1, \dots, n]^2$ 且在 $\{0, 1/9, -1/8\}$ 处全纯的独立函数（其中真正存在的只有上面列出的九个），但它们的对称化中只有 14 个（其中七个是真实的）具有对应的积分型 $n[1, \dots, 2n]^2$。
+
+我们论文的核心想法之一是，虽然如基本注记 9.0.20 中所解释的，我们的 holonomy 边界对于数据组 $(\varphi; \prod[1,\dots,\mathbf{b}n]) := (\lambda^2/(\lambda-1),[1,\dots,2n]^2)$ 和 $(\varphi;\prod[1,\dots,\mathbf{b}n]) := (\lambda,[1,\dots,n]^2)$ 是等价的，但积分类型：
+\[ (\varphi; \prod n^{\mathbf{e}}[1,\dots,\mathbf{b}n]) := (\lambda^2/(\lambda-1), n[1,\dots,2n]^2) \]
+所给出的边界却要显著优于积分类型：
+\[ (\varphi; \prod n^{\mathbf{e}}[1,\dots,\mathbf{b}n]) := (\lambda, n[1,\dots,n]^2); \]
+其优越程度甚至使得前一种类型中的 14 个函数所带来的约束力远比后一种类型中的 17 个函数来得强。我们在下一个注记中详细阐述这一对比。
+
+\setcounter{equation}{2}
+\begin{remark}\label{rem:10.3.3}
+（该注记最好在读完定理 A 的完整证明后再行体味，尽管将其放在本节中最为合适。）上述 17 个具有分母类型 $n[1, \dots, n]^2$ 的函数符合定理~6.0.2 中的如下精细分母方案：
+\[ \mathbf{b} := (0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)^{\mathrm{t}} \]
+这里的 integrations 向量为：
+\[ \mathbf{e} := (0, 1, 1, 1, 1, 1, 1, 1, 1; 0; 0, 0, 0, 0, 1, 1, 1, 1). \]
+这里的前八个分量由行 \eqref{eq:10.3.2} 索引，精确地以此顺序排列；其中，鉴于 $\tau^{\sharp}$ 的定义 (6.0.5) 中的项 $\max_i(e_i)$，我们选择将 $\operatorname{Li}_2$ 归入类型 $n[1,\dots,n]$，并将 $\operatorname{Li}_3$ 归入类型 $n[1,\dots,n]^2$。第九个分量是函数 \eqref{eq:10.1.7}。最后，设 $H(x) \in \mathbf{Q}[x]$ 为下文命题~11.1.8 中的函数，最后八个分量为虚构函数：
+\[ H(x), \ H'(x), \ H\left(\frac{x}{x-1}\right), \ H'\left(\frac{x}{x-1}\right), \]
+\[ \int \frac{H(x) - H(0)}{x} dx, \ \int \frac{H\left(\frac{x}{x-1}\right) - H(0)}{x} dx, \]
+\[ \int \frac{H(x) - H(0)}{x-1} dx, \ \int \frac{H\left(\frac{x}{x-1}\right) - H(0)}{x-1} dx, \]
+这些函数结果是 $\mathbf{Q}(x)$-线性无关的，并且在 $\mathbf{P}^1 \setminus \{0, 1/9, -1/8, 1, \infty\}$ 上是 holonomic 的。回忆 $\tau(\mathbf{b}; \mathbf{e}) = \tau^\flat(\mathbf{b}) + \tau^\sharp(\mathbf{e})$ 是由两部分构建而成的。对于这些分母类型，我们计算得到：
+\[ \tau^{\flat}(\mathbf{b}) = \frac{(1+3)\cdot 0 + (5+7)\cdot 1 + (9+11+13+\dots+33)\cdot 2}{17^2} = \frac{558}{289} = 1.93079584\dots \]
+这相比于粗糙的主分母上限 $\sigma = 2$ 有所改善。我们在此处得到的 $\tau^\flat(\mathbf{b})$ 的值甚至优于我们将在 \S~13 中使用的相应值 $191/49 = 2 \cdot 1.948979\dots$；因为在此处我们可以进一步利用 $\operatorname{Li}_1 = \int dx/(x-1)$ 的特殊积分型 $n$。但是对于 $\tau(\mathbf{b}; \mathbf{e})$ 的另一部分 $\tau^\sharp(\mathbf{e})$，我们得到：
+\[ \tau^{\sharp}(\mathbf{e}) = 83711/242760 = 0.34483\dots, \]
+其中式 (6.0.5) 中的最优 $\xi$ 为包含选择 $\xi = 57/40$ 的某一个短区间。在此处总共有：
+\[ \tau(\mathbf{b}; \mathbf{e}) = 558/289 + 83711/242760 = 552431/242760 = 2.275626\dots \]
+这远远差于 \eqref{eq:13.0.6} 中的值 $16603/3920 = 2 \cdot 2.1173\dots$，并且这三个额外的函数几乎不足以弥补这一差距，我们现在对此进行解释。
+
+为了探讨 holonomy 商的数值情况，我们可以选择映射 $\varphi$ 为如下形式的最优映射：
+\[ \varphi(z) := \lambda(G(z)), \qquad G: (\overline{\mathbf{D}}, 0) \to (\mathbf{D}, 0), \qquad \varphi'(0) = 16G'(0), \]
+其中具体地，$G$ 可以（例如）是受限于 $\mathbf{D}$ 内部任何包围原点的简单闭合围道的拓扑圆盘的 Riemann 映射，正如我们在 \S~A 中研究的围道。为了满足可容许性，该围道绝不能包围 $\lambda^{-1}(1/9)$ 和 $\lambda^{-1}(-1/8)$ 中的任何非实纤维点，但我们甚至可以忽略这一点，因为这只会让数值结果变得更糟。那么，需要与 $m = 17$ 进行比较的 holonomy 边界由如下商给出：
+\begin{equation}\label{eq:10.3.4}\tag{10.3.4}
+\frac{\iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w)}{\log 16 + \log |G'(0)| - \frac{552431}{242760}}.
+\end{equation}
+使用 \S~A.2 中定义的 gobble 围道中（稍微）优化的选择 $\operatorname{Gob}(0.92, 110, 23)$，我们发现 $|G'(0)| = 0.9163768\dots$，并且商 \eqref{eq:10.3.4} 的计算结果大约为 $22.7527$，距离所需的阈值 $17$ 还有相当长的一段距离。\end{remark}
+
+\setcounter{equation}{4}
+\begin{remark}[定理 A 和 C 的透视]\label{rem:10.3.5}
+这就是为什么我们此后将坚持使用型为 $n[1,\dots,2n]^2$ 的函数 $f_i(y)$（例如上述的 $B_i(y)$），它们是 holonomic 的，奇异点位于 $y=\infty$，在 $y=4$ 处具有 $\mathbf{Z}/2$ 局部单值性，并且所有其他奇异点对于 $f_i(y)$ 均是超收敛（overconvergent）的，且足够接近于 0。在定理 A 和 C 的应用中，这些后者的“超收敛”奇异点结果证明为 $\{0,-1/72\}$，正如我们将在下一节中发现的。借助\rthm{thm:6.0.2}，我们将在 \S~13 中发现这些奇异点 $\{0,-1/72\}$ 确实足够接近 0，并且可以幸运地达到小于 14 的 holonomy 边界：从而证明这样的 14 个独立函数不能同时存在。最终，这与假设的 $1$, $\zeta(2)$ 和 $L(2, \chi_{-3})$ 之间的 $\mathbf{Q}$-线性相关性相矛盾，在这样的相关性下，14 个函数中有多达 7 个是通过\mylem{lem:12.1.1}产生的。
+\end{remark}

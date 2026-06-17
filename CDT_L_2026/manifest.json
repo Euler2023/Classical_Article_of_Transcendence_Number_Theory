@@ -1,0 +1,29 @@
+{
+  "source": "input/CDT_L_2026.pdf",
+  "output": "output/CDT_L_2026/CDT_L_2026_Chn.tex",
+  "input_files": [
+    "output/CDT_L_2026/tex/sec1.tex"
+  ],
+  "bibliography": {
+    "file": "output/CDT_L_2026/bib/references.bib",
+    "style": "plain",
+    "entries": 35,
+    "uncited_handling": null
+  },
+  "objects": {
+    "section_1": {
+      "sections": 4,
+      "equations": 4,
+      "propositions": 0,
+      "theorems": 3,
+      "remarks": 3,
+      "lemmas": 2,
+      "corollaries": 1,
+      "definitions": 0,
+      "proofs": 0,
+      "figures": 1,
+      "tables": 0,
+      "display_eqs": 19
+    }
+  }
+}

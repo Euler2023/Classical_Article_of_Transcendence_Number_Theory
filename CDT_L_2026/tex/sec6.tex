@@ -1,0 +1,871 @@
+\section{精细 holonomy 边界}\label{sec:6}
+
+在本节中, 我们给出了第一个主要 holonomy 边界(定理~\ref{thm:6.0.2}), 我们通过重新审视 \cite[§ 2.5]{CDT21} 中的方法并利用 \S~3 和 \S~4 的(标准)结果对其进行增强来证明该定理.
+这一对边界的初等处理对于定理~A 和 C 的证明以及我们在本文中的所有其他应用已经足够.
+稍后, 在 \S~7 和 \S~8 中, 我们将证明其他 holonomy 边界, 其中一些涉及 Bost--Charles 双重积分, 该积分在理论上小于~\eqref{eq:6.0.15} 中的重排积分; 然而, 我们将在注记~8.1.17 和 \S~8.3 中发现, 这种差异在实践中微乎其微.
+对于我们的默认处理, 我们选择突出递增重排特征, 在概率解释下, 该特征在 holonomy 商~\eqref{eq:6.0.10} 的顶端和底端数量中同时出现.
+
+为了表述我们的 holonomy 边界, 我们首先(依据引理~\ref{lem:5.0.4})定义一个函数, 用于度量在将原始函数集的积分引入到多变量评估模中时, 对系数分母增加的额外贡献, 正如 \S~5 中所讨论的 (在定理~\ref{thm:6.0.2} 的表述中, 这些将是具有 $e_i > 0$ 的形式为~\eqref{eq:6.0.9} 的函数 $f_i$).
+
+\begin{definition}\label{def:6.0.1}
+对于 $0 \le \max\{u, 1\} \le v$ 且 $w \le v$, 设:
+\[
+\begin{aligned}
+I_{u}^{v}(w) :=& \int_{\min\{u,1\}}^{1} \max\{t-w, 0\} dt + \int_{\max\{u,1\}}^{v} \left\{ \sum_{h=1}^{\lfloor \frac{t-1}{\max(1,w)} \rfloor} \frac{1}{h} \right\} dt \\
+&+ \int_{\max\{u,1\}}^{v} \max\left\{ \frac{t}{\lfloor (t + \max(0, w - 1))/\max(1, w) \rfloor} - w, 0 \right\} dt.
+\end{aligned}
+\]
+\end{definition}
+
+我们现在有:
+
+\begin{theorem}\label{thm:6.0.2}
+考虑两个正整数 $m, r \in \mathbf{N}_{>0}$, 一个非负整数向量 $\mathbf{e} := (e_1, \dots, e_m) \in \mathbf{N}^m$, 以及一个 $m \times r$ 的非负实数矩形阵列:
+\[ \mathbf{b} := (b_{i,j})_{1 \le i \le m, \ 1 \le j \le r}, \]
+其所有列均具有如下形式:
+\begin{equation}\label{eq:6.0.3}
+0 = b_{1,j} = \dots = b_{u_j,j} < b_{u_j+1,j} = \dots = b_{m,j} =: b_j, \qquad \forall j = 1, \dots, r,
+\end{equation}
+其中 $u_j \in \{0, 1, \dots, m\}$ 取决于列.
+设
+\[ \sigma_i := b_{i,1} + \dots + b_{i,r}, \qquad i = 1, \dots, m \]
+为第 $i$ 行的和, 并定义:
+\begin{equation}\label{eq:6.0.4}
+\tau^{\flat}(\mathbf{b}) := \frac{1}{m^2} \sum_{i=1}^{m} (2i - 1)\sigma_i = \sigma_m - \frac{1}{m^2} \sum_{j=1}^{r} u_j^2 b_j \in [0, \sigma_m],
+\end{equation}
+以及(其中 $I_{\xi}^m(\xi)$ 如定义~\ref{def:6.0.1} 所示):
+\begin{equation}\label{eq:6.0.5}
+\tau^{\sharp}(\mathbf{e}) := (2/m^2) \min_{\xi \in [0,m]} \left\{ \xi \sum_{i=1}^m e_i + \left( \max_{1 \le i \le m} e_i \right) I_{\xi}^m(\xi) \right\}.
+\end{equation}
+最后定义:
+\begin{equation}\label{eq:6.0.6}
+\tau(\mathbf{b}; \mathbf{e}) := \tau^{\flat}(\mathbf{b}) + \tau^{\sharp}(\mathbf{e}).
+\end{equation}
+
+考虑一族全纯映射 $\varphi_0, \dots, \varphi_l : (\overline{\mathbf{D}}, 0) \to (\mathbf{C}, 0)$, 其导数(共形半径)满足:
+\begin{equation}\label{eq:6.0.7}
+|\varphi_0'(0)| < |\varphi_1'(0)| < \dots < |\varphi_l'(0)| \quad 且 \quad |\varphi_l'(0)| > e^{\max(\sigma_m, \tau(\mathbf{b}; \mathbf{e}))}.
+\end{equation}
+相应地, 通过引入分割点参数来划分区间 $[0,m]$:
+\[ 0 = \gamma_0 < \dots < \gamma_l < \gamma_{l+1} = m, \]
+并利用这些选择, 通过在圆周 $\mathbf{T}$ 上根据 $[0,1)$ 到 $[\gamma_k/m, \gamma_{k+1}/m)$ 的线性缩放分段拼接函数 $\log |\varphi_k|$, 来定义一个 $L^1$ 函数:
+\[ g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}:[0,1)\to\mathbf{R}\cup\{-\infty\}, \]
+\begin{equation}\label{eq:6.0.8}
+g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}(t):=\log\left|\varphi_k\left(e^{2\pi i\frac{mt-\gamma_k}{\gamma_{k+1}-\gamma_k}}\right)\right| \quad \text{当 } t\in[\gamma_k/m,\gamma_{k+1}/m).
+\end{equation}
+
+如果存在一个由 $m$ 个 $\mathbf{Q}(x)$-线性无关的形式幂级数组成的 $m$ 元组 $f_1, \dots, f_m \in \mathbf{Q}[\![x]\!]$, 其分母类型具有如下形式:
+\begin{equation}\label{eq:6.0.9}
+f_i(x) = a_{i,0} + \sum_{n=1}^{\infty} a_{i,n} \frac{x^n}{n^{e_i}[1, \dots, b_{i,1} \cdot n] \cdots [1, \dots, b_{i,r} \cdot n]}, \qquad a_{i,n} \in \mathbf{Z},
+\end{equation}
+使得对于所有对 $i = 1, \dots, m$ 和 $k = 0, \dots, l$, $f_i(\varphi_k(z)) \in \mathbf{C}[\![z]\!]$ 都是 $|z| < 1$ 上的亚纯函数芽, 那么:
+\begin{align}
+m &\le \frac{\int_{0}^{1} 2t \cdot g_{\boldsymbol{\varphi}, \boldsymbol{\gamma}}^{*}(t) dt + \frac{1}{m} \sum_{k=1}^{l} \gamma_{k}^{2} \log \frac{|\varphi_{k}'(0)|}{|\varphi_{k-1}'(0)|}}{\log |\varphi_{l}'(0)| - \tau(\mathbf{b}; \mathbf{e})} \nonumber\\
+&= \frac{\int_{0}^{1} \int_{0}^{1} \max (g_{\boldsymbol{\varphi}, \boldsymbol{\gamma}}(s), g_{\boldsymbol{\varphi}, \boldsymbol{\gamma}}(t)) ds dt + \frac{1}{m} \sum_{k=1}^{l} \gamma_{k}^{2} \log \frac{|\varphi_{k}'(0)|}{|\varphi_{k-1}'(0)|}}{\log |\varphi_{l}'(0)| - \tau(\mathbf{b}; \mathbf{e})}.\label{eq:6.0.10}
+\end{align}
+
+如果此外所有函数 $f_i$ 都被先验地假定为 holonomic, 则在方程~\eqref{eq:6.0.7} 中对 $\varphi_l$ 的假设 $|\varphi'_l(0)| > e^{\max(\sigma_m, \tau(\mathbf{b}; \mathbf{e}))}$ 可以放宽为 $|\varphi'_l(0)| > e^{\tau(\mathbf{b}; \mathbf{e})}$.
+\end{theorem}
+
+这里, 在 $g^*$ 中我们使用了~\eqref{eq:2.4.1} 中 $g$ 的递增重排函数的记号.
+这就是为什么我们经常将诸如 $\int_0^1 2t \cdot g^*(t) dt = \iint_{[0,1]^2} \max(g(s), g(t)) ds dt$ 之类的量称为重排积分 (rearrangement integrals).
+
+\begin{remark}[音乐记号]\label{rem:6.0.11}
+在定理~\ref{thm:2.5.1} 的记号中, 我们有 $\tau(\mathbf{b}) = \tau^{\flat}(\mathbf{b}) = \tau(\mathbf{b}; \mathbf{0})$.
+我们使用这种音乐记号的原因是将 $\tau = \tau^{\flat}(\mathbf{b})$ 视为去除~\eqref{eq:7.0.1} 中幂次 $n^{\mathbf{e}}$ 时, 对来自 \cite{CDT24} 的较粗糙值 $\tau = \sigma_m$ 的主规约(降音/flattening), 并将 $\tau^{\sharp}(\mathbf{e})$ 视为在原始函数列表中加入这些积分所带来的额外项(升音/sharpening).
+\end{remark}
+
+\begin{remark}\label{rem:6.0.12}
+在定理~\ref{thm:6.0.2} (以及我们证明的所有其他类似定理)中, 我们实际上可以放宽分母类型~\eqref{eq:6.0.9}, 允许具有如下更宽松的形式:
+\begin{equation}\label{eq:6.0.13}
+n^{e_i}[1, \dots, b_{i,1} \cdot n + c_{i,1}] \cdots [1, \dots, b_{i,r} \cdot n + c_{i,r}],
+\end{equation}
+其中 $c_{i,j}$ 为任意给定的整数集.
+这可以通过应用我们定理的原始陈述得到, 其中所有非零的 $b_{i,j}$ 都替换为 $b_{i,j} + \varepsilon$ (对于某个足够小的正数 $\varepsilon > 0$).
+这对于除有限多个 $n$ 之外的所有情况都包含了分母类型~\eqref{eq:6.0.13}, 并且任何有限的系数初始段都可以通过缩放使其具有任何给定的分母类型.
+然后, 注意到这些边界总是连续地依赖于 $b_{i,j}$, 取极限 $\varepsilon \to 0$ 即可.
+\end{remark}
+
+作为单个解析映射 $\varphi$ 的特殊情况 $l=0$, 我们记录边界~\eqref{eq:2.5.5} 的推广:
+
+\begin{corollary}\label{cor:6.0.14}
+假设与定理~\ref{thm:6.0.2} 相同的条件和记号, 但更简单地考虑单个全纯映射 $\varphi: (\overline{\mathbf{D}}, 0) \to (\mathbf{C}, 0)$, 其满足 $|\varphi'(0)| > e^{\tau(\mathbf{b}; \mathbf{e})}$, 且使得拉回 $\varphi^* f_i$ 在开单位圆盘上是亚纯函数, 即 $\varphi^* f_i \in \mathcal{M}(\mathbf{D})$.
+如果要么 $|\varphi'(0)| > e^{\sigma_m}$, 要么所有函数 $f_i$ 都是 holonomic, 那么:
+\begin{equation}\label{eq:6.0.15}
+m \le \frac{\iint_{\mathbf{T}^2} \log \left( \max(|\varphi(z)|, |\varphi(w)|) \right) \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w)}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})} = \frac{\int_0^1 2t \cdot (\log |\varphi(e^{2\pi it})|)^* dt}{\log |\varphi'(0)| - \tau(\mathbf{b}; \mathbf{e})}.
+\end{equation}
+\end{corollary}
+
+\begin{remark}\label{rem:6.0.16}
+如果我们仅假设 $|\varphi'(0)| > e^{\tau(\mathbf{b};\mathbf{e})}$, 则先验的 holonomic 性质是不能丢弃的.
+更确切地说, 对于在比例~\ref{cor:6.0.14} 的陈述中的任何给定的数据组 $(\mathbf{b};\varphi)$, 如果假设相反的不等式 $|\varphi'(0)| \le e^{\sigma_m}$, 那么一个简单的归纳构造就可以说明如下结论: 如果存在至少一个满足该数据组 $(\mathbf{b};\varphi)$ 的算术和解析条件的 $\mathbf{Q}(x)$-线性无关的形式函数 $m$ 元组 $\{f_i\}$, 那么就存在连续统(continuum)个这样的 $m$ 元组; 这尤其意味着存在非 holonomic 的此类函数.
+
+为了说明这一断言, 在固定 $f_1, \ldots, f_{m-1}$ 的情况下, 证明对于在 $e_m = 0$ 的形式~\eqref{eq:6.0.9} 下的 $f_m \in \mathbf{Q}[\![x]\!]$, 存在连续统个有效的系数选择 $a_{m,\bullet} \in \mathbf{Z}$, 使得拉回幂级数 $\sum c_n z^n := f_m(\varphi(z)) \in \mathbf{C}[\![z]\!]$ 具有次指数级小的系数 $|c_n| = \exp(o(n))$ 就足够了 (对比 \cite[§ 6.4.2]{BC22}, \cite[§ 6]{Pol1923} 或 \cite[§ 5]{Rob68}).
+我们展示出在所有先前的系数 $a_{m,0}, \ldots, a_{m,n-1}$ 已经被选择好之后, 每个后续系数 $a_{m,n} \in \mathbf{Z}$ 具有至少两个有效的选项.
+这通过递归地将 $c_n = \mu_n a_{m,n} - P_n(a_{m,0}, \ldots, a_{m,n-1})$ 表达出来而得到, 其中系数
+\[ \mu_n := \varphi'(0)^n / \prod_{i=1}^h [1, \dots, b_{m,i} \cdot n] \]
+通过素数定理具有次指数级增长, 且 $P_n \in \mathbf{C}[x_0, \dots, x_{n-1}]$ 是取决于映射 $\varphi$ 的多项式.
+这给出了两个不同的有效选项 $a_{m,n} \in \{\lfloor P_n(\mathbf{a}_{m,< n})/\mu_n \rfloor, \lfloor P_n(\mathbf{a}_{m,< n})/\mu_n \rfloor + 1\}$, 并由此构造了一个基数为 $2^{\#\mathbf{N}} = \#\mathbf{R}$ 的 $f_m \in \mathbf{Q}[\![x]\!]$ 集合.
+\end{remark}
+
+本节中一个至关重要的技术特征, 并最终用于定理~A 和 C 的证明, 是容纳增加积分的项 $\tau^{\sharp}$, 它补充了定理~2.5.1 的主要分母形式.
+我们通过几个例子来描述这一特征.
+
+\begin{remark}[基本注记 6.0.17]\label{rem:6.0.17}
+重新审视来自基本注记~2.6.3 的最简单的例子, 让我们计算如下情况下的 $\tau(\mathbf{b}; \mathbf{e})$:
+\[ \mathbf{b} = (0,0)^{\mathrm{t}}, \quad \mathbf{e} = (0,1). \]
+显然 $\tau^{\flat}(\mathbf{b}) = 0$, 并且我们很容易计算出:
+\[ \tau^{\sharp}(\mathbf{e}) = \frac{1}{2} \min_{\xi \in [0,2]} \left\{ \frac{3 + (\xi - 1)^2}{2} \right\} = \frac{3}{4}, \]
+这在终点 $\xi = 1$ 处达到.
+因此我们发现了与采用较粗糙方案时相同的数值 $\tau(\mathbf{b}, \mathbf{e}) = \tau^{\flat}(\mathbf{b}) + \tau^{\sharp}(\mathbf{e}) = 3/4$:
+\[
+\begin{aligned}
+\mathbf{b} &= (0, 1)^t, \qquad \mathbf{e} = (0, 0), \\
+\tau^{\flat}(\mathbf{b}) &= 3/4, \quad \tau^{\sharp}(\mathbf{e}) = 0,
+\end{aligned}
+\]
+在此例中与 \S~2.5 相比并没有取得改进.
+
+稍后, 我们将重新审视并改进 \cite[§ 2.1]{CDT21} 中的丢番图逼近框架.
+在关于我们运行的例子的那个框架中, 我们有如下形式的辅助函数(复制到许多变量): $P(x) + Q(x) \log(1-x)$, 其中 $P, Q \in \mathbf{Z}[x]$ 是次数小于 $D$ 的多项式.
+根据 \S~3.3.7 中的讨论, 任何此类函数的最低阶单项式 $\beta x^n$ 的次数必然满足 $n \le 2D - 1$, 其中等号由 Hermite--Pad{\'e} 逼近式(本质上由 Legendre 多项式给出)唯一达到.
+我们的证明方案结合了对系数 $\beta \in \mathbf{Q}^{\times}$ 的解析上界与通过非零有理数 $\beta$ 分母的倒数给出的算术下界 $|\beta| > 1/\text{den}(\beta)$.
+我们可以直接看出为什么在这种情况下, $\log(1-x) = -\sum_{k=1}^{\infty} x^k/k$ 的更精细分母并没有给算术下界 $|\beta| \ge 1/\text{den}(\beta)$ 带来任何额外帮助.
+$x^n$ 系数 $\beta \in \mathbf{Q}$ 的分母是通过区间 $[n-D, n] \supset [n/2, n]$ 中所有整数的最小公倍数来估计的.
+因为 $[n/2, \dots, n] = [1, \dots, n]$ (对于每个整数 $k \in [1, n]$, 都存在唯一的 $2$ 的幂次倍数落在 $(n/2, n]$ 内), 在这种情况下, 这等于整个初始整数组的最小公倍数 $[1, \dots, n]$: 这正是我们通过在函数 $f(x) = \log(1-x)$ 中用 $[1, \dots, k]$ 代替 $k$ 作为系数分母所得到的估计.
+我们还看到, 一旦我们有至少 $m \ge 3$ 个函数, 预计更精细的分母就会产生影响, 因为 $[2n/3, \dots, n]$ 已经显著小于 $[1, \dots, n]$ (参见基本注记~5.0.2). \end{remark}
+
+\begin{remark}\label{rem:6.0.18}
+利用精细的对 $\mathbf{b} \in M_{m \times r}(\mathbf{N})$ 与 $\mathbf{e} \in \mathbf{N}^m$, 而不是粗糙地拼接成 $\mathbf{e} \leadsto \mathbf{0}$, 并不总是能对定理~\ref{thm:6.0.2} 的估计给出改进.
+考虑 $m=3$ 且处于定理~2.7.2 证明的情况, 但具有更精细的类型:
+\[ \mathbf{b} = (0, 0, 1)^{\mathrm{t}}, \quad \mathbf{e} = (0, 1, 0), \]
+这给出了一个包含三个具有如下分母类型函数的模板:
+\begin{equation}\label{eq:6.0.19}
+x^n, \ \frac{x^n}{n}, \ \frac{x^n}{[1, \dots, n]}.
+\end{equation}
+这一对阵列 $(\mathbf{b}; \mathbf{e})$ 的选择具有 $\tau^{\flat}(\mathbf{b}) = \tau^{\sharp}(\mathbf{e}) = 5/9$, 后者在整个区间 $\xi \in [3/2, 2]$ 上达到最小值.
+但是类型~\eqref{eq:6.0.19} 也被我们在定理~2.7.2 的证明中所作的更粗糙的选择所包含:
+\[ \mathbf{b}_0 := (0, 1, 1)^{\mathbf{t}}, \quad \mathbf{e}_0 = (0, 0, 0), \]
+并且在这一情况下, 这一基本选择给出了更好的数值 $\tau(\mathbf{b}_0; \mathbf{e}_0) = \tau(\mathbf{b}_0) = 8/9$, 而不是 $\tau(\mathbf{b}; \mathbf{e}) = 10/9$.
+原因在于在定理~\ref{thm:6.0.2} 的证明中, 辅助函数首项系数的分母是如何被估计的; 速率 $\tau^{\flat}(\mathbf{b}) + \tau^{\sharp}(\mathbf{e})$ 作为一个上界, 而在目前的例子中, 该上界估计被证明是严格且有损失的.
+我们不知道在最终用于证明定理~A 的 $m = 14$ 的情况下该上界是否为等式, 但我们预计它是一个相当精确的分母估计, 甚至可能是等式. \end{remark}
+
+\begin{example}\label{exa:6.0.20}
+我们给出最后一个例子, 我们将在 \S~6.8 中使用它来完成定理~2.8.4 的证明.
+对于适用于具有如下分母类型的四个函数集合的矩阵:
+\[ \mathbf{b} = \begin{pmatrix} 0 & 0 \\ 0 & 2 \\ 0 & 2 \\ 1 & 2 \end{pmatrix}, \qquad \mathbf{e} = (0, 0, 1, 0) \]
+这些类型为:
+\begin{equation}\label{eq:6.0.21}
+x^n, \quad \frac{x^n}{[1,\dots,2n]}, \quad \frac{x^n}{n[1,\dots,2n]}, \quad \frac{x^n}{[1,\dots,n][1,\dots,2n]},
+\end{equation}
+我们有:
+\[ \tau^{\flat}(\mathbf{b}) = \frac{37}{16}, \quad \tau^{\sharp}(\mathbf{e}) = \frac{7}{16}, \qquad \tau(\mathbf{b}; \mathbf{e}) = \frac{21}{8} = 2.625, \]
+其中 $7/16$ 的值在相同的区间极小值 $\xi \in [2, 3]$ 上达到.
+但是, 即使是微弱地包含了引言中所强调的定理~2.5.1 框架内的类型~\eqref{eq:6.0.21} 的中间粗糙选择:
+\[ \mathbf{b}_0 = \begin{pmatrix} 0 & 0 \\ 0 & 2 \\ 1 & 2 \\ 1 & 2 \end{pmatrix}, \qquad \mathbf{e}_0 = (0, 0, 0, 0), \]
+也已经给出了:
+\[ \tau(\mathbf{b}_0; \mathbf{e}_0) = \tau(\mathbf{b}_0) = \frac{1}{16} (1 \cdot 0 + 3 \cdot 2 + 5 \cdot 3 + 7 \cdot 3) = \frac{21}{8} = 2.625. \]
+在这一情况下, 数值是相同的, 类似于基本注记~6.0.17 中的情形. \end{example}
+
+与上述例子形成对比的是, 利用精细化对 $(\mathbf{b}; \mathbf{e})$ 往往确实能产生严格优于通过对某些粗糙的 $\mathbf{e} \leadsto \mathbf{0}$ 方案进行封顶所能达到的结果.
+对于在 \S~13 中给出的定理~A 的证明来说尤其如此.
+在那里, 我们有一个阶为 $m = 14$ 的包含增加积分的局部系统, 意味着对于其中六个指数有 $e_i = 1$, 而对于其余八个指数有 $e_i = 0$.
+经过简单的计算~\eqref{eq:13.0.5}, 这样的向量具有 $\tau^{\sharp}(\mathbf{e}) = 27/80$.
+整体上, 所使用的精细 $\tau(\mathbf{b}; \mathbf{e})$ 计算出为 $191/49 + 27/80 = 16603/3920 = 4.235459 \dots$.
+但在该例子中, 使用 $\mathbf{e} = \mathbf{0}$ 类型无法得到优于注记~13.0.7 中相当差的 $865/196 = 4.413265 \dots$ 的估计.
+
+\subsection{水平积分}\label{sec:6.1}
+\setcounter{footnote}{19}
+
+我们的证明方案精确地遵循了我们起初为关于无界分母猜想的首个解答 \cite[§ 2.5]{CDT21} 所设计的 $d \to \infty$ 渐近方法.
+这就是我们所谓的``跨变量积分''的想法, 其中给定的单变量函数 $f_i(x)$ 在 $d \to \infty$ 的分裂变量中被复制, 以便利用 Dirichlet 抽屉原理构造一个非零辅助函数:
+\begin{equation}\label{eq:6.1.1}
+F(x_1, \dots, x_d) := \sum_{\substack{\mathbf{i} \in \{1, \dots, m\}^d \\ \mathbf{k} \in [0, D]^d \cap \mathbf{Z}^d}} c_{\mathbf{i}, \mathbf{k}} x_1^{k_1} \cdots x_d^{k_d} f_{i_1}(x_1) \cdots f_{i_d}(x_d) \in \mathbf{Q}[[x_1, \dots, x_d]] \setminus \{0\},
+\end{equation}
+其具有次指数级渐近大小的整数系数 $c_{\mathbf{i},\mathbf{k}} \in \mathbf{Z}$:
+\[ |c_{\mathbf{i},\mathbf{k}}| = \exp\left(o_{d\to\infty}(dD)\right), \]
+但 $F(x_1, \ldots, x_d)$ 却在 $\mathbf{x} = \mathbf{0}$ 处消亡至几乎最高可想象的阶 $\alpha$.
+奇妙的是, 在这个方案中, Nevanlinna 特征增长项 $\int_{\mathbf{T}} \log^+ |\varphi| \, \mu_{\text{Haar}}$ 并非作为圆周积分本身出现 (外加可能无论是通过 \cite[§ 2.3 或 § 2.4]{CDT21}, 还是通过我们在下面 \S~7 中基于 \cite{BC22} 和 \cite{CDT24} 的讨论); 而是通过标准的大偏差边界\footnote{这只是我们在 \S~4 中详细讨论的定理~\ref{thm:4.2.1} 的重述. 事实上, 指数函数建立了测度空间 ($[0,1]^d$, $\mu_{\text{Lebesgue}}$) 和 ($\mathbf{T}^d$, $\mu_{\text{Haar}}$) 之间的同构, 在该同构下方体偏差函数相对应.}——其要求一旦 $d \ge d_0(\epsilon)$, 高维环面 $\mathbf{T}^d$ 上的低偏差集合 $D(\mathbf{z}) < \epsilon$ 具有至少 $1 - Ce^{-c\epsilon^4 d}$ 的测度——从拉回单项式 $\varphi(z_1)^{k_1} \cdots \varphi(z_d)^{k_d}$ 的优势增长率中产生.
+这就是为什么我们会把这种方法描述为以跨变量的方式进行积分, 或者如果将丢番图逼近构造中维度、次数和 $\mathbf{T}$ (任意一个固定变量中的复分析)等各个方面可视化, 则称为``水平地''进行积分.
+
+本论文的主要发现之一是 \S~3 和 \S~4 的某种结合, 它实际上改进了~\eqref{eq:6.1.1} 中``最高可想象消亡阶'' $\alpha$ 的含义.
+在 \cite[§ 2]{CDT21} 较粗糙的处理中, 在待求未知数 $c_{i,k}$ 的线性方程组个数的参数计数中, 我们仅有 $\alpha = mdD/e - o_{d\to\infty}(dD)$; 这归因于标准高维单纯形与其最大嵌入子立方体的 $e^d:1$ 渐近体积比.
+我们现在解释关于与 Cartesian 乘积的消亡过滤跳跃集合形成的可交换性的推论~\ref{cor:3.1.11}, 以及测度集中材料 \S~4 如何协同工作以将该消亡阶改进为 $\alpha = mdD/2 - o_{d\to\infty}(dD)$.
+为了简单起见, 因为我们稍后在定理~\ref{thm:6.0.2} 的一般形式中无论如何都会需要它, 我们假设基于 $f_i$ 的 holonomic 性质的最强形式的 Cartesian 幂结构: 引理~\ref{lem:3.2.14}, 它源于 Chudnovsky--Osgood 定理与推论~\ref{cor:3.1.11} 的结合.
+
+\subsubsection{Thue--Shidlovsky 思想}\label{sec:6.1.2}
+
+引理~\ref{lem:3.2.14} 确保了一旦 $D \gg_{\delta,d} 1$, 非零幂级数~\eqref{eq:6.1.1} 对于任何 $\delta > 0$ 和 $d$, 必须拥有一个具有非零单项式 $\beta \mathbf{x}^{\mathbf{n}} = \beta x_1^{n_1} \cdots x_d^{n_d}$ 且 $\mathbf{n} = (n_1, \dots, n_d) \in [0, (m+\delta)D]^d$ 的项.
+因此, 在 Thue--Siegel 引理中用于求解总消亡阶的线性方程组中, 我们不需要关心宽单纯形区域 $|\mathbf{n}| < \alpha$, 而是可以简单地使 $\mathbf{x}^{\mathbf{n}}$ 的系数在遍历超立方体 $[0, (m-\delta)D]^d$ 的所有 $\mathbf{n}$ 时消亡 (显然, 这是参数计数中最大可想象的超立方体), 以及在稍大超立方体 $[0, (m+\delta)D]^d$ 的低偏差部分之外的所有 $\mathbf{n}$ 处消亡 (允许我们对向量 $\mathbf{n}$ 的分量集合也使用测度集中).
+这里为了应用定理~\ref{thm:4.2.1}, 根据偏差参数 $\epsilon$ 选取足够小的 $\delta > 0$ 是至关重要的; 然后参数计数就能顺利通过 (这一步包含在引理~\ref{lem:6.2.6} 中).
+其结果是在该构造中, 随着 $\epsilon \to 0$ (最终在 $D \to \infty, d \to \infty, \delta \to 0$ 之后), $F(x_1,\ldots,x_d)$ 中所有最低阶单项式 $\beta \cdot x_1^{n_1} \cdots x_d^{n_d}$ 的指数向量 $(n_1,\ldots,n_d)$ 渐近地接近于集合 $\{jmD/d: 0 \le j < d\}$ 的某种排序.
+特别是, 总消亡阶确实接近于 $mdD/2$.
+
+正是这种相比于 \cite[Lemma 2.1.2]{CDT21} 的 $mdD/e$ 的改进, 在 \cite[§ 2]{CDT21} 的初等渐近框架下恢复了 $e \rightsquigarrow 2$ 的系数改进.
+在这一点上, Thue--Shidlovsky 论证进一步对分式~\eqref{eq:2.2.3} 的顶端和底端提供了两个类似且同样关键的改进.
+
+接下来我们依次引入这两个改进, 为简单起见以推论~\ref{cor:6.0.14} 的情况为例, 随后我们开始定理~\ref{thm:6.0.2} 的一般证明.
+
+\subsubsection{阿基米德精细化}\label{sec:6.1.3}
+
+首先, 这一渐近方案允许通过初等方法将积分 $\int_{\mathbf{T}} \log^+ |\varphi| \, \mu_{\text{Haar}}$ 改进为严格较小的量 $\int_0^1 t \cdot (\log |\varphi(e^{2\pi it})|)^* \, dt$.
+我们已经在 \cite[§ 2.3.3]{CDT21} 中指出, 通过再次利用定理~\ref{thm:4.2.1}, 可以将~\eqref{eq:6.1.1} 中的单项式指数 $\mathbf{k}$ 限制在超立方体 $[0,D]^d$ 的低偏差部分, 从而实现对 holonomy 边界的一些改进.
+用具体的启发式语言来说, 这意味着当 $d \to \infty$ 时, 指数向量 $(k_1,\ldots,k_d)$ 在~\eqref{eq:6.1.1} 中可以被认为接近于集合 $\{jD/d:0\le j< d\}$ 的某种排序.
+通过这种方式, 注意到在所有这些排序中, $|\varphi(z_1)^{k_1}\cdots\varphi(z_d)^{k_d}|$ 的最大值发生在 $(k_1,\ldots,k_d)$ 与 $(|\varphi(z_1)|,\ldots,|\varphi(z_d)|)$ 具有相同排列顺序的时候, 我们发现重排积分:
+\begin{equation}\label{eq:6.1.4}
+\int_{0}^{1} t (\log |\varphi|)^{*}(t) dt = \frac{1}{2} \iint_{\mathbf{T}^{2}} \log (\max(|\varphi(z)|, |\varphi(w)|)) \ \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w)
+\end{equation}
+恰好在基于不仅环面点 $\mathbf{z} \in \mathbf{T}^d$ 的均匀分布, 而且单项式指数向量 $\mathbf{k}$ 的均匀分布的精细优势增长率中出现.
+图~8.1.15 的显式例子展示了这样所节省的幅度.
+
+\subsubsection{算术精细化}\label{sec:6.1.5}
+
+对于 $F(x_1,\ldots,x_d)$ 的首项射流指数 $\mathbf{n}$ 的均匀分布, 我们还可以加入大数定律的另一个初等应用: 在不改变(广义上)参数计数渐近大小的情况下, 我们可以坚持要求 $m$ 个函数种类在组成~\eqref{eq:6.1.1} 的所有分裂变量乘积 $f_{i_1}(x_1)\cdots f_{i_d}(x_d)$ 中以相等的频率 $1/m$ 出现.
+换句话说, 我们可以假设 $d \equiv 0 \mod m$, 并且求和多重指数 $\mathbf{i}$ 在~\eqref{eq:6.1.1} 中被限制为每个指数 $i_0 \in \{1,\ldots,m\}$ 作为 $\mathbf{i}$ 的分量出现 $d/m$ 次.
+这允许我们对我们 $m$ 个函数种类的 $m$ 个不同分母类型进行求和, 在我们对分母上限阵列 $\mathbf{b}$ 的条件下, 我们恰好发现~\eqref{eq:2.5.6} 作为~\eqref{eq:2.4.2} 的对应物.
+
+\subsection{辅助构造}\label{sec:6.2}
+
+我们在此开始定理~\ref{thm:6.0.2} 的证明.
+在所有 $f_i$ 都被先验地假定为 holonomic 函数的情况下, 我们对 \cite[Lemma 2.1.2]{CDT21} 具有如下改进.
+
+对于 $d \in \mathbf{N}_{>0}$ 且 $\epsilon \in (0,1]$, 我们用
+\begin{equation}\label{eq:6.2.1}
+P_{\epsilon}^{d} := \{ \mathbf{t} \in [0,1]^{d} : D(\mathbf{t}) < \epsilon \} \subset [0,1]^{d}
+\end{equation}
+表示 $d$ 维超立方体的 $\epsilon$-偏差部分, 其中 $D:[0,1]^d \to [0,1]$ 是定义~\ref{def:4.1.1} 的归一化偏差函数.
+该集合在解析同构 $\exp:[0,1)^d \to \mathbf{T}^d$, $\mathbf{t} \mapsto e^{2\pi i \mathbf{t}}$ 下的像将记为 $T^d_\epsilon \subset \mathbf{T}^d$.
+在这些记号中, 定理~\ref{thm:4.2.1} 的较粗糙形式可以重述为如下双重极限:
+\begin{equation}\label{eq:6.2.2}
+\lim_{\varepsilon \to 0} \lim_{d \to \infty} \mu_{\text{Lebesgue}}(P_{\varepsilon}^{d}) = 1, \qquad \lim_{\varepsilon \to 0} \lim_{d \to \infty} \mu_{\text{Haar}}(T_{\varepsilon}^{d}) = 1.
+\end{equation}
+
+在下文中, 我们固定一个 $m \in \mathbf{N}_{_{>0}}$, 并将渐近参数 $d \in \mathbf{N}_{>0}$ 限制为满足 $d \equiv 0 \mod m$ 的整数.
+为了执行 \S~6.1.5 中概述的方案, 我们将~\eqref{eq:6.1.1} 中的多重指数 $\mathbf{i}$ 限制在如下等分布集合中:
+\begin{equation}\label{eq:6.2.3}
+V_m^d := \{ \mathbf{i} : \forall i \in \{1, \dots, m\}, \#\{h \in \{1, \dots, d\} : i_h = i\} = d/m \} \subset \{1, \dots, m\}^d.
+\end{equation}
+该集合仍然具有渐近满大小 $m^{d-o(d)}$:
+
+\begin{lemma}\label{lem:6.2.4}
+在我们立论的假设 $d \equiv 0 \mod m$ 下, 我们有:
+\begin{equation}\label{eq:6.2.5}
+\#V_m^d = {d \choose \frac{d}{m}, \dots, \frac{d}{m}} > m^d / {d+m-1 \choose m-1}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+$m$-fold 展开式
+\[ m^{d} = (1 + \dots + 1)^{d} = \sum_{\substack{\mathbf{j} \in \mathbf{N}^{m} \\ |\mathbf{j}| = d}} {d \choose j_{1}, \dots, j_{m}} \]
+具有 $\binom{d+m-1}{m-1}$ 项, 其中最大的一项是具有 $j_1=\dots=j_m=d/m$ 的中心多项式系数.
+\end{proof}
+
+我们的 Thue--Siegel 构造(来自 \S~2.12 中一般大纲的步骤 (ii))如下.
+
+\begin{lemma}\label{lem:6.2.6}
+假设我们有 $m$ 个 holonomic 形式幂级数 $f_1, \ldots, f_m \in \mathbf{Q}[\![x]\!]$.
+假定每个 $f_i(x)$ 具有如下粗糙类型的分母:
+\begin{equation}\label{eq:6.2.7}
+f_i(x) = \sum_{n=0}^{\infty} a_{i,n} \frac{x^n}{A^{n+1}[1,\dots,Bn]^{\sigma}}, \quad \text{其中 } A \in \mathbf{N}_{>0}, \ B, \sigma \in \mathbf{N}
+\end{equation}
+且在复圆盘 $|x| < \rho$ 上收敛, 对于某个 $\rho \in (0,1)$.
+
+存在一个函数
+\[ d_0: \mathbf{N}^3 \times (0,1) \times (0,1) \to \mathbf{N} \]
+使得如下结论成立.
+
+对于每个 $\epsilon \in (0,1)$, 存在一个 $\delta = \delta(\epsilon) \in (0,\epsilon)$, 使得对所有满足 $d \geq d_0(A,B,\sigma,\rho;\epsilon)$ 且 $d \equiv 0 \mod m$ 的 $d$, 当 $D \to \infty$ 时, 渐近地存在一个形如~\eqref{eq:6.1.1} 的非零 $d$ 元形式函数 $F(\mathbf{x})$:
+\begin{equation}\label{eq:6.2.8}
+F(\mathbf{x}) = \sum_{\substack{\mathbf{i} \in V_m^d \\ \mathbf{k}/D \in P_{\epsilon}^d \cap \mathbf{Z}^d}} c_{\mathbf{i}, \mathbf{k}} \mathbf{x}^{\mathbf{k}} \prod_{s=1}^d f_{i_s}(x_s) \in \mathbf{Q}[\![\mathbf{x}]\!] \setminus \{0\},
+\end{equation}
+其具有整数系数 $c_{\mathbf{i},\mathbf{k}} \in \mathbf{Z}$, 绝对值均由 $|c_{\mathbf{i},\mathbf{k}}| < e^{\epsilon dD}$ 控制, 且使得~\eqref{eq:6.2.8} 的幂级数展开 $F(\mathbf{x}) = \sum b_{\mathbf{n}} \mathbf{x}^{\mathbf{n}}$ 满足如下主要要求:
+\begin{equation}\label{eq:6.2.9}
+\begin{gathered}
+\star \quad \text{\autoref{eq:6.2.8} 中的所有极小阶单项式 $\beta_{\mathbf{n}} \mathbf{x}^{\mathbf{n}}$，} \\
+\text{其指数向量 $\mathbf{n}$ 均满足 $\mathbf{n}/((m+\delta)D) \in P_e^d$。}
+\end{gathered}
+\end{equation}
+\end{lemma}
+
+注意到 $(\star)$ 尤其意味着在集合 $((m+\delta)D) P_{\epsilon}^d \cap \mathbf{Z}^d$ 中, 至少存在一个这样的 $\mathbf{n}$ 使得 $\beta_{\mathbf{n}} \neq 0$.
+
+在进行证明之前, 我们收集一些由条件 $(\star)$ 带来的推论.
+在下文中, 我们将考虑最终让其趋近于零的 $\epsilon \in (0,1/4]$.
+在整个 \S~6 中, 我们将写入:
+\begin{equation}\label{eq:6.2.10}
+\alpha := mdD/2.
+\end{equation}
+该记记号反映了 $\alpha$ 作为消亡参数在 \cite[§ 2]{CDT21} 中的相关使用, 见例如 \cite[Lemma 2.1.2(1)]{CDT21}.
+在先前的论文中, 我们(在渐近意义上)取 $\alpha$ 为(阶数在) $mdD/e \sim m(d!)^{1/d}D$, 我们在此处将其改进为 $mdD/2$.
+
+\begin{corollary}\label{cor:6.2.11}
+在引理~\ref{lem:6.2.6} 中, 我们有:
+\begin{equation}\label{eq:6.2.12}
+\operatorname{ord}_{\mathbf{x}=\mathbf{0}} F(\mathbf{x}) \in [(1-2\epsilon)\alpha, (1+2\epsilon)^2 \alpha].
+\end{equation}
+每个~\eqref{eq:6.2.8} 中的多重指数 $\mathbf{k} = (k_1, \dots, k_d)$ 均满足 $\max_{j=1}^d k_j \leq \frac{2\alpha}{md}$, 并且允许 $\{1, \dots, d\}$ 的一个置换 $\psi = \psi_{\mathbf{k}}$ 使得 $k_{\psi(1)} \leq \dots \leq k_{\psi(d)}$ 且有:
+\begin{equation}\label{eq:6.2.13}
+\frac{2\alpha j}{md^2} - 2\epsilon \alpha/(md) \le k_{\psi(j)} \le (1+\epsilon) \frac{2\alpha j}{md^2} + 4\epsilon \alpha/(md), \qquad \forall j \in \{1, \dots, d\}.
+\end{equation}
+此外, Taylor 级数 $F(\mathbf{x}) \in \mathbf{Q}[\![\mathbf{x}]\!]$ 中具有最低总阶数 $n := |\mathbf{n}| = \operatorname{ord}_{\mathbf{x} = \mathbf{0}} F(\mathbf{x})$ 的每个指数 $\mathbf{n} = (n_1, \dots, n_d)$ 都具有 $\{1,\ldots,d\}$ 的一个置换 $\pi$ 使得 $n_{\pi(1)} \leq \dots \leq n_{\pi(d)}$ 且:
+\begin{equation}\label{eq:6.2.14}
+2\alpha j/d^2 - 2\epsilon \alpha/d \le n_{\pi(j)} \le (1+\epsilon)2\alpha j/d^2 + 4\epsilon \alpha/d, \qquad \forall j \in \{1, \dots, d\},
+\end{equation}
+且对所有满足 $u \leq v$ 的 $u, v \in [0, 1]$, 它都满足:
+\begin{equation}\label{eq:6.2.15}
+(1 - 2\epsilon)(v^2 - u^2)\alpha \le \sum_{ud \le j < vd} n_{\pi(j)} \le (1 + 2\epsilon)^2 (v^2 - u^2)\alpha.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+偏次数边界~\eqref{eq:6.2.13} 只是我们定义~\eqref{eq:6.2.10} 的重写, 但它被用于将分析组织在首项渐近参数 $\alpha$ 周围.
+估计式~\eqref{eq:6.2.12} 随后由下式得出, 其中注意到期望值 $\mathbf{E}\left[t\in[0,1]\right]=\int_0^1t\,dt=1/2$, 这由 Koksma--Hlawka 不等式或初等的计算显示出如下蕴含关系:
+\begin{equation}\label{eq:6.2.16}
+\mathbf{t} \in P_{\epsilon}^{d} \implies \sum_{j=1}^{d} t_{j} \in [d/2 - \epsilon d, d/2 + \epsilon d].
+\end{equation}
+具体而言, 处于 $(\star)$ 内的所有非零单项式 $\beta_{\mathbf{n}}\mathbf{x}^{\mathbf{n}}$ (其构成非空集!)在~\eqref{eq:6.2.12} 中的上界由如下平凡估计链给出: $|\mathbf{n}| \leq (m+\delta)D(d/2+\epsilon d) \leq (1+\epsilon)mD(d/2+\epsilon d) < (1+2\epsilon)mD(d/2+\epsilon d) = (1+2\epsilon)(2\alpha/d)(d/2+\epsilon d) = (1+2\epsilon)^2\alpha$, 这是由~\eqref{eq:6.2.16} 蕴含的.
+下界通过使用来自~\eqref{eq:6.2.16} 的 $|\mathbf{n}| \geq (m+\delta)D(d/2-\epsilon d) > mD(d/2-\epsilon d) = (2\alpha/d)(d/2-\epsilon d) = (1-2\epsilon)\alpha$ 也是类似的, 并且对~\eqref{eq:6.2.15} 的证明也是相同的.
+
+对于来自首项 $|\mathbf{n}| = \operatorname{ord}_{\mathbf{x}=\mathbf{0}} F(\mathbf{x})$ 射流 $(\star)$ 的任意 $\mathbf{n}$, 取置换 $\pi$ 使得 $n_{\pi(1)} \leq n_{\pi(2)} \leq \dots \leq n_{\pi(d)}$.
+为了得到~\eqref{eq:6.2.14} 中的下界, 注意到区间 $[0, n_{\pi(j)}]$ 包含了分量集合 $\{n_j\}$ 的至少 $j$ 个元素 $n_{\pi(1)}, \ldots, n_{\pi(j)}$.
+由于 $\mathbf{n} \in ((m+\delta)D) \, P_{\epsilon}^d$, 偏差的定义要求区间 $[0, n_{\pi(j)}] = ((m+\delta)D) \cdot [0, n_{\pi(j)}/((m+\delta)D))$ 最多包含:
+\[ n_{\pi(j)}d/((m+\delta)D) + \epsilon d < n_{\pi(j)}d/(mD) + \epsilon d = n_{\pi(j)}d^2/(2\alpha) + \epsilon d \]
+个 $\mathbf{n}$ 的分量.
+因此:
+\[ j \le n_{\pi(j)} d^2/(2\alpha) + \epsilon d, \]
+这给出了所要求的对 $n_{\pi(j)}$ 的下界.
+
+为了得到~\eqref{eq:6.2.14} 中的上界, 区间
+\[ \left[n_{\pi(j)}, ((m+\delta)D)\right] = \left((m+\delta)D\right) \cdot \left[n_{\pi(j)}/\left((m+\delta)D\right), 1\right] \]
+包含了我们 $\mathbf{n} \in ((m+\delta)D) P_{\epsilon}^d$ 的分量集合 $\{n_j\}$ 的至少 $d-j+1$ 个元素 $n_{\pi(j)}, \dots, n_{\pi(d)}$.
+因此, 与之前类似:
+\[ d - j + 1 \le d \cdot \left(1 - n_{\pi(j)} / \left((m + \delta)D\right)\right) + \epsilon d \le d - n_{\pi(j)}d/((1+\epsilon)mD) + \epsilon d \]
+\[ = d - n_{\pi(j)}(1+\epsilon)^{-1}d^2/(2\alpha) + \epsilon d, \]
+完成了对~\eqref{eq:6.2.14} 的证明.
+最后, 边界~\eqref{eq:6.2.13} 按照相同的证明得出.
+\end{proof}
+
+\subsection{抽屉原理步骤: 引理 6.2.6 的证明}\label{sec:6.3}
+
+我们的证明结合了经典的 Thue--Siegel 引理 \cite[Lemma 2.9.1]{BG06} 以及关于函数非佳逼近性质与消亡过滤跳跃 Cartesian 乘积结构的结合引理~\ref{lem:3.2.14}, 遵循我们在 \S~6.1.2 中概述的步骤.
+
+\begin{proof}[引理~\ref{lem:6.2.6} 的证明]
+第一个要考虑的参数是用于测度偏离 $\mu_{\text{Lebesgue},[0,1)}$ 或 $\mu_{\text{Haar}}$ 程度的 $\epsilon$; 这是我们在证明中最后令其趋于 $0$ 的参数.
+然后, 根据定理~\ref{thm:4.2.1} 中的指数衰减率函数 $\kappa(\epsilon) := \epsilon^4/300 > 0$, 我们取任意足够小的 $\delta \in (0, \epsilon)$ 使得:
+\begin{equation}\label{eq:6.3.1}
+\frac{m-\delta}{m+\delta} > e^{-\kappa(\epsilon)} = e^{-\epsilon^4/300}.
+\end{equation}
+
+然后, 通过在 Taylor 级数展开中要求
+\begin{equation}\label{eq:6.3.2}
+F(\mathbf{x}) = \sum_{\substack{\mathbf{i} \in V_m^d \\ \mathbf{k}/D \in P_{\epsilon}^d \cap \mathbf{Z}^d}} c_{\mathbf{i}, \mathbf{k}} \, \mathbf{x}^{\mathbf{k}} \prod_{s=1}^d f_{i_s}(x_s) = \sum_{\mathbf{n} \in \mathbf{N}^d} \beta_{\mathbf{n}} \, \mathbf{x}^{\mathbf{n}},
+\end{equation}
+只要满足 $\max_{j=1}^{d} n_{j} \leq (m-\delta)D$ 或 $\mathbf{n} \notin (m+\delta)D \cdot P_{\epsilon}^{d}$, 所有的系数 $\beta_{\mathbf{n}}$ 均消亡, 我们便在模板形式~\eqref{eq:6.2.8} 的未知系数 $c_{i,k}$ 中建立了一个包含 $M \leq 2((m-\delta)D)^d$ 个线性方程的线性方程组.
+一旦维度 $d \gg_{\epsilon,\delta} 1$ 足够大, 定理~\ref{thm:4.2.1} 和引理~\ref{lem:6.2.4} 表明, 我们线性方程组中自由参数 $c_{\mathbf{i},\mathbf{k}}$ 的个数 $N$ 将超过数量:
+\begin{equation}\label{eq:6.3.3}
+N > ((m - \delta/2)D)^d > 2((m - \delta)D)^d \ge M.
+\end{equation}
+在 Siegel 引理中, 这给出了 Dirichlet 指数:
+\begin{equation}\label{eq:6.3.4}
+\frac{M}{N-M} < \frac{1}{\frac{1}{2} \cdot \left(\frac{m-\delta/2}{m-\delta}\right)^d - 1} = o_{d\to\infty}(1).
+\end{equation}
+
+对于我们线性方程组的高度, 基于素数定理的简单估计表明, 该系统可以表示为 $\mathbf{A} \cdot \mathbf{y} = 0$ 的形式, 在较小的高度内寻寻找非零整数解向量 $\mathbf{y} \in \mathbf{Z}^N$, 其中某些 $M \times N$ 的整数矩阵 $\mathbf{A} \in \mathbf{M}_{M \times N}(\mathbf{Z})$ 的元素在绝对值上由 $C_0(A, B, \sigma, \rho)^{\alpha}$ 控制.
+这里, $C_0(A, B, \sigma, \rho)$ 是在我们在~\eqref{eq:6.2.7} 中假设的函数 $f_i(x)$ (阿基米德收敛于 $|x| < \rho$)的参数下的一个简单的可计算函数, 对我们来说并不重要.
+在这一点上, \eqref{eq:6.3.4} 和 \cite[Lemma 2.9.1]{BG06} 证明了, 一旦 $d \gg_{\epsilon,\delta} 1$ 且随后 $D \gg_d 1$, 就会存在一个形如~\eqref{eq:6.3.2} 的非零形式函数 $F(\mathbf{x}) \in \mathbf{Q}[\![\mathbf{x}]\!] \setminus \{0\}$, 其中左侧的所有系数 $c_{\mathbf{i},\mathbf{j}} \in \mathbf{Z}$ 都是绝对值小于 $e^{\epsilon dD}$ 的有理整数, 并且在右侧具有对于所有满足 $\mathbf{n} \notin (m + \delta)D \cdot P_{\epsilon}^d$ 的 $\beta_{\mathbf{n}} = 0$, 以及对于所有 $\mathbf{n} \notin [0, (m - \delta)D]^d$ 的消亡.
+
+所要求的属性 $(\star)$ (参见等式~\eqref{eq:6.2.9}) 现在由引理~\ref{lem:3.2.14} 得到, 在将 $\varepsilon := \delta/2$ 应用于所有 $f_1,\ldots,f_m$ 均为 holonomic 函数的假设之后.
+\end{proof}
+
+在引理~\ref{lem:6.2.6} 中关于所有 $f_i$ 均为 holonomic 函数的条件由目前正在证明的定理~\ref{thm:6.0.2} 的假定所满足.
+事实上, 先验的 holonomicity 要么直接作为假设给出, 要么满足更强的正性条件~\eqref{eq:6.0.7}.
+通过 Andr{\'e} 的 holonomicity 判别准则 (推论~2.6.1, 亦在 \S~2.12 中进行了概述, 并在自洽的 \S~B 中得到了完整证明), 在将微分算子 $\left(x\frac{d}{dx}\right)^{e_i}$ 应用于 $f_i(x)$ 以消除~\eqref{eq:6.0.9} 分母中额外的 $n^{e_i}$ 项(并观察到, 归功于链式法则, $d/dx$ 求导保持了亚纯拉回条件 $\varphi_l^* f_i \in \mathcal{M}(\overline{\mathbf{D}})$)之后, 条件 $\log |\varphi_l'(0)| > \sigma_m \ge b_{i,1} + \dots + b_{i,r}$ 本身就迫使 $f_i$ 成为 holonomic 函数.
+
+这使得我们能够应用引理~\ref{lem:6.2.6}.
+在下文中, 我们将固定一个由该引理提供的``辅助函数'' $F(\mathbf{x}) \in \mathbf{Q}[\![\mathbf{x}]\!] \setminus \{0\}$, 并在该引理的结论下写出 $\delta := \delta(\epsilon)$ 对应于 $\delta \in (0, \epsilon)$.
+在证明的最后, 我们将依次令 $D \to \infty$、$d \to \infty$ 和 $\epsilon \to 0$, 记住后者尤其导致了 $\delta \to 0$.
+
+\subsection{播种}\label{sec:6.4}
+
+现在考虑 $F(\mathbf{x})$ 中的一个非零最低阶单项式 $\beta \mathbf{x}^{\mathbf{n}}$.
+因此 $\beta := \beta_{\mathbf{n}} \in \mathbf{Q}^{\times}$ 是一个非零有理数, 其具有继承自~\eqref{eq:6.0.9} 的分母上限, 我们将在下面的 \S~6.6 中进行研究, 并且根据推论~\ref{cor:6.2.11}, 其指数 $\mathbf{n} = (n_1, \ldots, n_d) \in ((m+\delta)D) P_{\epsilon}^d$ 满足 $\delta < \epsilon$, 总次数满足 $n := |\mathbf{n}| = n_1 + \dots + n_d \in [(1-2\epsilon)\alpha, (1+2\epsilon)^2\alpha]$.
+直到证明结束, 我们都固定这一最低阶指数 $\mathbf{n}$, 并且通过重新标记变量 $x_1, \ldots, x_d$, 我们可以并且将会假定 $n_1 \leq n_2 \leq \dots \leq n_d$.
+
+我们现在转向论证中所需的部分——该部分我们在引言简述 \S~6.1 中省略了 (但我们在一般引言的 \S~2.13.10 中进行了简要描述)——以便获得比更基本的特殊情况~\eqref{eq:6.0.15} 更强的边界~\eqref{eq:6.0.8}.
+该思想是将索引集 $\{1,\ldots,d\}$ 划分为 $l+1$ 个组, 以便在满足 $\gamma_k/m \leq j/d < \gamma_{k+1}/m$ (其中 $k=0,\ldots,l$) 的解析变量 $z_j$ 情况下使用映射 $\varphi_k$, 约定 $\gamma_{l+1}/m=1$, 并且等号在 $k=l$ 的右侧条件中具有定义.
+设 $\Phi:\overline{\mathbf{D}}^d\to\mathbf{C}^d$ 是由此类对 $j^{\text{th}}$ 坐标函数使用 $\varphi_k(z_j)$ 的方式所定义的对角映射, 其中 $k=k(j)\in\{0,\ldots,l\}$ 由 $j\in\{\lceil\gamma_kd/m\rceil,\ldots,\lceil\gamma_{k+1}d/m\rceil-1\}$ (以及在 $j=d$ 时 $k=l$) 唯一决定.
+这是一个满足 $\Phi(\mathbf{0})=\mathbf{0}$ 的全纯映射, 且——消去对于 $1\le i\le m, 0\le k\le l$ 的亚纯拉回函数 $f_i(\varphi_k(z))$ 的公共全纯分母——存在一个全纯函数 $h \in \mathcal{O}(\overline{\mathbf{D}})$ 满足 $h(0)=1$ 且有:
+\begin{equation}\label{eq:6.4.1}
+\begin{aligned}
+G(\mathbf{z}) &:= h(z_1) \cdots h(z_d) \cdot (\Phi^* F)(\mathbf{z}) \\
+&\in \mathcal{O}\left(\overline{\mathbf{D}}^d\right)
+\end{aligned}
+\end{equation}
+在闭单位多圆盘的某个邻域上全纯.
+根据构造, $G(\mathbf{z})$ 的 $\mathbf{z}^{\mathbf{n}}$ 系数等于\footnote{形式上将加法记号进行指数化, 选取任意对数分支.}:
+\begin{equation}\label{eq:6.4.2}
+[\mathbf{z}^{\mathbf{n}}] \{ G(\mathbf{z}) \} = \beta \cdot \exp \left( \sum_{k=0}^{l} \left( \sum_{\substack{\frac{d\gamma_k}{m} \le j < \frac{d\gamma_{k+1}}{m}}}^{\prime} n_j \right) \log \varphi_k^{\prime}(0) \right),
+\end{equation}
+其中内层求和号中的撇号是提醒我们在 $k = l$ 的情况下, $j = d$ 这一项也应该被包括在内.
+根据推论~\ref{cor:6.2.11}, 关于 $j$ 的内层求和满足:
+\begin{equation}\label{eq:6.4.3}
+(1 - 2\epsilon)(\gamma_{k+1}^2 - \gamma_k^2) \frac{\alpha}{m^2} \le \sum_{\frac{d\gamma_k}{m} \le j < \frac{d\gamma_{k+1}}{m}} n_j \le (1 + 2\epsilon)^2 (\gamma_{k+1}^2 - \gamma_k^2) \frac{\alpha}{m^2}.
+\end{equation}
+
+\subsection{等分布性}\label{sec:6.5}
+
+存在至少两种方法 \cite[§ 2.4 或 § 2.5]{CDT21} 以与我们的精细分析兼容的方式来处理阿基米德增长项.
+\cite[§ 2.5]{CDT21} 的 Vandermonde 阻尼因子直接基于 Cauchy 公式, 并且更符合我们用于执行 \S~6.1.3 和 \S~6.1.5 的跨变量积分技术.
+Poisson--Jensen 方法 \cite[§ 2.4]{CDT21} 基于由 Andr{\'e} 向我们建议的字典式归纳引理 \cite[Lemma 2.4.1]{CDT21}; 这一方法在精神上更接近我们稍后在 \S~8 中的处理.
+我们最初关于无界分母猜想之解的 holonomicity 定理的第三个证明 \cite[§ 2.3]{CDT21} 似乎不适用于目前的改进.
+
+因此, 我们选择在当前小节的细节中坚持使用 Vandermonde 因子方法 (尽管如此, 仍可参见 \cite[§ 2.5.1]{CDT21} 以获取关于位势理论的一些基本且广为人知的事实).
+
+\subsubsection{Vandermonde 因子}\label{sec:6.5.1}
+
+为了设置我们的阻尼因子, 我们在此收集一些关于复平面中对数位势理论的基本事实.
+给定一变组量 $\mathbf{z} = (z_1, \dots, z_d)$, 我们定义:
+\begin{equation}\label{eq:6.5.2}
+V(\mathbf{z}) := \prod_{i < j} (z_i - z_j) = \det \begin{bmatrix} 1 & z_1 & z_1^2 & \cdots & z_1^{d-1} \\ 1 & z_2 & z_2^2 & \cdots & z_2^{d-1} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & z_d & z_d^2 & \cdots & z_d^{d-1} \end{bmatrix} \in \mathbf{Z}[z_1, \dots, z_d] \setminus \{0\}.
+\end{equation}
+
+如在 \cite[§ 2.5.1]{CDT21} 中所指出的:
+
+\begin{lemma}\label{lem:6.5.3} (Fekete)
+在单位多圆周 $\mathbf{z} \in \mathbf{T}^d$ 上 $|V(\mathbf{z})| = \prod_{1 \leq i < j \leq d} |z_i - z_j|$ 的上确界等于 $d^{d/2}$, 并且等号成立当且仅当点 $z_1, \ldots, z_d$ 是正 $d$ 边形的顶点.
+\end{lemma}
+
+\begin{lemma}\label{lem:6.5.4} (Bilu)
+存在函数 $c(\varepsilon) > 0$ 以及 $d_0(\varepsilon) \in \mathbf{R}$, 使得对于每个 $\varepsilon \in (0,1]$, 如果 $d \geq d_0(\varepsilon)$ 且 $\mathbf{z} = (z_1, \ldots, z_d) \in \mathbf{T}^d$ 是一个偏差满足 $D(\mathbf{z}) \geq \varepsilon$ 的 $d$ 元组, 那么:
+\begin{equation}\label{eq:6.5.5}
+|V(\mathbf{z})| = \prod_{1 \le i < j \le d} |z_i - z_j| < e^{-c(\varepsilon)d^2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+参见 \cite[Lemma 2.5.8]{CDT21} 中的证明, 该证明又紧密基于 Bombieri 和 Gubler 的著作 \cite[page 103]{BG06} 中关于线性代数环面上具有小正则高度的点的 Bilu 等分布定理的探讨.
+\end{proof}
+
+在这一点上, 我们在证明结束前固定一个 $\epsilon > 0$ 和一个 $\delta \in (0, \epsilon)$, 并假定 $d \geq d_0(\epsilon, \delta)$.
+
+\subsubsection{全纯阻尼器}\label{sec:6.5.6}
+
+我们现在假定在 \S~6.4 中进行成 $l+1$ 个连续块的 $\{1, \ldots, d\}$ 划分, 并将对应的变量块写为 $\mathbf{z} = (\mathbf{z}^{(0)}, \ldots, \mathbf{z}^{(l)})$.
+显式地, $\mathbf{z}^{(k)}$ 按增加的标号列出满足 $\gamma_k d/m \leq j < \gamma_{k+1} d/m$ 的变量 $z_j$, 并且在 $k = l$ 的情况下假定末端项 $j = d$ 也被包括在内.
+遵循 \cite[§ 2.5.14]{CDT21}, 我们将通过使用如下的多变量全纯乘子选择, 来阻尼用于系数~\eqref{eq:6.4.2} 的 Cauchy 积分公式中的被积函数:
+\begin{equation}\label{eq:6.5.7}
+W(\mathbf{z}) := \prod_{k=0}^{l} V\left(\mathbf{z}^{(k)}\right)^{M} \in \mathbf{Z}[\mathbf{z}] \setminus \{0\},
+\end{equation}
+其中 $M$ 是在证明中待选择的极大整数参数.
+
+\subsubsection{跨变量积分}\label{sec:6.5.8}
+
+跨变量积分的想法很简单.
+考虑高维单位环面上的 $\mathbf{z} \in \mathbf{T}^d$.
+如果我们的某个 $k \in \{0,\dots,l\}$ 块具有偏差 $D\left(\mathbf{z}^{(k)}\right) \geq \epsilon > 0$, 引理~\ref{lem:6.5.4} 告诉我们~\eqref{eq:6.5.7} 中的对应项 $V\left(\mathbf{z}^{(k)}\right)$ 关于 $-d^2$ 是一致\footnote{作为 $d \in \mathbf{N}_{>0}$ 的函数, 但对于给定的 $\epsilon > 0$.}指数级小的.
+这与作为对其他因子 $V\left(\mathbf{z}^{(q)}\right)$ (对于 $q \in \{0,\dots,l\} \setminus \{k\}$)的一致上界的引理~\ref{lem:6.5.3} 相结合, 导致整体阻尼因子 $W(\mathbf{z})$ 以 $-Md^2$ 的指数速率衰减, 这在 $d \in \mathbf{N}_{_{>0}}$ 和 $\left\{\mathbf{z}^{(q)}: q \in \{0,\dots,l\} \setminus \{k\}\right\}$ 中是一致的.
+这证明了:
+\begin{equation}\label{eq:6.5.9}
+\sup_{\substack{\mathbf{z} \in \mathbf{T}^d \\ \exists k: D(\mathbf{z}^{(k)}) \ge \epsilon}} \{|W(\mathbf{z})|\} < e^{-c'(\epsilon)M d^2},
+\end{equation}
+对于某个取决于 $\epsilon$ 但不取决于 $d$ 的函数 $c'(\epsilon) > 0$.
+
+此外, 暂时使用 $d = d_0 + \dots + d_l$ 来表示变量槽基数的划分, 引理~\ref{lem:6.5.3} 也隐含了一致的 $\exp(o(M d^2))$ 上界:
+\begin{equation}\label{eq:6.5.10}
+\sup_{\mathbf{z} \in \mathbf{T}^d} |W(\mathbf{z})| \le \prod_{k=0}^l d_k^{Md_k/2} \le d^{Md/2}.
+\end{equation}
+
+使用具有~\eqref{eq:6.5.9} 和~\eqref{eq:6.5.10} 的乘子的效果大概如下.
+由于通过~\eqref{eq:6.2.8} 在 $G$ 的构成中单项式指数向量 $\mathbf{k}$ 具有渐近一致分布的分量 $\{k_j\} \subset [0, D]$, 重排不等式引入了函数~\eqref{eq:6.0.8}, 并在极限下使得乘积 $W(\mathbf{z})G(\mathbf{z})$ 筛选出平均增长率:
+\[ \exp\left(D\int_0^1 t \cdot (g_{\boldsymbol{\varphi},\boldsymbol{\gamma}})^*(t) dt\right) \]
+作为一个一致的 $\mathbf{z} \in \mathbf{T}^d$ 上确界.
+我们将在下面使其成为一个精确的论证.
+
+心中带着这个计划, 我们转向 \S~2.12 中大纲的步骤 (iii).
+我们在解析层面上研究 $F(\mathbf{x})$ 中 $\mathbf{x}^{\mathbf{n}}$ 的系数 $\beta \in \mathbf{Q}^{\times}$.
+为了研究它, 我们通过 Cauchy 积分来表达~\eqref{eq:6.4.2}:
+\begin{equation}\label{eq:6.5.11}
+\begin{aligned}
+&\beta \cdot \exp\left(\sum_{k=0}^{l} \left(\sum_{\frac{d\gamma_k}{m} \le j < \frac{d\gamma_{k+1}}{m}}^{\prime} n_j\right) \log \varphi_k^{\prime}(0)\right) \\
+&= [\mathbf{z}^{\mathbf{n}}] \left\{G(\mathbf{z})\right\} \\
+&= \left[z_1^{n_1+M} \dots z_d^{n_d+dM}\right] \left\{W(\mathbf{z})G(\mathbf{z})\right\} \\
+&= \int_{\mathbf{T}^d} \frac{W(\mathbf{z})G(\mathbf{z})}{z_1^{n_1+M} z_2^{n_2+2M} \dots z_d^{n_d+dM}} \, \mu_{\text{Haar}}(\mathbf{z}).
+\end{aligned}
+\end{equation}
+
+因此, 通过逐点上确界来估计后一被积函数, 我们推导出非零有理数 $\beta \in \mathbf{Q}^{\times}$ 的解析上界:
+\begin{align}
+|\beta| &\le \exp\left(\sup_{\mathbf{T}^{d}} \left\{\log|WG|\right\} - \sum_{k=0}^{l} \left(\sum_{\frac{d\gamma_{k}}{m} \le j < \frac{d\gamma_{k+1}}{m}} n_{j}\right) \log|\varphi'_{k}(0)|\right) \nonumber\\
+&\le \exp\left(\sup_{\mathbf{T}^{d}} \left\{\log|W(\mathbf{z})F(\Phi(\mathbf{z}))|\right\} - \sum_{k=0}^{l} \left(\sum_{\frac{d\gamma_{k}}{m} \le j < \frac{d\gamma_{k+1}}{m}} n_{j}\right) \log|\varphi'_{k}(0)| + O_{h}(1)\right).\label{eq:6.5.12}
+\end{align}
+
+这里, 由于 $|\varphi_l'(0)| > 1$ 并且这是一个上界, 我们合法地在内层关于 $j$ 的求和中去除了撇号限制.
+我们使用~\eqref{eq:6.4.3} 进一步重写~\eqref{eq:6.5.12} 并应用 Abel 求和法来获得关于 $\log |\beta|$ 的如下边界(回忆边界条件 $\gamma_{l+1} = m$ 和 $\gamma_0 = 0$):
+\begin{align}
+\log |\beta| &\le \sup_{\mathbf{T}^d} \left\{ \log |W(\mathbf{z})F(\Phi(\mathbf{z}))| \right\} - \frac{\alpha}{m^2} \sum_{k=0}^l (\gamma_{k+1}^2 - \gamma_k^2) \log |\varphi_k'(0)| + O(\epsilon \alpha) \nonumber\\
+&= \sup_{\mathbf{T}^d} \left\{ \log |W(\mathbf{z})F(\Phi(\mathbf{z}))| \right\} - \alpha \log |\varphi_l'(0)| + \frac{\alpha}{m^2} \sum_{k=1}^l \gamma_k^2 \log \frac{|\varphi_k'(0)|}{|\varphi_{k-1}'(0)|} + O(\epsilon \alpha).\label{eq:6.5.13}
+\end{align}
+
+在这一点上, 我们遵循 \cite[§ 2.5.14]{CDT21} 来上估~\eqref{eq:6.5.13} 中的上确界项.
+由~\eqref{eq:6.2.8}, 三角不等式给出了在 $\mathbf{z} \in \mathbf{T}^d$ 上的一致逐点上界:
+\begin{equation}\label{eq:6.5.14}
+\log |F(\Phi(\mathbf{z}))| \le \max_{\mathbf{k}/D \in P_{\epsilon}^d \cap \mathbf{Z}^d} \left\{ \sum_{j=1}^d k_j \log |\Phi_j(z_j)| \right\} + O(\epsilon \alpha) + o(\alpha),
+\end{equation}
+其中我们使用了多变量映射的一元分量的拼接记号 (我们在上面的 \S~6.4 中定义的)
+\[ \Phi(\mathbf{z}) =: (\Phi_1(z_1), \dots, \Phi_d(z_d)) \]
+它在由 \S~6.4 阐明的 $\gamma$ 规则决定的唯一 $k = k(j) \in \{0, \dots, l\}$ 下满足 $\Phi_j(z_j) := \varphi_k(z_j)$.
+
+\subsubsection{数值积分}\label{sec:6.5.15}
+
+在通过 $z \mapsto (1-\varepsilon)z$ 对单位圆盘 $\mathbf{D}$ 的坐标进行无限小地缩放并在最后取 $\varepsilon \to 0$ 极限后, 我们能够并且假定在全纯函数 $\varphi_0, \ldots, \varphi_l \in \mathcal{O}(\overline{\mathbf{D}})$ 中没有一个在单位圆周 $\mathbf{T}$ 上有任何零点.
+
+为了稍后记号的便利, 我们定义 $T_{\gamma,\epsilon}^d := \{\mathbf{z} \in \mathbf{T}^d : \forall k, D(\mathbf{z}^{(k)}) < \epsilon\}$.
+我们用 $d^{(k)} := \lceil \gamma_{k+1} d/m \rceil - \lceil \gamma_k d/m \rceil$ 表示变量块 $\mathbf{z}^{(k)}$ 的长度, 并在块形式中将 $\mathbf{z} := e^{2\pi i \mathbf{s}}$ 写为 $\mathbf{z} = (\mathbf{z}^{(0)}, \dots, \mathbf{z}^{(l)})$, 使得 $\mathbf{z} \in T_{\gamma,\epsilon}^d$ 等同于对每个 $k = 0, \dots, l$ 都有 $D(\mathbf{s}^{(k)}) < \epsilon$.
+给定一个向量 $\mathbf{w} = (w_1, \dots, w_d) \in \mathbf{R}^d$, 让我们稍微滥用一下记号, 用 $\mathbf{w}^* := (w_1^*, \dots, w_d^*)$ 表示 $\mathbf{w}$ 的分量集合的递增\footnote{或者更确切地说, 是非降的.}重排向量.
+根据推论~\ref{cor:6.2.11}, 运行条件 $\mathbf{k}/D \in P_{\epsilon}^d$ 蕴含着:
+\begin{equation}\label{eq:6.5.16}
+k_j^* = D(j/d) + O(\epsilon D) = (2j/d^2) \frac{\alpha}{m} + O(\epsilon \alpha/d), \qquad j = 1, \dots, d.
+\end{equation}
+
+类似地, 对于满足 $D(\mathbf{s}^{(k)}) < \epsilon$ 的 $\mathbf{s}^{(k)} \in [0,1)^{d^{(k)}}$, 递增重排 $(\mathbf{s}^{(k)})^*$ 具有分量:
+\begin{equation}\label{eq:6.5.17}
+(s^{(k)})_{\ell}^* = \ell/d^{(k)} + O(\epsilon), \qquad \ell = 1, \dots, d^{(k)}.
+\end{equation}
+
+由于所有的坐标函数 $\log |\Phi_j| = \log |\varphi_{k(j)}| : \mathbf{T} \to \mathbf{R}$ 都是有界变差的, Koksma 不等式 (例如, 参见 \cite[§ 2.5.1]{CDT21} 以获取讨论和进一步引用)意味着对于 $j \in [\lceil \gamma_k d/m \rceil, \lceil \gamma_{k+1} d/m \rceil)$, 有:
+\[ \log |\Phi_j(e^{2\pi i(s^{(k)})_{\ell}^*})| = \log |\varphi_k(e^{2\pi i\ell/d^{(k)}})| + O(\epsilon). \]
+
+因此, 再次由 Koksma 不等式, 我们到达了函数~\eqref{eq:6.0.8} 的定义:
+\[ g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}(j/d) = \log \left| \varphi_k \left( e^{2\pi i \left( j - \sum_{h=0}^{k-1} d^{(h)} \right) / d^{(k)}} \right) \right| + O(1/d). \]
+
+那么递增重排记号读作:
+\begin{equation}\label{eq:6.5.18}
+g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}^*(j/d) = \left(\log \left| \varphi_{k(j)} \left( e^{2\pi i \left( j - \sum_{h=0}^{k(j)-1} d^{(h)} \right) / d^{(k(j))}} \right) \right| \right)_j^* + O(1/d),
+\end{equation}
+其中指数 $k = k(j) \in \{0, \dots, l\}$ 由 \S~6.4 的规则决定, 在这些自变量下它读作: $j/d \in [\gamma_k/m, \gamma_{k+1}/m)$.
+
+综上所述, 我们已经证明了:
+\[ (\Phi_j(z_j))_j^* = g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}^*(j/d) + O(\epsilon) + O(1/d). \]
+
+现在 Koksma 不等式和重排不等式产生了一个数值积分估计:
+\begin{equation}\label{eq:6.5.19}
+\mathbf{t} \in P_{\epsilon}^{d}, \ t_{1} \leq \dots \leq t_{d}, \quad \mathbf{z} \in T_{\gamma, \epsilon}^{d} \implies \sum_{j=1}^{d} 2t_{j} \cdot \log |\Phi_{j}(z_{j})| \leq \sum_{j=1}^{d} (2j/d) g_{\boldsymbol{\varphi}, \boldsymbol{\gamma}}^{*}(j/d) + O(\epsilon d) + O(1).
+\end{equation}
+
+因此, \eqref{eq:6.5.14} 和~\eqref{eq:6.5.19} 隐含了如下上估:
+\begin{equation}\label{eq:6.5.20}
+\sup_{\mathbf{z} \in T_{\boldsymbol{\gamma}, \epsilon}^{d}} \left\{ \log |F(\Phi(\mathbf{z}))| \right\} \le \frac{1}{d} \left( \sum_{j=1}^{d} 2(j/d) \cdot g_{\boldsymbol{\varphi}, \boldsymbol{\gamma}}^{*}(j/d) \right) \frac{\alpha}{m} + O(\epsilon \alpha) + O\left(\frac{\alpha}{d}\right) + o(\alpha).
+\end{equation}
+
+在这一点上, Koksma 不等式再次适用, 以证明在分布良好部分 $T^d_{\gamma,\epsilon} \subset \mathbf{T}^d$ 上一致成立的估计:
+\begin{equation}\label{eq:6.5.21}
+\sup_{\mathbf{z} \in T_{\boldsymbol{\gamma},\epsilon}^d} \left\{ \log |F(\Phi(\mathbf{z}))| \right\} \le \frac{\alpha}{m} \cdot \int_0^1 2t \cdot g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}^*(t) \, dt + O(\epsilon \alpha) + O\left(\frac{\alpha}{d}\right) + o(\alpha).
+\end{equation}
+
+\subsubsection{噪声消除}\label{sec:6.5.22}
+
+为了处理积分环面 $\mathbf{T}^d$ 的补充(分布不良)部分, 我们选择阻尼 Vandermonde 式的``足够大''指数 $M$:
+\begin{equation}\label{eq:6.5.23}
+M := \left\lfloor \frac{\sup_{\mathbf{T}} \log |\Phi|}{c'(\epsilon)} \frac{\alpha}{d^2} \right\rfloor,
+\end{equation}
+其中 $c'(\epsilon)$ 是来自~\eqref{eq:6.5.9} 的函数, 并且我们回忆在那个引理中我们已经假定了条件 $d \geq d_0(\epsilon)$.
+在分布不良的部分 $\mathbf{T}^d \setminus T_{\gamma,\epsilon}^d$ 上, 我们得到:
+\begin{equation}\label{eq:6.5.24}
+\sup_{\mathbf{z} \in \mathbf{T}^d \setminus T_{\boldsymbol{\gamma}, \epsilon}^d} \{ \log |W(\mathbf{z})F(\Phi(\mathbf{z}))| \} = O(\epsilon \alpha) + o(\alpha).
+\end{equation}
+
+综合~\eqref{eq:6.5.21}、\eqref{eq:6.5.24} 和引理~\ref{lem:6.5.3}, 我们导出了如下一致估计:
+\begin{equation}\label{eq:6.5.25}
+\sup_{\mathbf{z} \in \mathbf{T}^d} \left\{ \log |W(\mathbf{z})F(\Phi(\mathbf{z}))| \right\} \le \frac{\alpha}{m} \cdot \int_0^1 2t \cdot g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}^*(t) \, dt + O_{\epsilon} \left( \frac{\log d}{d} \alpha \right) + O(\epsilon \alpha) + o(\alpha).
+\end{equation}
+
+\subsubsection{Cauchy 边界}\label{sec:6.5.26}
+
+我们对首项 $\mathbf{x}^{\mathbf{n}}$ 系数 $\beta$ 的上界现在作为~\eqref{eq:6.5.13} 和~\eqref{eq:6.5.25} 的结合得出:
+\begin{equation}\label{eq:6.5.27}
+  \begin{aligned}
+  \log |\beta| 
+  & \leq \frac{\alpha}{m} \cdot \int_0^1 2t \cdot g_{\boldsymbol{\varphi}, \boldsymbol{\gamma}}^*(t) dt - \alpha \log |\varphi_l'(0)| + \frac{\alpha}{m^2} \sum_{k=1}^l \gamma_k^2 \log \frac{|\varphi_k'(0)|}{|\varphi_{k-1}'(0)|}  \\
+  & + O_{\epsilon} \left(\frac{\log d}{d} \alpha\right) + O(\epsilon\alpha) + o(\alpha).
+  \end{aligned}
+\end{equation}
+
+
+
+这一渐近不等式在按 $\alpha \to \infty, d \to \infty$ 和 $\epsilon \to 0$ 的顺序取极限后, 已经证明了定理在 $\mathbf{b} = \mathbf{0}, \mathbf{e} = \mathbf{0}$ 情况下的特殊情况, 此时 $\beta \in \mathbf{Z} \setminus \{0\}$ 是一个非零有理整数, 因此在绝对值上至少为 $1$.
+为了完成一般情况的证明, 剩下的是估计 $F(\mathbf{x})$ 中首项系数 $\beta \in \mathbf{Q}^{\times}$ 的分母.
+
+\subsection{分母算术}\label{sec:6.6}
+
+这是我们在 \cite[§ 2]{CDT21} 中未曾遇到的新方面.
+我们考虑所有可能的具有 $c_{\mathbf{i},\mathbf{k}} \in \mathbf{Z}$ 的组合~\eqref{eq:6.2.8}, 并在这些组合中, 在引理~\ref{lem:6.2.6} 的前提下以及分母类型~\eqref{eq:6.0.9} 下, 逐个素数地估计可能在首项系数 $\beta$ 中出现的最坏分母.
+我们证明了 $\exp\left(\alpha\tau^{\flat}(\mathbf{b}) + o(\alpha)\right)$ 作为 $\mathbf{e} = \mathbf{0}$ 情况下的最佳(精确)公式.
+对于包含增加积分的一般情况, 精确的最坏分母分析似乎十分微妙——特别是如果在 \S~13 我们主要应用的实际 $m = 14$ 情况下, 尝试考虑我们在注记~10.2.3 中所指示的更精细分母时;——但我们提供了一个方便的上估, 它恰好是定理~\ref{thm:6.0.2} 的陈述中的量 $\exp\left(\alpha\tau^{\flat}(\mathbf{b}) + \alpha\tau^{\sharp}(\mathbf{e}) + o(\alpha)\right) = \exp\left(\alpha\tau(\mathbf{b}; \mathbf{e}) + o(\alpha)\right)$.
+我们怀疑我们的估计在用于证明定理~A 的情况下是相当精确的.
+
+\subsubsection{关于 $\tau^{\sharp}$ 的预览}\label{sec:6.6.1}
+
+从这些增长率 $\tau^{\flat}(\mathbf{b})$ 和 $\tau^{\sharp}(\mathbf{e})$ 相加的方式可以清楚地看出, 我们是在分别估计~\eqref{eq:6.0.9} 中因子 $n^{e_i}$ 引入的额外分母.
+在 $\tau^{\sharp}(\mathbf{e})$ 的定义~\eqref{eq:6.0.5} 中的参数 $\xi \in [0, m]$ 被用于引理~\ref{lem:5.0.4} 中的截止(cutoff), 以决定对于哪些素数 $p$ 根据引理来估计 $\mathrm{den}(\beta)$ 中增加的 $p$ 幂次, 以及对于哪些素数则直接根据注记来估计: 即每个乘积 $f_{i_1}(x_1) \cdots f_{i_d}(x_d)$ 在~\eqref{eq:6.0.9} 中仅有有限个涉及``额外 $n$ 分母''的因子: 也就是说, 如果我们连同重度 $n^{e_i}$ 一起计算, 那么 $d$ 个因子中恰好有 $(\sum_{i=1}^m e_i) d/m$ 个因子作出了贡献.
+对于素数 $p \leq \xi D$, 我们使用后一个平凡估计; 对于范围 $p > \xi D$, 我们利用首项 $\prec$-阶指数向量 $\mathbf{n}$ 在重标记变量后接近于 $(mD/d, 2mD/d, \dots, dmD/d)$ 这一事实, 由引理~\ref{lem:5.0.4} 进行估计.
+
+这意味着要分别审视等式 $\sum_{\mathbf{i},\mathbf{k}} c_{\mathbf{i},\mathbf{k}} \mathbf{x}^{\mathbf{k}} f_{i_1}(x_1) \dots f_{i_m}(x_m) = \sum_{\mathbf{n}} \beta_{\mathbf{n}} \mathbf{x}^{\mathbf{n}}$ 的左侧和右侧.
+在我们 $d \to \infty$ 的渐近过程中, 我们的 $\prec$-首项指数向量 $\mathbf{n} \approx (mD/d, 2mD/d, \dots, dmD/d)$ 再次实现了跨变量维度, 其具有一个积分变量 $t := jm/d \in [0, m]$, 它引入了定义~\ref{def:6.0.1} 的积分 LCM 成本函数 $I_{\xi}^m(\xi)$.
+更确切地说, 回忆我们最终将令 $\epsilon \to 0$, 这将自动迫使 $\delta \to 0$, 后者作为 Riemann 积分 $\int_0^{m+\delta}$ 显现出来:
+\[
+\begin{aligned}
+&\frac{\max_{i}(e_i)}{D} \log \frac{[\max(1, tD - D), tD]}{\gcd\{[1, \dots, \xi D], [\max(1, tD - D), tD]\}} dt
+\end{aligned}
+\]
+它来自于引理~\ref{lem:5.0.4} 的估计.
+因为后一估计是``跨变量''进行的, 它仅通过其次项共同上限 $\max_i(e_i)$ 来看待指数 $n^{e_i}$, 这是基于如下注记: 即在每个单一变量 $x_j$ 中, $f_i(x_j)$ 的项 $[x_j^n]$ 的增加分母最多乘上 $n^{\max_i(e_i)}$; 这必须在 $i \in \{1, \ldots, m\}$ 中一致地取(因此在 $i$ 上取最大值), 因为在~\eqref{eq:6.2.8} 的每个乘积中, 给定的函数种类 $f_i$ 将在每个坐标 $x_j$ 处出现.
+为了平衡许多 $f_i$ 可能具有比该跨变量分母估计的共同上限 $n^{\max_i(e_i)}$ 更小的增加分母 $n^{e_i}$ 这一事实, 我们使用了一个平衡参数 $\xi$, 并直接在可能隐藏有额外 $p^{e_i}$ 分母的受影响因子的重度密度 $(\sum_{i=1}^m e_i) d/m$ 下估计素数 $p \leq \xi D$ (这是一个保守估计!).
+
+我们现在执行此 $\mathrm{den}(\beta)$ 放大程序的两个要点 $\tau^{\flat}(\mathbf{b})$ 和 $\tau^{\sharp}(\mathbf{e})$.
+在这些分母估计中, 关键点在于我们由引理~\ref{lem:6.2.6} 给出的 $F(\mathbf{x})$ 中的 $\prec$-极小指数 $\mathbf{n} \in (m+\delta)D \cdot P^d_{\epsilon}$ 具有均匀分布的分量, 但关于 $\mathbf{k} \in D \cdot P^d_{\epsilon}$ 的相应信息现在被忽略了 (可以想象后者也可以被利用来给出更精确的边界; 然而, 我们无法在我们的应用中做到这一点).
+
+这与 \S~6.5 中的阿基米德增长估计恰好相反.
+
+\subsubsection{$\tau^{\flat}(\mathbf{b})$ 部分}\label{sec:6.6.2}
+
+考虑由引理~\ref{lem:6.2.6} 给出的任何最低阶指数向量 $\mathbf{n} = (n_1, \dots, n_d) \in (m + \delta)D \cdot P_{\epsilon}^d$.
+回忆在 \S~6.4 中, 我们重新标记了坐标以假定——这只是为了记号上的便利——我们的 $\mathbf{n}$ 具有非降分量: $n_1 \leq \dots \leq n_d$.
+那么, 由推论~\ref{cor:6.2.11}, 我们有:
+\begin{equation}\label{eq:6.6.3}
+n_j \le (1+\epsilon)mD(j/d) + 2m\epsilon D \le mD(j/d) + 3m\epsilon D, \qquad j = 1, \dots, d.
+\end{equation}
+
+我们需要计算在任何乘积
+\begin{equation}\label{eq:6.6.4}
+x_1^{k_1} \cdots x_d^{k_d} \cdot g_{\pi(1)}(x_1) \cdots g_{\pi(d)}(x_d) \in \mathbf{Q}[\![\mathbf{x}]\!]
+\end{equation}
+中可能作为 $\mathbf{x}^{\mathbf{n}}$ 系数出现的非零有理数 $\beta \in \mathbf{Q}^{\times}$ 的最小公分母, 在所有可能的 $\mathbf{k} \in D \cdot P^d_{\epsilon}$、所有可能的 $\{1, \dots, d\}$ 的置换 $\pi$ 以及对每个 $i \in \{1, \dots, m\}$ 的所有可能的形式函数:
+\begin{equation}\label{eq:6.6.5}
+g_{1+(i-1)d/m}(x), \dots, g_{id/m}(x) \in \bigoplus_{n=0}^{\infty} \frac{x^n}{[1, \dots, b_{i,1} \cdot n] \cdots [1, \dots, b_{i,r} \cdot n]} \mathbf{Z}
+\end{equation}
+下.
+这不外乎是如下所有乘积的最小公倍数:
+\begin{equation}\label{eq:6.6.6}
+\prod_{i=1}^{m} \prod_{s=1}^{d/m} \prod_{h=1}^{r} \left[ 1, \dots, b_{i,h} \cdot n_{\pi((i-1)d/m+s)} \right], \quad \pi \in S_d,
+\end{equation}
+当 $\pi$ 遍历 $\{1, \dots, d\}$ 的所有置换时.
+
+我们通过对极大估值进行逐个素数的确定来处理~\eqref{eq:6.6.6}.
+以下简单的引理是在我们在 \S\S~6, 7 中所有定理中对分母上限阵列 $\mathbf{b}$ 使用特殊条件~\eqref{eq:6.0.3} 的关键所在.
+
+\begin{lemma}\label{lem:6.6.7}
+对于每个素数 $p$, 每个具有如下形式的向量 $(c_1, \dots, c_m) \in \mathbf{N}^m$:
+\begin{equation}\label{eq:6.6.8}
+0 = c_1 = \dots = c_u < c_{u+1} = \dots = c_m =: c,
+\end{equation}
+以及由 $km$ 个正整数构成的任意非降序列 $n(1) \leq \dots \leq n(km)$, 以下等式成立:
+\begin{align}
+&\max_{\pi \in S_{km}} \operatorname{val}_{p} \left\{ \prod_{i=1}^{m} \prod_{s=1}^{k} \left[ 1, \dots, c_{i} \cdot n \left( \pi \left( (i-1)k + s \right) \right) \right] \right\} \nonumber\\
+&= \operatorname{val}_{p} \left\{ \prod_{i=1}^{m} \prod_{s=1}^{k} \left[ 1, \dots, c_{i} \cdot n \left( (i-1)k + s \right) \right] \right\}.\label{eq:6.6.9}
+\end{align}
+换句话说, 当 $\pi \in S_{km}$ 遍历 $\{1, \dots, km\}$ 的所有置换时, 恒等置换 $\pi = \mathrm{id}$ 最大化了~\eqref{eq:6.6.9} 中的 $p$-进估值.
+\end{lemma}
+
+\begin{proof}
+条件~\eqref{eq:6.6.8} 将所要求的乘积~\eqref{eq:6.6.9} 简化为:
+\begin{equation}\label{eq:6.6.10}
+\prod_{i=u+1}^{m} \prod_{s=1}^{k} \quad [1, \dots, c \cdot n (\pi ((i-1)k+s))].
+\end{equation}
+前 $N$ 个正整数的最小公倍数 $[1, \dots, N]$ 具有等于 $\lfloor \frac{\log N}{\log p} \rfloor$ 的 $p$-进估值, 因此~\eqref{eq:6.6.9} 中待最大化的量恰好等于:
+\begin{equation}\label{eq:6.6.11}
+\sum_{i=u+1}^{m} \sum_{s=1}^{k} \left\lfloor \frac{\log c}{\log p} + \frac{\log n \left( \pi \left( (i-1)k + s \right) \right)}{\log p} \right\rfloor.
+\end{equation}
+从 $km$ 个正整数 $\{n(1), \dots, n(km)\}$ 中, 我们必须挑挑出 $k(m - u)$ 个具有两两不同下标的元素来最大化总和~\eqref{eq:6.6.11}.
+显然, 这通过挑选 $k(m-u)$ 个最大的可用数字 $n(\bullet)$ 来达到最大值, 故我们在 $n(\bullet)$ 上的单调性假设尤其给出了：由恒等置换 $\pi = \mathrm{id}$ 最大化~\eqref{eq:6.6.11}, 最大值为：
+\[ \sum_{j=ku+1}^{km} \left\lfloor \frac{\log c}{\log p} + \frac{\log n(j)}{\log p} \right\rfloor. \]
+\end{proof}
+
+将~\eqref{eq:6.6.3} 应用于非降序列 $\mathbf{n}$, 结合我们关于 $m \times r$ 阵列的条件~\eqref{eq:6.0.3}, 我们由引理~\ref{lem:6.6.7} 发现, 一旦 $D \gg_{\epsilon} 1$, 所有的最小公倍数乘积~\eqref{eq:6.6.6} 均整除:
+\begin{equation}\label{eq:6.6.12}
+\prod_{i=1}^{m} \prod_{s=1}^{d/m} \prod_{h=1}^{r} \left[ 1, \dots, b_{i,h} \cdot \left( (i-1)D + smD/d \right) + \epsilon BD \right],
+\end{equation}
+其中常数 $B := m \cdot \max_{i,h} \{b_{i,h}\}.$
+
+由素数定理, 最小公倍数上限~\eqref{eq:6.6.12} 在 $D \to \infty$ 的渐近下计算为:
+\begin{align}
+&\exp\left(\sum_{i=1}^{m}\sum_{s=1}^{d/m}\sum_{h=1}^{r}\left(b_{i,h}\cdot\left((i-1)D+smD/d\right)+O(\epsilon D)\right)\right) \nonumber\\
+&\quad =\exp\left(mD\sum_{i=1}^{m}\sum_{s=1}^{d/m}\sigma_{i}\cdot\left((i-1)/m+s/d\right)+O(\epsilon dD)\right) \nonumber\\
+&\quad =\exp\left(\alpha\sum_{i=1}^{m}\sigma_{i}\int_{(i-1)/m}^{i/m}2t\,dt+O(\epsilon\alpha)+o_{d\to\infty}(\alpha)\right) \nonumber\\
+&\quad =\exp\left(\alpha\tau^{\flat}(\mathbf{b})+O(\epsilon\alpha)+o_{d\to\infty,\epsilon\to0}(\alpha)\right),\label{eq:6.6.13}
+\end{align}
+回忆我们对消亡参数 $\alpha = mdD/2$ 的定义~\eqref{eq:6.2.10}.
+
+\begin{remark}\label{rem:6.6.14}
+如果将条件~\eqref{eq:6.6.8} 放宽为任意单调的 $0 \le c_1 \le \dots \le c_m$, 则引理~\ref{lem:6.6.7} 的陈述将不再成立.
+因此, 在将 $\tau^{\flat}(\mathbf{b}) = \frac{1}{m^2} \sum_{i=1}^m (2i-1)\sigma_i$ 作为~\eqref{eq:6.0.4} 中的定义时, 如果我们将分母类型的粗糙上限~\eqref{eq:6.0.3} 放宽为具有非降分量列的任意矩阵 $\mathbf{b}$, 定理的证明将不再成立. \end{remark}
+
+\begin{remark}\label{rem:6.6.15}
+与 \S~6.5.15 中的阿基米德增长估计不同, 我们在此处的计算在平凡估计 $\mathbf{k} \in [0, D]^d$ 中忽略了一致分布约束 $\mathbf{k} \in D \cdot P_{\epsilon}^d$.
+这就是增长率 $\tau^{\flat}$ 如此被定义的原因, 它不考虑辅助多项式指数 $\mathbf{k}$ 的分布; 对于此定义, 它是一个精确计算.
+与此相反, 水平积分想法对于利用 $\prec$-首项 $\mathbf{x} = \mathbf{0}$ 指数 $\mathbf{n} \in (m + \delta)D \cdot P_{\epsilon}^d$ 的均匀分布分量至关重要.
+
+原则上(或在实践中), 在计算出比定理~8.0.1 中的项 $\mathrm{Den}_N(\mathbf{b},\epsilon,d,\varepsilon)$ 还要复杂的复合分母速率后, 人们可以给出定理~\ref{thm:6.0.2} 的一个版本, 其中 $\tau(\mathbf{b};\mathbf{e})$ 被形式地改进为一个复杂的极限公式, 该公式也考虑了在组成~\eqref{eq:6.2.8} 的辅助函数中对指数向量 $\mathbf{k} \in [0,D]^d$ 的均匀分量限制; 并且可以考虑比我们模板形式~\eqref{eq:7.0.1} 还要精细的分母形式.
+注记~10.2.3 中的分母, 以及涉及限制区间内素数的乘积或二项式系数乘积的类似形式, 都是未来应用中需要考虑的典型例子; 对于更深入的研究和更复杂的例子, 参见 \cite{Vio04}\cite{RV96}\cite{Sor16}\cite{Zud14}\cite{DZ14}.
+在应用到我们主定理~A 的情况下, 我们未能通过利用均匀分布的 $\mathbf{k}$ 来处理注记~10.2.3 的更受限分母类型而取得任何(非微不足道的)进展. \end{remark}
+
+\subsubsection{$\tau^{\sharp}(\mathbf{e})$ 部分}\label{sec:6.6.16}
+
+为了估计来自额外积分分母 $n^e$ 的分母盈余, 我们将(作为一个上界)把主分母上限~\eqref{eq:6.6.12} 分别乘以所有可能的乘积:
+\[ x_1^{k_1} \cdots x_d^{k_d} \cdot g_{\pi(1)}(x_1) \cdots g_{\pi(d)}(x_d) \in \mathbf{Q}[\![\mathbf{x}]\!], \]
+的可能 $\mathbf{x}^{\mathbf{n}}$ 系数 $\beta \in \mathbf{Q}^{\times}$ 的最小公分母, 遍历所有可能的 $\mathbf{k} \in D \cdot P^d_{\epsilon}$, 任意置换 $\pi \in S_d$, 以及对每个 $i \in \{1, \dots, m\}$ 的形式函数:
+\begin{equation}\label{eq:6.6.17}
+g_{1+(i-1)d/m}(x), \dots, g_{id/m}(x) \in \bigoplus_{n=0}^{\infty} \frac{x^n}{n^{e_i}} \mathbf{Z}.
+\end{equation}
+这相乘了在每个素数 $p$ 处可能出现的分母最高次幂的局部估计.
+考虑在定义~\eqref{eq:6.0.5} 中的参数 $\xi \in [0, m]$.
+我们对 $p \leq \xi D$ 和 $p > \xi D$ 的情况进行不同的估计.
+首先我们收集两个基本标准事实, 第一个为素数定理的一个版本, 第二个为其直接推论:
+\begin{enumerate}
+  \item[(a)] 素数 $p \le n$ 的乘积渐近于 $\exp(n + o(n))$.
+  \item[(b)] 满足 $a \ge 2$ 的真素数幂 $p^a \le n$ 的乘积被 $\exp(O(\sqrt{n})) = \exp(o(n))$ 控制.
+\end{enumerate}
+两者结合蕴含:
+\begin{enumerate}
+  \item[(c)] 最小公倍数 $[1, \dots, n] = \exp(n + o(n))$.
+\end{enumerate}
+
+这些性质证明了对于``通用的'':
+\begin{equation}\label{eq:6.6.18}
+[1, \dots, \xi D]^{\lfloor d \left( \sum_{i=1}^{m} e_i \right) / m \rfloor} \cdot x_1^{k_1} \dots x_d^{k_d} \cdot g_{\pi(1)}(x_1) \dots g_{\pi(d)}(x_d) \in \mathbf{Q}[\![\mathbf{x}]\!],
+\end{equation}
+其 $\mathbf{x}^{\mathbf{n}}$ 系数分母, 我们有:
+\begin{enumerate}
+  \item[(i)] 所有素数 $p \le \xi D$ 仅给~\eqref{eq:6.6.18} 的分母增加一个可以忽略的 $\exp(o(\xi D)) = \exp(o(\alpha))$ 因子;
+  \item[(ii)] 清理因子满足:
+  \[
+\begin{aligned}
+[1, \dots, \xi D]^{\lfloor \frac{d}{m} \sum_i e_i \rfloor} 
+&= \exp\left(\xi dD\left(\sum_{i=1}^m e_i\right)/m + o(\alpha)\right) \\
+&= \exp\left(\xi\left(\sum_{i=1}^m e_i\right) \cdot 2\alpha/m^2 + o(\alpha)\right).
+\end{aligned}
+\]
+\end{enumerate}
+
+那么显而易见, 在相差一个 $\exp(o_{d\to\infty,\epsilon\to0}(\alpha))$ 因子的意义下, 当 $h_j(x)$ 遍历~\eqref{eq:6.6.17}, $n$ 遍历 $(m + \delta)D \cdot P^d_{\epsilon}$, $\mathbf{k}$ 遍历 $D \cdot P^d_{\epsilon}$ 时, 所有的形式表达式~\eqref{eq:6.6.18} 的 $\mathbf{x}^{\mathbf{n}}$ 系数的最小公分母是下式的除数:
+\[
+\begin{aligned}
+&\frac{[1,\ldots,\xi D]^{\infty}}{(n_1-k_1)^{\max_i(e_i)}\dots(n_d-k_d)^{\max_i(e_i)}}, \\
+&\quad \mathbf{n}\in(m+\delta)D\cdot P^d_{\epsilon}, \quad \mathbf{k}\in D\cdot P^d_{\epsilon};
+\end{aligned}
+\]
+并且, 在相差一个 $\exp(o_{d\to\infty,\epsilon\to0}(\alpha))$ 因子的意义下, 这又是下式的除数\footnote{即使包括所有的 $\mathbf{k} \in [0, D]^d$, 即再次忽略 $\mathbf{k} \in P_{\epsilon}^d$ 的限制.}:
+\begin{equation}\label{eq:6.6.19}
+\prod_{j=1}^{d} \prod_{\substack{\text{素数 } p > \xi D: \\ p \text{ 整除下列区间内} \\ \text{的某个正整数} \\ [mD(j/d) - D, mD(j/d)]}} p^{\max_{i}(e_{i})}.
+\end{equation}
+
+根据引理~\ref{lem:5.0.4}, 如果 $m(j/d) > 1$, 则~\eqref{eq:6.6.19} 中的内层乘积渐近于下式的指数:
+\[
+\begin{aligned}
+&\left(\max_{i} e_{i}\right) D \left( \sum_{h=1}^{\lfloor (m(j/d)-1)/\max(1,\xi)\rfloor} 1/h \right) \\
+&\quad + \left(\max_{i} e_{i}\right) D \max \left\{\frac{m(j/d)}{\lfloor (m(j/d)+\max(0,\xi-1))/\max(1,\xi)\rfloor} - \xi, 0\right\} + o(D).
+\end{aligned}
+\]
+在 $m(j/d) \le 1$ 的情况下, \eqref{eq:6.6.19} 中的内层乘积渐近于下式的指数:
+\[ \left(\max_{i} e_{i}\right) D \max\{0, m(j/d) - \xi\} + o(D). \]
+
+因此, 重新收集我们关于集成 LCM 成本函数 $I_u^v(w)$ 的定义~\ref{def:6.0.1}, 我们发现在 $d \to \infty$ 时, 使得离散变量 $t := m(j/d)$ 收敛到线段 $[0, m]$ 的连续 Lebesgue 测度, 水平积分将渐近完全分母乘积~\eqref{eq:6.6.19} 计算为(在相差一个 $\exp(o_{d\to\infty,\epsilon\to0}(\alpha))$ 因子的意义下):
+\begin{align}
+&\exp\left((dD/m)\left(\max_{i} e_{i}\right) \cdot I_{\xi}^{m}(\xi) + o_{d \to \infty, \epsilon \to 0}(dD)\right) \nonumber\\
+&= \exp\left((2\alpha/m^{2})\left(\max_{i} e_{i}\right) \cdot I_{\xi}^{m}(\xi) + o_{d \to \infty, \epsilon \to 0}(\alpha)\right).\label{eq:6.6.20}
+\end{align}
+
+总而言之, 对于任意 $\xi \in [0, m]$, 我们获得了在引理~\ref{lem:6.2.6} 的辅助函数 $F(x)$ 的任何首项系数中, 来自于~\eqref{eq:6.0.9} 中 $n^{e_i}$ 因子的额外分母上限估计:
+\begin{equation}\label{eq:6.6.21}
+\exp\left((2\alpha/m^2)\cdot\left(\xi\sum_{i=1}^m e_i + \left(\max_{1\leq i\leq m} e_i\right)\cdot I_\xi^m(\xi)\right) + o(\alpha) + o_{d\to\infty,\epsilon\to 0}(\alpha)\right).
+\end{equation}
+
+我们对速率 $\exp \alpha \cdot \tau^{\sharp}(\mathbf{e}) + o(\alpha)$ 的定义为总的额外分母估计~\eqref{eq:6.6.21} 在参数 $\xi \in [0, m]$ 上的极小值.
+
+\subsection{定理 6.0.2 的证明}\label{sec:6.7}
+
+我们将关于首项 $\mathbf{x}^{\mathbf{n}}$ 系数 $\beta \in \mathbf{Q}^{\times}$ 的上界~\eqref{eq:6.5.27} 与我们在 \S~6.6.2 和 \S~6.6.16 中计算出的关于该系数分母 $\mathrm{den}(\beta) \in \mathbf{N}_{>0}$ 的相加后上界估计相结合.
+后者给出:
+\begin{equation}\label{eq:6.7.1}
+\log |\beta| \ge -\alpha \cdot \left(\tau^{\flat}(\mathbf{b}) + \tau^{\sharp}(\mathbf{e})\right) + o_{d \to \infty, \epsilon \to 0}(\alpha).
+\end{equation}
+前者简化为:
+\begin{equation}\label{eq:6.7.2}
+\begin{aligned}
+\log |\beta| 
+&\le \frac{\alpha}{m} \cdot \int_0^1 2t \cdot g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}^*(t) dt - \alpha \log |\varphi_l'(0)| \\
+&\quad + \frac{\alpha}{m^2} \sum_{k=1}^l \gamma_k^2 \log \frac{|\varphi_k'(0)|}{|\varphi_{k-1}'(0)|} + o_{d \to \infty, \epsilon \to 0}(\alpha).
+\end{aligned}
+\end{equation}
+两者的结合在 $\alpha \to \infty, d \to \infty, \epsilon \to 0$ 极限下筛选出:
+\begin{equation}\label{eq:6.7.3}
+m \le \frac{\int_0^1 2t \cdot g_{\boldsymbol{\varphi},\boldsymbol{\gamma}}^*(t) \, dt + \frac{1}{m} \sum_{k=1}^l \gamma_k^2 \log \frac{|\varphi_k'(0)|}{|\varphi_{k-1}'(0)|}}{\log |\varphi_l'(0)| - \tau^{\flat}(\mathbf{b}) - \tau^{\sharp}(\mathbf{e})},
+\end{equation}
+这恰好是我们声称的 holonomy 边界.
+
+在这一点上, 主要对定理~A 和 C 的证明感兴趣的读者可以在第一次阅读时直接跳到关于 $y:=x+x/(x-1)=x^2/(x-1)$ 下降的 \S~9.
+
+\subsection{定理 2.8.4 证明的完成}\label{sec:6.8}
+
+在 \S~2.11 中, 通过定理~2.5.1 的直接应用, 我们已经证明了定理~2.8.4 中关于 $\log^2(1-x)$ 函数算术刻画的性质 $(\star)$.
+这是与我们对我们在 \S~2.11.12 中给出的对 $\mathbf{Q}$-线性无关证明的示例应用相关的案例——其中最小阶微分算子 $\mathcal{L}$ 在定理陈述中的``第四个穿孔点'' $x = \delta$ 处具有本质奇点.
+凭借定理~\ref{thm:6.0.2} 中多个映射 $\varphi$ 的特征, 我们现在可以通过处理 $x = \delta$ 至多为 $\mathcal{L}$ 的表观奇点的情况, 来完成完整定理~2.8.4 的证明.
+
+\begin{proof}[定理~2.8.4 的证明]
+根据 \S~2.11 的讨论, 由于定理的假定意味着我们的 $[1,\ldots,n][1,\ldots,n/2]$ 类型形式函数 $f(x)\in \mathbf{Q}[\![x]\!]$ 在 $\varphi(z):=\frac{8(z+z^3)}{(1+z)^4}$ 下具有亚纯拉回, 其中已经有 $|\varphi'(0)|=8>\tau=3/2$, 我们当然得到了满足 $\mathcal{L}(f)=0$ 的 $\mathbf{Q}(x)$ 上的非零极小阶线性微分算子 $\mathcal{L}$ 的存在性.
+剩下的是要覆盖线性 ODE $\mathcal{L}(F)=0$ 在 $x=\delta$ 的邻域内具有全套亚纯解的情况.
+在乘以一个非零多项式 $Q\in\mathbf{C}[x]\setminus\{0\}$ 以消除可能的亚纯极点后, 这等同于全纯函数芽 $Q(x)f(x)\in\mathbf{C}[\![x]\!]$ 能够沿着 $\mathbf{P}^1\setminus\{0,1,\infty\}$ 中的所有路径解析延拓为全纯函数的假设.
+根据命题~2.9.3, 这一条件又提供在满足 $\varphi^{-1}(0)=\{0\}$ 的所有全纯映射 $\varphi:\overline{\mathbf{D}}\to\mathbf{C}\setminus\{1\}$ 下的亚纯拉回 $\varphi^*f=(\varphi^*(Qf))/\varphi^*Q\in\mathcal{M}(\overline{\mathbf{D}})$.
+
+在这一情况下, 先前的论证之所以崩溃, 是因为在没有第四个奇点 $\delta \notin \{0,1,2,\infty\}$ 的情况下, 再也没有理由说明 $f(x/(x-1))$ 从五类函数 $1, \log(1-x), \log^2(1-x), f(x), f(x/(x-1))$ 中 $\mathbf{Q}(x)$-线性无关, 且我们仅有具有如下四个函数的 $m=4$:
+\begin{equation}\label{eq:6.8.1}
+f_1(x) := 1, \quad f_2(x) := \log(1-x), \quad f_3(x) := \log^2(1-x), \quad f_4(x) := f(x),
+\end{equation}
+以及由例~\ref{exa:6.0.20} 给出的分母类型 $\frac{1}{2}\mathbf{b}_0$ 且 $\mathbf{e} = \mathbf{0}$.
+另一方面, $\delta$ 的缺失免去了我们要解析映射 $\varphi$ 必须仅覆盖 $\delta$ 一次的麻烦, 且我们可以选取满足 $\varphi^{-1}(0) = \{0\}$ 的完全任意的 $\varphi : \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1\}$.
+
+为了导出矛盾, 假设在~\eqref{eq:6.8.1} 中存在第四个 $\mathbf{Q}(x)$-线性无关的函数 $f(x)$, 它仍属于 $[1,\ldots,n/2][1,\ldots,n]$ 类型, 从而完成了例~\ref{exa:6.0.20} 中组合后的类型 $\frac{1}{2}\mathbf{b}_0$.
+在 $S=T=\emptyset$ 并且将 $\mathcal{H}$ 取为~\eqref{eq:6.8.1} 的四维 $\mathbf{Q}(x)$-线性张成的设定下, 我们利用在关于 $y:=x+x/(x-1)=x^2/(x-1)$ 下降的 \S~9 中描述的对称化字典 $\varphi_{Y(2)} \leadsto \varphi_{Y_0(2)}$, 加上由引理~9.0.3 (在代数和算术端)与引理~9.0.13 (在解析端)给出的技术细节.
+显式地, 利用对合 $w(x):=x/(x-1)$ 和对称化坐标 $y:=x+w(x)=xw(x)=x^2/(x-1)$, 我们对于 $\mathcal{H}^{w=1}$ 具有在例~\ref{exa:6.0.20} 中记为 $\mathbf{b}_0$ 分母类型的四维 $\mathbf{Q}(y)$-向量空间, 满足 $\mathbf{e}=\mathbf{0}$ (无增加积分), 且由 $1$, $\sqrt{y(4-y)}\arcsin \frac{\sqrt{y}}{2}$, $\left(\arcsin\frac{\sqrt{y}}{2}\right)^2$ 以及 $f(x)$ 的对称化所张成.
+在基本注记~9.0.20 的记号中, 其中特别是 $h=\lambda^2/(\lambda-1)=-256q+\dots$ 表示在坐标 $q:=e^{2\pi i \tau}$ 中写出的 $Y_0(2)$ 的 hauptmodul~\eqref{eq:9.0.1}, 我们为我们的环境选择全纯映射:
+\begin{equation}\label{eq:6.8.2}
+\varphi_{Y_0(2)} := h \circ \operatorname{Gob}(1/2, 10, 3) \in \mathcal{O}(\overline{\mathbf{D}}),
+\end{equation}
+其中 $\operatorname{Gob}(1/2, 10, 3) : \overline{\mathbf{D}} \hookrightarrow \mathbf{D}$ 是在 \S~A.2 中描述的区域.
+引理~A.2.2 计算出该区域的共形半径为 $|\operatorname{Gob}'(1/2, 10, 3)(0)| = 198/505$, 给出了:
+\begin{equation}\label{eq:6.8.3}
+|\varphi'_{Y_0(2)}(0)| = 256 \cdot \frac{198}{505} = \exp(4.608886\dots)
+\end{equation}
+作为我们所处全纯映射的共形大小.
+与来自例~\ref{exa:6.0.20} 的分母增长率 $\tau(\mathbf{b}_0) = 21/8 = 2.625$ 相比, 它大得非常有用.
+
+此处推论~9.0.19, 在基本注记~9.0.20 解释下并再次使用合适的多项式乘子 $Q \in \mathbf{C}[y] \setminus \{0\}$ 以消除所有可能的亚纯极点, 证明了我们的选择~\eqref{eq:6.8.2} 在解析上解出了四维 holonomic $\mathbf{Q}(y)$-模 $\mathcal{H}^{w=1}$:
+\begin{equation}\label{eq:6.8.4}
+\dim_{\mathbf{Q}(y)} \mathcal{H}^{w=1} = 4, \qquad \varphi_{Y_0(2)}^* \mathcal{H}^{w=1} \subset \mathcal{M}(\overline{\mathbf{D}}).
+\end{equation}
+这完全取决于正处于证明之中的定理的假定虚假性.
+正是对这种 $\mathbf{Q}(y)$ 情况, 我们应用定理~\ref{thm:6.0.2}, 取 $m := 4$ 且对中间映射 $\varphi_k$ 和分割参数 $\gamma_k$ 作如下选择:
+\begin{align}
+l &:= 2; \quad \gamma_1 := 3/5, \quad \gamma_2 := 2; \nonumber\\
+\varphi_0(z) &:= \varphi_{Y_0(2)} (e^{-5} z), \nonumber\\
+\varphi_1(z) &:= \varphi_{Y_0(2)} (e^{-1/2} z), \nonumber\\
+\varphi_2(z) &:= \varphi_{Y_0(2)}(z).\label{eq:6.8.5}
+\end{align}
+
+Mathematica 随后给出了略低于 $< 3.9$ 的 holonomy 商~\eqref{eq:6.0.10}, 这是一个所要求的矛盾, 从而完成了四个原始函数~\eqref{eq:6.8.1} 的 $\mathbf{Q}(x)$-线性无关性的证明.
+\end{proof}
+
+最后, 相比于 $\mathbf{Q}\left[x,\frac{1}{x},\frac{1}{1-x}\right]$ 的积分精细化在此处由超越性中的 Hermite--Lindemann--Weierstrass 和 Mahler 定理得出, 恰如定理~2.7.2 的证明; 并且从 $\mathbf{Q}\left[x,\frac{1}{x},\frac{1}{1-x}\right]$ 到 $\mathbf{Q}\left[x,\frac{1}{1-x}\right]$ 的升级正是由我们对 $[1,\ldots,n][1,\ldots,n/2]$ 的严格分母要求所给出, 恰如定理~2.7.2 证明中的第 (ii) 点.
+
+\begin{example}\label{exa:6.8.6}
+对于 $m=3$ 且当前使用如下类型的真实函数 $1$, $\sqrt{y(4-y)}\arcsin \frac{\sqrt{y}}{2}$, $\left(\arcsin \frac{\sqrt{y}}{2}\right)^2$:
+\[ \mathbf{b} = \begin{pmatrix} 0 & 0 \\ 0 & 2 \\ 1 & 2 \end{pmatrix}, \qquad \mathbf{e} = (0, 0, 0), \qquad \tau(\mathbf{b}; \mathbf{e}) = \frac{7}{3}, \]
+一些简短的数值实验(我们未曾尝试使其变得严格)表明, 对于 $l = 2$ ($2$ 个分割点)以及具有如下形式的映射:
+\[
+\begin{aligned}
+\varphi_{Y_0(2)}(z) &:= h\left(\operatorname{Gob}(r,e,f)(\delta z)\right), \\
+\varphi_k(z) &:= \varphi_{Y_0(2)}\left(\gamma_k z\right), \quad k = 0, 1, 2,
+\end{aligned}
+\]
+在三个函数上的极小化 holonomy 边界大概在如下选择附近达到:
+\[ (r, e, f) \approx (0.55, \infty, 5); \quad (\gamma_1, \gamma_2) \approx (0.19, 0.65), \quad (r_0, r_1) \approx (e^{-4.3}, e^{-0.76}), \quad \delta \approx 0.77, \]
+其具有大概为 $\approx 3.239$ 的 holonomy 商值~\eqref{eq:6.0.10}. \end{example}

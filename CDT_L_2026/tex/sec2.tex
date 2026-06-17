@@ -1,0 +1,944 @@
+\section{主算术 holonomy 边界}\label{sec:2}
+
+我们首先在最简单的情况下讨论维度边界.
+
+\subsection{代数情况}\label{sec:2.1}
+
+我们对``无界分母''猜想的解决 \cite{CDT21} 是基于对代数函数的特定 $\mathbf{Q}(x)$-线性空间的如下维度上界估计.
+我们将这种类型的结果称为算术 holonomy 边界 (arithmetic holonomy bound).
+虽然这一名称在 \cite{CDT21} 中仍显晦涩, 但我们希望它能在本文中得到印证——在本文中, 我们处理更一般的 holonomic 函数, 其解析开拓产生无穷且不可解的单值群 (monodromy group).
+给定闭单位圆盘 $\overline{\mathbf{D}} \subset \mathbf{C}$ 的某个邻域上的全纯映射 $\varphi: \overline{\mathbf{D}} \to \mathbf{C}$, 满足 $\varphi(0) = 0$ 且 $\lvert\varphi'(0)\rvert > 1$, 我们在 \cite[Theorem 2.1]{CDT21} 中确立了以下维度上界:
+\begin{equation}\label{eq:2.1.1}
+\dim_{\mathbf{Q}(x)} \mathcal{H}(\varphi) \le e \cdot \frac{\int_{\mathbf{T}} \log^{+} \lvert\varphi\rvert \, \mu_{\text{Haar}}}{\log \lvert\varphi'(0)\rvert}
+\end{equation}
+它作用于 $\mathbf{Q}(x)$-线性生成空间 $\mathcal{H}(\varphi)$ 上, 该空间由在 $\overline{\mathbf{D}}$ 的邻域上同样收敛的 $\mathbf{Z}[\! [x]\!]$ 形式幂级数 $f(x)$ 及其下拉 $\varphi$-pullback $f(\varphi(z))$ 生成.
+这里 $\mathbf{T}$ 是单位圆, $\log^+\lvert x\rvert$ 定义为 $\max(0, \log\lvert x\rvert)$, 并且 $\mu_{\text{Haar}}$ 是 $\mathbf{T}$ 上的标准 Haar 测度, 
+因此分子中的积分同样可以写为 $\int_0^1 \max(0, \log\lvert\varphi(e^{2\pi it})\rvert) dt$.
+
+\begin{remark}[Basic Remark 2.1.2]\label{rem:2.1.2}
+假设 \(f(x)\) 是一个幂级数, 它可以解析开拓为包含原点且共形映射半径 \(\rho(\Omega,0) > 1\) 的区域 \(\Omega \subset \mathbf{C}\) 上的全纯函数.
+(关于共形映射半径的精确定义参见第 2.7 节开头.)
+根据定义, 从而存在一个双全纯映射 \(\varphi : \mathbf{D} \to \Omega\), 满足 \(\varphi(0) = 0\) 且 \(\lvert\varphi'(0)\rvert = \rho(\Omega,0) > 1\).
+反过来, \(f(x)\) 在 \(\Omega\) 上的全纯性恰恰意味着拉回的幂级数 \(f(\varphi(z)) \in \mathbf{C}[\![z]\!]\) 在 \(\mathbf{D}\) 上收敛.
+边界估计 \eqref{eq:2.1.1} 随后表明, 由 \(f(x) \in \mathbf{Z}[\![x]\!]\) 及其各次幂生成的 \(\mathbf{Q}(x)\)-向量空间是有限维的 (因为 \(f(x)\) 的各次幂同样落入 \(\mathcal{H}(\varphi)\) 中), 
+因而 \(f(x)\) 是代数函数 (具有某个显式有界的次数).
+然而, 在这些假设下, 人们其实已经可以从 Borel--P{\'o}lya 定理 (即\autoref{thm:1.2.4}) 中推导出 \(f(x)\) 的有理性质.
+因此, 当 \(\varphi\) 不是单值 (univalent) 时, 边界估计 \eqref{eq:2.1.1} 会更加有趣.
+(我们最终会发现, Borel--P{\'o}lya 定理也将完全被比 \eqref{eq:2.1.1} 更精细的 holonomy 边界所吞并, 
+例如下文源于 Bost--Charles \cite{BC22} 的边界 \eqref{eq:2.2.4}, 以及本文最终的新主 holonomy 边界 \eqref{eq:2.5.4}.)
+
+一个非单值的例子如下. 
+假设 \(f(x) \in \mathbf{Z}[\![x]\!]\) 可以解析开拓到从 \(0\) 出发且避开 \(0\) 和某个固定实数 \(\alpha > 0\) 的 \(\mathbf{C}\) 中的任意路径上.
+例如, 取 \(f(x) = (1-4x)^{-1/2} = \sum {2n \choose n} x^n\), 且 \(\alpha = 1/4\).
+则人们可以取 \(\varphi\) 为任何满足 \(\varphi(0) = 0\) 但不具有其他 \(0\) 或 \(\alpha\) 原像的全纯函数.
+其中一个这样的函数是
+\[ \varphi(z) = \alpha \lambda(z) \]
+这里的 \(\lambda\) 是 \eqref{eq:1.2.8} 中给出的模 \(\lambda\) 函数.
+在这种情况下, 我们有 \(\lvert\varphi'(0)\rvert = 16\alpha\).
+因此, 如果 \(\alpha > 1/16\), 我们推导出 \(f(x)\) 是代数函数 (在 \(\mathbf{Q}(x)\) 上的次数具有由 \eqref{eq:2.1.1} 显式给出的界).
+这个例子其实已经由 Andr{\'e} 给出.
+
+论文 \cite{CDT21} 关注的是 \(\alpha = 1/16\) 的情况, 此时存在无穷多个 \(\mathbf{Q}(x)\)-线性无关的代数实例, 包括
+\[ f(x) = \sum_{n=0}^{\infty} {4n \choose 2n} x^n = \sqrt{\frac{1 + \sqrt{1 - 16x}}{2 - 32x}}; \]
+单在其上不添加任何条件，代数性将不再成立，这可以从超几何级数 \(\sum {2n \choose n}^2 x^n\) 中看出。
+该例子曾被 Andr{\'e} 在 \cite{And96} 中使用, 并在 \cite{And04} 附录 A 中做了进一步讨论.
+我们把关于代数情况的任何进一步讨论留给 \cite{CDT21}.
+
+\end{remark}
+
+
+
+\subsection{分母}\label{sec:2.2}
+
+对于线性无关性证明, 正如第 1 节中的例子所暗示的, 我们需要作用于 \(\mathbf{Q}[\![x]\!]\) 上的 holonomy 边界, 而非 \(\mathbf{Z}[\![x]\!]\).
+事实上, 我们这里作为首要关注点的有理系数——例如 \(\eta = L(2,\chi_{-3})\)——猜想上是超越数, 
+因而任何在周期矩阵中的体现必然涉及一个具有无穷全球单值群 (global monodromy group)的局部系统.
+另一方面, 如果 \(P(x) \in \mathbf{Z}[x]\) 落在附着于某个满足 \(\varphi(0) = 0\) 且 \(\lvert\varphi'(0)\rvert > 1\) 的 \(\varphi: \overline{\mathbf{D}} \to \mathbf{C}\) 的 holonomic 模 \(\mathcal{H}(\varphi)\) 中, 
+那么就会推导出 \(P(x)\) 是代数函数.
+Grothendieck--Katz 的 $p$-曲率猜想 \cite{And04} (已被 Katz 在许多源于几何的情形中证明) 非正式地将可积联络的全球单值群的无穷性与正密度素数 $p$ 下 $p$-曲率算子的非零性相对应——即模 $p$ 可积性的局部障碍.
+但是我们提醒读者, 即使对于一个不可约的线性齐次 ODE, 
+单个 \(\mathbb{Z}[1/S][\! [x]\!]\) 解并不意味着 $p$-曲率的消失; 
+相反, \(\mathbb{Z}[1/S][\mathbf{x}^{1/h}]\) 的一组基解才意味着这一消失.
+例如, 在第 1 节讨论的 Ap{\'e}ry 的论证中, 函数 \(A(x) \in \mathbb{Z}[x]\) 具有整系数但并不是代数函数.
+为了将这个例子与上述关于 \(P(x)\) 的评述统一起来, 
+请记住, holonomy 边界绝不是直接应用到 \(A(x) \in \mathbf{Z}[x]\) 本身, 
+而是应用到同一个 ODE 的 A(x) 与另一个解 \(B(x) \in \mathbf{Q}[\![x]\!]\) 的某个设想用于引出矛盾的 \(\mathbf{Q}\)-线性组合 \(P(x) = B(x) - \eta A(x)\) 上.
+这第二个解 \(B(x)\) 的系数分母中确实包含无穷多个素数.
+
+由 \cite{And89}, 我们对源于 $G$-函数的泰勒级数 \(P(x) = \sum a_n x^n \in \mathbf{Q}[\![x]\!]\) 的分母类型具有一个猜想上的认识\footnote{对于“源于几何”的 $G$-函数而言, 这是一个无条件定理, 基于在除了有限个坏还原素数之外的所有素数处 $F$-晶体结构的存在性, 参见 \cite[§ V app.]{And89}. 我们可以更加精确: 如果对于某个非零的 $r$ 阶 Fuchsian 算子 $\mathcal{L}$ 有 $\mathcal{L}(f) = 0$, 且该算子在 $x = 0$ 处的局部指数为分母整除 $b$ 的有理数, 那么 $f$ 的分母形式可以取为 $A^{n+1}[1,\ldots,bn+b_0]^{r-1}$, 其中 $A \in \mathbb{N}_{>0}$ 且 $b_0 \in \mathbb{Z}$.}:
+应当存在 \(A \in \mathbf{N}_{_{>0}}\), \(b \in \mathbf{Q}_{_{_{>0}}}\), 以及 \(\sigma \in \mathbf{N}\) 使得
+\begin{equation}\label{eq:2.2.1}
+a_n A^{n+1}[1, \dots, bn]^{\sigma} \in \mathbf{Z} \qquad \forall n \in \mathbf{N};
+\end{equation}
+这里以及在我们的整篇论文中 (正如之前在引言中指出的), [1, ..., n] 用于表示前 \(\lfloor n \rfloor\) 个正整数的最小公倍数.
+
+最基本且常见的例子是 \(G\)-函数 \(\log(1-x)\). 
+它的类型为 \eqref{eq:2.2.1} 并且满足 A=1, b=1 以及 \(\sigma=1\), 
+但在这种情况下该形式显然可以被改进: 只需前 $n$ 个整数的最小公倍数级的分母消去能力即可, 这反映了以下事实:
+\[ \log(1-x) = \int \frac{dx}{x-1} \]
+是代数函数的积分. 
+事实表明 (参见第 5 节), 利用这种源于积分的精细化表述最终将是以及重要的.
+在任何情况下, 至少为 \([1, \dots, bn]\) 的分母的必要性迫使我们走出了形式算术表面理论 \cite{BC22} 的原有范畴\footnote{一个自然的框架是在形式解析算术簇及其代数化上构造和对比可积联络. 除了在 § 15.2 中提出一个特定的有限性问题之外, 我们不准备在本文中探讨这一概念, 但我们希望在其他场合重新讨论它.}.
+
+在存在分母的情况下, 对于给定的全纯映射 \(\varphi : \mathbf{D} \to \mathbf{C}\) 以及参数 b \(\in \mathbf{Q}_{\ge 0}\) 和 \(\sigma \in \mathbf{N}\), 
+我们定义 holonomic 模 \(\mathcal{H}(\varphi; b; \sigma)\) 为由以下形式的所有形式函数生成的 \(\mathbf{Q}(x)\)-线性空间:
+\begin{equation}\label{eq:2.2.2}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{[1, \dots, bn]^{\sigma}} \in \mathbf{Q}[\![x]\!], \qquad a_n \in \mathbf{Z} \quad \forall n \in \mathbf{N}
+\end{equation}
+且其 \(\varphi\)-下拉 \(f(\varphi(z))\) 在 \(\mathbf{D}\) 上收敛. 
+\cite[§ 2]{CDT21} 中的证明可以常规地推广以确立这方面的第一个结果:
+\begin{equation}\label{eq:2.2.3}
+\dim_{\mathbf{Q}(x)} \mathcal{H}(\varphi; b; \sigma) \le e \cdot \frac{\int_{\mathbf{T}} \log^{+} \lvert\varphi\rvert \, \mu_{\text{Haar}}}{\log \lvert\varphi'(0)\rvert - \tau},
+\end{equation}
+这里 \(\tau := b\sigma\) 并且我们假设 \(\varphi\) 的共形大小满足 \(\lvert\varphi'(0)\rvert > e^{\tau}\).
+
+不幸的是, 在 \cite{CDT21} 的渐近框架中表现良好的 holonomy 边界 \eqref{eq:2.2.3} (其中绝对数值系数并不重要), 
+现在对于证明 \(L(2, \chi_{-3})\) 的无理数性质而言显得过于粗糙了.
+因此, 探寻能够替代边界 \eqref{eq:2.2.3} 中常数 $e$ 的最小可能值是极有意义的.
+Bost 和 Charles \cite[Corollary 8.3.5]{BC22} 取得了重大进展, 
+他们在 \cite{CDT21} 的原始 \(\sigma = 0\) 的情况下, 确立了更精细的边界:
+\begin{equation}\label{eq:2.2.4}
+\frac{\iint_{\mathbf{T}^2} \log \lvert\varphi(z) - \varphi(w)\rvert \,\mu_{\text{Haar}}(z)\mu_{\text{Haar}}(w)}{\log \lvert\varphi'(0)\rvert}.
+\end{equation}
+
+在 2023 年, 为了响应我们关于对一般 holonomic 模 \(\mathcal{H}(\varphi; b; \sigma)\) 的类似维度边界的询问, 
+Charles 向我们解释了他们的证明如何可以直接推广以得到:
+\begin{equation}\label{eq:2.2.5}
+\dim_{\mathbf{Q}(x)} \mathcal{H}(\varphi; b; \sigma) \le \frac{\iint_{\mathbf{T}^2} \log \lvert\varphi(z) - \varphi(w)\rvert \, \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w)}{\log \lvert\varphi'(0)\rvert - b\sigma}.
+\end{equation}
+这特别意味着 (例如参见\autoref{cor:8.1.14}) \eqref{eq:2.1.1} 和 \eqref{eq:2.2.3} 中的系数 $e$ 可以降为更好的常数 $2$.
+Bost 和 Charles 的工作为我们探索无理数性质的应用提供了强有力的催化剂.
+受 \cite{BC22} 的启发, 但走出了他们形式算术表面的框架, 并结合 Perelli 与 Zannier \cite{PZ84} 的一个想法, 
+我们在附录 B 中证明了将 \eqref{eq:2.2.3} 中的 $e$ 降为 $2$ 的过程.
+在第 7 节中, 我们基于 \cite{BC22} 中针对解析目的重新诠释的一些结果, 
+将其进一步推向 Bost 先前的评估高度方法, 
+以便将 \eqref{eq:2.2.4} 和 \eqref{eq:2.2.5} 推广到合并更精细的分母项; 
+参见定理 2.5.1 获取第 7 节中我们边界的一个特例.
+我们关于 2-进 $\zeta(5)$ 无理数性质的姐妹篇论文 \cite{CDT24} 在更广泛的背景中探索了这些边界.
+
+\subsection{各种 holonomy 边界预览}\label{sec:2.3}
+
+我们目前论文稳定的核心由精细化的 holonomy 边界组成, 这些边界改进了 \eqref{eq:2.2.5} 并统一了 \eqref{eq:2.2.3} 和 \eqref{eq:2.2.4} 背后的证明方法.
+这些边界的一个方面是改进了 \eqref{eq:2.2.3} 中的 \(\tau = b\sigma\) 项; 
+在这里, 高维方法最终提供了更精确的信息, 尽管这种差异在本文的所有应用中是隐而不现的.
+另一个方面是进行更精细的复分析估计 (参见第 2.13.10 节和第 2.13.13 节获取思想概述) 
+以进一步改进 \eqref{eq:2.2.4} 中的双重积分; 
+这里的改进在单变量中与在高维处理中是完全相同的.
+其中一项技术新颖性是引入了来自大偏差理论 (large deviations theory) 的概率输入, 
+即使在我们 \cite[§ 2]{CDT21} 原始多元分析的初等多元框架中, 
+它也能容纳将系数从 $e$ 降为 $2$ 的改进.
+这是通过在 $d$ 个辅助变量中的双廷逼近论证确立的, 
+而在这一高维几何特征的极限过程 $d \to \infty$ 中, 
+精确实现系数从 $e$ 降为 $2$ 的改进之关键在于, 它为进一步的独立改进提供了额外的空间.
+我们在本文中拥有的最尖锐的 holonomy 边界 (定理 8.0.1) 是高维评估模中测度集中特征的产物.
+
+对于本文中的应用（包括定理 A 和 C），分母项最精细的改进其实并没有带来差别.
+我们为这些定理提供了两条通用的简化路径.
+一条是通过定理 6.0.2 在基本的 Siegel 引理框架中使用高维技术, 
+而另一条是通过定理 7.0.1 并且可选择定理 7.1.13 使用单变量方法.
+(参见第 1.3 节了解本文不同章节之间依赖关系的更多细节, 以及通往定理 A 和 C 的各种路径.)
+对于定理 A 的应用, 定理 7.0.1 给出了最弱的勉强合格边界（仅具有微弱的盈余）, 
+而其``凸性精细化''形式（定理 7.1.10）则给出了比它们中任何一个都更强的边界.
+定理 7.0.1 的证明是 Bost 与 Charles 工作的直接结合, 
+并伴随着我们对相对简单设定中 \(\tau = b\sigma\) 项的改进 (参见定理 2.5.1; 这一简单设定使得我们即使不用高维方法也能获得 \(\tau\) 的最佳改进), 
+以及第 5 节中用于容纳分母类型 \eqref{eq:2.2.1} 中 $n$ 的额外方幂的计算.
+
+为了获得能以更充裕盈余处理定理 A 的更强边界, 我们使用更精细的复分析估计来证明定理 6.0.2 和定理 7.1.6.
+在前者的情况下, 大偏差输入不仅用于达到分母速率项 \(\tau\) 的改进, 
+而且还用于将 Bost--Charles 双重积分替换为我们在第 2.4 节中引入的更初等的重排积分\footnote{这里的重排积分指的是比 $\int_0^1 2t \cdot (\log \lvert\varphi(e^{2\pi it})\rvert)^* dt$ 的被积函数中的 $\log \lvert\varphi\rvert$ 更一般的函数集合. 正如我们将在 § 8.1 中看到的, 后者比 Bost--Charles 双重积分更大. 一般来说, 我们通过使用一组促进我们精细化复分析估计的合适半径 $r$, 将该被积函数内部的 $\varphi$ 替换为函数 $z \mapsto \varphi(rz)$ 的分段加权组合.}; 
+这里的证明完全独立于 \cite{BC22}.
+另一方面, 基于 \cite{BC22} 和定理 7.0.1, 我们对 Bost 斜率框架中评估映射高度的最佳估计进行了更仔细的研究, 
+并利用这些改进来证明定理 7.1.6. 
+这就是我们所谓的``来自凸性的改进'', 这一命名术语指的是亚纯函数值分布理论中的一个经典定理: 
+亚纯函数 \(\varphi\) 的 Nevanlinna 特征函数 \(T(r,\varphi)\) 是 \(\log r\) 的凸递增函数.
+此外, 如果我们在辅助多项式的评估模上选择某种启发式最佳的 Hermitian 结构, 
+定理 7.1.6 的论证将引出启发式最佳的边界, 我们将其表述为定理 7.6.4, 这依然使用单变量方法.
+在我们在下文引言定理 2.5.1 中引入的基本分母上限中, 定理 7.6.4 与定理 8.0.1 相同 (参见注记 8.0.6), 
+并且我们预期 (参见注记 7.6.7) 两者都给出比定理 6.0.2 更强的边界.
+
+我们现在继续描述这些基本改进中的一部分, 然后给出我们新 holonomy 边界的第一种形式.
+
+\subsection{Nevanlinna 生长特征的变体}\label{sec:2.4}
+
+从起始边界 \eqref{eq:2.2.3} 出发, 在进一步探讨 \cite[Remark 2.3.3]{CDT21} 时, 
+多变量自然地将 Nevanlinna 的生长特征项 \(\int_0^1 \log^+ \lvert\varphi(e^{2\pi i t})\rvert dt\) 
+改进为明显更小的重排积分 \(\int_0^1 t \cdot (\log \lvert\varphi(e^{2\pi i t})\rvert)^* dt\); 
+这里以及在我们的整篇论文中, 我们遵循经典分析的惯例, 用
+\begin{equation}\label{eq:2.4.1}
+g^{*}(t) := \inf_{s \in \mathbf{R}} \left\{ \mathbf{P} \left( x \in (0,1) : g(x) > s \right) \le t \right\} = \inf_{s \in \mathbf{R}} \left\{ \int_{0}^{1} \chi_{g^{-1}([s,\infty))} dt \le t \right\}
+\end{equation}
+来表示可测函数 \(g:(0,1)\to \mathbf{R}\) 的递增重排 (increasing rearrangement).
+(参见基本注记 2.4.4.) 
+这是唯一的\footnote{在忽略测度为零的集合之外相差一个函数的意义下. 一些作者更喜欢使用“非降重排函数”这一术语.}与 g 具有相同分布函数的非递减可测函数.
+\begin{equation}\label{eq:2.4.2}
+\int_0^1 2t \cdot g^*(t) \, dt = \int_0^1 \int_0^1 \max(g(s), g(t)) \, ds \, dt,
+\end{equation}
+这引出了与来自 \eqref{eq:2.2.4} 的 Bost--Charles 双重积分项的对比.
+\(\varphi\) 在圆周上的积分行为在第 8.1 节将被详细研究, 并且我们将会发现它比后者稍微大一些.
+
+然而, 正是 \eqref{eq:2.4.2} 的左手边自然地呈现在我们新论证的概率论特征中.
+对于我们这里的讨论, 只需注意到以下平凡的不等式:
+\begin{equation}\label{eq:2.4.3}
+\int_0^1 2t \cdot g^*(t) \, dt \le \int_0^1 2 \max(g^*(t), 0) \, dt = \int_0^1 2 \max(g(t), 0)^* \, dt = 2 \int_0^1 \max(g(t), 0) \, dt
+\end{equation}
+它适用于任何可测函数 g, 
+因而这特别在更广泛的高维视角下恢复了系数从 $e$ 降为 $2$ 的改进, 
+这在某种意义上是一种与 \cite{BC22} 或第 7 节中任何一个单变量分析``正交''的方法.
+(这些单变量分析方法具有 Arakelov 几何的特征, 
+并带有它们自身且各不相同的对 Nevanlinna 生长特征的精细化表述, 
+这在第 7.1.1 节中我们将其称为 Bost--Charles 特征.) 
+现在的关键点在于, 这一极限过程 $d \to \infty$ 的论证进一步允许了对 \eqref{eq:2.2.3} 到 \(\mathbf{Q}[\! [x]\!]\) 函数的推广中 \(\tau = b\sigma\) 项进行类似的``分母递增重排''改进.
+某种这样的改进对于我们定理 A 和 C 的所有证明都是必不可少的.
+我们确实也在第 7 节中对第 6 节的主要结果给用了单变量处理.
+
+\begin{remark}[基本注记 2.4.4]\label{rem:2.4.4}
+理解等式 \eqref{eq:2.4.1} 中 $g^*(t)$ 的定义的一个基本方法如下. 
+假设 $g(t)$ 是 $[0, 1]$ 上的连续 (从而有界) 函数. 如果 $g(t)$ 是单调递增的, 那么 $g^*(t) = g(t)$. 对于任意的 $g(t)$, 设 $g_n(t)$ (对于 $n \ge 1$) 表示分段常数阶梯函数, 
+它在区间 $I_k = [(k-1)/n, k/n)$ (对于 $k = 1, \ldots, n$, 并将最后一个区间 $I_n$ 延伸至包含 1) 上取值为 $g(k/n)$. 当 $n \to \infty$ 时, 函数 $g_n(t)$ 一致收敛于 $g(t)$. 现在设 $g_n^*(t)$ 表示同样在这 $n$ 个区间 $I_1, \ldots, I_n$ 上为常数的阶梯函数, 
+只是现在分别取这 $n$ 个对应值 $\{g(1/n), g(2/n), g(3/n), \dots, g(n/n)\}$ 并在重新进行递增排序 (因此得名). 
+那么 $g_n^*(t)$ 就是 $g_n(t)$ 的递增重排, 
+并且函数 $g_n^*(t)$ 当 $n \to \infty$ 时一致收敛于 $g^*(t)$. \end{remark}
+
+\subsection{算术 holonomy 边界，基本形式}\label{sec:2.5}
+
+\begin{theorem}\label{thm:2.5.1}
+考虑两个正整数 \(m, r \in \mathbf{N}_{>0}\) 以及一个非负实数组成的 \(m \times r\) 矩形阵列 \(\mathbf{b} := (b_{i,j})_{1 \le i \le m, 1 \le j \le r}\), 其所有列均具有如下形式:
+\[ 0 = b_{1,j} = \dots = b_{u_j,j} < b_{u_j+1,j} = \dots = b_{m,j} =: b_j, \qquad \forall j = 1,\dots,r, \]
+对于某些 \(u_j \in \{0, 1, \dots, m\}\). 令
+\[ \sigma_i := b_{i,1} + \dots + b_{i,r}, \qquad i = 1, \dots, m \]
+为第 \(i\) 行之和, 并且定义
+\begin{equation}\label{eq:2.5.2}
+  \tau(\mathbf{b}) := \frac{1}{m^2} \sum_{i=1}^{m} (2i - 1)\sigma_i = \sigma_m - \frac{1}{m^2} \sum_{j=1}^{r} u_j^2 b_j \in [0, \sigma_m].
+\end{equation}
+此外, 考虑一个全纯映射 \(\varphi: (\overline{\mathbf{D}}, 0) \to (\mathbf{C}, 0)\), 其导数 (共形大小) 满足 \(\lvert\varphi'(0)\rvert > e^{\sigma_m}\).
+假设存在一个由在 \(\mathbf{Q}[\! [x]\!]\) 中的 \(\mathbf{Q}(x)\)-线性无关形式函数组成的 \(m\)-元组 \(f_1, \dots, f_m\), 它们的分母类型为如下形式:
+\begin{equation}\label{eq:2.5.3}
+  f_i(x) = \sum_{n=0}^{\infty} a_{i,n} \frac{x^n}{[1, \dots, b_{i,1} \cdot n] \cdots [1, \dots, b_{i,r} \cdot n]}, \qquad a_{i,n} \in \mathbf{Z},
+\end{equation}
+使得对于所有 \(i = 1, \dots, m\), 其拉回 \(f_i(\varphi(z)) \in \mathbf{C}[\![z]\!]\) 是在 \(|z| < 1\) 上的亚纯函数的芽 (germ).
+那么我们有以下边界:
+\begin{equation}\label{eq:2.5.4}
+  m \le \frac{\iint_{\mathbf{T}^2} \log \lvert\varphi(z) - \varphi(w)\rvert \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w)}{\log \lvert\varphi'(0)\rvert - \tau(\mathbf{b})}.
+\end{equation}
+此外, 如果先验地假设所有函数 \(f_i\) 都是全纯的, 则条件 \(\lvert\varphi'(0)\rvert > e^{\sigma_m}\) 可以放宽为 \(\lvert\varphi'(0)\rvert > e^{\tau(\mathbf{b})}\).
+\end{theorem}
+
+利用基于高维测度集中现象的初等方法, 我们在第 6 节中直接证明了以下使用递增重排函数的变体:
+\begin{equation}\label{eq:2.5.5}
+m \le \frac{\iint_{\mathbf{T}^2} \log \left( \max(\lvert\varphi(z)\rvert, \lvert\varphi(w)\rvert) \right) \, \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w)}{\log \lvert\varphi'(0)\rvert - \tau(\mathbf{b})} = \frac{\int_0^1 2t \cdot (\log \lvert\varphi(e^{2\pi it})\rvert)^* \, dt}{\log \lvert\varphi'(0)\rvert - \tau(\mathbf{b})}.
+\end{equation}
+
+为了突出 \(\tau(\mathbf{b})\) 与简单概率考量中出现的递增重排函数的相似性，我们可以写出以下形式的等价加权积分表示（设 \(\sigma_0 := 0\)）：
+\begin{equation}\label{eq:2.5.6}
+\tau(\mathbf{b}) = \sum_{i=1}^{m} \sigma_i \int_{(i-1)/m}^{i/m} 2t \, dt = \int_0^1 2t \cdot \left( \sum_{i=1}^{m} (\sigma_i - \sigma_{i-1}) \chi_{[0,i/m]}(t) \right) \, dt.
+\end{equation}
+
+\subsection{Siegel 的 $G$-函数}\label{sec:2.6}
+
+正如上文所讨论的, \autoref{thm:2.5.1} 具有一个粗糙的定性推论, 我们可以将其解读为算术 holonomicity 判定准则. 它由 Andr{\'e} 在 \cite{And89} 中给出; 在稍有不同的语境中, 这一类型的第一个全纯性结果大概是由 Perelli 和 Zannier 在 \cite{PZ84} 中发现的.
+
+\begin{corollary}\label{cor:2.6.1}
+如果一个形式函数 \(f \in \mathbf{Q}[\! [x]\!]\) 具有如下形式的有理系数:
+\begin{equation}\label{eq:2.6.2}
+  f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{[1, \dots, b_1 n] \cdots [1, \dots, b_r n]}, \qquad a_n \in \mathbf{Z}
+\end{equation}
+并且允许一个满足共形大小 \(\lvert\varphi'(0)\rvert > e^{b_1 + \dots + b_r}\) 的全纯映射 \(\varphi: (\mathbf{D}, 0) \to (\mathbf{C}, 0)\), 使得复合函数芽 \(f(\varphi(z)) \in \mathbf{C}[\![z]\!]\) 成为 \(\mathbf{D}\) 上的亚纯函数的芽, 
+那么 \(f(x)\) 是一个 holonomic 函数: 存在一个非零且在 \(\mathbf{Q}[x]\) 中具有系数的线性微分算子 \(\mathcal{L}\) 满足 \(\mathcal{L}(f) = 0\).
+\end{corollary}
+
+在本文中, 我们将展示并利用这样一些 $f \in \mathbf{Q}[\![x]\!]$，其 holonomic 性质可以通过该准则进行识别。分母 \eqref{eq:2.6.2} 的特殊形式将我们更具体地置于 Siegel 的 $G$-函数理论语境中；特别是，参见注记 3.2.12 进行的讨论，线性微分算子 $\mathcal{L}$ 事后可以被视作属于 Fuchsian 类，仅具有正则奇点且具有有理指数 \cite[III 6.1, VII 2.1, 和 VIII 1.5]{DGS94}。一个重大的未决问题（这与 § 15.2 的讨论密切相关，且对无理数证明及有效的 Siegel 整点问题有重要影响）是控制在极小阶非齐次常微分方程 $\mathcal{L}(f) \in \mathbf{Q}[x]$ 中线性微分算子 $\mathcal{L}$ 可能出现的表观奇点（apparent singularities）。
+
+\begin{remark}[Basic Remark 2.6.3]\label{rem:2.6.3}
+最简单的例子是 $f(x) = \log(1-x)$, 它的类型由 $(b_1, \ldots, b_r) = (1)$ 给出，且极小微分算子为 $\mathcal{L} := (1-x)(d/dx)^2 - (d/dx)$，它在区域 $\Omega = \mathbb{C} \setminus \{1\}$ 上 holonomic 地变化，从而定义了一个二阶局部系统
+\[ \operatorname{Span}_{\mathbf{C}} \{ 1, \log(1-x) \} \]
+其围绕奇点 $x=1$ 的单值群（monodromy group）是由单能矩阵（unipotent matrix）
+\begin{equation*}
+T := \left( \begin{array}{cc} 1 & 0 \\ -2\pi i & 1 \end{array} \right)
+\end{equation*}
+生成的无限循环群。
+这表达了这样一个事实：在沿着包围奇点 $\{1\}$ 的逆时针简单闭回路上解析开拓 $T$（局部单值算子）时，对于 $\log(1-x)$ 保持 $f_1 := 1$ 不变，但会为 $f_2 := \log(1-x)$ 加上周期 $-2\pi i$ 乘以 $f_1$：
+\begin{equation*}
+T^{k}(\log(1-x)) = \log(1-x) - 2\pi i k, \qquad T^{k}(1) = 1.
+\end{equation*}
+此外，该 holonomic 例子也能够被识别为属于全纯性准则推论 2.6.1 的一种情形。例如，在多值映射选择下，对于任意 $R > e$ 可取 $\varphi(z) := 1 - e^{-Rz}$；或取满射性质的 $\varphi(z) := \lambda(z)$，其导数满足 $|\varphi'(0)| = 16 > e$；或在单值选择下取 $\varphi(z) := 4z/(1+z)^2$，其导数满足 $|\varphi'(0)| = 4 > e$。
+
+在定理 2.5.1 中，分母类型被捕获为一个 $2 \times 1$ 的矩阵 $\mathbf{b} = (0,1)^{\mathrm{t}}$，且满足 $\tau(\mathbf{b}) = (1 \cdot 0 + 3 \cdot 1)/2^2 = 3/4$。对于映射选择 $\varphi(z) := 4z/(1+z)^2$，其 holonomy 商值约等于 $\log 4/(\log 4 - 3/4) \approx 2.1787$，它是该二阶局部系统维数 $m=2$ 的一个维度上界估计。
+\end{remark}
+
+在第 11 节中，我们将对 Zagier 的 holonomic 函数 \cite{Zag09} 进行彻底研究，这些函数同样将数值 $\zeta(2)$ 和 $L(2,\chi_{-3})$ 赋予为分布在更复杂区域 $\Omega = \mathbb{C} \setminus \{0,1/9,1\} \cong \mathbb{H}/\Gamma_0(6)$ 上的局部系统中的周期。对于这一局部系统（它源于分析 Ap{\'e}ry 关于 $\zeta(2)$ 无理性证明 \cite{Ape79}\cite{Coh78}\cite{vdP79} 中的递推形式，并基于 Eichler 积分理论），我们现在将拥有主整性类型 $x^n/[1,\ldots,n]^2$。随后，我们将把 $1, \zeta(2), L(2,\chi_{-3})$ 的 $\mathbf{Q}$-线性无关性问题归结为一个关于不存在类型为 $x^n/[1,\ldots,n]^2$ 且具有某些解析性质的 $G$-函数的丢番图分析问题：具体而言，我们的任务转为证明 Zagier 的局部系统不能包含在奇点 $\{0,1/9\}$ 处正则（即 $e_0$ 超收敛）的非零 $\mathbb{Q}[x]$ 元素。
+
+直接应用 \eqref{eq:2.5.4}（参见本节下文的第 2.11 节）足以证明如下混合周期的无理数性质：
+\begin{equation*}
+L(2,\chi_{-3}) - \pi \frac{\log 3}{3\sqrt{3}} = L(2,\chi_{-3}) - L(1,\chi_{-3}) \log 3.
+\end{equation*}
+
+（另一个关于混合周期的无理性结果是 Beukers 利用模形式证明的 $\zeta(3) - 5\sqrt{5} L(3, \chi_5) \notin \mathbf{Q}(\sqrt{5})$ \cite[Thm 4]{Beu87}。）为了证明纯 $L(2, \chi_{-3})$ 的无理性（如 § 2.3 中所讨论的），我们需要一个甚至比这更精细的结果，以同时考虑函数的积分。这些更复杂的定理 2.5.1 版本（包括定理 6.0.2、7.0.1、7.1.6 和 7.1.13）将被推迟到下文第 6 节与第 7 节中进行证明。向定理 A 的具体应用相当微妙，在产生 $\zeta(2)$ 和 $L(2, \chi_{-3})$ 作为其 holonomic 系数的众多局部系统中，最终对我们起作用的选择是高度可约的（尽管具有不可解的单值群），并且涉及导致分母本质上\footnote{更准确地说，是具有 $n[1, ..., 2n+3]^2$ 的形式，但根据注记 6.0.12，这或多或少可以被视作具有 $n[1, ..., 2n]^2$ 的形式。}为 $n[1, \ldots, 2n]^2$ 形式的积分。
+
+\subsection{单值 holonomy 边界与对数的算术特征}\label{sec:2.7}
+
+我们现在考虑将 \autoref{thm:2.5.1} 特殊化到映射 \(\varphi\) 为单值的情形. 我们指出, 尽管对于一般的 \(\varphi\), 我们拥有对 \autoref{thm:2.5.1} 的各种改进, 比如定理 7.1.6 和定理 7.6.4 (在假设其对应部分中的 $\mathbf{e}$ 为 $\mathbf{0}$ 的情况下), 但在 \(\varphi\) 为单值的情况下, 所有这些都将简化为如下的\autoref{thm:2.7.1}.
+
+对于包含原点的单连通区域 \(\Omega \subset \mathbf{C}\), 黎曼映射定理提供了一个双全纯映射 \(\varphi : \mathbf{D} \xrightarrow{\simeq} \Omega\), 满足 \(\varphi(0) = 0\), 由 Schwarz 引理, 该映射在一圈旋转的意义下是唯一确定的. 这使得绝对值 \(\lvert\varphi'(0)\rvert \in (0,\infty]\) 是良好定义的; 我们用 \(\rho(\Omega,0)\) 表示它并将其称为单连通区域在原点处的共形映射半径. 如果全纯映射 \(\varphi : \mathbf{D} \to \mathbf{C}\) 是单值 (univalent) 的, 则称其为其图像上的双全纯映射, 或者等价地, 如果 \(\varphi : \mathbf{D} \hookrightarrow \mathbf{C}\) 是单射.
+
+\begin{theorem}[Univalent Holonomy Bound]\label{thm:2.7.1}
+在\autoref{thm:2.5.1} 的记号与假设下, 考虑一个单连通区域 \(\Omega \subset \mathbf{C}\), 满足 \(0 \in \Omega\) 且具有满足 \(\rho(\Omega,0) > e^{\tau(\mathbf{b})}\) 的共形映射半径. 对于任意一个在 \(\Omega\) 上是亚纯的、由 \(\mathbf{Q}(x)\)-线性无关的类型为 \eqref{eq:2.5.3} 的形式函数组成的 \(m\)-元组, 以下 holonomy 边界成立:
+\[ m \le \frac{\log \rho(\Omega, 0)}{\log \rho(\Omega, 0) - \tau(\mathbf{b})}. \]
+\end{theorem}
+
+\begin{proof}
+这直接由\autoref{thm:2.5.1} 导出. 
+需要观察的关键点是, Bost--Charles 双重积分项满足不等式:
+\begin{equation*}
+\iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \, \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w) \ge \log |\varphi'(0)|,
+\end{equation*}
+其中等号成立当且仅当 \(\varphi : \mathbf{D} \hookrightarrow \mathbf{C}\) 在开圆盘上是单值的. 
+为了说明这一点, 只需注意到单值性等价于双变量全纯函数
+\[ \frac{\varphi(z) - \varphi(w)}{z - w} = \varphi'(0) + O(|z| + |w|) \in \mathcal{O}(\mathbf{D}^2) \]
+在整个单位多圆盘内非零. 
+因此, 函数
+\[ G(z,w) := \log \left| \frac{\varphi(z) - \varphi(w)}{z - w} \right| : \mathbf{D}^2 \to \mathbf{R} \cup \{-\infty\} \]
+是多重次调和的 (plurisubharmonic), 并且其为调和函数当且仅当 \(\varphi\) 是单值的. 
+注意到 \(G(0,0) = \log |\varphi'(0)|\), 同时根据基本积分恒等式 \(\iint_{\mathbf{T}^2} \log \frac{1}{|z-w|} \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w) = 0\), 有
+\[ \iint_{\mathbf{T}^2} G(z, w) \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w) = \iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \, \mu_{\text{Haar}}(z) \mu_{\text{Haar}}(w), \]
+由此上述两个断言均得证.
+\end{proof}
+
+我们指出以下将\autoref{thm:2.7.1} 应用到对数函数的情形, 这正是基本注记 2.6.3 的例子.
+
+\begin{theorem}\label{thm:2.7.2}
+假设 \(f(x) = \sum_{n=0}^{\infty} a_n x^n \in \mathbf{Q}[\! [x]\!]\) 是一个幂级数, 满足:
+\begin{enumerate}
+  \item[(1)] 对于所有 \(n \in \mathbf{N}\), \([1, \dots, n]a_n \in \mathbf{Z}\).
+  \item[(2)] \(f(x)\) 在 \(\mathbf{C} \setminus [1, \infty)\) 上是全纯的.
+\end{enumerate}
+那么
+\[ f(x) = Q_0(x) + Q_1(x)\log(1-x) \]
+对于某些有理函数 \(Q_0, Q_1 \in \mathbf{Q}\left[x, \frac{1}{1-x}\right] \subset \mathbf{Q}(x)\) 成立.
+\end{theorem}
+
+我们视\autoref{thm:2.7.2} 为对数函数的一个算术特征刻画.
+
+\begin{proof}
+我们考虑收缩区域 \(\Omega := \mathbb{C} \setminus [1, \infty)\), 其在原点处的共形映射半径为 \(\rho(\Omega,0)=4\), 对应的黎曼映射为 \(\varphi(z)=4z/(1+z)^2\). 
+我们在 \(m=3\), \(r=1\) 且 \(\mathbf{b}=(0,1,1)^{\mathrm{t}}\) 满足 \(\tau(\mathbf{b})=8/9\) 的情况下应用\autoref{thm:2.7.1}, 此时数值计算
+\begin{equation}\label{eq:2.7.3}
+\frac{\log 4}{\log 4 - 8/9} = 2.787050 \dots < 3
+\end{equation}
+证明了不存在第三个 \(\mathbf{Q}(x)\)-线性无关的、类型为 \eqref{eq:2.6.2} 且在 \(\Omega = \mathbb{C} \setminus [1, \infty)\) 上解析的函数, 它与两个已知的例子 \(f_1 = 1\) 和 \(f_2 = \log(1-x)\)（其对应 \((b_1, \ldots, b_r) = (1)\)）线性无关. 
+这意味着所有此类函数必定具有 \(Q_0(x) + Q_1(x) \log(1-x)\) 的形式, 其中 \(Q_0(x), Q_1(x) \in \mathbf{Q}(x)\).
+
+此时, 我们已知 \(f(x)\) 在 \(\mathbb{C} \setminus ([1, \infty) \cap \overline{\mathbb{Q}})\) 上是正则（全纯）的, 并且 \(\mathbf{C}\) 中的每个点 \(x \neq 1\) 至多是 \(f(x)\) 的一个亚纯极点. 接下来只需证明以下两点:
+\begin{itemize}
+  \item[(i)] \(Q_0(x)\) 和 \(Q_1(x)\) 属于 \(\mathbf{Q}(x)\) 的子环 \(\mathbf{Q}\left[x, \frac{1}{x}, \frac{1}{1-x}\right]\).
+  \item[(ii)] 如果 \(Q_0(x), Q_1(x) \in \mathbf{Q}[x, 1/x]\), 则必定有 \(Q_0(x), Q_1(x) \in \mathbf{Q}[x]\).
+\end{itemize}
+事实上, 假定 (i) 成立, 我们只需将 \(f(x)\) 替换为 \((1-x)^k f(x)\)（其中 \(k \in \mathbb{N}\) 是一个足够大的次数以消去 \(Q_0(x)\) 中的分母 \((1-x)\)）, 那么由 (ii) 即可得出我们所需的结论.
+
+我们首先证明 (ii). 假设 \(Q_0(x)\) 和 \(Q_1(x)\) 不都在 \(\mathbf{Q}[x]\) 中. 如果
+\[ Q_1(x) \in \mathbf{Q}[x] \subset (1/x)\mathbf{Q}[x] \]
+那么 \(Q_1(x) \log(1-x)\) 在 \(x=0\) 处是全纯的, 从而 \(Q_0(x)=f(x)-Q_1(x)\log(1-x)\) 在 \(x=0\) 处也是全纯的, 进而 \(Q_0(x)\in \mathbf{Q}[x]\). 
+因此我们可以假设 \(Q_1(x) \in \mathbf{Q}[x, 1/x] \setminus \mathbf{Q}[x]\). 
+在将 \(f(x)\) 乘以适当的 \(x\) 的幂次以及足够整除的正整数之后, 我们可以假设 \(Q_1(x) \in (\mathbf{Z}[x] + \mathbf{Z} \cdot x^{-1}) \setminus \mathbf{Z}[x]\) 并且 \(Q_0(x)\)（根据上述参数, 它现在也是全纯的）属于 \(\mathbf{Z}[x, 1/x]\) 从而也属于 \(\mathbf{Z}[x]\), 且此时分母性质 (1) 依然保持. 
+反过来, 通过从 \(f(x)\) 中减去 \( \mathbf{Z}[x] + \log(1-x)\mathbf{Z}[x] \) 中的适当元素, 我们只需分析如下情况
+\[ f(x) = \frac{q_1 \log(1-x)}{x} \]
+其中 \(q_1 \in \mathbf{Z} \setminus 0\). 
+但在这种情况下, \(f(x)\) 的 \(x^{p-1}\) 项系数等于 \(q_1/p\), 当 \(p > |q_1|\) 为素数时, 这显然不满足所需的性质 (1). 这完成了化简步骤 (ii).
+
+我们现在考虑 (i). 假设有理函数 \(Q_0(x)\) 和 \(Q_1(x)\) 不属于子环 \(\mathbf{Q}\left[x, \frac{1}{x}, \frac{1}{1-x}\right]\), 那么其中至少一个必定有一个极点 \(\alpha \in \overline{\mathbf{Q}} \setminus \{0, 1\}\).
+
+固定一个复嵌入 \(\overline{\mathbf{Q}} \hookrightarrow \mathbf{C}\), 首先考虑对于 \(Q_0(x)\) 或 \(Q_1(x)\) 的至少一个极点满足 \(\alpha \notin (1, \infty)\) 的情形. 
+在这种情况下, 我们关于 \(f(x)\) 在 \(\alpha\) 处全纯的假设意味着
+\[ Q_0(x) = \frac{V(x)}{(x-\alpha)^k}, \quad Q_1(x) = \frac{-U(x)}{(x-\alpha)^k} \]
+对于某个正整数 \(k \in \mathbb{N}_{>0}\) 以及在 \(x = \alpha\) 处正则且不为零的有理函数 \(U, V \in \overline{\mathbb{Q}}(x)\) 成立. 
+在等式
+\[ (x - \alpha)^k f(x) = V(x) - U(x)\log(1 - x) \]
+中代入 \(x = \alpha\), 得到一个非平凡的消去组合 \(V(\alpha) - U(\alpha) \log(1 - \alpha) = 0\), 其系数为非零代数数 \(U(\alpha), V(\alpha) \in \overline{\mathbf{Q}}^{\times}\). 
+但这与 Hermite--Lindemann--Weierstrass 关于 \(\log(1-x)\) 在 \(\overline{\mathbf{Q}} \setminus \{0,1\}\) 上的代数自变量取超越值的定理相矛盾.
+
+剩下的情况是 \(Q_0\) 和 \(Q_1\) 的所有非 \(0, 1, \infty\) 的极点 \(\alpha\) 都属于 \(\alpha \in (1, \infty) \cap \overline{\mathbf{Q}}\), 且这一极点集合非空. 
+此时, 我们的全纯性条件 \(f \in \mathcal{O}(\mathbf{C} \setminus [1, \infty))\) 并不能排除在 \(x = \alpha\) 处的亚纯极点, 因而我们需要一个不同的论证. 
+由于所讨论的极点集合在 \(\mathrm{Gal}(\overline{\mathbf{Q}}/\mathbf{Q})\) 作用下是稳定的, 我们的假设意味着 \(\alpha\) 的所有 Galois 共轭也必定落在 \((1, \infty) \cap \overline{\mathbf{Q}}\) 中. 
+那么我们根据乘积公式可以推导出, 存在一个素数 \(p\) 以及极点的一个选择 \(\alpha \in \overline{\mathbf{Q}} \cap \mathbf{C}_p\), 使得它落在开圆盘 \(|x|_p < 1\) 中. 
+接着, 引用 Mahler 关于 \(p\)-进指数函数在非零代数自变量处所有收敛值超越性的定理 \cite{Mah19a}, 我们可以在 \(p\)-进意义下得到同样的矛盾; 
+该定理等价于 \(p\)-进对数函数 \(\log(1-x)\) 在去心开单位圆盘 \(0 < |x|_p < 1\) 的代数点处的所有取值均为超越数.\footnote{\(p\)-进下关于指数函数特殊值代数无关性的完整 Hermite--Lindemann--Weierstrass 定理的对应结论是一个著名且尚未解决的猜想. 我们参考 Nesterenko 的工作 \cite{Nes08} 以获取部分结果, 并参考 \cite[§ 2.4]{Nes19} 以对该主题进行概述并对 Mahler 的论证作一介绍.}
+\end{proof}
+
+\begin{remark}[Remark 2.7.4]\label{rem:2.7.4}
+\autoref{thm:2.7.2} 及其证明在将 (1) 减弱为例如下述形式时依然成立:
+\[ \left[1,\ldots,\left(1+\frac{1}{100}\right)n\right]; \]
+但此时仅能通过步骤 (i) 得到较弱的结论 \(Q_0, Q_1 \in \mathbf{Q}[x, 1/x, 1/(1-x)]\), 此时 \(1/x\) 确实无法再被消去, 对应实例有函数 \(f(x) = 100! \cdot \log(1-x)/x\). 
+这里的常数 \(1 + 1/100\) 也可以等价地替换为区间 \((1, (3 \log 2)/2) = (1, 1.03972\dots)\) 中的任意元素.
+\end{remark}
+
+\begin{remark}[Remark 2.7.5]\label{rem:2.7.5}
+在\autoref{thm:2.7.2} 的结论中, 我们能完全刻画所有可能的 \(Q_i(x)\). 
+具体而言, \(f(x) = Q_0(x) + Q_1(x) \log(1-x)\) 具有所需形式的充要条件为以下两个条件同时成立:
+\begin{enumerate}
+  \item[(1)] \(Q_1(x) \in \mathbf{Z}[x, 1/(1-x)]\).
+  \item[(2)] 对于每个 \(n\), \(Q_0(x)\) 属于由 \(x^n/[1, \dots, n]\) 生成的 \(\mathbf{Z}[x, 1/(1-x)]\)-模; 这等价于由每个素数幂 \(q\) 对应的 \(x^q/q\) 生成.
+\end{enumerate}
+这给出了\autoref{thm:2.7.2} 中（无限维）解的 \(\mathbf{Z}[x, 1/(1-x)]\)-模的生成元与关系的完整描述.
+
+显然, 这些条件蕴含了\autoref{thm:2.7.2} 的要求. 
+为了证明其逆命题, 考虑定理中满足 \(f(x) = Q_0(x) + Q_1(x) \log(1-x)\) 的一个解. 
+一旦我们确立了对 \(Q_1(x)\) 的结论, 对 \(Q_0(x)\) 的结论就是显而易见的. 
+不失一般性（在乘以 \(1-x\) 的适当幂次后）, 我们只需证明若 \(Q_i(x) \in \mathbf{Q}[x]\), 则有 \(Q_1(x) \in \mathbf{Z}[x]\). 
+若 \(Q_1(x) \notin \mathbf{Z}[x]\), 那么存在一个素数 \(p\) 以及 \(Q_1(x)\) 的单项式 \(q_{1,m}x^m\), 使得 \(p\)-进估值 \(\operatorname{val}_p(q_{1,m}) < 0\) 为负, 并且在 \(Q_1(x)\) 的所有系数的 \(p\)-进估值中是极小的. 
+但是现在, 如果选取满足 \(p^r > \deg(Q_0(x)), \deg(Q_1(x))\) 的素数幂, 容易验证当 \(n = p^r + m\) 且 \(a_n\) 为 \(f(x)\) 中 \(x^n\) 的系数时, \([1, 2, \ldots, n]a_n\) 的 \(p\)-进估值是负的.
+\end{remark}
+
+\begin{remark}[Remark 2.7.6]\label{rem:2.7.6}
+在\autoref{thm:2.7.2} 的证明中, 诉诸 Hermite--Lindemann--Weierstrass 定理及其 \(p\)-进（部分的）Mahler 对应定理绝非偶然. 
+事实上, 至少在部分意义下反向思考, 该定理的陈述蕴含了例如对于所有整数 \(n \in \mathbf{Z} \setminus \{1\}\) 对应的 \(\log(1-1/n)\) 的无理性; 
+因为如果此（阿基米德）对数取有理值 \(p/q\), 那么
+\[ f(x) := \frac{q \log(1-x) - p}{1-nx} = q \frac{\log(1-x) - \log(1-1/n)}{1-nx} \in \mathbf{Q}[\! [x]\! ] \cap \mathcal{O}\left(\mathbf{C} \setminus [1,\infty)\right) \]
+就能够满足\autoref{thm:2.7.2} 中的整性与全纯性约束, 
+但是在表示式 \(f(x) = Q_0(x) + Q_1(x) \log(1-x)\) 中的有理函数 \(Q_0(x), Q_1(x) \in \mathbf{Q}(x)\) 却在 \(x = 1/n\) 处是奇异的, 从而绝对不属于环 \(\mathbf{Q}\left[x, \frac{1}{1-x}\right]\). 
+我们将在第 15.2 节重温这类问题.
+\end{remark}
+
+\subsubsection{定理 2.7.1 作为 Borel--Pólya--Zudilin 有理性判据的精细化}\label{sec:2.7.7}
+
+我们对定理 2.7.1 作出三个评注. 
+首先, 在基本注记 2.1.2 的讨论中, 我们确实恢复了原始 Borel--Pólya 定理中更精确的有理性断言, 因为在那种设定下我们可以有 \(\tau(\mathbf{b}) = \tau(\mathbf{0}) = 0\). 
+其次, 在复平面中给定的、满足共形映射半径 \(\rho(\Omega,0) > 1\) 的单连通区域 \(\Omega \ni 0\) 上, 
+所有具有如下形式的分母类型的超越 \(\mathbf{Q}[\![x]\!]\) 形式函数芽:
+\begin{equation}\label{eq:2.7.8}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{[1, \dots, b_1 n] \cdots [1, \dots, b_r n]}, \quad a_n \in \mathbf{Z},
+\end{equation}
+都必然满足分母类型间隙:
+\begin{equation}\label{eq:2.7.9}
+b_1 + \dots + b_r > (2/3) \log \rho(\Omega, 0).
+\end{equation}
+如果有至少 \(m \geq 2\) 个此类 \(\mathbf{Q}(x)\)-线性无关的函数, 则 \eqref{eq:2.7.9} 中的系数 2/3 改进为 \(m/(m+1)\).
+
+最后, 在所有最基础的情况下, 取 \(\Omega\) 为以 0 为中心、半径为 \(R > e^{\sigma_m}\) 的圆盘 \(|x| < R\)（如 Apéry 所考虑的, 只是现在如同 Borel 一样, 我们假设亚纯性而非 holonomicity）, 我们解释定理 2.7.1 如何暗示 \(f(x) \in \mathbf{Q}(x)\).
+直接应用定理 2.7.1, 我们首先推导出此类函数生成的对应 \(\mathbf{Q}(x)\)-向量空间 \(\mathcal{H}\) 是有限维的, 并且特别是它由 holonomic 函数组成.
+然而, 如果 \(f(x) = \sum a_n x^n \in \mathbf{Q}[\![x]\!]\) 在 \(\Omega\) 上是亚纯的, 那么对于 \(\zeta = e^{2\pi i/m}\), 其扭转（twists）:
+\[ \frac{1}{m} \sum_{i=0}^{m-1} f(\zeta^i x) \zeta^{-ik} = \sum a_{mn+k} x^{nm+k} \]
+也同样是亚纯的, 并且它们具有与 \(f(x)\) 相同的分母类型.
+这表明 \(\mathcal{H}\) 在 \(x \mapsto \zeta x\) 的作用下对于任意 \(m\) 都是保持不变的.
+除非其奇点集合是 \(\{0, \infty\}\) 的子集, 否则对应微分方程的（非明显的）奇点不可能在所有这些有理旋转下保持不变.
+但这暗示了任何此类 \(f(x)\) 都必须在 \(\mathbf{C}\) 上是亚纯的, 并且（在清除分母后）我们可以再次应用定理 2.7.1, 此时取 \(R\) 为任意大, 以推导出 \(\dim_{\mathbf{Q}(x)} \mathcal{H} = 1\).
+（注意, 确实存在维数大于 1 的有限维 \(\mathbf{Q}(x)\)-向量空间, 它们由 \(\mathbf{D}\) 上的 \(\mathbf{Z}[\![x]\!]\) 全纯函数生成, 并且在 \(x \mapsto \zeta x\) 对于所有有理旋转下是保持不变的；例如, 由 1 以及 \(f(x) = \sum x^{n!}\) 生成的 \(\mathbf{Q}(x)\)-向量空间. 后者当然是非 holonomic 的.）
+
+我们可以通过以下对 Borel--P{\'o}lya 有理性判据以及 Zudilin 决定性判据 \cite{Zud17} 的精细化表述来总结这三个评注:
+
+\begin{theorem}\label{thm:2.7.10}
+考虑复平面中一个收缩开区域 \(\Omega \ni 0\) 以及以下算术类型的形式幂级数:
+\begin{equation}\label{eq:2.7.11}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{[1, \dots, b_1 n] \cdots [1, \dots, b_r n]}, \quad a_n \in \mathbf{Z}, \quad \forall n \in \mathbf{N},
+\end{equation}
+它是 \(\Omega\) 上亚纯函数在 \(x=0\) 处的泰勒展开芽. 假设满足以下任一条件:
+\begin{itemize}
+  \item[(i)] \(\Omega\) 是一个圆盘 \(|x| < R\), 其半径满足 \(R > \exp(b_1 + \dots + b_r)\); 或者
+  \item[(ii)] \(\Omega\) 在原点处的共形映射半径 \(\rho(\Omega, 0)\) 超过了
+    \[ \exp\left(\frac{3}{2}(b_1+\ldots+b_r)\right). \]
+\end{itemize}
+那么 \(f(x) \in \mathbf{Q}(x)\) 是一个有理函数.
+\end{theorem}
+
+
+
+\subsection{超越对数的算术特征}\label{sec:2.8}
+
+鉴于\autoref{thm:2.7.2}, 探求其他基本超越函数在其解析区域与幂级数算术行为方面的算术特征是非常自然的. 考虑到 Bely\u{\i} 定理 \cite{BG06}, 一个自然的起点是 (正是在\autoref{thm:2.7.2} 中) 解析开拓到沿所有在 $\mathbf{P}^1 \setminus \{0,1,\infty\}$ 中的路径的多值全纯函数幂级数. 相比于\autoref{thm:2.7.2} 的分母类型 \([1,\dots,n]\), 走得更远需要使用一个多值的映射 \(\varphi\), 但仍然需要一个局部单值性输入 (这将在第 2.9 节进行讨论, 并在定义 9.0.12 和推论 9.0.19 中形式化), 这对于我们的无理数证明方法至关重要.
+
+无论如何, 如果有 \(\tau = \tau(\mathbf{b})\), 那么我们的方法有任何应用希望的必要条件是 \(\lvert\varphi'(0)\rvert > e^{\tau}\). Carath{\'e}odory 的一个定理 \cite[p.~198, (412.8)]{Car54} 表明, 对于所有满足 \(\varphi^{-1}(0) = \{0\}\) 的全纯映射 \(\varphi: \mathbf{D} \to \mathbf{C} \setminus \{1\}\), 均有 \(\lvert\varphi'(0)\rvert \le 16\), 并且等号成立当且仅当 \(\varphi(z) = \lambda(cz)\) 且 \(\lvert c\rvert = 1\). 因此, 在这种情况下, 必须有 \(\lambda'(0) = 16 > e^{\tau}\) (关于 Carath{\'e}odory 定理中特定假设之关联性的细节参见第 2.9 节). 对于 \(\tau = 2\), 这一必要条件显然是满足的. 特别是, 推论 2.6.1 表明, 在 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 上 holonomic 且分母类型为 \([1, \dots, n]^2\) 的函数组成的 \(\mathbf{Q}(x)\)-向量空间是有限维的. 正如我们将在下文解释的, 我们对定理 A 和 C 的证明方法可以概括为朝着确定该有限维空间迈出了充分的一步.
+
+\begin{conjecture}\label{conj:2.8.1}
+对于 |x| < 1 内收敛的形式幂级数 \(f(x) = \sum_{n=0}^{\infty} a_n x^n \in \mathbf{Q}[\![x]\!]\), 以下条件是等价的:
+\begin{enumerate}
+  \item[(1)] \(f(x)\) 可以解析开拓为 \(\mathbf{C} \setminus [1, \infty)\) 上的全纯函数, 并且可以沿着 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 中的所有路径解析开拓为亚纯函数; 并且存在一个 \(M \in \mathbf{N}_{>0}\) 使得对于所有 \(n \in \mathbf{N}\) 满足 \([1, \dots, n]^2 a_n \in M^{-1}\mathbf{Z}\).
+  \item[(2)] 存在有理函数 \(Q_0, \dots, Q_4 \in \mathbf{Q}\left[x, \frac{1}{1-x}\right] \subset \mathbf{Q}(x)\) 使得
+    \[
+    \begin{aligned}
+      f(x) = {} & Q_0(x) + Q_1(x)\log(1-x) + Q_2(x)\log^2(1-x) + Q_3(x)\text{Li}_2(x) \\
+      & + \frac{Q_4(x)}{\sqrt{1-x}} \int_0^x \frac{\log(1-t)}{t\sqrt{1-t}} dt.
+    \end{aligned}
+    \]
+\end{enumerate}
+这里, \(\text{Li}_2(x) := -\int_0^x \log(1-t)\,d\log t = \sum_{n=1}^\infty x^n/n^2\) 是标准双对数函数 (dilogarithm function) 分支, 并且我们在第 10.1 节中更深入地讨论了该设想的解空间.
+人们应该将该猜想与定理 2.7.2 作一对比.
+在任一情况下, 人们都可以考虑一个双重（分为两部分）的方法.
+第一部分是在定理 2.5.1 中设计一个证明此类函数的 \(\mathbf{Q}(x)\)-向量空间有限维性的框架;
+第二部分是为该空间给出一个与已知函数数量相吻合的边界.
+事实上, 无论是 \(16 > e\) 还是 \(16 > e^2\) 都在对应情况下确立了第一项断言.
+然而, 在第二种情况下, 我们目前所能确立的维数最佳上界是 9 而非 5 (参见注记 A.5.2 与方程 A.5.3).
+排除任何其他可能的函数仍然是一个困难的问题, 目前超出了本文方法的范畴.
+\end{conjecture}
+
+\begin{remark}\label{rem:2.8.2}
+与注记 2.7.6 类似, \(\mathbf{Q}[x,1/(1-x)]\) 的精细化在其表述中包含了一个隐藏在猜想 2.8.1 形式中的特定条款, 即对于每个 \(n\in\mathbf{Z}\setminus\{0,1\}\), 猜想表述中的五个函数 \(1\), \(\log(1-x)\), \(\log^2(1-x)\), \(\operatorname{Li}_2(x)\) 和 \(\frac{1}{\sqrt{1-x}}\int_0^x \frac{\log(1-t)}{t\sqrt{1-t}}\,dt\) 的在 \(x=1/n\) 处特殊值的 \(\mathbf{Q}\)-线性无关性. 例如, 如果 \(\operatorname{Li}_2(1/n)\in\mathbf{Q}\), 那么关键点在于函数
+\[ f(x) := \frac{\operatorname{Li}_2(x) - \operatorname{Li}_2(1/n)}{1 - nx} \in \mathcal{O}(\mathbf{C} \setminus [1, \infty)) \cap \mathbf{Q}[\![x]\!] \]
+满足猜想中条件 (1) 的所有要求, 但它显然不包含在由 (2) 规定的解 \(\mathbf{Q}[x,1/(1-x)]\)-模中.
+
+对于所有 \(|n| \geq N_0\) (其中 \(N_0\) 是某个足够大且可显式计算的数), 这五个函数在 \(x = 1/n\) 处特殊值的 \(\mathbf{Q}\)-线性无关性可以作为 G-函数特殊值一般理论中定理 15.1.3 的一个非常特殊的特例推出. 对于双对数函数, 第一个这样的结果已经由 Maier 在 \cite[§ 8]{Mai27} 中证明, 该工作预示并直接启发了 Siegel 1929 年的论文 \cite{Zan14}. 无理数性质 \(\text{Li}_2(1/n) \notin \mathbf{Q}\) 目前仅在 \(n \notin \{-4, -3, -2, 2, 3, 4, 5\}\) 时被证明 \cite{Hat93, RV05, RV19}. 该问题在第 15.2 节中作了进一步讨论.
+\end{remark}
+
+在本文的主旨精神下, 人们甚至可以探讨猜想 2.8.1 的变体, 以允许在原始分支 \(f(x)\) 的收敛圆盘 \(|x| < 1\) 中存在其他 (可能的) 奇点, 例如:
+
+\begin{question}\label{qu:2.8.3}
+如果在条件 (1) 中在 \(\mathbf{P}^1 \setminus \{0,1,\infty\}\) 上的亚纯可延拓性被放宽为在 \(\mathbf{P}^1 \setminus \{0,\delta,1,\infty\}\) 上的亚纯可延拓性 (对于某个 \(\delta \in [-1/2,1/2]\)), 猜想 2.8.1 的结论是否依然成立？
+
+特别是, 对于一个在 \(|x| < 1\) 上收敛、并在 \(\mathbf{P}^1 \setminus \{0,\delta,1,\infty\}\) 上定义分母类型满足条件 \(a_n[1, \dots, n]^2 \in \mathbf{Z}\) 的 holonomic 函数的形式幂级数 \(f(x) \in \mathbf{Q}[\![x]\!]\) (其中 \(\delta \in [-1/2, 1/2]\) 是一个任意的第四奇点), \(f(x)\) 是否会自动跨越该第四奇点 \(x = \delta\) 延拓并定义一个 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 上的 holonomic 函数？
+\end{question}
+
+虽然这些问题对于我们在本文中开发的有理 holonomy 边界方法显得颇为棘手, 但我们能够完全解决一个介于定理 2.7.2 和猜想 2.8.1 之间的、难度适中的子问题, 即分母类型具有 \([1,2,\dots,n][1,2,\dots,n/2]\) 形式（即“\(\tau=3/2\) 的情况”）的情形, 此时在 \(\log(1-x)\) 之后出现的第一个新函数是 \(\log^2(1-x)\). 这里猜想 2.8.1 对应于下述定理的 \(\delta=0\) 的情况, 该定理对 \([1,\dots,n][1,\dots,n/2]\) 类型的子情形肯定地回答了问题 2.8.3:
+
+\begin{theorem}\label{thm:2.8.4}
+假设 
+
+\[f(x) = \sum_{n=0}^{\infty} a_n x^n \in \mathbf{Q}[\! [x]\!]\] 
+
+满足对于所有 \(n \in \mathbf{N}\) 有 \([1,\dots,n][1,\dots,n/2]a_n \in \mathbf{Z}\), 在 \(\mathbf{C} \setminus [1,\infty)\) 上是全纯的, 并且可解析开拓为沿着所有在 \(\mathbf{P}^1 \setminus \{0,\delta,1,\infty\}\) 中的路径的亚纯函数, 对于某个 \(\delta \in (-\infty,1)\). 那么
+\begin{equation}\label{eq:2.8.5}
+  f(x) = Q_0(x) + Q_1(x)\log(1-x) + Q_2(x)\log^2(1-x)
+\end{equation}
+对于某些有理函数 
+
+\begin{equation*}
+Q_0, Q_1, Q_2 \in \mathbf{Q}\left[x, \frac{1}{1-x}\right] \subset \mathbf{Q}(x)
+\end{equation*}
+
+成立. 
+
+特别地,
+\[ (*) \quad f(x) \text{ 沿着所有在 } \mathbf{P}^1 \setminus \{0, 1, \infty\} \text{ 中的路径解析开拓为亚纯函数.} \]
+\end{theorem}
+
+定理 2.8.4 之性质 (*) 对 \(\mathbf{Q}\)-线性无关性证明的一些直接应用将在下文引言的第 2.11 节中进行讨论, 作为我们方法的可行性验证. 正是在那里, 我们将作为定理 2.5.1 的应用来证明性质 (*). 而要完成完整的定理 2.8.4 则需要更精细的 holonomy 边界, 这将在第 6.8 节中完成.
+
+\subsection{超收敛与单值叶}\label{sec:2.9}
+
+我们现在转向通过延伸 Ap{\'e}ry 极限方法来证明无理数性质的基本机制. 我们将在第 2.10 节中给出一些显式示例, 并在第 2.11 节中给出一个应用于一些新 \(\mathbf{Q}\)-线性无关性证明的原理性应用.
+
+考虑半径为 \(R \in (0, \infty]\) 的复圆盘 \(\mathbf{D}_R := \{x \in \mathbf{C} : |x| < R\}\) 的离散子集 \(\Sigma \subset \mathbf{D}_R\) (可能包含圆盘中心 $x = 0$), 以及中心点处的全纯函数芽 \(f(x) \in \mathbf{C}[\! [x]\!]\), 它可以作为全纯函数沿着 \(\mathbf{D}_R \setminus \Sigma\) 中的所有路径解析开拓. 我们定义子集 \(\Sigma_f^+ \subset \Sigma\), 在 \(0 \in \Sigma\) 时必然包含 \(0\), 它由那些满足如下性质的 \(\beta \in \Sigma\) 组成: \(f(x) \in \mathbf{C}[\! [x]\!]\) 从 \(x = 0\) 朝向 \(x = \beta\) 的径向解析开拓保持有界. 我们称幂级数 \(f(x)\) 在 \(\Sigma_f^+\) 处超收敛 (overconvergent), 并作为多值全纯函数延拓到 \(\mathbf{D}_R \setminus \Sigma\) 上. 那么初始幂级数芽 \(f(x) \in \mathbf{C}[\! [x]\!]\) 的收敛半径等于 \(\min_{\beta \in (\{R\} \cup \Sigma) \setminus \Sigma_f^+} |\beta|\). 以下平凡的引理对我们证明定理 A 和 C 的方法至关重要; 我们指出, 如果我们在前一段中将所有地方的“全纯”替换为“亚纯”, 那么这种关于与积分相容性的陈述将变得完全错误.
+
+\begin{lemma}\label{lem:2.9.1}
+我们有等式 \(\Sigma_{\int_0^x f(t) dt}^+ = \Sigma_f^+\).
+\end{lemma}
+
+现在给定一个满足 \(\varphi(0) = 0\) 的全纯映射 \(\varphi: \mathbf{D} \to \mathbf{D}_R\), 我们可以将同样的概念应用到拉回的幂级数 \(f(\varphi(z)) \in \mathbf{C}[\! [z]\!]\) 上, 它是一个 \(z = 0\) 处的全纯函数芽, 并在 \(\mathbf{D} \setminus \varphi^{-1}(\Sigma)\) 上延拓为多值全纯函数. 一般来说, 对于 \(f\) 与 \(\varphi^*f\), 其超收敛集合 \(\Sigma_f^+ \subset \Sigma \subset \mathbf{D}_R\) 与 \((\varphi^{-1}(\Sigma))_{\varphi^*f}^+ \subset \varphi^{-1}(\Sigma) \subset \mathbf{D}\) 之间没有任何关系.
+
+关系建立在大前提满足的基础上. 假设存在一个单连通开邻域 \(0 \in \Omega \in \mathbf{D}\), \(\varphi|_{\Omega}: \Omega \xrightarrow{\simeq} \varphi(\Omega)\) 在其上是单值的, 因而成为到图像开邻域 \(\varphi(\Omega) \ni 0\) 的共形同构. 进一步假设 \(\varphi^{-1}(0) = \{0\}\) 并且 \(\varphi(\Omega) \cap \Sigma_f^+\) 中的每个点在全纯映射 \(\varphi\) 下恰好有一个原像, 即:
+\[ \varphi^{-1}\left(\varphi(\Omega)\cap\Sigma_f^+\right)\subset\Omega. \]
+那么, 特别地, \(f(\varphi(z))\) 至少在 \(\Omega\) 上是全纯的:
+\begin{equation}\label{eq:2.9.2}
+\left(\varphi^{-1}\left(\Sigma\right)\cap\Omega\right)_{\varphi^{*}f}^{+}=\varphi^{-1}\left(\Sigma_{f}^{+}\right)\cap\Omega=\varphi^{-1}\left(\Sigma_{f}^{+}\cap\varphi(\Omega)\right).
+\end{equation}
+这就是我们提到的单值性输入. 如果现在此外有 \(\varphi(\mathbf{D}) \cap \Sigma = \Sigma_f^+ \cap \varphi(\Omega)\), 那么立刻可以推导出 \(\mathbf{D} \setminus \varphi^{-1}(\Sigma) = \mathbf{D} \setminus \varphi^{-1}\left(\Sigma_f^+ \cap \varphi(\Omega)\right) = \mathbf{D} \setminus \left(\varphi^{-1}(\Sigma) \cap \Omega\right)_{\varphi^*f}^+\) 上的多值全纯函数 \(f(\varphi(z))\) 实际上是整个圆盘 \(\mathbf{D}\) 上的 (单值) 全纯函数, 即该圆盘上的收敛幂级数.
+
+我们总结一下刚才证明的基本性质:
+
+\begin{proposition}\label{prop:2.9.3}
+设 \(f \in \mathbf{C}[\! [x]\!]\) 是一个全纯函数芽, 它可作为多值全纯函数延拓到黎曼球面上的有限穿孔集合 \(\Sigma\) 的余集 \(\mathbf{P}^1 \setminus \Sigma\) 上. 考虑不交划分 \(\Sigma = \Sigma^0 \sqcup \Sigma^1\), 一个满足 \(\varphi(0) = 0\) 且将 \(\mathbf{D}\) 映射到 \(\mathbf{P}^1 \setminus \Sigma^1\) 的全纯映射 \(\varphi : \mathbf{D} \to \mathbf{P}^1 \setminus \Sigma^1\), 并且包含 \(0\) 的单连通开邻域 \(\Omega \subset \mathbf{D}\), \(\varphi\) 在其上限制为单值映射 (等价地: \(\varphi_{|\Omega} : \Omega \xrightarrow{\simeq} \varphi(\Omega)\) 是一个共形同构). 我们假设 \(\varphi^{-1}\left(\Sigma^0\right) \subset \Omega\) 并且 \(f \in \mathcal{O}(\varphi(\Omega))\) 在 \(\varphi(\Omega)\) 上是全纯的.
+那么, 拉回的函数芽 \(f(\varphi(z)) \in \mathbf{C}[\! [z]\!]\) 在整个圆盘 \(\mathbf{D}\) 上收敛.
+\end{proposition}
+
+\begin{remark}\label{rem:2.9.4}
+\autoref{prop:2.9.3} 中对三元组 \((\varphi, \Omega, \Sigma)\) 的假设也可以更简洁地表述为: 存在全纯映射 \(\varphi: (\mathbf{D},0) \to (\mathbf{C},0)\), 它在单连通开邻域 \(\Omega \ni 0\) 上限制为单值的, 并且对于有限穿孔集 \(\Sigma\) 满足 \(\varphi^{-1}(\Sigma) \subset \Omega\). 我们选择包含 \(\Sigma = \Sigma^0 \sqcup \Sigma^1\) 的表述是为了突出当奇异性类型 \((\Sigma^0, \Sigma^1)\) 给定但开邻域 \(\Omega \ni 0\) 未指定时, 通用映射 \(\varphi\) 的实际存在性.
+\end{remark}
+
+\subsubsection{模 \(\lambda\) 映射}\label{sec:2.9.5}
+
+在这种一般语境下, 模 \(\lambda\) 映射 \eqref{eq:1.2.8} 的重要性在于如下观察: \(\varphi(z) := \lambda(z)\) 是\autoref{prop:2.9.3} 在 \(\Sigma^0 = \{0\}\) 且 \(\Sigma^1 = \{1, \infty\}\) 情况下的万有映射（同时保持未指定的开邻域 \(\Omega \ni 0\) 的选择弹性）.
+因此, 它的导数 \(\lambda'(0) = 16\) 最大化了任何此类映射的共形大小.
+这可以被视作区域 \(\Omega = \mathbf{C} \setminus [1, \infty)\) 和 Koebe 映射 \(\varphi(z) = 4z/(1+z)^2\) 在\autoref{thm:2.7.2} 的证明中所扮演角色的多值对应物（直接联系参见注记 2.11.3）.
+具体而言, 如果 \(f(x) \in \mathbf{C}[x]\) 可以沿着所有路径解析开拓为 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 上的全纯函数（例如任何平衡超几何级数）, 那么下拉的函数 \(f(\lambda(z)) \in \mathbf{C}[x]\) 在开单位圆盘 \(z \in \mathbf{D}\) 上收敛.
+一个最基本的例证是经典的 Jacobi 公式:
+\begin{equation}\label{eq:2.9.6}
+\sum_{n=0}^{\infty} {2n \choose n}^2 \left(\frac{\lambda(q)}{16}\right)^n = \left(\sum_{n=0}^{\infty} q^{n^2}\right)^2,
+\end{equation}
+其中在 \(x = \lambda(q)\) 处的 holonomic 性质是 Legendre 椭圆曲线在如下曲线上的 de Rham 上同调的 Picard--Fuchs ODE 的一种体现:
+\[ Y(2)_{\mathbf{C}} = \text{Spec } \mathbf{C} [x, 1/x, 1/(1-x)]. \]
+我们对定理 A 的证明将涉及 Picard--Fuchs ODE 在模曲线
+\[ Y_0(6)_{\mathbf{C}} \cong \operatorname{Spec} \mathbf{C} [x, 1/x, 1/(1-x), 1/(1-9x)] \]
+上的类似表达（第 11.1 节）, \(\zeta(2)\) 和 \(L(2,\chi_{-3})\) 在其中作为 Eichler 积分周期出现.
+
+\subsection{首批无理数证明}\label{sec:2.10}
+
+在关于猜想 2.8.1 的注记 2.8.2 中, 我们观察到所规定的 \(\mathbf{Q}[x,1/(1-x)]\)-模对形如 $x=1/n$ 处的特殊值具有直接的无理数含义. 然而, 我们目前论文的方法仅在\autoref{thm:2.5.1} 的框架下解决 \(\mathbf{Q}(x)\)-向量空间问题, 而不解决它们在介于 \(\mathbf{Q}[x]\) 和 \(\mathbf{Q}(x)\) 之间的有限生成 \(\mathbf{Q}\)-代数上的积分结构问题. 我们现在解释即使是猜想 2.8.1 较粗糙的 \(\mathbf{Q}(x)\)-形式 (如问题 2.8.3 所增强的) 如何铸就一种建立无理数证明的方法. 这些现在是以 Ap{\'e}ry 极限的形式出现, 而不是直接作为相关 holonomic 模中函数的特殊值.
+
+以下内容对我们在引言中已经讨论过的内容进行了拓展. 理想情况如下. 给定一个感兴趣的周期数 \(\eta\), 人们写下一个系数在 \(\mathbf{Q}(\eta)\) 中的 holonomic 函数 $f(x)$. 设想为了引出矛盾假设 \(\eta \in \mathbf{Q}\) 从而 \(f(x) \in \mathbf{Q}[\![x]\!]\), 这一函数 (连同其导数) 在 \(\mathbf{Q}(x)\) 上提供了一个具有某些显式分母类型与维度的 holonomic 函数空间. 此外, 视情况而定, 该空间中还将存在其他已知的函数. 对单值性 (或其他方面) 的考虑通常允许人们表明, 这一已知函数空间在 \(\mathbf{Q}(x)\) (甚至是 \(\mathbf{C}(x)\)) 上与来自 \(f(x)\) 的函数是线性无关的. 如果来自这些函数生成的下界超出了我们定理中的上界, 我们就获得了 \(\eta\) 所期望的无理数性质.
+
+例如, 考虑我们确立 \(1, \zeta(2)\) 和 \(L(2,\chi_{-3})\) 的 \(\mathbf{Q}\)-线性无关性的任务. 理想的情况是利用一个假设的 \(\mathbf{Q}\)-线性相关性来写下一个具有分母类型 \(\tau = [1,2,\dots,n]^2\) 且在 \(\mathbf{P}^1 \setminus \{0,1,\infty\}\) 中沿着所有路径全纯延拓的 \(f(x)\), 但使得 \(f(x)\) 不在猜想 2.8.1 中的五个函数生成的 \(\mathbf{Q}(x)\)-向量空间中. 那么猜想 2.8.1 将立刻给出矛盾. 这是不可能的, 但显然我们可以退而求其次. 如前所述, 我们可以在此类函数的维度上证明 9 的边界. 只要 \(f(x)\) 及其导数的生成空间与这五个函数线性无关, 并且给出一个维度至少为 5 的补 \(\mathbf{Q}(x)\)-向量空间, 那么这样一个边界就仍然是足够的. 在实践中, 即使这在两个方面也失效了. 首先, 我们构造的函数 \(f(x)\) 仅生成一个 4 维的 holonomic 模. 其次, 我们构造的函数 \(f(x)\) 在 \(\mathbf{P}^1 \setminus \{0,1,\infty\}\) 中到 \(\delta = 1/9\) 和 \(\delta = -1/8\) 处具有额外的奇点. 事实表明, 尽管存在这些额外的奇点, 我们仍然可以将空间的维度限制在 9, 但数值仍然开发出少许空间。因此，我们必须在我们的故事中额外加入这些（以及其他）函数的积分，这就是我们最终实现定理 A 证明的方式，这也许是我们应用中最微妙的一个。然而，给出一些可以直接应用上述方法的例子似乎是有用的，首先通过重新证明 $\log 3$ 的无理数性质，和（在定理 2.11.17 中）设计一个新的无理数结果.
+
+\begin{remark}[Basic Remark 2.10.1]\label{rem:2.10.1}
+现在转向 holonomy 边界在无理数证明中的主要应用风格, 以下是 Zudilin \cite[§ 3]{Zud17} 给出的一个简单例子, 在这种情况下, \autoref{thm:2.7.10} 的情况 (ii) (而非情况 (i)) 通过考虑以下积分提供了常数 \(\log 3\) 的无理数证明:
+\begin{equation}\label{eq:2.10.2}
+  f(x) := \frac{1}{\sqrt{1 - 4x + x^2}} \int_{2 - \sqrt{3}}^{x} \frac{dt}{\sqrt{1 - 4t + t^2}} = \frac{1}{2} \sum_{n=0}^{\infty} (b_n - a_n \log 3) \cdot \frac{x^n}{2^n},
+\end{equation}
+其中 \(a_n \in \mathbf{Z}\), \([1, \dots, n] b_n \in \mathbf{Z}\), \(\forall n \in \mathbf{N}\).
+对于第二行, 我们使用了 \((1-4x+x^2)^{-1/2} \in \mathbb{Z}[\! [x/2]\!]\) 的二项式展开, 并且利用了 \(-\log(2-x+\sqrt{1-4x+x^2})\) 是 \(1/\sqrt{1-4x+x^2}\) 的一个显式原函数的事实.
+
+当然, \(f(x)\) 不是一个 $G$-函数, 因为它由于包含 \(\log 3\) 而具有超越系数; 相反, 它是 \(\mathbb{P}^1 \setminus \{2 \pm \sqrt{3}, \infty\}\) 上的两个 $G$-函数的 $G$-线性组合, 并且 \(\log 3 \in G\) 被刻画为在此类组合中给出在较小奇点 \(x = 2 - \sqrt{3}\) 处全纯的芽的唯一 (holonomic) 系数. (这通过在绕着该奇点 \(x = 2 - \sqrt{3}\) 的简单回路上两个因子都改变符号, 因而它们的乘积在 \(x = 2 - \sqrt{3}\) 处没有单值性这一事实非常清晰地展现出来.)
+
+但是我们可以扭转这一逻辑, 并将\autoref{thm:2.7.10} (从而最终是单值 holonomy 边界) 应用到 \(\log 3 \notin \mathbf{Q}\) 的无理数证明中. 证明 \(\log 3 \notin \mathbf{Q}\) 恰恰意味着证明 \(f(2x) \notin \mathbf{Q}[\! [x]\!]\). 反之, 则 \(f(2x) \in \mathbf{Q}[\! [x]\!]\) 在清除一个固定的正整数分母后, 显然具有类型 \eqref{eq:2.7.11} (满足 $r=1$ 且 \((b_1,\dots,b_r)=(1)\)). 与此同时, 根据构造, 我们有 \(f(2x)\) 在区域
+\[ x \in \Omega := \mathbf{C} \setminus \left[ \frac{2 + \sqrt{3}}{2}, \infty \right) \]
+上全纯, 其黎曼映射半径为
+\[ \rho(\Omega, 0) = 2(2 + \sqrt{3}) = 7.4641... > 4.481689... = e^{3/2}. \]
+\autoref{thm:2.7.10} (ii) 证明了每一个这样的函数 \(f(2x)\) 必须是一个有理函数. 显然, 源自 \eqref{eq:2.10.2} 的设想函数 (只有在 \(\log 3\) 是有理数时才会存在) 不是有理函数, 因而反过来, 这一论证给出了 \(\log 3\) 的无理数证明.
+
+然而, 由于 \(2 + \sqrt{3} = 3.73205\dots < 5.43656\dots = 2e\), 这些近似 \(\log 3 \approx b_n/a_n\) 中的 \(2^n[1,\dots,n]\) 分母增长速率超过了近似误差 \(\lvert\log 3 - b_n/a_n\rvert\) 的衰减速率 \(2 - \sqrt{3}\) 的倒数. 换句话说, 定理中的情况 (ii) 适用, 而情况 (i) 则不适用. 因而, 我们通过 G-函数方法得到了一个无理性证明, 而无需实际构造任何快速收敛的显式 (holonomic) 有理逼近.（尽管已知在 \(\log 3\) 的情况下存在一个更复杂的构造 \cite{Sal07, Sor16} 可以绕过这一要求, 但对于例如 \(\log p\) 来说却并非如此, 其中 \(p\) 为任何足够大的素数.）
+
+正如我们将看到的, 定理 2.5.1 的实用性在于可以使用——而非像本例中那样使用区域 \(\Omega \subset \mathbf{C}\)——多值映射, 例如 \(\varphi(z) := \lambda(z)\), 这是一个 \(\mathbf{D}\) 上的全纯函数, 且其导数 \(\lvert\varphi'(0)\rvert = 16 > e^2\) 恰好超过了此处所关注的若干线性无关性问题（包括定理 A 和 C 的情形）中共同的 \([1,\dots,n]^2\) 层分母的增长速率, 并且适用于 \(\mathbf{P}^1 \setminus \{0,1,\infty\}\) 上的 holonomic 函数.
+\end{remark}
+
+\subsection{多值情况：首批新的线性无关性结果}\label{sec:2.11}
+
+在本节中, 我们利用\autoref{thm:2.5.1} 中的多值映射 \(\varphi\) 来证明\autoref{thm:2.8.4} 的一半——即性质 (*), 并推导出一个首批新的 \(\mathbf{Q}\)-线性无关性证明, 该证明与基本注记 2.10.1 完全相似, 实际上是一个全新的结果. \autoref{thm:2.8.4} 的第二半与该应用无关, 将在下文第 6.8 节中得到证明.
+
+需要牢记的关键一点是, 我们绝对需要为 \(\varphi\) 选择多值映射.
+
+\begin{remark}[Basic Remark 2.11.1]\label{rem:2.11.1}
+Koebe 的四分之一定理表明, 对于所有满足 \(\varphi(0) = 0\) 的单值全纯映射 \(\varphi: (\mathbf{D}, 0) \to (\mathbf{C} \setminus \{1\}, 0)\), 其导数均满足 \(\lvert\varphi'(0)\rvert \le 4\), 且等号成立当且仅当 \(\varphi(z) = G(cz)\) 满足 \(|c| = 1\), 
+这里 \(G(z) := \frac{4z}{(1+z)^2} = 1 - \left(\frac{1-z}{1+z}\right)^2\) 是 Koebe 的极值函数, 即裂缝复平面 \(\mathbb{C} \setminus [1, \infty)\) 在原点处的黎曼共形映射.
+特别地, 如果我们在\autoref{thm:2.5.1} 中将 \(\varphi\) 限制为单值映射, 那么我们无法指望证明\autoref{thm:2.8.4}, 因为此时
+\[ \lvert\varphi'(0)\rvert \le 4 < 4.481689... = e^{3/2}. \]
+Koebe 映射在开单位圆盘上是 1:1 的, 但它延伸到 \(\mathbb{C} \setminus \{\pm 1\} \to \mathbb{C} \setminus \{1\}\) 上是一个 2:1 的有理映射. 将此二次有理映射与 \(\mathbb{D} \to \mathbb{C} \setminus ((-\infty, -1] \cup [1, \infty))\) 的黎曼共形映射 (即 \(\sqrt{G(z^2)} = 2z/(1+z^2)\)) 进行复合, 我们最终得到双值映射:
+\begin{equation}\label{eq:2.11.2}
+\varphi : \mathbf{D} \to \mathbf{C} \setminus \{1\}, \qquad \varphi(z) := G\left(\sqrt{G(z^2)}\right) = \frac{8(z+z^3)}{(1+z)^4} = 1 - \left(\frac{1-z}{1+z}\right)^4.
+\end{equation}
+在当前节中, 类似于 Koebe 单值映射在\autoref{thm:2.7.2} 的证明中所扮演的角色, 我们利用了双值映射 \eqref{eq:2.11.2} 的基本性质. 该映射诱导了双射 \((-1,1) \stackrel{\simeq}{\longrightarrow} (-\infty,1)\) 并且在 \(\mathbf{D} \setminus (-1,1)\) 上是双值的, 将两个连接的一半中的任意一个共形同构地映射到 \(\mathbf{C} \setminus (-\infty, 1]\) 上. 这特别表明, \autoref{prop:2.9.3} 中满足 \(\Sigma^1 := \{1, \infty\}\) 且任意 \(\Sigma^0 \subset (-\infty, 1)\) 的情形 \(\varphi : (\mathbf{D}, 0) \to (\mathbf{C} \setminus \{1\}, 0)\) 可以具有大至 \(\lvert\varphi'(0)\rvert = 8\) 的导数.
+\end{remark}
+
+这一构造的延续解释了模 \(\lambda\) 映射在本文中的核心作用:
+
+\begin{remark}[Basic Remark 2.11.3]\label{rem:2.11.3}
+我们可以通过将 \(G(z) = 4z/(1+z)^2\) 升级为 
+
+\[ G\left(\sqrt{G(z^2)}\right) = 8(z+z^3)/(1+z)^4 \]
+
+随后与复平面 \(\mathbf{C}\) 中除去从单位根 \(z=\pm i\)（即提供映射 \eqref{eq:2.11.2} 额外零点的点, 我们在 \(\Sigma^0 = \{0\}\) 中希望规避这些点）以及 \(z=\pm 1\)（提供映射 \eqref{eq:2.11.2} 的值 1 和 \(\infty\), 我们在 \(\Sigma^1 = \{1,\infty\}\) 中希望规避这些点）出发的四个标准外部射线并集的余集上的黎曼映射进行复合, 来重复这一过程. 
+然而, 这一 \(\mathbf{Z}/4\) 旋转对称裂缝区域的黎曼映射正好是 \(\sqrt[4]{G(z^4)}\). 其结果是四值映射:
+\begin{equation}\label{eq:2.11.4}
+\varphi: \mathbf{D} \to \mathbf{C} \setminus \{1\}, \qquad \varphi(z) := G\left(\sqrt{G\left(\sqrt{G(z^4)}\right)}\right) = \frac{8\sqrt{2}\left(1+z^2\right)^2\sqrt{1+z^4}}{\left(z\sqrt{2}+\sqrt{1+z^4}\right)^4},
+\end{equation}
+它具有更大的导数 \(\varphi'(0) = 8\sqrt{2}\), 并且在 \(\Sigma^0 = \{0\}\) 且 \(\Sigma^1 = \{1, \infty\}\) 的情况下依然适用于\autoref{prop:2.9.3}.
+
+继续这些迭代, 我们发现带有 \(n\) 次平方根的嵌套映射:
+\begin{equation}\label{eq:2.11.5}
+\varphi_n : \mathbf{D} \to \mathbf{C} \setminus \{1\}, \qquad \varphi_n(z) := G\left(\sqrt{G\left(\sqrt{G\left(\sqrt{\dots G(z^{2^n})}\right)}\right)}\right)
+\end{equation}
+在\autoref{prop:2.9.3} 的 \(\Sigma^0 = \{0\}, \Sigma^1 = \{1, \infty\}\) 情况下依然适用, 并且具有导数:
+\begin{equation}\label{eq:2.11.6}
+\varphi'_n(0) = 4^{1 + \frac{1}{2} + \frac{1}{4} + \dots + \frac{1}{2^n}} = 16^{1 - 2^{-n-1}}.
+\end{equation}
+这构造了 \(\mathbf{C}[\! [q]\!]\) 中的一族 2-可解代数形式幂级数 \(\varphi_0(q), \varphi_1(q), \varphi_2(q), \dots\), 它以 Koebe 映射 \(\varphi_0(q) = 4q/(1+q)^2\) 开始, 并在系数和在 \(q \in \mathbf{D}\) 上的局部一致意义下收敛到模 \(\lambda\) 映射 \eqref{eq:1.2.8}. 这一事实在本质上已经由 Landen、Legendre 和 Gauss 发现 \cite[§ 1]{BB98}, 表现为算术-几何平均迭代 \((a,b) \leadsto \left(\frac{a+b}{2}, \sqrt{ab}\right)\). \(\triangle\)
+\end{remark}
+
+我们在\autoref{thm:2.8.4} 的证明中基于来自基本注记 2.11.1 的双值映射例子：
+\[ \varphi(z) := G\left(\sqrt{G(z^2)}\right) = 8(z+z^3)/(1+z)^4 \]
+关键在于, 该有理映射在 \(\mathbf{D}\) 上的限制具有相当大的导数 \(\varphi'(0) = 8\), 并且能够诱导双射 \((-1,1) \xrightarrow{\simeq} (-\infty,1)\) 以及共形同构 \(\mathbf{D} \cap \{\operatorname{im}(z) > 0\} \xrightarrow{\simeq} \mathbf{C} \setminus (-\infty,1]\) 和 \(\mathbf{D} \cap \{\operatorname{im}(z) < 0\} \xrightarrow{\simeq} \mathbf{C} \setminus (-\infty,1]\).
+
+该基本函数的有理性质也为 holonomy 边界 \eqref{eq:2.5.4} 中出现的双重积分提供了一个显式求值公式.
+
+\begin{lemma}\label{lem:2.11.7}
+映射 \(\varphi(z) := 8(z+z^3)/(1+z)^4\) 的 Bost--Charles 双重积分具有以下显式评估:
+\begin{equation}\label{eq:2.11.8}
+  \iint_{\mathbf{T}^2} \log \lvert\varphi(z) - \varphi(w)\rvert \,\mu_{\text{Haar}}(z)\mu_{\text{Haar}}(w) = \log 8 + \frac{4G}{\pi},
+\end{equation}
+其中 \(G := L(2, \chi_{-4})\) 是 Catalan 常数.
+\end{lemma}
+
+\begin{proof}
+这一次, 为了与\autoref{thm:2.7.1} 中的单值情况的证明进行对比, 我们具有如下因子分解:
+\begin{equation}\label{eq:2.11.9}
+\frac{\varphi(z) - \varphi(w)}{z - w} = 8 \frac{(1 - zw)(1 + ix - iy - xy)(1 - ix + iy - xy)}{(1 + z)^4 (1 + w)^4},
+\end{equation}
+它在单位多圆盘 \(\mathbf{D}^2\) 上确实具有零点: Bost--Charles 的“溢出”项（Bost-Charles *overflow*） \cite[§ 5]{BC22} 是正的, 且等于 Mahler 测度:
+\[
+\begin{aligned}
+m(1+x^2+y^2-4xy+x^2y^2) = {} & m(1+ix-iy-xy) + m(1-ix+iy-xy) \\
+= {} & 2m(1+x+y-xy) = 4G/\pi,
+\end{aligned}
+\]
+这里两个积分分别作了单模变量代换 \((x, y) \rightsquigarrow (\pm ix, \mp iy)\), 且最后一个求值公式源自 Smyth \cite{Boy98}.
+\end{proof}
+
+我们将\autoref{thm:2.8.4} 的证明分为两部分：一是定理表述中关于在所有解析开拓中跨越 \(\delta\) 时的亚纯延拓性质 (*); 二是利用性质 (*) 导出完整形式 \eqref{eq:2.8.5}. 我们现在证明第一部分——性质 (*), 并在下文第 2.11.12 节中给出一个在 \(\mathbf{Q}\)-线性无关性中的范例应用. 第二部分更为微妙, 将在第 6.8 节中基于更精细的 holonomy 边界定理 6.0.2 予以证明.
+
+\begin{proof}[\autoref{thm:2.8.4}性质 (*) 的证明]
+设想相反的情形, 假设存在一个 \(\delta \in (-\infty,1) \setminus \{0\}\) 使得 \(f(x)\) 在 \(|x| < 1\) 内收敛, 并且可以沿着 \(\mathbf{P}^1 \setminus \{0,\delta,1,\infty\}\) 中的所有路径进行解析开拓, 且最终具有绕着 \(x = \delta\) 的非平凡局部单值性.
+考虑 Möbius 变换 \(x \mapsto x/(x-1)\), 它保持级数展开的原点不变, 保持分母类型 \([1,\dots,n][1,\dots,n/2]\) 不变, 交换奇点 \(1 \leftrightarrow \infty\), 并将 \(\delta \leftrightarrow \delta/(\delta-1)\) 映射到一个不同的奇点（由于 \(\delta \neq 2\)）, 且该奇点同样落在 \((-\infty,1)\) 内.
+那么形式幂级数 \(f(x/(x-1)) \in \mathbf{Q}[\![x]\!]\) 具有与 \(f(x)\) 类似的性质, 只是现在允许它沿着 \(\mathbf{P}^1 \setminus \{0,\delta/(\delta-1),1,\infty\}\) 中的所有路径解析开拓, 且在绕着 \(x = \delta/(\delta-1)\) 时具有非平凡的局部单值性.
+由于 \(\delta \neq \delta/(\delta-1)\), 容易推导出如下五个具有分母类型 \([1,\dots,n][1,\dots,n/2]\) 的函数在 \(\mathbf{C}(x)\) 上是线性无关的:
+\begin{equation}\label{eq:2.11.10}
+1, \quad \log(1-x), \quad \log^2(1-x), \quad f(x), \quad f\left(\frac{x}{x-1}\right).
+\end{equation}
+
+我们在\autoref{thm:2.5.1} 中应用对应的 \(5 \times 2\) 数组:
+\[ \mathbf{b} := \left( \begin{array}{ccccc} 0 & 1 & 1 & 1 & 1 \\ 0 & 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \end{array} \right)^{\mathrm{t}}, \]
+它对应于有序列表 \eqref{eq:2.11.10} 中的分母类型.
+我们计算得到:
+\begin{equation}\label{eq:2.11.11}
+\tau(\mathbf{b}) = \frac{1 \cdot 0 + 3 \cdot 1 + (5 + 7 + 9) \cdot (3/2)}{5^2} = \frac{69}{50} = 1.38.
+\end{equation}
+
+对于映射 \(\varphi\), 我们选择:
+\[ \varphi(z) := \frac{8(z+z^3)}{(1+z)^4} = 8z - 32z^2 + 88z^3 - 192z^4 + \dots, \]
+其基本内涵已在基本注记 2.11.1 中讨论. 该映射满足\autoref{prop:2.9.3} 对于 \(\Sigma^1 := \{1, \infty\}\) 且 \(\Sigma^0 := \{0, \delta, \delta/(\delta - 1)\} \subset (-\infty, 1)\) 的准则, 并且在此我们需要将 \(f(x)\) 替换为 \(Q(x)f(x)\)（对于某个非零多项式 \(Q \in \mathbf{C}[x] \setminus \{0\}\)）, 使得 \(Q(x)f(x)\) 与 \(Q(x)f(x/(x-1))\) 沿着 \(\mathbf{D} \setminus \{0\}\) 中所有路径的 \(\varphi_*\)-图像解析开拓下是全纯的（而仅是亚纯的）. 
+对于这五个函数 \eqref{eq:2.11.10} 的 \(\mathbf{Q}(x)\)-线性生成空间 \(\mathcal{H}\), \autoref{prop:2.9.3} 从而给出 \(\varphi^*\mathcal{H} \subset \mathcal{M}(\mathbf{D})\), 满足了\autoref{thm:2.5.1} 的解析性假设.
+
+由此, 根据\autoref{lem:2.11.7}, holonomy 边界 \eqref{eq:2.5.4} 给出:
+\[ 5 = m \le \frac{\log 8 + (4G/\pi)}{\log 8 - 69/50} = 4.640395\dots, \]
+这产生了一个矛盾.
+\end{proof}
+
+\subsubsection{一些混合周期}\label{sec:2.11.12}
+
+我们对刚刚证明的定理给出一个在无理性方面的应用.
+
+\begin{lemma}\label{lem:2.11.13}
+定义
+\[ H_A(x) := \frac{1}{\sqrt{1 - 4x}} \in \mathbf{Z}[\! [x]\!], \]
+\[ H_B(x) := \frac{1}{\sqrt{1 - 4x}} \int_0^x \frac{1}{1 - t} \frac{1}{\sqrt{1 - 4t}} dt \in \mathbf{Q}[\! [x]\!], \]
+\[ H_C(x) := \frac{1}{\sqrt{1 - 4x}} \int_0^x \frac{\log(1 - t)}{t\sqrt{1 - 4t}} dt \in \mathbf{Q}[\! [x]\!], \]
+\[ H_D(x) := \frac{1}{\sqrt{1 - 4x}} \int_0^x \frac{\log(1 - t)}{1 - t} \frac{1}{\sqrt{1 - 4t}} dt \in \mathbf{Q}[\! [x]\!]. \]
+那么 \(H_A(x)\), \(H_B(x)\), \(H_C(x)\) 和 \(H_D(x)\) 的泰勒级数的收敛圆盘为 \(|x| < 1/4\), 并且可以解析开拓为沿着所有在 \(\mathbf{P}^1 \setminus \{0, 1/4, 1, \infty\}\) 中的路径的全纯函数. 它们的分母类型分别为 \(1\) (对于 \(H_A\)); \([1, 2, \dots, n]\) (对于 \(H_B\)); 并且 \([1, 2, \dots, n][1, 2, \dots, n/2]\) (对于 \(H_C\) 和 \(H_D\)). 一个绕着奇异点 \(x = 1/4\) 逆时针运动的简单回路会诱导以下单能局部单值算子 (unipotent local monodromy operator):
+\begin{equation}\label{eq:2.11.14}
+  T(H_A) = - H_A = H_A - 2H_A,
+\end{equation}
+\[ T(H_B) = H_B - 2L(1, \chi_{-3})H_A, \]
+\[ T(H_C) = H_C + \frac{\pi^2}{9}H_A, \]
+\[ T(H_D) = H_D - 2(L(1, \chi_{-3}) \log 3 - L(2, \dots, -3))H_A. \]
+\end{lemma}
+
+我们还有
+\begin{equation}\label{eq:2.11.15}
+  L(1,\chi_{-3}) = \frac{\pi}{3\sqrt{3}}.
+\end{equation}
+
+\begin{proof}
+所有结论都是直接的；我们在此指出关于 $x=1/4$ 处局部单值算子 $T$ 的计算. 第一个等式 $T(H_A)=-H_A$ 是显然的，因为解析开拓必须是唯一的代数共轭. 关于 $T(H_B)$ 的等式则由 \eqref{eq:2.11.15} 以及闭式积分求解（并利用 $\arctan(1/\sqrt{3})=\pi/6$ 进行分部积分）得到:
+\begin{equation}\label{eq:2.11.16}
+H_B(x) = \frac{\pi}{3\sqrt{3}} H_A(x) - \frac{2}{\sqrt{3}} \frac{\arctan\sqrt{\frac{1-4x}{3}}}{\sqrt{1-4x}},
+\end{equation}
+其中第二项在 $x=1/4$ 处是正则的. 一般地，正如基本注记 2.10.1 中所讨论的，对于 $x=1/4$ 附近的任何亚纯函数 $f(x)$，函数 $\frac{1}{\sqrt{1-4x}} \int_{1/4}^x \frac{f(t)}{\sqrt{1-4t}} dt$ 在 $x=1/4$ 附近都是亚纯的（在单值算子 $T$ 作用下，这两个因子都改变符号）. 因此，$x=1/4$ 处的单值算子 $T$ 作用如下:
+\[ T(H_A) = -H_A = H_A - 2H_A, \]
+\[ T(H_B) = H_B - 2H_A \int_0^{1/4} \frac{1}{1 - t} \frac{1}{\sqrt{1 - 4t}} dt, \]
+\[ T(H_C) = H_C - 2H_A \int_0^{1/4} \frac{\log(1 - t)}{t\sqrt{1 - 4t}} dt, \]
+\[ T(H_D) = H_D - 2H_A \int_0^{1/4} \frac{\log(1 - t)}{1 - t} \frac{1}{\sqrt{1 - 4t}} dt. \]
+直接进行积分可以得到 holonomy 系数:
+\[ \int_0^{1/4} \frac{1}{1-t} \frac{1}{\sqrt{1-4t}} dt = \frac{\pi}{3\sqrt{3}} = L(1, \chi_{-3}), \]
+这重新确认了 \eqref{eq:2.11.16}，且
+\[ \int_0^{1/4} \frac{\log(1-t)}{t\sqrt{1-4t}} \, dt = -\frac{\pi^2}{18}. \]
+最后，进行一个稍显复杂的积分——或者借助计算软件包——可以求得:
+\[ V(x) := \int \frac{\log(1-x)}{1-x} \frac{1}{\sqrt{1-4x}} \, dx \]
+的值为
+\[
+\begin{aligned}
+& -\frac{2i}{\sqrt{3}} \left( \arctan \sqrt{\frac{1-4x}{3}} \left( \arctan \sqrt{\frac{1-4x}{3}} - i \left( \log \frac{4(1-x)}{\left(1+\sqrt{\frac{1-4x}{3}}\right)^2} \right) \right) \right) \\
+& +\frac{2i}{\sqrt{3}} \left( \operatorname{Li}_2 \left( \frac{\sqrt{\frac{4x-1}{3}} - 1}{\sqrt{\frac{4x-1}{3}} + 1} \right) \right),
+\end{aligned}
+\]
+于是借助如下常用公式:
+\[ \arctan \frac{1}{\sqrt{3}} = \frac{\pi}{6}, \]
+\[ L(1, \chi_{-3}) = \frac{\pi}{3\sqrt{3}}, \]
+\[ \operatorname{Li}_2(-1) = -\frac{\pi^2}{12}, \]
+\[ \operatorname{Li}_2\left(e^{2\pi i/3}\right) = -\frac{\pi^2}{18} + i\frac{\sqrt{3}}{2}L(2, \chi_{-3}) \]
+便可直接算得所需的 holonomy 系数:
+\[ \int_0^{1/4} \frac{\log(1-t)}{1-t} \frac{1}{\sqrt{1-4t}} dt = V(1/4) - V(0) = L(1,\chi_{-3}) \log 3 - L(2,\chi_{-3}). \]
+由此积分计算便可推出引理. 我们在上述推导中使用的特殊值 \eqref{eq:2.11.15} 恰好是虚二次域 $\mathbf{Q}(\sqrt{-3})$ 的 Dirichlet 类数公式.
+\end{proof}
+
+\begin{theorem}\label{thm:2.11.17}
+四个周期数
+\[ 1, \quad \frac{\pi}{\sqrt{3}}, \quad \pi^2, \quad 3L(2,\chi_{-3}) - \frac{\pi}{\sqrt{3}}\log 3 \]
+是 \(\mathbf{Q}\)-线性无关的.
+特别地, Mahler 测度
+\begin{equation}\label{eq:2.11.18}
+  m\left(\frac{(1+x+y)^4}{3}\right) = \int_0^1 \int_0^1 \log\left\lvert\frac{(1+e^{2\pi i s} + e^{2\pi i t})^4}{3}\right\rvert ds dt \notin \mathbf{Q}
+\end{equation}
+是无理数.
+\end{theorem}
+
+\begin{proof}
+根据引理 \ref{lem:2.11.13}，$\mathbf{C}$-线性组合
+\begin{equation}\label{eq:2.11.19}
+  f(x) = aH_A(x) + bH_B(x) + cH_C(x) + dH_D(x)
+\end{equation}
+在奇异点 $x = 1/4$ 处超收敛 (overconverge) 当且仅当
+\[ a + b\frac{\pi}{3\sqrt{3}} - c\frac{\pi^2}{18} + d\left(\frac{\pi}{3\sqrt{3}}\log 3 - L(2,\chi_{-3})\right) = 0. \]
+如果这一关系式对于某个非零整数向量 $(a, b, c, d) \in \mathbf{Z}^4 \setminus \{(0, 0, 0, 0)\}$ 成立，那么组合 \eqref{eq:2.11.19} 将满足定理 2.8.4 中关于 $\delta := 1/4$ 的全部条件. 然而显然，$f(x)$ 并非在 $\mathbf{P}^1 \setminus \{0, 1, \infty\}$ 上而仅在 $\mathbf{P}^1 \setminus \{0, \delta, 1, \infty\} = \mathbf{P}^1 \setminus \{0, 1/4, 1, \infty\}$ 上是 holonomic 的.
+
+特别地，Mahler 测度 \eqref{eq:2.11.18} 的无理性可以直接由 Smyth 公式 \eqref{eq:1.1.2} 得到，我们可以将其重写为:
+\[
+\begin{aligned}
+m\left(\frac{(1+x+y)^4}{3}\right) = {} & 4m(1+x+y) - \log 3 \\
+= {} & \frac{3\sqrt{3}}{\pi}L(2,\chi_{-3}) - \log 3 = \frac{3L(2,\chi_{-3}) - \frac{\pi}{\sqrt{3}}\log 3}{\pi/\sqrt{3}}.
+\end{aligned}
+\]
+在假设定理 2.5.1（我们已经证明了它蕴含定理 2.8.4 所需性质 (*)）的前提下，这完成了证明.
+
+定理 2.5.1 将在第 7 节中得到证明, 而完整的定理 2.8.4（在前面的论证中我们其实不需要它）将在第 6.8 节中完成.
+\end{proof}
+
+\subsection{我们如何证明 holonomy 边界}\label{sec:2.12}
+
+我们区分三个主要步骤:
+\begin{enumerate}
+  \item[(i)] 设置一个辅助多项式模 \((Q_1, \dots, Q_m)\), 借此我们考虑形如 \(F := \sum_{i=1}^m Q_i f_i\) 的辅助函数或其多元推广形式.
+  \item[(ii)] 对辅助多项式 \(Q_i\) 的未知系数安排 Dirichlet 抽屉原理或 Thue--Siegel 引理, 从而使得关联的函数 $F$ 在 $x=0$ 处满足高阶消逝.
+  \item[(iii)] 对辅助函数 $F$ 的最低阶系数进行丢番图分析 (Diophantine analysis).
+\end{enumerate}
+
+在特别有利的情况下, 如 Hermite 对指数函数的逼近 \cite{Her1874, Her1893} 或随之而来的对对数和二项式函数的逼近 \cite{Chu79, Chu83b}, 步骤 (ii) 被上述多项式 \(Q_i\) 的显式构造所替代. 一些最简单的例子在第 3.3 节中讨论. 当这些构造可行时, 它们通常会产生比 (ii) 更强的定量结果. 然而, 对于我们复杂的应用以及抽象定理而言, 某种形式的 Dirichlet 抽屉原理都是必不可少的.
+
+最简单的安排可以得到关于 $\mathbf{Q}(x)$-线性无关函数的最大数量 $m$ 的*某种*（相当微弱的）holonomy 边界，其内容如下. 经常使用的 Siegel 引理推论 \cite[Lemma 2.9.1]{BG06} 表明，对于一个由 $M$ 个线性齐次方程组成的线性系统，其中系数均为有理整数，其绝对值以参数 $\alpha$ 的指数级为上界，而自由变量的数量 $N$ 不小于要求解的方程数量的两倍（$N > 2M$），则存在分量均为有理整数且不全为零的解，其分量绝对值以 $\max(\alpha, \log N)$ 的指数级为上界.（一旦自由变量的数量严格超过方程的数量，Cramer 公式就可以显式地构造出线性系统的非零解; 但该解的行列式表达式通常给出一个以 $M\alpha$ 而非 $\alpha$ 为指数级的边界; 在我们 $M \simeq \alpha$ 的设定中，这意味着 Cramer 解是以 $\alpha^2$ 而非 $\alpha$ 的指数级为上界的. 对于 holonomic 函数的 Hermite-Padé 逼近而言，这并不是方法论上的限制，而实际上是大多数自然发生的情形中的正确阶数; 关于代数情形的完整研究，参见 \cite{BC97b}.）
+
+遵循 Thue \cite[§ 11]{Thu77} 的工作，通过对于一个很大的常数 $C$ 使用 $N = (1+C)M$ 个自由变量，我们可以将线性系统解的上界从关于 $\alpha$ 的指数级改进为关于 $\alpha$ 的渐近子指数级. 此时 Siegel 引理提供了大小以 $\exp\left(O\left(\alpha/C\right)\right)$ 为界的非平凡有理整数解; 在先让 $\alpha\to\infty$ 再让 $C\to\infty$ 的渐近过程中，该上界变为子指数级的. 因此，如果我们有一个分母类型为 $A^{n+1}[1,\ldots,bn]^{\sigma}$ 的 $\mathbf{Q}(x)$-线性无关集合 $f_1,\ldots,f_m$，其中 $m$ 相对于 $A,b,\sigma$ 以及 $f_i(x)$ 的最小收敛半径而言足够大（这最终在引理 6.2.6 中于我们证明精细化边界所需的高维设定下进行处理），则 Siegel 引理保证存在一个非零辅助函数
+\begin{equation}\label{eq:2.12.0}
+F(x) := \sum_{i=1}^{m} Q_i(x) f_i(x) = \beta x^n + O(x^{n+1}) \in \mathbf{Q}[x], \quad \beta \in \mathbf{Q}^{\times}
+\end{equation}
+它在 $x = 0$ 处消逝到某个高阶 $n$，同时其所涉及的整系数多项式 $Q_i \in \mathbf{Z}[x]$ 的次数与系数在对数尺度上\footnote{这意味着所有这些多项式的次数都小于 $cn$，且其有理整数系数的绝对值满足 $\ll e^{cn}$.} 小于消逝阶数 $n$ 的任意指定的线性速率 $cn$.
+
+但是，“任意指定的线性速率 $cn$”的含义是，当独立函数 $f_i(x)$ 的数量 $m$ 被设为相应地大时，可以达到任意小的 $c > 0$: 从而为辅助多项式 $m$ 元组 $(Q_1, \dots, Q_m) \in \mathbf{Z}[x]_{\deg \leq D}^{\oplus m}$ 提供了多达 $N = mD$ 个待定系数. 将此定量化最终将转化为类似于 \eqref{eq:2.5.4} 的 holonomy 边界. 为了解释这些边界是如何导出的，我们注意到，如果函数 $f_i(x)$ 具有分母类型 $[1, \dots, b_1 n] \cdots [1, \dots, b_r n]$，那么由于辅助多项式 $Q_i(x)$ 具有整数系数，最低阶系数 $\beta \in \mathbf{Q}^{\times}$ 是该分母下的某个非零有理数，因此
+\begin{equation}\label{eq:2.12.1}
+|\beta| \ge \frac{1}{[1, \dots, b_1 n] \cdots [1, \dots, b_r n]}.
+\end{equation}
+
+根据素数定理，这给出了关于该前导系数的如下丢番图下界：
+\[ e^{-(b_1+\dots+b_r)n+o(n)}. \]
+现在假设我们有一个全纯映射 $\varphi: (\overline{\mathbf{D}},0) \to (\mathbf{C},0)$，其导数满足 $|\varphi'(0)| > e^{b_1 + \dots + b_r}$，并且使得所有的 $f_i(\varphi(z)) \in \mathbf{C}[\! [z]\!]$ 在闭单位圆盘 $z \in \overline{\mathbf{D}}$ 的一个邻域内都是全纯的（收敛的）. 那么 $G(z) := z^{-n}F(\varphi(z)) = \varphi'(0)^n\beta + O(z)$ 在闭单位圆盘的邻域内是一个全纯函数，但在该圆盘的中心 $z=0$ 处取得指数级大的值：
+\begin{equation}\label{eq:2.12.2}
+|G(0)| = |\varphi'(0)|^n |\beta| \ge \exp\left(\left(\log|\varphi'(0)| - \sum_{h=1}^r b_h\right) n + o(n)\right).
+\end{equation}
+然而，由于根据构造，多项式 $Q_i(x)$ 的次数小于 $cn$ 且其系数小于 $e^{cn}$，我们在此构造中知道，在单位圆周 $\mathbf{T}$ 上，全纯函数 $G(z)$ 具有如下逐点上界：
+\begin{equation}\label{eq:2.12.3}\tag{2.12.3}
+\sup_{\mathbf{T}} |G| \le \exp\left(O\left(c\left(\max_{\mathbf{T}} \log |\varphi|\right) \cdot n\right)\right).
+\end{equation}
+
+因为在假设 $m$ 相应地大时，我们可以使系数 $c>0$ 任意小，但全纯函数的最大模原理约束了 \eqref{eq:2.12.2} 的左侧不能大于 \eqref{eq:2.12.3} 的左侧，我们对下界 \eqref{eq:2.12.2} 中正速率的假设对我们的 $\mathbf{Q}(x)$-线性无关函数 $f_i(x)$ 的最大数量 $m$ 设定了一个上限. 该维数边界仅取决于全纯映射 $\varphi$ 以及通过 \eqref{eq:2.12.2} 出现的正差值 $\log |\varphi'(0)| - \sum_{h=1}^r b_h$. 由于其证明的丢番图方式，我们称其为算术 holonomy 边界 (arithmetic holonomy bound).
+
+为了简化这一概述，我们假设 $f_i(\varphi(z))$ 是闭单位圆盘邻域内的全纯函数而非亚纯函数. 一般的亚纯情形可以通过完全相同的方式处理，只需将全纯函数 $G(z)$ 的定义修改为 $G(z) := h(z)z^{-n}F(\varphi(z))$，其中 $h \in \mathcal{O}(\overline{\mathbf{D}})$ 是闭单位圆盘邻域内的全纯函数，满足 $h(0) = 1$，且使得所有的 $h(z)f_i(\varphi(z))$ 在该圆盘上同时全纯.
+
+特别地，这一概述证明了 André 的 holonomicity 判据（推论 2.6.1），因为根据链式法则，推论 2.6.1 中所有 $f(x)$ 的 $\mathbf{Q}(x)$-线性张成空间在求导算子 $d/dx$ 下是封闭的. 这就是 holonomy 如何从有限性定理中产生的原因.
+
+\subsection{精细化方法}\label{sec:2.13}
+
+本小节是比第 2 节其余部分更深入、技术性更强的介绍, 它作为我们证明 holonomy 边界思想的更详细总结. 它的内容并非这些证明在逻辑上所严格必需的. 因此, 读者可以选择跳过以下任何部分, 并在稍后需要时再行参考.
+
+我们在第 2.12 节中刚刚描述的初等证明方法在丢番图分析领域是完全标准的. 在 Dèbes \cite{Deb86} 和 André \cite[§ VIII.3]{And89} 的著作中，它被称为 Gelfond 方法，并在 David 和 Gregory Chudnovsky 具有开创性的工作 \cite{CC85b, CC85c} 中首次应用于算术代数化. 我们的附录 B 通过 Perelli 和 Zannier 的工作 \cite{PZ84} 的视角精细化了这些想法，以在我们的语境下重新导出边界 \eqref{eq:2.2.3}，包括通过单变量分析实现的系数由 $e \rightsquigarrow 2$ 的降低. 正如在第 2.3 节中所提到的，对于我们在无理数方面的应用，我们有两条可供选择的 holonomy 边界路线：一条通过高维技术（定理 6.0.2，其蕴含 \eqref{eq:2.5.5}），另一条通过单变量斜率方法（定理 7.0.1，其蕴含定理 2.5.1，以及其加强版定理 7.1.6）. 我们现在讨论如何改进前面的方案以分别获得这两条精细化的结果. 我们从基于多元丢番图逼近的定理 6.0.2 的证明想法开始. 其基本想法可以总结为：我们的多变量评估模将完全保留类似于附录 B 的本质上的一维特征的简单性，同时又具有任何带有 $d \to \infty$ 变量的丢番图逼近方案中固有的大数定律的所有附加灵活性.
+
+\subsubsection{可能的消逝阶数}\label{sec:2.13.1}
+我们可以用不同的方式来表述上述方案的步骤 (i). 我们同样可以很容易地在多元框架下进行表述，其中 $\mathbf{x} := (x_1, \dots, x_d)$，正如我们将要看到的，在处理单变量评估模的 $d$ 阶笛卡尔积时，这最终对证明非常有利. 给定:
+\begin{itemize}
+  \item 一个 $\mathbf{Q}(\mathbf{x})$-线性无关的 $\mathbf{Q}[\![\mathbf{x}]\!]$ 形式幂级数集合 $\{f_{\mathbf{i}}(\mathbf{x})\}_{\mathbf{i}\in I}$，其指标集为有限集 $I$，在本文中我们将 $I$ 视为 $\{1,\dots,m\}^d$ 的子集;
+  \item 以及一个有界的 Lebesgue 可测子集 $\Omega \subset [0, \infty)^d$.
+\end{itemize}
+我们可以通过引入参数 $D$，并让 $(Q_1, \dots, Q_m)$（或者在更一般的意义下的 $(Q_i)_{i \in I}$）在辅助多项式模
+\[ E_{D,\Omega}^I := \operatorname{Span}_{\mathbf{Z}} \left\{ \mathbf{x}^{\mathbf{k}} \, : \, \mathbf{k} \in (D \cdot \Omega) \cap \mathbf{Z}^d \right\}^{\oplus I} \]
+中变化，来表达上述论证. 这是一个秩为 $R_{D,\Omega}^I = (1+o(1))(\#I)\operatorname{vol}(\Omega)D^d$ 的自由 $\mathbf{Z}$-模. 对于原始的 $d=1$、$I=\{1,\dots,m\}$ 且 $\Omega=[0,1)$ 的情形，我们将记号简化为 $E_D = \mathbf{Z}[x]_{< D}^{\oplus m}$，其秩为 $R_{D,[0,1)}^{\{1,\dots,m\}} = mD$.
+
+$f_{\mathbf{i}}(\mathbf{x})$ 满足 $\mathbf{Q}(\mathbf{x})$-线性无关性条件正好意味着，对于所有的 $D$ 和 $\Omega$，评估同态
+\[ \psi_D: E_{D,\Omega}^I \hookrightarrow \mathbf{Q}[\![\mathbf{x}]\!], \qquad (Q_{\mathbf{i}})_{\mathbf{i} \in I} \mapsto \sum_{\mathbf{i} \in I} Q_{\mathbf{i}} f_{\mathbf{i}} \in \mathbf{Q}[\![\mathbf{x}]\!] \]
+是单射.（我们在 $\psi_D$ 的记号中省略了 $\Omega$ 和 $I$，因为在整个过程中它们最终都将被视为固定的，而 $D$ 是第一个被设为趋于无理的渐近参数 $\to \infty$.）
+
+在第 2.12 节的大纲中，我们考虑了该评估映射的值域中的某些在 $x=0$ 处消逝阶数恰好为 $n$ 的幂级数 $F(x) = \beta x^n + O(x^{n+1})$（对应于 $d=1$ 的情形）. 但是，任何 $F = \sum_{\mathbf{i}} Q_{\mathbf{i}} f_{\mathbf{i}} \in E_{D,\Omega}^I$ 中可能的前导阶指数 $\mathbf{n} \in \mathbf{N}^d$ 恰好占用 $R_{D,\Omega}^I = \dim_{\mathbf{Q}}(E_{D,\Omega}^I \otimes \mathbf{Q})$ 个可能性，这些可能性仅取决于评估模 $(E_D, \psi_D)$，而不取决于特定的元素 $(Q_{\mathbf{i}}) \in E_{D,\Omega}^I$. 这些（消逝）过滤跳跃（filtration jumps）\footnote{它们也可以被称为评估模的\emph{相继极小值} (successive minima)，正如 \cite{Ber99} 中从代数曲线上的 Weierstrass 隙 (Weierstrass gaps) 中汲取灵感那样.} 构成了 $\mathbf{N}^d$ 的一个大小为 $R_{D,\Omega}^I$ 的子集，我们将在第 3.1.3 节中对其进行正式定义.
+
+对于本文的最终结果，我们最终仅考虑单变量的常微分方程. 高维模 $E_{D,\Omega}^I$ 的引入来源于单变量模 $E_D = E_{D,[0,1)}^{\{1,\ldots,m\}}$（由定理 2.5.1 中的函数 $f_1,\ldots,f_m \in \mathbf{Q}[\! [x]\!]$ 生成）的 $d$ 阶笛卡尔积:
+\begin{equation}\label{eq:2.13.2}
+E_{D,[0,1)^d}^{\{1,\ldots,m\}^d} = E_D \times \cdots \times E_D, \quad f_{\mathbf{i}}(\mathbf{x}) := \prod_{s=1}^d f_{i_s}(x_s), \quad \text{秩为 } (mD)^d,
+\end{equation}
+及其合适的子模——这就是 $d \to \infty$ 极限下测度集中现象的思想——即通过限制在统计上占主导地位的子集 $\Omega \subset [0,1)^d$ 和 $I \subset \{1,\ldots,m\}^d$ 上得到.
+
+我们在本文中相比于 \cite[第 2 节]{CDT21} 取得的新进展的一个基本想法是一个关于评估模的笛卡尔积形成与消逝过滤跳跃集合之间可交换性的简单引理（推论 3.1.11）. 具体而言，评估模 \eqref{eq:2.13.2} 的 $(mD)^d$ 个过滤跳跃位于形式为 $S^d$ 的笛卡尔幂集上，其中 $S \subset \mathbb{N}$ 且满足 $\#S = mD$.
+
+\subsubsection{微分代数方法与函数劣逼近性}\label{sec:2.13.3}
+在一般 holonomy 边界的证明中，我们使用了关于消逝过滤跳跃更精确的信息. 这在传统的超越数论证明中承担了“零点估计” (zero estimates) 的角色. 在我们的语境中，后者可以被视为关于劣逼近性的 Schmidt 子空间定理的函数模拟.（事实上，参见 \cite{Wan04} 中关于代数函数的情形.）而与微分代数的 Liouville 丢番图不等式更为相似的更简单但更粗糙的版本，则包括 Siegel-Shidlovsky 关于 E-函数特殊值定理的历史证明 \cite{Shi59} 中的典型 Shidlovsky 引理 \cite[§ 3.5, Lemma 8]{Shi89}，以及文献中可获得的众多有效可计算的变体 \cite[第 11 节]{Chu80}\cite{BB85}\cite{BCY04}\cite[第 2 节]{Ber12}. 一般劣逼近定理曾被称为 Kolchin 问题（\cite{Kol59}，参见问题 3.2.7），之后由 David 与 Gregory Chudnovsky \cite{CC83} 以及 Osgood \cite{Osg85} 针对 $f_1, \dots, f_m$ 为 holonomic 的本质情形独立证明. 它的陈述等同于说，消逝过滤跳跃集合 $S$ 接近于一般跳跃 $\{0, 1, \dots, mD-1\}$，其含义为
+\[ S \subset \{0, 1, \dots, mD + o_{f_1, \dots, f_m}(D)\}, \quad \#S = mD. \]
+在渐近意义上，这几乎确定了与本文相关的所有 holonomic 评估模的消逝过滤跳跃：这些模指的是满足 $\operatorname{vol}(\Omega) = 1 - o_{d \to \infty}(1)$ 的 $\Omega \subset [0,1)^d$、满足 $\#I = m^d - o_{d \to \infty}(m^d)$ 的 $I \subset \{1,\ldots,m\}^d$ 且 $f_1,\ldots,f_m$ 为 holonomic 的模 $E_{D,\Omega}^I$. 这些改进将在第 3.2 节中进行讨论.
+
+从技术上讲，对于定理 A 和定理 C 的定性线性无关性证明（在将数值阈值 $10^{-6}$ 替换为更小的绝对常数的前提下），实际上可以完全避免求助于第 3.2 节的这些微分代数材料. 然而，坚持不使用它是一条不必要且繁琐的途径; 此外，在寻求丢番图线性无关测度的任何定量精细化时，第 3.2 节中收集的定理的某种版本都是必不可少的. 我们在第 6-8 节中关于 holonomy 边界的主要证明中同样选择使用函数劣逼近性，因为这使得论证更为简洁，并且实际上（据我们所知）对于我们以其整洁结构形式陈述的大多数一般性（定性的！）holonomy 边界而言，它都是必需的. 然而，我们确实注意到，此类结构上的必要性并不涉及定理 2.5.1 本身的主要情形 $|\varphi'(0)| > e^{\sigma_m}$，该情形确实允许不依赖于任何函数劣逼近定理的简洁证明.（注记 6.0.16 表明，在 $|\varphi'(0)| > e^{\tau(\mathbf{b})}$ 情形中必须对常微分方程进行某种特殊利用.）所有这些都在第 7.7 节中进行讨论. 读者可以将此情形与更简单的附录 B 进行对比，在附录 B 中，消逝过滤跳跃的任何特殊信息都与定性 holonomy 边界 \eqref{eq:B.0.1} 的证明无关.
+
+\subsubsection{多变量解锁大数定律}\label{sec:2.13.4}
+我们接下来讨论，在由独立同分布随机变量建模的 $d \to \infty$ 渐近极限中，我们如何利用全测度子集 $\Omega \subset [0,1)^d$ 以及 $I \subset \{1,\ldots,m\}^d$. 历史上，多变量丢番图逼近是把 Liouville 的劣逼近定理 $|\alpha - p/q| \gg q^{-[\mathbf{Q}(\alpha):\mathbf{Q}]}$ 改进为 Roth 的“最佳可能”劣逼近测度 $|\alpha - p/q| \gg_{\varepsilon} q^{-2-\varepsilon}$（当目标 $\alpha$ 为代数无理数时）的关键. 该方案\footnote{由 Siegel 发现，并在 Roth 的工作 \cite{Rot55} 之前由 Schneider \cite{Sch36} 进行过部分成功的尝试.} 的目的是在应用 Siegel 引理时的参数计数. 使一个多变量辅助函数 $F(x_1, \ldots, x_d)$ 在点 $(0,\ldots,0)$ 处达到 high $(D_1, \ldots, D_d)$ weighted order $\geq \xi d$ 意味着使所有满足 $n_1/D_1+\ldots+n_d/D_d\geq \xi d$ 的单项式 $\mathbf{x}^{\mathbf{n}} := x_1^{n_1}\cdots x_d^{n_d}$ 消逝. 但是，随着 $d\to\infty$ 且 $D_i\to\infty$，令 $t_i := n_i/D_i \in [0,1]$，由 $d \to \infty$ 个均匀且独立同分布的随机变量 $t_i \in [0,1]$ 的和 $\sum_{i=1}^{d} t_i \approx d/2$ 的大数定律（在 Chernoff 形式下）表明，以 $1 - \exp(O(-d\varepsilon^2))$ 的概率，$\xi = \frac{1}{2} - \varepsilon$ 是在 Thue-Siegel 引理中通过参数计数所能达到的正确合理的加权消逝阶数.（相比之下，单变量构造仅能达到 Liouville 强度的消逝阶数系数 $\xi = 1/[\mathbf{Q}(\alpha) : \mathbf{Q}]$，而双变量构造仅能达到约 $\xi = 1/(2\sqrt{|\mathbf{Q}(\alpha):\mathbf{Q}|})$ 的消逝阶数系数，从而给出了 Siegel 的亚 Liouville 定理中的指数 \cite{Sie1921}.）
+
+Wirsing 旨在纠正 Roth 在 \cite{Rot55} 中关于用在 $\mathbf{Q}$ 上具有固定次数的代数逼近逼近代数数目标的勘误表的进一步工作 \cite[参见第 4.2 节]{Wir71}，围绕着上述大数定律的精细化——即高维超立方体 $[0,1]^d$ 的测度集中性质——展开，该性质指出，不仅 $\frac{1}{d}\sum_{i=1}^d t_i$ 在概率上收敛于期望值 $\mathbf{E}[t] = \int_0^1 t \, dt = \frac{1}{2}$（当 $d \to \infty$ 时），而且更精确地，在 $d \to \infty$ 的渐近极限下，随机向量 $(t_1, \ldots, t_d) \in [0, 1]^d$ 具有极大概率表现出分量均匀分布的特征. 这在我们下面精细化 \cite[Lemma 13]{Wir71} 的定理 4.2.1 中具有精确的含义：$\varepsilon$-高偏差集合（参见定义 4.1.1）
+\[ B_\varepsilon^d := \left\{ \mathbf{t} \in [0,1)^d \, : \, \exists [a,b) \subset [0,1), \, \left| (b-a) - \frac{1}{d} \# \{i \, : \, t_i \in I\} \right| \geq \varepsilon \right\} \]
+的高维 Lebesgue 测度满足 $\operatorname{vol}(B_{\varepsilon}^d) \leq 100 \exp\left(-\varepsilon^4 d/300\right)$. 这最终是我们在第 2.4 节中讨论我们边界 \eqref{eq:2.13.5} 中重排积分背后的统计学性质；该边界是定理 6.0.2 在 $\mathbf{e} = \mathbf{0}, l = 0, \varphi_0 = \varphi$ 时的特例:
+\begin{equation}\label{eq:2.13.5}
+m \le \frac{\int_0^1 2t \cdot (\log |\varphi(e^{2\pi it})|)^*\;dt}{\log |\varphi'(0)| - \tau(\mathbf{b})}
+\end{equation}
+
+我们在第 4 节中回顾了测度集中和统计大偏差的主题. 这些思想不仅被用于筛选评估模 $E_{D,\Omega}^I$ 构成中的子集 $\Omega \subset [0,1)^d$ 以及 $I \subset \{1,\ldots,m\}^d$，而且还被用于有效地限制 $d$ 元辅助函数 $F \in \sum_{i} Q_{i} f_{i} \in \mathbb{Q}[x] \setminus \{0\}$ 的前导阶射丛（leading order jet）中单项式 $\mathbf{x^n}$ 的形状. 前者导出了重排积分; 后两者特别地导出了精细化的分母下降率 $\tau(\mathbf{b})$. 我们在第 2.13.6 节中讨论这两项改进的机制. 正如我们在第 2.3 节中所提到的，对于如定理 2.5.1 中所述的基本分母类型（以及第 6-7 节中所有其他 holonomy 边界），完全相同的分母节省也可以通过第 7 节的单变量方法（从而无需测度集中）获得; 而最佳的一般分母项则在定理 8.0.1 中通过测度集中再次获得. 尽管定理 6.0.2 和 8.0.1 的证明是用不同的语言描述的（一个通过 Thue-Siegel 引理，另一个通过 Bost 的斜率方法），但两者处理分母背后的想法是相同的，在分母方面的进一步改进空间也是相同的.
+
+在 \cite{CDT21} 中我们证明主 holonomy 定理的所有三个证明中, 我们都使用了 $d \to \infty$ 来自动改进 Dirichlet 指数——也就是说, 如果 M 是方程的个数, N 是参数的个数, 那么 \(M/N = o_{d\to\infty}(1)\), 因而 Dirichlet 指数 M/(N-M) 也是 \(o_{d\to\infty}(1)\). 
+在极限过程 \(d \to \infty\) 的大偏差估计中，该性质支撑了我们重排积分边界的建立. 这一方面再次体现在 \eqref{eq:2.13.5} 中, 但对于这特定的一点, \(d\to\infty\) 仅被用作使用最传统形式的 Thue--Siegel 引理的一个方法论特征. (附录 B 解释了我们如何可以在坚持单变量模 \(E_D\) 的情况下绕过辅助系数的大小, 其形式类似于第 7 节中斜率方法的处理.) 迄今为止, 来自测度集中现象的输入是高维的最本质应用.
+
+然而, 分数 \eqref{eq:2.2.3} 的分子与分母中的微细改进仅在它们同时伴随着系数由 \(e \rightsquigarrow 2\) 的整体降低时才具有意义. 我们接下来讨论在 Dirichlet 抽屉原理中, 如何通过利用在第 2.13.1 节中描述的意义下、关于消逝过滤跳跃向量的笛卡尔乘积结构的引理 3.1.11 来实现这一降低. 这一要点也将阐明我们在第 2.13.3 节中提到的函数 bad approximability 结果的运用.
+
+\subsubsection{高维参数计数}\label{sec:2.13.6}
+
+首先, 使一般评估模 \((E_{\Omega,D}^I, \psi_D)\) 范围内的辅助函数 \(F := \sum Q_{\mathbf{i}} f_{\mathbf{i}}\) 在 \(\mathbf{x} = \mathbf{0}\) 处消逝到至少 \(\alpha\) 阶, 涉及在多项式 \(Q_{\mathbf{i}}\) 的 \(\sim \text{vol}(\Omega)(mD)^d\) 个未知系数中求解 \(\binom{\alpha+d}{d} \sim \alpha^d/d!\) 个线性方程. 根据 Stirling 渐近公式 \(d! = d^d/e^{d-o(d)}\), 在高维渐近极限 \(d \to \infty\) 下最大可达到的消逝阶数似乎为 \(\alpha \sim mdD/e\). 这也是为什么在 \cite[§ 2]{CDT21} 中, 我们通过超立方体选择 \(\Omega := [0,1)^d\) 建立的 holonomy 边界中出现了系数 \(e\). 如果我们转而使用单纯形（simplex）选择:
+\[ \Omega := \{(t_1, \dots, t_d) \in [0, 1]^d : t_1 + \dots + t_d < 1\}, \quad \operatorname{vol}(\Omega) = 1/d!, \]
+我们原本可以获得高达 \(\alpha \sim mD\) 的渐近消逝阶数（而常数 \(e\) 并不作为系数进入）; 但在这种情况下, 函数 \(Q_{\mathbf{i}}(\varphi(z_1),\dots,\varphi(z_d))\) 在单位多圆周 \(\mathbf{z}=(z_1,\dots,z_d)\in\mathbf{T}^d\) 上将变得过于庞大. 在这种方法中, 我们只会获得一个不够精细且带有指数级较大分子的 holonomy 边界（例如 \(\sup_{\mathbf{T}}\log\lvert\varphi\rvert\)）, 而非 Nevanlinna 生长特征 \(T(\varphi)=\int_{\mathbf{T}}\log^+\lvert\varphi\rvert\;\mu_{\mathrm{Haar}}\). 在本文中, 出于类似的原因, 我们仍然使用超立方体形状 \(\Omega=[0,1)^d\), 或者更准确地说, 其测度集中子集 \(\Omega=P_\epsilon^d:=[0,1)^d\smallsetminus B_\epsilon^d\) 作为辅助单项式指数的范围. 正如我们上面所讨论的, 我们确实依赖于高维超立方体的这些统计上占主导地位的部分, 以获得精细化的生长积分 \eqref{eq:2.4.2}; 此外, 我们将解释如何利用这些统计数据来控制 Siegel 引理构造中最低阶项的形状, 从而获得精细化生长积分的分母对应物 \eqref{eq:2.5.6}.
+
+笛卡尔乘积的特殊性在于迫使消逝过滤跳跃向量（属于 \(\mathbf{N}^d\)）在 \(E_{[0,1)^d,D}\) 上具有笛卡尔乘积结构（推论 3.1.11）（如第 2.13.1 节所述）. 这反过来又被用来发掘所寻求的辅助函数 \(F\) 的许多系数的某种自动消逝性. 自动消逝的最简单实例展示在第 B.2 节中. 我们并没有直接求解使 \(F\) 的所有低次单项式消逝（这在我们在第 2.12 节步骤 (iii) 的高维延拓中执行最大模原理步骤时是绝对需要的）, 而是通过专注于单变量评估模 \(E_D\) 的 \(mD\) 个过滤跳跃:
+\[ 0 \le u(1) < u(2) < \dots < u(mD) \]
+来以不同方式建立 Thue--Siegel 引理. 在单变量情况下, 该过程可以简单地简化为将 F(x) 的 \(x^{u(p)}\) 系数 \(\beta_{u(p)} = 0\)（对于 \(p = 1, \dots, mD\)）设为零. 一般地, 对于任何子集 \(T \subset [0, mD]^d\), 我们写成:
+\[ u(T) := \{(u(s_1), \dots, u(s_d)) : (s_1, \dots, s_d) \in T \cap \mathbf{N}_{>0}^d\}. \]
+那么, 在满足 \(\operatorname{vol}(\Omega) > 1 - 100 \exp\left(-\epsilon^4 d/300\right)\) 的测度集中子模 \(E_{D,\Omega}^I \subset E_{D,[0,1)^d}^{\{1,\dots,mD\}^d}\) 中, 我们利用辅助多项式系数中已有的 \((mD)^{d-o(d)}\) 个自由度来构造一个非零的 \(F(\mathbf{x}) = \sum_{\mathbf{i}} Q_{\mathbf{i}}(\mathbf{x}) f_{\mathbf{i}}(\mathbf{x}) = \sum_{\mathbf{n}} \beta_{\mathbf{n}} \mathbf{x}^{\mathbf{n}}\), 其中所有辅助多项式 \(Q_{\mathbf{i}}\) 都具有在绝对值上被 \(e^{\epsilon dD}\) 有界限制的整数系数, 并且（在一个足够小的 \(\delta \in (0,\epsilon)\) 下）满足:
+\begin{equation}\label{eq:2.13.7}
+\beta_{\mathbf{n}} = 0 \quad \text{对于所有} \quad \mathbf{n} \in u([0, (m-\delta)D]^d) \cup u((m+\delta)D \cdot B_{\epsilon}^d),
+\end{equation}
+前提是 \(\delta \in (0, \epsilon)\) 足够小以使得 \((m - \delta)/(m + \delta) > \exp(-\epsilon^4/400)\). 对于定理 2.5.1 在 \(\lvert\varphi'(0)\rvert > e^{\sigma_m}\) 时的情形, 以及在第 7.7 节中讨论的我们边界的一些进一步形式（这些确实涵盖了对定理 A 的最终应用）, 技术上可以直接从这种构造中设计出一个证明, 而无需诉诸第 2.13.3 节的想法.
+
+在任何情况下, 就我们在本文中的实际目的而言, 如果读者希望进一步简化其本质心智图像, 将过滤跳跃想象得尽可能简单（即由 \(u(i) = i - 1\) 给出）是非常合理的. 例如, 我们在第 3.3 节中讨论的经典 Hermite--Pad{\'e} 系统就是这种情况. 第 3.2 节的函数 bad approximability 定理的主旨是, 对于包括我们的应用在内的许多应用而言, 这样的假设离被满足并不遥远：我们在第 2.13.3 节中阐述的 Chudnovsky--Osgood 定理可以表述为上界 \(u(mD) \le (m+\varepsilon)D + C(\varepsilon)\), 对于 \(D\gg 1\), 如果我们假设 \(\varepsilon<\delta<\epsilon\), 这至多为 \((m+\epsilon)D\). 我们作为一个统计效应观察到, 在 \(D\to\infty\) 随后 \(\epsilon\to 0\) 的渐近分析中, \(u(i)\) 与其下界 \(i-1\) 之间的差异变得可以忽略不计. 我们通往函数 bad approximability 定理的途径 is through Andr{\'e} 的 holonomicity 判据（推论 2.6.1; 除非如应用中那样, \(f_i\) 是先验给定的 holonomic）, 其证明在第 2.12 节中作了概述, 并在附录 B 中完整铺开. 结合 Chudnovsky--Osgood 定理, 之前的构造简单地化简为达到:
+\begin{equation}\label{eq:2.13.8}
+\beta_{\mathbf{n}} = 0 \quad \text{对于所有} \quad \mathbf{n} \in [0, (m - \delta)D]^d \cup (m + \delta)D \cdot B_{\epsilon}^d.
+\end{equation}
+
+无论采用哪种方法, 第 2.12 节步骤 (iii) 的常规步骤都是检查非零的最低阶系数 \(\beta := \beta_{\mathbf{n}} \neq 0\) 的可能性. 一方面, 如上所述, 笛卡尔结构限制了 \(\mathbf{n}\) 必须具有如下形式:
+\[ \mathbf{n} = (u(p_1), u(p_2), \dots, u(p_d)), \]
+对于某些 \(p_1, \dots, p_d \in \{1, \dots, mD\}\).
+由于我们的 Thue--Siegel 引理构造消去了处于超立方体 \(\epsilon\)-高偏度部分的 \((mD+\delta)\cdot B^d_\epsilon\) 中的所有多重指标 \((p_1,\dots,p_d)\), 上述元组 \((p_1,\dots,p_d)\) 必定属于统计典型点的互补部分 \((mD+\delta)\cdot P^d_\epsilon\). 启发式地讲, 当 \(d\to\infty\) 随后 \(\epsilon\to0\) 时, \(F\in \mathbf{Q}[\![\mathbf{x}]\!]\setminus\{0\}\) 泰勒级数中每个最低阶指数向量 \(\mathbf{n}\) 的分量 \(n_j=u(p_j)\) 都接近于集合
+\[ \{u(\lfloor mD/d \rfloor), u(\lfloor 2mD/d \rfloor), \dots, u(\lfloor dmD/d \rfloor)\} \]
+的某种排序.
+特别地, 该辅助构造中的消逝阶数满足:
+\[ \operatorname{ord}_{\mathbf{x}=\mathbf{0}} F = |\mathbf{n}| = (1 + o(1)) \sum_{j=1}^{d} u(\lfloor jmD/d \rfloor) \ge (1 + o(1)) \sum_{j=1}^{d} jmD/d = (1 + o(1))mdD/2, \]
+这相比于 \cite[§ 2]{CDT21} 中渐近消逝阶数参数 \(\alpha \sim mdD/e\) 是一个显著的改进.
+
+这一启发式下界估计确实与使用 Chudnovsky--Osgood 定理和 \eqref{eq:2.13.8} 的精确渐近公式相吻合. 对于希望在此处放弃第 3.2 节中定理的读者来说, 直接从 \eqref{eq:2.13.7} 进行论证的一个（根本上很小的）技术要点是——对于我们证明的偏度理论目的而言——均匀分布 \(\{p_1,\dots,p_d\}\approx\{\lfloor mD/d\rfloor,\lfloor 2mD/d\rfloor,\dots,\lfloor dmD/d\rfloor\}\) 在将 \(u\) 应用于两侧时并不能保持 \(\approx\) 关系. 然而, 这与上述概述无关; 唯一关键的是, \(u(i)\ge i-1\) 以及 \((p_1,\dots,p_d)\) 具有渐近均匀分布的分量这些事实本身就蕴含了 \(\lvert\mathbf{n}\rvert\ge (1+o(1))mdD/2\).
+
+\subsubsection{对分母的影响}\label{sec:2.13.9}
+
+我们现在讨论如何在定理 6.0.2 以及推广后的定理 8.0.1 中获得精细化的分母节省项. 为了阐明这一想法, 我们使用基于 Chudnovsky--Osgood 定理的构造 \eqref{eq:2.13.8}, 并考虑 \(F(\mathbf{x})\) 在最小总次数 \(n = \lvert\mathbf{n}\rvert\) 的项中按字典序最小的项 \(\beta \mathbf{x}^{\mathbf{n}}\). 因此 \(n \in (m + \delta)D \cdot P^d_\epsilon\), 并且 \(F\) 是 \(f^{\mathbf{i}}\) 的 \(\mathbf{Q}[x]\)-线性组合, 其中每个 \(\mathbf{i}\) 都是平衡的（balanced）——也就是说, 每个 \(\mathbf{i}^0 \in \{1, \dots, m\}\) 在所有 \(\mathbf{i}^j\)（对于 \(1 \le j \le d\)）中出现大约 \(d/m\) 次. 非零有理数 \(\beta \in \mathbf{Q}^{\times}\) 的分母整除模 \(\mathbf{Q}[x]f^{\mathbf{i}}\) 中所有形式函数的 \(x^{\mathbf{n}}\) 项系数分母的最小公倍数, 其中 \(\mathbf{i} \in I\) 在平衡的多重指标集上变化. 定理 2.5.1 中假设的特殊分母形式（其中 \(f_1, \dots, f_m\) 的类型按“从最佳到最差”的顺序排列）表明, 上述最小公倍数在渐近上形式地与 \(f_{\mathbf{i}^0}\) 的 \(x^{\mathbf{n}}\) 系数一致, 这里的 \(\mathbf{i}^0\) 是一个按非降序排列的平衡多重指标. 这一观察将我们的分母节省项 \(\tau(\mathbf{b})\) 赋予为一个“有限重排积分” \eqref{eq:2.5.6}. 一般来说, 并没有单个特定的 \(\mathbf{i}\) 来决定 \(\beta\) 的渐近分母; 这个“集体 \(\mathbf{i}^0\)”实际上是仅使用平衡的 \(\mathbf{i}\) 的形式效应, 它们——作为 \(d \to \infty\) 的测度集中优势的另一个结果\setcounter{footnote}{12}\footnote{这里基本上相当于中央多项式系数的最大性, 参见引理 6.2.4.}——在 \(\{1, \dots, m\}^d\) 中统计上是占绝对主导的.
+
+\subsubsection{复分析工具}\label{sec:2.13.10}
+
+在复分析工具的提炼上，最大值原理可以通过 Poisson--Jensen 积分公式或使用更具包容力的多值全纯阻尼子（dampeners）加以增强（参见附录 B.3）。在高维极限过程中，我们可以使用判别式乘积
+\[ \prod_{1 \le i < j \le d} (z_i - z_j) \]
+作为以及自然的除零型权重。这在全纯切片的多圆周 Torus 上能够大幅压缩那些偏离 Haar 均匀分布的多变量多项式的值。这种几何测度方法在第 6 节中被证明非常强健，而在第 8 节中我们将其与 Arakelov 几何的相交数形式（slopes method）融为一体，从而得到了本文的最尖锐结果。
+
+我们在第 2.3 节中提到的进一步精细化基于以下想法. 如果我们考虑另一个同样满足所有 \(\psi^*f_i \in \mathcal{M}(\mathbf{D})\) 的全纯映射 \(\psi: (\mathbf{D}, 0) \to (\mathbf{C}, 0)\), 我们可以在 \(F(\varphi(z_1), \dots, \varphi(z_d))\) 中将 \(\varphi(z_j)\) 的一个子集替换为 \(\psi(z_j)\), 并进行类似的分析, 从而使用组合后的解析映射 \(\varphi\) 和 \(\psi\). 对于将索引集进行比例相当的划分 \(\{1, \dots, d\} = S_1 \sqcup S_2\), 并在 \(j \in S_1\) 时使用 \(\varphi\)、在 \(j \in S_2\) 时使用 \(\psi\), 观察到如果我们将全纯阻尼子取为:
+\[ \prod_{1 \le i < j \le d, i, j \in S_1} (z_i - z_j) \prod_{1 \le i < j \le d, i, j \in S_2} (z_i - z_j) \]
+的适当方幂, 那么辅助函数拉回在 \(\mathbf{T}^d\) 上的增长的主要贡献将来自于 \(\mathbf{z} \in \mathbf{T}^d\) 的如下部分：序列 \((z_j)_{j \in S_1}\) 和 \((z_j)_{j \in S_2}\) 与圆周 \(\mathbf{T}\) 上的标准 Haar 测度都有较小的偏差. 关键点在于, 当我们通过解析方法估计前导项 \(\mathbf{x}^{\mathbf{n}}\) 的系数 \(\beta\) 时, 只有被 \(j \in S_1\) 索引的变量使用 \(\varphi\), 而被 \(j \in S_2\) 索引的变量使用 \(\psi\). 我们选择这种划分以极小化最大值原理在 \(\mathbf{z} \in \mathbf{T}^d\) 上的上界. 对于给定的 \(\varphi\), 我们当然可以取我们的第二个（或者重复该过程，我们的“下一个”）映射为任意 \(0 < r < 1\) 对应的 \(\psi(z) := \varphi(rz)\). 只要 \(\varphi\) 不是单值的, 我们就可以证明, 根据 \(n_j\) 的大小, 人们可以为变量 \(z_j\) 选择某个最佳半径 \(r = r(n_j) \in (0,1)\) 以获得一个严格更好的估计. 这就是将边界 \eqref{eq:2.13.5} 改进为完整的定理 6.0.2 背后的核心思想.
+
+\subsubsection{动态抽屉原理或更精细的几何数论}\label{sec:2.13.11}
+
+第 2.12 节中给出的基本大纲植根于一种“静态”的 Thue--Siegel 引理构造：寻找一个非零的辅助函数 \(F \in E_D\), 然后通过组合最低阶非零系数 \(\beta \in \mathbf{Q}^{\times}\) 的算术和解析性质来进行“外推”论证. 这种简单的步骤不足以通过单变量分析来获得原始的 holonomy 边界 \eqref{eq:2.1.1}, 因为在第 2.12 节的 Thue--Siegel 引理中, 无法在拥有接近最大消逝阶数 \(M \approx N\) 的同时获得一个足够小的 Dirichlet 指数 \(M/(N-M) < c\). 在 \cite[§ 2]{CDT21} 中, 我们利用了 \(d \to \infty\) 下衰减的 Dirichlet 指数（在本文中, 这是步骤 \eqref{eq:6.3.4}）, 从而使高维分析中的这一问题得以消除. 
+正如 Bost 和 Charles 的工作 \cite{BC22} 所极其清晰表明的那样, 只要将初等的 Thue--Siegel 引理替换为 pigeonhole 或 Minkowski 参数的足够精确的安排, 即使使用单变量方法也能够证明 \eqref{eq:2.2.3}（甚至带有常数降低 \(e \rightsquigarrow 2\)）.
+我们的附录 B 基于 Perelli 和 Zannier 的动态抽屉原理技术 \cite[§ 2 Lemma 1]{PZ84} 给出了一项本质上是初等的此类证明.
+这也常被解读为对 Bost 斜率方法框架的一个引论, 这一方法的思想与其非常相似, 只是被注入到了 \(\operatorname{Spec} \mathbf{Z}\) 上的 Hermitian 向量丛的语言中, 并且它是第 7 节的核心内容.
+
+我们现在讨论通过 Bost 斜率方法证明定理 7.0.1、7.1.6 和 7.1.13 的更具体想法. 它们共同的成分（应用于单变量情形的简化）是第 2.13.3 节与第 2.13.10 节.
+
+\subsubsection{带有 Bost--Charles \cite{BC22} 成分的 Bost 斜率方法}\label{sec:2.13.12}
+
+我们套用第 2.13.1 节的符号来考虑一个过滤 \(\mathbf{Z}\)-模 \(E_D\) 以及一个评估同态 \(\psi_D\). （在第 7 节的大部分内容中, 我们选择使用 \(x^{1-D}E_D\), 因为这能更自然地与某个充足线丛的全局截面进行识别; 为了简单起见, 我们在这里依然坚持使用正次数单项式, 正如我们在第 7.5 节中更初等的一种斜率方法变体中所做的那样.）我们用 \(E_D^{(n)} \subset E_D\) 来表示第 \(n\) 阶消逝过滤, 即由在 \(\psi_D\) 下在 \(x=0\) 处消逝阶数至少为 \(n\) 的元素组成的子模. 评估同态 \(\psi_D: E_D \hookrightarrow \mathbf{Q}[\! [x]\!]\) 随后在分次商上诱导了一组单同态 \(\psi_D^{(n)}\). 一旦我们为 \(E_D\) 赋予了一个 Euclidean 格结构, 就可以定义底层 Hermitian 向量丛 \(\overline{E}_D\) 的算术度（arithmetic degree）以及评估映射 \(\psi_D^{(n)}\) 的高度. （为此需要固定 \(\mathbf{Q}[\! [x]\!]\) 的一个格, 并为其赋予一个 pro-Euclidean 结构. 这随后根据 \cite[§ 1.4.3]{Bos20} 定义了 \(\psi_D^{(n)}\) 的局部与全局高度. 我们坚持选择最自然的格, 即 \(\mathbf{Z}[\! [x]\!]\), 其 pro-Euclidean 结构是通过使用 \(\{x^n\}_{n=0}^{N-1}\) 作为 \(\mathbf{R}[\! [x]\!]\) 每个有限维商 \(\mathbf{R}[\! [x]\!]/x^N\mathbf{R}[\! [x]\!]\) 的标准正交基诱导的.）
+
+Bost 的斜率不等式 \eqref{eq:7.2.14} 根据评估映射 \(\psi_D^{(n)}\) 的高度提供了 \(\overline{E}_D\) 算术度的一个上界估计. 在 \cite{Bos01, Bos04} 中, Bost 证明了与第 2.1 节类似的算术几何语境下的若干代数化判据. 他的方法将全局算术 Hilbert--Samuel 公式的粗糙版本（用作 \(\overline{E}_D\) 算术度的下界）与局部复分析及 \(p\)-进分析工具（用于设计 \(\psi_D^{(n)}\) 所有局部高度的逐位上界）结合起来. 这些代数化结果随后在 \(D \to \infty\) 渐近极限下从斜率不等式中被发掘出来. Bost 和 Charles 最近的工作 \cite{BC22} 是在（部分）Bost 算术曲线上无穷维 Hermitian 向量丛的 \(\theta\) 不变量理论 \cite{Bos20} 框架下写的, 但人们当然可以在更初等的斜率方法语言中重新诠释其论证. 我们坚持后一种选择, 因为第 7.1 节中的凸性增强似乎更多地具有解析性质而非几何性质, 并且我们不准备在这里将其纳入 \(\theta\) 不变量的理论中.
+
+边界 \eqref{eq:2.2.4} 和 \eqref{eq:2.2.5} 证明的主要成分是用于精确渐近算术度 \(\overline{E}_D\) 的算术 Hilbert--Samuel 公式, 以及在优化 \(\psi_D^{(n)}\) 的阿基米德局部高度的复分析基础上对产生 \(\overline{E}_D\) 的 Euclidean 结构进行的选择. 后者依赖于该学科的经典工具：Poincar{\'e}--Lelong 公式和 Poisson--Jensen 公式. 在 Bost 和 Charles 的理论 \cite[§ 4]{BC22} 中, 为了进行算术相交数计算所需的一个技术要点是, 扩展经典 Arakelov 理论的范围, 以允许使用不一定光滑但具有 Bost--Charles 术语中 \(\mathcal{C}^{\mathrm{b}\Delta}\) 正则性的 Green 函数和 Hermitian 度量：这一条件 \cite[Def. 4.1.1]{BC22} 与使用局部有界变差的连续 Green 函数有关. 我们在第 7 节和第 8 节中使用该框架.
+
+\subsubsection{杂项}\label{sec:2.13.13}
+
+为了证明定理 7.0.1, 我们使用与第 2.13.12 节最后一段中提到的相同的 \(E_D \otimes_{\mathbf{Z}} \mathbf{R}\) 上的 Euclidean 范数; 并且我们套用了对 \(\psi_D^{(n)}\) 的阿基米德局部高度相同的复分析估计. 另一方面, 基于分母类型 \eqref{eq:7.0.1}, 我们选择了一个新的 \(E_D \otimes_{\mathbf{Z}} \mathbf{Q}\) 的 \(\mathbf{Z}\)-子格, 以优化 \(\overline{E}_D\) 的算术度与斜率不等式 \eqref{eq:7.2.14} 中涉及的所有评估映射 \(\psi_D^{(n)}\) 的合并非阿基米德高度之间的比较. 后者带来了评估模的消逝过滤跳跃集合（第 2.13.1 节）, 并且这也是第 3.2 节中定理（正如第 2.13.3 节所总结的那样）在此方法中同样被使用的关键所在.
+
+定理 7.1.6 的额外输入依赖于第 2.13.10 节的想法, 即通过使用多个全纯映射 \(\varphi, \psi, \dots\) 根据 \(n/D\) 的范围来设计关于各种阿基米德局部评估高度 \(h_{\infty}(\psi_D^{(n)})\) 的更尖锐估计. 我们依然坚持从单个全纯环境 \(\varphi: \overline{\mathbf{D}} \to \mathbf{C}\) 导出的选择 \(\psi(z) = \varphi(rz)\), 其中关于各种 Nevanlinna 风格生长特征函数的 \(\log r\) 凸性特征意味着, 在多值情况下, 总是可以从每一个中间半径 \(r \in (0,1]\) 中获得一些改进. 最终, 这引出了定理 7.1.10 中的极限形式, 其中总的凸性节省被呈现为一个在 \(r \in [0,1]\) 上的、关于 Ahlfors--Shimizu 覆盖面积函数的类似物的平方的 \(dr/r\) 积分. 这一原理适用于可用于 holonomy 边界主项的亚纯映射 Nevanlinna 特征的许多变体, 包括 \cite[Prop. 5.4.5]{BC22} 中出现的经典 Ahlfors--Shimizu 特征; 对于我们来说（参见示例 8.1.16 进行的说明性对比）, 它更显著地适用于我们在第 7.1.2 节中定义的 Bost--Charles 特征（为了简单起见, 我们仅坚持使用全纯映射 \(\overline{\mathbf{D}} \to \mathbf{C}\) 的最基本情形）.
+
+诚然, 另一方面, 一旦我们通过使用有限个中间半径 \(r\) 引入了关于阿基米德局部评估高度上界的这一新改进, Bost 和 Charles 对 \(E_D \otimes_{\mathbf{Z}} \mathbf{R}\) 上的 Euclidean 范数的选择在一般情况下将不再是最佳的（除非 \(\varphi\) 是单值的）. 我们在定理 7.6.4 中为 Euclidean 范数提出了一个启发式最佳的选择（参见注记 7.6.7）。
+

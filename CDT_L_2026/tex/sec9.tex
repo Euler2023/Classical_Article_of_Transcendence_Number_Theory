@@ -1,0 +1,348 @@
+\section{\texorpdfstring{$Y(2)$}{Y(2)} 与 \texorpdfstring{$Y_0(2)$}{Y\_0(2)} 的关系}\label{sec:9}
+
+通过由公式 (1.2.8) 给出的坐标 \(\lambda\), 存在一个将 \(Y(2)\) 与 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 进行的自然识别. 
+如果我们用 \(Y_0(2)\) 表示级别为 \(\Gamma_0(2)\) 的模曲线, 
+那么 \(Y_0(2)\) 也是有理的, 并且具有 hauptmodul:
+\begin{equation}\label{eq:9.0.1}
+h := \lambda + \frac{\lambda}{\lambda - 1} = -256q \prod_{n=1}^{\infty} (1 + q^n)^{24} = -256 \cdot \frac{\Delta(2\tau)}{\Delta(\tau)}, \quad q = e^{2\pi i \tau},
+\end{equation}
+其中我们在此处写出 \(q = e^{2\pi i \tau}\), 
+这与等式 (1.2.8) 中的 \(q = e^{\pi i \tau}\) 进行了对比. 
+与 \(\lambda\) 以及相似, 伴随着对记号的轻微滥用, 
+我们也将 h 视为参数 \(q \in \mathbf{D}\) 的函数. 
+参数 h 给出了 \(Y_0(2)\) 与 \(\mathbf{P}^1 \setminus \{0, \infty\}\) 的一个识别. 
+模曲线的映射 \(Y(2) \to Y_0(2)\) 作为代数叠（algebraic stacks）的映射是光滑的, 
+但作为其底层的粗糙模空间（coarse moduli spaces）的映射则不然. 
+为了妥善解释这一点, 最好记住 \(Y_0(2)\) 在 h = 4 处具有一个 2-阶椭圆点, 
+该点是双重覆盖态射 \(\lambda \mapsto h = \lambda^2/(\lambda - 1)\) 的分支点, 
+且 \(\lambda = 2\) 是其唯一的原像：即作为代数曲线的分支覆盖 \(Y(2) \to Y_0(2)\) 的分歧因子. 
+在叠的层面上, \(Y(2) \to Y_0(2)\) 是一个 Galois 覆盖度为 2 的 {\'e}tale 映射, 
+因此在 \(Y(2)\) 上的不变函数以及在 \(Y_0(2)\) 上的函数之间存在着自然的对应关系.
+
+然而, 正如我们将在下文所看到的, 这种关系也保持了相应幂级数展开的某些算术性质. 
+首先我们评述, 变换
+\begin{equation}\label{eq:9.0.2}
+w: x \mapsto \frac{x}{x-1} \in \mathbf{Z}[\![x]\!]
+\end{equation}
+是 \(\mathbf{P}^1 \setminus \{0, 1, \infty\}\) 的一个对合自同构, 
+该对合保持 0 并交换了 1 以及 \(\infty\). 
+这一映射（以及其逆映射）的整性特征意味着：如果 \(f(x) \in \mathbf{Q}[\![x]\!]\) 具有某种分母类型, 
+那么对于 \(f(w(x))\) 也是如此. 
+其次, 我们注意到公式 \eqref{eq:9.0.2} 的映射 w 恰好是 \(Y(2)\) （的函数域）关于 \(Y_0(2)\) 的非平凡 Galois 自同构.
+
+\begin{lemma}\label{lem:9.0.3}
+设 \(S \subset \mathbf{P}^1 \setminus \{0, 1, \infty\}\) 是一个在等式 \eqref{eq:9.0.2} 的对合 w 下保持不变的有限集合, 
+并且定义 \(T \subset \mathbf{P}^1 \setminus \{0, \infty\}\) 为 S 在映射 \(x \mapsto y\) 下的像, 其中:
+\begin{equation}\label{eq:9.0.4}
+y := x + w(x) = x + \frac{x}{x - 1} = \frac{x^2}{x - 1}.
+\end{equation}
+考虑 \(c_1, \ldots, c_r \in [0, \infty)\), 并且设 \(f(x) \in \mathbf{Q}[\![x]\!]\) 是具有如下形式的幂级数:
+\begin{equation}\label{eq:9.0.5}
+f(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{\prod_{i=1}^r [1, \dots, c_i n]} \in \mathbf{Q}[\![x]\!], \qquad a_n \in \mathbf{Z} \quad \forall n \in \mathbf{N},
+\end{equation}
+它在 x = 0 的一个邻域上收敛, 并且可以沿着 \(\mathbf{P}^1 \setminus \{0,1,S,\infty\}\) 中的所有路径解析延拓为全纯函数. 
+那么:
+\begin{itemize}
+  \item[(1)] 函数 \(f(w(x)) \in \mathbb{Q}[\![x]\!]\) 也是具有 \eqref{eq:9.0.5} 形式的.
+  \item[(2)] 如果 \(f(x) = f(w(x))\), 那么我们可利用 \eqref{eq:9.0.4} 形式地将 \(f(x)\) 写为满足下式的幂级数 \(F(y) \in \mathbf{Q}[\![y]\!]\):
+  \begin{equation}\label{eq:9.0.6}
+  2F(y) = \sum_{n=0}^{\infty} b_n \frac{y^n}{\prod_{i=1}^r [1, \dots, 2c_i n]} \in \mathbf{Q}[\![y]\!], \qquad b_n \in \mathbf{Z} \quad \forall n \in \mathbf{N},
+  \end{equation}
+  其在 y = 0 的一个邻域内收敛, 沿着 \(\mathbf{P}^1 \setminus \{0, 4, \infty, T\}\) 中的所有路径解析延拓为全纯函数, 
+  并且绕点 y = 4 具有阶数整除 2 的有限局部单值性（monodromy）\setcounter{footnote}{35}\footnote{在这种一般性下, 绕 y = 4 具有“阶数整除 2 的有限局部单值性”仅仅意味着：如果 \(\gamma:(0,1]\to \mathbf{P}^1\setminus\{0,4,\infty,T\}\) 是任意一条满足 \(\lim_{t\to 0^+}\gamma(t)=0\) 的路径, 且 \(\pi\) 是 \(\mathbf{P}^1\setminus\{0,4,\infty,T\}\) 中绕 y = 4、基点为 \(\gamma(1)\) 的简单回路, 那么 \(F(y)\) 在拼接路径 \(\gamma\) 以及 \(\pi^2\cdot\gamma\) 末端的解析延拓值是相等的. 在局部系统为 \(\mathbf{P}^1\setminus\{0,4,\infty,T\}\) 上的有限维局部系统的特殊情况下, 这显然与通常的概念相契合.}.
+\end{itemize}
+反过来, 如果 \(2F(y)\) 具有 \eqref{eq:9.0.6} 的形式, 
+那么 \(2F\left(x+\frac{x}{x-1}\right)\) 具有 \eqref{eq:9.0.5} 的形式; 
+并且如果 \(F(y)\) 具有在第 (2) 部分中所阐明的 \(\mathbf{P}^1 \setminus \{0,4,\infty,T\}\) 上的解析延拓性质, 
+那么 \(F\left(x+\frac{x}{x-1}\right)\) 具有 \(\mathbf{P}^1 \setminus \{0,1,S,\infty\}\) 上的解析延拓性质.
+\end{lemma}
+
+\begin{proof}
+函数论方面的断言直接由 Galois 理论以及 \(x \mapsto w(x)\) 
+是 \(Y(2)\) 关于 \(Y_0(2)\) 的自同构这一事实得出. 
+因此只需确立关于整性的断言. 
+性质 (1) 显然由展开式 \(w(x)^n = (-1)^n x^n (1-x)^{-n} \in x^n \mathbf{Z}[\![x]\!]\) 
+的整数系数以及分母类型 \(\prod_{i=1}^r [1,\ldots,c_i n]\) 在 \(n\mapsto n+1\) 下分层嵌套的评述而得出. 
+设 x 和 y 由等式 \eqref{eq:9.0.4} 关联. 
+由于在 x 以及 \(w(x) = x/(x-1)\) 中的初等对称函数都等于 \(y = x + w(x) = xw(x)\), 
+我们可能通过以下规则定义多项式 \(P_n(y)\):
+\begin{equation}\label{eq:9.0.7}
+P_n(y) := x^n + (x/(x-1))^n.
+\end{equation}
+那么 \(P_0(y) = 2\), \(P_1(y) = y\), 并且存在着初等递推关系:
+\[ P_n(y) = yP_{n-1}(y) - yP_{n-2}(y). \]
+我们发现 \(P_n(y)\) 具有次数 n, 并在 y=0 处消逝阶数为 \(\lceil n/2 \rceil\). 
+我们现在假设我们拥有一个系数 \(A_n\) 满足 \(a_n := A_n \prod_{i=1}^r [1, \ldots, c_i n] \in \mathbf{Z}\) 的有理系数函数 \(f(x) = \sum A_n x^n\). 
+然后, 在正在被证明的性质 (2) 下, 我们利用假设 \(f(w(x)) = f(x)\) 写出:
+\[ f(x) + f\left(\frac{x}{x-1}\right) = 2F(y) = \sum A_k P_k(y) =: \sum B_n y^n. \]
+中间的等式定义了一个合法的 \(\mathbf{Q}[\![y]\!]\) 级数, 
+因为 \(P_k(y)\) 可以被 \(y^{\lceil k/2 \rceil}\) 整除, 且这可以被作为定义. 
+更确切地, 多项式 \(P_k(y)\) 的所有非零系数都出现在次数范围 \([k/2, k]\) 内, 
+且它们是整数. 
+因此 \(P_k(y)\) 仅对于满足 \(k \in [n, 2n]\) 的 k 对 \(y^n\) 项产生贡献, 
+并且有 \(b_n := B_n \prod_{i=1}^r [1, 2, \dots, 2c_i n] \in \mathbf{Z}\). 
+反过来, 由于 \(x + \frac{x}{x-1} = \frac{x^2}{x-1}\), 如果我们写出
+\[ \sum A_n x^n = \sum B_k \left( x + \frac{x}{x-1} \right)^k = \sum B_k \frac{x^{2k}}{(x-1)^k}, \]
+那么右手边对 \(A_n\) 产生贡献的项仅对于 \(k \leq n/2\) 出现.
+\end{proof}
+
+受到本引理的启发, 我们拥有以下定义:
+
+\begin{definition}\label{def:9.0.8}
+设 \(F(x) \in \mathbf{Q}[\![x]\!]\). 
+我们定义 plus 以及 minus 轴对称化函数 \(F^+(y)\) 和 \(F^-(y)\) 为具有如下性质的 \(\mathbf{Q}[\![y]\!]\) 元素:
+\begin{equation}\label{eq:9.0.9}
+F^{+}(y) = F(x) + F\left(\frac{x}{x-1}\right),
+\end{equation}
+\[ F^{-}(y) = \left(x - \frac{x}{x-1}\right) \left(F(x) - F\left(\frac{x}{x-1}\right)\right), \]
+在此, \(y := x + \frac{x}{x-1} = \frac{x^2}{x-1}\).
+\end{definition}
+
+在算术 holonomy 边界的语境中, 我们将这些轴对称化与解析解式 \(\varphi^* f \in \mathcal{O}(\mathbf{D})\) 联系起来. 
+我们首先引入一个特设定义（其仅在引理 9.0.13 中被使用）:
+
+\begin{definition}\label{def:9.0.10}
+一个 holonomic 下降数据（holonomic descent datum）是一个四元组
+\[ \mathcal{R}_f = \left(U_{Y(2)}, \Sigma_{Y(2)}^0, \Sigma_{Y(2)}^1, f\right) \]
+它由以下部分组成:
+\begin{itemize}
+  \item[(1)] 一个收缩开邻域 \(0 \in U_{Y(2)} \subset \mathbb{C} \setminus \{2\}\), 该邻域在对合 w 下保持不变.
+  \item[(2)] 有限子集 \(\Sigma_{Y(2)}^0 \subset U_{Y(2)}\) 以及 \(\Sigma_{Y(2)}^1 \subset Y(2) = \mathbf{C} \setminus \{0, 1\}\), 它们在对合 w 下都是保持不变的.
+  \item[(3)] 一个全纯函数 \(f \in \mathcal{O}(U_{Y(2)})\), 其在 w 下是不变（即满足 \(f(w(x)) = f(x)\)）的, 并且可沿着 \(\mathbf{P}^1 \setminus \{0, 1, \Sigma^0_{Y(2)}, \Sigma^1_{Y(2)}, \infty\}\) 中的所有路径解析延拓为全纯函数.
+\end{itemize}
+对于每一个此类数据 \(\mathcal{R}_f\), 我们按如下方式附加一个商数据（quotient datum）:
+\[ \mathcal{Q}_F = \left(U_{Y_0(2)}, \Sigma_{Y_0(2)}^0, \Sigma_{Y_0(2)}^1, F\right). \]
+通过将 w-不变的幂级数展开 \(f(x) \in \mathbb{C}[\![x]\!]\) 形式地表达为 \(y := x + w(x)\) 的级数, 
+我们如\autoref{lem:9.0.3}中那样附加了\footnote{除了现在在解析语境下, 我们假设 \(f \in \mathbf{C}[\![x]\!]\) 而不是 \(f \in \mathbf{Q}[\![x]\!]\) 之外; 证明显然是相同的.}一个唯一的形式幂级数 \(F(y) = F_f(y) \in \mathbb{C}[\![y]\!]\), 使得:
+\begin{equation}\label{eq:9.0.11}
+F(y) = F(x + w(x)) = F\left(x + \frac{x}{x - 1}\right) = f(x).
+\end{equation}
+以相似的方式, 我们定义 \(\Sigma_{Y_0(2)}^0\), \(\Sigma_{Y_0(2)}^1\) 和 \(U_{Y_0(2)}\) 为 \(\Sigma_{Y(2)}^0\), \(\Sigma_{Y(2)}^1\) 和 \(U_{Y(2)}\) 
+在映射
+\[ x \mapsto y := x + w(x) = x + \frac{x}{x - 1} \]
+下的像.
+\end{definition}
+
+为了简短起见, 我们也采纳以下定义, 该定义形式化了命题 2.9.3 中关于单价叶（univalent leaves）的想法.
+
+\begin{definition}\label{def:9.0.12}
+考虑两个带基点的 Riemann 面 \((D, O)\) 以及 \((X, P)\), 以及一个开邻域 \(P \in U \subset X\). 
+如果全纯映射 \(\varphi : (D, O) \to (X, P)\) 将包含 O 的 \(\varphi^{-1}(U)\) 
+的连通分支共形同构地映射到 U:
+\[ \varphi: (\varphi^{-1}(U))_{O} \xrightarrow{\simeq} U, \]
+那么我们称该态射在 O 处具有关于 U 的单价叶（univalent leaf）. 
+我们把该区域 \((\varphi^{-1}(U))_O \subset D\) 自身称为（在 O 处关于 U 的）单价叶. \(\triangle\)
+\end{definition}
+
+\begin{lemma}\label{lem:9.0.13}
+设 \(\mathcal{R}_f\) 是一个具有商 \(\mathcal{Q}_F\) 的 holonomic 下降数据. 
+设 \(\varphi_{Y(2)}\) 是一个满足下式的全纯映射:
+\[ \varphi_{Y(2)}: \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1, \Sigma^1_{Y(2)}\}, \qquad \varphi^{-1}_{Y(2)}(0) = \{0\}, \]
+并且其在 \(0 \in \mathbf{D}\) 处具有一个关于 \(U_{Y(2)}\) 的单价叶 \(\left(\varphi_{Y(2)}^{-1}\left(U_{Y(2)}\right)\right)_0\), 
+该单价叶包含 \(\varphi_{Y(2)}\) 下 \(\Sigma_{Y(2)}^0\) 的所有原像.
+
+假设:
+\begin{equation}\label{eq:9.0.14}
+w(\varphi_{Y(2)}(z)) = \varphi_{Y(2)}(-z).
+\end{equation}
+拉回 \(\varphi_{Y(2)}^*f\) 在 \(\overline{\mathbf{D}}\) 上是全纯的. 
+如果 \(\varphi_{Y_0(2)}\) 是全纯映射:
+\begin{equation}\label{eq:9.0.15}
+\varphi_{Y_0(2)}(z) := \varphi_{Y(2)}\left(\sqrt{z}\right) + \varphi_{Y(2)}\left(-\sqrt{z}\right) \in \mathcal{O}(\overline{\mathbf{D}}),
+\end{equation}
+那么:
+\begin{itemize}
+  \item[(1)] \(\varphi_{Y_0(2)}^{-1}(0) = \{0\}.\)
+  \item[(2)] \(\varphi_{Y_0(2)}\) 的值域排除了 \(\Sigma^1_{Y_0(2)}\).
+  \item[(3)] \(\varphi_{Y_0(2)}\) 在纤维集 \(\varphi_{Y_0(2)}^{-1}(4)\) 的所有点处的分歧指数都是偶数.
+  \item[(4)] 邻域 \(U_{Y_0(2)} \ni 0\) 是一个收缩区域, 并且 \(\varphi_{Y_0(2)}\) 在 \(0 \in \mathbf{D}\) 处具有一个关于 \(U_{Y_0(2)}\) 的单价叶, 
+  该单价叶此外包含 \(\varphi_{Y_0(2)}\) 下 \(\Sigma_{Y_0(2)}^0\) 的所有原像.
+  \item[(5)] \(F|_{U_{Y_0(2)}} \in \mathcal{O}\left(U_{Y_0(2)}\right)\) 是全纯的, 并且满足以下关系:
+  \begin{equation}\label{eq:9.0.16}
+  \begin{aligned}
+  F\left(\varphi_{Y_0(2)}(z)\right) 
+  &= f\left(\varphi_{Y(2)}(\sqrt{z})\right) \\
+  &= f\left(w\left(\varphi_{Y(2)}(\sqrt{z})\right)\right) \\
+  &= \frac{f\left(\varphi_{Y(2)}(\sqrt{z})\right) + f\left(\left(\varphi_{Y(2)}(-\sqrt{z})\right)\right)}{2} \in \mathcal{O}(\overline{\mathbf{D}}).
+  \end{aligned}
+  \end{equation}
+  特别是, F 通过 \(\varphi_{Y_0(2)}\) 的拉回在 \(\overline{\mathbf{D}}\) 上是全纯的.
+\end{itemize}
+反过来, 每一个满足条件 (1) 到 (4) 的全纯映射 \(\varphi_{Y_0(2)} \in \mathcal{O}(\overline{\mathbf{D}})\) 
+都通过关系 \eqref{eq:9.0.15} 确定了唯一一对满足 \(w(\varphi(z)) = \varphi(-z)\) 
+的全纯映射对 \(\{\varphi_{Y(2)}, w \circ \varphi_{Y(2)}\}\):
+\[ \varphi: \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1, \Sigma_{Y(2)}^1\}, \qquad \varphi^{-1}(0) = \{0\}. \]
+\end{lemma}
+
+\begin{proof}
+根据命题 2.9.3, 伴随 \(\Omega := \left(\varphi_{Y(2)}^{-1}(U_{Y(2)})\right)_0\), 
+因为有 \(f \in \mathcal{O}\left(U_{Y(2)}\right)\), 
+所以 \(\varphi_{Y(2)}^*f\) 在 \(\overline{\mathbf{D}}\) 上的全纯性直接成立. 
+我们观察到 \(U_{Y_0(2)}\) ——根据开映射定理, 它是一个区域——也是一个拓扑圆盘, 
+因为有 \(4 \notin U_{Y_0(2)}\) 且 \(U_{Y(2)} \subset \mathbf{C} \setminus \{2\}\), 
+而映射 \(y := x^2/(x-1)\) 仅有 \(x \in \{0,2\}\) 作为其分歧点（分支值为 \(y \in \{0,4\}\)）.
+
+假设现在有对称性 \(f(x) = f(w(x))\) 以及 \(w(\varphi_{Y(2)}(z)) = \varphi_{Y(2)}(-z)\), 
+并且定义通过 \eqref{eq:9.0.15} 给出的、显然全纯的映射 \(\varphi_{Y_0(2)} \in \mathcal{O}(\overline{\mathbf{D}})\). 
+正是由于这一对称性 \(w(\varphi_{Y(2)}(z)) = \varphi_{Y(2)}(-z)\), 
+允许我们将解析数据下降到 \(Y_0(2)\) 的情形中, 
+即作为 \(\varphi_{Y(2)}\) 的 plus-对称化:
+\begin{equation}\label{eq:9.0.17}
+\begin{aligned}
+\varphi_{Y_0(2)}(z) 
+&:= \varphi_{Y(2)} \left( \sqrt{z} \right) + \varphi_{Y(2)} \left( -\sqrt{z} \right) \in \mathcal{O}(\overline{\mathbf{D}}) \\
+&= \varphi_{Y(2)} \left( \sqrt{z} \right) + w \left( \varphi_{Y(2)} \left( \sqrt{z} \right) \right) \\
+&= \frac{\varphi_{Y(2)} (\sqrt{z})^2}{\varphi_{Y(2)} (\sqrt{z}) - 1}.
+\end{aligned}
+\end{equation}
+第二行——伴随着定义性的事实：\(\Sigma^1_{Y(2)}\) 在双重覆盖映射 \(y=x+w(x)\) 下是 \(\Sigma^1_{Y_0(2)}\) 的完全逆像——表明 \(\varphi_{Y_0(2)}\) 的值域排除了集合 \(\Sigma^1_{Y_0(2)}\), 
+因为 \(\varphi_{Y(2)}\) 排除了相应的集合 \(\Sigma^1_{Y(2)}\). 
+第三行表明 \(\varphi_{Y_0(2)}\) 满足 \(\varphi^{-1}(0)=\{0\}\) 
+并且在纤维集 \(\varphi^{-1}_{Y_0(2)}(4)=\varphi^{-1}_{Y(2)}(2)\) 的所有点处都具有偶数的分歧指数. 
+在对 \eqref{eq:9.0.17} 的第二行中给出的 \(x=\varphi_{Y(2)}(\sqrt{z})\) 应用 \(F(x+w(x))=f(x)=f(w(x))\) 的前提下, 
+我们获得了 \eqref{eq:9.0.16}, 
+并且特别是拉回 \(\varphi^*_{Y_0(2)}F\in\mathcal{O}(\overline{\mathbf{D}})\) 的全纯性. 
+最后, 归功于定义等式 \(F(x+w(x))=f(x)\) 以及将 \(U_{Y_0(2)}\) 定义为 \(U_{Y(2)}\) 在 \(x+w(x)\) 下的像, 
+全纯性 \(F|_{U_{Y_0(2)}}\in\mathcal{O}\left(U_{Y_0(2)}\right)\) 直接由相应的全纯性 \(f|_{U_{Y(2)}}\in\mathcal{O}\left(U_{Y(2)}\right)\) 得出.
+
+对于反向的情况, 根据形式二项式展开——选择平方根号的任何一个分支——我们通过解出关于对 \eqref{eq:9.0.17} 第三行的、将 z 更改为 \(z^2\) 的二次关系, 
+获得在 \(\mathbb{C}[\![z]\!]\) 中的幂级数 \(\varphi_{Y(2)}\):
+\begin{equation}\label{eq:9.0.18}
+\varphi_{Y(2)}(z) := \frac{\varphi_{Y_0(2)}(z^2) + \sqrt{\varphi_{Y_0(2)}(z^2)} \cdot \sqrt{\varphi_{Y_0(2)}(z^2) - 4}}{2}.
+\end{equation}
+在关于 \(\varphi_{Y_0(2)}^{-1}(0) = \{0\}\) 以及在 \(\varphi_{Y_0(2)}\) 沿 \(\varphi_{Y_0(2)}^{-1}(4)\) 具有偶数分歧指数的条件下, 
+表明形式级数 \eqref{eq:9.0.18} 事实上在 \(\overline{\mathbf{D}}\) 的邻域上是全纯的, 
+并满足 \(\varphi_{Y(2)}^{-1}(0) = \{0\}\) 以及 \(w\left(\varphi_{Y(2)}(z)\right) = \varphi_{Y(2)}(-z)\). 
+在 \eqref{eq:9.0.18} 中对平方根号的另一种选择导致了自变量的符号交换 \(\varphi_{Y(2)}(-z)\), 
+并且映射对 \(\{\varphi_{Y(2)}, w \circ \varphi_{Y(2)}\}\) 是由 \(\varphi_{Y_0(2)}\) 唯一决定的, 
+并满足 \eqref{eq:9.0.17}, 
+从而也继承了值域性质 \(\varphi_{Y(2)}: \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1, \Sigma_{Y(2)}^1\}\).
+\end{proof}
+
+我们将要在后续使用的关于 hauptmodul 映射 \eqref{eq:9.0.1} 的解析拉回的特殊情况作为一单独的推论而写出. 
+这应该被视为关于 hauptmodul 映射 \(Y_0(2)\) 的、命题 2.9.3 关于超收敛的代数叠（stacky）版本.
+
+\begin{corollary}\label{cor:9.0.19}
+考虑任意幂级数 \(F \in \mathbb{C}[\![y]\!]\), 
+该级数在收缩开邻域 \(0 \in U_{Y_0(2)} \subset \mathbb{C} \setminus \{4\}\) 上定义了一个全纯函数. 
+假设 \(\Sigma^0_{Y_0(2)} \subset U_{Y_0(2)}\) 以及 \(\Sigma^1_{Y_0(2)} \subset \mathbb{C}\) 是有限子集, 
+满足 \(F(y)\) 可以沿着 \(y \in \mathbb{P}^1 \setminus \{0,4,\Sigma^0_{Y_0(2)},\Sigma^1_{Y_{0(2)}}\}\) 
+中的所有路径解析延拓为全纯函数, 
+并且绕 y = 4 具有阶数整除 2 的有限局部单值性. 
+令 \(h: \mathbb{D} \to \mathbb{C}\) 是映射 \eqref{eq:9.0.1}.
+
+那么, 在满足在 \(0 \in \mathbf{D}\) 处具有一个关于 \(U_{Y_0(2)}\) 的单价叶（该单价叶包含 \(\varphi_{Y_0(2)}^{-1}\left(\Sigma^0_{Y_0(2)}\right)\)）的任意全纯映射
+\[ \varphi_{Y_0(2)}: \overline{\mathbf{D}} \to \mathbf{C} \setminus \Sigma^1_{Y_0(2)} \]
+（且该全纯映射分解为关于某个满足 \(\psi^{-1}_{Y_0(2)}(0) = \{0\}\) 的全纯函数 \(\psi_{Y_0(2)}: \overline{\mathbf{D}} \to \mathbf{D}\) 的复合 \(\varphi_{Y_0(2)} = h \circ \psi_{Y_0(2)}\)）
+下, F 的拉回是全纯的: \(\varphi^*_{Y_0(2)}F \in \mathcal{O}(\overline{\mathbf{D}})\).
+\end{corollary}
+
+\begin{proof}
+定义 \(U_{Y(2)} := y^{-1}\left(U_{Y_0(2)}\right)\) 为在映射 \(y := x + w(x) = x^2/(x-1)\) 下的完全逆像. 
+由于 \(4 \notin U_{Y_0(2)}\), 这一邻域 \(U_{Y(2)} \ni 0\) 也是收缩的. 
+同时设定 \(f(x) := F(y) = F(x + w(x))\) 以及 \(\Sigma_{Y(2)}^0 := y^{-1}\left(\Sigma_{Y(2)}^0\right)\), 
+\(\Sigma_{Y(2)}^1 := y^{-1}\left(\Sigma_{Y(2)}^1\right)\), 
+我们便随之构造了一个具有商 \(\mathcal{Q}_F = \left(U_{Y_0(2)}, \Sigma_{Y_0(2)}^0, \Sigma_{Y_0(2)}^1, F\right)\) 的 holonomic 下降数据 \(\mathcal{R}_f\).
+
+由于（在关于 \(\psi_{Y_0(2)}\) 的假设下）具有 \(\varphi_{Y_0(2)} = h \circ \psi_{\psi_{Y_0(2)}}\) 
+形式的映射满足引理 9.0.13 中的条件 (1) 到 (4), 
+该引理的反向情况随后构造了一个具有 \(\varphi_{Y(2)}^{-1}(0) = \{0\}\) 以及 \(w\left(\varphi_{Y(2)}(z)\right) = \varphi_{Y(2)}(-z)\) 
+的全纯映射 \(\varphi_{Y(2)} : \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1, \Sigma_{Y(2)}^1\}\), 
+并诱导了共形同构 \(\varphi_{Y(2)}^{-1}\left(U_{Y(2)}\right)_0 \xrightarrow{\simeq} U_{Y(2)}\)： 
+即在 \(0 \in \mathbf{D}\) 处关于 \(U_{Y(2)}\) 的一个单价叶. 
+引理 9.0.13 的前向情况现在证明了全纯性 \(\varphi_{Y(2)}^*f \in \mathcal{O}(\overline{\mathbf{D}})\) 
+以及轴对称化关系 \eqref{eq:9.0.16}, 
+这特别地表明了全纯性 \(\varphi_{Y_0(2)}^*F \in \mathcal{O}(\overline{\mathbf{D}})\).
+\end{proof}
+
+\begin{remark}[Basic Remark 9.0.20]\label{rem:9.0.20}
+我们将引理 9.0.3 以及 9.0.13 结合并解释如下. 
+对于我们论文的其余部分, 我们将一致保留字母 y 来表示覆盖映射 \(y := x^2/(x-1)\). 
+假设给定一个由在某个邻域 \(U_{Y(2)} \ni 0\) 上全纯、且可沿着 \(\mathbf{P}^1 \setminus \{0,1,S,\infty\}\) 中的所有路径解析延拓为全纯函数的算术类型 \eqref{eq:9.0.5} 的 \(\mathbf{Q}[\![x]\!]\) 幂级数所生成的 \(\mathbf{Q}(x)\)-向量空间 \(\mathcal{H}\). 
+\autoref{lem:9.0.3} 随后在 \(\mathbf{P}^1 \setminus \{0,4,T,\infty\}\) 上构造了一个相应的、关于在 y=4 处具有至多 \(\mathbf{Z}/2\) 局部单值性、并满足算术条件 \eqref{eq:9.0.6} 的函数的、在 \(\mathbf{Q}(y)\) 上的 \(\mathbf{Q}(y)\)-向量空间 \(\mathcal{H}^{w=1}\). 
+此外, 根据基本的 Galois 理论, 我们有:
+\begin{equation}\label{eq:9.0.21}
+\dim_{\mathbf{Q}(x)} \mathcal{H} = \dim_{\mathbf{Q}(y)} \mathcal{H}^{w=1}.
+\end{equation}
+显式地, 我们有 \(\dim_{\mathbf{Q}(y)}(\mathbf{Q}(x)) = 2\), 
+其一组基底由 1 以及 \(y^- = x - \frac{x}{x-1}\) 给出. 
+存在由下式给出的 \(\mathbf{Q}(y)\)-向量空间的同构 \(\mathcal{H} = \mathcal{H}^{w=1} \oplus \mathcal{H}^{w=-1}\):
+\[ F(x) \mapsto \left(F^+(y), F^-(y)/y^-\right) = \left(F(x) + F\left(\frac{x}{x-1}\right), F(x) - F\left(\frac{x}{x-1}\right)\right), \]
+以及由乘以 \(y^-\) 给出的同构 \(\mathcal{H}^{w=1} \to \mathcal{H}^{w=-1}\). 
+因此:
+\[ \dim_{\mathbf{Q}(y)} \mathcal{H}^{w=1} = \frac{1}{2} \dim_{\mathbf{Q}(y)} \mathcal{H} = \dim_{\mathbf{Q}(x)} \mathcal{H}. \]
+
+人们现在可以问, 当将形式为:
+\begin{equation}\label{eq:9.0.22}
+\dim_{\mathbf{Q}(x)} \mathcal{H} \leq \frac{\iint_{\mathbf{T}^2} \log |\varphi(z) - \varphi(w)| \, \mu_{\mathrm{Haar}}(z) \mu_{\mathrm{Haar}}(w)}{\log |\varphi'(0)| - \sigma}
+\end{equation}
+的 holonomy 边界从 Y(2) 或 \(\mathbf{Q}(x)\) 域转换到 \(Y_0(2)\) 或 \(\mathbf{Q}(y)\) 域时, 会发生什么？
+
+该问题的回答是：对应的不等式 \eqref{eq:9.0.22} 在定理 2.5.1 的框架内同样是等价的. 
+首先, 我们需要明确在形式解析算术簇以及算术 holonomy 边界的语境中, 
+我们所说的 Y(2) 以及 \(Y_0(2)\) 域是指什么. 
+这正是引理 9.0.13 的内容以及目的. 
+来自第 2.9.5 节的设定, “使用 Y(2) 域”是指具有 \(\varphi^{-1}_{Y(2)}(0) = \{0\}\) 
+的、从而分解为如下形式的全纯映射 \(\varphi = \varphi_{Y(2)} : \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1\} = Y(2) \cup \{0\}\):
+\[ \varphi_{Y(2)} = \lambda \circ \psi_{Y(2)}, \]
+其中 \(\psi_{Y(2)}: \overline{\mathbf{D}} \to \mathbf{D}\) 是一个仍然具有 \(\psi_{Y(2)}^{-1}(0) = \{0\}\) 的全纯映射. 
+这一分解的证明（细节参见 \cite[第 4.11、4.12 节]{Car54}）归结为 \(\tau \mapsto \lambda(\tau)\) （此处 \(\tau : \mathbf{H} \to \mathbf{P}^1 \setminus \{0,1,\infty\}\)）在 \(\tau(i) = 1/2\) 处是一个万有覆盖映射的事实. 
+在另一方面, 模 \(\lambda\) 映射的基本性质还包括：在 \(\tau \in \mathbf{H}\) 域中具有 \(\lambda(\tau+1) = \lambda(\tau)/(\lambda(\tau)-1)\), 
+也就是在 \(q = e^{\pi i \tau} \in \mathbf{D}\) 域中具有 \(\lambda(-q) = w(\lambda(q))\). 
+因此, 如果我们在映射 \(\psi_{Y(2)}\) 上施加条件 \(\psi_{Y(2)}(-z) = -\psi_{Y(2)}(z)\), 
+那么对合自同构 w 作用为 \(w(\varphi_{Y(2)}(z)) = \varphi_{Y(2)}(-z)\). 
+在 \(\psi_{Y(2)} : (\mathbf{D}, 0) \xrightarrow{\simeq} (\Psi, 0)\) 是一个满足 \(0 \in \Psi \subset \overline{\Psi} \subset \mathbf{D}\) 
+的收缩区域 \(\Psi\) 的 Riemann 映射的特殊情况下, 
+这一条件仅仅相当于要求区域 \(\Psi\) 绕原点是对称的. 
+我们进一步假设原点的开邻域 \(U_{Y(2)}\) 满足引理 9.0.13 的条件： 
+即 \(w(U_{Y(2)}) = U_{Y(2)}\), 并且 \(\varphi_{Y(2)}^{-1} (U_{Y(2)})_0 \xrightarrow{\simeq} U_{Y(2)}\) 
+是 \(\varphi_{Y(2)}\) 在 \(0 \in \mathbf{D}\) 处的一个包含 \(\Sigma_{Y(2)}^0\) 所有的原像的单价叶. 
+我们注意这一性质蕴含了、但严格强于对于内部映射 \(\psi_{Y(2)}\) 在分解 \(\varphi_{Y(2)} = \lambda \circ \psi_{Y(2)}\) 中相应的性质.
+
+我们现在处于引理 9.0.13 的范围中, 
+在其中我们可以寻找一个带有 \(\Sigma^0_{Y(2)} \subset U_{Y(2)}\) 以及 \(\varphi_{Y(2)} : \overline{\mathbf{D}} \to \mathbf{C} \setminus \{1, \Sigma^1_{Y(2)}\}\) 
+的分解 \(S = \Sigma^0_{Y(2)} \sqcup \Sigma^1_{Y(2)}\). 
+在此类条件下, 我们从 \(\varphi_{Y(2)}\) 获得了映射 \(\varphi_{Y_0(2)}\), 
+使得对于任意 \(f \in \mathcal{H}\) 或 \(F \in \mathcal{H}^{w=1}\), 
+其拉回 \(\varphi^*_{Y(2)}f\) 以及 \(\varphi^*_{Y_0(2)}F\) 分别在 \(\overline{\mathbf{D}}\) 上是全纯的.
+
+在定理 2.5.1 的表述下, 正是通过对解析映射 \(\varphi\) 的这些选择 \(\varphi_{Y(2)}\) 以及 \(\varphi_{Y_0(2)}\), 
+以及对相应常数 \(\sigma := \tau(\mathbf{b})\) （对应地 \(\sigma := \tau(2\mathbf{b}) = 2\tau(\mathbf{b})\)）的选择, 
+我们在由引理 9.0.3 提供的字典下比较了 holonomy 商 \eqref{eq:9.0.22}.
+
+我们现在证实我们关于这两个商 \eqref{eq:9.0.22} 精确相等的声称. 
+前述分析依赖于代数叠的映射 \(Y(2) \to Y_0(2)\) 是 {\'e}tale 的事实. 
+在另一方面, 由于有理代数曲线的分支双重覆盖 \(X(2) \to X_0(2)\) 
+在我们形式级数展开的中心 h=0 （尖点 \(\tau=i\infty\)）处是完全分歧的, 
+由引理 7.4.5 的投影公式紧接着有：在 \eqref{eq:9.0.22} 的 \(Y_0(2)\) 版本的 holonomy 商中的对应积分以及共形半径项都精确地被该覆盖的次数（在我们的情况下等于 2）所缩放. 
+在我们最基本的情况下, 我们可以通过如下一种非常直接以及显式的方式看到这一点. 
+让我们在上半平面 \(\tau \in \mathbf{H}\) 上将 hauptmodul h 评估于 \(e^{2\pi i\tau}\) 处的值写为 \(H(\tau)\), 
+以及将 \(\lambda\) 评估于 \(e^{\pi i\tau}\) 处的值写为 \(L(\tau)\). 
+如果 \(\psi_{Y(2)}(e^{i\theta}) = e^{2\pi i\tau}\) 且满足 \(\tau \in \mathbf{H}\), 
+那么, 在做出平方根号的某些（一致的）分支选择下, 我们有:
+\[ \varphi_{Y_0(2)}(e^{i\theta}) = h(e^{2\pi i \tau}) = H(\tau), \]
+而在另一方面, 有:
+\[ \varphi_{Y(2)}(e^{i\theta/2}) = \lambda(e^{\pi i \tau}) = L(\tau), \qquad \varphi_{Y(2)}(-e^{i\theta/2}) = L(\tau+1) = \frac{L(\tau)}{L(\tau)-1}. \]
+特别地, 涉及 \(\log |L(\tau) - L(\sigma)|\) 的 Y(2) 积分在将积分划分为四个部分之后, 
+变为了对下式进行的积分:
+\[
+\begin{aligned}
+&\log |L(\tau) - L(\sigma)| + \log \left| \frac{L(\tau)}{L(\tau) - 1} - L(\sigma) \right| \\
+&\quad + \log \left| L(\tau) - \frac{L(\sigma)}{L(\sigma) - 1} \right| + \log \left| \frac{L(\tau)}{L(\tau) - 1} - \frac{L(\sigma)}{L(\sigma) - 1} \right|.
+\end{aligned}
+\]
+但现在（仅仅利用对数的乘法性质以及一些初等代数）, 这恰好就是:
+\[ 2\log\left|L(\tau) + \frac{L(\tau)}{L(\tau) - 1} - L(\sigma) - \frac{L(\sigma)}{L(\sigma) - 1}\right| = 2\log|H(\tau) - H(\sigma)|. \]
+考虑到源自各种不同缩放的因子 2, 这意味着在 \(Y_0(2)\) 域中的积分*精确两倍于*在 Y(2) 域中的积分. 
+在另一方面, 共形半径也是被平方了（这对于 \(\psi_{Y(2)}\) 和 \(\psi_{Y'(2)}\) 的因子以及等式 \(|h'(0)| = 256 = |\lambda'(0)|^2\) 是显然的）, 
+因此共形半径的对数也被加倍了. 
+与此同时, 在\autoref{lem:9.0.3}的语境下, 不变量 \(\sigma = \sum_{i=1}^{r} c_i\) 被加倍了, 
+并且在定理 2.5.1 的语境下 \(\tau(\mathbf{b})\) 同样被加倍了.
+
+总而言之, 应用于 \(\dim_{\mathbf{Q}(x)} \mathcal{H}\) 以及 \(\dim_{\mathbf{Q}(y)} \mathcal{H}^{w=1}\) （它们根据等式 \eqref{eq:9.0.21} 是相等的） 
+的边界 \eqref{eq:9.0.22} 在两种情况下都给出了完全相同的结果. 
+因此, 这在算术以及解析层面上都给出了这两个问题之间的（粗糙）等价性. 
+然而, 同样至关重要的一点是, 边界 \eqref{eq:9.0.22} 的这种清脆等价性仅适用于如在定理 2.5.1 或引理 9.0.3 中所陈述的粗糙分母类型的框架, 
+并且一旦我们开始考虑精细分母数据（例如伴随着来自第 6 节中添加积分的 \(\tau^{\sharp}\)）, 
+其间仍然存在差异. 
+我们将在第 10.3 节中看到, 在那时进行我们在本注记中详细阐明的 \(\varphi_{Y(2)} \rightsquigarrow \varphi_{Y_0(2)}\) 解析下降过渡会是非常有利的. \end{remark}
