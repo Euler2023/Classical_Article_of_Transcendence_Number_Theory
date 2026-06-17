@@ -1,0 +1,68 @@
+%# -*- coding: utf-8-unix -*-
+\chapter*{新进展}
+\addcontentsline{toc}{chapter}{新进展}
+\markboth{新进展}{新进展}
+
+我们对本书完成以来超越数\index{transcendental number}理论所取得的部分进展进行简要概述. 事实上, 这是一个非常活跃的研究领域, 在这里我们只能提及一小部分新成果. 近年来取得的许多重要成果的详细内容可以在 \textit{Transcendence theory: advances and applications} (Academic Press, London and New York, 1977) 中找到, 该书为 1976 年在 Cambridge 举办的学术会议论文集, 由 A. Baker\index{Baker, R. C.}\index{Baker, A.} 和 D. W. Masser\index{Masser, D. W.} 编辑; 后面将其简称为 TTAA.
+
+\section*{1. 对数线性形式\index{linear forms in logarithms}}
+
+在 \autoref{thm:ch3_1} 叙述之后给出的关于 \(\Lambda\) 的不等式得到了很大的改进. 在 TTAA 的第 1 章中证明了, 如果 \(\alpha_i\) 和 \(\beta_i\) 是高度分别至多为 \(A_i\) (\(\ge 4\)) 和 \(B\) (\(\ge 4\)) 的代数数\index{algebraic number}, 且由所有的 \(\alpha\) 与 \(\beta\) 在有理数域上生成的域的次数至多为 \(d\), 那么要么 \(\Lambda = 0\), 要么 \(|\Lambda| > (B\Omega)^{-C\Omega \log \Omega'}\), 其中 \(\Omega = \log A_1 \dots \log A_n\), \(\Omega' = \Omega/\log A_n\) 并且 \(C = (16nd)^{200n}\). 此外, 在有理数的情形下, 即当 \(\beta_0 = 0\) 且 \(\beta_1, \dots, \beta_n\) 是有理整数时, 括号中的因子 \(\Omega\) 可以被消去, 从而得到 \(|\Lambda| > B^{-C\Omega \log \Omega'}\). 后一个结果关于 \(A_n\) 和 \(B\) 是最佳可能的, 且除了二阶项 \(\log \Omega'\) 之外, 关于 \(A_1, \dots, A_{n-1}\) 也是类似的. 其证明特别涉及到了 Tijdeman\index{Tijdeman, R.} 对第 25 页的 \autoref{lem:ch2_1} 所作的一个改进版本, Shorey\index{Shorey, T. N.} 关于第 31 页的 \autoref{lem:ch2_6} 中出现的归纳步骤大小的一个新想法, 以及关于第 34 页和第 35 页中论证的一些相当深入的进展, 其中更广泛地应用了 Kummer 理论\index{Kummer theory}. 若干作者已经发表了对结果的精细化改进, 特别是关于 \(C\) 的表达式.\footnote{参见 J. Australian Math. Soc. 25 (1978), 445-78.}
+
+对数线性形式\index{linear forms in logarithms}也存在着内容丰富的 \(p\)-进理论. 该课题由 Mahler\index{Mahler, K.} 在 20 世纪 30 年代首创, 当时他获得了 Hermite\index{Hermite, Ch.}-Lindemann\index{Lindemann, F.} 定理和 Gelfond\index{Gelfond, A. O.}-Schneider\index{Schneider, Th.} 定理的 \(p\)-进类比; 事实上, 在该工作的进行过程中, Mahler\index{Mahler, K.} 奠定了 \(p\)-进解析函数理论的基础, 这也是该领域所有后续研究的基石. van der Poorten\index{van der Poorten, A. J.} 在 TTAA 的第 2 章中对这一主题做出了优秀的论述; 特别地, 他在其中建立了 \(\Lambda\) 的 \(p\)-进赋值估计, 其精确度基本上与前面引用的 Archimedean 情形相同.
+
+\section*{2. 丢番图方程\index{Diophantine equations}}
+
+关于 \(\Lambda\) 的更精确的估计, 特别是它们对 \(A_n\) 的最佳可能依赖关系, 使得丢番图方程\index{Diophantine equations}理论取得了许多瞩目的进展.
+
+首先, 它们立刻给出了方程 \(ax^n-by^n=c\) 的所有整数解 \(x>1, y>1, n>2\) 的显式上界, 其中 \(a, b, c\) (\(\neq 0\)) 是任意给定的整数. 事实上, 不失一般性地, 我们可以假设 \(a\) 和 \(b\) 为正数且 \(y\ge x\), 则该方程给出 \(|\Lambda|\ll y^{-n}\), 其中 \(\Lambda=\log{(a/b)}+n\log{(x/y)}\), 并且其中所蕴含的常数仅依赖于 \(a\), \(b\) 和 \(c\). 然而, 根据 \S~1 中记录的结果, 我们有 \(\log{|\Lambda|} \gg -\log{y}\log{n}\); 对比估计便可得到 \(n\) 的一个用 \(a, b, c\) 表示的界, 进而由 \autoref{thm:ch4_2} 给出 \(x\) 和 \(y\) 的界.
+
+Tijdeman\index{Tijdeman, R.}\footnote{Acta Arith. 29 (1976), 197-209.} 曾利用类似的论证证明了著名的 Catalan 方程\index{Catalan equation} \(x^p - y^q = 1\) 只有有限多个整数解 \(x, y, p, q\) (均 \({}> 1\)). 这里我们可以假设 \(p, q\) 为奇素数, 且只需处理 \(p > q\) 的情形. 此时, 对于某些整数 \(X, Y\), 有 \(x = kX^q + 1\), \(y = lY^p - 1\), 其中 \(k\) 为 \(1\) 或 \(1/p\), \(l\) 为 \(1\) 或 \(1/q\). 显然我们有
+\[ |p\log x - q\log y| \ll y^{-q}, \]
+因此 \(|\Lambda| \ll (kX^q)^{-1}\), 其中
+\[ \Lambda = p \log k - q \log l + pq \log (X/Y). \]
+由此根据 \S~1, 可得 \(q \ll (\log p)^4\). 此外, 线性型 \(\Lambda' = p \log (x/Y^q) - q \log l\) 满足 \(|\Lambda'| \ll (lY^p)^{-1}\), 因此再次根据 \S~1, 有 \(p \ll q (\log p)^3\). 从而 \(p\) 和 \(q\) 是有界的, 进而由 \autoref{thm:ch4_2}, \(x\) 和 \(y\) 也是有界的, 由此完成了证明.
+
+在 Tijdeman\index{Tijdeman, R.} 的发现之后, 涌现出了许多新颖的结果; 特别参见 TTAA 的第 3 章. 特别是, Schinzel\index{Schinzel, A.} 和 Tijdeman\index{Tijdeman, R.}\footnote{Acta Arith. 31 (1976), 199-204.} 有效解决了超椭圆类型的方程 \(y^m = f(x)\) 在整数 \(x, y > 1, m > 2\) 中的求解问题. Shorey\index{Shorey, T. N.} 和 Tijdeman\index{Tijdeman, R.}\footnote{Math. Scand. 39 (1976), 5-18.} 处理了方程 \(y^m = x^n + x^{n-1} + \dots + 1\) 在整数 \(x, y, m, n\) (均 \({}>1\)) 中的求解问题, 其中或者是 \(x\) 固定, 或者是 \(n + 1\) 或 \(y\) 具有固定的素因子. Gy{\"o}ry, Tijdeman\index{Tijdeman, R.} 和 Voorhoeve\index{Voorhoeve, M.}\footnote{Acta Arith. 38 (1981), 389-410.} 证明了对于任何整数 \(k \ge 6\), 方程 \(y^m = 1^k + \dots + x^k\) 只有有限多个整数解 \(x \ge 1, y \ge 1, m > 1\), 并且原则上所有这些解都可以被有效确定. Stewart\index{Stewart, C. L.}\footnote{Mathematika 24 (1977), 130-2. 类似的结果由 Inkeri 和 van der Poorten\index{van der Poorten, A. J.} 独立获得.} 证明了, 只要 \(|x-y|\) 是有界的, 那么 Fermat 方程\index{Fermat equation} \(x^n + y^n = z^n\) 在正整数 \(x, y, z\) 和 \(n\) (\({}>2\)) 中就只有有限多个解. Van der Poorten\footnote{Acta Arith. 33 (1977), 195-207.} 利用 \(p\)-进分析有效解决了方程 \(x^p - y^q = z^r\) 在整数 \(x, y, z, p, q\) (均 \({}> 1\)) 中的求解问题, 其中 \(z\) 仅由一组给定的素数的幂组成, 且 \(r\) 是 \(p\) 和 \(q\) 的最小公倍数. 此外, Gy{\"o}ry 和 Papp\index{Papp, Z. Z.}\footnote{Publ. Math. Debrecen 25 (1978), 311-25.} 最近在有效解决第 \autoref{ch:7} 章第 68 页提到的那种多元范数型方程的问题上取得了有价值的进展.
+
+还应当指出的是, 在第 \autoref{ch:7} 章中讨论的 Schmidt\index{Schmidt, W. M.} 的工作已经由 Dubois\index{Dubois, E.} 和 Rhin\index{Rhin, G.},\footnote{Ast{\'e}risque (Soc. Math. France), 24-5 (1975), 211-27.} 以及 Schlickewei\index{Schlickewei, H. P.}\footnote{J.M. 288 (1976), 86-105.} 在 \(p\)-进领域中得到了广泛推广.
+
+\section*{3. 椭圆函数与 Abelian 函数\index{Abelian function}}
+
+在过去的几年里, 围绕第 \autoref{ch:6} 章的工作进行了大量的研究. 事实上, 这些结果已经在三个方向上得到了推广, 即定量化、\(p\)-进化以及在 Abelian 簇的背景下. 特别令人感兴趣的是第 64 页末尾引用的 Masser\index{Masser, D. W.} 结果的定量版本; 参见 Anderson\index{Anderson, M.} 在 TTAA 第 7 章中的论文. 这些研究引出了关于 Weierstrass\index{Weierstrass, K.} 函数分点值性质的微妙问题, 并且特别是 Bashmakov\index{Bashmakov, M.} 和 Ribet\index{Ribet, K. A.} 最近关于该主题的一些定理已被证明非常有用. 正如 Masser\index{Masser, D. W.},\footnote{Invent. Math. 45 (1978), 61--82.} Coates\index{Coates, J.} 和 Lang\index{Lang, S.}\footnote{Invent. Math. 34 (1976), 129--133.} 所展示的那样, 只要对复乘\index{complex multiplication}做出适当的假设, 就可以将这些方法推广到处理 Abelian 函数\index{Abelian function}的情形; 并且该理论已被 Bertrand\index{Bertrand, D.} 和 Flicker\index{Flicker, Y. Z.}\footnote{Acta Arith. 38 (1980), 47--61.} 推广到了针对一大类素数 \(p\) 的 \(p\)-进领域.
+
+其他值得注意的结果包括 Bertrand\index{Bertrand, D.}\footnote{TTAA 第 9 章以及 Invent. Math. 40 (1977), 171-93.} 获得的 Schneider\index{Schneider, Th.} \autoref{thm:ch6_2} 的 \(p\)-进版本, Masser\index{Masser, D. W.}\footnote{Mathematika, 22 (1975), 97-107.} 解决了第 57 页提到的当 \(p=2\) 时的未决问题, 他将 \autoref{thm:ch6_6} 推广到包含数 \(2\pi i\) 的情形,\footnote{TTAA 第 6 章.} 以及 Chudnovsky\index{Chudnovsky, G. V.}\footnote{参见 Waldschmidt\index{Waldschmidt, M.} 在 Lecture Notes in Mathematics, vol. 567 (Springer-Verlag, Berlin, 1977), pp. 274-92. 中的文章.} 的一个引人注目的定理, 该定理指出如果 \(g_2\) 和 \(g_3\) 是代数数, 那么由 \(\omega_1, \omega_2, \eta_1, \eta_2\) 在有理数域上生成的域的超越次数\index{transcendence degree}至少为 2. 作为一个直接推论, 人们得到了 \(\Gamma(\frac{1}{4})\) 的超越性; 这可以通过考虑曲线 \(y^2 = 4x^3 - 4x\) 得到, 对于该曲线我们可以取 \(\omega_1 = (\Gamma(\frac{1}{4}))^2/\sqrt{(8\pi)}\), \(\omega_2 = i\omega_1\), \(\eta_1 = \pi/\omega_1\) 以及 \(\eta_2 = -i\eta_1\). 类似地, 从曲线 \(y^2 = 4x^3 - 4\) 可以推导出 \(\Gamma(\frac{1}{3})\) 也是超越数.
+
+\section*{4. 亚纯函数的算术性质\index{meromorphic function}}
+
+Mahler\index{Mahler, K.} 在他的专著 \textit{Lectures on transcendental numbers\index{transcendental number}\index{numbers}} (Lecture Notes in Mathematics, vol. 546, Springer-Verlag, Berlin, 1976) 中对 Siegel\index{Siegel, C. L.}-Shidlovsky\index{Shidlovsky, A. B.} 定理给出了极好的论述. 该书还包含了一些著名的整超越函数的例子, 这些函数连同其导数在所有代数点上都取代数数值, 并且还有一个有趣的附录, 对 \(e\) 和 \(\pi\) 超越性的经典证明进行了历史性的综述. Waldschmidt\index{Waldschmidt, M.} 和 Bertrand\index{Bertrand, D.} 在 TTAA 第 11 章与第 12 章中的论文包含了关于有限阶亚纯函数\index{meromorphic function}的新结果.
+
+第 117 页提到的估计量 \(P(E_1, \dots, E_n)\) 的问题已被 Nesterenko\index{Nesterenko, Ju. V.}\footnote{I.A.N. 41 (1977), 253-84.} 研究, 并且他得到了对 \(P\) 的次数具有显式依赖关系的界; 在这方面的进一步工作, 以及与第 \autoref{ch:10} 章相关的研究, 已由 V{\"a}{\"a}n{\"a}nen\footnote{Manuscripta Math. 21 (1977), 173-80; Bull. Australian Math. Soc. 14 (1976), 161-79.} 完成. 对 \(G\)-函数估计类似表达式的问题已由 Nurmagomedov\index{Nurmagomedov, M. S.}, Galo\v{c}kin 以及在 \(p\)-进领域中的 Flicker\index{Flicker, Y. Z.}\footnote{J. London Math. Soc. 15 (1977), 395-402.} 进行了探讨. 顺便提一下, 至今尚未给出 Siegel\index{Siegel, C. L.}-Shidlovsky\index{Shidlovsky, A. B.} 理论令人满意的 \(p\)-进推广.
+
+在另一个方向上, Mahler\index{Mahler, K.} 关于满足某些函数方程的函数的古老且此前被忽视的方法, 在过去几年中已成为许多研究活动的焦点. 该方法背后的原理比 Siegel\index{Siegel, C. L.}-Shidlovsky\index{Shidlovsky, A. B.} 理论的原理更为简单, 并且它们已被证明能够进行相当广泛的推广; 参见 Loxton\index{Loxton, J. H.} 与 van der Poorten\index{van der Poorten, A. J.} 以及 Kubota\index{Kubota, K. K.} 在 TTAA 第 15 章和第 16 章中的综述文章. 该方法所提供的结果的典型例子包括: 对于满足 \(0 < |z| < 1\) 的所有代数数 \(z\), Fredholm 级数\index{Fredholm series} \(\sum z^{2^n}\) 的超越性, 以及对于所有上述 \(z\) 和任意无理数 \(\omega\), \(\sum [n\omega]z^n\) 的超越性. 它还产生了一些新的代数无关数\index{numbers}的实例.
+
+\section*{5. 其他工作}
+
+Stewart\index{Stewart, C. L.}\footnote{Acta Arith. 26 (1975), 427-33; Proc. London Math. Soc. 35 (1977), 425-47; 另见 TTAA 第 4 章.} 利用前面引用的对数线性形式\index{linear forms in logarithms}估计, 给出了关于算术序列因子性质的许多新信息, 特别是关于 Lucas 和 Lehmer 数\index{Lucas and Lehmer numbers}的性质.
+
+Chudnovsky\index{Chudnovsky, G. V.} 宣布了对第 \autoref{ch:12} 章讨论的 Gelfond\index{Gelfond, A. O.} 方法的一些广泛推广, 从而导出了某些集合中三个或更多个数\index{numbers}的代数无关性, 而不仅是 \autoref{thm:ch12_1} 和 \autoref{thm:ch12_2} 中出现的两个数.\footnote{再次参见 Waldschmidt\index{Waldschmidt, M.} 在 Lecture Notes in Mathematics, vol. 567 (Springer-Verlag, Berlin, 1977), pp. 274-92. 中的文章.}
+
+R. C. Baker\index{Baker, R. C.}\index{Baker, A.}\footnote{Mathematika, 23 (1976), 18-31, 184-97.} 获得了关于 \(T\)-数的新结果, 以及关于 Schmidt\index{Schmidt, W. M.} 与作者提出的关于第 \autoref{ch:10} 章讨论的度量理论\index{metrical theory}的猜想的新结果.
+
+Stepanov\index{Stepanov, S. A.} 以及随后的 Bombieri\index{Bombieri, E.} 和 Schmidt\index{Schmidt, W. M.} 利用超越技术为曲线的 Riemann 假设\index{Riemann hypothesis}提供了一个新证明, 该证明比最初给出的证明要初等得多.\footnote{参见 Schmidt\index{Schmidt, W. M.} 的专著, Lecture Notes in Mathematics, vol. 536 (1976).}
+
+最后, 我们提一下 Ap{\'e}ry 刚刚证明了 \(\zeta(3)\) 的无理性.
+
+\section*{6. 附加评注 (1990)}
+
+TTAA (参见第 155 页) 的一个自然续篇是 \textit{New advances in transcendence theory} (Cambridge University Press, 1988), 该书为 1986 年在 Durham 举行的一个专题研讨会的论文集, 由 A. Baker\index{Baker, R. C.}\index{Baker, A.} 编辑; 后面我们将该书简称为 NATT. 它涵盖了近年来最重大的发现.
+
+W{\"u}stholz 以及 Philippon 和 Waldschmidt\index{Waldschmidt, M.} 在 NATT 中的论文独立证明了, 可以从第 155 页讨论的关于 \(|\Lambda|\) 的估计中消去二阶项 \(\log \Omega'\). 这些论证依赖于群簇上的重数估计理论. 这是超越数论中一个重要的新工具, 源于 Nesterenko\index{Nesterenko, Ju. V.}\footnote{I.A.N. 41 (1977), 253--284.} 引入的涉及交换代数的技术; 它已由 Brownawell\index{Brownawell, W.} 和 Masser,\footnote{J.M. 314 (1980), 200--216; Duke Math. J. 47 (1980), 273--295.} Masser\index{Masser, D. W.} 和 W{\"u}stholz,\footnote{Invent. Math. 64 (1981), 489--516; 80 (1985), 233--267.} Philippon\footnote{Bull. Soc. Math. France 114 (1986), 355--383.} 以及最著名的是由 W{\"u}stholz\footnote{J.M. 317 (1980), 102--119; Ann. Math. 129 (1989), 471--517.} 进行了进一步发展. 这项工作导致了该主题的许多方面在代数群框架下的显著统一.
+
+NATT 中有几篇关于丢番图分析\index{Diophantine analysis}的重要研究论文; 特别是包括了 Evertse, Gy{\"o}ry, Stewart\index{Stewart, C. L.} 和 Tijdeman\index{Tijdeman, R.} 对富饶的 \(S\)-单位方程领域进行综述的文章, 以及 Odoni 撰写的一篇将结果应用于 Serre\index{Serre, J. P.} 关于模形式问题之中的论文. 正如专著\footnote{此处, 许多内容有赖于第 156 页提到的 van der Poorten\index{van der Poorten, A. J.} 的 \(p\)-进估计. Yu Kunrui 最近给出了一个改进版本 (Compositio Math., 即将发表), 纠正了 van der Poorten\index{van der Poorten, A. J.} 论证中的一些错误; 参见 NATT 中的讨论.} \textit{Exponential Diophantine equations\index{Diophantine equations}}\footnote{Cambridge University Press, 1986; 由 T. N. Shorey\index{Shorey, T. N.} 和 R. Tijdeman\index{Tijdeman, R.} 著.} 所表明的那样, 在过去十年中, 这一课题已经变成了一个异常丰富研究领域. 在另一个令人兴奋的进展中, Masser\index{Masser, D. W.} 与 W{\"u}stholz 以及 Vojta 最近利用超越方法分别给出了 Mordell\index{Mordell, L. J.} 猜想的两个新证明, 该猜想指出亏格\index{curves of genus} \({}>1\) 的代数曲线上的有理点个数是有限的 (该猜想于 1983 年由 Faltings 首次证明).
+
+\(E\)-函数和 \(G\)-函数的研究继续保持非常活跃. NATT 再次对该领域做出了出色的论述; 特别是 Beukers\index{Beukers, F.} 和 Wolfart 的一些漂亮的结果, 它们精确地指出了经典的超几何函数\index{hypergeometric function}何时可以取代数数值. A. B. Shidlovsky\index{Shidlovsky, A. B.} 在 \textit{Transcendental numbers\index{transcendental number}\index{numbers}} (de Gruyter, 1989), Studies in mathematics 12 一书中对基本的 Siegel\index{Siegel, C. L.}-Shidlovsky\index{Shidlovsky, A. B.} 理论进行了全面的阐述.
+
+第 95 页提到的关于 \((\psi(h))^n\) 的度量猜想已由 V. I. Bernik 证明; 在他发表于 NATT 的论文中给出了对此结果的引用, 以及他对 Baker\index{Baker, R. C.}\index{Baker, A.} 和 Schmidt\index{Schmidt, W. M.} 关于 Hausdorff 维度\index{Hausdorff dimension}问题之解答的引用.
+
+Gauss\index{Gauss, C. F.} 关于有效确定具有给定类数的所有虚二次域的著名问题, 此前已针对 \autoref{ch:5} 中描述的类数\index{numbers} 1 和 2 的情形得到了解决, 如今已由 Goldfeld, Gross 和 Zagier 通过椭圆曲线\index{elliptic curve}理论在一般情况下获得了解决.\footnote{C.R. 297 (1983), 85--87; Bull. Amer. Math. Soc. 13 (1985), 23--37.}

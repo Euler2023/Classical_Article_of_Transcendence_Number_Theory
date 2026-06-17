@@ -1,0 +1,191 @@
+%# -*- coding: utf-8-unix -*-
+
+\chapter{椭圆函数}\label{ch:6}
+
+\section{引言}
+
+Siegel\index{Siegel, C. L.}\footnote{J.M. 167 (1932), 62--9.} 于 1932 年证明了, 如果 $\wp(z)$ 是一个 Weierstrass\index{Weierstrass, K.} $\wp$ 函数\index{Weierstrass $\wp$-function}, 使得方程
+
+\[(\wp'(z))^2 = 4(\wp(z))^3 - g_2\wp(z) - g_3\]
+中的不变量 $g_2, g_3$ 是代数数\index{algebraic number}, 那么 $\wp(z)$ 的任意一组基本周期对 $\omega, \omega'$ 中至少有一个是超越数; 因此, 如果 $\wp(z)$ 具有复乘\index{complex multiplication}, 则 $\omega$ 和 $\omega'$ 都是超越数. Siegel\index{Siegel, C. L.} 的工作在 1937 年被 Schneider\index{Schneider, Th.}\footnote{M.A. 113 (1937), 1--13.} 大幅改进; Schneider\index{Schneider, Th.} 证明了如果 $g_2, g_3$ 是代数的, 那么 $\wp(z)$ 的任何周期都是超越数, 并且除了复乘\index{complex multiplication} 的情况外, 商 $\omega/\omega'$ 也是超越数. 由后一个结果可以立即得出, 对于除虚二次无理数以外的任何代数数 $z$, 椭圆模函数\index{elliptic modular function} j(z) 都是超越数. Schneider\index{Schneider, Th.} 的工作实际上导出了一系列关于 Weierstrass\index{Weierstrass, K.} 函数值超越性的定理, 并且在 1941 年, 他进一步获得了关于 Abelian 函数\index{Abelian function} 以及积分的具有深远影响的推广.\footnote{J.M. 183 (1941), 110--28.}
+
+Schneider\index{Schneider, Th.} 在此背景下的多数结果都可以作为他于 1949 年证明的关于亚纯函数\index{meromorphic function} 的一个一般性定理 of 的特例导出.\footnote{M.A. 121 (1949), 131--40.} 该定理最近由 Lang\index{Lang, S.} 进行了重新表述.\footnote{参见参考文献 (第一部著作).}
+
+\begin{mythm}{}{ch6_1}
+设 K 为代数数\index{algebraic number} 域, 并设 $f_1(z), \ldots, f_n(z)$ 为有限阶的亚纯函数\index{meromorphic function}. 假设环 $K[f_1, \ldots, f_n]$ 在微分作用下映射到自身, 且在 K 上具有至少为 2 的超越度\index{transcendence degree}. 那么仅有有限多个数\index{numbers} z 使得 $f_1, \ldots, f_n$ 同时在 K 中取值.
+\end{mythm}
+
+如果存在 $\rho > 0$ 以及 f 表示为整函数之商 g/h 的表示形式, 使得对于任意 $R \ge 2$ 和所有满足 $|z| \le R$ 的 z, 均有
+
+\[\max(|g(z)|, |h(z)|) < \exp(R^{\rho}). \tag{1}\label{eq:ch6_1}\]
+则称亚纯函数\index{meromorphic function} f(z) 具有有限阶.
+
+环 $K[f_1,\dots,f_n]$ 由所有以 K 中元素为系数 of 的 $f_1,\dots,f_n$ 的多项式组成, 而超越度\index{transcendence degree} 是代数无关子集中的最大元素个数. \autoref{thm:ch6_1} 已被推广 to 到与多元亚纯函数\index{meromorphic function} 相关的情形, 但该断言仅对本质上可表示为笛卡尔积的点集成立, 这极大地限制了其应用范围.\footnote{关于旨在克服这一困难的一些研究工作, 参见 Bombieri\index{Bombieri, E.} (Invent. Math. 10 (1970), 267--87) 以及 Bombieri\index{Bombieri, E.} 和 Lang\index{Lang, S.} (同上, 11 (1970), 1--14) 的论文. 文中表明, 如果所讨论的点不位于代数超曲面上就足够了.} 然而, 正如在第 \ref{ch:2} 章和第 \ref{ch:3} 章中那样, 多元函数已在关于椭圆函数\index{elliptic functions} 的其他研究中得到应用, 这将是 \S~6 的主题.
+
+\section{推论}
+
+我们现在给出 \autoref{thm:ch6_1} 的一些推论; 其他推论可以在参考文献中引用的著作里找到.
+
+\begin{mythm}{}{ch6_2}
+如果 $g_2, g_3$ 是代数的, 那么对于任何代数数 $\alpha \neq 0$, $\wp(\alpha)$ 都是超越数.
+\end{mythm}
+
+对于该证明, 只需注意到如果 $\wp(\alpha)$ 是代数的, 那么对于无数个整数值 z, 函数
+
+\[f_1(z) = \wp(\alpha z), \quad f_2(z) = \wp'(\alpha z), \quad f_3(z) = z\]
+
+将同时在由 $g_2, g_3, \alpha, \wp(\alpha)$ 以及 $\wp'(\alpha)$ 在有理数域上生成的代数数\index{algebraic number} 域中取值, 这与 \autoref{thm:ch6_1} 矛盾.
+
+\begin{mythm}{}{ch6_3}
+对于除二次无理数以外的、具有正虚部的任何代数数 $\alpha$, $j(\alpha)$ 是超越数.
+\end{mythm}
+
+因为假设 $j(\alpha)$ 是代数的. 那么存在一个具有代数不变量 $g_2, g_3$ 和基本周期 $\omega_1, \omega_2$ 的 $\wp$ 函数, 使得 $\alpha = \omega_2/\omega_1$; 事实上, 如果 $\overline{\wp}(z)$ 是具有周期 1, $\alpha$ 的 $\wp$ 函数, 且 $\overline{g}_2, \overline{g}_3$ 是 $\overline{\wp}$ 的不变量, 那么所要求的 $\wp$ 函数的周期在 $\overline{g}_3 \neq 0$ 时为 $\overline{g}_3^{\frac{1}{3}}, \alpha \overline{g}_3^{\frac{1}{3}}$, 在 $\overline{g}_2 \neq 0$ 时为 $\overline{g}_2^{\frac{1}{2}}, \alpha \overline{g}_2^{\frac{1}{2}}$. 现在, 当 $z = (r + \frac{1}{2})\omega_1$ ($r = 1, 2, \ldots$) 时, 函数 $f_1 = \wp(z)$, $f_2 = \wp(\alpha z)$, $f_3 = \wp'(z)$, $f_4 = \wp'(\alpha z)$ 同时在某个代数数\index{algebraic number} 域 (不妨记为 K) 中取值, 因此由 \autoref{thm:ch6_1}, $K[f_1, f_2, f_3, f_4]$ 的超越度\index{transcendence degree} 至多为 1. 这表明 $f_1, f_2$ 代数相关, 从而对于某个正整数 l, $l\omega_2$ 是 $\wp(\alpha z)$ 的一个周期. 因此对于某些整数 m, n, 有 $l\alpha \omega_2 = m\omega_1 + n\omega_2$, 从而 $\alpha$ 是一个二次无理数. 回想一下, 如果 1, $\alpha$ 是虚二次域 K 的一组基, 那么 $j(\alpha)$ 实际上是一个实代数整数\index{algebraic integer}, 其次数由 K 的类数给出,\footnote{关于旨在克服这一困难的一些研究工作, 参见 Bombieri\index{Bombieri, E.} (Invent. Math. 10 (1970), 267--87) 以及 Bombieri\index{Bombieri, E.} 和 Lang\index{Lang, S.} (同上, 11 (1970), 1--14) 的论文. 文中表明, 如果所讨论的点不位于代数超曲面上就足够了.} 从而 \autoref{thm:ch6_3} 的假设显然是必要的.
+
+\begin{mythm}{}{ch6_4}
+通过对 Abelian 积分\index{Abelian integral} 求逆而从代数曲线\footnote{该曲线定义在代数数\index{algebraic number} 上.} 中得到的 Abelian 函数\index{Abelian function} 的任何周期向量都是超越的.
+\end{mythm}
+
+该结果可通过将 $f_1(z), \dots, f_{n-1}(z)$ 设为 Abelian 函数\index{Abelian function} (不妨设为 $A(z_1, \dots, z_p)$) 以及它关于 $z_1, \dots, z_p$ 的 p 个偏导数在 $z_1 = \omega_1 z, \dots, z_p = \omega_p z$ 处的值 (其中 $(\omega_1, \dots, \omega_p)$ 表示给定的周期), 并结合 $f_n(z) = z$ 应用 \autoref{thm:ch6_1} 得到. 也许应当强调的是, 该定理仅确立了周期向量中至少一个元素的超越性, 证明每一个此类元素的超越性仍是一个未决问题. \autoref{thm:ch6_4} 的一个类似结果由 Schneider\index{Schneider, Th.}\footnote{J.M. 183 (1941), 110--28.} 于 1941 年获得; 他通过多元技术证明了 2p 个基本周期的第一个分量中至少有一个是超越数, 这意味着 $\beta$ 函数
+
+\[\beta(a,b) = \int_0^1 x^{a-1} (1-x)^{b-1} dx = \frac{\Gamma(a) \; \Gamma(b)}{\Gamma(a+b)}\]
+
+对于所有有理数、非整数的 a, b 是超越的. 因为如果 a+b 不是整数, 那么由积分 $x^{a-1}(1-x)^{b-1}$ 产生的 Abelian 函数\index{Abelian function} 的周期的第一个分量由 $\beta(a,b)$ 与在有理数域上由 $e^{2\pi ia}$ 和 $e^{2\pi ib}$ 生成的域中的数的乘积给出; 而 a+b 是整数的情形可归结为 $\pi$ 的超越性\index{transcendence of  $\pi$}. 关于 $\beta(a,b)$ 的这一结果代表了目前对 $\Gamma$ 函数值超越性的全部了解.
+
+最后, 设 $\omega$ 为具有代数不变量 $g_2, g_3$ 的 $\wp$ 函数的基元周期, 并且设 $\eta = 2\zeta(\frac{1}{2}\omega)$ 为满足 $\zeta'(z) = -\wp(z)$ 的 Weierstrass\index{Weierstrass, K.} $\zeta$ 函数\index{Weierstrass $\zeta$-function} 的相应拟周期. 我们有
+
+\begin{mythm}{}{ch6_5}
+$\omega, \eta$ 的任何系数不全为 0 的代数系数线性组合都是超越数.
+\end{mythm}
+
+对于该证明, 我们只需观察到, 如果 $\alpha\omega + \beta\eta$ 是代数的 (其中 $\alpha, \beta$ 是不全为 0 的代数数\index{algebraic number}), 那么当 $z=(r+\frac{1}{2})\,\omega$ ($r=1,2,\dots$) 时, 函数
+
+\[f_1 = \wp(z), \quad f_2 = \wp'(z), \quad f_3 = \alpha z + \beta \zeta(z)\]
+
+将同时在一个代数数\index{algebraic number} 域中取值, 这与 \autoref{thm:ch6_1} 矛盾. 回想一下 $\omega$ 和 $\eta$ 可以分别表示为第一类 and 和第二类椭圆积分\index{elliptic integral}, 我们可以很容易地从 \autoref{thm:ch6_5} 推导出, 任何具有代数轴长的椭圆\index{ellipse} 的周长都是超越数. 此背景下的进一步工作将在 \S~6 中讨论.
+
+\section{线性方程组}\label{sec:ch6_3}
+
+我们在此建立一个关于具有代数系数的线性方程组\index{linear equations} 的结果, 它推广了第 \ref{ch:2} 章的 \autoref{lem:ch2_1}. K 将表示一个代数数\index{algebraic number} 域, 而 $c_1, c_2, c_3$ 将表示仅依赖于 K 的正数\index{numbers}. 此外, 像在第 \ref{ch:4} 章中一样, $\|\theta\|$ 将表示 $\theta$ 的大小, 即 $\theta$ 的所有共轭元绝对值的最大值.
+
+\begin{mylemma}{}{ch6_1}
+设 M, N 为满足 N > M > 0 的整数, 并且设
+\[u_{ij} \quad (1 \leqslant i \leqslant M, 1 \leqslant j \leqslant N)\]
+为 K 中的代数整数\index{algebraic integer}, 其大小至多为 U ($\approx \geqslant 1$). 则在 K 中存在不全为 0 的代数整数\index{algebraic integer} $x_1, \dots, x_N$, 满足
+\[\sum_{j=1}^{N} u_{ij} x_j = 0 \quad (1 \leqslant i \leqslant M)\]
+且
+\[\|x_j\| \le c_1(c_1 N U)^{M/(N-M)} \quad (1 \le j \le N).\]
+\end{mylemma}
+
+\begin{proof}
+我们用 $\omega_1, \dots, \omega_n$ 表示 K 的一组整基, 并且注意到
+\[u_{ij}\omega_k = \sum_{h=1}^n u_{hijk}\omega_h\]
+对于某些有理整数 $u_{hijk}$ 成立. 这些方程用于将后者表示为 $u_{ij}$ 及其共轭元的线性组合, 其系数仅依赖于 K, 因此我们有 $|u_{hijk}| < c_2 U$. 由第 \ref{ch:2} 章的 \autoref{lem:ch2_1} 可知, 存在不全为 0 的有理整数 $x_{jk}$, 其绝对值至多为 $(c_3 NU)^{M/(N-M)}$, 满足
+\[\sum_{j=1}^{N}\sum_{k=1}^{n}u_{hijk}x_{jk}=0 \quad (1\leqslant h\leqslant n,\, 1\leqslant i\leqslant M),\]
+现在显然, 数\index{numbers}
+\[x_j = \sum_{k=1}^n x_{jk} \omega_k \quad (1 \leqslant j \leqslant N)\]
+具有所要求的性质.
+\end{proof}
+
+\section{辅助函数}
+
+\begin{mylemma}{}{ch6_2}
+在 K 中存在不全为 0 的代数整数\index{algebraic integer} $p(\lambda_1, \lambda_2)$, 其大小至多为 $k^{c_2k}$, 使得函数
+\[\Phi(z) = \sum\limits_{\lambda_1=0}^L \sum\limits_{\lambda_2=0}^L p(\lambda_1,\lambda_2) \left(f_1(z)\right)^{\lambda_1} (f_2(z))^{\lambda_2}\]
+满足
+\[\Phi^{(j)}(y_l)=0 \quad (0\leqslant j\leqslant k,\, 1\leqslant l\leqslant m).\]
+\end{mylemma}
+
+\begin{proof}
+数 $\Phi^{(j)}(y_l)$ 显然可表示为以 $p(\lambda_1, \lambda_2)$ 为变量的线性形式, 其系数由 $f_1(y_l), \dots, f_n(y_l)$ 的多项式给出. 这些多项式源自 $f_1, \dots, f_n$ 的导数, 根据假设, 它们是 $K[f_1, \dots, f_n]$ 中的元素; 因此 $p(\lambda_1, \lambda_2)$ 的系数属于 K. 后者在乘以某个正整数后变为代数整数\index{algebraic integer}, 我们假设 these 这些代数整数\index{algebraic integer} 的大小至多为 U. 需要满足的方程个数为 M = m(k+1), 且未知量 $p(\lambda_1, \lambda_2)$ 的个数为 $N = (L+1)^2 > k^{\frac{1}{2}}$. 但显然对于足够大的 k, 有 N > 2M, 从而根据 \autoref{lem:ch6_1}, 这些方程有非平凡解, 并且 $p(\lambda_1, \lambda_2)$ 的大小至多为 $c_1^2NU$. 因此, 只需证明可以取 $U \leq k^{c_1k}$.
+
+现在, 很容易通过对 j 进行归纳来验证, 对于任何在 K 中有系数的多项式
+\[Q(x_1, \dots, x_n) = \sum_{l_1=0}^{d} \dots \sum_{l_n=0}^{d} q(l_1, \dots, l_n) x_1^{l_1} \dots x_n^{l_n}\]
+函数 $R(z) = Q(f_1, \dots, f_n)$ 满足
+\[R^{(j)}(z) = \sum_{l_1=0}^{d'} \dots \sum_{l_n=0}^{d'} r(l_1, \dots, l_n) f_1^{l_1} \dots f_n^{l_n},\]
+其中 $r(l_1, \dots, l_n)$ 同样是 K 中的元素, 且 $d' \leq d + j\delta$, 其中 $\delta$ 表示 $f_1, \dots, f_n$ 的一阶导数 (表示为后者的多项式) 的最大次数. 此外, 很容易证实, 如果在将 Q 乘以某个正整数后, $q(l_1, \dots, l_n)$ 变为大小至多为 s 的代数整数\index{algebraic integer}, 那么 $R^{(j)}$ 也可以乘以一个正整数, 使得 $r(l_1, \dots, l_n)$ 变为大小至多为 $S = (c_2d)^j j! s$ 的代数整数\index{algebraic integer}. 在此结果中取 $Q = x_1^{\lambda_1} x_2^{\lambda_2}$ 且 $j \leq k$, 从而 $s = 1, d \leq L \leq k$ 以及 $S \leq k^{c_0 k}$, 并注意到若 k 足够大, 则对在 $z = y_l$ 处求值的每个幂乘积 $f_1^{l_1} \dots f_n^{l_n}$ 均可得到估计值 $k^{c_0 k}$ (其中 $l_i \leq d' \leq c_{10} k$ 且 $l \leq m$), 由此即可得出本引理.
+\end{proof}
+
+\begin{mylemma}{}{ch6_3}
+对于任意 $R \ge 2$ 和所有满足 $|z| \le R$ 的 z, 函数 $\phi = (h_1 \dots h_n)^L \Phi$ 满足
+\[|\phi(z)| < \exp\left\{c_{11}(k\log k + LR^{\rho})\right\}.\]
+此外, 对于任意满足 $j \ge k, l \le m$ 且对所有 i < j 均有 $\Phi^{(i)}(y_l) = 0$ 的 j, l, 数 $\phi^{(j)}(y_l)$ 要么为 0, 要么其绝对值至少为 $j^{-c_{12}j}$.
+\end{mylemma}
+
+\begin{proof}
+第一部分可由 \eqref{eq:ch6_1} 以及 \autoref{lem:ch6_2} 中出现的估计值直接推得. 第二部分通过类似于第 \ref{ch:2} 章 \autoref{lem:ch2_3} 证明中采用的论证获得; 我们观察到 $\Phi^{(j)}(y_l)$ 是 K 中的一个元素, 并且对于 $j \ge k$, 它在乘以某个同样有界的正整数后成为一个大小至多为 $j^{c_{13}j}$ 的代数整数\index{algebraic integer}. 此外, 根据假设, $\Phi^{(j)}(y_l)$ 与 $\phi^{(j)}(y_l)$ 仅相差一个在 $z = y_l$ 处求值的因子 $(h_1 \dots h_n)^L$, 且所要求的结果现在由非零代数整数\index{algebraic integer} 的范数至少为 1 这一事实得出.
+\end{proof}
+
+\section{主定理的证明}
+
+\begin{proof}
+只需证明 $\Phi$ 恒等于 0; 因为这表明 $f_1$ 和 $f_2$ 代数相关, 从而由于下标可以任意选择, $K[f_1, \dots, f_n]$ 的超越度\index{transcendence degree} 至多为 1, 这与假设矛盾. 该矛盾表明 m 如上所述被某个 $c_4$ 所界定, 从而序列 $y_1, y_2, \dots$ 必须终止.
+
+证明将对 j 进行归纳; 我们假设
+\[\Phi^{(i)}(y_l) = 0 \quad (0 \le i < j, \ 1 \le l \le m),\]
+并证明对于 i = j 同样成立. 鉴于 \autoref{lem:ch6_2}, 我们可以假设 j > k. 现在设 C 为复平面上以原点为中心、半径为 $R = j^{1/(4\rho)}$ 且沿正方向描绘的圆周. 此外, 设
+\[F(z) = (z - y_1) \dots (z - y_m),\]
+并设 l 为满足 $1 \leq l \leq m$ 的任何整数. 根据 Cauchy 留数定理\index{Cauchy's residue theorem}
+\[\frac{\phi^{(j)}(y_l)}{(F'(y_l))^j} = \frac{j!}{2\pi i} \int_C \frac{\phi(z)\,dz}{(z-y_l)\,(F(z))^j}.\]
+
+显然, 对于 C 上的 z, 我们有
+\[|F(z)| > (\frac{1}{2}R)^m > j^{m/(8\rho)},\]
+并且还有 $|z-y_i| > \frac{1}{2}R$. 此外, 我们有 $LR^{\rho} \leq k^{\frac{3}{4}}j^{\frac{1}{4}} \leq j$, 从而由 \autoref{lem:ch6_3} 可得 $|\phi(z)| \leq j^{c_{14}j}$. 此外, 显然对于足够大的 k  有 $|F'(y_i)| < j$. 因此我们得到
+\[|\phi^{(j)}(y_j)| \leq j^{c_{15}j-jm/(8\rho)}.\]
+
+但如果 $m > 8\rho(c_{12} + c_{15})$, 那么鉴于 \autoref{lem:ch6_3}, 后一个估计值意味着 $\phi^{(j)}(y_l) = 0$. 在显然可以假设 $h_1 \dots h_n$ 在 $z = y_l$ 处不为 0 的情况下, 可得 $\Phi^{(j)}(y_l) = 0$. 因此, 通过归纳法, 我们断定 $\Phi$ 及其所有导数在 $y_1, \dots, y_m$ 处均为 0, 从而 $\Phi$ 恒等于 0, 证毕.
+\end{proof}
+
+\section{周期与拟周期}
+
+引言中引用的 Siegel\index{Siegel, C. L.} 的工作基于此前几年 Gelfond\index{Gelfond, A. O.} 发现的插值技术\footnote{例如参见 T{\^o}hoku Math. J. 30 (1929), 280--5.}, 而 Schneider\index{Schneider, Th.} 的工作源于这些技术的进一步发展, 正引言正如第 \ref{ch:2} 章中所提到的, 这导致了 Hilbert\index{Hilbert, D.} 第七问题的解决.\footnote{G{\"{o}}ttingen Nachrichten (1969), No. 16, 145--57.} 前面章节中讨论的关于代数数对数线性形式\index{logarithms of algebraic numbers}\index{algebraic number} 的最新进展, 同样为椭圆函数\index{elliptic functions} 的超越理论带来了新的成果, 我们现在将对此进行阐述.
+
+首先, 作为 \autoref{thm:ch6_5} 的推广, 现已证明如果 $\omega_1, \omega_2$ 是可能不同的、均具有代数不变量的某些 $\wp$ 函数的基元周期, 并且如果 $\eta_1, \eta_2$ 是其关联的 $\zeta$ 函数的拟周期, 则我们有
+
+\begin{mythm}{}{ch6_6}
+$\omega_1, \omega_2, \eta_1, \eta_2$ 的任何非零代数系数线性组合都是超越数.
+\end{mythm}
+
+这特别确立了两个具有代数轴长的椭圆\index{ellipse} 周长之和的超越性. 对于 \autoref{thm:ch6_6} 的证明, 我们用 $\wp_1, \wp_2$ 表示给定的 $\wp$ 函数, 用 $\zeta_1, \zeta_2$ 表示相应的 $\zeta$ 函数, 并且我们不失一般性地假设相应的不变量 $\frac{1}{4}g_2, \frac{1}{4}g_3$ 是代数整数\index{algebraic integer}. 我们还假设存在一个线性关系式
+\[\alpha_1\omega_1 + \alpha_2\omega_2 + \beta_1\eta_1 + \beta_2\eta_2 = \alpha_0,\]
+where $\alpha_0 \neq 0$, $\alpha_1$, $\alpha_2$, $\beta_1$, $\beta_2$ are algebraic numbers\index{algebraic number}, and we ultimately derive a contradiction. 我们用 k 表示一个超过足够大数 c 的整数 (其中 c 仅依赖于 $\alpha, \beta$ 以及 Weierstrass\index{Weierstrass, K.} 函数的不变量、周期与拟周期\index{periods and quasi-periods}), 为了简便起见, 我们记 $h = [k^{\frac{1}{10}}]$, $L = [k^{\frac{1}{2}}]$. 该论证随后基于一个辅助函数\index{auxiliary function} 的构造:
+\[\Phi(z_1,z_2) = \sum_{\lambda_0=0}^L \sum_{\lambda_1=0}^L \sum_{\lambda_2=0}^L p(\lambda_0,\lambda_1,\lambda_2) \left( f(z_1,z_2) \right)^{\lambda_0} (\wp_1(\omega_1 z_1))^{\lambda_1} (\wp_2(\omega_2 z_2))^{\lambda_2},\]
+其中 $p(\lambda_0, \lambda_1, \lambda_2)$ 是不全为 0 且绝对值至多为 $k^{10k}$ 的整数, 并且
+\[f(z_1, z_2) = \alpha_1 \omega_1 z_1 + \alpha_2 \omega_2 z_2 + \beta_1 \zeta_1(\omega_1 z_1) + \beta_2 \zeta_2(\omega_2 z_2).\]
+构造该函数使其满足: 对于所有满足 $1 \le s \le h$ 的整数 s 以及所有满足 $m_1 + m_2 \le k$ 的非负整数 $m_1, m_2$, 有
+\[\Phi_{m_1, m_2}(s+\frac{1}{2}, s+\frac{1}{2}) = 0\]
+其中下标如第 \ref{ch:2} 章中那样表示偏导数.
+
+证明的实质是一个类似于在对数线性形式\index{linear forms in logarithms} 中描述的外推算法, 但这里 $\Phi$ 的阶大于早期工作中的阶, 为了补偿, 利用了具有大分母的有理外推点; 因此, 椭圆函数\index{elliptic functions} 的等分值性质在讨论中起着重要作用. 第 \ref{ch:2} 章引理 4 的对应部分断言, 对于 0 到 50 之间的任何整数 J (包含 0 和 50), 我们有
+\[\Phi_{m_1, m_2}(s + r/q, s + r/q) = 0\]
+对于所有满足 q 为偶数、(r, q) = 1 的整数 q, r, s, 以及
+\[1\leqslant q\leqslant 2h^{\frac{1}{4}J},\quad 1\leqslant s\leqslant h^{\frac{1}{4}J+1},\quad 1\leqslant r< q,\]
+且所有满足 $m_1 + m_2 \leq k/2^J$ 的非负整数 $m_1, m_2$ 均成立. 论证通过归纳法进行, 并像原引理中那样应用了最大模原理\index{maximum-modulus principle}. 它还利用了这样一个观察: 除因子 $\omega_1^{m_1}\omega_2^{m_2}$ 外, 所需方程左边的数是代数的, 其次数至多为 $c'q^4$ (其中 c' 的定义与上面的 c 类似); 并且等分值理论给出了该数及其共轭元的精确估计. 由该引理断定
+\[\Phi_{m_1, m_2}(s+\frac{1}{4}, s+\frac{1}{4}) = 0 \quad (1 \le s \le L+1, \ 0 \le m_1, m_2 \le L),\]
+这显然是一个包含 $(L+1)^3$ 个线性方程\index{linear equations} 且具有相同数量变量 $p(\lambda_0, \lambda_1, \lambda_2)$ 的方程组; 注意到对于任何正则函数 f, 第 i 行、第 j 列为 $(f(z))^j$ 的 i 阶导数的 n 阶行列式的值为
+\[2! \dots n! (f'(z))^{\frac{1}{2}n(n+1)},\]
+很容易验证该方程组是不能成立的, 这便证明了 \autoref{thm:ch6_6}.
+
+该定理在 $\wp_1, \wp_2$ 为同一个 $\wp$ 函数 (不妨记为 $\wp$) 时的特殊情况特别令人感兴趣. 因为此时 $\omega_1, \omega_2$ 可取为 $\wp$ 的一对基本周期, 并且我们有 Legendre 关系式\index{Legendre relation}
+\[\eta_1\omega_2-\eta_2\omega_1=2\pi i.\]
+在此情况下, Coates\index{Coates, J.}\footnote{Amer. J. Math. 93 (1971), 385--97; Inventiones Math. 11 (1970), 167--82.} 以及最近 Masser\index{Masser, D. W.}\footnote{Ph.D. Thesis, Cambridge, 1974.} 极大地扩展了上述论证并证明了:
+
+\begin{mythm}{}{ch6_7}
+由 1, $\omega_1$, $\omega_2$, $\eta_1$, $\eta_2$ 以及 $2\pi i$ 在代数数\index{algebraic number} 域上张成的空间的维数根据 $\wp$ 是否具有复乘\index{complex multiplication} 而分别为 4 或 6.
+\end{mythm}
+
+该定理显然展示了一个关于五个数\index{numbers} 的非平凡例子, 它们是代数相关的, 但在代数数\index{algebraic number} 域上是线性无关的. 此外, 它还意味着, 当 $\wp$ 具有复乘\index{complex multiplication} 时, 所讨论的数满足除周期之间的线性关系以外的代数线性关系; 这是由 Masser\index{Masser, D. W.} 发现的. 它形式为
+\[a\eta_{2}-c\tau\eta_{1}=\gamma\omega_{1}\]
+其中 $\gamma$ 是代数数, 且 a, c 是满足由 $\tau = \omega_1/\omega_2$ 满足的方程
+\[a + b\tau + c\tau^2 = 0\]
+中出现的整数. $\gamma$ 为 0 的充要条件是 $g_2$ 或 $g_3$ 为 0, 从而可以推导得出, $\eta_1/\eta_2$ 是超越数当且仅当不变量均不为 0. 该定理还表明, 例如, 对于 $\wp(z)$ 的任何周期 $\omega$ 和 $\wp(z)$ 的拟周期 $\eta$, $\pi + \omega$ 以及 $\pi + \eta$ 都是超越数. 顺便提一下, $\pi$ 的超越性\index{transcendence of  $\pi$} 可以通过函数 $\wp(\omega z/\pi)$ 和 $e^{2\pi iz}$ 由 \autoref{thm:ch6_1} 推出.
+
+\autoref{thm:ch6_6} 的论证很容易推广到在属于 \autoref{thm:ch6_7} 的条件下, 确立 $\omega_1, \omega_2, \eta_1, \eta_2$ 以及 $2\pi i$ 的任何非零线性组合的超越性; 此时辅助函数\index{auxiliary function} 具有形式
+\[ \Phi(z_1,z_2,z_3) = \sum_{\lambda_0=0}^L \dots \sum_{\lambda_3=0}^L p(\lambda_0,\dots,\lambda_3) (f(z_1,z_2,z_3))^{\lambda_0} (\wp_1(\omega_1z_1))^{\lambda_1} (\wp_2(\omega_2z_2))^{\lambda_2} e^{2\pi i \lambda_3 z_3}, \]
+where $L = [k^{\frac{1}{2}}]$ and $f(z_1, z_2, z_3)$ is the sum of $f(z_1, z_2)$, as defined above, and an algebraic multiple of $\pi z_3$. 然而, 在此有必要求助于等分值的另一个显著性质, 即对于任何正整数 n, 通过在 $K = \mathbb{Q}(g_2, g_3, e^{2\pi i/n})$ 中添加 $\wp(\omega_1/n)$, $\wp(\omega_2/n)$, $\wp'(\omega_1/n)$ 以及 $\wp'(\omega_2/n)$ 所得到的域在 K 上的次数至多为 $2n^3$; 这确保了上面提到的估计值 $c'q^4$ 在当前的背景下保持不变. 为了完成 \autoref{thm:ch6_7} 的证明, 必须在 $\wp$ 具有复乘\index{complex multiplication} 的情况下, 确立 $\omega_1, \eta_1$ 以及 $2\pi i$ 在代数数\index{algebraic number} 域上的线性无关性; 并在 $\wp$ 不具有复乘的情况下, 确立 these 这些数与 $\omega_2, \eta_2$ 一起在代数数域上的线性无关性. 其研究工作大体类似, 使用了略微修改的辅助函数\index{auxiliary function}, 但最后的行列式论证不再适用; 为了克服这一困难, 引入了专门的技术, 特别是涉及到对亚纯函数\index{meromorphic function} 零点密度的新的考量. $\omega_1, \omega_2$ 与 $2\pi i$ 的线性无关性实际上首先由 Coates\index{Coates, J.} 利用 Serre\index{Serre, J. P.} 的一个深刻结果证明, 但 Masser\index{Masser, D. W.} 后来以更初等的方式验证了这一点.
+
+在另一个方向上, 该工作已被细化以给出周期与拟周期\index{periods and quasi-periods} 线性形式 of 的下方估计. 例如, 它们表明, 对于具有代数不变量的任何 $\wp$ 函数、任何 $\varepsilon > 0$ 以及任何正整数 n,
+\[|\wp(n)| < C n^{(\log \log n)^{7+\epsilon}},\]
+where C depends only on $g_2$, $g_3$ and $\epsilon$.\footnote{Amer. J. Math. 92 (1970), 619--22 (A. Baker\index{Baker, R. C.}\index{Baker, A.}); P.C.P.S. 73 (1973), 339--50 (D. W. Masser\index{Masser, D. W.}).} 事实上, 对于 $\wp(\pi+n)$ 以及 $\wp(\alpha)$ (where $\alpha$ is any non-zero algebraic number\index{algebraic number}) 已经建立了类似的结果. 该估计与对某些 C > 0 和无穷多个 n 成立的下界 $|\wp(n)| > Cn$ 相当.
+
+最后, 作为通过上述方法获得的此类定理的进一步例子, 我们提及 Masser\index{Masser, D. W.}\footnote{Ph.D. Thesis, Cambridge, 1974.} 最近关于椭圆曲线\index{elliptic curve} 上代数点的一个结果; 也就是说, 他证明了如果 $\wp(z)$ 具有代数不变量且具有复乘\index{complex multiplication}, 那么使得 $\wp(u_i)$ 是代数数的任何数\index{numbers} $u_1, \ldots, u_n$ 要么在 $\mathbb{Q}(\tau)$ 上线性相关, 要么在所有代数数\index{algebraic number} 组成的域上线性无关. 更一般地, 对所有具有代数不变量的 $\wp$ 函数建立后一种类型的定理将非常令人感兴趣, 同样, 将 \autoref{thm:ch6_6} 推广到适用于任意数量的 $\wp$ 函数也十分令人感兴趣; 然而, 这两个问题目前似乎都遥不可及.

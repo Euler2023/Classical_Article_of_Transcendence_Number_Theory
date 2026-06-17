@@ -1,0 +1,431 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{对数线性型}\label{ch:2}
+
+\section{引言}
+
+1900 年, 在巴黎举行的国际数学家大会上, Hilbert\index{Hilbert, D.} 在其著名的 23 个问题清单中提出了第七个问题, 即以代数数为底的代数数\index{algebraic number}的无理对数是否为超越数. 该问题可以有多种不同的等价表述; 例如, 人们可以问代数数\index{algebraic number}的自然对数\index{logarithms of algebraic numbers}的无理商是否为超越数, 或者对于任何代数数\index{algebraic number} $\alpha \neq 0, 1$ 和任何代数无理数 $\beta$, $\alpha^{\beta}$ 是否为超越数. 涉及有理数对数的一个特例可以追溯到此前一个多世纪 Euler\index{Euler, L.} 的著作, 但在解决该问题方面一直没有取得明显的进展. 事实上, Hilbert\index{Hilbert, D.} 曾表示, 该问题的解决比 Riemann 假设\index{Riemann hypothesis}或 Fermat 大定理\index{Fermat's last theorem}的证明还要遥远.
+
+第一个重大的进展是由 Gelfond\index{Gelfond, A. O.} 在 1929 年做出的. 通过采用他先前在研究整型整数值函数\index{integral integer-valued functions}时所使用的插值技术,\footnote{C.R. 189 (1929), 1224--8.} Gelfond\index{Gelfond, A. O.} 证明了以代数数为底的代数数\index{algebraic number}的对数不能是虚二次无理数, 也就是说, 对于任何代数数\index{algebraic number} $\alpha \neq 0, 1$ 以及任何虚二次无理数 $\beta$, $\alpha^{\beta}$ 是超越数; 特别地, 这意味着 $e^{\pi} = (-1)^{-i}$ 是超越数. 该结果在 1930 年被 Kuzmin\index{Kuzmin, R. O.}\footnote{I.A.N. 3 (1930), 583--97.} 推广到了实二次无理数 $\beta$. 但很明显, 直接求助于 Gelfond\index{Gelfond, A. O.}-Kuzmin\index{Kuzmin, R. O.} 工作所基于的 $e^{\beta z}$ 的插值级数, 对于更一般的 $\beta$ 并不适用, 进一步的进展有待于新的思想. 后者的探索在 1934 年由 Gelfond\index{Gelfond, A. O.}\footnote{D.A.N. 2 (1934), 1--6; I.A.N. 7 (1934), 623--4.} 与 Schneider\index{Schneider, Th.}\footnote{J.M. 172 (1934), 65--9.} 独立地圆满完成. 他们发现的论证方法适用于任何无理数 $\beta$, 虽然在细节上有所不同, 但都依赖于构造一个在某些选定点处消失的辅助函数\index{auxiliary function}. 类似的技巧在此前几年已被 Siegel\index{Siegel, C. L.} 在研究 Bessel 函数\index{Bessel function}的过程中所使用.\footnote{Abh. Preuss Akad. Wiss. (1929), No. 1; 参见 \autoref{ch:11}.} 至此, Hilbert\index{Hilbert, D.} 第七问题\index{Hilbert's seventh problem}终于得到了解决.
+
+Gelfond\index{Gelfond, A. O.}-Schneider\index{Schneider, Th.} 定理表明, 对于任何非零代数数\index{algebraic number} $\alpha_1$, $\alpha_2$, $\beta_1$, $\beta_2$, 若 $\log \alpha_1$, $\log \alpha_2$ 在有理数域上线性无关, 则我们有\footnote{这里的对数可以取任何固定的值.}
+\[
+\beta_1 \log \alpha_1 + \beta_2 \log \alpha_2 \neq 0.
+\]
+
+自然地, 人们猜测类似的定理对于任意多个代数数\index{algebraic number}的对数\index{logarithms of algebraic numbers}也成立, 此外, 人们很快意识到这一结果将具有广泛的应用. 该猜测由作者\footnote{Mathematika, 13 (1966), 204--16; 14 (1967), 102--7, 220--8.}于 1966 年证明, 其证明将是本章的主题.
+
+\begin{mythm}{}{ch2_1}
+设 $\alpha_1, \dots, \alpha_n$ 是非零代数数\index{algebraic number}, 使得 $\log \alpha_1, \dots, \log \alpha_n$ 在有理数域上线性无关, 则 $1, \log \alpha_1, \dots, \log \alpha_n$ 在所有代数数\index{algebraic number}构成的域上线性无关.
+\end{mythm}
+
+该证明依赖于构造一个多元复变量的辅助函数\index{auxiliary function}, 它推广了 Gelfond\index{Gelfond, A. O.} 最初使用的一元变量函数. Schneider\index{Schneider, Th.} 在关于 Abelian 积分\index{Abelian integral}\footnote{J.M. 183 (1941), 110--28.} 的研究中曾使用过多元变量函数, 但多年来, 它们在更广泛背景下的可用性似乎存在严重的局限性. 主要困难在于基本的插值技术. 迄今为止, 这方面的工作总是涉及在保持插值点固定的同时增加导数的阶数; 然而, 当处理多元变量函数时, 这类论证要求所讨论的点构成笛卡尔积, 这一条件显然只能针对特殊的多周期函数得到满足. \autoref{thm:ch2_1} 的证明涉及一种在当前语境下特有的外推程序, 其中插值范围现在被扩大, 而导数的阶数则降低了. 改进与推广将在下一章进行讨论, 而结果在数论各个分支中的应用将是第 \ref{ch:4} 章和第 \ref{ch:5} 章的主题.
+
+\section{推论}
+
+在着手证明 \autoref{thm:ch2_1} 之前, 我们先记录几个直接推论.
+
+\begin{mythm}{}{ch2_2}
+代数数\index{algebraic number}的对数\index{logarithms of algebraic numbers}以代数数为系数的任何非零线性组合都是超越数.
+\end{mythm}
+
+换句话说, 对于任何非零代数数\index{algebraic number} $\alpha_1, \dots, \alpha_n$ 以及任何代数数\index{algebraic number} $\beta_0, \beta_1, \dots, \beta_n$, 若 $\beta_0 \neq 0$, 则我们有
+\[
+\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n \neq 0.
+\]
+这在 $n = 0$ 时显然成立. 我们假设该命题对于 $n < m$ 成立, 其中 $m$ 是一个正整数, 并着手证明对于 $n = m$ 命题也成立. 现在, 如果 $\log \alpha_1, \dots, \log \alpha_m$ 在有理数域上线性无关, 那么结果由 \autoref{thm:ch2_1} 直接得出. 因此, 我们可以假设存在有理数 $\rho_1, \dots, \rho_m$, 不妨设 $\rho_r \neq 0$, 使得
+\[
+\rho_1 \log \alpha_1 + \dots + \rho_m \log \alpha_m = 0.
+\]
+显然我们有
+\[
+\rho_r(\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_m \log \alpha_m) = \beta'_0 + \beta'_1 \log \alpha_1 + \dots + \beta'_m \log \alpha_m,
+\]
+其中
+\[
+\beta'_0 = \rho_r \beta_0, \quad \beta'_j = \rho_r \beta_j - \rho_j \beta_r \quad (1 \le j \le m),
+\]
+并且 $\beta'_0 \neq 0$, $\beta'_r = 0$; 由数学归纳法即得所求结果.
+
+\begin{mythm}{}{ch2_3}
+对于任何非零代数数\index{algebraic number} $\alpha_1, \dots, \alpha_n, \beta_0, \beta_1, \dots, \beta_n$, $e^{\beta_0} \alpha_1^{\beta_1} \dots \alpha_n^{\beta_n}$ 是超越数.
+\end{mythm}
+
+事实上, 如果 $\alpha_{n+1} = e^{\beta_0} \alpha_1^{\beta_1} \dots \alpha_n^{\beta_n}$ 是代数数, 那么
+\[
+\beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n - \log \alpha_{n+1} \quad (= -\beta_0)
+\]
+将是代数的且非零, 这与 \autoref{thm:ch2_2} 矛盾. 在 $\beta_0 = 0$ 的情况下, 存在 \autoref{thm:ch2_3} 的一个自然类似物:
+
+\begin{mythm}{}{ch2_4}
+对于任何不为 $0$ 或 $1$ 的代数数\index{algebraic number} $\alpha_1, \dots, \alpha_n$ 以及在有理数域上线性无关的任何代数数\index{algebraic number} $1, \beta_1, \dots, \beta_n$, $\alpha_1^{\beta_1} \dots \alpha_n^{\beta_n}$ 是超越数.
+\end{mythm}
+
+为了证明这一点, 只需表明对于任何不为 $0$ 或 $1$ 的代数数\index{algebraic number} $\alpha_1, \dots, \alpha_n$ 以及在有理数域上线性无关的任何代数数\index{algebraic number} $\beta_1, \dots, \beta_n$, 我们有
+\[
+\beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n \neq 0;
+\]
+事实上, 将其应用于以 $n+1$ 代替 $n$ 且 $\beta_{n+1}=-1$ 的情形即可得出该定理. 显然该命题在 $n=1$ 时成立; 我们假设它对于 $n < m$ 成立, 其中 $m$ 是一个正整数, 并着手证明对 $n=m$ 断言也成立. 如果 $\log \alpha_1, \dots, \log \alpha_n$ 在有理数域上线性无关, 则结果是 \autoref{thm:ch2_1} 的直接推论; 因此, 我们可以假设存在有理数 $\rho_1, \dots, \rho_m$ 和如 \autoref{thm:ch2_2} 证明中的数\index{numbers} $\beta'_j$, 此时 $\beta_0 = \beta'_0 = 0$. 显而易见, 如果 $\beta_1, \dots, \beta_m$ 在有理数域上线性无关, 那么 $\beta'_j$ ($j$ 不为 $0$ 或 $r$) 也是如此, 定理由数学归纳法即得.
+
+最后, 从上述定理的特殊情况中显然可以看出, 对于任何非零代数数\index{algebraic number} $\alpha$, $\pi\index{transcendence of  $\pi$} + \log \alpha$ 是超越数 (这包含了 $\pi\index{transcendence of  $\pi$}$ 的超越性), 并且对于任何代数数\index{algebraic number} $\alpha, \beta$ ($\beta \neq 0$), $e^{\alpha\pi+\beta}$ 是超越数 (这包含了 $e\index{transcendence of e}$ 的超越性).
+
+\section{记号}
+
+本章的其余部分致力于证明 \autoref{thm:ch2_1}. 我们假设定理不成立, 从而存在不全为 $0$ 的代数数\index{algebraic number} $\beta_0, \beta_1, \dots, \beta_n$, 使得
+\[
+\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n = 0,
+\]
+并且我们最终将导出矛盾. 显然 $\beta_1, \dots, \beta_n$ 中至少有一个不为 $0$, 不失一般性, 我们可以假设 $\beta_n \neq 0$. 由于上述方程在用 $\beta'_j = -\beta_j/\beta_n$ 代替 $\beta_j$ 时仍然成立, 我们可以进一步假设, 不失一般性, $\beta_n = -1$; 于是我们有
+\begin{equation} \label{eq:ch2_1}\tag{1}
+e^{\beta_0}\alpha_1^{\beta_1}\dots\alpha_{n-1}^{\beta_{n-1}}=\alpha_n.
+\end{equation}
+
+我们用 $c, c_1, c_2, \dots$ 表示仅依赖于这些 $\alpha$、$\beta$ 以及对数的初始确定的正数\index{numbers}. 我们用 $h$ 表示超过上述足够大数 $c$ 的正整数.
+
+我们记下以下内容以备后用: 如果 $\alpha$ 是满足下式的任一代数数\index{algebraic number}
+\[
+A_0 \alpha^d + A_1 \alpha^{d-1} + \dots + A_d = 0,
+\]
+其中 $A_0, \dots, A_d$ 是绝对值至多为 $A$ 的有理整数, 那么对于每个非负整数 $j$, 我们有
+\[
+(A_0\alpha)^j = A_0^{(j)} + A_1^{(j)}\alpha + \dots + A_{d-1}^{(j)}\alpha^{d-1}
+\]
+其中 $A_m^{(j)}$ 为绝对值至多为 $(2A)^j$ 的某些有理整数; 这是递推关系
+\[
+A_m^{(j)} = A_0 A_{m-1}^{(j-1)} - A_{d-m} A_{d-1}^{(j-1)} \quad (0 \le m < d, j \ge d)
+\]
+的显而易见的结果, 其中 $A_{-1}^{(j-1)}=0$. 由此可见, 如果 $d$ 是 $\alpha_1, \dots, \alpha_n, \beta_0, \dots, \beta_{n-1}$ 的次数的最大值, 并且如果 $a_1, \dots, a_n, b_0, \dots, b_{n-1}$ 是它们各自极小多项式\index{minimal polynomial of algebraic number}的首项系数, 那么
+\begin{equation} \label{eq:ch2_2}\tag{2}
+(a_r \alpha_r)^j = \sum_{s=0}^{d-1} a_{rs}^{(j)} \alpha_r^s, \quad (b_r \beta_r)^j = \sum_{t=0}^{d-1} b_{rt}^{(j)} \beta_r^t,
+\end{equation}
+其中 $a_{rs}^{(j)}, b_{rt}^{(j)}$ 是绝对值至多为 $c_1^j$ 的有理整数. 为了简便起见, 我们将设
+\[
+f_{m_0, \dots, m_{n-1}}(z_0, \dots, z_{n-1}) = \left(\frac{\partial}{\partial z_0}\right)^{m_0} \dots \left(\frac{\partial}{\partial z_{n-1}}\right)^{m_{n-1}} f(z_0, \dots, z_{n-1}),
+\]
+其中 $f$ 表示一个整函数, 且 $m_0, \dots, m_{n-1}$ 是非负整数.
+
+\section{辅助函数}
+
+我们现在的目的是描述在证明 \autoref{thm:ch2_1} 中起基础性作用的辅助函数\index{auxiliary function} $\Phi$; 它是在下面 \autoref{lem:ch2_2} 中构造的, 之前先给出了一个通过 Dirichlet\index{Dirichlet, P. G. L.} 抽屉原理\index{Dirichlet's box principle}得到的关于线性方程组\index{linear equations}的初步结果. 关于 $\Phi$ 的基本估计在 \autoref{lem:ch2_3} 中建立, 随后这些估计被用于外推算法. 另外两个补充结果由引理 \ref{lem:ch2_6} 和引理 \ref{lem:ch2_7} 给出; 前者展示了对数线性型的一个简单但有用的下界, 后者则提供了一个特殊的扩张多项式. 我们将会看到, 在 \autoref{thm:ch2_1} 的阐述中包含 $1$ (这在推论中产生了 $e$ 的代数幂) 给证明带来了相当大数量的额外复杂性; 特别是, 最后一个引理本质上是处理这一特征所必需的.
+
+\begin{mylemma}{}{ch2_1}
+设 $M, N$ 表示整数, 且 $N > M > 0$, 并设
+\[
+u_{ij} \quad (1 \le i \le M, 1 \le j \le N)
+\]
+表示绝对值至多为 $U (\ge 1)$ 的整数. 则存在不全为 $0$ 的整数 $x_1, \dots, x_N$, 其绝对值至多为 $(NU)^{M/(N-M)}$, 使得
+\begin{equation} \label{eq:ch2_3}\tag{3}
+\sum_{j=1}^N u_{ij} x_j = 0 \quad (1 \le i \le M).
+\end{equation}
+\end{mylemma}
+
+\begin{proof}
+我们设 $B = [(NU)^{M/(N-M)}]$, 其中与后文相同, $[x]$ 表示 $x$ 的整数部分. 存在 $(B+1)^N$ 个不同的整数组 $x_1, \dots, x_N$, 满足 $0 \le x_j \le B$ $(1 \le j \le N)$, 且对于每个这样的元组, 我们有
+\[
+-V_i B \le y_i \le W_i B \quad (1 \le i \le M),
+\]
+其中 $y_i$ 表示 \eqref{eq:ch2_3} 的左端, 且 $-V_i, W_i$ 分别表示所有负的和正的 $u_{ij}$ $(1 \le j \le N)$ 之和. 由于 $V_i + W_i \le NU$, 不同的元组 $y_1, \dots, y_M$ 至多有 $(NUB+1)^M$ 个. 现在 $(B+1)^{N-M} > (NU)^M$, 因而 $(B+1)^N > (NUB+1)^M$. 因此, 存在两个不同的整数组 $x_1, \dots, x_N$ 对应于同一组 $y_1, \dots, y_M$, 它们的差即给出了 \eqref{eq:ch2_3} 所要求的解.
+\end{proof}
+
+\begin{mylemma}{}{ch2_2}
+存在不全为 $0$ 的整数 $p(\lambda_0, \dots, \lambda_n)$, 其绝对值至多为 $e^{h^3}$, 使得函数
+\[
+\Phi(z_0, \dots, z_{n-1}) = \sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L p(\lambda_0, \dots, \lambda_n) z_0^{\lambda_0} e^{\lambda_n \beta_0 z_0} \alpha_1^{\gamma_1 z_1} \dots \alpha_{n-1}^{\gamma_{n-1} z_{n-1}},
+\]
+其中 $\gamma_r = \lambda_r + \lambda_n \beta_r$ ($1 \le r < n$) 且 $L = [h^{2-1/(4n)}]$, 满足
+\begin{equation} \label{eq:ch2_4}\tag{4}
+\Phi_{m_0, \dots, m_{n-1}}(l, \dots, l) = 0
+\end{equation}
+对于所有满足 $1 \le l \le h$ 的整数 $l$ 以及所有满足 $m_0 + \dots + m_{n-1} \le h^2$ 的非负整数 $m_0, \dots, m_{n-1}$ 成立.
+\end{mylemma}
+
+\begin{proof}
+考虑到 \eqref{eq:ch2_1}, 只需确定 $p(\lambda_0, \dots, \lambda_n)$ 使得对于上述 $l, m_0, \dots, m_{n-1}$ 的范围有
+\begin{equation} \label{eq:ch2_5}\tag{5}
+\sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L p(\lambda_0, \dots, \lambda_n) q(\lambda_0, \lambda_n, l) \alpha_1^{\lambda_1 l} \dots \alpha_n^{\lambda_n l} \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}} = 0
+\end{equation}
+其中
+\[
+q(\lambda_0, \lambda_n, z) = \sum_{\mu_0=0}^{m_0} \binom{m_0}{\mu_0} \lambda_0(\lambda_0 - 1) \dots (\lambda_0 - \mu_0 + 1) (\lambda_n \beta_0)^{m_0 - \mu_0} z^{\lambda_0 - \mu_0}.
+\]
+在 \eqref{eq:ch2_5} 两端同乘以
+\begin{equation} \label{eq:ch2_6}\tag{6}
+P' = (a_1 \dots a_n)^{Ll} b_0^{m_0} \dots b_{n-1}^{m_{n-1}},
+\end{equation}
+写出
+\[
+\gamma_r^{m_r} = \sum_{\mu_r=0}^{m_r} \binom{m_r}{\mu_r} \lambda_r^{m_r-\mu_r} (\lambda_n \beta_r)^{\mu_r},
+\]
+并利用 \eqref{eq:ch2_2} 代替由此产生的 $a_r \alpha_r$ 和 $b_r \beta_r$ 的幂, 我们得到
+\[
+\sum_{s_1=0}^{d-1} \dots \sum_{s_n=0}^{d-1} \sum_{t_0=0}^{d-1} \dots \sum_{t_{n-1}=0}^{d-1} A(s,t) \alpha_1^{s_1} \dots \alpha_n^{s_n} \beta_0^{t_0} \dots \beta_{n-1}^{t_{n-1}} = 0,
+\]
+其中
+\[
+A(s,t) = \sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L \sum_{\mu_0=0}^{m_0} \dots \sum_{\mu_{n-1}=0}^{m_{n-1}} p(\lambda_0, \dots, \lambda_n) q' q'' q''',
+\]
+并且 $q', q'', q'''$ 分别由下式给出:
+\begin{align*}
+q' &= \prod_{r=1}^n \left\{ a_r^{(L-\lambda_r)l} a_{r,s_r}^{(\lambda_r l)} \right\}, \\
+q'' &= \prod_{r=1}^{n-1} \left\{ \binom{m_r}{\mu_r} (b_r \lambda_r)^{m_r-\mu_r} \lambda_n^{\mu_r} b_{r,t_r}^{(\mu_r)} \right\}, \\
+q''' &= \binom{m_0}{\mu_0} \lambda_0(\lambda_0-1) \dots (\lambda_0-\mu_0+1) \lambda_n^{m_0-\mu_0} b_n^{\mu_0} l^{\lambda_0-\mu_0} b_{0,t_0}^{(m_0-\mu_0)}.
+\end{align*}
+因此, 如果这 $d^{2n}$ 个方程 $A(s,t)=0$ 成立, 则 \eqref{eq:ch2_4} 将被满足. 现在, 这些方程代表以整数为系数的关于 $p(\lambda_0, \dots, \lambda_n)$ 的线性方程组\index{linear equations}.
+由于 $l \le h$ 且 $\binom{m_r}{\mu_r} \le 2^{m_r}$, 我们有
+\begin{align*}
+|q'| &\le \prod_{r=1}^n \left\{ a_r^{(L-\lambda_r)l} c_1^{\lambda_r l} \right\} \le c_2^{Lh}, \\
+|q''| &\le \prod_{r=1}^{n-1} (c_3 L)^{m_r}, \\
+|q'''| &\le 2^{m_0} (\lambda_0 b_n)^{\mu_0} (c_1 \lambda_n)^{m_0 - \mu_0} l^{\lambda_0 - \mu_0} \le (c_3 L)^{m_0} h^L,
+\end{align*}
+并且由不等式
+\[
+(m_0+1)\dots(m_{n-1}+1) \le 2^{m_0+\dots+m_{n-1}} \le 2^{h^2}
+\]
+易知, $p(\lambda_0, \dots, \lambda_n)$ 在线性形式 $A(s,t)$ 中的系数, 即
+\[
+\sum_{\mu_0=0}^{m_0} \dots \sum_{\mu_{n-1}=0}^{m_{n-1}} q' q'' q''',
+\]
+绝对值至多为 $U = (2c_3 L)^{h^2} c_4^{Lh}$. 此外, 整数 $l, m_0, \dots, m_{n-1}$ 的不同组合至多有 $h(h^2+1)^n$ 个, 从而对应有 $M \le d^{2n} h(h^2+1)^n$ 个方程 $A(s,t)=0$. 再者, 存在 $N=(L+1)^{n+1}$ 个未知数 $p(\lambda_0, \dots, \lambda_n)$, 且我们有 $N > h^{(2-1/(4n))(n+1)} > h^{2n+3/2} > 2d^{2n} h(h^2+1)^n \ge 2M$.
+
+因此, 由 \autoref{lem:ch2_1}, 该方程组可以非平凡地求解, 并且可以选取绝对值至多为
+\[
+NU \le h^{2n+2} (2c_3 L)^{h^2} c_4^{Lh} \le e^{h^3}
+\]
+的整数 $p(\lambda_0, \dots, \lambda_n)$ (如果 $h$ 足够大), 这即为所求.
+\end{proof}
+
+\begin{mylemma}{}{ch2_3}
+设 $m_0, \dots, m_{n-1}$ 为满足
+\[
+m_0 + \dots + m_{n-1} \le h^2
+\]
+的任何非负整数, 并设
+\begin{equation} \label{eq:ch2_7}\tag{7}
+f(z) = \Phi_{m_0, \dots, m_{n-1}}(z, \dots, z).
+\end{equation}
+则对于任何数 $z$, 我们有 $|f(z)| \le c_5^{h^2+L|z|}$. 此外, 对于任何正整数 $l$, 要么 $f(l) = 0$, 要么 $|f(l)| > c_6^{-h^2-Ll}$.
+\end{mylemma}
+
+\begin{proof}
+函数 $f(z)$ 由下式给出:
+\[
+P \sum_{\lambda_0=0}^L \dots \sum_{\lambda_n=0}^L p(\lambda_0, \dots, \lambda_n) q(\lambda_0, \lambda_n, z) \alpha_1^{\lambda_1 z} \dots \alpha_n^{\lambda_n z} \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}},
+\]
+其中 $q(\lambda_0, \lambda_n, z)$ 见 \autoref{lem:ch2_2} 中的定义, 且
+\[
+P = (\log \alpha_1)^{m_1} \dots (\log \alpha_{n-1})^{m_{n-1}}.
+\]
+我们有
+\begin{align*}
+|q(\lambda_0, \lambda_n, z)| &\le (c_7 L)^{m_0} (|z| + 1)^L \sum_{\mu_0=0}^{m_0} \binom{m_0}{\mu_0} = (2c_7 L)^{m_0} (|z| + 1)^L, \\
+\left|\alpha_1^{\lambda_1 z} \dots \alpha_n^{\lambda_n z}\right| &\le c_8^{L|z|}, \quad \left|P \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}}\right| \le (c_9 L)^{m_1+\dots+m_{n-1}},
+\end{align*}
+并且上述多重求和中的项数至多为 $h^{2n+2}$; 借助不等式
+\[
+L \le h^2, \quad m_0 + \dots + m_{n-1} \le h^2, \quad |p(\lambda_0, \dots, \lambda_n)| \le e^{h^3}
+\]
+便可得出对 $|f(z)|$ 所要求的估计.
+
+为了证明第二个断言, 我们首先指出数 $f' = (P'/P)f(l)$ 是一个次数至多为 $d^{2n}$ 的代数整数\index{algebraic integer}, 其中 $P'$由 \eqref{eq:ch2_6} 定义. 此外, 通过如上的估计, 我们看到通过对 $\alpha_r, \beta_r$ 替换为任意共轭而得到的 $f'$ 的任何共轭, 绝对值至多为 $c_{10}^{h^2+Ll}$; 显然, 同样的界限对 $P'/P$ 也成立. 但如果 $f' \neq 0$, 那么 $f'$ 的范数\footnote{共轭之积; 它显然是一个有理整数.}的绝对值至少为 $1$, 因而
+\[
+|f'| \ge c_{10}^{-(h^2+Ll)d^{2n}}.
+\]
+由此即得所求结果.
+\end{proof}
+
+\begin{mylemma}{}{ch2_4}
+设 $J$ 为满足 $0 \le J \le (8n)^2$ 的任何整数. 则对所有满足 $1 \le l \le h^{1+J/(8n)}$ 的整数 $l$ 以及所有满足 $m_0 + \dots + m_{n-1} \le h^2/2^J$ 的非负整数 $m_0, \dots, m_{n-1}$, \eqref{eq:ch2_4} 均成立.
+\end{mylemma}
+
+\begin{proof}
+由 \autoref{lem:ch2_2}, 该结果在 $J = 0$ 时成立. 设 $K$ 是满足 $0 \le K < (8n)^2$ 的整数, 并假设该引理对于
+\[
+J = 0, 1, \dots, K
+\]
+成立. 我们着手证明该命题对于 $J = K + 1$ 亦成立.
+只需证明, 对于任何满足 $R_K < l \le R_{K+1}$ 的整数 $l$, 以及非负整数 $m_0, \dots, m_{n-1}$ 的任何满足
+\[
+m_0 + \dots + m_{n-1} \le S_{K+1}
+\]
+的组合, 我们有 $f(l) = 0$, 其中 $f(z)$ 由 \eqref{eq:ch2_7} 定义, 且
+\[
+R_J = \left[h^{1+J/(8n)}\right], \quad S_J = \left[h^2/2^J\right] \quad (J = 0, 1, \dots).
+\]
+根据归纳假设, 我们看到对于所有满足 $1 \le r \le R_K$ 且 $0 \le m \le S_{K+1}$ 的整数 $r, m$, 有 $f_m(r) = 0$; 显然, 这是因为 $f_m(r)$ 是由
+\[
+\left(\frac{\partial}{\partial z_0} + \dots + \frac{\partial}{\partial z_{n-1}}\right)^m \Phi_{m_0, \dots, m_{n-1}}(z_0, \dots, z_{n-1})
+\]
+在点 $z_0 = \dots = z_{n-1} = r$ 处求值得到的, 即由
+\[
+\sum m! (j_0! \dots j_{n-1}!)^{-1} \Phi_{m_0+j_0, \dots, m_{n-1}+j_{n-1}}(r, \dots, r)
+\]
+给出, 其中求和是对所有满足 $j_0 + \dots + j_{n-1} = m$ 的非负整数 $j_0, \dots, j_{n-1}$ 进行的, 且这里的导数均为 $0$, 因为
+\[
+m_0 + \dots + m_{n-1} + j_0 + \dots + j_{n-1} \le 2S_{K+1} \le S_K.
+\]
+因此, 函数 $f(z)/F(z)$ (其中
+\[
+F(z) = \{(z-1) \dots (z-R_K)\}^{S_{K+1}}
+\]
+) 在以原点为中心、半径为 $R = R_{K+1} h^{1/(8n)}$ 的圆周 $C$ 内部及边界上是正则的, 从而根据最大模原理\index{maximum-modulus principle},
+\begin{equation} \label{eq:ch2_8}\tag{8}
+\theta |F(l)| \ge \Theta |f(l)|,
+\end{equation}
+其中 $\theta, \Theta$ 分别表示 $|f(z)|$ 在 $C$ 上的上界和 $|F(z)|$ 在 $C$ 上的下界. 现在显然有 $\Theta \ge (\frac{1}{2}R)^{R_K S_{K+1}}$, 且根据 \autoref{lem:ch2_3}, $\theta \le c_5^{h^3+LR}$. 此外, 我们有 $|F(l)| \le R_{K+1}^{R_K S_{K+1}}$, 并且再次根据 \autoref{lem:ch2_3}, 要么 $f(l) = 0$, 要么 $|f(l)| > c_6^{-h^3-LR}$. 然而, 结合 \eqref{eq:ch2_8}, 后一种可能性将导致
+\[
+(c_5 c_6)^{h^3+LR} \ge \left(\frac{1}{2} h^{1/(8n)}\right)^{R_K S_{K+1}},
+\]
+但由于 $K < (8n)^2$ 且
+\[
+LR \le h^{3+K/(8n)} \le 2^{K+3} R_K S_{K+1},
+\]
+当 $h$ 足够大时, 该不等式是无法成立的. 因此必有 $f(l) = 0$, 引理得证.
+\end{proof}
+
+\begin{mylemma}{}{ch2_5}
+令 $\phi(z) = \Phi(z, \dots, z)$, 我们有
+\begin{equation} \label{eq:ch2_9}\tag{9}
+|\phi_j(0)| < \exp(-h^{8n}) \quad (0 \le j \le h^{8n}).
+\end{equation}
+\end{mylemma}
+
+\begin{proof}
+根据 \autoref{lem:ch2_4}, 我们看到对于所有满足 $1 \le l \le X$ 的整数 $l$ 以及满足
+\[
+m_0 + \dots + m_{n-1} \le Y
+\]
+的非负整数 $m_0, \dots, m_{n-1}$, \eqref{eq:ch2_4} 均成立, 其中 $X = h^{8n}$ 且 $Y = \left[h^2/2^{(8n)^2}\right]$. 因此, 与 \autoref{lem:ch2_4} 的证明类似, 我们对于所有满足 $1 \le r \le X$ 且 $0 \le m \le Y$ 的整数 $r, m$, 得到 $\phi_m(r) = 0$. 由此可知, 函数 $\phi(z)/E(z)$ (其中
+\[
+E(z) = \{(z-1) \dots (z-X)\}^Y
+\]
+) 在以原点为中心、半径为 $R = X h^{1/(8n)}$ 的圆周 $\Gamma$ 内部及边界上是正则的, 从而根据最大模原理\index{maximum-modulus principle}, 对于任何满足 $|w| \le X$ 的 $w$, 我们有
+\[
+|\phi(w)| \le \xi \Xi^{-1} |E(w)|,
+\]
+其中 $\xi$ 和 $\Xi$ 分别表示 $|\phi(z)|$ 在 $\Gamma$ 上的上界和 $|E(z)|$ 在 $\Gamma$ 上的下界. 现在显然有
+\[
+|E(w)| \le (2X)^{XY}, \quad |\Xi| \ge \left(\frac{1}{2}R\right)^{XY},
+\]
+并且根据 \autoref{lem:ch2_3}, $\xi \le c_5^{h^3+LR}$. 于是我们得到
+\[
+|\phi(w)| \le c_5^{h^3+LR} \left(\frac{1}{4} h^{1/(8n)}\right)^{-XY},
+\]
+又因为
+\[
+LR \le h^{8n+2} \le 2^{(8n)^2+1} XY,
+\]
+由此可得 $|\phi(w)| < e^{-XY}$. 进一步, 由 Cauchy 积分公式, 我们有
+\[
+\phi_j(0) = \frac{j!}{2\pi i} \int_{\Lambda} \frac{\phi(w)}{w^{j+1}} \, dw,
+\]
+其中 $\Lambda$ 表示正向绕行的圆周 $|w|=1$, 且右侧表达式的绝对值至多为 $j^j e^{-XY}$. 所要求的估计 \eqref{eq:ch2_9} 立即得出.
+\end{proof}
+
+\begin{mylemma}{}{ch2_6}
+对于任何不全为 $0$ 且绝对值至多为 $T$ 的整数 $t_1, \dots, t_n$, 我们有
+\[
+|t_1 \log \alpha_1 + \dots + t_n \log \alpha_n| > c_{11}^{-T}.
+\]
+\end{mylemma}
+
+\begin{proof}
+设 $a_i$ ($1 \le i \le n$) 是 $\alpha_i$ 或 $\alpha_i^{-1}$ 的极小定义多项式\index{minimal polynomial of algebraic number}的首项系数, 具体取决于 $t_i \ge 0$ 还是 $t_i < 0$. 那么
+\[
+\omega = a_1^{|t_1|} \dots a_n^{|t_n|} (\alpha_1^{t_1} \dots \alpha_n^{t_n} - 1)
+\]
+是一个次数至多为 $d^n$ 的代数整数\index{algebraic integer}, 并且通过用任意共轭替换 $\alpha_1, \dots, \alpha_n$ 得到的 $\omega$ 的任何共轭, 其绝对值至多为 $c_{12}^T$. 如果 $\omega = 0$, 那么
+\[
+\Omega = t_1 \log \alpha_1 + \dots + t_n \log \alpha_n
+\]
+是 $2\pi i$ 的倍数, 实际上是一个非零倍数, 因为根据假设, $\log \alpha_1, \dots, \log \alpha_n$ 在有理数域上线性无关; 因此, 在这种情况下, 引理平凡地成立. 否则, $\omega$ 的范数绝对值至少为 $1$, 从而 $|\omega| \ge c_{13}^{-T d^n}$. 但由于对于任何 $z$ 有 $|e^z - 1| \le |z| e^{|z|}$, 我们得到 $|\omega| < |\Omega| e^{|\Omega|} c_{14}^T$, 因而假设 (我们可以这样假设) $|\Omega| \le 1$, 引理即成立.
+\end{proof}
+
+\begin{mylemma}{}{ch2_7}
+设 $R, S$ 为正整数, 并设 $\sigma_0, \dots, \sigma_{R-1}$ 是互不相同的复数\index{numbers}. 定义 $\sigma$ 为 $1, |\sigma_0|, \dots, |\sigma_{R-1}|$ 的最大值, 并定义 $\rho$ 为 $1$ 以及所有满足 $0 \le i < j < R$ 的 $|\sigma_i - \sigma_j|$ 的最小值. 那么, 对于任何满足 $0 \le r < R, 0 \le s < S$ 的整数 $r, s$, 存在绝对值至多为 $(8\sigma/\rho)^{RS}$ 的复数\index{numbers} $w_j$ ($0 \le j < RS$), 使得多项式
+\[
+W(z) = \sum_{j=0}^{RS-1} w_j z^j
+\]
+对除 $i=r, j=s$ 之外的所有满足 $0 \le i < R, 0 \le j < S$ 的 $i, j$, 满足 $W_j(\sigma_i) = 0$, 且满足 $W_s(\sigma_r) = 1$.
+\end{mylemma}
+
+\begin{proof}
+所求的多项式由下式给出:
+\[
+W(z) = \left(\frac{-1}{s!}\right) \frac{1}{2\pi i} \int_{C_r} \frac{(\zeta - \sigma_r)^s U(z)}{(\zeta - z) U(\zeta)} \, d\zeta,
+\]
+其中
+\[
+U(z) = \{(z - \sigma_0) \dots (z - \sigma_{R-1})\}^S
+\]
+且 $C_r$ 表示以 $\sigma_r$ 为中心、半径足够小的正向绕行圆周, 该半径例如小于 $\rho$ 且对于 $z \neq \sigma_r$ 小于 $|z - \sigma_r|$. 该证明取决于 $W(z)$ 的两种等价表达式. 首先, 由于被积函数乘以 $|\zeta|$ 的绝对值在 $|\zeta| \to \infty$ 时递减趋于 $0$, 根据 Cauchy 残数定理\index{Cauchy's residue theorem}, 我们有
+\[
+W(z) = \frac{(z-\sigma_r)^s}{s!} + \frac{U(z)}{s!} \frac{1}{2\pi i} \sum_{\substack{j=0\\j\neq r}}^{R-1} \int_{C_j} \frac{(\zeta-\sigma_r)^s}{(\zeta-z) \, U(\zeta)} \, d\zeta
+\]
+其中 $C_j$ 与上文的 $C_r$ 类似, 是围绕 $\sigma_j$ 且半径足够小的圆周. 显然, 关于 $j$ 的求和是 $z$ 的有理函数, 且在 $z = \sigma_r$ 处是正则的; 又因为 $U(z)$ 在 $z = \sigma_i$ 处有 $S$ 阶零点, 由此可见, 如果 $i = r$ 且 $j = s$, 则有 $W_j(\sigma_i) = 1$, 否则对于所有 $0 \le j < S$ 均为 $0$.
+
+另一方面, 由 Cauchy 积分公式我们得到
+\[
+W(z) = \frac{-1}{s!\,t!} \left[ \frac{d^t}{d\zeta^t} \frac{(\zeta - \sigma_r)^S \, U(z)}{(\zeta - z) \, U(\zeta)} \right]_{\zeta = \sigma_r},
+\]
+其中 $t = S - s - 1$, 从而有
+\[
+W(z) = (-1)^{t-1} (s!)^{-1} U(z) \sum v(j_0, \dots, j_{R-1}) (\sigma_r - z)^{-j_r - 1},
+\]
+其中求和是对所有满足 $j_0 + \dots + j_{R-1} = t$ 的非负整数 $j_0, \dots, j_{R-1}$ 进行的, 且
+\[
+v(j_0, \dots, j_{R-1}) = \prod_{\substack{i=0\\i\neq r}}^{R-1} \binom{S+j_i-1}{j_i} (\sigma_r - \sigma_i)^{-S-j_i}.
+\]
+现在 $j_r + 1$ 介于 $1$ 到 $S$ 之间 (含端点), 因此显然 $W(z)$ 是一个次数至多为 $RS - 1$ 的多项式. 此外, 我们看到 $W(z)$ 与 $U(z)$ 类似, 在 $z = \sigma_i$ ($i \neq r$) 处具有 $S$ 阶零点, 因而对所有 $j < S$ 有 $W_j(\sigma_i) = 0$. 此外, 显而易见, 定义 $v$ 的乘积中的典型因子绝对值至多为 $2^{S+j_i-1}\rho^{-S-j_i}$, 从而有
+\[
+|v(j_0, \dots, j_{R-1})| \le (2/\rho)^{(R-1)S+j_0+\dots+j_{R-1}} \le (2/\rho)^{RS}.
+\]
+注意到 $(\sigma_r - z)^{-j_r - 1} U(z)$ 的系数绝对值至多为 $(\sigma + 1)^{RS}$, 且进一步观察到上述求和中的项数不超过 $S^R$, 易知 $W(z)$ 的系数绝对值至多为
+\[
+S^R(\sigma+1)^{RS} (2/\rho)^{RS} \le (8\sigma/\rho)^{RS}
+\]
+这便完成了引理的证明.
+\end{proof}
+
+\section{主定理的证明}
+
+我们接下来将证明在 \autoref{lem:ch2_5} 中得到的不等式 \eqref{eq:ch2_9} 不能全部成立, 由此导出的矛盾将确立 \autoref{thm:ch2_1}.
+
+我们首先令 $S = L + 1$, $R = S^n$, 并指出任何满足 $0 \le i < RS$ 的整数 $i$ 均可唯一地表示为以下形式:
+\[
+i = \lambda_0 + \lambda_1 S + \dots + \lambda_n S^n,
+\]
+其中 $\lambda_0, \dots, \lambda_n$ 表示介于 $0$ 到 $L$ 之间 (含端点) 的整数. 对于每个这样的 $i$, 我们定义
+\[
+\nu_i = \lambda_0, \quad p_i = p(\lambda_0, \dots, \lambda_n),
+\]
+并且我们设 $\psi_i = \lambda_1 \log \alpha_1 + \dots + \lambda_n \log \alpha_n$.
+那么显然有
+\begin{equation} \label{eq:ch2_10}\tag{10}
+\phi(z) = \sum_{i=0}^{RS-1} p_i z^{\nu_i} e^{\psi_i z}.
+\end{equation}
+
+此外, 根据 \autoref{lem:ch2_6}, 对应于不同数组 $\lambda_1, \dots, \lambda_n$ 的任何两个 $\psi_i$ 之差绝对值至少为 $c_{11}^{-L}$; 特别地, $\psi_i$ 中恰好有 $R$ 个是互不相同的, 我们以某种顺序将这些不同的值记为 $\sigma_0, \dots, \sigma_{R-1}$. 如果 $\sigma, \rho$ 如 \autoref{lem:ch2_7} 中所定义, 那么我们有 $\sigma \le c_{14} L$ 且 $\rho \ge c_{15}^{-L}$.
+
+现在设 $t$ 为使得 $p_t \neq 0$ 的任何下标, 设 $s = \nu_t$, 设 $r$ 为使得 $\psi_t = \sigma_r$ 的那个下标, 并设 $W(z)$ 表示由 \autoref{lem:ch2_7} 给出的多项式. 根据该引理中所指定的 $W(z)$ 的性质, 我们看到
+\[
+p_t = \sum_{i=0}^{RS-1} p_i W_{\nu_i}(\psi_i).
+\]
+
+此外, 根据 Leibnitz 定理\index{Leibnitz's theorem}, 我们有
+\[
+W_{\nu_i}(\psi_i) = \sum_{j=0}^{RS-1} j(j-1) \dots (j-\nu_i+1) \, w_j \, \psi_i^{j-\nu_i} = \sum_{j=0}^{RS-1} w_j \left[ \frac{d^j}{dz^j} (z^{\nu_i} e^{\psi_i z}) \right]_{z=0},
+\]
+从而由 \eqref{eq:ch2_10} 我们得到
+\[
+p_t = \sum_{j=0}^{RS-1} w_j \phi_j(0).
+\]
+
+现在 $RS \le h^{2n+2}$, 因而根据 \autoref{lem:ch2_5}, 可知 \eqref{eq:ch2_9} 对所有满足 $0 \le j \le RS$ 的 $j$ 均成立. 此外, 根据 \autoref{lem:ch2_7}, 我们有
+\[
+|w_j| \le (8\sigma/\rho)^{RS} \le (8c_{14}Lc_{15}^L)^{RS} \le c_{16}^{h^{2n+4}}.
+\]
+因此, 由于 $|p_t| \ge 1$, 我们得出
+\[
+0 \le \log RS + c_{17}h^{2n+4} - h^{8n}.
+\]
+若 $h$ 足够大, 该不等式显然是不可能的, 由此导出的矛盾便证明了该定理.

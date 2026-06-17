@@ -1,0 +1,118 @@
+%# -*- coding: utf-8-unix -*-
+
+\chapter{指数函数}\label{ch:10}
+
+\section{引言}\label{sec:ch10_1}
+
+在 1899 年的一篇经典论文中, Borel\index{Borel, E.}\footnote{C.R. 128 (1899), 596--9.} 获得了 Hermite\index{Hermite, Ch.} 关于指数函数\index{exponential function}定理的精细化, 并由此建立了 $e$ 的第一个超越性测度\index{measure of transcendence}. 他证明了, 对于任意正整数 $n$, 仅有有限多个整系数且次数为 $n$ 的多项式 $P$ 满足 $|P(e)| < h^{-\phi(h)}$, 其中 $h$ 表示 $P$ 的高度, 且 $\phi(h) = c \log \log h$ 对于某个 $c = c(n) > 0$. Borel\index{Borel, E.} 的结果在 1929 年被 Popken\index{Popken, J.}\footnote{M.Z. 29 (1929), 526-41.} 大大改进; Popken\index{Popken, J.} 表明 $\phi(h)$ 可以被替换为 $n + \epsilon(h)$, 其中 $\epsilon(h) = c/\log \log h$ 且 $c = c(n) > 0$, 这显然意味着 $e$ 是一个 1 型的 $S$-数. Mahler\index{Mahler, K.}\footnote{J.M. 166 (1932), 118-50} 随后推导出了 $c$ 的形如 $c'n^2\log(n+1)$ 的显式表达式, 其中此时 $c'$ 是绝对常数.
+
+在 1965 年, 作者建立了一个类似于 \autoref{thm:ch7_1} 的 Popken\index{Popken, J.} 结果的推广, 而这将是本章的主题.\footnote{Canadian J. Math. 17 (1965). 616-26}
+
+\begin{mythm}{}{ch10_1}
+对于任意互不相同的非零有理数 $\theta_1, \ldots, \theta_n$ 以及任意 $\epsilon > 0$, 仅有有限多个正整数 $q$ 满足
+\[q^{1+\epsilon} \|q e^{\theta_1}\| \dots \|q e^{\theta_n}\| < 1.\]
+\end{mythm}
+
+该定理显然得出了在将 $\alpha_1, \ldots, \alpha_n$ 替换为 $e^{\theta_1}, \ldots, e^{\theta_n}$ 后, \autoref{thm:ch7_1} 之后记录的所有推论, 并且对于任意非零有理数 $\theta$, 在将 $\alpha$ 替换为 $e^{\theta}$ 后, \autoref{thm:ch7_2} 确实成立. 此外, 与 \autoref{ch:7} 的工作相比, 这里的论证使我们能够将 $\epsilon$ 替换为一个当 $q \to \infty$ 时趋于 0 的函数 $\epsilon(q)$, 即 $c(\log \log q)^{-\frac{1}{2}}$, 其中 $c = c(\theta_1, \ldots, \theta_n) > 0$.
+
+该定理的证明涉及类似于 Siegel\index{Siegel, C. L.} 在其关于 Bessel 函数\index{Bessel function}的研究中引入的技术, 这些技术将在 \autoref{ch:11} 中进行讨论. 特别地, 将采用 Dirichlet\index{Dirichlet, P. G. L.} 抽屉原理\index{Dirichlet's box principle}来构造 $e^{\theta_1 x}, \ldots, e^{\theta_n x}$ 的具有多项式系数且在原点处高阶消逝的某些线性形式. 这种类型的线性形式出现在 Popken\index{Popken, J.} 和 Mahler\index{Mahler, K.} 的工作中, 但在那些工作中, 它们是通过解析积分显式推导出来的. 显然, \autoref{thm:ch10_1} 改进了 Popken\index{Popken, J.}-Mahler\index{Mahler, K.} 定理, 除非多项式 $P$ 的系数在绝对值上几乎全部相等, 此时鉴于更快速递减的函数 $\epsilon$, 之前的研究工作略强一些. Feldman\index{Feldman, N. I.}\footnote{V.M. 2 (1967), 63--72.} 已经表明, 这里所使用的技术为某些与指数函数\index{exponential function}密切相关的级数提供了一个 $(\log \log q)^{-1}$ 阶的函数 $\epsilon(q)$.
+
+本章的论证不容易推广到为代数数 $\theta_1, \dots, \theta_n$ 提供 \autoref{thm:ch10_1}. Mahler\index{Mahler, K.} 的原始论文中获得了关于这一背景的一些结果, 但它们似乎远非最佳可能. 事实上, 即使在迄今为止建立的 \autoref{thm:ch7_2} 最精确的类似物中（取 $\alpha = e^{\theta}$ 且 $\theta$ 为代数数）, 随着 $\theta$ 的次数增加, $B$ 的指数也会迅速趋于 $-\infty$\footnote{ 参见 Ann. Univ. 3d. Budapest, 9 (1966), 3-14 (Luise-Charlotte Kappe).}. 然而, 类似于下面 \autoref{sec:ch10_2} 中所采用的构造, 立刻对一个著名的 Littlewood 问题的幂级数类似物给出了否定回答.\footnote{Michigan Math. J. 11 (1964), 247--50.} Littlewood 提问是否对于任意实数 $\theta$, $\phi$ 以及任意 $\epsilon > 0$, 都存在一个正整数 $q$ 满足
+\[q\|q\theta\|\|q\phi\|<\epsilon;\]
+级数 $\theta = e^{1/x}$ 和 $\phi = e^{2/x}$ 为该类似物提供了一个反例, 但问题本身仍未解决. 而后者让人联想到丢番图逼近\index{Diophantine approximation}中的另一个杰出问题, 即是否每个具有无界偏商的连分数都必然是超越数; 这似乎也非常困难.
+
+\section{基本多项式}\label{sec:ch10_2}
+
+我们假设 $\theta_1, \ldots, \theta_n$ 是互不相同的有理数, 且 $0 < \epsilon < 1$. 由 $\leqslant$ 或 $\gg$ 所隐含的常数将仅取决于这些量. 与之前一样, 每当我们谈到多项式的高度时, 默认其系数均为整数. 我们将用 $f^{(j)}$ 表示函数 $f$ 的 $j$ 阶导数, 在一阶导数的情况下则记为 $f'$.
+
+\begin{mylemma}{}{ch10_1}
+对于最大值为 $r \gg 1$ 的任意正整数 $r_1, \ldots, r_n$, 存在不全恒为 0 的多项式 $P_i(x)$ $(1 \leq i \leq n)$, 其次数至多为 $r$, 高度至多为 $r_i! r^{cr}$, 满足当 $j < r - r_i$ 时 $P_i^{(j)}(0) = 0$, 并且
+\[\sum_{i=1}^{n} P_i(x) e^{\theta_i x} = \sum_{m=M}^{\infty} \rho_m x^m, \tag{1}\label{eq:ch10_1}\]
+其中 $|\rho_m| < (r!/m!) r^{c(r+m)}$ 且
+\[M = r_1 + \ldots + r_n + n - 1 - [\epsilon r].\]
+\end{mylemma}
+
+\begin{proof}
+设 $L$ 为 $\theta_1, \ldots, \theta_n$ 绝对值的最大值, 并设 $l$ 为它们分母的最小公倍数. 对于除满足 $1 \le i \le n$ 且 $r - r_i \le j \le r$ 的 $N = r_1 + \ldots + r_n + n$ 个数对之外的所有整数 $i, j$, 我们取 $p_{ij}$ 为 0, 然后我们将这些剩余的值定义为不全为 0 的整数 $p_{ij}$, 满足
+\[\sum_{i=1}^{n} \sum_{j=0}^{m} \binom{m}{j} \theta_{i}^{m-j} l^{m} p_{ij} = 0 \quad (0 \leq m < M). \tag{2}\label{eq:ch10_2}\]
+凭借 \autoref{ch:2} 中的 \autoref{lem:ch2_1}, 存在这样的整数, 并且事实上可以选择它们使得绝对值至多为
+\[H = \{N(2lL)^{M}\}^{M/(N-M)}.\]
+我们接下来证明多项式
+\[P_{i}(x) = r! \sum_{j=0}^{r} p_{ij}(j!)^{-1} x^{j} \quad (1 \leq i \leq n)\]
+具有所需的性质.
+
+首先我们注意到, 将 $e^{\theta_i x}$ 展开为 $x$ 的幂级数, 我们得到
+\[\sum_{i=1}^n P_i(x)\,e^{\theta_i\,x} = r! \sum_{m=0}^\infty \sigma_m(m!)^{-1}\,x^m,\]
+其中对于每个 $m$, $l^m \sigma_m$ 由 \eqref{eq:ch10_2} 的左侧给出. 因此 \eqref{eq:ch10_1} 对于 $\rho_m = (r!/m!) \sigma_m$ 成立. 此外我们有 $M < N < 2nr$ 且 $N - M > \epsilon r$, 由此可得
+\[H < \{2nr(2lL)^{2nr}\}^{2n/\epsilon} < r^{\frac{1}{2}\epsilon r}.\]
+由于当 $j < r - r_i$ 时 $p_{ij} = 0$, 因此 $P_i(x)$ 的系数的绝对值至多为
+\[\frac{r!\,H}{(r-r_i)!} = r_i!\,H\binom{r}{r_i}\leqslant r_i!\,r^{\epsilon r}.\]
+同样显然有
+\[\left|\sigma_{m}\right| < n(m+1) \, (2lL)^{m} \, H < r^{\epsilon(r+m)},\]
+这就证明了引理.
+\end{proof}
+
+\begin{mylemma}{}{ch10_2}
+设 $P_{ij}(x)$ $(1 \le i \le n, j \ge 1)$ 递归定义为
+\[P_{i1}(x) = P_{i}(x), \quad P_{i,j+1}(x) = P'_{ij}(x) + \theta_i P_{ij}(x).\]
+如果对于所有 $i$ 均有 $r_i > 2s$, 其中 $s = [\epsilon r] + (n-1)^2$, 则第 $i$ 行第 $j$ 列为 $P_{ij}(x)$ 的 $n$ 阶行列式 $\Delta(x)$ 在 $x = 1$ 处的零点阶数不能大于 $s$.
+\end{mylemma}
+
+\begin{proof}
+我们稍后将证明没有一个 $P_i(x)$ 恒等于 0; 首先我们假设这一点. 那么每个 $P_i$ 都有一个非零的首项系数, 设其为 $p_i$. 因为显然 $P_{ij}(x)$ 的次数至多为 $r$ 且首项系数为 $p_i \theta_i^{j-1}$, 由此可知 $\Delta(x)$ 是一个次数至多为 $nr$ 且首项系数为 $p_1 \dots p_n \psi$ 的多项式, 其中 $\psi$ 是由 $\theta_i$ 的幂构成的 $n$ 阶 Vandermonde 行列式. 根据假设, $\theta_i$ 是互不相同的, 因此 $\Delta(x)$ 不恒等于 0.
+
+现在我们假设 $r = r_1$, 显然这不失一般性. 将 \eqref{eq:ch10_1} 的左侧记为 $\Phi(x)$, 我们显然有
+\[\Phi^{(j-1)}(x) = \sum_{i=1}^{n} P_{ij}(x) e^{\theta_i x}.\]
+因此, 如果将第一行替换为 $e^{-\theta_1 x} \Phi^{(j-1)}(x)$ （对于 $j=1,2,\ldots,n$）, $\Delta(x)$ 保持不变. 对 \eqref{eq:ch10_1} 求导, 我们看到 $\Phi^{(j)}(x)$ 在 $x=0$ 处具有阶数至少为 $M-j$ 的零点; 并且显然 $P_{ij}(x)$ 在 $x=0$ 处具有阶数至少为 $r-r_i-j+1$ 的零点. 因此 $\Delta(x)$ 在 $x=0$ 处具有阶数至少为
+\[M-n+1+\sum_{i=2}^{n}(r-r_{i}-n+1)=nr-s\]
+的零点, 并且由于 $\Delta(x)$ 的次数至多为 $nr$, 引理成立.
+
+现在只需证明最初的假设. 我们假设多项式 $P_i(x)$ 中恰好有 $k$ 个不恒等于 0, 且不失一般性地, 设 它们由 $i=1,2,\dots,k$ 给出. 我们也假设 $r=r_i$ 对于满足 $k \le i \le n$ 的某个 $i$ 成立, 这显然是可行的. 现在, 如上所述, 我们看到 $\Delta(x)$ 中由前 $k$ 行和前 $k$ 列组成的子式是一个不恒等于 0 且次数至多为 $kr$ 的多项式. 另一方面, 通过对行进行线性组合, 显然它在 $x=0$ 处具有阶数至少为
+\[M-k+1+\sum_{i=1}^{k-1}(r-r_i-k+1) \ge (k-1)r-s+\sum_{i=k}^n r_i\]
+的零点. 凭借对于所有 $i$ 均有 $r_i > 2s$ 的假设, 由此可得 $k = n$, 这便完成了引理的证明.
+\end{proof}
+
+\begin{mylemma}{}{ch10_3}
+在 $1$ 到 $n+s$（含）之间存在 $n$ 个互不相同的下标 $J(j)$ $(1 \le j \le n)$, 使得以 $P_{i,J(j)}(x)$ 作为第 $i$ 行第 $j$ 列元素的 $n$ 阶行列式在 $x=1$ 处不为 0.
+\end{mylemma}
+
+\begin{proof}
+我们通过以下方程引入 $w_1, \ldots, w_n$ 的线性形式
+\[W_{j} = \sum_{i=1}^{n} P_{ij}(x) w_{i} \quad (j = 1, 2, \ldots). \tag{3}\label{eq:ch10_3}\]
+若 $\Delta_{ij}(x)$ 是由划去 $\Delta(x)$ 的第 $i$ 行和第 $j$ 列得到的余子式, 则
+\[w_{i}\Delta(x) = \sum_{j=1}^{n} (-1)^{i+j} W_{j}\Delta_{ij}(x) \quad (1 \leq i \leq n). \tag{4}\label{eq:ch10_4}\]
+根据 \autoref{lem:ch10_2}, 存在一个整数 $t \leq s$ 使得 $\Delta^{(t)}(1) \neq 0$, 并且我们假设 $t$ 是满足该条件的最小非负整数. 现在将 $w_i$ 视为 $x$ 的可微函数并将 \eqref{eq:ch10_4} 求导 $t$ 次, 将每个阶段出现的 $w_i'$ 替换为 $w_i\theta_i$（这是可行的, 因为所得方程对于 $w_i$ 和 $w_i'$ 恒等成立）, 我们得到
+\[w_i \left\{ \sum_{j=0}^t \binom{t}{j} \theta_i^{t-j} \Delta^{(j)}(x) \right\} = \sum_{j=1}^{n+t} W_j F_{ij}(x) \quad (1 \leq i \leq n),\]
+其中 $F_{ij}(x)$ 是由 $\Delta_{ij}(x)$ 以及它们的导数的线性组合给出的多项式. 因此, 由 \eqref{eq:ch10_3} 在 $x = 1$ 且 $1 \le j \le n + t$ 时定义的线性形式包含一组 $n$ 个线性无关的线性形式, 并且通过关联的下标给出 $J(j)$ $(1 \le j \le n)$, 引理成立.
+\end{proof}
+
+\begin{mylemma}{}{ch10_4}
+存在构成非零行列式的整数 $q_{ij}$ $(1 \le i, j \le n)$, 使得 $|q_{ij}| < r_i! r^{4cr}$ 并且
+\[\left| \sum_{i=1}^{n} q_{ij} e^{\theta_i} \right| < r! r^{4\epsilon n r} \left( \prod_{i=1}^{n} r_i! \right)^{-1}. \tag{5}\label{eq:ch10_5}\]
+\end{mylemma}
+
+\begin{proof}
+事实上, 整数 $q_{ij} = l^{n+s}P_{i,J(j)}(1)$ 具有所需的性质. 的确, 第一个断言由 \autoref{lem:ch10_3} 推出, 而第二个断言由 $P_{ij}$ 的系数绝对值的明显上界估计 $r_i! (r+L)^j r^{cr}$ 推出. 此外, 利用 \autoref{lem:ch10_2} 的符号, \eqref{eq:ch10_5} 左侧的和由 $l^{n+s}\Phi^{J(j)-1}(1)$ 给出, 并且, 对 \eqref{eq:ch10_1} 求导 $h \leq n+s-1$ 次, 我们得到
+\[|\Phi^{(h)}(1)| < r! r^{\epsilon r} \sum_{m=M}^{\infty} r^{\epsilon m} ((m-h)!)^{-1}.\]
+但右侧的和乘以 $(M-h)!$ 显然至多为 $e^r r^{\epsilon M}$, 且我们有
+\[(M-h)! \geqslant (r_1 + \ldots + r_n - 2s)! \geqslant (nr)^{-2s} (r_1 + \ldots + r_n)!.\]
+由于 $M \leq \frac{5}{4} nr$ 且 $s \leq \frac{5}{4} \epsilon r$, 这便给出了 \eqref{eq:ch10_5}.
+\end{proof}
+
+\section{主定理的证明}\label{sec:ch10_3}
+
+现在可以通过数的几何\index{Geometry of Numbers}\footnote{关于另一种论证, 参见作者在 Canadian J. Math. 17 (1965) 上的论文.} 轻松完成证明. 设 $\theta_1, \ldots, \theta_n$ 是互不相同的非零有理数, 并假设 $\xi > 0$. 由 $\leqslant$ 或 $\geqslant$ 所隐含的常数将仅取决于这些量. 为简便起见, 我们令 $k = n + 1$, 并且我们用 $\mathbf{A}_k$ 表示 $R^k$ 中的向量 $(e^{\theta_1}, \ldots, e^{\theta_n}, 1)$. 此外, 我们用 $\mathbf{A}_j$ $(1 \leqslant j \leqslant n)$ 表示 $k$ 阶单位矩阵的第 $j$ 行. 我们接下来证明, 对于满足 $\mu_1 \ldots \mu_k = 1$ 且 $\mu_j > 1$ $(1 \leqslant j \leqslant k)$ 的任意数\index{numbers} $\mu_1, \ldots, \mu_k$, 若对于所有 $j$ 均有 $\mu_j \leqslant \mu$ 且 $\mu \geqslant 1$, 则平行多面体 $|\mathbf{A}_j \mathbf{x}| < \mu_j$ $(1 \leqslant j \leqslant k)$ 的第一个极小值 $\lambda_1$ 超过 $\mu^{-\xi}$.
+
+事实上, 证明该平行多面体的最后一个极小值 $\lambda_k \ll \mu^{\xi/n}$ 便已足够, 因为我们有 $\lambda_1 \dots \lambda_k \gg 1$, 从而 $\lambda_1 \gg \lambda_k^{-n}$. 我们将应用将 $n$ 替换为 $k$ 且 $\theta_k = 0$ 的 \autoref{lem:ch10_4}. 我们取 $r = r_k$ 为使 $\mu < r! r^{-4\epsilon r}$ 成立的最小正整数, 然后取满足
+\[(r_j-1)!\leqslant \mu_j r^{4\epsilon r}< r_j!\]
+的整数 $r_1, \dots, r_n$. 显然, $r$ 是 $r_1, \ldots, r_k$ 的最大值, 并且我们对于所有 $i$ 均有 $r \gg 1$ 且 $r_i > 4\epsilon r$; 特别地, \autoref{lem:ch10_2} 的假设得到满足. 此外, 从 Stirling 公式中我们看到
+\[\mu > (r-1)! r^{-4\epsilon r} > r^{\frac{1}{4}r}\]
+因此由 \autoref{lem:ch10_4} 得
+\[|q_{ij}| < \mu_i r^{8\epsilon r + 1} < \mu_i \mu^{20\epsilon}\]
+此外, \eqref{eq:ch10_5} 的右侧至多为
+\[r^{4\epsilon r}(\mu_1\dots\mu_n)^{-1}\leqslant \mu_k\mu^{20\epsilon},\]
+由于 $q_{ij}$ 的行列式不为 0, 由此可得 $\lambda_k \leq \mu^{20\epsilon}$. 如果 $\epsilon$ 足够小, 这便给出了 $\lambda_1 > \mu^{-\epsilon}$, 从而满足要求.
+
+最后, 我们应用 \autoref{ch:7} 中的 \autoref{lem:ch7_8}, 其中令 $l = n = k - 1$. 通过用 $\mathbf{a}_j$ ($1 \le j \le k$) 表示在 \autoref{ch:7} 的 \autoref{sec:ch7_10} 开始处用 $e^{\theta_j}$ 代替 $\alpha_j$ 所定义的向量, 我们得出结论, 平行多面体 $|\mathbf{a}_j \mathbf{x}| < \mu_j^{-1}$ ($1 \le j \le k$) 的第一个极小值 $\nu_1$ 满足
+\[\nu_1 \gg \lambda_1 \dots \lambda_l \geqslant \lambda_1^l\]
+从而 $\nu_1 \gg \mu^{-k}$. 因此 \autoref{ch:7} 的 \autoref{sec:ch7_10} 的主要命题成立, 并且 \autoref{thm:ch10_1} 现在通过紧随其后的论证得出.

@@ -1,0 +1,198 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{起源}\label{ch:1}
+
+\section{Liouville 定理}
+
+超越数\index{transcendental number}理论源于 Liouville\index{Liouville, J.} 在 1844 年发表的著名论文\footnote{C.R. 18 (1844), 883--5, 910--11; J. Math. pures appl. 16 (1851), 133--42. 缩写参见第 130 页.}中. 在这篇论文中, 他首次获得了一类不满足任何整系数代数方程的数\index{numbers}, 正如该论文标题中所描述的那样, 这一类数是“范围极广”（\textit{tr\`es-\'etendue}）的. 然而, 早在这一日期之前, 人们就已经提出了一些与该主题相关的孤立问题, 并且与其紧密相关的无理数\index{numbers}研究在之前的至少一个世纪里一直是人们关注的主要焦点. 事实上, 到了 1744 年, Euler\index{Euler, L.} 已经证明了 $e$ 的无理性, 而到了 1761 年, Lambert\index{Lambert, J. H.} 证实了 $\pi$ 的无理性. 此外, 早期关于连分数\index{continued fractions}的研究已经揭示了关于用有理数逼近无理数\index{numbers}的几个基本特征. 例如, 人们知道, 对于任何无理数 $\alpha$, 都存在一个无穷的有理数列 $p/q$ ($q>0$) 使得\footnote{这实际上很容易验证; 对于任何整数 $Q > 1$, 在 $[0, 1]$ 可分成的 $Q$ 个长度为 $1/Q$ 的子区间中, 必有一个子区间包含 $1, \{q\alpha\}$ ($0 \le q < Q$) 这 $Q+1$ 个数\index{numbers}中的两个（其中 $\{q\alpha\}$ 表示 $q\alpha$ 的小数部分）, 并且它们的差具有 $q\alpha - p$ 的形式.} $|\alpha-p/q|<1/q^2$. 同时人们也知道, 二次无理数的连分数最终是周期的, 由此存在 $c = c(\alpha) > 0$ 使得对所有有理数 $p/q$ ($q > 0$) 都有 $|\alpha - p/q| > c/q^2$. Liouville\index{Liouville, J.} 观察到, 后一类的结果更普遍地成立, 事实上, 对于任何非有理数的代数数\index{algebraic number}, 其被有理数逼近的精度是存在限制的. 正是这一观察提供了可用于构造超越数\index{transcendental number}的第一个实用判别准则.
+
+\begin{mythm}{Liouville\index{Liouville, J.} 定理\index{Liouville's theorem}}{ch1_1}
+对于任何次数 $n > 1$ 的代数数\index{algebraic number} $\alpha$, 存在 $c = c(\alpha) > 0$ 使得
+\[
+|\alpha - p/q| > \frac{c}{q^n}
+\]
+对所有有理数 $p/q$ ($q > 0$) 均成立.
+\end{mythm}
+
+该定理几乎可以立即可由代数数\index{algebraic number}的定义推导出来. 一个实数或复数如果是一个整系数多项式的根, 则称其为代数的; 每个代数数\index{algebraic number} $\alpha$ 都是某个此类不可约\footnote{即在整数上不可因子分解, 或者等价地, 由 Gauss\index{Gauss, C. F.} 引理\index{Gauss' lemma}, 在有理数上不可因子分解.}多项式（设为 $P(x)$）的根, 该多项式在相差一个常数因子的意义下是唯一的, 并且 $\alpha$ 的次数定义为 $P(x)$ 的次数. 显然只需证明 $\alpha$ 为实数的情形; 在此情况下, 对于任何有理数 $p/q$ ($q > 0$), 由微分中值定理我们有:
+\[
+-P(p/q) = P(\alpha) - P(p/q) = (\alpha - p/q) P'(\xi)
+\]
+其中 $\xi$ 介于 $p/q$ 和 $\alpha$ 之间. 显然可以假设 $|\alpha - p/q| < 1$, 否则结果平凡地成立; 此时有 $|\xi| < 1 + |\alpha|$, 从而对某个 $c = c(\alpha) > 0$ 有 \[|P'(\xi)| < 1/c\]; 因此
+\[
+|\alpha - p/q| > c |P(p/q)|.
+\]
+但是, 由于 $P$ 是不可约的, 我们有 \[P(p/q) \neq 0\], 因而整数 $|q^n P(p/q)|$ 至少为 $1$; 定理得证. 注意, 我们可以很容易地给出 $c$ 的一个显式值; 事实上可以取
+\[
+c^{-1} = n^2(1+|\alpha|)^{n-1} H,
+\]
+其中 $H$ 表示 $\alpha$ 的高度, 即 $P(x)$ 系数绝对值的最大值.
+
+一个不是代数数的实数或复数被称为超越数. 鉴于 \autoref{thm:ch1_1}, 此类数的一个显然例子是由 Liouville\index{Liouville, J.} 常数给出: $\xi = \sum_{n=1}^{\infty} 10^{-n!}$. 因为如果我们写成
+\[
+p_j = 10^{j!} \sum_{n=1}^{j} 10^{-n!}, \qquad q_j = 10^{j!} \quad (j = 1, 2, \dots),
+\]
+那么 $p_j, q_j$ 是互素的有理整数, 并且我们有
+\begin{align*}
+|\xi - p_j/q_j| &= \sum_{n=j+1}^{\infty} 10^{-n!} \\
+&< 10^{-(j+1)!} (1 + 10^{-1} + 10^{-2} + \dots) \\
+&= \frac{10}{9} q_j^{-j-1} < q_j^{-j}.
+\end{align*}
+基于 Liouville\index{Liouville, J.} 定理\index{Liouville's theorem}可以具体给出许多其他超越数\index{transcendental number}; 事实上, 任何其中出现足够长零块的无限小数, 或者任何部分商增长足够快的连分数, 都提供了一个例子. 这类的数\index{numbers}, 即具有一族截然不同的有理逼近序列 $p_n/q_n$ ($n=1,2,\dots$) 使得 $|\xi - p_n/q_n| < 1/q_n^{\omega_n}$ (其中 $\limsup \omega_n = \infty$) 的实数 $\xi$, 被称为 Liouville\index{Liouville, J.} 数\index{Liouville number}; 当然, 这些数都是超越数. 但 Liouville\index{Liouville, J.} 的思想在构造超越数\index{transcendental number}\index{numbers}方面的其他不那么显然的应用也已被描述; 特别是, Maillet\index{Maillet, E.}\footnote{参见文献目录.} 利用关于二次无理数逼近的 \autoref{thm:ch1_1} 推广, 确立了一类著名的准周期连分数\index{continued fractions}的超越性.
+
+在 1874 年, Cantor\index{Cantor, G.} 引入了可数性的概念, 并且这立刻导致了一个观察, 即“几乎所有”数都是超越数. Cantor\index{Cantor, G.} 的工作可以被视为某些重要度量理论\index{metrical theory}的先驱, 我们将在 \autoref{ch:9} 中讨论这些理论.
+
+
+\section{$e$ 的超越性}
+
+在 1873 年, 发表了 Hermite\index{Hermite, Ch.} 具有划时代意义的专著 \textit{Sur la fonction exponentielle}, 在其中他确立了自然对数底 $e\index{transcendence of e}$ 的超越性. 如前所述, Euler\index{Euler, L.} 在 1744 年已经证明了 $e$ 的无理性, 且 Liouville\index{Liouville, J.} 在 1840 年直接从定义级数证明了事实上 $e$ 和 $e^2$ 都既不能是有理数也不能是二次无理数; 但 Hermite\index{Hermite, Ch.} 的工作开启了一个新纪元. 特别是, 在十年之内, Lindemann\index{Lindemann, F.} 成功推广了 Hermite\index{Hermite, Ch.} 的方法, 并在在一篇经典论文中证明了 $\pi$ 是超越的, 从而解决了古希腊关于化圆为方\index{quadrature of the circle}的古老难题. 希腊人曾试图仅用直尺和圆规构造一个面积等于给定圆面积的正方形. 在假定给定单位长度的情况下, 这显然等同于在平面上构造两个距离为 $\sqrt{\pi}$ 的点. 但是, 由于所有可构造的点都是由直线与圆的交点定义的, 由此很容易得出, 它们在适当坐标系中的坐标均由代数数\index{algebraic number}给出. 因此, $\pi$ 的超越性\index{transcendence of  $\pi$}意味着化圆为方\index{quadrature of the circle}是不可能的.
+
+Hermite\index{Hermite, Ch.} 和 Lindemann\index{Lindemann, F.} 的研究工作在 1885 年被 Weierstrass\index{Weierstrass, K.} 简化, 并在 1893 年被 Hilbert\index{Hilbert, D.}, Hurwitz\index{Hurwitz, A.} 和 Gordan\index{Gordan, P.} 进一步简化. 我们现在将以这些后来的学者所建议的风格来论证 $e\index{transcendence of e}$ 和 $\pi\index{transcendence of  $\pi$}$ 的超越性.
+
+\begin{mythm}{$e\index{transcendence of e}$ 的超越性}{ch1_2}
+$e$ 是超越的.
+\end{mythm}
+
+\begin{proof}
+在进行证明之前, 我们观察到, 如果 $f(x)$ 是任意一个设为 $m$ 次的实多项式, 且如果
+\[
+I(t) = \int_0^t e^{t-u} f(u) \, du,
+\]
+其中 $t$ 是任意复数, 且积分是在连接 $0$ 和 $t$ 的线段上进行的, 那么通过反复分部积分, 我们有\footnote{$f^{(j)}(x)$ 表示 $f(x)$ 的第 $j$ 阶导数.}
+\begin{equation} \label{eq:ch1_1}\tag{1}
+I(t) = e^t \sum_{j=0}^m f^{(j)}(0) - \sum_{j=0}^m f^{(j)}(t).
+\end{equation}
+此外, 如果 $\bar{f}(x)$ 表示由 $f(x)$ 将每个系数替换为其绝对值后得到的多项式, 那么
+\begin{equation} \label{eq:ch1_2}\tag{2}
+|I(t)| \le \int_0^t |e^{t-u} f(u)| \, du \le |t| e^{|t|} \bar{f}(|t|).
+\end{equation}
+
+现在假设 $e$ 是代数的, 从而有
+\begin{equation} \label{eq:ch1_3}\tag{3}
+q_0 + q_1 e + \dots + q_n e^n = 0
+\end{equation}
+对于某些整数 $n>0$, $q_0 \neq 0$, $q_1, \dots, q_n$ 成立. 我们将比较对下式的估计
+\[
+J = q_0 I(0) + q_1 I(1) + \dots + q_n I(n),
+\]
+其中 $I(t)$ 的定义如上, 且取
+\[
+f(x) = x^{p-1} (x-1)^p \dots (x-n)^p,
+\]
+$p$ 表示一个大素数. 由 \eqref{eq:ch1_1} 和 \eqref{eq:ch1_3} 我们有
+\[
+J = -\sum_{j=0}^{m} \sum_{k=0}^{n} q_k f^{(j)}(k),
+\]
+其中 $m = (n+1)p - 1. $ 显然, 当 $j < p$, $k > 0$ 以及当 $j < p-1$, $k = 0$ 时, $f^{(j)}(k) = 0$; 因此对于除 $j = p-1$, $k = 0$ 之外的所有 $j$, $k$, $f^{(j)}(k)$ 都是一个能被 $p!$ 整除的整数; 此外我们有
+\[
+f^{(p-1)}(0) = (p-1)! (-1)^{np} (n!)^p,
+\]
+由此, 如果 $p > n$, 则 $f^{(p-1)}(0)$ 是一个能被 $(p-1)!$ 整除但不能被 $p!$ 整除的整数. 由此可知, 如果还有 $p > |q_0|$, 那么 $J$ 是一个能被 $(p-1)!$ 整除的非零整数, 从而 $|J| \ge (p-1)!$. 但是, 平凡估计 $\bar{f}(k) \le (2n)^m$ 结合 \eqref{eq:ch1_2} 给出
+\[
+|J| \le |q_1| e \bar{f}(1) + \dots + |q_n| n e^n \bar{f}(n) \le c^p
+\]
+其中 $c$ 与 $p$ 无关. 当 $p$ 足够大时, 这两个估计是不一致的, 这一矛盾证明了定理.
+\end{proof}
+
+
+\begin{mythm}{$\pi\index{transcendence of  $\pi$}$ 的超越性}{ch1_3}
+$\pi$ 是超越的.
+\end{mythm}
+
+\begin{proof}
+反设 $\pi$ 是代数的; 那么 $\theta = i\pi$ 也是代数的. 设 $\theta$ 的次数为 $d$, 设 $\theta_1 \,(=\theta), \theta_2, \dots, \theta_d$ 表示 $\theta$ 的共轭, 并且设 $l$ 表示定义 $\theta$ 的极小多项式\index{minimal polynomial of algebraic number}\footnote{即前面指出的具有互素整数系数的不可约多项式; $x^d$ 的系数称为首项系数, 且假定其为正. 共轭是该多项式的根.}的首项系数. 由 Euler\index{Euler, L.} 恒等式\index{Euler's equation} $e^{i\pi} = -1$, 我们得到
+\[
+(1+e^{\theta_1})(1+e^{\theta_2})\dots(1+e^{\theta_d})=0.
+\]
+左侧的乘积可以写成 $2^d$ 项 $e^{\Theta}$ 的和, 其中
+\[
+\Theta = \epsilon_1 \theta_1 + \dots + \epsilon_d \theta_d,
+\]
+且 $\epsilon_j = 0$ 或 $1$; 我们假设数\index{numbers}
+\[
+\epsilon_1 \theta_1 + \dots + \epsilon_d \theta_d
+\]
+中恰有 $n$ 个非零, 且将这些数记为 $\alpha_1, \dots, \alpha_n$. 我们便有
+\begin{equation} \label{eq:ch1_4}\tag{4}
+q + e^{\alpha_1} + \dots + e^{\alpha_n} = 0,
+\end{equation}
+其中 $q$ 是正整数 $2^d - n$.
+
+我们将比较对下式的估计
+\[
+J = I(\alpha_1) + \dots + I(\alpha_n),
+\]
+其中 $I(t)$ 的定义如 \autoref{thm:ch1_2} 证明中所示, 且取
+\[
+f(x) = l^{np} x^{p-1} (x-\alpha_1)^p \dots (x-\alpha_n)^p,
+\]
+$p$ 同样表示一个大素数. 由 \eqref{eq:ch1_1} 和 \eqref{eq:ch1_4} 我们有
+\[
+J = -q \sum_{j=0}^{m} f^{(j)}(0) - \sum_{j=0}^{m} \sum_{k=1}^{n} f^{(j)}(\alpha_k),
+\]
+其中 $m = (n+1)p - 1. $ 现在关于 $k$ 的求和是一个关于 $l\alpha_1, \dots, l\alpha_n$ 的具有整数系数的对称多项式, 并且由对称函数基本定理的两项应用, 结合对 $l\alpha_1, \dots, l\alpha_n$ 的每个初等对称函数也是这 $2^d$ 个数\index{numbers} $l\Theta$ 的初等对称函数的观察, 推出它表示一个有理整数. 此外, 由于当 $j < p$ 时 $f^{(j)}(\alpha_k)=0$, 后者显然能被 $p!$ 整除. 显然, 当 $j \neq p-1$ 时, $f^{(j)}(0)$ 也是一个能被 $p!$ 整除的有理整数, 并且当 $p$ 足够大时,
+\[
+f^{(p-1)}(0) = (p-1)! (-l)^{np} (\alpha_1 \dots \alpha_n)^p
+\]
+是一个能被 $(p-1)!$ 整除但不能被 $p!$ 整除的有理整数. 因此, 如果 $p > q$, 我们有 $|J| \ge (p-1)!$. 但由 \eqref{eq:ch1_2} 我们得到
+\[
+|J| \le |\alpha_1| e^{|\alpha_1|} \bar{f}(|\alpha_1|) + \dots + |\alpha_n| e^{|\alpha_n|} \bar{f}(|\alpha_n|) \le c^p
+\]
+其中 $c$ 与 $p$ 无关. 当 $p$ 足够大时, 这些估计是不一致的, 这一矛盾证明了定理.
+\end{proof}
+
+
+\section{Lindemann 定理}
+
+前两个定理, 即 $e\index{transcendence of e}$ 和 $\pi\index{transcendence of  $\pi$}$ 的超越性, 是一个更普遍结果的特例. 这一结果由 Lindemann\index{Lindemann, F.} 在其 1882 年的原始论文中给出了简述, 并在后来由 Weierstrass\index{Weierstrass, K.} 给予了严格证明.
+
+\begin{mythm}{Lindemann\index{Lindemann, F.} 定理\index{Lindemann's theorem}}{ch1_4}
+对于任意互不相同的代数数\index{algebraic number} $\alpha_1, \dots, \alpha_n$ 以及任意非零的代数数\index{algebraic number} $\beta_1, \dots, \beta_n$, 我们有
+\begin{equation*} 
+\beta_1 e^{\alpha_1} + \dots + \beta_n e^{\alpha_n} \neq 0.
+\end{equation*}
+\end{mythm}
+
+由 \autoref{thm:ch1_4} 立即可得, 对于在有理数域上线性无关的所有代数数 $\alpha_1, \dots, \alpha_n$, $e^{\alpha_1}, \dots, e^{\alpha_n}$ 是代数独立的; 结果的这种形式通常被称为 Lindemann\index{Lindemann, F.} 定理\index{Lindemann's theorem}. 作为 \autoref{thm:ch1_4} 的进一步直接推论, 我们可以看到, 对于所有非零代数数 $\alpha$, $\cos \alpha$, $\sin \alpha$ 以及 $\tan \alpha$ 都是超越的, 此外, 对于不等于 $0$ 或 $1$ 的代数数 $\alpha$, $\log \alpha$ 是超越的.
+
+现在假设该定理不成立, 从而有
+\begin{equation} \label{eq:ch1_5}\tag{5}
+\beta_1 e^{\alpha_1} + \dots + \beta_n e^{\alpha_n} = 0.
+\end{equation}
+显然, 在不失一般性的情况下, 可以假设 $\beta$ 都是有理整数, 因为这可以通过将 \eqref{eq:ch1_5} 乘以通过让左边的 $\beta_1, \dots, \beta_n$ 独立地取其各自的共轭所得到的所有表达式, 然后再乘以一个公分母来保证. 此外, 我们可以假设存在整数 $0 = n_0 < n_1 < \dots < n_r = n$, 使得 $\alpha_{n_t+1}, \dots, \alpha_{n_{t+1}}$ 对每个 $t$ 都是一个完整的共轭集合, 并且有
+\[
+\beta_{n_t+1} = \dots = \beta_{n_{t+1}}.
+\]
+因为显然 $\alpha_1, \dots, \alpha_n$ 都是某个设为 $N$ 次的整系数多项式的根, 且如果用 $\alpha_{n+1}, \dots, \alpha_N$ 表示其余的根, 我们有
+\[
+\prod (\beta_1 e^{\alpha_{k_1}} + \dots + \beta_N e^{\alpha_{k_N}}) = 0,
+\]
+其中乘积是对 $1, \dots, N$ 的所有排列 $k_1, \dots, k_N$ 进行的, 且有 $\beta_{n+1} = \dots = \beta_N = 0$. 左式可以表示为若干项 $\exp(h_1 \alpha_1 + \dots + h_N \alpha_N)$ 的带有整数系数的组合, 其中 $h_1, \dots, h_N$ 是和为 $N!$ 的整数, 并且显然, 在 $1, \dots, N$ 的所有排列 $k_1, \dots, k_N$ 上取值的 $h_1 \alpha_{k_1} + \dots + h_N \alpha_{k_N}$ 组成一个完整的共轭集合; 关于 $\beta$ 相等性的条件由对称性即得. 还要注意, 在合并具有相同指数的项之后, 新系数 $\beta$ 中至少有一个将是非零的; 这可以通过考虑根据复数\index{numbers} $z = x + iy$ 的排序（即如果 $x_1 < x_2$, 或 $x_1 = x_2$ 且 $y_1 < y_2$, 则定义 $z_1 < z_2$）具有最高指数的项的系数来轻易证实.
+
+现在设 $l$ 为任意正整数使得 $l\alpha_1, \dots, l\alpha_n$ 以及 $l\beta_1, \dots, l\beta_n$ 都是代数整数\index{algebraic integer},\footnote{如果一个代数数\index{algebraic number}在定义它的极小多项式\index{minimal polynomial of algebraic number}中的首项系数为 $1$, 则称该代数数为代数整数\index{algebraic integer}; 如果 $\alpha$ 是代数数\index{algebraic number} 且 $l$ 是其极小多项式\index{minimal polynomial of algebraic number}的首项系数, 那么 $l\alpha$ 就是代数整数\index{algebraic integer}.} 并令
+\[
+f_i(x) = l^{np} \{(x-\alpha_1)\dots(x-\alpha_n)\}^p/(x-\alpha_i) \quad (1 \le i \le n),
+\]
+其中 $p$ 表示一个大素数. 我们将比较对 $|J_1 \dots J_n|$ 的估计, 其中
+\[
+J_{i} = \beta_{1} I_{i}(\alpha_{1}) + \dots + \beta_{n} I_{i}(\alpha_{n}) \quad (1 \le i \le n),
+\]
+且 $I_i(t)$ 如 \autoref{thm:ch1_2} 的证明中所定义, 且取 $f = f_i$. 由 \eqref{eq:ch1_1} 和目标代数关系式我们有
+\[
+J_i = -\sum_{j=0}^m \sum_{k=1}^n \beta_k f_i^{(j)}(\alpha_k),
+\]
+其中 $m = np - 1. $ 此外, 除非 $j = p - 1$, $k = i$, 否则 $f_i^{(j)}(\alpha_k)$ 都是能被 $p!$ 整除\footnote{也就是说, 商是代数整数\index{algebraic integer}.}的代数整数\index{algebraic integer}; 而在后一种情况下, 我们有
+\[
+f_i^{(p-1)}(\alpha_i) = l^{np}(p-1)! \prod_{\substack{k=1 \\ k \neq i}}^n (\alpha_i - \alpha_k)^p,
+\]
+由此可知, 如果 $p$ 足够大, 那么它是一个能被 $(p-1)!$ 整除但不能被 $p!$ 整除的代数整数\index{algebraic integer}. 由此推出, $J_i$ 是一个能被 $(p-1)!$ 整除的非零代数整数\index{algebraic integer}. 此外, 根据初始假设, 我们有
+\[
+J_{i} = -\sum_{j=0}^{m} \sum_{t=0}^{r-1} \beta_{n_{t+1}} \{ f_{i}^{(j)}(\alpha_{n_t+1}) + \dots + f_{i}^{(j)}(\alpha_{n_{t+1}}) \},
+\]
+并且这里关于 $t$ 的每个求和都可以表示为一个关于 $\alpha_i$ 的具有与 $i$ 无关的有理系数的多项式; 因为显然, 由于 $\alpha_1, \dots, \alpha_n$ 是一个完整的共轭集合, $f_i^{(j)}(x)$ 的系数可以写成这种形式. 因而 $J_1 \dots J_n$ 是有理数, 从而实际上是能被 $((p-1)!)^n$ 整除的有理整数. 因此我们有 $|J_1 \dots J_n| \ge ((p-1)!)^n$. 但由 \eqref{eq:ch1_2} 给出
+\[
+|J_i| \le \sum_{k=1}^n |\beta_k| |\alpha_k| e^{|\alpha_k|} \bar{f}_i(|\alpha_k|) \le c^p
+\]
+其中 $c$ 与 $p$ 无关, 且如果 $p$ 足够大, 这些不等式是不一致的. 这一矛盾证明了定理.
+
+上述证明是 Hermite\index{Hermite, Ch.} 和 Lindemann\index{Lindemann, F.} 原始论证的简化版本, 它们的动机可能显得晦涩; 事实上, \textit{先验地}（\textit{a priori}）并无法解释为什么要引入函数 $I$ 和 $f$. 最好的办法是通过研读 Hermite\index{Hermite, Ch.} 的基础论文来获得更深入的见解, 在那里, 这些函数以修改后的形式首次出现. 但可以说, 它们与 $e^x$ 的连分数展开中关于同时逼近的渐近分数的推广有关. 在第 \ref{ch:10} 和 \ref{ch:11} 章中将对这一主题有进一步的阐明. Lindemann\index{Lindemann, F.} 定理\index{Lindemann's theorem}构成了上个世纪成就的顶峰, 我们对这一时期的概述也就此结束.

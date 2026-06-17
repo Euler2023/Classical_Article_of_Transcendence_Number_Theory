@@ -1,0 +1,297 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{丢番图方程}\label{ch:4}
+
+\section{引言}\label{sec:ch4_1}
+
+一般而言，丢番图分析\index{Diophantine analysis}是指对整数方程可解性的研究. 尽管这一领域的研究可追溯至古代，且该学科的历史或多或少相当于数学本身的历史，但直到相对近代才出现了一些一般性理论. 因此，我们将通过再次引用 Hilbert\index{Hilbert, D.} 著名的问题清单，从1900年开始我们的讨论.
+
+其中的第十个问题要求寻找一种通用算法，用以判定给定的丢番图方程（即方程 $f(x_1, \dots, x_n) = 0$，其中 $f$ 表示具有整数系数的多项式）在整数 $x_1, \dots, x_n$ 中是否可解. 虽然 Hilbert\index{Hilbert, D.} 是以可解性的形式提出该问题，但在此联系中，人们当然还希望获得许多其他类型的信息；例如，人们可能会询问某个特定方程是否具有无穷多个解，或者寻求对解的分布或大小的某种描述. 1970年，Matijasevic\index{Matijasevic, Y. V.},\footnote{D.A.N. 191 (1970), 279--82.} 发展了 Davis\index{Davis, M.}\index{Davis, C. S.}、Robinson\index{Robinson, J.} 与 Putnam\index{Putnam, H.},\footnote{Ann. Math. 74 (1961), 425--36.} 的工作，证明了 Hilbert\index{Hilbert, D.} 所寻求的那种通用算法实际上并不存在. 然而，如果限制变量的个数，就会提出一个更实际的问题，特别是对于含两个未知数的多项式，我们现在的知识已相当丰富.
+
+Dickson\index{Dickson, L. E.} 著名的《数论历史》\textit{History of the theory of numbers\index{numbers}} 详尽地叙述了该领域的早期成果. 书中给出了对各种丢番图问题的引用，这些问题主要在过去的两个世纪中通过各种 \textit{ad hoc}（特设）方法得到了研究. 迈向系统化理论的第一个重大进展是由 Thue\index{Thue, A.}\footnote{J.M. 135 (1909), 284--305.} 在1909年取得的，当时他证明了方程 $F(x,y) = m$（其中 $F$ 表示整系数且次数至少为 3 的不可约二元形式）在整数 $x, y$ 中仅有有限个解. Thue\index{Thue, A.} 是通过对代数数有理逼近\index{rational approximations to algebraic numbers}\index{algebraic number} 的基础研究来确立这一结论的. 将方程写为
+\[
+a(x-\alpha_1 y)\dots(x-\alpha_n y)=m
+\]
+的形式，可以看出 $F(x, 1)$ 的零点之一 $\alpha$ 具有有理逼近 $x/y \ (y > 0)$，满足 $|\alpha - x/y| < c/y^n$，其中 $c$ 仅依赖于 $F$ 与 $m$，而 Thue\index{Thue, A.} 证明了若 $y$ 充分大，这是不可能的.\footnote{参见 \autoref{ch:7}.} Thue\index{Thue, A.} 的工作在1929年被 Siegel\index{Siegel, C. L.}\footnote{Abh. Preuss. Akad. Wiss. (1929), no. 1.}\footnote{Acta Math. 53 (1928), 281--315.} 大大扩展了. Siegel\index{Siegel, C. L.} 证明了：对于方程 $f(x, y) = 0$（其中 $f$ 表示整系数多项式），若它所表示的曲线属为 1\index{curves of genus 1} 或属为 0\index{curves of genus 0} 且具有至少三个无穷赋值，则该方程在整数 $x, y$ 中仅有有限个解；否则，该曲线可以参数化，从而存在无穷多个所谓的“整状”（ganzartige）解，即具有常数分母的代数解. Siegel\index{Siegel, C. L.} 的工作除了其他方面，还依赖于他在1921年获得的 Thue\index{Thue, A.} 逼近结果的改进版本\footnote{M.Z. 10 (1921), 173--213.}，以及1928年证明的关于曲线上有理点群基有限性著名的 Mordell\index{Mordell, L. J.}-Weil 定理. Thue\index{Thue, A.} 与 Siegel\index{Siegel, C. L.} 的工作令人满意地解决了哪些曲线仅具有有限多个整数点的问题，此外，当其有限时，它还给出了点数的估计. 但它对关于此类点是否存在的基本 Hilbert\index{Hilbert, D.} 问题没有提供任何线索，因此更不用说提供一个确定它们全体的算法了；因为这些论证依赖于一个起初就作出的假设，即方程至少有一个大解，而这纯粹是假设性的. Thue\index{Thue, A.} 定理在温和限制下的另一个证明由 Skolem\index{Skolem, Th.} 于1935年通过一种与原证明截然不同的 $p$ 进论证给出，但这里的论证依赖于 $p$ 进整数的紧致性质，因此同样是非有效的.
+
+我们在这里的目的是应用 \autoref{ch:3} 的工作来有效解决一大类丢番图方程\index{Diophantine equations}. 特别地，我们将处理定义在任意代数数\index{algebraic number}域上的 Thue\index{Thue, A.} 方程 $F(x,y)=m$，著名的 Mordell\index{Mordell, L. J.} 方程\index{Mordell equation} $y^2=x^3+k$（顺便提一下，它的历史可以追溯到1621年的 Bachet\index{Bachet, C. G.}），并且我们将获得一个用于确定任意属为 1\index{curves of genus 1} 曲线上的所有整数点的有效算法. 我们的定理将在本质上以定性的形式进行证明，但显然它们可以被调整以产生方程所有解大小的显式界. 该工作的定量方面的总结在最后一节中给出.
+
+\section{Thue 方程}\label{sec:ch4_2}
+
+设 $K$ 为次数为 $d$ 的代数数\index{algebraic number}域，设 $\alpha_1, \dots, \alpha_n$ 为 $K$ 中的 $n \ge 3$ 个互不相同的代数整数\index{algebraic integer}，并设 $\mu$ 为 $K$ 中的任意非零代数整数\index{algebraic integer}. 我们证明：
+
+\begin{mythm}{}{ch4_1}
+方程
+\[
+(X - \alpha_1 Y) \dots (X - \alpha_n Y) = \mu
+\]
+在 $K$ 中的代数整数\index{algebraic integer} $X, Y$ 中仅有有限个解，且这些解可以被有效确定.
+\end{mythm}
+
+我们定义 $K$ 中任意代数整数\index{algebraic integer} $\theta$ 的\textit{大小}（size）为其共轭绝对值的最大值，并将 $\theta$ 的大小记为 $\|\theta\|$. 利用该记号，我们实际上将展示如何对上述所有 $X, Y$ 获得 $\|X\|$ 与 $\|Y\|$ 的显式界. 该界可以用 $d$ 与 $\alpha_1, \dots, \alpha_n, \mu$ 的最大高度以及生成 $K$ 的某个代数整数\index{algebraic integer}的最大高度来表示；我们将用 $c_1, c_2, \dots$ 表示仅能由这些量确定的正数\index{numbers}. 我们将假设 $K$ 具有 $s$ 个共轭实域和 $2t$ 个共轭复域，从而 $d = s + 2t$；此外，我们将用 $\theta^{(j)}$ ($1 \le j \le d$) 表示 $K$ 的任意元素 $\theta$ 的共轭，其中 $\theta^{(1)}, \dots, \theta^{(s)}$ 为实数，而 $\theta^{(s+t+j)}$ 分别为 $\theta^{(s+j)}$ 的复共轭. 随后的论证基于 Dirichlet\index{Dirichlet, P. G. L.} 著名的已知结果，即 $K$ 中存在 $r = s + t - 1$ 个单位元素 $\eta_1, \dots, \eta_r$ 满足
+\[
+\left|\log\left|\eta_i^{(j)}\right|\right| < c_1 \quad (1 \le i, j \le r)
+\]
+且 $|\Delta| > c_2$，其中 $\Delta$ 表示以 $\log|\eta_i^{(j)}|$ 为第 $i$ 行第 $j$ 列的 $r$ 阶行列式.\footnote{参见 Hecke\index{Hecke, E.} 参考文献.}
+
+我们现在假设 $X, Y$ 是满足给定方程的 $K$ 中的任意代数整数\index{algebraic integer}，为了简便，我们写成
+\[
+\beta_i = X - \alpha_i Y \quad (1 \le i \le n).
+\]
+我们用 $N\beta_i$ 表示 $\beta_i$ 的域数规范（norm），并令 $m_i = |N\beta_i|$，从而 $m_1\dots m_n = |N\mu|$. 我们首先证明可以确定 $\beta_i$ 的一个伴随元（associate）$\gamma_i$ 满足
+\begin{equation} \label{eq:ch4_1}\tag{1}
+\left|\log\left|\gamma_i^{(j)}\right|\right| < c_3 \quad (1 \le j \le d).
+\end{equation}
+这实际上源于以下观察：$r$ 维 Euclidean 空间中的每个点 $P$ 与以
+\[
+(\log |\eta_i^{(1)}|, \dots, \log |\eta_i^{(r)}|) \quad (1 \le i \le r)
+\]
+为基的格的某个点之间的距离在 $c_4$ 之内. 通过将 $P$ 取为点
+\[
+(\log |\beta_i^{(1)}|, \dots, \log |\beta_i^{(r)}|),
+\]
+我们推导出存在有理整数 $b_{i1}, \dots, b_{ir}$ 使得
+\begin{equation} \label{eq:ch4_2}\tag{2}
+\gamma_i = \beta_i \eta_1^{b_{i1}} \dots \eta_r^{b_{ir}}
+\end{equation}
+对于 $1 \le j \le r$ 满足 \eqref{eq:ch4_1}（以 $c_4$ 代替 $c_3$），并且由于
+\[
+\left|\gamma_i^{(j+t)}\right| = \left|\gamma_i^{(j)}\right| \quad (s < j \le s+t),
+\]
+除可能对 $j = s + t$ 与 $j = s + 2t$（若 $t = 0$ 则仅其中之一存在）外，这对于 $1 \le j \le d$ 均成立. 但我们有
+\[
+\left|\gamma_i^{(1)}\dots\gamma_i^{(d)}\right| = m_i, \quad 1 \le m_i \le \left|N\mu\right| \le c_5,
+\]
+因此 \eqref{eq:ch4_1} 对所有 $j$ 均成立.
+
+现在令 $H_i = \max |b_{ij}|$，并设 $l$ 为使 $H_l = \max H_i$ 的下标. 方程组
+\[
+\log \left|\gamma_i^{(j)}/\beta_i^{(j)}\right| = b_{i1} \log \left|\eta_1^{(j)}\right| + \dots + b_{ir} \log \left|\eta_r^{(j)}\right| \quad (1 \le j \le r)
+\]
+用于将每个数 $\Delta b_{ij}$ 表示为左侧各数的线性组合，其系数由 $\Delta$ 的代数余子式给出，因此这些数\index{numbers}绝对值的最大值超过了 $c_8H_i$. 设最大值在 $j=J$ 处取得. 则由 \eqref{eq:ch4_1} 我们有
+\[
+\left|\log\left|\beta_i^{(J)}\right|\right| = \left|\log\left|\beta_i^{(J)}/\gamma_i^{(J)}\right| + \log\left|\gamma_i^{(J)}\right|\right| > c_6H_i - c_3,
+\]
+且由于 $|\beta_i^{(1)} \dots \beta_i^{(d)}| = m_i$，可推出对某个 $h_i$ 有
+\[
+\log \left|\beta_i^{(h_i)}\right| < -(c_6 H_i - c_3 - \log m_i)/(d-1).
+\]
+因此，若 $H_l > c_7$，则对某个 $h$ 有 $|\beta_l^{(h)}| < e^{-c_9 H_l}$. 此外，由于 $\beta_1^{(h)} \dots \beta_n^{(h)} = \mu^{(h)}$，我们得到对某个 $k \neq l$ 有 $|\beta_k^{(h)}| > c_{10}$. 我们取 $j$ 为不同于 $k$ 与 $l$ 的任意下标；根据假设 $n \ge 3$，这显然是存在的.
+
+为了简单起见，我们现在可以省略上标 $h$，并假定 $\alpha_i^{(h)} = \alpha_i$，$\beta_i^{(h)} = \beta_i$. 从恒等式
+\[
+(\alpha_k - \alpha_l) \beta_j + (\alpha_l - \alpha_j) \beta_k + (\alpha_j - \alpha_k) \beta_l = 0
+\]
+中，我们得到
+\[
+\eta_1^{b_1} \dots \eta_r^{b_r} - \alpha = \omega,
+\]
+其中
+\[
+b_s = b_{ks} - b_{js} \quad (1 \le s \le r),
+\]
+\[
+\alpha = \frac{(\alpha_j - \alpha_l) \, \gamma_k}{(\alpha_k - \alpha_l) \, \gamma_j}, \quad \omega = \frac{(\alpha_k - \alpha_j) \, \beta_l \, \gamma_k}{(\alpha_k - \alpha_l) \, \beta_k \, \gamma_j}.
+\]
+注意到对于任意复数 $z$，不等式 $|e^z - 1| < \frac{1}{4}$ 意味着对于某个有理整数 $b$ 有 $|z - i b \pi| \le 4 |e^z - 1|$. 通过令
+\[
+z = b_1 \log \eta_1 + \dots + b_r \log \eta_r - \log \alpha
+\]
+（其中对数取其主值），我们很容易推导出，若 $|\omega/\alpha| < \frac{1}{4}$，则 $|\Lambda| \le 4 |\omega/\alpha|$，其中 $\Lambda = z - b \log (-1)$. 显然 $\omega \neq 0$，从而也有 $\Lambda \neq 0$. 此外我们看到对于所有 $j$ 有 $|b_j| \le 2H_l$，因此 $z$ 的虚部绝对值至多为 $\pi B$，其中 $B = 4rH_l$. 从而我们有 $|b| \le B$，且显然 $|b_j| \le B$. 进一步，由上面给出的对 $\beta_k = \beta_k^{(h)}$ 与 $\beta_l = \beta_l^{(h)}$ 的估计，我们看到，若 $H_l > c_{10}$，则
+\[
+4|\omega/\alpha| < c_{11}|\beta_l/\beta_k| < e^{-c_{12}B}.
+\]
+但 $\eta_1, \dots, \eta_r$ 与 $\alpha$ 的次数至多为 $d$，且它们的高度有上界 $c_{13}$. 因此 \autoref{thm:ch3_1} 给出 $|\Lambda| > B^{-C}$（对某个如上的 $C$），由此及我们的估计 $|\Lambda| < e^{-c_{12}B}$，我们得出 $B < c_{14}$，从而 $H_l < c_{15}$. 由 \eqref{eq:ch4_1} 与 \eqref{eq:ch4_2} 可得
+\[
+\|\beta_i\| < e^{c_{16}H_i} < c_{17},
+\]
+现在，方程
+\[
+X = \frac{\alpha_2 \beta_1 - \alpha_1 \beta_2}{\alpha_2 - \alpha_1}, \quad Y = \frac{\beta_1 - \beta_2}{\alpha_2 - \alpha_1}
+\]
+及其共轭显然暗示了 \autoref{thm:ch4_1} 的正确性.
+
+\section{超椭圆方程}\label{sec:ch4_3}
+
+如 \autoref{sec:ch4_2} 中一样，我们用 $K$ 表示次数为 $d$ 的代数数\index{algebraic number}域. 我们假设 $\alpha_1, \dots, \alpha_n$ 是 $K$ 中的 $n \ge 3$ 个代数整数\index{algebraic integer}，设 $\alpha_1, \alpha_2, \alpha_3$ 互不相同，且与 $\alpha_4, \dots, \alpha_n$ 不同，我们证明：
+
+\begin{mythm}{}{ch4_2}
+方程
+\begin{equation} \label{eq:ch4_3}\tag{3}
+Y^2 = (X - \alpha_1) \dots (X - \alpha_n)
+\end{equation}
+在 $K$ 中的代数整数\index{algebraic integer} $X, Y$ 中仅有有限个解，且这些解可以被有效确定.
+\end{mythm}
+
+我们将通过 Siegel\index{Siegel, C. L.} 的一种方法\footnote{J. London Math. Soc. 1 (1926), 66--8.} 从 \autoref{thm:ch4_1} 确立 \autoref{thm:ch4_2}，而且同样清楚的是，这些论证使人们能够提供 $\|X\|$ 与 $\|Y\|$ 的显式界. 如果在 \eqref{eq:ch4_3} 的右侧引入一个 $K$ 中的非零因子，\autoref{thm:ch4_2} 的结论显然依然成立，因此该定理特别地涵盖了椭圆方程\index{elliptic equation}
+\[
+y^2 = ax^3 + bx^2 + cx + d,
+\]
+where all quantities signify rational integers. 在这种情况下，然而，该结果可以通过由 Mordell\index{Mordell, L. J.} 提出的、涉及二元四次形式化简理论的更直接的方法，从 \autoref{thm:ch4_1} 中导出.\footnote{J. London Math. Soc. 43 (1968), 1--9.}
+
+现在假设 $X, Y$ 为满足 \eqref{eq:ch4_3} 的 $K$ 中的非零代数整数\index{algebraic integer}. 我们首先证明在 $K$ 中存在代数整数\index{algebraic integer} $\xi_j, \eta_j, \zeta_j \ (j=1,2,3)$ 满足
+\begin{equation} \label{eq:ch4_4}\tag{4}
+\begin{gathered}
+X - \alpha_j = (\xi_j/\eta_j) \, \zeta_j^2, \\
+\max (\|\xi_j\|, \|\eta_j\|) < c_1,
+\end{gathered}
+\end{equation}
+其中 $c_1$ 与 $c_2, c_3, \dots$ 一样，表示如 \autoref{sec:ch4_2} 中指定的正数，即仅依赖于 $d$、$\alpha_1, \dots, \alpha_n$ 的最大高度以及生成 $K$ 的某个代数整数\index{algebraic integer}的最大高度. 为了简单起见，我们写成 $\alpha = \alpha_j$，并且我们观察到，由于理想方程
+\[
+[Y^2] = [X - \alpha_1] \dots [X - \alpha_n],
+\]
+我们对于 $K$ 中的某些理想 $\mathfrak{a, b}$ 有
+\[
+[X - \alpha] = \mathfrak{ab}^2,
+\]
+其中 $\mathfrak{a}$ 整除
+\[
+\prod_{i \neq j} [\alpha - \alpha_i].
+\]
+
+此外，在分别与 $\mathfrak{a, b}$ 的理想类互逆的类中存在理想 $\mathfrak{a', b'}$，其规范（norm）至多为 $c_2$，并且显然 $\mathfrak{aa'}$ 与 $\mathfrak{a'b'^2}$ 是主理想；因此，后者由 $K$ 中的代数整数\index{algebraic integer} $\xi', \eta'$ 生成，满足
+\[
+|N\xi'| \le c_2 N\mathfrak{a}, \quad |N\eta'| \le c_2^3.
+\]
+进而，由于
+\[
+N\mathfrak{a} \le \prod_{i \neq j} N[\alpha - \alpha_i] < c_3,
+\]
+很容易得出（如导出 \eqref{eq:ch4_1} 时那样），分别存在 $\xi', \eta'$ 的伴随元 $\xi'', \eta''$ 满足
+\[
+\max(\|\xi''\|, \|\eta''\|) < c_4.
+\]
+
+现在 $\mathfrak{bb'}$ 为主理想，因此由 $K$ 中的某个代数整数\index{algebraic integer} $\zeta'$ 生成. 由此，从方程
+\[
+(\mathfrak{a'b'^2})[X-\alpha] = (\mathfrak{aa'})(\mathfrak{bb'})^2
+\]
+中，我们得到
+\[
+X-\alpha=\epsilon(\xi''/\eta'')\,\zeta'^2,
+\]
+其中 $\epsilon$ 表示 $K$ 中的单位元素. 根据 Dirichlet\index{Dirichlet, P. G. L.} 定理，在 $K$ 中存在一个单位基元组 $\epsilon_1, \dots, \epsilon_r$ 满足
+\[
+\max \left(\left\| \epsilon_1 \right\|, \dots, \left\| \epsilon_r \right\| \right) < c_5,
+\]
+且我们有
+\[
+\epsilon = \rho \epsilon_1^{j_1} \dots \epsilon_r^{j_r}
+\]
+（对某些有理整数 $j_1, \dots, j_r$ 与某个单位根 $\rho$）；现在显然分别由
+\[
+\xi'' \rho \epsilon_1^{j'_1} \dots \epsilon_r^{j'_r}, \quad \eta'', \quad \zeta' \epsilon_1^{\frac{1}{2}(j_1-j'_1)} \dots \epsilon_r^{\frac{1}{2}(j_r-j'_r)}
+\]
+给出的数\index{numbers} $\xi, \eta, \zeta$（其中当 $j_i$ 为偶数或奇数时，分别取 $j'_i = 0$ 或 $1$）具有所要求的性质.
+
+从 \eqref{eq:ch4_4} 中消去 $X$，我们得到三个如下形式的方程
+\[
+\sigma_2 \zeta_2^2 - \sigma_3 \zeta_3^2 = \alpha_3 - \alpha_2,
+\]
+其中 $\sigma_j = \xi_j/\eta_j \ (j = 1, 2, 3)$. 此外，通过对平方根的任意选择，令
+\[
+\beta_1 = \sigma_2^{\frac{1}{2}} \zeta_2 - \sigma_3^{\frac{1}{2}} \zeta_3
+\]
+并以循环轮换下标的方式类似地定义 $\beta_2, \beta_3$，我们有
+\begin{equation} \label{eq:ch4_5}\tag{5}
+\beta_1 + \beta_2 + \beta_3 = 0.
+\end{equation}
+
+现在 $\beta_1$ 是在 $K$ 上由 $\sigma_2^{\frac{1}{2}}$ 与 $\sigma_3^{\frac{1}{2}}$ 生成的域的非零元素；此外，通过乘以 $\delta = \eta_1 \eta_2 \eta_3$，可得到一个域规范绝对值至多为 $c_6$ 的代数整数\index{algebraic integer}. 如上所示，容易得出对该域中的某个单位元素 $\epsilon_1'$ 和某个伴随元 $\beta_1'$（满足 $\|\beta_1'\| < c_7$）有 $\delta \beta_1 = \beta_1' \epsilon_1'$；在轮换下标后，这对于 $\beta_2, \beta_3$ 同样成立. 因此，\eqref{eq:ch4_5} 给出
+\[
+\beta_1' \epsilon_1'^3 + \beta_2' \epsilon_2'^3 + \beta_3' \epsilon_3'^3 = 0,
+\]
+两边同乘以 $\beta_1'^2 / \epsilon_3'^3$，这变成一个 Thue\index{Thue, A.} 方程
+\[
+x^3 - \lambda y^3 = \mu,
+\]
+其中
+\[
+x = \beta_2' \epsilon_2' / \epsilon_3', \quad y = \epsilon_1' / \epsilon_3'.
+\]
+因此，由 \autoref{thm:ch4_1}， $\|x\|$ 与 $\|y\|$ 至多为 $c_8$，剩下的只需证明 $\|X\|$ 与 $\|Y\|$ 同样是有界的.
+
+在固定了 $\sigma_2^{\frac{1}{2}}$ 符号的选择后，显然可以选择 $\beta_3$ 中 $\sigma_2^{\frac{1}{2}}$ 的符号使得 $|\epsilon_3'| < c_9$. 那么上面建立的界 $\|y\| < c_8$ 给出 $\|\epsilon_1'\| < c_{10}$，从而由于 $\|\beta_1'\| > c_{11}$，我们得到 $\|\delta \beta_1\| < c_{12}$. 但这对于 $\sigma_3^{\frac{1}{2}}$ 符号的任一选择均成立，因此我们得出 $|\zeta_2|$ 与 $|\zeta_3|$ 均至多为 $c_{13}$. 此时从 \eqref{eq:ch4_4} 明显可见 $|X| < c_{14}$；从与 \eqref{eq:ch4_3} 共轭的方程组出发，我们对 $X$ 的每个共轭推导出相同的界，定理得证.
+
+\section{属为 1 的曲线}\label{sec:ch4_4}
+
+设 $f(x,y)$ be an absolutely irreducible polynomial with integer coefficients such that the curve $f(x, y) = 0$ has genus 1\index{curves of genus 1}. 我们证明：
+
+\begin{mythm}{}{ch4_3}
+方程 $f(x,y) = 0$ 在整数 $x, y$ 中仅有有限个解，且这些解可以被有效确定.
+\end{mythm}
+
+如 \autoref{sec:ch4_1} 中所述，该定理的第一部分最初是由 Siegel\index{Siegel, C. L.} 于1929年确立的，但他的证明方法是非有效的. 我们在这里将给出的论证基于一种双有理变换，该变换将方程化简为 \autoref{thm:ch4_2} 中考虑的典范形式，这为属为 1\index{curves of genus} 的曲线情况下的 Siegel\index{Siegel, C. L.} 定理提供了一个有效的、更简单的证明；但它似乎不易扩展到更高属的曲线.
+
+我们将分别用 $\mathbb{Q}$、$\mathbb{Q}(x)$ 与 $K$ 表示所有代数数\index{algebraic number}构成的域、以 $\mathbb{Q}$ 中元素为系数的 $x$ 的有理函数域，以及通过添加 $f(x, y) = 0$ 的根而形成的 $\mathbb{Q}(x)$ 的有限代数扩张. 根据 Riemann-Roch 定理\index{Riemann-Roch theorem}，在曲线上存在有理函数 $X_1, X_2$，它们在 $K$ 的某个固定无穷赋值（设为 $\mathfrak{Q}$）处的阶数分别为 $-2, -3$，并且在 $K$ 的所有其他赋值处具有非负阶数；此外，人们可以有效确定其 Puiseux 展开式中的代数系数. 仿照 Chevalley\index{Chevalley, C.} 的做法，我们现在观察到这七个函数 $1, X_1, X_2, X_1^2, X_1 X_2, X_1^3, X_2^2$ 在 $\mathfrak{Q}$ 处至多有 6 阶极点，因此根据 Riemann-Roch 定理\index{Riemann-Roch theorem}，它们在 $\mathbb{Q}$ 上是线性相关的.
+
+设 $p_1, \dots, p_7$ 为联系它们的线性方程中的相应系数；显然我们有 $p_6 \neq 0$，因为除 $X_1^3$ 之外的六个函数在 $\mathfrak{Q}$ 处具有互不相同的阶. 通过令
+\[
+X = X_1, \quad Y = 2p_5 X_2 + p_7 X_1 + p_3,
+\]
+我们得到
+\[
+Y^2 = aX^3 + bX^2 + cX + d,
+\]
+其中 $a, b, c, d$ 是 $p_1, \dots, p_7$ 的具有整数系数的多项式. 右侧的三次式具有互不相同的零点，因为如果方程退化为
+\[
+\{Y/(X-\alpha)\}^2=a(X-\beta),
+\]
+那么 $Y/(X - \alpha)$ 只能在 $\mathfrak{Q}$ 处拥有极点；但是，由于 $X_1, X_2$ 在 $\mathfrak{Q}$ 处的阶数分别为 $-2, -3$ 且 $p_6 \neq 0$，该函数实际上在 $\mathfrak{Q}$ 处具有 1 阶极点，这与 Riemann-Roch 定理\index{Riemann-Roch theorem}相矛盾.
+
+我们现在观察到，由于 $X_1, X_2$ 是具有固定域中系数的 $x, y$ 的有理函数，当 $x, y$ 为有理整数时，函数 $X, Y$ 成为固定域中的代数数\index{algebraic number}. 此外，存在一个独立于 $x$ 与 $y$ 的非零有理整数 $q$，使得 $qX$ 与 $qY$ 为代数整数\index{algebraic integer}；因为函数 $X = X_1$ 仅在无穷赋值 $\mathfrak{Q}$ 处具有极点，因此 $X$ 在 $\mathbb{Q}(x)$ 上满足的方程具有以下形式：
+\[
+X^m + P_1(x) X^{m-1} + \dots + P_m(x) = 0,
+\]
+其中 $m$ 是 $f$ 关于 $y$ 的次数，且 $P_1, \dots, P_m$ 是 $x$ 的具有代数系数且次数至多为 2 的多项式. 我们从 \autoref{thm:ch4_2} 得出，当 $x, y$ 为有理整数时，$X, Y$ 只能取有限多个值. 再次注意到 $X$ 在 $\mathfrak{Q}$ 处具有极点，立即可得 $x$ 仅能取有限多个值，再结合初始方程 $f(x, y) = 0$，同样可得 $y$ 也仅能取有限多个值. 此外，很容易证实上述采用的所有论证在原则上都是有效的，这就证明了 \autoref{thm:ch4_3}.
+
+当存在至少三个无穷赋值时，该证明方法可以很容易地推广到处理属\index{curves of genus} 为 0 的曲线，这与上述结果一起使人们能够有效解决一般的三次方程 $f(x, y) = 0$；然而，后者可以更直接地化简为 \autoref{thm:ch4_2} 中考虑的形式.
+
+\section{定量界}\label{sec:ch4_5}
+
+如前所述，这里所采用的论证使人们能够提供上述方程所有解大小的显式上界. 为了计算这些界，首先需要 \autoref{thm:ch3_1} 的定量版本，在此联系中，迄今为止确立的最有用的结果\footnote{Mathematika, 15 (1968), 204--16.} 为：
+
+若 $\alpha_1, \dots, \alpha_n$ 为 $n \ge 2$ 个非零代数数\index{algebraic number}，其次数与高度分别至多为 $d \ (\ge 4)$ 与 $A \ (\ge 4)$，且存在绝对值至多为 $B$ 的有理整数 $b_1, \dots, b_n$ 使得
+\[
+0 < |b_1 \log \alpha_1 + \dots + b_n \log \alpha_n| < e^{-\delta B},
+\]
+其中 $0 < \delta \le 1$，且对数取其主值，则
+\[
+B < (4^{n^2} \delta^{-1} d^{2n} \log A)^{(2n+1)^2}.
+\]
+
+通过将此结果与代数数\index{algebraic number}域中单位元素的某些估计结合应用，已经证明 \autoref{thm:ch4_1} 中提到的 Thue\index{Thue, A.} 方程的所有解 $X, Y$ 均满足
+\[
+\max(\|X\|, \|Y\|) < \exp\{(dH)^{(10d)^5}\},
+\]
+其中 $H$ 表示 $\alpha_1, \dots, \alpha_n, \mu$ 的高度以及生成 $K$ 的某个代数整数\index{algebraic integer}的最大高度.\footnote{Phil. Trans. Roy. Soc. London, A 263 (1968), 173--91; P.C.P.S. 65 (1969), 439--44.} 这导出了对 \autoref{thm:ch4_2} 中讨论的超椭圆方程\index{hyperelliptic equation}所有解 $X, Y$ 大小的界
+\[
+\exp \exp \left(d^{10d^2}H^{d^2}\right).
+\]
+此外，利用后一个估计与有理函数的有效构造\footnote{P.C.P.S. 68 (1970), 105--23 (J. Coates\index{Coates, J.}). }，已经证明 \autoref{thm:ch4_3} 中曲线 $f(x,y) = 0$ 上的所有整数点 $x, y$ 均满足
+\[
+\max(|x|,|y|) < \exp\exp\{(2H)^{10^{n/2}}\},
+\]
+where $H$ denotes the maximum of the absolute values of the coefficients of $f$ and $n$ denotes its degree.\footnote{P.C.P.S. 67 (1970), 595--602.}
+
+在特殊情况下，人们拥有更强的界. 例如，对于 \autoref{thm:ch4_2} 阐述后提到的椭圆方程\index{elliptic equation}，已经建立了如下估计
+\[
+\max (|x|, |y|) < \exp \{(10^6 H)^{10^6}\},
+\]
+其中假定 $a, b, c, d$ 的绝对值至多为 $H$；而对于 Mordell\index{Mordell, L. J.} 方程\index{Mordell equation} $y^2 = x^3 + k$，已经证明对于任意 $\epsilon > 0$，界 $\exp(c|k|^{1+\epsilon})$ 均成立，其中 $c$ 仅依赖于 $\epsilon$.\footnote{Acta Arith. 24 (1973), 251--9 (H. Stark\index{Stark, H. M.}).}
+
+此外，已经设计出一些技术，对于广泛的数值例子，使得确定相关解的完整清单的问题可通过机器计算\index{machine computation}来解决；例如，由此证明了方程组 $3x^2-2=y^2$ 与 $8x^2-7=z^2$ 的仅有整数解由 $x=1$ 与 $x=11$ 给出，且方程 $y^2=x^3-28$ 仅具有由 $x=4, 8, 37$ 给出的解（相应的 $y$ 值分别为 $\pm 6, \pm 22, \pm 225$）.\footnote{Quart. J. Math. Oxford Ser. (2) 20 (1969), 129--37; J. Number Th. 4 (1972), 107--17.}
+
+人们对原始 Thue\index{Thue, A.} 方程 $F(x,y)=m$（参见 \autoref{sec:ch4_1}）解的大小有着极大的兴趣. 作为 \autoref{thm:ch3_1} 阐述后记录的关于 $|\Lambda|$ 的第三个不等式的结果，导致 \autoref{thm:ch4_1} 的论证表明，若 $m \ge 2$，则 $|x|$ 与 $|y|$ 不能超过 $m^C$，其中 $C$ 是仅依赖于 $F$ 的可计算数.\footnote{I.A.N. 35 (1971), 973--90.}
+
+这立即可对 Liouville\index{Liouville, J.} 定理\index{Liouville's theorem}进行改进；事实上，采用 \autoref{thm:ch1_1} 的记号，对于所有有理数 $p/q \ (q>0)$，我们有
+\[
+|\alpha - p/q| > c/q^{\kappa},
+\]
+其中 $c, \kappa$ 是在 $\alpha$ 的项下可有效计算的正数\index{numbers}，且满足 $\kappa < n$. 该结果以稍弱的形式于1967年首次建立，\footnote{Phil. Trans. Roy. Soc. London, A 263 (1968), 173--91.} 然而，在几年前，已通过 Gauss\index{Gauss, C. F.} 超几何函数\index{hypergeometric function} 的特殊性质获得了一些特定情况下的结果.\footnote{Proc. London Math. Soc. 4 (1964), 385--98.}
+
+例如，已经证明，\footnote{Quart. J. Math. Oxford Ser. (2) 15 (1964), 375--83.} 当 $\alpha$ 分别是 2 和 17 的立方根时，上述不等式分别以 $c=10^{-6}, \kappa=2.955$ 与 $c=10^{-9}, \kappa=2.4$ 成立，这些值事实上几乎肯定比那些由更一般技术给出的值更精确. 但是，抛开 $c$ 的有效性质不谈，从 Thue\index{Thue, A.} 开创的研究领域中，人们对代数数的有理逼近\index{rational approximations to algebraic numbers}\index{algebraic number} 了解得要多得多，而这将是 \autoref{ch:7} 的主题.
+
+利用这里描述的方法还可以处理各种其他方程. 例如，它们可以用来给出方程 $y^m = f(x)$（其中 $m \ge 2$，且 $f$ 表示具有至少两个不同零点的任意整系数多项式）所有整数解 $x, y$ 的界；特别地，它们使人们能够对任何给定的 $m, n$ 有效解决 Catalan 方程\index{Catalan equation} $x^m - y^n = 1$.\footnote{P.C.P.S. 65 (1969), 439--44. 事实上，R. Tijdeman\index{Tijdeman, R.} 最近已证明，它们使人们能够给 Catalan 方程\index{Catalan equation} 的所有解 $x, y, m, n$ 提供一个有效界.}
+
+此外，它们还可以通过 $p$进域中的分析进行推广，以提供方程 $F(x,y) = m$ 与 $y^2 = x^3 + k$ 的所有有理数解（其分母仅由固定素数集的幂组成）；因此，更特别地，它们实现了对具有给定导手（conductor）的所有椭圆曲线\index{elliptic curve}的有效确定.\footnote{Acta Arith. 15 (1969), 279--305; 16 (1970), 399--412, 425--35 (J. Coates\index{Coates, J.}).}

@@ -1,0 +1,120 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{度量理论}\label{ch:9}
+
+\section{引言}\label{sec:ch9_1}
+
+正如前文所述, Mahler\index{Mahler, K.} 于 1932 年猜想, 几乎所有实数\index{numbers} 都是 $1$ 型的 $S$-数\index{numbers}, 且几乎所有复数\index{numbers} 都是 $\frac{1}{2}$ 型的 $S$-数\index{numbers}.\footnote{M.A. 106 (1932), 131--9.} 他最初证明了它们显然都是至多 $4$ 型的, 随后在 1939 年, Koksma\index{Koksma, J. F.} 将实数和复数情形下的 $4$ 分别改进为 $3$ 和 $\frac{5}{2}$. LeVeque\index{LeVeque, W. J.} 于 1953 年将这些结果改进为 $2$ 和 $\frac{5}{3}$, 而 Volkmann\index{Volkmann, B.} 在 1964 年进一步将它们降低为 $\frac{4}{3}$ 和 $\frac{2}{3}$. 此外, Kubilyus\index{Kubilyus, I. P.}、Kasch\index{Kasch, F.} 和 Volkmann\index{Volkmann, B.} 给出了 Mahler\index{Mahler, K.} 猜想\index{Mahler's conjecture} 在 $n=2$ 和 $n=3$ 特殊情形下的证明.\footnote{见文献目录; 其中包含早期工作的参考文献.} 最后, 在 1965 年, Sprind\v{z}uk\index{Sprindzhuk, V. G.} 获得了 Mahler\index{Mahler, K.} 猜想\index{Mahler's conjecture} 对所有 $n$ 的完整证明, 并且确实得到了 $\omega_n$ 的最佳可能值.
+
+我们将在此建立作者于 1966 年推导出的 Sprind\v{z}uk\index{Sprindzhuk, V. G.} 结果的一个精细化版本.\footnote{Proc. Roy. Soc. London, A 292 (1966), 92--104.} 设 $\psi(h)$ 是整变量 $h>0$ 的正单调递减函数, 满足 $\sum \psi(h)$ 收敛, 我们证明:
+
+\begin{mythm}{}{ch9_1}
+对于几乎所有实数 $\theta$ 以及任意正整数 $n$, 仅存在有限个次数为 $n$ 且具有整数系数的多项式 $P$ 满足 $|P(\theta)| < (\psi(h))^n$, 其中 $h$ 表示 $P$ 的高度.
+\end{mythm}
+
+对于几乎所有复数\index{numbers} $\theta$, 将指数 $n$ 替换为 $\frac{1}{2}(n-1)$ 后, 类似的结果仍然成立. 例如, 从 Minkowski 线性型定理\index{Minkowski's linear forms theorem} 显然可以看出, 若取 $\psi(h) = 1/h$, 该断言将不再成立; 事实上, 极易验证, 如果 $\sum \psi(h)$ 发散, 则在 $n = 1$ 的情况下, 几乎没有 $\theta$ 能够满足所需的性质. 但似乎很有可能将函数 $(\psi(h))^n$ 替换为 $h^{-n+1}\psi(h)$, 这一猜想在 $n \leq 3$ 的情形下实际上已经成立.
+
+该定理最近已被应用于计算某些集合的 Hausdorff 维数\index{Hausdorff dimension}; 特别是, 它已被用于证明: 对于任意 $\lambda \geq 1$ 以及任意正整数 $n$, 满足对任意 $\lambda' < \lambda$, 存在无穷多个次数至多为 $n$ 且高度为 $b$ 的代数数\index{algebraic number} $\beta$ 满足 $|\xi - \beta| < b^{-(n+1)\lambda'}$ 的所有实数 $\xi$ 构成的集合, 其维数为 $1/\lambda$.\footnote{Proc. London Math. Soc. 21 (1970), 1--11 (A. Baker\index{Baker, R. C.}\index{Baker, A.} 与 W. M. Schmidt\index{Schmidt, W. M.}).} 这推广了著名的 Jarn\'{i}k 与 Besicovitch\index{Besicovitch, A. S.} 定理; 并且它立即推导出了上一章中提到的关于存在任意大类型的 $S$-数\index{numbers} 的结果.
+
+这里的工作启发了进一步研究的多种途径. 例如, 获得与多元多项式的 \autoref{thm:ch9_1} 类似的结果将是非常有意义的, 事实上, R. Slesoraitene\index{Slesoraitene, R.} 在这方面取得了一些进展, 特别是对于两个未知数的三次多项式.\footnote{参见自 1969 年以来在 Litovsk. Mat. Sb. 上发表的若干论文; 另见 Sprind\v{z}uk\index{Sprindzhuk, V. G.} 在 Actes, Congr\`{e}s international math. (1970) 上的报告.} 在另一个方向上, 由 \autoref{thm:ch9_1} 通过经典的转移原理可得, 对于任意 $\epsilon > 0$ 以及任意正整数 $n$, 对于几乎所有实数 $\theta$, 仅存在有限个正整数 $q$ 满足
+\[\max \|q\theta^j\| < q^{-(1/n)-\epsilon} \quad (1 \leqslant j \leqslant n),\]
+这提出了证实更强命题的问题, 即将上述不等式替换为
+\[q^{1+\epsilon}\|q\theta\|\ldots\|q\theta^n\|<1,\]
+其中记号与 \autoref{thm:ch7_1} 相同. 该问题似乎相当困难.
+
+\section{多项式的零点}\label{sec:ch9_2}
+
+我们记录一些关于多项式零点之间距离的简单不等式, 以备后用. 设 $P(x)$ 为次数为 $n$ 且具有互异零点 $\kappa_1, \ldots, \kappa_n$ 的多项式. 我们首先注意到, 如果 $\theta$ 是满足对所有 $j$ 都有 $|\theta - \kappa_1| \leq |\theta - \kappa_j|$ 的任意实数, 则
+\[|P(\theta)| \geqslant 2^{-n} |P'(\kappa_1)| |\theta - \kappa_1|, \tag{1}\label{eq:ch9_1}\]
+其中 $P'$ 表示 $P$ 的导数. 因为显然有 $|\kappa_1 - \kappa_j| \leq 2 |\theta - \kappa_j|$, 并且我们有 $P'(\kappa_1) = a(\kappa_1 - \kappa_2) \dots (\kappa_1 - \kappa_n)$, 其中 $a$ 表示 $P$ 的首项系数. 类似地, 我们可得
+\[|P(\theta)| |\kappa_1 - \kappa_2| \ge 2^{-n} |P'(\kappa_1)| |\theta - \kappa_1|^2. \tag{2}\label{eq:ch9_2}\]
+此外, 我们观察到, 如果对所有 $j \geq 2$ 都有 $|\theta - \kappa_1| \leq |\kappa_1 - \kappa_j|$, 则 $|\theta - \kappa_j| \leq 2|\kappa_1 - \kappa_j|$, 从而
+\[|P(\theta)| \leq 2^n |P'(\kappa_1)| |\theta - \kappa_1|. \tag{3}\label{eq:ch9_3}\]
+
+现在假设 $P(x), Q(x)$ 是次数 $n \ge 2$ 的整系数多项式; 设它们的首项系数分别为 $a, b$, 零点分别为 $\kappa_1, \ldots, \kappa_n$ 以及 $\lambda_1, \ldots, \lambda_n$, 且假设所有这些零点均互异且绝对值至多为 $K$. 为简便起见, 我们记
+\[p = |a^{n-1}(\kappa_1 - \kappa_2) \dots (\kappa_1 - \kappa_n)|,\]
+并用 $q$ 表示 $Q$ 的类似函数. 我们的目的是证明: 如果对所有 $j \geq 2$ 都有 $|\kappa_1 - \kappa_2| \leq |\kappa_1 - \kappa_j|$, 且 $|\kappa_1 - \kappa_2| < p^{-\frac{1}{2}}$, 并且对于 $Q$ 类似的估计也成立, 则
+\[|\kappa_1 - \lambda_1| \gg \min(p^{-\frac{1}{2}}, q^{-\frac{1}{2}}), \tag{4}\label{eq:ch9_4}\]
+where the implied constant depends only on $n$ and $K$.
+
+为了进行证明, 我们假设 \eqref{eq:ch9_4} 不成立, 并且如果隐含常数足够大, 我们将导出一个矛盾. 首先我们观察到, 对所有 $j \geqslant 3$ 都有 $|\kappa_1 - \kappa_j| \gg p^{-\frac{1}{2}}$. 这是由于 $P$ 的判别式, 即
+\[a^{2n-2}\prod_{i< j}(\kappa_i-\kappa_j)^2,\]
+的绝对值至少为 $1$; 因为考虑到对所有 $i, j$ 均成立的不等式 $|\kappa_i - \kappa_j| \le 2K$, 可得
+\[\left|(\kappa_1-\kappa_2)(\kappa_2-\kappa_j)\right|\gg p^{-1}\quad (j\geqslant 3),\]
+且根据假设, 我们有 $|\kappa_2 - \kappa_j| \leq 2 |\kappa_1 - \kappa_j|$ 以及 $|\kappa_1 - \kappa_2| < p^{-\frac{1}{2}}$.
+
+因此, 由 \eqref{eq:ch9_4} 的反面, 我们得到对所有 $j \ge 3$ 都有 $|\kappa_1 - \kappa_j| \gg |\kappa_1 - \lambda_1|$, 从而
+\[|\kappa_j - \lambda_1| \leq |\kappa_j - \kappa_1| + |\kappa_1 - \lambda_1| \ll |\kappa_j - \kappa_1|\]
+对于所有 $j \ge 3$. 由此得到
+\[\left|a^{n-1}P(\lambda_1)\right| \ll p\left|(\kappa_1 - \lambda_1)(\kappa_2 - \lambda_1)\right|, \tag{5}\label{eq:ch9_5}\]
+且显然, 类似的不等式也适用于 $Q$.
+
+我们现在使用 $P$ 与 $Q$ 的结式的绝对值至少为 $1$ 这一事实, 即 $|ab|^n \prod |\kappa_i - \lambda_j| \ge 1$. 由于 $|\kappa_i - \lambda_j| \ll 1$, 这给出 $|ab|^{n-1} |P(\lambda_1) Q(\kappa_1) (\kappa_2 - \lambda_2) (\kappa_1 - \lambda_1)^{-1}| \gg 1$, 从而由 \eqref{eq:ch9_5} 及其关于 $Q$ 的类似物, 我们得到
+\[\left| (\kappa_1 - \lambda_1) (\kappa_1 - \lambda_2) (\kappa_2 - \lambda_1) (\kappa_2 - \lambda_2) \right| \geqslant (pq)^{-1}. \tag{6}\label{eq:ch9_6}\]
+此外, 由 \eqref{eq:ch9_4} 的反面以及假设 $|\kappa_1 - \kappa_2| \leq p^{-\frac{1}{2}}$, 我们有 $|\kappa_1 - \lambda_1| \ll p^{-\frac{1}{2}}$, 且类似地有 $|\kappa_1 - \lambda_2| \ll q^{-\frac{1}{2}}$. 进而我们看到, 由于 $p \gg 1, q \gg 1$, 我们有
+\[|\kappa_2 - \lambda_1| \leq |\kappa_1 - \kappa_2| + |\kappa_1 - \lambda_1| \ll p^{-\frac{1}{2}}\]
+以及类似地有 $|\kappa_2 - \lambda_2| \ll q^{-\frac{1}{2}}$. 但但这与 \eqref{eq:ch9_6} 一起推导出了 \eqref{eq:ch9_4} 的成立, 与假设矛盾. 该矛盾证明了上述断言.
+
+\section{零测度集}\label{sec:ch9_3}
+
+现在设 $\psi$ 是 \autoref{sec:ch9_1} 中的任意函数, 且对于任意正整数 $n$ 和任意实数 $\theta$, 设 $\mathscr{P}(n, \psi, \theta)$ 是满足 \autoref{thm:ch9_1} 假设的所有多项式 $P$ 构成的集合. 该定理断言, 使得 $\mathscr{P}(n, \psi, \theta)$ 包含无穷多个元素的所有 $\theta$ 构成的集合 $\mathscr{R}(n, \psi)$ 的测度为零. 我们在此将证明, 建立以下修改后的结果就已经足够.
+
+\emph{使得 $\mathscr{P}(n, \psi, \theta)$ 包含无穷多个满足 (i) 不可约 且 (ii) 首项系数超过其余系数绝对值 的多项式 $P$ 的所有 $\theta$ 构成的集合 $\mathscr{S}(n, \psi)$ 具有零测度.}
+
+我们首先注意到, 对于 $\mathscr{R}(n, \psi)$ 中的任意 $\theta$, 根据第 8 章的引理 1, 存在一个整数 $j$ ($0 \le j \le n$), 使得 $\mathscr{P}(n, \psi, \theta)$ 中的无穷多个多项式 $P$ 满足 $|P(j)| \le h$, 其中 $h$ 是 $P$ 的高度; 并且如有必要, 通过用 $-P$ 代替 $P$, 我们可以假设 $P(j) > 0$. 显然, 证明对应于固定整数 $j$ 的 $\mathscr{R}(n, \psi)$ 中的 $\theta$ 构成的集合具有零测度就足够了, 这等价于证明由所有数\index{numbers} $\xi = \theta - j$ 构成的平移集具有零测度. 现在 $\xi$ 对 $\mathscr{P}(n, \psi, \theta)$ 中的所有 $P$ 均满足 $|P(\xi+j)| < (\psi(h))^n$, 且对于仅取决于 $n$ 的某个常数 $C$, $P(x+j)$ 是 $x$ 的多项式且其高度至多为 $Ch$.
+
+此外, 存在一个正单调递减函数 $\sigma(h)$, 使得 $\sum \sigma(h)$ 收敛, $\sigma(h) > \psi(h)$ 且 $\sigma(h)/\sigma(Ch) \le 2C^n$; 事实上, 我们可以取 $\sigma(1) = 2\psi(1)$ 以及
+\[h(h-1) \sigma(h) = \sum_{k=2}^{h} (2k-2) \psi(k) \quad (h \geqslant 2),\]
+由此可得
+\[\sum_{h=1}^{n} \sigma(h) = 2n^{-1} \sum_{m=1}^{n} \sum_{h=1}^{m} \psi(h),\]
+从而有 $\sum \sigma(h) = 2\sum \psi(h)$. 因此, $\xi$ 是 $\mathscr{R}(n, \phi)$ 的一个元素, 其中 $\phi = 2C^n\sigma$, 且对于仅取决于 $n$ 的某个 $c > 0$, $\mathscr{P}(n, \phi, \xi)$ 中的无穷多个多项式 $P$ 具有超过 $ch$ 的常数项系数. 对于任何此类多项式 $P$, 多项式 $Q(x) = x^n P(1/x)$ 的首项系数超过 $ch$, 从而在假设 $c < 1$ 的情况下, $R(x) = Q(c^{-1}z)$ 满足 (ii). 此外, $R(x)$ 的高度至多为 $c^{-n}h$, 且如果 $c^{-1}$ 是整数, 则它也具有整数系数. 进而, 对于任何正整数 $k$ 以及上述满足 $|\xi| > k^{-1}$ 的任何 $\xi$, 数 $\eta = c\xi^{-1}$ 满足
+\[|R(\eta)| < (k\phi(h))^n.\]
+
+显而易见, 证明所有这些 $\eta$ 构成的集合具有零测度就已经足够了; 因为给定 $\eta$ 的一个区间覆盖 $I_1, I_2, \ldots$, 我们可以得到 $\xi$ 的一个覆盖 $I'_1, I'_2, \ldots$, 其中 $I'_j$ 由所有满足 $x$ 在 $I_j$ 中且 $|x| > k^{-1}$ 的 $cx^{-1}$ 组成, 并且显然我们有 $|I'_j| \leq k^2 |I_j|$. 因此, 再次利用上述 $\sigma$ 的构造, 我们看到现在只需证明: 使得 $\mathscr{P}(n, \psi, \theta)$ 包含无穷多个满足 (ii) 但不一定满足 (i) 的多项式的所有 $\theta$ 构成的集合 $\mathscr{T}(n, \psi)$ 具有零测度.
+
+在此我们使用归纳法. 显然, 集合 $\mathscr{S}(1,\psi)$ 与 $\mathscr{T}(1,\psi)$ 是相同的, 因此所需结果在 $n = 1$ 时成立. 我们假设对于任意 $\psi$, 当 $m < n$ 时集合 $\mathscr{R}(m, \psi)$ 为零测度集, 且 $\mathscr{S}(n, \psi)$ 亦为零测度集, 接下来我们证明此时每个 $\mathscr{T}(n, \psi)$ 均为零测度集. 对于 $\mathscr{T}(n, \psi)$ 中的每个 $\theta$, $\mathscr{P}(n, \psi, \theta)$ 中有无穷多个 $P$ 满足 (ii), 且如果其中有无穷多个是不可约的, 则 $\theta$ 将属于 $\mathscr{S}(n, \psi)$, 从而所需结果成立. 因此, 我们假设所有的 $P$ 都是可约的.
+
+那么每个 $P$ 都包含至少一个整系数多项式 $Q$ 作为因子, 其次数 $m < n$ 且满足 $|Q(\theta)| < (\psi(h))^n$; 此外, 无穷多个 $P$ 对应于某个固定的整数 $m$, 并且除非 $\theta$ 是代数数, 否则在相关的 $Q$ 中将有无穷多个互异的多项式. 现在利用 \autoref{ch:8} 的 \autoref{lem:ch8_2}, 并且第三次采用类似于上述的平均构造, 我们得出存在一个函数 $\phi$, 使得 $\mathscr{F}(n,\psi)$ 中的每个 $\theta$ 至少属于 $m < n$ 的集合 $\mathscr{R}(m,\phi)$ 之一. 根据归纳假设, 这些集合中的每一个都是零测度集, 从而 $\mathscr{T}(n, \psi)$ 也是零测度集, 正如所求.
+
+\section{区间的交集}\label{sec:ch9_4}
+
+我们在此建立证明 \autoref{thm:ch9_1} 所需的另一个简单的测度论结果.
+
+对于每个正整数 $h$, 设 $\mathscr{U}(h)$ 是有限个实闭区间的集合, 并且设 $\mathscr{V}(h)$ 是 $\mathscr{U}(h)$ 的子集, 满足对于 $\mathscr{V}(h)$ 中的每个 $I$, 均存在 $\mathscr{U}(h)$ 中的 $J \neq I$ 使得 $|I \cap J| \geq \frac{1}{2}|I|$. 此外, 分别设 $W$ 和 $w$ 为包含在无穷多个 $V(h)$ 和无穷多个 $v(h)$ 中的点集, 其中 $V(h)$ 是 $\mathscr{V}(h)$ 中区间 $I$ 的并集, 而 $v(h)$ 是当 $I$ 属于 $\mathscr{V}(h)$ 且 $J \neq I$ 属于 $\mathscr{U}(h)$ 时区间 $I \cap J$ 的并集. 我们的目的是证明: 如果 $w$ 是零测度集, 那么 $W$ 也是零测度集.
+
+我们有
+\[w = \bigcap_{1 \leq m < \infty} \bigcup_{h \geq m} v(h),\]
+因此, 如果 $w$ 为零测度集, 那么对于任意 $\varepsilon > 0$, 存在一个整数 $m$, 使得对于所有 $n \ge m$, 对所有满足 $m \le h \le n$ 的 $h$ 求并得到的 $v(h)$ 的并集其测度至多为 $\varepsilon$. 现在, 该并集由有限个不相交区间的集合组成, 并且根据 $\mathscr{V}$ 的定义, 我们看到, 将这些区间中的每一个关于其中心对称地膨胀至其长度的三倍所得到的集合, 将覆盖在相同的 $h$ 范围内取值的所有 $V(h)$. 因此, 对于每个 $n \ge m$, 后者的集合测度至多为 $3\varepsilon$, 并且注意到 $W$ 可以表示为类似于上述 $w$ 的形式 (只需用 $V$ 代替 $v$), 该断言即成立.
+
+\section{主定理的证明}\label{sec:ch9_5}
+
+凭借 \autoref{sec:ch9_3}, 证明每个集合 $\mathscr{S}(n, \psi)$ 的测度均为零就足够了. 极易验证 $\mathscr{S}(1, \psi)$ 是零测度集, 并且我们将假设当 $m < n$ 时 $\mathscr{S}(m, \psi)$ 均为零测度集; 接下来我们对 $m = n \ge 2$ 建立该结果.
+
+设 $\mathscr{Q}(n,h)$ 是满足 \autoref{sec:ch9_3} 中 (i) 和 (ii) 的所有次数为 $n$、整系数且高度为 $h$ 的多项式构成的集合. 此外, 设 $\kappa_1, \ldots, \kappa_n$ 是 $\mathscr{Q}(n,h)$ 中任意元素 $P$ 的零点, 并且设
+\[\tau_j = \min |\kappa_i - \kappa_j|,\]
+其中最小值是对所有 $i \neq j$ 取的. 根据 (i) 我们有 $\tau_j > 0$, 且由 (ii) 我们得到 $|\kappa_j| \leq n$, 因为显然有
+\[|P(x)-hx^n|\leqslant nh\max(1,|x|^{n-1}).\]
+
+现在假设 $\psi$ 是第 1 节中的任何函数, 设
+\[\nu_j=2^n\left|P'(\kappa_j)\right|^{-1}(\psi(h))^n\quad (1\leqslant j\leqslant n),\]
+并且设 $I_j = I_j(P)$ 是由实轴与以 $\kappa_j$ 为中心且以
+\[\mu_j = \min \{ \nu_j, (\tau_j \nu_j)^{\frac{1}{2}} \} \]
+为半径的复平面闭圆盘相交所形成的区间 (可能为空). 由 \eqref{eq:ch9_1} 和 \eqref{eq:ch9_2} 我们看到, $\mathscr{S}(n,\psi)$ 中的每个元素都包含在某个 $j$ 的无穷多个 $\mathscr{J}_j(h)$ 中, 其中 $\mathscr{J}_j(h)$ 表示当 $P$ 取遍 $\mathscr{Q}(n,h)$ 的所有元素时所有 $I_j(P)$ 构成的集合. 我们接下来证明包含在无穷多个 $\mathscr{J}_1(h)$ 中的点集其测度为零; 当 $j > 1$ 时的证明是类似的, 因此这足以确立该定理. 现在不妨假设 $P$ 的零点顺序满足 $\tau_1 = |\kappa_1 - \kappa_2|$.
+
+我们将 $\mathscr{Q}(n,h)$ 中的多项式 $P$ 划分为两个不相交的类别: 如果 $\tau_1 \geq p^{-\frac{1}{2}}$, 则将 $P$ 放入 $\mathscr{A}(n,h)$ 中, 否则放入 $\mathscr{B}(n,h)$ 中, 其中 $p$ 的定义见 \autoref{sec:ch9_2}, 取 $a=h$. 我们分别用 $\mathscr{K}(h)$ 和 $\mathscr{L}(h)$ 表示当 $P$ 跑遍 $\mathscr{A}(n,h)$ 和 $\mathscr{B}(n,h)$ 的元素时所有 $I_1(P)$ 的并集. 显然, $\mathscr{K}(h)$ 与 $\mathscr{L}(h)$ 的并集就是 $\mathscr{J}_1(h)$, 且只需证明包含在无穷多个 $\mathscr{K}(h)$ 中的点集 $\mathscr{K}$, 以及类似地包含在无穷多个 $\mathscr{L}(h)$ 中的点集 $\mathscr{L}$ 的测度均为零.
+
+我们首先证明 $\mathscr{K}$ 是零测度集. 由于 $\psi(h)$ 是正单调递减函数且 $\sum \psi(h)$ 收敛, 当 $h \to \infty$ 时有 $h\psi(h) \to 0$, 因此不妨假设对所有 $h$ 均有 $\psi(h) < h^{-1}$. 对于 $\mathscr{A}(n,h)$ 中的每个 $P$, 设 $I=I(P)$ 是由实轴与以 $\kappa_1$ 为中心且以 $(\psi(h))^{-1}\mu_1$ 为半径的复平面闭圆盘相交所形成的区间. 显然有 $I_1 \subset I$ 且 $|I_1| \leq \psi(h) |I|$. 我们用 $\mathscr{U}(h)$ 表示所有 $I(P)$ 组成的集合, 并用 $\mathscr{V}(h)$ 表示 $\mathscr{U}(h)$ 的满足 \autoref{sec:ch9_4} 所指定性质的最大子集. 沿用该节的记号, 我们现在开始证明 $w$ 是零测度集. 首先我们观察到, 只要 $h$ 足够大, $I(P)$ 中的每个 $\theta$ 均满足
+\[\left|\theta - \kappa_{1}\right| \leq (\psi(h))^{-1} \nu_{1} \leq h^{-n+1} |P'(\kappa_{1})|^{-1} = \left|(\kappa_{1} - \kappa_{2}) p\right|^{-1}, \tag{7}\label{eq:ch9_7}\]
+根据 $\mathscr{A}(n, h)$ 的定义, 右边的数至多为 $|\kappa_1 - \kappa_2|$.
+
+因此 \eqref{eq:ch9_3} 成立, 从而有
+\[\big|P(\theta)\big|\leqslant 2^n\, \big|P'(\kappa_1)\big|\, (\psi(h))^{-1}\, \nu_1=\, 2^{2n}(\psi(h))^{n-1}.\]
+现在, 如果 $\theta$ 也是 $\mathscr{A}(n,h)$ 中某个 $Q \neq P$ 的 $I(Q)$ 的一个点, 那么多项式 $R = P - Q$ 将满足 $|R(\theta)| \leq 2^{2n+1} (\psi(h))^{n-1}$. 此外, 根据 (ii), 我们看到 $R$ 的次数至多为 $n-1$ 且高度至多为 $2h$. 但是, 对于 $w$ 中的每个 $\theta$, 存在无穷多个具有这些性质的互异的多项式 $R$, 因此, 再次诉诸于 \autoref{sec:ch9_3} 中的构造, 可以得出 $w$ 包含在适当函数 $\phi$ 的集合 $\mathscr{R}(m,\phi)$ 的并集中, 其中 $1 \leq m < n$. 我们的归纳假设与 \autoref{sec:ch9_3} 的结果表明, 对于每个 $m$, $\mathscr{R}(m,\phi)$ 都是零测度集, 因此 $w$ 是零测度集, 证毕.
+
+我们由 \autoref{sec:ch9_4} 得出 $W$ 是零测度集, 从而要完成 $\mathscr{K}$ 是零测度集的证明, 只需验证包含在无穷多个 $\mathscr{K}(h)$ (排除那些对应的 $I$ 属于 $\mathscr{V}(h)$ 的 $I_1(P)$) 中的点集具有零测度. 现在, 如果 $I(P)$ 与 $I(Q)$ 是不包含在 $\mathscr{V}(h)$ 中的互异元素, 那么
+\[|I(P) \cap I(Q)| < \frac{1}{2} \min(|I(P)|, |I(Q)|).\]
+正如人们极易验证的, 这意味着任何点都不能包含在三个不属于 $\mathscr{V}(h)$ 的互异区间 $I(P)$ 中. 此外, 所有 $I(P)$ 均包含在 $[-3n,3n]$ 中, 因为我们有 $|\kappa_j| \leq n$ 并且如上所述, 对于 $I(P)$ 中的每个 $\theta$, 都有 $|\theta-\kappa_1| \leq \tau_1$. 因此, 所有不属于 $\mathscr{V}(h)$ 的 $I(P)$ 的总长度至多为 $12n$. 对应的 $I_1(P)$ 的总长度至多为 $12n\psi(h)$, 且由于 $\sum \psi(h)$ 收敛, 立即推得 $\mathscr{K}$ 为零测度集.
+
+剩下的工作是证明 $\mathscr{L}$ 是零测度集. 对于每个正整数 $k$, 设 $\mathscr{C}(n,k)$ 是满足 $4^{k-1} \leq h < 4^k$ 的所有集合 $\mathscr{B}(n,h)$ 的并集; 且对于每个整数 $l$, 设 $\mathscr{C}(n,k,l)$ 是 $\mathscr{C}(n,k)$ 的子集, 由所有满足 $4^{l-1} \leq p < 4^l$ 的多项式 $P$ 组成. 那么, 根据 \eqref{eq:ch9_7}, 对于 $\mathscr{C}(n,k,l)$ 中的每个 $P$, $I_1(P)$ 的长度至多为
+\[2\mu_1 \leq 2(\tau_1 \nu_1)^{\frac{1}{2}} \ll (4^{-l+1}\psi(4^{k-1}))^{\frac{1}{2}} \ll 2^{-l-k},\]
+其中隐含的常数仅取决于 $n$. 此外, 如果 $I_1(P)$ 非空, 那么 $\kappa_1$ 的虚部至多为 $\mu_1$. 对区间 $[-n,n]$ 应用简单的抽屉原理, 我们可以由 \eqref{eq:ch9_4} 推出: 如果 $k \gg 1$, 则使得 $I_1(P)$ 非空的 $\mathscr{C}(n,k,l)$ 中多项式 $P$ 的个数为 $\leqslant 2^l+1$. 因此, 对于 $\mathscr{C}(n,k,l)$ 中满足 $P$ 的所有 $I_1(P)$ 的总长度为 $\leqslant 2^{-k}(2^{-l}+1)$. 然而由 \autoref{sec:ch9_2} 中关于 $P$ 的判别式的估计, 我们看到 $p \gg 1$, 且显然也有 $p \leqslant 4^{nk}$. 因此, 对于任何 $n$ 以及 $k$, 非空集合 $\mathscr{C}(n,k,l)$ 的个数为 $\leqslant k$, 且对于这些集合, 我们有 $2^{-l} \leqslant 1$. 我们得出结论, 所有满足 $P$ 在 $\mathscr{C}(n,k)$ 中的 $I_1(P)$ 的总长度为 $\leqslant k2^{-k}$, 而 $\mathscr{L}$ 为零测度集则由 $\sum k2^{-k}$ 的收敛性推得. 至此, 定理证明全部完成.

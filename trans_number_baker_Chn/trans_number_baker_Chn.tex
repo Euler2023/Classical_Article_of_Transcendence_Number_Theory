@@ -1,0 +1,224 @@
+%# -*- coding: utf-8-unix -*-
+%======================================================================
+% trans_number_baker_Chn.tex for Alan Baker's Transcendental Number Theory
+%======================================================================
+\documentclass{qbook}
+
+% Enable makeidx for generating dynamic index corresponding to new page numbers
+\usepackage{makeidx}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\makeindex
+
+% ==================================================================
+% 中文标签与交叉引用样式重写 (Chinese Labels & Cross-referencing Overrides)
+% ==================================================================
+\makeatletter
+\def\q@contentsname{目录}
+\def\q@figurename{图}
+\def\q@listfigurename{插图索引}
+\def\q@tablename{表}
+\def\q@listtablename{表格索引}
+\def\q@overviewname{概览}
+\def\q@pre{前言}
+\def\q@label@thm{定理}
+\def\q@label@defn{定义}
+\def\q@label@keypoint{关键点}
+\def\q@label@rem{注}
+\def\q@label@prop{性质}
+\def\q@label@proof{证明}
+\def\q@label@lem{引理}
+\def\q@label@cor{推论}
+\def\q@label@exmp{例}
+\def\q@value@listingname{算法}
+\makeatother
+
+% 重写 Qbook 的英文交叉引用宏，使其输出中文
+\renewcommand{\rremark}[1]{\text{{\color{purple}{注记}}} \ref{#1}}
+\renewcommand{\rfig}[1]{\text{{\color{purple}{图}}} \ref{#1}}
+\renewcommand{\rtab}[1]{\text{{\color{purple}{表}}} \ref{#1}}
+\renewcommand{\rprop}[1]{\text{{\color{purple}{性质}}} \ref{#1}}
+\renewcommand{\rdef}[1]{\text{{\color{purple}{定义}}} \ref{#1}}
+\renewcommand{\rthm}[1]{\text{{\color{purple}{定理}}} \ref{#1}}
+\renewcommand{\mylem}[1]{\text{{\color{purple}{引理}}} \ref{#1}}
+\renewcommand{\rexa}[1]{\text{{\color{purple}{例}}} \ref{#1}}
+\renewcommand{\rproblem}[1]{\text{{\color{purple}{问题}}} \ref{#1}}
+
+% ==================================================================
+% Custom Academic Footnote Symbols (Baker Style: Page-by-page starting with †)
+% ==================================================================
+\usepackage[perpage]{footmisc}
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \ddagger\or \S\or \P\or \|\or \dagger\dagger\or \ddagger\ddagger\or \S\S\or \P\P\else *\fi}}
+\makeatother
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% ==================================================================
+% Academic Section, Theorem, and Equation Numbering (Baker Style)
+% ==================================================================
+% 1. Section numbering without Chapter prefix (e.g., "1" instead of "1.1")
+\renewcommand{\thesection}{\arabic{section}}
+
+% 2. Theorem and Lemma numbering
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{lemma}{引理}[chapter]
+\renewcommand{\thelemma}{\arabic{lemma}}
+
+% 3. Equation numbering resetting per chapter and without Chapter prefix (e.g., "(1)" instead of "(1.1)")
+\makeatletter
+\@addtoreset{equation}{chapter}
+\makeatother
+\renewcommand{\theequation}{\arabic{equation}}
+
+% ==================================================================
+% Custom hanglist environment for appendices (Original Papers / Further Publications)
+% ==================================================================
+\newenvironment{hanglist}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.5em}%
+    \setlength{\itemindent}{-1.5em}%
+    \setlength{\itemsep}{3pt}%
+    \setlength{\parsep}{0pt}%
+  }%
+}{\end{list}}
+
+% 4. Autoref names (Chinese)
+\makeatletter
+\AtBeginDocument{%
+  \def\chapterautorefname{}%
+  \def\sectionautorefname{}%
+  \def\subsectionautorefname{}%
+  \def\equationautorefname{公式}%
+  \def\theoremautorefname{定理}%
+  \def\lemmaautorefname{引理}%
+  \def\definitionautorefname{定义}%
+  %
+  % Custom Chinese autoref format with prefix & suffix
+  \let\oldautoref\autoref
+  \gdef\autoref#1{%
+    \edef\HyRef@label{#1}%
+    \expandafter\HyRef@checkprefix\HyRef@label::\@nil{#1}%
+  }%
+  \gdef\HyRef@checkprefix#1:#2:#3\@nil#4{%
+    \def\HyRef@temp{#1}%
+    \def\HyRef@ch{ch}%
+    \def\HyRef@sec{sec}%
+    \def\HyRef@subsec{subsec}%
+    \ifx\HyRef@temp\HyRef@ch%
+      第\oldautoref{#4}~章%
+    \else\ifx\HyRef@temp\HyRef@sec%
+      第\oldautoref{#4}~节%
+    \else\ifx\HyRef@temp\HyRef@subsec%
+      第\oldautoref{#4}~小节%
+    \else%
+      \oldautoref{#4}%
+    \fi\fi\fi%
+  }%
+}
+\makeatother
+
+% 5. Redefine theindex to prepend the author's intro note spanning full-width above the two columns
+\makeatletter
+\renewenvironment{theindex}{%
+  \chapter*{\indexname}%
+  \@mkboth{\MakeUppercase\indexname}{\MakeUppercase\indexname}%
+  \thispagestyle{plain}%
+  \vspace{1.5em}%
+  \noindent\textmd{作者条目指的是其名字或其某篇著作被引用的地方.}\vspace{1.5em}%
+  \parindent\z@%
+  \parskip\z@\@plus.3\p@\relax%
+  \columnsep 35\p@%
+  \columnseprule\z@%
+  \let\item\@idxitem%
+  \begin{multicols}{2}%
+}{%
+  \end{multicols}%
+}
+\makeatother
+
+\begin{document}
+\begin{sloppypar}	
+	\pagestyle{empty}
+	
+	% ==================================================================
+	% Cover Page
+	% ==================================================================
+	\begin{center}
+		\vspace*{5cm}
+		{\Huge\sffamily\bfseries 超越数论} \\
+		\vspace{2em}
+		{\Large\sffamily\bfseries ALAN BAKER F.R.S.} \\
+		\vspace{1em}
+		{\small 剑桥大学三一学院院士 \\ 剑桥大学纯粹数学教授} \\
+		\vfill
+		{\large\sffamily\bfseries 剑桥大学出版社}
+	\end{center} 
+	\thispagestyle{empty}
+	\cleardoublepage
+
+	% ==================================================================
+	% Front Matter
+	% ==================================================================
+	\frontmatter
+	\pagestyle{empty}
+	
+	% Include Preface (from original 1974 edition, Cambridge)
+	\include{tex/preface}
+	
+	% Automatically generated dynamic Table of Contents
+	\tableofcontents
+	\cleardoublepage
+	
+	% ==================================================================
+	% Main Matter
+	% ==================================================================
+	\mainmatter
+	\pagestyle{fancy}
+	
+	\include{tex/chapter1}
+	\include{tex/chapter2}
+	\include{tex/chapter3}
+	\include{tex/chapter4}
+	\include{tex/chapter5}
+	\include{tex/chapter6}
+	\include{tex/chapter7}
+	\include{tex/chapter8}
+	\include{tex/chapter9}
+	\include{tex/chapter10}
+	\include{tex/chapter11}
+	\include{tex/chapter12}
+	
+	% ==================================================================
+	% Back Matter & Bibliography
+	% ==================================================================
+	\renewcommand{\bibname}{参考文献}
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{参考文献}
+	
+	% Output dynamic bibliography generated from BibTeX database
+	\include{tex/ref}
+	
+	% ==================================================================
+	% Appendices & Further Additions (Baker's Definitve Editions)
+	% ==================================================================
+	% Include list of classical Original Papers
+	\include{tex/original_papers}
+	
+	% Include list of modern Further Publications
+	\include{tex/further_publications}
+	
+	% Include the historical New Developments chapter (up to 1990)
+	\include{tex/new_developments}
+	
+	% ==================================================================
+	% Dynamic Index
+	% ==================================================================
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{索引}
+	\printindex
+	
+	\backmatter	
+\end{sloppypar}
+\end{document}

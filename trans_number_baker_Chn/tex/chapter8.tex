@@ -1,0 +1,155 @@
+%# -*- coding: utf-8-unix -*-
+
+\chapter{Mahler 分类法}\label{ch:8}
+
+\section{引言}\label{sec:ch8_1}
+
+1932 年, Mahler\index{Mahler, K.}\footnote{J.M. 166 (1932), 118--36.} 引入了将所有超越数\index{transcendental number}\index{numbers}的集合划分为三个互不相交的集合（称为 $S$-数、$T$-数与 $U$-数\index{U-number}\index{U*-number}）的分类方法, 并且事实证明, 它在该学科的总体发展中具有相当大的价值. 这种分类的首个雏形由 Maillet\index{Maillet, E.}\footnote{参见文献目录.} 于 1906 年提出, 其他分类方法也曾由 Perna\index{Perna, A.}\footnote{Giorn. Mat. Battaglini, 52 (1914), 305--65.} 以及 Morduchai-Boltovskoj\footnote{Mat. Sbornik, 41 (1934), 221--32.} 描述过; 但迄今为止, 最引人关注的仍是 Mahler\index{Mahler, K.} 分类法\index{Mahler's classification}.
+
+与前一章相同, 我们将多项式的“高度”（height）定义为其系数绝对值的最大值, 并且我们仅对系数不全为 $0$ 的整系数多项式讨论其高度. 设 $\xi$ 为任意复数, 对于每对正整数 $n$ 和 $h$, 设 $P(x)$ 为次数至多为 $n$ 且高度至多为 $h$ 的多项式, 使得 $|P(\xi)|$ 取得最小的正值; 并通过方程 $|P(\xi)| = h^{-n\omega(n,h)}$ 定义 $\omega(n,h)$ . 进一步定义
+\[\omega_n = \limsup_{h \to \infty} \omega(n, h), \quad \omega = \limsup_{n \to \infty} \omega_n,\]
+并令 $\nu$ 为使 $\omega_n = \infty$ 的最小正整数 $n$, 如果事实上对所有的 $n$ 都有 $\omega_n < \infty$, 则记 $\nu = \infty$ . Mahler\index{Mahler, K.} 将所有复数的集合表征如下:
+\begin{align*}
+\text{$A$-数\index{A-number}} & \quad \omega = 0, \quad \nu = \infty, \\
+\text{$S$-数\index{S*-number}\index{S-number}} & \quad 0 < \omega < \infty, \quad \nu = \infty, \\
+\text{$T$-数\index{T-number}} & \quad \omega = \infty, \quad \nu = \infty, \\
+\text{$U$-数\index{U-number}\index{U*-number}} & \quad \omega = \infty, \quad \nu < \infty.
+\end{align*}
+
+我们将在 \autoref{sec:ch8_2} 中证明, $A$-数\index{numbers}恰好是代数数\index{algebraic number}; 因此, 如果对于所有的 $n$ 和 $h$, $\omega(n,h)$ 是一致有界的, 则超越数\index{transcendental number} $\xi$ 是 $S$-数\index{S*-number}\index{S-number}; 如果对于某个 $n$, $\omega(n,h)$ 是无界的, 则为 $U$-数\index{U-number}\index{U*-number}; 否则为 $T$-数\index{T-number}. 此外, 我们有:
+
+\begin{mythm}{}{ch8_1}
+代数相关的数\index{numbers}属于同一类.
+\end{mythm}
+
+\begin{mythm}{}{ch8_2}
+几乎所有的数\index{numbers}都是 $S$-数\index{S-number}\index{S*-number}\index{numbers}.
+\end{mythm}
+
+这里的“几乎所有”是在 Lebesgue 测度论的意义下解释的, 对于实数与复数\index{numbers}, 分别采用线测度和面测度.
+
+上面定义的整数 $\nu$ 称为 $\xi$ 的次数. 显然, \autoref{ch:1} 中提到的 Liouville\index{Liouville, J.} 数\index{Liouville number}是次数为 1 的 $U$-数\index{U-number}\index{U*-number}, 并且 LeVeque\index{LeVeque, W. J.}\footnote{J. London Math. Soc. 28 (1953), 220--9.} 于 1953 年证明了每个次数的 $U$-数\index{U-number}\index{U*-number}\index{numbers}的存在性; 我们将在 \autoref{sec:ch8_6} 中确立后者. 许多年来, 是否存在 $T$-数\index{T-number}\index{numbers}一直是一个悬而未决的问题, 但在 1968 年, Schmidt\index{Schmidt, W. M.}\footnote{Symposia Math. IV (Academic Press, 1970), pp. 3--26.} 基于 Wirsing\index{Wirsing, E.} 早期版本的 \autoref{thm:ch7_2} 给出了肯定的回答, 这将是 \autoref{sec:ch8_7} 的主题. 通常习惯根据“类型”（type）对 $S$-数\index{S-number}\index{S*-number}\index{numbers}进行子分类, 类型定义为序列 $\omega_1, \omega_2, \ldots$ 的上确界. 我们将在 \autoref{sec:ch8_2} 中展示, 对于任意超越数 $\xi$, 根据 $\xi$ 是实数还是复数, $\omega_n$ 分别至少为 1 或 $\frac{1}{2}(1-1/n)$, 从而 $\xi$ 的类型分别至少为 1 或 $\frac{1}{2}$ . 1965 年, Sprindžuk\index{Sprindzhuk, V. G.} 证实了 Mahler\index{Mahler, K.} 的一个猜想, 证明了几乎所有的实数与复数\index{numbers}分别是类型为 1 和 $\frac{1}{2}$ 的 $S$-数\index{S-number}\index{S*-number}\index{numbers}. 此外, 最近通过对该结果的改进表明, 存在具有任意大类型的 $S$-数\index{S-number}\index{S*-number}\index{numbers}. 因此, 除了迄今为止所展示的 $T$-数\index{T-number}\index{numbers}类型中存在一个微小的空白之外, 超越数谱在某种意义上是完整的. 后者的测度论命题将是下一章的主题.
+
+鉴于 \autoref{thm:ch8_2}, 人们会期望任何自然定义的数, 例如 $e$、$\pi$、$e^{\pi}$ 以及代数数 $\alpha$ ($\alpha \neq 0, 1$) 的 $\log \alpha$, 都是 $S$-数\index{S-number}\index{S*-number} . 1929 年, Popken\index{Popken, J.} 证明了 $e$ 确实是类型为 1 的 $S$-数\index{S*-number}\index{S-number}, 我们将在 \autoref{ch:10} 中证实这一结果. \autoref{thm:ch3_1} 表明 $\pi$, 事实上还有代数数对数\index{logarithms of algebraic numbers}\index{algebraic number}的具有代数系数的任何非零线性组合, 要么是 $S$-数要么是 $T$-数\index{T-number}, 但后一种可能性迄今为止尚未被排除. 例如, 从 \autoref{thm:ch7_1} 的 $n = 1$ 的情况可以看出, 对于任何整数 $a \ge 2$, $b \ge 3$, $\sum_{n=1}^{\infty} a^{-b^n}$ 都是超越的. 并且在同样的背景下, Mahler\index{Mahler, K.}\footnote{N.A.W. 40 (1937), 421--8.} 于 1937 年证明了按升序写出自然数\index{numbers}而得到的小数 $.1234 \dots$ 也是超越的; 在这里, 同样已证明它们要么是 $S$-数, 要么是 $T$-数\index{T-number}\index{numbers}.\footnote{Acta Math. 111 (1964), 97--120.} 然而, 对于 $e^{\pi}$, 目前甚至还没有排除它是 Liouville\index{Liouville, J.} 数\index{Liouville number}的可能性. 注意, 凭借 \autoref{thm:ch8_1}, 上述结果使我们能够提供许多代数无关数\index{numbers}的例子; 事实上, 如果 $\xi$ 是任何 $U$-数\index{U-number}\index{U*-number}, 例如 $\sum 10^{-n!}$, 且 $\eta$ 是 (比方说) $e$、$\pi$、$\sum 10^{-10^n}$ 或者是 Mahler\index{Mahler, K.} 的小数\index{Mahler's decimal}, 那么 $\xi$ 与 $\eta$ 必定是代数无关的.
+
+1939 年, Koksma\index{Koksma, J. F.} 引入了一种与 Mahler\index{Mahler, K.} 分类法非常相似的分类方法, 这也证明了其启发性.\footnote{有关参考文献和进一步讨论, 请参见 Schneider\index{Schneider, Th.} (文献目录).} 设 $\xi$ 为任意复数, 对于每对正整数 $n$ 和 $h$, 设 $\alpha$ 为次数至多为 $n$ 且高度至多为 $h$ 的代数数\index{algebraic number}, 使得 $|\xi - \alpha|$ 取得最小的正值; 并通过方程 $|\xi - \alpha| = h^{-n\omega^*(n, h)-1}$ 定义 $\omega^*(n, h)$ .
+
+Koksma\index{Koksma, J. F.} 以与 Mahler\index{Mahler, K.} 相同的方式将复数\index{numbers}分类为 $A^{*-}$、 $S^{*-}$、 $T^{*-}$ 或 $U^{*-}$-数, 只是用 $\omega^*$ 代替了 $\omega$ . 因此, 如果 $\omega^{*}(n,h)$ 是一致有界的, 则超越数\index{transcendental number} $\xi$ 是 $S^{*-}$-数; 如果对某个 $n$, $\omega^{*}(n,h)$ 是无界的, 则为 $U^{*-}$-数; 否则为 $T^{*-}$-数. 这两种分类之间存在精确的对应关系, $S^{*-}$、$T^{*-}$ 与 $U^{*-}$-类实际上分别与 $S$-、$T$- 和 $U$-类完全相同; 此外, 函数 $\omega_{n}$ 与 $\omega_{n}^{*}$ 取得可比的值. 事实上, 很容易验证 $\omega_{n}^{*} \leq \omega_{n}$, 并且 Wirsing\index{Wirsing, E.}\footnote{J.M. 206 (1961), 67--77.} 获得了以 $\omega_{n}$ 表示的 $\omega_{n}^{*}$ 的简单下界. 这些特别暗示, 当 $\omega_{n} = 1$ 时, $\omega_{n}^{*} = 1$, 从而鉴于 Sprindžuk\index{Sprindzhuk, V. G.}\index{Sprindžuk, V. G.} 定理, 对于几乎所有的实数 $\xi$, 我们有 $\omega_{n}^{*} = 1$ . 但对于所有的实数 $\xi$, 是否有 $\omega_{n}^{*} \geqslant 1$ 仍然是一个未决问题.
+
+\section{$A$-数}\label{sec:ch8_2}
+
+我们在这一节证明, $A$-数恰好是代数数\index{algebraic number}. 首先假设 $\xi$ 是一个实超越数\index{transcendental number}. 我们考虑所有数\index{numbers} $Q(\xi)$ 的集合, 其中 $Q$ 表示一个非恒等于 0 的多项式, 其次数至多为 $n$, 且整系数在 0 到 $h$ 之间（含两端）. 该集合显然包含 $(h+1)^{n+1}-1$ 个元素, 且每个元素的绝对值至多为 $ch$ (对于某个 $c = c(n, \xi)$). 如果现在我们将区间 $[-ch, ch]$ 划分为 $h^{n+1}$ 个互不相交的子区间, 每个子区间的长度为 $2ch^{-n}$, 那么在同一个子区间中将存在两个不同的数\index{numbers} $Q_1(\xi)$ 和 $Q_2(\xi)$ . 因此, 多项式 $P = Q_1 - Q_2$ 满足 $|P(\xi)| < 2ch^{-n}$, 从而 $\omega_n \ge 1$ . 类似地, 如果 $\xi$ 是复数, 我们将实轴和虚轴上的区间 $[-ch, ch]$ 划分为至多 $h^{\frac{1}{2}(n+1)}$ 个互不相交的子区间, 对于某个 $c' = c'(n, \xi)$, 每个子区间的长度至多为 $c'h^{-\frac{1}{2}(n-1)}$, 并且将存在两个不同的数\index{numbers} $Q_1(\xi)$ 与 $Q_2(\xi)$, 它们的实部和虚部分别落在相同的子区间中. 因此我们有
+\[\omega_n \geqslant \frac{1}{2}(1-1/n).\]
+
+现在, 如果 $\xi$ 是次数为 $m$ 的代数数, 那么对于上述任何多项式 $P$, 对于某个 $c = c(n, \xi)$, $P(\xi)$ 是一个次数至多为 $m$ 且高度至多为 $ch$ 的代数数\index{algebraic number} . 因此, 要么 $P(\xi) = 0$, 要么对于某个 $c' = c'(n, \xi) > 0$ 有 $|P(\xi)| > c'h^{-m}$ . 由此可知, 对于所有的 $n$ 和 $h$, $n\omega(n, h)$ 是一致有界的, 这便证明了该断言.
+
+\section{代数相关性}\label{sec:ch8_3}
+
+假设 $\xi$ 和 $\eta$ 是代数相关的. 那么它们满足方程 $Q(\xi,\eta)=0$, 其中 $Q(x,y)$ 是一个在 $x$ 中次数为 $k$、在 $y$ 中次数为 $l$ 的多项式, 且其代数系数不全为 0 . 不失一般性, 我们可以假设 $\xi$ 和 $\eta$ 是超越的, 因为否则它们都将是代数数, 从而属于同一类; 我们也可以假设 $Q$ 的系数是有理整数, 因为这显然可以通过用其共轭项的乘积代替 $Q$ 来确保. 此外, 我们可以假设 $Q(x, \eta)$ 的所有零点 $\xi_1 = \xi, \xi_2, \ldots, \xi_k$ 都是超越的; 因为如果其中一个是代数数, 那么它的极小定义多项式\index{minimal polynomial of algebraic number}（设为 $p(x)$）将整除被视为 $y$ 的多项式的 $Q(x,y)$ 的所有系数, 因此只需考虑用 $Q(x,y)/p(x)$ 代替 $Q(x,y)$ .
+
+现在让 $P$ 和 $\omega(n, h)$ 如 \autoref{sec:ch8_1} 开头所定义, 并设
+\[J=P(\xi_1)\dots P(\xi_k).\]
+显然我们有
+\[|J| \leqslant c_1 h^{-n\omega(n, h)+k-1},\]
+where $c_1$, like $c_2$, $c_3$ below, depends only on $\xi$, $\eta$, n and Q. 此外, $J$ 关于 $\xi_1, \ldots, \xi_k$ 是对称的, 从而根据关于对称函数的基本定理, 它可以表示为关于初等对称函数的多项式, 其总次数至多为 $n$, 且高度至多为 $c_2h^k$ . 现在每个初等对称函数由 $\pm q_i/q_0$ 给出, 其中
+\[Q(x, \eta) = q_0(\eta) x^k + q_1(\eta) x^{k-1} + \ldots + q_k(\eta).\]
+因此, $q_0^n J$ 是关于 $\eta$ 的多项式, 其次数至多为 $ln$, 且高度至多为 $h' = c_3 h^k$ . 因此, 如果对 $\eta$ 像对 $\xi$ 定义 $\omega(n, h)$、$\omega_n$ 与 $\omega$ 那样定义 $\omega'(n, h')$、$\omega'_n$ 和 $\omega'$, 我们便有
+\[h'^{ln\omega'(ln,h')} \geqslant c_1 h^{n\omega(n,h)-k+1}.\]
+这给出 $kln\omega'/ln > n\omega_n - k + 1$, 从而有 $kl\omega' \ge \omega$ . 类似地, 通过交换 $\xi$ 与 $\eta$, 我们便得到 $kl\omega \ge \omega'$, 接着 \autoref{thm:ch8_1} 随之成立.
+
+\section{多项式的高度}\label{sec:ch8_4}
+
+我们现在建立两个引理, 它们将被用于 \autoref{thm:ch8_2} 的证明以及下一章中. 这些命题将针对具有任意复系数的多项式进行证明, 并且这里对高度的定义不附加任何限制. $P(x)$ 将表示一个次数为 $n$ 且高度为 $h$ 的多项式, 并且由 $\ll$ 或 $\gg$ 所隐含的常数将仅依赖于 $n$ .
+
+\begin{mylemma}{}{ch8_1}
+对于某个满足 $0 \le j \le n$ 的整数 $j$, 我们有
+\[h \ll |P(j)| \ll h.\]
+\end{mylemma}
+
+\begin{proof}
+很容易验证
+\[P(x) = \sum_{j=0}^{n} P(j) A(x)/\{(x-j) A'(j)\},\]
+where $A(x) = x(x-1)\dots(x-n)$, and $A'$ denotes the derivative of $A$. 现在我们有 $|A'(j)| \ge 1$, 并且显然多项式 $A(x)/(x-j)$ 的系数也是 $\ll 1$ . 因此我们看到, 对于某个 $j$, 有 $|P(j)| \gg h$, 并且显然对于所有的 $j$ 都有 $|P(j)| \ll h$ . 这便证明了该引理.
+\end{proof}
+
+\begin{mylemma}{}{ch8_2}
+如果 $P = P_1 \dots P_k$, 其中 $P_i$ 是高度为 $h_i$ 的多项式, 那么
+\[h_1 \dots h_k \ll h \ll h_1 \dots h_k.\]
+\end{mylemma}
+
+\begin{proof}
+右侧的估计可直接通过以下观察得出: $P$ 中的每个系数都可以表示为 $\ll 1$ 个项的和, 其中每个项都由 $k$ 个系数的乘积给出, 每一个系数分别来自于不同的 $P_i$ .
+
+为了建立左侧的估计, 我们首先选择一个满足 \autoref{lem:ch8_1} 的整数 $j$, 并用 $h_i'$ 表示多项式 $P_i(x+j)$ 的高度. 通过将 $P_i(x)$ 表示为关于 $x-j$ 的多项式, 显然有 $h_i \ll h_i'$ . 现在, 如果 $\eta$ 是 $P_i(x+j)$ 的任意零点, 我们从中值定理推导出对于某个满足 $|\xi| < |\eta|$ 的 $\xi$ 有
+\[h_i' \ll |P_i(j)| + |\eta| h_i'\] .
+因此, 如果对于某个仅依赖于 $P_i$ 次数的足够大的 $c$ 有 $|\eta| < c^{-1}$, 则我们有 $h_i' \ll |P_i(j)|$, 否则有 $|\eta| \ge c^{-1}$ . 但是 $P_i(x+j)$ 的零点包含在 $P(x+j)$ 的零点中, 并且 $P_i(x+j)$ 中的每个系数都可以写为常数项系数 $P_i(j)$ 与零点倒数的初等对称函数的乘积. 由此我们获得 $|P_i(j)| \gg h_i'$, 并且由于 $P(j) = P_1(j) \dots P_k(j)$, 引理随之成立.
+\end{proof}
+
+\section{$S$-数}\label{sec:ch8_5}
+
+我们现在着手在平面 Lebesgue 测度的意义下证明关于复数\index{numbers}的 \autoref{thm:ch8_2}; 关于实数\index{numbers}的论证是类似的. 这里我们同样仅对整系数多项式讨论其高度.
+
+我们首先注意到, 如果 $\xi$ 是任意复数, 且 $P$ 是任意次数至多为 $n$、高度至多为 $h$ 的不可约多项式, 那么 $P$ 离 $\xi$ 最近的零点 $\alpha$ 满足
+\[|P(\xi)| \gg |P'(\alpha)| |\xi - \alpha| \tag{14}\label{eq:ch8_14}\]
+因为如果 $\alpha'$ 是 $P$ 的任何其他零点, 我们有
+\[|\alpha-\alpha'| \le |\xi-\alpha| + |\xi-\alpha'| < 2|\xi-\alpha'|.\]
+此外, 我们观察到 $|P'(\alpha)| \gg h^{-n}$; 因为如果 $p$ 表示 $P$ 的首项系数, 且如果 $\alpha_1, \dots, \alpha_m$ 是 $\alpha$ 的任何不同的共轭项, 那么在应用 \autoref{lem:ch8_2} (其中 $P_i$ 由 $x-\alpha_i$ 给出) 时, 可以看到代数整数\index{algebraic integer}\footnote{众所周知, 这是一个代数整数\index{algebraic integer}; 参见例如 Hecke\index{Hecke, E.} (文献目录).} $p^k \alpha_1 \dots \alpha_m$ 是 $\ll h$, 从而 $P'(\alpha)$ 的范数乘以 $p^{n-1}$ 是 $\gg 1$, 这便给出了所需的估计.
+
+如果现在 $\xi$ 是 $T$-数或 $U$-数\index{U-number}\index{U*-number}, 那么根据 \autoref{lem:ch8_2}, 对于某个 $n$, 存在无限多个如上所述的多项式 $P$ 满足 $|P(\xi)| < h^{-\omega n}$, 从而 $P$ 离 $\xi$ 最近的零点 $\alpha$ 满足
+\[|\xi-\alpha| \ll h^{-\omega n}\] .
+因此, 每个 $T$-数与 $U$-数\index{U-number}\index{U*-number}都属于对于某个 $n$ 的无穷多个集合 $S(n, h)$ 的元素, 其中 $S(n, h)$ 由所有以次数至多为 $n$ 且高度至多为 $h$ 的代数数\index{algebraic number}为中心、半径为 $h^{-2n}$ 的圆盘组成. 但是在每个 $S(n, h)$ 中有 $\ll h^{n+1}$ 个元素, 从而它们的总面积是 $\ll h^{-2}$ . 因为 $\sum h^{-2}$ 收敛, 由此可知, 所有 $T$-数与 $U$-数\index{U-number}\index{U*-number}\index{numbers}的集合具有测度零, 这正是所要求的.
+
+\section{$U$-数}\label{sec:ch8_6}
+
+我们在这一节确立每个次数的 $U$-数\index{U-number}\index{U*-number}\index{numbers}的存在性. 事实上, 我们将证明, 对于任何正整数 $n$, $\xi^{1/n}$ 是次数为 $n$ 的 $U$-数\index{U-number}\index{U*-number}, 其中 $\xi = \sum_{m=1}^{\infty} 10^{-m!}$ . 更一般地, 我们将证明, 如果存在一个由互不相同的次数为 $n$ 的代数数\index{algebraic number}组成的序列 $\alpha_1, \alpha_2, \dots$, 满足
+\[|\xi - \alpha_j| < h_j^{-\omega_j} \tag{15}\label{eq:ch8_15}\]
+(where $h_j$ denotes the height of $\alpha_j$ and $\omega_j \to \infty$ as $j \to \infty$), 并且对于某个 $\tau > 1$, 对所有足够大的 $j$ 都有
+\[h_j < h_{j+1} < h_j^{\tau} \tag{16}\label{eq:ch8_16}\]
+那么 $\xi$ 是次数为 $n$ 的 $U$-数\index{U-number}\index{U*-number} . 显然, $\xi = \sum 10^{-m!}$ 在 $\alpha_j = p_j/q_j$ 时满足 \eqref{eq:ch8_15} 和 \eqref{eq:ch8_16}, 其中
+\[p_j = 10^{j!} \sum_{m=1}^{j} 10^{-m!}, \quad q_j = 10^{j!}\]
+and with $\omega_j = j$, $\tau = 2$; also $\alpha_j$ has exact degree n since $q_j$ is not a perfect power.
+
+要证明此结论, 只需表明如果 \eqref{eq:ch8_15} 和 \eqref{eq:ch8_16} 成立, 那么仅有有限多个次数至多为 $n-1$ 的代数数\index{algebraic number} $\beta$ 满足
+\[|\xi - \beta| < b^{-\omega}, \tag{17}\label{eq:ch8_17}\]
+其中 $b$ 表示 $\beta$ 的高度. 因为那样的话, $n$ 是使得存在如上所述满足 \eqref{eq:ch8_15} 的序列 $\alpha_1, \alpha_2, \dots$ 与 $\omega_1, \omega_2, \dots$ 的最小正整数, 从而 $\xi$ 是次数为 $n$ 的 $U^*$-数, 因此也是相同次数的 $U$-数\index{U-number}\index{U*-number} . 为了验证 $U$-数与 $U^*$-数\index{numbers}之间的这种联系, 注意到如果 $P_j(x)$ 是 $\alpha_j$ 的极小定义多项式\index{minimal polynomial of algebraic number}, 那么对于所有足够大的 $j$, \eqref{eq:ch8_15} 给出
+\[|P_j(\xi)| < h_j^{-\omega_j+1},\]
+其中隐含的常数仅依赖于 $\xi$ 和 $n$; 反之, 如果存在一个次数至多为 $n-1$ 且高度至多为 $h_j$ 的多项式序列 $P_j(x)$ ($j=1,2,\dots$) 使得 $|P_j(\xi)| < h_j^{-\omega_j}$, 那么 $P_j$ 离 $\xi$ 最近的零点 $\alpha_j$ 将满足以 $\omega_j/n$ 代替 $\omega_j$ 的 \eqref{eq:ch8_15} .
+
+现在假设 $\beta$ 是一个次数至多为 $n-1$ 且满足 \eqref{eq:ch8_17} 的代数数\index{algebraic number}, 并令 $j$ 为在 $b$ 足够大时满足以下条件的整数:
+\[h_j \le b^{4n} < h_{j+1}; \tag{18}\label{eq:ch8_18}\]
+在下文中, 我们将简记 $\alpha, h, \omega$ 分别代表 $\alpha_j, h_j, \omega_j$ . 由 \eqref{eq:ch8_15} 和 \eqref{eq:ch8_17} 我们有
+\[|\alpha - \beta| \le |\xi - \alpha| + |\xi - \beta| \le h^{-\omega} + b^{-\omega},\]
+并且在 $\omega > 4n^2$ 的条件下, 结合 \eqref{eq:ch8_16} 与 \eqref{eq:ch8_18}, 右侧的项至多为 $(bh)^{-\omega/(4n^2)}$ . 另一方面, $\alpha-\beta$ 是一个非零代数数\index{algebraic number}, 其次数至多为 $n^2$, 且其每个共轭项的绝对值都满足 $\ll bh$, 其中隐含的常数仅依赖于 $n$; 此外, 极小定义多项式\index{minimal polynomial of algebraic number}的首项系数也有同样的估计. 因此
+\[|\alpha-\beta| \gg (bh)^{-n^2},\]
+由此, 如果 $b$ 足够大, 我们就得到了一个矛盾; 该矛盾便确立了所求结果.
+
+最后我们指出, 上述论证中隐含的不等式 $|\alpha-\beta| \gg (ab)^{-n^2}$ (其中 $\alpha, \beta$ 表示互不相同的代数数\index{algebraic number}, 其次数至多为 $n$, 高度分别为 $a, b$, 且隐含的常数仅依赖于 $n$) 可以被大大改进. 事实上, 通过考虑 $\alpha-\beta$ 的范数并利用 \autoref{sec:ch8_5} 中使用的关于代数数\index{algebraic number}共轭项乘积的结果, 很容易得到 $|\alpha-\beta| > a^{-l}b^{-m}$, 其中 $l, m$ 分别表示由 $\beta$ 在 $\mathbb{Q}(\alpha)$ 上以及 $\alpha$ 在 $\mathbb{Q}(\beta)$ 上生成的域的次数. 一个特例由 A. Brauer\index{Brauer, R.}\index{Brauer, A.}\footnote{J.M. 160 (1929), 70--99.} 于 1929 年发现, 但令人好奇的是, 完整的结果直到相对较近的时候才被记载.\footnote{有关该背景下的参考文献和进一步工作, 请参见 \textit{Michigan Math. J.} \textbf{8} (1961), 149--69 (R. Güting).}
+
+\section{$T$-数}\label{sec:ch8_7}
+
+正如我们现在所展示的, 这些数是存在的. 首先, 设 $\alpha_1, \alpha_2, \dots$ 为任意非零代数数\index{algebraic number}, 并设 $\nu_1, \nu_2, \dots$ 为任何大于 1 的实数\index{numbers} . 我们将证明, 存在一个由非零数\index{numbers}组成的序列 $\gamma_1, \gamma_2, \dots$ 满足 $\gamma_j/\alpha_j$ 为有理数, 使得如果 $h_j$ 表示 $\gamma_j$ 的高度, 那么 $H_{j+1} > 2H_j$ (其中 $H_j = h_j^{\nu_j}$), 并且此外, $\gamma_{j+1}$ 落在由所有满足以下条件的实数 $x$ 组成的区间 $I_j$ 内:
+\[|H_j|^{-3} < x - \gamma_j < |H_j|^{-2};\]
+此外, 我们将证明, 可以选择该序列使得对于某些介于 0 和 1 之间的数\index{numbers} $\lambda_1, \lambda_2, \dots$, 我们有
+\[|\gamma_j-\beta| > B^{-\lambda_j}\]
+对于所有次数 $n \le j$ 且不同于 $\gamma_1, \dots, \gamma_j$ 的代数数\index{algebraic number} $\beta$ 成立, 其中 $B = \lambda_j^{-1}b^{j^2}$, 且 $b$ 表示 $\beta$ 的高度. 显然, 此时 $\gamma_1, \gamma_2, \dots$ 趋于一个极限 $\xi$, 它对于所有不同于 $\gamma_1, \dots, \gamma_j$ 的代数数\index{algebraic number} $\beta$ 满足 $|\xi-\beta| > B^{-\lambda_j}$, 并且对于所有的 $j$ 还满足
+\[|\xi-\gamma_j| < |H_j|^{-2}\] . 我们现在取 $\nu_j = (3n_j)^4$, 其中 $n_j$ 表示 $\alpha_j$ 的次数, 并且我们选择 $\alpha_1, \alpha_2, \dots$ 使得方程 $n_j = n$ 对于每个正整数 $n$ 都有无穷多个解. 那么 $\xi$ 是一个 $T^*$-数, 从而通过与 \autoref{sec:ch8_6} 中记载的类似的观察, 它也是一个 $T$-数\index{T-number} .
+
+事实上, 我们将构造 $\gamma_1, \gamma_2, \dots$ 使得另外四个条件得以满足. 令 $J_j$ 为 $I_j$ 中满足以下条件的所有 $x$ 的集合: 对于所有次数 $n \le j$、不同于 $\gamma_1, \dots, \gamma_j$ 且满足 $B > H_j$ 的代数数\index{algebraic number} $\beta$, 都有 $|x-\beta| > 2B^{-\lambda_j}$ . 然后我们将确保 (i) $\gamma_j$ 落在 $J_{j-1}$ 中, (ii) $I_j$ 和 $J_j$ 的测度满足 $|J_j| > \frac{1}{2}|I_j|$, (iii) 对于所有次数为 $j$ 的 $\beta \neq \gamma_j$, 我们有 $|\gamma_j-\beta| > 2B^{-\lambda_{j-1}}$, (iv) 如果最简分数形式 of $\gamma_j/\alpha_j = p_j/q_j$ 满足 $q_j > 0$, 那么对于所有满足次数 $n < j$ 且 $b^{3n} \le q_j$ 的 $\beta$, 都有 $|\gamma_j-\beta| > q_j^{-3n}$ .
+
+为了定义 $\gamma_1$, 我们首先注意到, 对于每个大素数 $q_1$, 在区间 (1,2) 中存在 $\gg q_1$ 个形如 $(p_1/q_1)\alpha_1$ 的数\index{numbers} $y$, 其中隐含的常数仅依赖于 $\alpha_1$, 并且这些数之间的相互距离为 $\gg q_1^{-1}$ . 此外, 存在 $\ll q_1^2$ 个满足 $b^3 \le q_1$ 的有理数 $\beta$, 从而存在 $\ll q_1^2$ 个数\index{numbers} $y$ 满足对于至少一个这样的 $\beta$ 有 $|y-\beta| < q_1^{-3}$ . 因此我们可以选择 $\gamma_1$ 使得 (iv) 成立, 进而根据 \autoref{thm:ch7_2}, 我们能选择 $\lambda_1$ 使得关于 $|\gamma_1-\beta|$ 的条件得以满足. 我们稍后将证明, 在 $j=1$ 的情况下, 如果 $q_1 > 1$, 则 (ii) 同样成立.
+
+现在假设 $\gamma_1, \dots, \gamma_{j-1}$ 已经定义并满足上述条件; 我们着手构造 $\gamma_j$ . 由 $\ll$ 或 $\gg$ 所隐含的常数将仅依赖于迄今为止已指定的数\index{numbers}, 可能包括 $\lambda_1, \dots, \lambda_{j-1}$ . 首先, 设 $J'_j$ 的定义与 $J_{j-1}$ 类似, 但附加了所讨论的 $\beta$ 的高度满足 $b^{3n} < q_j$ 的限制. 显然, 使得后一个不等式成立的 $\beta$ 的数量为 $\ll q_j$, 因此 $J_{j-1}'$ 由 $\ll q_j$ 个区间组成. 此外, $J_{j-2}$ 包含 $J_{j-1}$, 从而根据 (ii), 我们有 $|J_{j-1}'| > \frac{1}{2}|I_{j-1}| \gg 1$ . 由此可知, 对于任何大素数 $q_j$, 在 $J_{j-1}'$ 中存在 $\gg q_j$ 个形如 $(p_j/q_j)\alpha_j$ 的数\index{numbers} $y$, 其中 $p_j$ 是一个满足 $(p_j, q_j) = 1$ 的整数且满足 $\ll q_j$ . 此外, 任何这样的 $y$ 实际上都在 $J_{j-1}$ 中, 因为如果 $\beta$ 的高度满足 $b^{3n} > q_j$, 那么 $B > q_j^{3n/j^2}$, 从而注意到 $(q_j/p_j)\beta$ 的高度为 $\ll q_j b$, 我们根据 \autoref{thm:ch7_2} 得到
+\[|y-\beta| \gg q_j^{-1}(q_j b)^{-j^2} \ge 2B^{-\lambda_{j-1}}.\]
+
+现在, 如上所述, 存在 $\ll q_j^2$ 个满足 (iv) 假设的数\index{numbers} $\beta$, 因此我们可以在 $J_{j-1}'$ 中选择 $y = \gamma_j$ 使得该条件成立. 那么显然, 对于所有不同于 $\gamma_1, \dots, \gamma_{j-1}$、次数为 $n \le j$ 且满足 $B \ge H_{j-1}$ 的 $\beta$, 我们有 $|\gamma_j-\beta| > B^{-\lambda_j}$ ; 并且事实上, 对于 $B < H_{j-1}$ 这也成立, 因为在此情况下, 设 $k$ 为使得 $B < H_k$ 的最小下标 $k \ge n$, 并且根据 $k > n$ 还是 $k = n$ 相应地对 $j=k$ 诉诸于 (i) 或 (iii), 我们便得到
+\[| \gamma_j-\beta | \ge |\gamma_k-\beta| - |\gamma_j-\gamma_k| > B^{-\lambda_{j-1}} - H_k^{-2} > B^{-\lambda_j}.\]
+我们现在利用 \autoref{thm:ch7_2} 并选择 $\lambda_j$ 使得对于所有次数为 $n = j$ 的代数数\index{algebraic number} $\beta \neq \gamma_j$ 都有 $|\gamma_j-\beta| > 2B^{-\lambda_j}$ .
+
+现在只需证明, 如同 $j=1$ 的情况一样, 如果 $q_j$ 足够大, 那么 (ii) 将会被满足. 现在, 对于 $I_j$ 中的所有 $x$ 以及所有满足次数 $n \le j$ 且 $H_j < B < q_j^{3n/j^2}$ 的 $\beta \neq \gamma_j$, 我们都有 $|x-\beta| > 2B^{-\lambda_j}$ . 因为如果 $b^{3n} \le q_j$, 那么由于 $H_j > q_j^3$ 且 $\nu_j > 1$, 由 (iv) 推得
+\[|x-\beta| \ge |\gamma_j-\beta| - |x-\gamma_j| > q_j^{-3n} - H_j^{-2} > 2B^{-\lambda_j},\]
+并且如果 $b^{3n} > q_j$, 那么再次诉诸于 \autoref{thm:ch7_2}, 我们得到
+\[|x-\beta| \ge |\gamma_j-\beta| - |x-\gamma_j| \gg q_j^{-j^2}b^{-j^2} - H_j^{-2} > 2B^{-\lambda_j}.\]
+
+因此, $J_j$ 在 $I_j$ 中的余集中的任何 $x$ 都对于某个满足次数 $n \le j$ 且 $B \ge H_j^{\lambda_j}$ 的 $\beta$ 满足 $|x-\beta| \le 2B^{-\lambda_j}$ . 但是次数为 $n$、高度为 $b$ 的 $\beta$ 的数量为 $\ll b^n$, 从而该余集的测度为 $\ll \sum B^{-\lambda_j}b^n$, 其中求和是对所有满足 $n \le j$ 且 $b \ge H_j$ 的 $n, b$ 进行的. 这显然是 $\ll H_j^{-2} \ll |I_j|^2 \ll \frac{1}{2}|I_j|$, 所求结果随之成立.
+
+可以看出, 上述论证允许人们构造一个 $\omega_n$ 取大于等于 $(3n)^4$ 的任意值的 $T$-数\index{T-number} . 这很容易被降低到 $n^2$ 阶的界, 但目前来看, 显然还不能轻易降低到填补整个超越数谱所需的 $n$ 阶 of 界.

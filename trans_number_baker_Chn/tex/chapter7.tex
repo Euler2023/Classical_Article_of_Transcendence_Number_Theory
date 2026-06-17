@@ -1,0 +1,300 @@
+%# -*- coding: utf-8-unix -*-
+
+\chapter{代数数的有理逼近}\label{ch:7}
+
+\section{引言}\label{sec:ch7_1}
+
+1909 年，挪威数学家 Axel Thue\index{Thue, A.} 对 Liouville\index{Liouville, J.} 定理\index{Liouville's theorem} 做出了重大改进.\footnote{J.M. 135 (1909), 284--305.} 他证明了对于任何次数为 $n > 1$ 的代数数\index{algebraic number} $\alpha$，以及任何 $\kappa > \frac{1}{2}n + 1$，存在 $c = c(\alpha, \kappa) > 0$，使得对于所有有理数 $p/q$ ($q>0$)，都有 $|\alpha - p/q| > c/q^{\kappa}$. 他的研究基于构造一个二元辅助多项式，该多项式在某些点处具有高阶零点. 他的工作可以被视为我们许多现代超越性技术的源头. 1921 年，Siegel\index{Siegel, C. L.}\footnote{M.Z. 10 (1921), 173--213.} 将对 $\kappa$ 的条件放宽到：对于任何正整数 $s$，$\kappa > s + n/(s+1)$，因此特别地有 $\kappa > 2\sqrt{n}$. 1947 年，Dyson\index{Dyson, F.}\footnote{Acta Math. 79 (1947), 225--40.} 和 Gelfond\index{Gelfond, A. O.}\footnote{参见文献目录.} 独立地进一步将条件放宽到 $\kappa > \sqrt{2n}$. 后两者的阐述仍然涉及二元多项式，进一步的进展似乎需要将相关论证推广到多元多项式；事实上，Schneider\index{Schneider, Th.}\footnote{J. M. 175 (1936), 182--92.} 在 1936 年已经在这方面取得了特殊结果. 1955 年，Roth\index{Roth, K. F.}\footnote{Mathematika, 2 (1955), 1--20.} 发现了这种所需的推广；他证明了上述命题对于任何 $\kappa > 2$ 均成立. 鉴于\autoref{ch:1}的引言部分，这一条件在本质上是最佳可能的.
+
+然而，Roth\index{Roth, K. F.} 的工作引发了许多进一步的问题. Siegel\index{Siegel, C. L.} 已经开始研究用固定代数数域中的代数数\index{algebraic number}以及用有界次数的代数数\index{algebraic number}来逼近给定代数数\index{algebraic number}的问题. 虽然 Roth\index{Roth, K. F.} 的论证可以很容易地推广到第一个课题并给出最佳可能的结果，\footnote{参见 LeVeque\index{LeVeque, W. J.}（文献目录）.} 但它们似乎无法直接推广到第二个课题. 至于同时用有理数逼近多个代数数\index{algebraic number}这一更广泛的问题，它们显得更加无能为力. 整个学科最终在 1970 年由 Schmidt\index{Schmidt, W. M.}\footnote{参见文献目录.} 予以解决. 他基于 Roth\index{Roth, K. F.} 的工作，并引入了许多新思想，特别是由数几何\index{Geometry of Numbers}引入的方法，证明了：
+
+\begin{mythm}{}{ch7_1}
+对于任何代数数\index{algebraic number} $\alpha_1, ..., \alpha_n$，其中 $1, \alpha_1, ..., \alpha_n$ 在有理数域上线性无关，以及对于任何 $\epsilon > 0$，只有有限多个正整数 $q$ 满足
+\[q^{1+\epsilon}\|q\alpha_1\|\dots\|q\alpha_n\|<1.\]
+\end{mythm}
+
+这里 $\|x\|$ 表示 $x$ 距离最近整数的正距离. 该定理通过经典的传递性原理\footnote{参见 Cassels\index{Cassels, J. W. S.} 的丢番图逼近（文献目录）.}意味着，只有有限多个非零整数 $q_1, ..., q_n$ 满足
+\[|q_1 \dots q_n|^{1+\epsilon} ||q_1 \alpha_1 + \dots + q_n \alpha_n|| < 1.\]
+
+此外，作为直接推论，我们可以看到只有有限多个整数 $p_1, \ldots, p_n, q \ (q > 0)$ 满足
+\[|\alpha_j - p_j/q| < q^{-1-(1/n)-\epsilon} \quad (1 \leqslant j \leqslant n),\]
+以及只有有限多个整数 $p, q_1, ..., q_n$ 满足
+\[|q_1\alpha_1+\ldots+q_n\alpha_n-p|< q^{-n-\epsilon},\]
+其中 $q = \max |q_j|$. 此外我们有：
+
+\begin{mythm}{}{ch7_2}
+对于任何次数超过 $n$ 的代数数\index{algebraic number} $\alpha$ 以及任何 $\epsilon > 0$，只有有限多个次数至多为 $n$ 的代数数\index{algebraic number} $\beta$ 满足 $|\alpha - \beta| < B^{-n-1-\epsilon}$，其中 $B$ 表示 $\beta$ 的高度.
+\end{mythm}
+
+该定理可由上述关于 $\alpha_j = \alpha^j$ 的不等式得出，这里需要注意到，如果 $P(x)$ 是 $\beta$ 的极小多项式\index{minimal polynomial of algebraic number}，那么对于仅依赖于 $\alpha$ 的某个 $C$，有
+\[|P(\alpha)| < BC|\alpha - \beta|.\]
+正如 Wirsing\index{Wirsing, E.} 所展示的那样，这里 $B$ 的指数在本质上是最佳可能的. 事实上，Wirsing\index{Wirsing, E.} 在 Schmidt\index{Schmidt, W. M.} 的工作之前于 1965 年得到了 \autoref{thm:ch7_2}，但其指数是较不精确的 $-2n - \epsilon$.\footnote{J.M. 206 (1961), 67--77.}
+
+本章方法的主要应用之一涉及多个变量的范数型丢番图方程\index{Diophantine equations}，这推广了在\autoref{ch:4}中讨论的 Thue\index{Thue, A.} 方程；事实上，这项工作已经对所有只有有限多个解的此类方程做出了完整描述.\footnote{Proc. Symposia Pure Math. (Amer. Math. Soc.), 20 (1971), 213--47.}
+
+\begin{mythm}{}{ch7_3}
+设 $K$ 为一个代数数\index{algebraic number}域，且设 $M$ 为 $K$ 中的一个模. 方程 $N\mu = m$ 在 $M$ 中具有无穷多个解 $\mu$ 的充分必要条件是：$M$ 是 $K$ 的某个非有理域且非虚二次域的子域中的全模.
+\end{mythm}
+
+必要性可以立即可由该子域（如果存在的话）至少包含一个基本单位这一事实得出，而充分性则是关于线性型乘积的 \autoref{thm:ch7_1} 推广形式的一个推论；\footnote{M.A. 191 (1971), 1--20.} 事实上，在 $M$ 的维数与 $K$ 的次数相比很小时，它是一个直接推论. 例如，我们可以看到方程
+\[N(x_1 + x_2\sqrt{2} + x_3\sqrt{3}) = 1\]
+在整数 $x_1, x_2, x_3$ 中具有无穷多个解，这些解由下式给出：
+\[x_1 + x_2\sqrt{2} = \pm (1 + \sqrt{2})^n, \quad \text{以及} \quad x_1 + x_3\sqrt{3} = \pm (2 + \sqrt{3})^n,\]
+其中 $n = 0, 1, 2, ...$；而方程
+\[N(x_1+q^{1/p}x_2+\ldots+q^{(p-2)/p}x_{p-1})=m,\]
+（其中 $p, q$ 为素数，$m$ 为任意整数）在整数 $x_1, ..., x_{p-1}$ 中只有有限多个解；因为显然由 $q^{1/p}$ 在有理数域上生成的域只包含平凡子域. 然而应该指出的是，与\autoref{ch:4}的工作不同，这里的论证是非有效的，无法用于确定所有解的集合. 事实上，除了 Skolem\index{Skolem, Th.}\footnote{参见文献目录.} 的一些特殊结果外，迄今为止关于三个或更多变量的范数型方程建立的唯一有效定理，都源自于在\autoref{ch:4}第 5 节中提到的关于超几何函数\index{hypergeometric function}的研究.
+
+Roth\index{Roth, K. F.} 定理\index{Roth's theorem}在 $p$-进数域中的推广由 Ridout\index{Ridout, D.}\footnote{Mathematika, 4 (1957), 125--31; 5 (1958), 40--8; 另见 Mahler\index{Mahler, K.}（文献目录）.} 于 1957 年得到；特别地，他证明了对于任何代数数\index{algebraic number} $\alpha$ 以及任何 $\epsilon > 0$，只有有限多个仅由固定素数集合的幂乘积组成的整数 $p, q$ 满足 $|\alpha - p/q| < q^{-\epsilon}$. 然而，在此种情况下，\autoref{thm:ch3_1}\footnote{P.C.P.S. 63 (1967), 693--702.} 给出了更多的结果；事实上，取 $\alpha_1 = \alpha$ 且将其余的 $\alpha$ 设为给定的素数，我们可以立即可见 $q^{-\epsilon}$ 可以被 $(\log q)^{-c}$ 代替，其中 $c$ 仅依赖于 $\alpha$ 和这些素数，而且这一结果是完全有效的. $p$-进逼近脉络下的进一步定理可由在\autoref{ch:3}中记录的关于 $|\Lambda|$ 的其他不等式得出.
+
+\section{Wronskian 行列式}\label{sec:ch7_2}
+
+单变量多项式 $\phi_1(x), \ldots, \phi_k(x)$ 的 Wronskian 定义为 $k$ 阶行列式，其第 $i$ 行、第 $(j+1)$ 列的元素为 $(j!)^{-1}\phi_i^{(j)}(x)$，其中 $1 \leq i \leq k, \ 0 \leq j < k$，且 $\phi^{(j)}$ 表示 $\phi$ 的第 $j$ 阶导数. 此类 Wronskian 行列式\index{Wronskians} 曾出现在 Thue\index{Thue, A.} 的原始研究工作中，且它们已足够用于 Siegel\index{Siegel, C. L.}、Dyson\index{Dyson, F.} 和 Gelfond\index{Gelfond, A. O.} 的论述中；然而，Roth\index{Roth, K. F.} 和 Schmidt\index{Schmidt, W. M.} 的论证则涉及了广义 Wronskian 的概念. 假设 $\phi_1, \ldots, \phi_k$ 是关于 $n$ 个变量 $x_1, \ldots, x_n$ 的多项式，且设 $\Delta^{(j)}$ 表示形如
+\[(j_1!\ldots j_n!)^{-1}(\partial/\partial x_1)^{j_1}\ldots(\partial/\partial x_n)^{j_n}\]
+的微分算子，其中 $j_1 + \ldots + j_n = j$. 那么，任何以某个 $\Delta^{(j)}\phi_i$ 作为第 $i$ 行、第 $(j+1)$ 列元素的 $k$ 阶行列式都被称为 $\phi_1, \ldots, \phi_k$ 的广义 Wronskian. 显然，$\phi_1, \ldots, \phi_k$ 的广义 Wronskian 行列式\index{Wronskians} 只有有限多个，并且当 $n=1$ 时，该集合退化为原始的 Wronskian 行列式. 我们稍后需要用到这样一个结论：如果 $\phi_1, \ldots, \phi_k$ 在它们的系数域上线性无关，那么至少有一个广义 Wronskian 不恒等于 0；其证明给出在例如 Cassels\index{Cassels, J. W. S.} 和 Mahler\index{Mahler, K.} 的著作中.
+
+\section{指数}\label{sec:ch7_3}
+
+\autoref{thm:ch7_1} 的证明涉及关于 $kn$ 个变量 $x_{lm}$ ($1 \le l \le k$, $1 \le m \le n$) 的多项式 $P$，这些多项式关于每个 $m$ 的变量 $x_{1m}, \ldots, x_{km}$ 都是齐次的. 假设 $P$ 具有实系数，且设 $L_m$ ($1 \le m \le n$) 为关于 $x_{1m}, \ldots, x_{km}$ 的实线性型. 那么 $P$ 相对于 $L_1, \ldots, L_n$ 以及正整数 $r_1, \dots, r_n$ 的指数定义为 $\theta$ 的最大值，使得 $P$ 可以表示为多项式 $L_1^{j_1} \ldots L_n^{j_n}$ 的线性组合，其中
+\[(j_1/r_1) + \ldots + (j_n/r_n) \geq \theta,\]
+且其系数为关于 $x_{lm}$ 的实多项式. 很容易验证，对于任何如上的多项 $P, Q$，为简便起见记为 ind 的关于 $L_m$ 和 $r_m$ 的指数满足 ind $(P+Q) \ge \min (\operatorname{ind} P, \operatorname{ind} Q)$，且有
+\[\operatorname{ind} PQ = \operatorname{ind} P + \operatorname{ind} Q.\]
+
+我们还需要一个相关概念，即实多项式 $P(x_1, ..., x_n)$ 相对于有理数 $p_m/q_m$ ($q_m > 0$) 以及整数 $r_m > 0$ ($1 \le m \le n$) 的指数；这被定义为关于 $2n$ 个变量 $x_{lm}$ ($l = 1, 2$) 的多项式 $x_{01}^{d_1} \dots x_{0n}^{d_n} P(x_{11}/x_{21}, \dots, x_{1n}/x_{2n})$ 相对于线性型
+\[L_m = q_m x_{1m} - p_m x_{2m}\]
+以及 $r_m$ 的指数，其中 $d_m$ 表示 $P$ 关于 $x_m$ 的次数. 后一种意义下的指数最早出现在 Roth\index{Roth, K. F.} 的工作中，而广义概念则是由 Schmidt\index{Schmidt, W. M.} 引入的.
+
+与前几章的记号类似，我们将多项式 $P$ 的高度 $\|P\|$ 定义为其系数绝对值的最大值；我们只对不恒为 0 的整系数多项式讨论其高度. 同样的定义显然也适用于线性型的特殊情况.
+
+现在假设 $P$ 是如本节开头所述的关于 $kn$ 个变量的多项式. 设 $L_1, \dots, L_n$ 为如上的具有互素整数系数的线性型，且设 $q_m = \|L_m\|$. 进一步，设 $r_1, \dots, r_n$ 为正整数，满足 $\delta r_m > r_{m+1}$ ($1 \le m < n$)，其中 $\delta = (\epsilon/32)^{2^n}$ 且 $0 < \epsilon < 1$. 我们有：
+
+\begin{mylemma}{}{ch7_1}
+如果 $q_m^{r_m} > q_1^{r_{m+1}} \ (1 \le m < n)$ 且 $q_1^{\delta \eta} > 8^{nk^2}$，其中 $0 < \eta \le k$，并且如果 $P$ 的高度至多为 $q_1^{\delta \eta r_1/k^2}$，且关于 $x_{1m}, \ldots, x_{km}$ 的次数至多为 $r_m$，那么 $P$ 相对于 $L_m$ 和 $r_m$ 的指数至多为 $\epsilon$.
+\end{mylemma}
+
+这是 Schmidt\index{Schmidt, W. M.} 对 Roth\index{Roth, K. F.} 工作中最基本部分的推广，有时也被称为 Roth 引理\index{Roth's lemma}. 该结果实际上可以很容易地由 Roth\index{Roth, K. F.} 所考虑的情形得出，正如我们现在所示.
+
+在不失一般性的情况下，我们可以假设 $q_m = |a_{1m}|$，其中
+\[L_m = \sum_{l=1}^k a_{lm} x_{lm} \quad (1 \leqslant m \leqslant n).\]
+
+我们进一步假设 $(a_{1m}, a_{2m})$\footnote{$(a, b)$ 表示 $a, b$ 的最大公约数.} 至多为 $q_m^{(k-2)/(k-1)}$；这同样不失一般性，因为一个素数 $p$ 至多能整除 $q_m$ 与 $a_{lm}$ ($1 < l \le k$) 的最大公约数中的 $k-2$ 个，从而它们的乘积整除 $q_m^{k-2}$. 现设 $P'$ 是由 $P$ 逐个移除（在某种顺序下）除 $P$ 的
+\[x_{lm} \quad (3 \leqslant l \leqslant k, 1 \leqslant m \leqslant n)\]
+最高幂次，然后令这些变量为 0 得到的多项式；进一步，设 $P''$ 是在 $P'$ 中令每个 $x_{2m} = 1$ 得到的多项式. 那么显然，$P$ 相对于 $L_m$ 和 $r_m$ 的指数至多为 $P''$ 相对于 $-a_{2m}/a_{1m}$ 和 $r_m$ 的指数. 同样地，由假设，当将 $a_{2m}/a_{1m}$ 化为最简分数时，其分母（即 $q_m/(a_{1m}, a_{2m})$）至少为 $q_m^{1/k}$. 因此，我们看到只需证明 \autoref{lem:ch7_1} 的如下修改版本即可.
+
+对于任何如上的整数 $r_m$ ($1 \leq m \leq n$) 和任何最简有理数
+\[p_m/q_m \quad (q_m > 0)\]
+满足 $q_m^{r_m} > q_1^{r_{m+1}}$ 且 $q_1^{\delta \eta} > 8^n$，其中 $0 < \eta \leqslant 1$，任何高度至多为 $q_1^{\delta \eta r_1/k^2}$ 且关于 $x_m$ 的次数至多为 $r_m$ 的多项式 $P(x_1,\dots,x_n)$，其相对于 $p_m/q_m$ 和 $r_m$ 的指数至多为 $\epsilon$.
+
+该命题的证明（可能是微调后的形式，特别是在 $\eta=1$ 的情况下）已给出在文献目录中引用的几部著作中，因此我们的论述可以相对简短. 该结果在 $n=1$ 时显然成立，因为如果 $j_1$ 是 $x_1-p_1/q_1$ 整除 $P(x_1)$ 的幂次，那么由 Gauss\index{Gauss, C. F.} 引理\index{Gauss' lemma}，我们有
+\[P(x_1) = (q_1x_1 - p_1)^{j_1}Q(x_1),\]
+其中 $Q$ 是一个整系数多项式；因此 $P$ 的首项系数至少为 $q_1^{j_1}$，从而 $j_1/r_1 < \delta \eta < \epsilon$，由此即得所求. 我们现在假设命题在 $n$ 被替换为 $n-1$ 时成立，并着手确立关于 $n \ (\geq 2)$ 的断言.
+
+我们首先将 $P$ 写为如下形式
+\[\phi_0 \psi_0 + \dots + \phi_{s-1} \psi_{s-1}\]
+其中 $\phi$ 和 $\psi$ 分别是关于变量 $x_1, \dots, x_{n-1}$ 和 $x_n$ 的有理系数多项式，且我们选择一个使 $s \ (\leq r_n + 1)$ 最小的表示. 那么存在不恒等于 0 的 $\phi$ 和 $\psi$ 的 Wronskian 行列式\index{Wronskians} $U', V'$，显然 $W = U'V'$ 可以表示为一个 $s$ 阶行列式，其第 $(i+1)$ 行、第 $(j+1)$ 列的元素为 $\Delta^{(j)}(i!)^{-1} (\partial/\partial x_n)^i P(x_1, \dots, x_n)$，其中 $\Delta^{(j)}$ 是如第 2 节中所示的满足 $j_n = 0$ 的算子. 因此，$W$ 是关于 $x_j$ 次数至多为 $s r_j$ 的多项式，且其高度满足 $\|W\| \leq (8^{rn} \|P\|)^s \leq q_1^{2\delta\eta r_1 s}$，其中 $r=r_1=\max r_m$；这里我们利用了假设 $q_1^{\delta\eta}>8^n$，以及注意到 $\Delta^{(j)}$ 作用于 $P$ 的任何单项式时引入一个不超过 $2^{rn}$ 的因子、此类单项式至多有 $2^{rn}$ 个、以及展开 $W$ 的行列式所得到的项数满足 $s!\leqslant 2^{rs}$ 的观察. 现在，再次利用 Gauss\index{Gauss, C. F.} 引理\index{Gauss' lemma}，我们有 $W=UV$，其中 $U, V$ 分别是关于变量 $x_1,\dots,x_{n-1}$ 和 $x_n$ 的整系数多项式，它们由 $U', V'$ 乘以某些有理倍数得到；显然对 $\|W\|$ 的上界也适用于 $\|U\|$ 和 $\|V\|$. 因此，由我们的归纳假设，并在使用 $2\delta$ 代替 $\delta$ 后，可得 $U$ 相对于 $p_m/q_m$ 和 $r_m$ 的指数至多为 $2^{-5+1/2^{n-1}} \epsilon^2 s$. 此外，由命题在 $n=1$ 时的情形结合假设 $q_n^{r_n}\geqslant q_1^{n r_1}$，同样的界也适用于 $V$ 的指数. 因此我们得出结论：$W$ 的指数至多为 $\frac{1}{8} \epsilon^2 s$.
+
+另一方面，$W$ 的行列式中一般元素的指数至少为
+\[\phi_i - \sum_{m=1}^{n-1} j_m / r_m\]
+其中 $\phi_i = \theta - i/r_n$，$\theta$ 表示 $P$ 的指数，且
+\[j_1+\dots+j_{n-1}=j\leqslant s-1\leqslant r_n;\]
+进一步，由假设，我们有 $\delta r_m > r_{m+1}$，因此上述和至多为 $\delta$. 因此，$W$ 的指数至少为
+\[\sum_{i=0}^{s-1} \max (\phi_i - \delta, 0) \geqslant \sum_{i=0}^{s-1} \max (\phi_i, 0) - s\delta.\]
+但是，如果 $\theta r_n < s-1$，那么最后一个和为
+\[([\theta r_n]+1)\left(\theta-[\theta r_n]/(2r_n)\right)\geqslant \tfrac{1}{4}\theta^2 s,\]
+而如果 $\theta r_n \geqslant s-1$，那么它为
+\[\theta s - \tfrac{1}{2} s(s-1)/r_n \, \geqslant \, \tfrac{1}{2} \theta s.\]
+通过比较估计，我们得到
+\[\max(\tfrac{1}{2}\theta, \tfrac{1}{4}\theta^2) \leqslant \frac{1}{8}\epsilon^2 + \delta \leqslant \frac{1}{4}\epsilon^2\]
+从而 $\theta \leqslant \epsilon$，得证.
+
+\section{组合引理}\label{sec:ch7_4}
+
+我们现在证明一个与大数定律\index{law of large numbers}相关的组合性质引理.\footnote{参见前引 Wirsing\index{Wirsing, E.} 论文：Proc. Symposia Pure Math. (Amer. Math. Soc.), 20 (1971), 213--47.} 此类结果最早出现在 Schneider\index{Schneider, Th.} 的工作中，后来由 Roth\index{Roth, K. F.} 予以利用，他给出了归功于 Davenport\index{Davenport, H.} 的一个简化证明. 另一个由 Reuter\index{Reuter, G. E. H.} 提出并提供了稍强定理的证明，被给出在 Mahler\index{Mahler, K.} 的小册子中，而 Schmidt\index{Schmidt, W. M.} 随后得到了我们在此确立的推广形式.
+
+\begin{mylemma}{}{ch7_2}
+假设 $r_1, ..., r_n$ 和 $k$ 是正整数，且 $0 < \epsilon < 1$. 那么满足
+\[\sum_{l=1}^k j_{lm} = r_m \quad (1 \leqslant m \leqslant n), \qquad \sum_{m=1}^n j_{1m}/r_m < n/k - \epsilon n\]
+的非负整数组 $j_{lm}$ ($1 \leqslant l \leqslant k$, $1 \leqslant m \leqslant n$) 的数量至多为
+\[\binom{r_1+k-1}{r_1}\cdots\binom{r_n+k-1}{r_n}e^{-\frac{1}{4}\epsilon^2n}.\]
+\end{mylemma}
+
+\begin{proof}
+我们首先注意到，所求的数量 $N$ 由 $\sum \nu_1(j_{11})\dots\nu_n(j_{1n})$ 给出，其中求和是对满足给定不等式的所有非负整数 $j_{11}, ..., j_{1n}$ 进行的，而 $\nu_m(j)$ 表示方程
+\[\sum_{l=2}^{k} j_{lm} = r_m - j\]
+在非负整数 $j_{2m},...,j_{km}$ 中的解数，即
+\[\nu_m(j) = \binom{r_m-j+k-2}{k-2}.\]
+因此，我们可以看到多元和
+\[\sum_{j_1=0}^{r_1} \dots \sum_{j_m=0}^{r_m} \nu_1(j_1) \dots \nu_m(j_m) \exp \left\{ \frac{1}{2} \varepsilon \left( n/k - \sum_{m=1}^n j_m/r_m \right) \right\}\]
+至少为 $Ne^{\frac{1}{2}\epsilon^2n}$. 现在，该求和可以交替写为如下形式：
+\[\prod_{m=1}^{n} \left\{ \sum_{j_{m}=0}^{r_{m}} \nu_{m}(j_{m}) \exp\left(\frac{1}{2}\epsilon \rho_{m}\right) \right\},\]
+其中 $\rho_m = 1/k - j_m/r_m$，且显然 $|\rho_m| \le 1$. 但是如果 $|x| \le 1$，那么 $e^x < 1 + x + x^2$，因此我们有
+\[\exp\left(\frac{1}{2}\epsilon\rho_m\right) < \frac{1}{2}\epsilon\rho_m + \exp\left(\frac{1}{4}\epsilon^2\right).\]
+此外我们有
+\[\sum_{j=0}^{r_m} \nu_m(j_m) \rho_m = 0;\]
+因为 $\rho_m$ 显然可以表示为
+\[(r_m - j_m)/r_m - (1 - 1/k),\]
+并且通过对 $r$ 归纳很容易验证以下恒等式
+\[\sum_{j=0}^{r} \binom{r-j+k-2}{k-2} = \binom{r+k-1}{r},\]
+\[\sum_{j=0}^r j \binom{j+k-2}{k-2} = r \left(1-\frac{1}{k}\right) \binom{r+k-1}{r}.\]
+因此，再次借助于第一个二项式恒等式，我们获得
+\[ \prod_{m=1}^{n} \left\{ \binom{r_m + k - 1}{r_m} e^{\frac{1}{4}\epsilon^2} \right\} \geqslant N e^{\frac{1}{4}\epsilon^2 n}, \]
+这就给出了所断言的估计.
+\end{proof}
+
+\section{网格}\label{sec:ch7_5}
+
+设 $T$ 为 $k$ 维欧氏空间中由线性无关向量 $\mathbf{u}_1, ..., \mathbf{u}_{k-1}$ 撑起的子空间. 我们所称的 $T$ 上大小为 $s$ 的网格\index{grid}，指的是形如
+\[w_1\mathbf{u}_1+\ldots+w_{k-1}\mathbf{u}_{k-1}\]
+的向量的有限集合，其中 $w_1, ..., w_{k-1}$ 取遍满足 $1 \le w_l \le s$ 的所有有理整数.
+
+现在设 $T_m$ ($1 \le m \le n$) 为任何如上的子空间，且设 $\Gamma_m$ 为 $T_m$ 上大小为 $s_m$ 的网格\index{grid}. 进一步，设 $T$ 和 $\Gamma$ 分别表示笛卡尔积 $T_1 \times \ldots \times T_n$ 和 $\Gamma_1 \times \ldots \times \Gamma_n$. 我们将用 $P$ 表示一个关于 $x_{1m}, \ldots, x_{km}$ 次数为 $r_m$ 的多项式（如第 3 节开头所示），并用 $\Delta_m^{(j)}$ 表示作用于 $x_{1m}, \ldots, x_{km}$ 的微分算子. 以下由 Schmidt\index{Schmidt, W. M.} 提出的简单引理对于 \autoref{thm:ch7_1} 的证明至关重要.
+
+\begin{mylemma}{}{ch7_3}
+如果对于某些满足 $s_m(t_m+1) > r_m$ 的整数 $t_m$ ($1 \le m \le n$)，满足 $j_m \le t_m$ 的所有多项式 $\Delta_1^{(j_1)} \dots \Delta_n^{(j_n)} P$ 在 $\Gamma$ 上处处消亡，那么 $P$ 在 $T$ 上恒等于 0.
+\end{mylemma}
+
+\begin{proof}
+显而易见，该引理可由 $n=1$ 的情形通过归纳法直接得出，因此只需证明后者即可. 此外，通过应用线性变换，显然可以假设 $T_m$ 为超平面 $x_{km}=0$，其基由单位矩阵的前 $k-1$ 行组成. 因此，省略下标 $m$，我们看到只需证明：
+
+如果一个次数为 $r$ 的多项式 $P(x_1, ..., x_{k-1})$ 满足对所有 $j \le t$，$\Delta^{(j)}P$ 在所有满足 $1 \leq w_l \leq s$ 的整数点 $(w_1, ..., w_{k-1})$ 处消亡，其中 $s(t+1) > r$，那么 $P$ 恒等于 0.
+
+这里 $\Delta^{(j)}$ 表示关于 $x_1, \ldots, x_{k-1}$ 的 $j$ 阶微分算子. 该断言在 $k=2$ 时显然成立，因为一个单变量多项式不能有超过其次数个零点，我们现在假设命题在 $k$ 被替换为 $k-1$ 时成立. 如果现在 $P$ 不恒等于 0，那么存在一个最大整数 $q$，使得有理函数
+\[ Q = (x_1 - 1)^{-q} \dots (x_1 - s)^{-q} P \]
+实际上是一个多项式，并且由于根据假设 $s(t+1) > r$，我们有 $q \le t$. 此外，由 $q$ 的选择，多项式 $Q(w_1, x_2, ..., x_{k-1})$（对于 $1 \le w_1 \le s$）中至少有一个不恒等于 0；设其为 $R$. 那么 $\Delta^{(j)}R$ 在所有满足 $1 \le w_l \le s$ 的整数点 $(w_2, ..., w_{k-1})$ 处消亡，其中 $\Delta^{(j)}$ 是关于 $x_2, ..., x_{k-1}$ 的任意满足 $j \le t-q$ 的微分算子. 但是 $R$ 的次数至多为 $r-sq < (t-q+1)s$，这显然与归纳假设矛盾. 这一矛盾确立了该断言.
+\end{proof}
+
+\section{辅助多项式}\label{sec:ch7_6}
+
+对于每个满足 $1 \le m \le n$ 的 $m$，我们用 $L_{lm}$ ($1 \le l \le k$) 表示关于 $x_{1m}, \ldots, x_{km}$ 的具有实代数整数\index{algebraic integer}系数的线性型. 进一步，我们用 $d$ 表示由这些系数在有理数域上生成的域 $K$ 的次数，并用 $c_1, c_2, \ldots$ 表示仅依赖于这些系数的且大于 1 的数\index{numbers}.
+
+现设 $r_1, ..., r_n$ 为任何正整数，并设 $r = \max r_m$. 进一步假设 $0 < \epsilon < 1$ 且满足 $e^{\frac{1}{4}\epsilon^2n} > 2kd$. 采用第 3 节的记号，我们有：
+
+\begin{mylemma}{}{ch7_4}
+存在一个关于 $x_{1m}, \ldots, x_{km}$ 的次数至多为 $r_m$ 且高度至多为 $c_1^r$ 的多项式 $P$，使得对于每个 $1 \le l \le k$，$P$ 相对于 $L_{lm}$ 和 $r_m$ 的指数至少为 $n/k - \varepsilon n$.
+\end{mylemma}
+
+\begin{proof}
+在不失一般性的情况下，可以假设对所有 $l, m$，在 $L_{lm}$ 中 $x_{1m}$ 的系数（设为 $\alpha_{lm}$）不为 0. 那么，$P$ 必须被确定为：对于所有 $l$ 以及满足
+\[\sum_{m=1}^{n} j_m/r_m < n/k - \epsilon n\]
+的所有非负整数 $j_1, \ldots, j_n$，多项式
+\[(j_1! \dots j_n!)^{-1} (\partial/\partial x_{11})^{j_1} \dots (\partial/\partial x_{1n})^{j_n} P\]
+当用 $-L_{lm}$（其中 $x_{1m}$ 被令为 0）代入 $x_{1m}$ 并乘以每个 $x_{2m}, \ldots, x_{km}$ 的因子 $\alpha_{lm}$ 时，恒等于 0. 现在，这些多项式是关于 $x_{2m}, \ldots, x_{km}$ 的次数为 $r_m - j_m$ 的齐次多项式，因此由 \autoref{lem:ch7_2} 可知，它们总共至多有 $kNe^{-\frac{1}{4}e^2n}$ 个系数，其中 $N$ 表示引理叙述中出现的二项式因子的乘积. 每个系数都是关于 $P$ 的系数的线性形式，且正好有 $N$ 个这样的线性型. 此外，这些线性型的系数是 $K$ 中的大小至多为 $c_2^r$ 的代数整数\index{algebraic integer}（参见第 3 节中的估计）. 借助于 $K$ 的整基并利用假设 $e^{\frac{1}{4}e^2n} > 2kd$，我们看到必须满足至多 $\frac{1}{2}N$ 个整系数线性方程组，其每个系数的绝对值至多为 $c_3^r$（参见\autoref{ch:6}第 3 节）. 所需结果现在直接由\autoref{ch:6}的 \autoref{lem:ch6_1} 得出.
+\end{proof}
+
+\section{连续极小}\label{sec:ch7_7}
+
+我们由数几何\index{Geometry of Numbers}\index{numbers}中回忆到，如果 $R$ 是 $k$ 维欧氏空间中的任意凸体，那么由满足 $\lambda R$ 包含 $l$ 个线性无关整数点的所有 $\lambda > 0$ 的下确界所给出的数\index{numbers} $\lambda_l$ ($1 \le l \le k$) 被称为 $R$ 的连续极小\index{successive minima}. 它们具有如下性质：$\lambda_1 \dots \lambda_k V$（其中 $V$ 表示 $R$ 的体积）的上界和下界均由仅依赖于 $k$ 的正数\index{numbers}控制.
+
+我们现在结合上述引理，来获得关于某个平行六面体的倒数第二个极小值的命题，这将是 \autoref{thm:ch7_1} 证明中的主要工具. 我们将用 $M_1, \ldots, M_k$ 表示关于 $x_1, \ldots, x_k$ 的具有实代数整数\index{algebraic integer}系数的线性型，它们构成一个非奇异矩阵 $A$；并且我们将用 $M'_1, \ldots, M'_k$ 表示由 $A^{-1}$ 的列给出的伴随线性型. 进一步，我们用 $S$ 表示某些下标 $i$ 的非空集合，使得 $M'_i$ 对于任何不全为 0 的整数向量不代表零；当然，假定 $S$ 存在涉及了一些一般性的损失. 我们证明：
+
+\begin{mylemma}{}{ch7_5}
+对于任何 $\zeta > 0$，存在 $c > 0$，使得对于满足 $\mu_1 \ldots \mu_k = 1$ 且对于 $i$ 在 $S$ 中满足 $\mu_i \ge 1$ 的所有正数 $\mu_1, \ldots, \mu_k$，平行六面体 $|M_i| \le \mu_i$ ($1 \le l \le k$) 的倒数第二个极小值 $\lambda_{k-1}$ 超过 $\mu^{-l}$，其中 $\mu$ 表示 $\mu_1, \ldots, \mu_k$ 与 $c$ 的最大值.
+\end{mylemma}
+
+\begin{proof}
+可以看到，该引理立刻蕴含了 Roth\index{Roth, K. F.} 定理\index{Roth's theorem}，即 \autoref{thm:ch7_1} 在 $n = 1$ 时的情形；这可以通过取
+\[M_1 = \alpha_1 x_1 - x_2, \quad M_2 = x_2\]
+并将 $S$ 设为仅包含下标 2 来实现，因为 $\alpha_1$ 是无理数.
+
+我们首先展示只需证明 \autoref{lem:ch7_5} 的修改版本即可. 假设 $Q \geqslant \mu^k$，且设 $\omega_1, \ldots, \omega_k$ 由 $\mu_l = Q^{\omega_l}$ 定义. 那么，由于 $\mu_1 \ldots \mu_k = 1$，我们有 $\omega_1 + \ldots + \omega_k = 0$，且显然对于 $S$ 中的 $i$ 有 $\omega_i \geqslant 0$. 显然，对于所有 $l$ 都有 $\omega_l \leqslant 1$，并且由于再次有 $\mu_1 \ldots \mu_k = 1$，我们有 $\mu_l \geqslant Q^{-1}$，从而 $\omega_l \geqslant -1$. 现在对于任何正整数 $N$，存在分母为 $N$ 且满足 $|\omega_l - \omega_l'| < 1/N$ 和对所有 $l$ 满足 $|\omega_l'| \leqslant 1$ 且有 $\omega_1' + \ldots + \omega_k' = 0$ 的有理数 $\omega_1', \dots, \omega_k'$；事实上只需取 $N\omega_1' = [N\omega_1]$，且在定义了 $\omega_1', \dots, \omega_{l-1}'$ 后，根据 $\omega_1' + \ldots + \omega_{l-1}'$ 是否超过 $\omega_1 + \ldots + \omega_{l-1}$ 来将 $N\omega_l'$ 取为 $[N\omega_l]$ 或 $-[-N\omega_l]$ 即可. 显然，这些 $\omega_1', \dots, \omega_k'$ 属于一个独立于 $Q$ 的有限有理数集合，并且平行六面体 $|M_l| \leqslant Q^{\omega_l'}$ ($1 \leqslant l \leqslant k$) 的极小值 $\lambda_{k-1}'$ 超过 $Q^{-1/N}\lambda_{k-1}$. 因此，只需证明：
+
+对于任何满足 $\omega_1 + \dots + \omega_k = 0$、对所有 $l$ 满足 $|\omega_l| \le 1$、以及对所有 $i$ 在 $S$ 中满足 $\omega_i \ge 0$ 的实数 $\omega_1, \dots, \omega_k$，且对于任何 $\zeta > 0$，存在 $C > 0$，使得对于所有 $Q > C$，平行六面体
+\[|M_l| \leqslant Q^{\omega_l} \quad (1 \leqslant l \leqslant k)\]
+的极小值 $\lambda_{k-1}$ 超过 $Q^{-\zeta}$.
+
+我们不妨假定 $\zeta \leq 1$，并设 $d$ 为 $A$ 的元素在有理数域上生成的域的次数. 设 $\varepsilon$ 为任何小于 $\zeta/(8k)^2$ 的正数，设 $n$ 为满足 \autoref{lem:ch7_4} 之前条件的任意整数，并设 $\delta$ 如 \autoref{lem:ch7_1} 中所定义. 我们假设存在一个无界的 $Q$ 的值集合，使得 $\lambda_{k-1} \leq Q^{-\zeta}$，并最终导出矛盾. 我们在此集合中选择一个足够大的 $Q_1$，即 $Q_1 > c_1$，其中 $c_1$ 类似于下面的 $c_2, c_3$，仅依赖于 $A, k, n, d, \varepsilon, \delta, \zeta$ 以及这些 $\omega$. 我们然后在此集合中选择进一步的元素 $Q_2, \ldots, Q_n$，使得 $Q_m^{\frac{1}{2}\delta} > Q_{m-1}$ ($1 < m \leq n$)，从而显然有 $Q_1 < \dots < Q_n$. 最后，我们选择正整数 $r_1, \ldots, r_n$ 使得 $Q_1^{\text{tr}_1} > Q_n$ 并且有
+\[Q_1^{r_1}\leqslant Q_m^{r_m}\leqslant Q_1^{(1+\epsilon)r_1}\quad (1\leqslant m\leqslant n);\]
+那么显然 \autoref{lem:ch7_1} 之前的条件得到满足.
+
+我们现在观察到，当设 $L_{lm} = M_{lm}(x_m)$ 时，\autoref{lem:ch7_4} 的假设成立，其中 $x_m$ 表示向量 $(x_{1m},\dots,x_{km})$；设 $P$ 为在那里构造的多项式. 此外我们注意到，对于如上的任何 $Q$，存在线性无关的整数点 $\mathbf{u}_1, \dots, \mathbf{u}_k$，其中 $\mathbf{u}_l$ 在 $\lambda_l R$ 中，这里 $R$ 表示给定的平行六面体，而 $\lambda_1, \dots, \lambda_k$ 表示其连续极小\index{successive minima}. 此外，存在一个具有互素整数系数的线性型 $L$，它除了一个因子 $\pm 1$ 之外是唯一的，该线性型在 $\mathbf{u}_1, \dots, \mathbf{u}_{k-1}$ 处消亡；当 $Q = Q_m$ 时，我们取 $\mathbf{u}_{lm}$ 和 $L_m$ 分别为这些 $\mathbf{u}_l$ 和 $L$. 我们稍后将验证，如果 $Q$ 足够大，那么 $q = \|L\|$ 满足 $Q^c < q < Q^{c'}$，其中 $c, c'$ 为仅依赖于 $\zeta$ 和 $d$ 的正数\index{numbers}. 暂时假定这一点，可得只要 $c_1$ 以及 $q_1$ 和 $Q_1$ 足够大，\autoref{lem:ch7_1} 的所有假设均以 $v = c/c'$ 成立. 因此，我们得出结论：$P$ 相对于 $L_m$ 和 $r_m$ 的指数至多为 $\varepsilon$.
+
+我们着手证明，采用第 5 节的记号，所有满足
+\[\Delta = \Delta_1^{(j_1)} \dots \Delta_n^{(j_n)}, \quad \sum_{m=1}^n j_m/r_m < 2\epsilon n\]
+的多项式 $\Delta P$ 在 $\Gamma$ 上处处消亡，其中 $\Gamma_m$ 是在由 $\mathbf{u}_{lm}$ ($1 < l < k$) 撑起的子空间 $T_m$ 上的大小为 $[\epsilon^{-1}] + 1$ 的网格\index{grid}. 这通过 \autoref{lem:ch7_3}（在取 $t_m = [\epsilon r_m]$ 时）意味着，所有满足 $\sum j_m/r_m < \epsilon n$ 的多项式 $\Delta P$ 在关于线性方程组
+\[L_1 = \dots = L_n = 0\]
+的 $n(k-1)$ 维解空间上恒等于 0. 但这与上面关于 $P$ 的指数的结论矛盾，该矛盾确立了引理. 为了证明这一命题，设 $\Delta P$ 为所讨论的任何多项式，并设 $P'$ 是由 $\Delta P$ 经线性代换 $y_{lm} = X_{jm}$ 后得到的关于新变量 $y_{lm}$ 的多项式. 那么很容易验证，$P'$ 的高度至多为 $c_1^r$，其中 $r = \max r_m$. 此外，由于根据假设 $\lambda_{k-1} < Q^{-\zeta}$，我们对于 $\Gamma_m$ 上的任何 $x_m$ 有
+\[|y_{lm}| < k(\epsilon^{-1}+1) Q_m^{\omega_l-\zeta} < Q_m^{\omega_l-\frac{1}{2}\zeta}.\]
+因此，由 \autoref{lem:ch7_4}，对于 $\Gamma$ 上的所有点，我们有 $|\Delta P| < c_2^r e^s$，其中
+\[s = \sum_{l=1}^{k} \sum_{m=1}^{n} (\omega_{l} - \frac{1}{2}\zeta) j_{lm} \log Q_{m},\]
+且 $j_{lm}$ 是某些满足以下条件的非负整数：
+\[\sum_{l=1}^{k} j_{lm} \leqslant r_{m} \quad (1 \leqslant m \leqslant n), \quad n/k - \sum_{m=1}^{n} j_{lm}/r_{m} < 3\epsilon n \quad (1 \leqslant l \leqslant k).\]
+为简便起见，用 $h_l$ 表示最后一个不等式的左端，我们可以看到，由第一个不等式有 $h_1 + \ldots + h_k \ge 0$，因此这两个不等式共同蕴含了 $|h_l| < 3kne\epsilon$. 进一步，由于 $|\omega_l| \le 1$，我们在考虑 $r_1, \dots, r_n$ 的初始选择后，获得
+\[s\leqslant r_1\log Q_1\sum_{l=1}^k\sum_{m=1}^n\{(\omega_l-\tfrac12\zeta)j_{lm}/r_m+2\epsilon\}.\]
+但是现在，借助我们对 $h_l$ 的估计和关于
+\[\omega_1 + \ldots + \omega_k = 0\]
+的假设，这里的双重和与 $-\frac{1}{2}\zeta n$ 的偏差至多为 $8k^2n\epsilon$. 由于根据定义有 $\epsilon < \zeta/(8k)^2$，这就意味着只要 $Q_1$ 足够大，就有 $|\Delta P| < Q_1^{-\frac{1}{4}\zeta nr} < 1$. 另一方面，$\Delta P$ 在 $\Gamma$ 的所有点上都是一个有理整数，因此必须有 $\Delta P = 0$，得证.
+
+现在只需证明关于 $q = \|L\|$ 的断言. 设 $U$ 为以 $\mathbf{u}_1, ..., \mathbf{u}_k$ 为列向量的矩阵，并设 $\mathbf{v}_1, ..., \mathbf{v}_k$ 为 $U^{-1}$ 的行向量. 那么显然，对于某个有理数 $\rho$，$\rho \mathbf{v}_k$ 是 $L$ 的系数向量. 由于 $L(\mathbf{u}_k)$ 是一个整数且 $\mathbf{v}_k \mathbf{u}_k = 1$，$\rho$ 实际上是一个整数. 进一步，$\rho$ 整除 $\det U$，因为显然有 $U^{-1} = \operatorname{adj} U/\operatorname{det} U$. 此外，我们有 $\det U \leq 1$，其中隐含的常数仅依赖于 $A$，因为 $R$ 的体积 $\gg 1$，从而由开头引用的连续极小\index{successive minima}的性质有 $\det(AU) \leqslant 1$. 随之可得，$(\det U) \mathbf{v}_k$ 的每个元素都是一个绝对值至多为 $q$ 的有理整数. 因此，$\operatorname{adj} (AU)$ 中的第 $k$ 行、第 $l$ 列元素（即 $(\det(AU)) M'_{l}(\mathbf{v}_{k})$）是一个大小至多为 $q$ 的代数整数\index{algebraic integer}. 但根据假设，我们有 $\lambda_{k-1} < Q^{-\zeta}$ 和 $\omega_1 + \ldots + \omega_k = 0$，因此该元素也是 $\ll Q^{-\omega_l-(k-1)\zeta}$. 我们得出结论：对于 $S$ 中的 $l$，该元素既是 $\gg q^{-d}$\footnote{我们采用 Vinogradov\index{Vinogradov, A. I.} 记号；由 $a \ll b$ 或 $a \leqslant b$ 我们意指对于某个常数 $c$ 有 $|a| < cb$，对于 $\gg$ 亦然.} 又是 $\leqslant Q^{-(k-1)\zeta}$，且由于假设 $S$ 非空，这就给出了 $q$ 所需的下界. 上界可由恒等式 $U^{-1} = (AU)^{-1} A$ 得出，这里如上所述，需要注意到 $(AU)^{-1}$ 的第 $k$ 行元素都是 $\leqslant Q$.
+\end{proof}
+
+\section{极小的比较}\label{sec:ch7_8}
+
+我们首先证明 Davenport\index{Davenport, H.} 的一个一般性引理，然后展示在某种限制下，\autoref{lem:ch7_5} 的平行六面体的极小值 $\lambda_{k-1}$ 和 $\lambda_k$ 仅相差一个微小因子. 由 $\leqslant$ 隐含的常数将仅依赖于 $k$.
+
+\begin{mylemma}{}{ch7_6}
+设 $L_1, ..., L_k$ 为行列式为 1 的实线性型，并设 $\lambda_1, ..., \lambda_k$ 为平行六面体
+\[|L_l| \leqslant 1 \quad (1 \leqslant l \leqslant k)\]
+的连续极小\index{successive minima}. 假设 $\rho_1 \ge ... \ge \rho_k > 0$ 且满足
+\[\rho_1 \lambda_1 \leqslant \ldots \leqslant \rho_k \lambda_k, \quad \rho_1 \ldots \rho_k = 1.\]
+那么对于 $\rho_1, \dots, \rho_k$ 的某个置换 $\rho'_1, \ldots, \rho'_k$，平行六面体 $\rho'_l | L_l | \leq 1$ ($1 \leq l \leq k$) 的连续极小\index{successive minima} $\lambda'_1, \ldots, \lambda'_k$ 满足
+\[\rho'_l \lambda_l \leqslant \lambda'_l \leqslant \rho'_l \lambda_l \quad (1 \leqslant l \leqslant k).\]
+\end{mylemma}
+
+\begin{proof}
+当然存在线性无关的整数点 $\mathbf{x}_1, \ldots, \mathbf{x}_k$，使得 $|L_1|, \ldots, |L_k|$ 中的至少一个在 $\mathbf{x}_l$ 处取值 $\lambda_l$，我们用 $S_l$ 表示由 $\mathbf{x}_1, \ldots, \mathbf{x}_l$ 撑起的子空间. 进一步，对于每个 $l \geq 2$，存在一个在 $S_{l-1}$ 上恒成立的非平凡线性关系 $a_1 L_1 + \ldots + a_l L_l = 0$，且可以对 $L_1, \dots, L_k$ 进行置换使得 $|a_l|$ 取到最大值；这就给出了：在 $S_l$ 上对于 $l = 1, 2, \dots, k$ 恒有
+\[|L_1| + \ldots + |L_{l-1}| > \frac{1}{2}(|L_1| + \ldots + |L_l|).\]
+现在对于任何 $j$，显然在 $S_l$ 中而不在 $S_{j-1}$ 中的每个点都满足
+\[\max (|L_1|, \dots, |L_l|) > \lambda_l,\]
+因此在考虑到上面得到的不等式后，它也满足
+\[\max (\rho_1 |L_1|, \dots, \rho_k |L_k|) > \rho_j \lambda_l.\]
+根据假设，对 $j > l$ 有 $\rho_j \lambda_j \le \rho_l \lambda_l$，对 $\lambda'_l$ 所需的下界通过将 $\rho'_1, \dots, \rho'_k$ 取为与 $L_1, \dots, L_k$ 相关联的置换的逆置换即得. 上界则是方程 $\rho'_1 \dots \rho'_k = 1$ 结合之前注意到的 $\lambda_1 \dots \lambda_k$ 和 $\lambda'_1 \dots \lambda'_k$ 均 $\ll 1$ 且 $\gg 1$ 这一性质的结果.
+\end{proof}
+
+\begin{mylemma}{}{ch7_7}
+只要对于 $S$ 中的所有 $i$ 都有 $\lambda_1 \mu^4 > \mu^{-\epsilon}$，那么 \autoref{lem:ch7_5} 的平行六面体的最后两个极小值满足 $\lambda_{k-1} > \lambda_k \mu^{-k^2\epsilon}$.
+\end{mylemma}
+
+\begin{proof}
+\autoref{lem:ch7_6} 的假设在取 $L_l$ ($1 \le l \le k$) 为 $M_l/\mu_l$ 且取 $\rho_l$ 为 $\mu_l \mu^{-1/k}$ ($1 \le l \le k$) 时成立，其中 $\mu$ 由方程 $\mu_1 \dots \mu_k = 1$ 定义. 设 $\rho'_1, \dots, \rho'_k$ 为引理中指出的 $\rho_1, \dots, \rho_k$ 的置换，并设 $\mu'_l = \mu_l \mu^{-1/k}/\rho'_l$. 首先假设对于 $S$ 中的所有 $i$ 都有 $\mu'_i > 1$. 那么，由将 $\mu_l$ 替换为 $\mu'_l$ 的 \autoref{lem:ch7_5}，我们推断出对于任何 $\epsilon' > 0$，存在 $c' > 0$ 使得 $\lambda'_{k-1} > \mu'^{-\epsilon'}$，其中 $\mu'$ 表示 $\mu'_1, \dots, \mu'_k$ 与 $c' $ 的最大值. 另一方面，由 \autoref{lem:ch7_6} 有 $\lambda'_{k-1} < \rho'_{k-1} \lambda_{k-1}$，且显然由于 $\lambda_1 \dots \lambda_k \ll 1$，我们有 $\rho'_{k-1} \ll \lambda_{k-1}/\lambda_k$. 因此，只要选择足够小的 $\epsilon'$，证明 $\mu'^{\epsilon'} \ll \mu^\epsilon$ 即已足够. 但由假设，由于 $S$ 被假定非空，我们有 $\lambda_1 \mu > \mu^{-\epsilon}$；进一步，由于对所有 $l$ 都有 $\lambda_l > \lambda_1$，我们看到 $\mu > \lambda_1$ 且 $\mu_l^{-1} \lambda_{k-1} < 1$. 因而我们获得
+\[\mu'_l < \lambda_{k-1}\mu < \mu^{k^2\epsilon+1},\]
+由此即得所求结果. 如果与上述假设相反，对于 $S$ 中的某些 $i$ 有 $\mu'_i < 1$，那么在注意到由假设我们获得 $\mu > \mu^{-\epsilon}$ 之后，同样可得所需结果.
+\end{proof}
+
+\section{外代数}\label{sec:ch7_9}
+
+对于 $R^k$ 中的任何向量 $\mathbf{x}_1, \dots, \mathbf{x}_l$ （其中 $1 < l < k$），我们用 $\mathbf{x}_1 \wedge \dots \wedge \mathbf{x}_l$ 表示 $R^m$ 中的向量，其元素是由以 $\mathbf{x}_1, \dots, \mathbf{x}_l$ 为列向量的 $k \times l$ 矩阵形成的 $m = \binom{k}{l}$ 个子行列式. 我们将利用该乘积的一些为人熟知的性质；特别地，我们将需要 Laplace 恒等式\index{Laplace's identity}
+\[( \mathbf{x}_1 \wedge \dots \wedge \mathbf{x}_l ) \cdot ( \mathbf{y}_1 \wedge \dots \wedge \mathbf{y}_l ) = \operatorname{det}(\mathbf{x}_i \cdot \mathbf{y}_j),\]
+（其中左边是通常的向量点积）以及关系式
+\[\operatorname{det} M_\sigma = (\operatorname{det} A)^{m-1},\]
+该式对于具有列向量 $\mathbf{a}_1, \dots, \mathbf{a}_k$ 的任意 $k$ 阶矩阵 $A$ 均成立，其中 $M_\sigma = \mathbf{a}_{i_1} \wedge \dots \wedge \mathbf{a}_{i_l}$，且 $\sigma$ 取遍由 $1, \dots, k$ 中选择 $l$ 个不同整数 $i_1, \dots, i_l$ 的所有集合 $\sigma$.\footnote{简短的证明给出在 Schmidt\index{Schmidt, W. M.} 的小册子中（文献目录）.}
+
+我们此外还需要以下归功于 Mahler\index{Mahler, K.} 的关于复合凸体的引理. $A$ 将表示一个满足 $\det A = 1$ 的如上多项式，且如第 8 节中所示，由 $\ll$ 隐含的常数将仅依赖于 $A$. 进一步，我们用 $\mathbf{a}\mathbf{x}$ 表示关于 $\mathbf{x}$ 元素的线性型，其系数向量为 $\mathbf{a}$.
+
+\begin{mylemma}{}{ch7_8}
+平行六面体 $|\mathbf{a}_i \mathbf{x}| \le 1$ ($1 \le i \le k$) 和 $|M_\sigma \mathbf{X}| \le 1$ 的连续极小\index{successive minima} $\lambda_1, \dots, \lambda_k$ 和 $\nu_1, \dots, \nu_m$（其中 $\sigma$ 跑遍所有如上的集合 $\sigma$）满足 $\nu_\sigma \ll \lambda_\sigma$，其中 $\lambda_\sigma = \prod \lambda_j$，乘积是对 $\sigma$ 中的所有 $j$ 进行的，且满足 $\nu_1 \le \nu_2 \le \dots \le \nu_m$.
+\end{mylemma}
+
+\begin{proof}
+设 $\mathbf{x}_1, \ldots, \mathbf{x}_k$ 为线性无关的整数点，满足 $|\mathbf{a}_i \mathbf{x}_j| \le \lambda_j$ ($1 \le j \le k$)，且设 $\mathbf{X}_\sigma$ 与上述 $\lambda_\sigma$ 类似定义，但用 $\mathbf{x}$ 代替 $\mathbf{a}$. 由 Laplace 恒等式\index{Laplace's identity}，我们有
+\[|M_\sigma \mathbf{X}_\tau| = |\operatorname{det}(\mathbf{a}_i \mathbf{x}_j)| \leqslant m \lambda_\sigma,\]
+其中 $i, j$ 取遍 $\sigma, \tau$ 的所有元素. 因此，对于每个满足 $1 \leqslant i \leqslant m$ 的 $i$，我们有 $|M_\sigma \mathbf{X}_i| \ll \lambda_\sigma$，从而 $\nu_i \ll \lambda_\sigma$. 但由于根据假设有 $\det A = 1$，我们有 $\det M_\sigma = 1$，因此平行六面体 $|M_\sigma \mathbf{X}| \leqslant 1$ 的体积为 $2^m$. 因此有 $\nu_1 \dots \nu_m \gg 1$，且由于有 $\lambda_{\sigma_1} \dots \lambda_{\sigma_m} \ll 1$，可得 $\nu_i \gg \lambda_\sigma$，得证.
+\end{proof}
+
+\section{主定理的证明}\label{sec:ch7_10}
+
+只需在假设 $\alpha_1, \dots, \alpha_n$ 为实代数整数\index{algebraic integer}的前提下证明 \autoref{thm:ch7_1} 即可，因为在将每个 $\alpha_i$ 乘以其极小多项式\index{minimal polynomial of algebraic number}的首项系数后，一般性结论显然随之成立. 我们用 $\mathbf{a}_j$ ($1 \leqslant j \leqslant n$) 表示 $R^{n+1}$ 中的向量，其由 $(\mathbf{e}_j, \alpha_j)$ 给出，其中 $\mathbf{e}_1, \dots, \mathbf{e}_n$ 表示 $n$ 阶单位矩阵的行向量. 进一步，为简便起见，我们写出 $k = n + 1$，并用 $\mathbf{a}_k$ 表示 $R^k$ 中的向量 $(0, ..., 0, 1)$. 由 $\ll$ 或 $\gg$ 隐含的常数将仅依赖于 $\alpha_1, \dots, \alpha_n$ 以及下面要定义的数量 $\epsilon, \zeta$.
+
+我们首先展示该定理是如下命题的推论.
+
+对于任何 $\zeta > 0$ 以及任何满足 $\mu_1 \dots \mu_k = 1$ 和对 $1 < j < k$ 满足 $\mu_j \le 1$ 的正数 $\mu_1, \dots, \mu_k$，平行六面体 $|\mathbf{a}_j \mathbf{x}| \le \mu_j$ ($1 < j < k$) 的第一极小 $\lambda_1$ 只要满足 $\mu > \mu_k$ 且 $\mu \gg 1$，就超过 $\mu^{-1}$.
+
+证明对 $n$ 进行归纳；我们已经指出，当 $n=1$ 时该结论是 \autoref{lem:ch7_5} 的直接推论，我们现在假设定理在 $n$ 被替换为 $n-1$ 时成立. 设 $q$ 为满足引理叙述中不等式的正整数，且设 $\mu_j = q^{-1-1/n-\epsilon}$ ($1 \le j \le n$). 进一步，设 $\mu_k = (\mu_1 \dots \mu_n)^{-1}$，其中如上所述 $k = n + 1$. 那么显然有 $\mu_k > q^{1+\epsilon'}$，而且平行六面体 $|\mathbf{a}_j \mathbf{x}| < \mu_j$ ($1 < j < k$) 的第一极小 $\lambda_1$ 至多为 $q^{-\epsilon'/n}$. 但是，再次借助于给定的不等式并应用归纳假设，我们可以看到，如果 $q \gg 1$，那么对于所有 $j < k$ 都有 $\mu_j < 1$. 因此，上述命题显示，对于任何 $\epsilon > 0$ 以及任何满足 $\mu \gg 1$ 且 $\mu \ge \mu_k$ 的 $\mu$，有 $\lambda_1 > \mu^{-\epsilon}$. 此外，由定理在 $n = 1$ 时的情形，我们有 $\mu_j > q^{-1}$ ($1 \leqslant j < n$)，从而 $\mu_k < q^n$. 显然，如果 $\epsilon$ 足够小，这些关于 $\lambda_1$ 的估计是不一致的，该矛盾证明了定理.
+
+在着手证明该命题之前，我们观察到，采用第 9 节的记号，线性型 $M_\sigma = M_\sigma \mathbf{X}$ 满足 \autoref{sec:ch7_7} 的假设，其中 $S$ 由包含 $k$ 的那些集合 $\sigma$ 给出. 因为通过 $A$ 的 Laplace 展开很容易验证：当 $\sigma$ 跑遍 $1, \dots, k$ 中 $\sigma$ 的补集时，线性型 $M'_e \mathbf{X}$ 构成了 $M_\sigma$ 的伴随集合（可能相差一个正负号）；进一步，如果 $\sigma$ 不包含 $k$，我们有
+\[M'_\sigma \mathbf{X} = \mathbf{X}_\sigma + \sum ( \pm \alpha_j ) \mathbf{X}_{\sigma-j+k},\]
+其中求和是对 $\sigma$ 中的所有 $j$ 进行的，右端出现了 $\mathbf{X}$ 的坐标，且 $\sigma-j+k$ 表示将 $\sigma$ 中的 $j$ 替换为 $k$ 后的集合. 根据假设，$1, \alpha_1, \dots, \alpha_n$ 在有理数域上线性无关，因此我们看到对于所有非零整数向量 $\mathbf{X} \neq 0$ 都有 $M'_\sigma \mathbf{X} \neq 0$，得证.
+
+该命题的证明对 $k$ 进行归纳；结果在 $k = 2$ 时由 \autoref{lem:ch7_5} 显然成立，我们现在假设它对于至多 $k-1$ 的所有值均已被验证. 设 $l$ 为满足 $1 \le l < k$ 的任何整数，且对于由 $1, \dots, k$ 选择 $l$ 个不同整数的任何集合 $\tau$，设 $\mu_\tau = \prod \mu_j$，其中乘积是对 $\tau$ 中的所有 $j$ 进行的. 由 \autoref{lem:ch7_7}，我们看到对于任何 $\tau > 0$，平行六面体 $|M_t| < \mu_t$ 的连续极小\index{successive minima} $\nu_1, \dots, \nu_m$ 满足 $\nu_{m-1} \gg \nu_m \mu^{-k\zeta}$，只要满足 $\mu \gg 1$，对于所有 $\tau$ 有 $\mu \gg \mu_\tau$，且对于 $S$ 中的 $\tau$ 有 $\nu_1 \mu_\tau > \mu^{-\zeta}$. 进一步，采用 \autoref{lem:ch7_8} 的记号，显然 $\tau_{m}$ 和 $\tau_{m-1}$ 分别由整数 $k-l+1, k-l+2, ..., k$ 和 $k-l, k-l+2, ..., k$ 组成. 因此，在上述条件下，我们有
+\[\lambda_{k-l}\lambda_{k-l+2}\cdots\lambda_k \gg \lambda_{k-l+1}\cdots\lambda_k \mu^{-k^2\epsilon}\mu^{-k\zeta}\]
+即 $\lambda_{k-l} \gg \lambda_{k-l+1} \mu^{-k\zeta}$. 所需的不等式 $\lambda_1 > \mu^{-\zeta}$ 通过将后者应用于 $l = 1, 2, ..., k - 1$，并注意到 $\lambda_k \gg 1$ 且取足够小的 $\zeta$ 即得.
+
+由于显然对所有 $\tau$ 有 $\mu_\tau \le \mu_k$，因此现在只需证明：对于 $S$ 中的 $\tau$，只要满足 $\mu \gg 1$ 且 $\mu > \mu_k$，就有 $\nu_1 \mu_\tau > \mu^{-\zeta}$. 事实上，只需证明 $\lambda_\sigma \mu_\sigma > \mu^{-\zeta}$ 即可，因为再次由 \autoref{lem:ch7_8} 有 $\nu_1 \gg \lambda_1 \dots \lambda_l \geqslant \lambda_1^{l}$. 现在，由 $\lambda_l$ 的定义，平行六面体 $|\mathbf{a}_j \mathbf{x}| < \lambda_l/\mu_j$ ($1 \leqslant j \leqslant k$) 包含一个非零整数点 $\mathbf{x} \neq 0$；事实上，由于根据 Minkowski 线性型定理\index{Minkowski's linear forms theorem}有 $\lambda_1 \leqslant 1$，$\mathbf{x}$ 的第 $k$ 个坐标不是 0，由此对 $1\leqslant j \leqslant k$ 有 $\lambda_1\mu_j < 1$，并且当第 $k$ 个坐标消亡时， $\mathbf{a}_j \mathbf{x}$ 仅仅是 $\mathbf{x}$ 的第 $j$ 个坐标. 随之可得，如果 $\tau$ 是 $S$ 的任何元素，那么由 $|\mathbf{a}_i \mathbf{x}| \leqslant \lambda_l/\mu_i$ （其中 $i$ 被限制在 $\tau$ 中，且忽略下标不在 $\tau$ 中的 $\mathbf{x}$ 的坐标）给出的 $R^l$ 中的平行六面体也包含一个非零整数点 $\mathbf{x} \neq 0$. 因此，在 $R^l$ 中由 $\mu_i' = \mu_i/\lambda_l$ 给出的平行六面体 $|\mathbf{a}_i \mathbf{x}| \le \mu_i'$ 的第一极小 $\lambda_1'$ 至多为 $\lambda_l/\mu_\tau^{1/l}$. 因此，只需证明 $\lambda_1' > \mu^{-\zeta}$ 即可；但这直接由归纳假设得出，因为显然有 $\prod \mu_i' = 1$ 且有 $\mu'_e > 1$. 至此，定理全部得证.

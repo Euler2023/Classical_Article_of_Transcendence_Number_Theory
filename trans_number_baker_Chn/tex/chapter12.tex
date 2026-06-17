@@ -1,0 +1,214 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{代数无关性}\label{ch:12}
+
+\section{引言}
+
+与线性无关性相比，迄今为止关于超越数\index{transcendental number}\index{numbers}的代数无关性所建立的定理很少. 事实上，除了上一章讨论的关于 $E$-函数的成果（这些成果实际上直接由其对应的线性结论推出），以及 \autoref{ch:8} 中提到的源于 Mahler\index{Mahler, K.} 分类\index{Mahler's classification}性质的例子之外，这方面唯一的具有一般性质的研究工作是基于 Gelfond\index{Gelfond, A. O.} 在 1949 年进行的工作\footnote{参考文献.}. 最近，许多学者在这方面取得了重要的改进，这些最新进展将是本章的主题.
+
+这些成果的基本特征可以由以下定理很好地说明：
+
+\begin{mythm}{}{ch12_1}
+如果 $\xi_1, \xi_2, \xi_3$ 以及 $\eta_1, \eta_2, \eta_3$ 在有理数域上都是线性无关的，那么数\index{numbers}
+\[\xi_i, \quad e^{\xi_i \eta_j} \quad (1 \leq i, j \leq 3)\]
+中至少有两个是代数无关的.
+\end{mythm}
+
+Gelfond\index{Gelfond, A. O.} 最初在某些附加条件下证明了该定理，而此处的表述则归功于 Tijdeman\index{Tijdeman, R.}.\footnote{I.M. 33 (1971), 146--162.} 作为直接推论，我们可以看到，如果 $\alpha$ 是除 0 和 1 之外的代数数\index{algebraic number}，且 $\beta$ 是三次无理数，那么 $\alpha^{\beta}, \alpha^{\beta^2}$ 是代数无关的；这实际上可以通过取 $\xi_j = \beta^{j-1}$ 以及 $\eta_j = \xi_j \log \alpha$ 推出. Tijdeman\index{Tijdeman, R.} 还推导出了 \autoref{thm:ch12_1} 的两个变体；他证明了如果 $\xi_1, \xi_2, \xi_3, \xi_4$ 以及 $\eta_1, \eta_2$ 在有理数域上线性无关，那么 $\xi_i, e^{\xi_i \eta_j}$ 中至少有两个是代数无关的，并且更进一步，如果 $\xi_1, \xi_2, \xi_3$ 以及 $\eta_1, \eta_2$ 在有理数域上线性无关，那么 $\xi_i, \eta_j, e^{\xi_i \eta_j}$ 中至少有两个是代数无关的. 这些结果包含了 \v{S}melev 早期的一些定理.\footnote{Mat. Zametki, 3 (1968), 61--68; 4 (1968), 626--632.}
+
+最近，Brownawell\index{Brownawell, W.}\footnote{J. Number Th. 6 (1974), 11--31.} 以及 Waldschmidt\index{Waldschmidt, M.}\footnote{J. Number Th. 5 (1973), 191--202.} 独立成功地获得了后者结果的一个新版本，这足以解决 Schneider\index{Schneider, Th.} 的一个著名问题. 他们证明了：
+
+\begin{mythm}{}{ch12_2}
+如果 $\xi_1, \xi_2$ 以及 $\eta_1, \eta_2$ 在有理数域上都是线性无关的，并且如果 $e^{\xi_1\eta_2}$ 以及 $e^{\xi_2\eta_2}$ 是代数数，那么 $\xi_i, \eta_j, e^{\xi_i\eta_j}$ 中至少有两个是代数无关的.
+\end{mythm}
+
+这特别意味着，如果 $\xi_1, \xi_2$ 以及 $\eta_1, \eta_2$ 在有理数域上线性无关，那么 $\xi_i, \eta_j, e^{\xi_i\eta_j}$ 中至少有两个不同的数\index{numbers}是超越数. 由此立即推出（通过取 $\xi_1 = \eta_1 = 1$，$\xi_2 = \eta_2 = e$），$e^e$ 以及 $e^{e^2}$ 中至少有一个是超越数. 此外，从 \autoref{thm:ch12_2} 可以看出，例如，对于任何除 0 和 1 之外的代数数\index{algebraic number} $\alpha$，$\alpha^{\log \alpha}$ 以及 $\alpha^{(\log \alpha)^2}$ 中至少有一个是超越数. 这些结果代表了迄今为止我们最接近证实诸如 $\log \pi$ 以及 $e^{\pi^2}$ 这类数\index{numbers}的超越性的工作.
+
+在另一个方向上，Lang\index{Lang, S.}\footnote{见参考文献，第一部著作.} 证明了：
+
+\begin{mythm}{}{ch12_3}
+如果 $\xi_1, \xi_2, \xi_3$ 以及 $\eta_1, \eta_2$ 在有理数域上线性无关，那么数\index{numbers} $e^{\xi_i\eta_j}$ 中至少有一个是超越数.
+\end{mythm}
+
+令人惊讶的是，\autoref{thm:ch12_3} 的证明比 \autoref{thm:ch12_1} 以及 \autoref{thm:ch12_2} 的证明要简单得多，然而该结果却能得出几个显著的推论. 特别地，由此可知，对于任何不为 0 或 1 的代数数\index{algebraic number} $\alpha$，以及任何超越数 $\beta$，$\alpha^{\beta}, \alpha^{\beta^2}$ 中至少有一个是超越数；而事实上，鉴于 Gelfond\index{Gelfond, A. O.}-Schneider\index{Schneider, Th.} 定理，这一结果对任何无理数 $\beta$ 都成立. 作为另一个例子，该定理清楚地表明，对于任何实无理数 $\beta$，函数 $x^{\beta}$ 在多于两个连续的正整数值 $x \ge 2$ 处不能同时取代数数值. 这种性质的更一般的成果（例如涉及 Weierstrass\index{Weierstrass, K.} $\wp$-函数\index{Weierstrass $\wp$-function} 的结果）是由 Ramachandra\index{Ramachandra, K.}\footnote{Acta Arith. 14 (1968), 83--88.} 获得的，他显然独立地发现了 \autoref{thm:ch12_3}. 该定理还对 Schneider\index{Schneider, Th.} 提出的关于代数数\index{algebraic number} $\alpha, \beta, \gamma, \delta$ 的方程
+\[\log \alpha \log \beta = \log \gamma \log \delta\]
+在对数在有理数域上线性无关时不可能成立的问题提供了一些启示；它实际上表明，给定 $\alpha, \gamma$，不可能存在两个解 $\beta, \delta$ 使得所有六个对数都是线性无关的. 当然，该问题只是更广泛的未决问题的一个特例，即证实代数数的对数\index{logarithms of algebraic numbers}\index{algebraic number}的代数无关性.
+
+最后我们指出，关于指数函数和对数函数的超越性质，我们的绝大多数期望都包含在一个被归功于 Schanuel 的一般猜想中，其大意是：如果 $\xi_1, \ldots, \xi_n$ 在有理数域上线性无关，那么由 $\xi_1, \ldots, \xi_n, e^{\xi_1}, \ldots, e^{\xi_n}$ 在有理数域上生成的域的超越次数\index{transcendence degree}至少为 $n$. 该猜想包含了 \autoref{thm:ch1_4} 以及 \autoref{thm:ch2_1}，而且它还蕴含了 $e$ 以及 $\pi$ 的代数无关性. 幂级数的对应结论已由 Ax\index{Ax, J.} 证明.\footnote{Ann. Math. 93 (1971), 252--268.}
+
+\section{指数多项式}
+
+我们的目标是建立 Tijdeman\index{Tijdeman, R.}\footnote{I.M. 33 (1971), 1--7.} 关于如下形式函数的零点的一个定理：
+\[F(z) = \sum_{k=0}^{K-1} \sum_{l=1}^{L} f(k,l) z^{k} e^{\sigma_{l} z}.\]
+我们将假设 $\sigma_1, \ldots, \sigma_L$ 是绝对值至多为 $S$ 的复数\index{numbers}，且 $f(k,l)$ 是使 $F$ 不恒为零的任意复数\index{numbers}. 由 $\ll$ 所隐含的常数将是绝对常数. 我们证明：
+
+\begin{mylemma}{}{ch12_1}
+$F$ 在任何半径为 $R$ 的闭圆盘中的零点个数（计入重数）为 $\ll KL + RS$.
+\end{mylemma}
+
+Tijdeman\index{Tijdeman, R.} 实际上得到了估计式 $3KL + 4RS$，但这些常数对我们这里的目的而言并不重要. 该结果的主要意义在于，与所有以往同类定理相比，它不依赖于 $\sigma$ 之间的差值，正是这种加强导致了前面提到的对 Gelfond\index{Gelfond, A. O.} 结果的改进.
+
+\begin{proof}
+为了开始证明，设 $C$ 是以原点为中心\footnote{显然，这一选择不失一般性.}、半径为 $R$ 的圆，并设 $M(R)$ 为 $|F|$ 在 $C$ 上的最大值. 此外，设
+\[W(z) = (z - \omega_1) \dots (z - \omega_h),\]
+其中 $\omega_1, \ldots, \omega_h$ 跑遍 $F$ 在 $C$ 内部及边界上的所有零点（计入重数）. 那么 $F/W$ 在任何具有更大半径的同心圆内部及边界上是全纯的，因此由最大模原理\index{maximum-modulus principle}有
+\[|W(v)|M(R) \leq |W(u)|M(4R),\]
+其中 $u, v$ 是某些满足 $|u| = R$ 且 $|v| = 4R$ 的数\index{numbers}. 现在显然
+\[|W(u)| \leq (2R)^h, \quad |W(v)| \geq (3R)^h,\]
+从而
+\[h \leqslant \log (M(4R)/M(R)).\]
+因此，剩下只需证明右边的数是 $\ll KL + RS$.
+
+令 $N = KL$ 个数\index{numbers}的序列 $\sigma_1, \ldots, \sigma_1, \ldots, \sigma_L, \ldots, \sigma_L$（其中每个 $\sigma$ 重复 $K$ 次）写为 $\eta_1, \ldots, \eta_N$. 由 Newton 插值公式\index{Newton's interpolation formula}，对于任意的 $w, z$，我们有
+\[e^{zw} = \sum_{n=0}^{N} a_n P_n(w),\]
+其中
+\[P_n(w) = (w - \eta_1) \dots (w - \eta_n) \quad (1 \le n \le N),\]
+且
+\[a_n = \frac{1}{2\pi i} \int_{\Gamma} \frac{e^{z\zeta}}{P_{n+1}(\zeta)} \left( \frac{\zeta - \eta_{n+1}}{\zeta - w} \right)^{\delta_n} d\zeta,\]
+这里 $\Gamma$ 表示一个以原点为中心、按正向绕行的圆，它包含所有的 $\eta$ 以及 $w$，且当 $n < N$ 时 $\delta_n = 0$，当 $n = N$ 时 $\delta_N = 1$. 显然，当 $n < N$ 时，$a_n$ 与 $w$ 无关，而 $a_N$ 是关于 $w$ 的整函数. 我们令
+\[P(w) = \sum_{n=0}^{N-1} a_n P_n(w) = \sum_{n=0}^{N-1} p_n w^n,\]
+然后很容易验证
+\[F(z) = \sum_{k=0}^{K-1} \sum_{l=1}^{L} f(k,l) P^{(k)}(\sigma_l) = \sum_{n=0}^{N-1} p_n F^{(n)}(0).\]
+我们现在继续利用后面的公式来获得 $|F|$ 的一个上界.
+
+由 Cauchy 定理我们有
+\[F^{(n)}(0) = \frac{n!}{2\pi i} \int_C \frac{F(\zeta) d\zeta}{\zeta^{n+1}},\]
+从而
+\[\left|F^{(n)}(0)\right| \leqslant n! \, M(R)/R^n.\]
+这给出
+\[|F(z)| \leqslant M(R) \sum_{n=0}^{N-1} n! |p_n|/R^n.\]
+为了估计后面的求和，令
+\[b_n = \frac{1}{2\pi i} \int_{\Gamma} \frac{e^{|z|\zeta}}{Q_{n+1}(\zeta)} d\zeta,\]
+其中 $Q_n(w) = (w-S)^n$ 且 $\Gamma$ 表示如上所述的一个包含 $S$ 的圆. 通过对比 $(P_n(\zeta))^{-1}$ 以及 $(Q_n(\zeta))^{-1}$ 展开为 $\zeta$ 的降幂级数时的系数，我们对所有 $n < N$ 得到 $|a_n| \leq b_n$. 但显然有 $b_n = e^{|z|S} |z|^n/n!$，因此，鉴于公式
+\[n! p_n = \sum_{r=n}^{N-1} a_r P_r^{(n)}(0),\]
+我们有
+\[n! \, \big| \, p_n \big| \, \leqslant \, n! \, \sum_{r \, = \, n}^{N \, - \, 1} \binom{r}{n} \, S^{r - n} \, b_r \, = \, e^{|z| S} \sum_{r \, = \, n}^{N \, - \, 1} \big| z \big|^r \, S^{r - n} / (r - n)! \, \leqslant \, \big| z \big|^n \, \, e^{2|z|S},\]
+由此可得
+\[|F(z)| \leq M(R) e^{2|z|S} \sum_{n=0}^{N-1} (|z|/R)^n.\]
+取 $|z| = 4R$，我们得出结论
+\[M(4R) \leqslant M(R) e^{8RS} 4^N,\]
+引理便立即得证.
+\end{proof}
+
+\section{高度}
+
+我们需要第 8 章引理 2 的一个更明确的版本. 该结果属于 Gelfond\index{Gelfond, A. O.}，他实际上以更一般的形式（涉及多元多项式）得到了这一命题.
+
+\begin{mylemma}{}{ch12_2}
+如果 $P(x)$ 是一个次数为 $n$、高度为 $h$ 的多项式，且 $P = P_1 P_2 \dots P_k$，其中 $P_i(x)$ 是高度为 $h_i$ 的多项式，那么
+\[h \geqslant e^{-n} h_1 h_2 \dots h_k.\]
+\end{mylemma}
+
+\begin{proof}
+我们不失一般性地假设 $P(0) \neq 0$. 对于 $P$ 的任意零点 $\rho$ 以及满足 $|z| = 1$ 的任意复数 $z$，设 $w$ 为 $\rho$ 在通过 $z$ 与 $-\rho/|\rho|$ 的直线上的投影，若 $z = \pm \rho/|\rho|$ 则取 $w = z$. 那么，由简单的几何知识有
+\[|z-\rho| \ge |w-\rho| = \frac{1}{2}(1+|\rho|)|z-\rho/|\rho||.\]
+因此，如果 $\rho_1, \ldots, \rho_n$ 是 $P$ 的所有零点，那么
+\[|P(z)| \geqslant 2^{-n} M_1 \dots M_k R(z),\]
+其中 $M_i$ 表示 $P_i$ 在单位圆上的最大值，且
+\[R(z) = \prod_{j=1}^{n} |z - \rho_j/|\rho_j||.\]
+现在对于任何多项式
+\[Q(x) = q_0 + q_1 x + \dots + q_m x^m\]
+我们有
+\[\int_0^1 |Q(e^{2\pi i\phi})|^2 d\phi = \sum_{j=0}^m |q_j|^2.\]
+因此取 $Q = R$，并注意到 $R$ 的首项系数为 1，且常数项的绝对值为 1，我们得到
+\[\int_0^1 |P(e^{2\pi i\phi})|^2 d\phi \geqslant 2^{1-2n} (M_1 \dots M_k)^2.\]
+但是，通过取 $Q = P$，我们可以看到左边的数至多为 $2nh^2$，并且显然也有
+\[M_j^2 \geqslant \int_0^1 |P_j(e^{2\pi i\phi})|^2 d\phi \geqslant h_j^2.\]
+由于 $e^n \ge n^{\frac{1}{2}} 2^n$，引理得证.
+\end{proof}
+
+我们将再次采用以下约定：当提及多项式的高度时，默认其系数为不全为 0 的有理整数.
+
+\begin{mylemma}{}{ch12_3}
+如果 $P_1(x), P_2(x)$ 分别是次数为 $n_1, n_2$ 且高度为 $h_1, h_2$ 的多项式，并且如果 $P_1, P_2$ 没有公因子，那么对于任何复数 $z$，有
+\[\max(|P_1(z)|, |P_2(z)|) \ge (n_1 + n_2)^{-\frac{1}{2}(n_1 + n_2 + 1)} h_1^{-n_2} h_2^{-n_1}.\]
+\end{mylemma}
+
+\begin{proof}
+证明基于这样一个观察：由于 $P_1, P_2$ 没有公因子，它们的结式 $R$ 不为 0. 现在 $R$ 可以表示为通过从方程
+\[x^i P_1(x) = 0 \quad (0 \leqslant i < n_2), \qquad x^j P_2(x) = 0 \quad (0 \leqslant j < n_1)\]
+中消去 $x$ 所构成的熟知的 $n_1 + n_2$ 阶 Sylvester 行列式\index{Sylvester determinant}. 因此 $R$ 是一个有理整数，从而 $|R| \ge 1$. 另一方面，如果我们将第 1 列第 $i$ 行的元素在 $i \le n_2$ 时替换为 $z^{i-1}P_1(z)$，在 $i > n_2$ 时替换为 $z^{i-n_2-1}P_2(z)$，则 $R$ 保持不变. 因此，如果 $|z| \le 1$，引理可由 Hadamard 不等式\index{Hadamard's inequality} 提供的这些元素的代数余子式的上界估计推出. 如果 $|z| > 1$，可以进行类似的论证，此时将最后一列的元素替换为上述的数\index{numbers}乘以 $z^{-n_1-n_2+1}$.
+\end{proof}
+
+\section{代数性判准}
+
+我们现在建立一个给出数是代数数的充分条件的引理；它最初由 Gelfond\index{Gelfond, A. O.} 导出，后来由 Brownawell\index{Brownawell, W.} 以及 Waldschmidt\index{Waldschmidt, M.} 进行了改进. 它表明，在某种意义上，一个数不能被代数数\index{algebraic number}逼近得太好，除非它本身是代数数，且该序列中超出某一点的所有项都相等. 我们实际上将以涉及多项式序列的形式来证明该命题，因为这在应用中更为有用.
+
+首先我们需要一个准备引理. 设 $P(x)$ 是一个次数为 $n$、高度为 $h$ 的多项式，并设 $z$ 是任意复数.
+
+\begin{mylemma}{}{ch12_4}
+如果 $|P(z)| \le 1$，那么 $P$ 有一个因子 $Q$（它是一个整系数不可约多项式的幂），使得
+\[|Q(z)| \leq |P(z)| \exp(8n(n + \log h)).\]
+\end{mylemma}
+
+\begin{proof}
+我们将 $P$ 写为不同不可约多项式的幂的乘积 $P_1 \dots P_k$，且为了简便，我们设 $p_j = |P_j(z)|$. 那么，由假设有 $p_1 \dots p_k \le 1$，因此存在一个下标 $l$（可能为 $1$ 或 $k$），使得
+\[p_1 \dots p_{l-1} \geqslant p_l \dots p_k, \quad p_1 \dots p_l \leqslant p_{l+1} \dots p_k.\]
+现在 $P_1 \dots P_{l-1}$ 以及 $P_l \dots P_k$ 的次数至多为 $n$，没有公因子，且鉴于 \autoref{lem:ch12_2}，它们的高度至多为 $e^n h$. 因此，由 \autoref{lem:ch12_3} 以及上面的第一个不等式，我们可以看到
+\[p_1 \dots p_{l-1} \geqslant \exp(-4n(n + \log h)).\]
+类似地，借助上面的第二个不等式，该估计对于 $p_{l+1} \dots p_k$ 也成立. 因此我们有
+\[p_l \leq p_1 \dots p_k \exp(8n(n + \log h)),\]
+取 $Q = P_l$，断言便成立.
+\end{proof}
+
+\begin{mylemma}{}{ch12_5}
+如果 $\omega$ 是超越数\index{transcendental number}，且如果 $P_j(x)$ ($j = 1, 2, \ldots$) 是一个多项式序列，其次数以及高度分别至多为 $n_j$ 以及 $h_j$，使得
+\[n_j < n_{j+1} \ll n_j, \quad \log h_j \leqslant \log h_{j+1} \ll \log h_j,\]
+那么对于 $j$ 的无穷多个值，有
+\[\log |P_j(\omega)| \gg -n_j(n_j + \log h_j).\]
+\end{mylemma}
+
+\begin{proof}
+这里隐含的常数再次是绝对常数. 为了进行证明，我们假设后一个不等式对足够大的 $j$ 不成立，并且若隐含的常数足够大，我们将推导出矛盾. 由 \autoref{lem:ch12_4}，$P_j$ 有一个因子 $Q_j$（它是不可约多项式的幂），使得 $|Q_j(\omega)| \le |P_j(\omega)| \exp(8n_j(n_j + \log h_j))$，并且由 \autoref{lem:ch12_2}，$Q_j$ 的高度至多为 $e^{n_j} h_j$. 由 \autoref{lem:ch12_3} 可知，对于所有足够大的 $j$，$Q_j$ 是某个与 $j$ 无关的不可约多项式（设为 $Q$）的幂；因为如果 $Q_j$ 以及 $Q_{j+1}$ 没有公因子，那么有
+\[\max(|Q_j(\omega)|, |Q_{j+1}(\omega)|) > e^{-4n_j^2+1} h_j^{-n_{j+1}} h_{j+1}^{-n_j}\]
+并且，鉴于关于 $n_{j+1}$ 以及 $h_{j+1}$ 的假设，这显然与前一个不等式或其将 $j$ 替换为 $j+1$ 的对应形式相矛盾. 由于显然 $Q_j$ 至多是 $Q$ 的 $n_j$ 次幂，我们得到 $|Q(\omega)| \le |Q_j(\omega)|^{1/n_j}$，并且由于当 $j \to \infty$ 时也有 $n_j \to \infty$，从而可以推出 $Q(\omega) = 0$. 但这与 $\omega$ 是超越数的假设相矛盾.
+\end{proof}
+
+\section{主要论证}
+
+定理 \ref{thm:ch12_1}、\ref{thm:ch12_2} 以及 \ref{thm:ch12_3} 的证明类似于前面几章的论证，因此仅对其进行轮廓式的描述就足够了.
+
+对于 \autoref{thm:ch12_1}，我们假设由 $\xi_i$ 以及 $e^{\xi_i \eta_j}$ ($1 \le i, j \le 3$) 在有理数域 $\mathbb{Q}$ 上生成的域的超越次数\index{transcendence degree}为 1，并由此推导出一个矛盾. 那么该域可以由一个超越数\index{transcendental number} $\omega$ 以及一个在 $\mathbb{Q}(\omega)$ 上代数的数 $\Omega$ 共同生成；并且我们可以假设 $\Omega$ 在 $\mathbb{Q}[\omega]$ 上是整的. 这里只需处理 $\xi_i$ 以及 $e^{\xi_i \eta_j}$ 在 $\mathbb{Q}[\omega]$ 上是整的情形；一般结果可以通过引入适当的分母类似地得出. 由 $\ll$、$\gg$ 以及 $c, c_1, c_2, \dots$ 隐含的常数将仅依赖于 $\xi$、$\eta$ 以及 $\omega$, $\Omega$.
+
+首先，对任意整数 $k \gg 1$，构造一个辅助函数\index{auxiliary function}
+\[\Phi(z) = \sum_{\lambda_0=0}^{L_0} \dots \sum_{\lambda_3=0}^{L} p(\lambda_0, \dots, \lambda_3) \, \omega^{\lambda_0} \, e^{(\lambda_1 \xi_1 + \lambda_2 \xi_2 + \lambda_3 \xi_3) z}\]
+使得对每个
+\[\eta = l_1 \eta_1 + l_2 \eta_2 + l_3 \eta_3 \quad (1 \leq l_1, l_2, l_3 \leq m),\]
+都有 $\Phi^{(j)}(\eta) = 0$ ($0 \le j < k$)，其中
+\[m = [k^{\frac{1}{2}}(\log k)^{\frac{1}{2}}], \quad L_0 = [k \log k], \quad L_1 = L_2 = L_3 = L = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}],\]
+且 $p(\lambda_0, \dots, \lambda_3)$ 是不全为 0 的有理整数，其绝对值至多为 $k^{c_1 k}$. 这样的构造是可能的，因为显然 $\Phi^{(j)}(\eta)$ 可以表示为以 $p$ 为变量的线性形式，其系数由 $\omega, \Omega$ 的多项式给出；后者关于 $\omega$ 的次数 $\ll L_0$，关于 $\Omega$ 的次数 $\ll 1$，且高度至多为 $k^{c_1 k}$. 因此，我们需要求解一个包含 $\gg L^3 L_0 > 2M$ 个未知数、有 $M \ll m^3 k$ 个线性方程\index{linear equations}的方程组，所以第 2 章的引理 1 是适用的.
+
+现在令 $c, \Gamma$ 分别是按正向绕行、以原点为中心、半径分别为 $k$ 以及 $k^{\frac{1}{2}}$ 的圆. 那么，对于 $\Gamma$ 上的任意 $z$，有
+\[\Phi(z) = \frac{1}{2\pi i} \int_{c} \left(\frac{A(z)}{A(\zeta)}\right)^k \frac{\Phi(\zeta)}{\zeta - z} d\zeta,\]
+其中 $A(z)$ 表示以 $m^3$ 个零点 $\eta$ 为根的首一多项式. 因此我们看到 $\log |\Phi(z)| \ll -m^3 k \log k$. 并且因为由 Cauchy 定理有
+\[\Phi^{(j)}(\eta) = \frac{j!}{2\pi i} \int_{\Gamma} \frac{\Phi(z)}{(z-\eta)^{j+1}} dz,\]
+所以当 $j \leq k(\log k)^{\frac{1}{4}}$ 时，将 $\Phi(z)$ 替换为 $\Phi^{(j)}(\eta)$ 后相同的估计仍然成立. 但由 \autoref{lem:ch12_1}，$\Phi$ 在 $c$ 内部及边界上只有 $\ll L^3$ 个零点，因此对上述的某些 $\eta$ 以及某些 $j$，有 $\Phi^{(j)}(\eta) \neq 0$. 此外，$\Phi^{(j)}(\eta)$ 是一个关于 $\omega, \Omega$ 的具有有理整数系数的多项式，且通过取其在 $\mathbb{Q}(\omega)$ 上的共轭乘积，我们导出一个次数为 $n$ 且高度为 $h$ 的多项式 $P(x)$，满足
+\[n \leqslant k \log k, \quad \log h \leqslant k(\log k)^{\frac{1}{4}}, \quad \log |P(\omega)| \leqslant -m^3 k \log k \leqslant -k^2 (\log k)^{\frac{5}{4}}.\]
+随着 $k$ 的增加，我们得到一个这样的多项式序列 $P$，显然，这与 \autoref{lem:ch12_5} 相矛盾. 该矛盾证明了定理.
+
+\autoref{thm:ch12_2} 的证明是类似的. 在类似的初始假设下，我们对任意整数 $k \gg 1$ 构造一个辅助函数\index{auxiliary function}
+\[\Phi(z) = \sum_{\lambda_0=0}^{L_0} \dots \sum_{\lambda_3=0}^{L_3} p(\lambda_0, \dots, \lambda_3) \, \omega^{\lambda_0} z^{\lambda_3} e^{(\lambda_1 \xi_1 + \lambda_2 \xi_2) z}\]
+使得对每个
+\[\eta = l_1 \eta_1 + l_2 \eta_2 \quad (1 \leqslant l_1 \leqslant m_1, \, 1 \leqslant l_2 \leqslant m_2),\]
+都有 $\Phi^{(j)}(\eta) = 0 \ (0 \le j < k$)，其中
+\[m_1 = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}], \quad m_2 = [(k \log k)^{\frac{1}{2}}],\]
+\[L_0 = L_3 = k, \quad L_1 = L_2 = L = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}],\]
+且 $p(\lambda_0, \dots, \lambda_3)$ 也是不全为 0 的有理整数，其绝对值至多为 $k^{c_2 k}$. 这一构造当然是可能的，因为鉴于 $e^{\xi_1\eta_2}$ 以及 $e^{\xi_2\eta_2}$ 是代数数的假设，线性形式中的系数具有与前面论证中相同的性质，从而我们只需在一个包含 $\gg L^2 L_0 L_3 > 2M$ 个未知数、有 $M \ll m_1 m_2 k$ 个线性方程\index{linear equations}的方程组中进行求解. 现在，利用上面的第一个积分公式（其中 $A$ 在此处表示具有 $m_1 m_2$ 个零点 $\eta$ 的首一多项式），对于 $\Gamma$ 上的所有 $z$，我们有
+\[\log |\Phi(z)| \ll -m_1 m_2 k \log k\]
+并且，由第二个积分公式，我们看到对于所有 $j \le k(\log k)^{\frac{1}{4}}$ 以及所有
+\[\eta' = l_1' \eta_1 + l_2' \eta_2 \quad (1 \leqslant l_1' \leqslant m_1', \ 1 \leqslant l_2' \leqslant m_2'),\]
+将 $\Phi(z)$ 替换为 $\Phi^{(j)}(\eta')$ 后相同的估计仍然成立，其中
+\[m_1' = [k^{\frac{1}{2}}(\log k)^{-\frac{1}{2}}], \quad m_2' = [k^{\frac{1}{2}}(\log k)^{\frac{3}{2}}].\]
+但由 \autoref{lem:ch12_1}，$\Phi$ 在 $c$ 内部及边界上只有 $\ll L^2 L_3$ 个零点，因此对上述的某些 $\eta'$ 以及某些 $j$，有 $\Phi^{(j)}(\eta') \neq 0$. 因此，通过在 $\mathbb{Q}(\omega)$ 上取共轭并再次诉诸于假设，我们导出一个次数为 $n$ 且高度为 $h$ 的多项式 $P(x)$，满足
+\[n \leqslant k(\log k)^{\frac{1}{2}}, \quad \log h \leqslant k \log k, \quad \log |P(\omega)| \ll -m_1 m_2 k \log k \ll -k^2 (\log k)^{\frac{5}{4}}.\]
+这与 \autoref{lem:ch12_5} 相矛盾，从而所需的结果成立.
+
+最后，对于 \autoref{thm:ch12_3} 的证明，我们假设所有的 $e^{\xi_i\eta_j}$ 都是代数数，且采用与上述相同的符号，对任意整数 $k \gg 1$ 构造一个辅助函数\index{auxiliary function}
+\[\Phi(z) = \sum_{\lambda_1=0}^{L} \sum_{\lambda_2=0}^{L} \sum_{\lambda_3=0}^{L} p(\lambda_1, \lambda_2, \lambda_3) e^{(\lambda_1 \xi_1 + \lambda_2 \xi_2 + \lambda_3 \xi_3) z}\]
+使得对于每个
+\[\eta = l_1 \eta_1 + l_2 \eta_2 \quad (1 \leqslant l_1, l_2 \leqslant k)\]
+都有 $\Phi^{(j)}(\eta) = 0$，其中 $L = [k^{\frac{1}{3}}]$，且 $p(\lambda_1, \lambda_2, \lambda_3)$ 是不全为 0 的有理整数，其绝对值至多为 $k^{c_3 k}$. 如果现在 $m$ 是任何满足 $m \ge k$ 的整数，且对于所有满足 $1 \le l_1, l_2 \le m$ 的 $\eta$ 都有 $\Phi^{(j)}(\eta) = 0$，那么对于所有
+\[\eta' = l'_1 \eta_1 + l'_2 \eta_2 \quad (1 \leqslant l'_1, l'_2 \leqslant m+1)\]
+也有 $\Phi^{(j)}(\eta') = 0$. 事实上，函数 $\Phi/A^k$（其中 $A$ 表示具有 $m^2$ 个零点 $\eta$ 的首一多项式）在以原点为中心、半径为 $m'$ 的圆 $c$ 内部及边界上显然是全纯的，因此由最大模原理\index{maximum-modulus principle}或者由上面的第一个积分公式，我们有
+\[\log |\Phi(\eta')| \ll -m^2 \log m;\]
+另一方面，在将 $\Phi(\eta')$ 乘以一个合适的分母之后，我们在一个固定数域中获得一个大小为 $s$ 且满足 $\log s \ll m k$ 的代数整数\index{algebraic integer}，通过考虑 $\Phi(\eta')$ 的范数，上述断言现在便可成立. 我们得出结论，对于 $l_1, l_2$ 的所有正整数值，都有 $\Phi^{(j)}(\eta) = 0$，因此 $\Phi(z)$ 恒等于零. 但这与 $\xi_1, \xi_2, \xi_3$ 在有理数域上线性无关的假设相矛盾，该矛盾证明了定理.

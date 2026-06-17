@@ -1,0 +1,460 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{线性型的下界}\label{ch:3}
+
+\section{引言}\label{sec:ch3_1}
+
+在\autoref{ch:2}中已经得到了线性型
+\[
+\Lambda = \beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_n \log \alpha_n,
+\]
+不消亡的各种条件，其中 $\alpha$ 与 $\beta$ 表示代数数\index{algebraic number}；特别地，假设 $\alpha$ 不为 $0$ 或 $1$，如果 $\beta_0 \neq 0$，或者 $\beta_1, \dots, \beta_n$ 在有理数域上线性无关，则上述线性型不消亡. 在本章中，我们将讨论这项工作的定量推广，利用 $\alpha$ 和 $\beta$ 的次数与高度给出 $|\Lambda|$ 的正下界；回忆\autoref{ch:1}，一个代数数\index{algebraic number}的高度是其互素的整系数极小定义多项式\index{minimal polynomial of algebraic number}中系数绝对值的最大值. 这类定理最早由 Morduchai-Boltovskoj\footnote{C.R. 176 (1923), 724--7.} 于 1923 年在 $n=1$ 的情况下证明，以及由 Gelfond\index{Gelfond, A. O.}\footnote{D.A.N. 2 (1935), 177--82.} 于 1935 年在 $n=2, \beta_0=0$ 的情况下证明. 基于\autoref{ch:2}中所述的工作，1966 年建立了一个对任意 $n$ 均成立的 $|\Lambda|$ 下界，随后人们又得到了各种改进. 特别地，当 $\alpha$ 以及 $\beta$ 的次数被视为固定时，目前已经导出了一个在本质上最佳的结果.\footnote{Mat. Sbornik, 76 (1968), 304--19; 77 (1968), 423--36 (N. I. Feldman\index{Feldman, N. I.}).}
+
+\begin{mythm}{}{ch3_1}
+设 $\alpha_1, \dots, \alpha_n$ 为非零代数数\index{algebraic number}，其次数至多为 $d$，高度至多为 $A$. 此外，设 $\beta_0, \dots, \beta_n$ 为代数数\index{algebraic number}，其次数至多为 $d$，高度至多为 $B \ (\ge 2)$. 则或者 $\Lambda = 0$，或者 $|\Lambda| > B^{-C}$，其中 $C$ 是一个仅依赖于 $n, d, A$ 以及对数初始确定的有效可计算数.
+\end{mythm}
+
+$C$ 的估计具有 $C'(\log A)^\kappa$ 的形式，其中 $\kappa$ 仅依赖于 $n$，$C'$ 仅依赖于 $n$ 和 $d$. 在 $\beta_0 = 0$ 且 $\beta_1, \dots, \beta_n$ 为有理整数的情况下，已经表明该定理实际上在 $C = C'\Omega \log \Omega$ 时成立，其中 $\Omega = (\log A)^n$；此外，如果假设 $\alpha_j$ 的高度不超过 $A_j$ ($\ge 4$)，那么 $\Omega$ 可以取为 $\log A_1 \dots \log A_n$.\footnote{Acta Arith. 27 (1974), 247--52.} 在应用中非常重要的一种特殊情况下，即当其中一个 $\alpha$（不妨设为 $\alpha_n$）的高度相对于其余各数很大时，已经得到了更强的结果. 事实上，已经证明如果 $\alpha_1, \dots, \alpha_{n-1}$ 和 $\alpha_n$ 的高度分别至多为 $A'$ 和 $A \ (\ge 4)$，则
+\[
+|\Lambda| > (B\log A)^{-C\log A},
+\]
+其中 $C > 0$ 是仅由 $A', n$ 和 $d$ 确定的有效可计算数.\footnote{Diophantine approximation and its applications (Academic Press, 1973) pp. 1--23.} 此外，当 $\beta_0 = 0$ 且 $\beta_1, \dots, \beta_n$ 为有理整数时，括号中的因子 $\log A$ 已被消去，从而得出
+\[
+|\Lambda| > C^{-\log A \log B},
+\]
+这在 $B$ 固定时关于 $A$ 显然是最佳的，在 $A$ 固定时关于 $B$ 也是最佳的.\footnote{Acta Arith. 21 (1972), 117--29.} 此外，在附加的特殊化条件 $\beta_n = -1$ 下，已经证明对任何 $\epsilon > 0$ 都有
+\[
+|\Lambda| > A^{-C} e^{-\epsilon B}
+\]
+成立，其中 $C$ 仅依赖于 $A', n, d$ 和 $\epsilon$.\footnote{Acta Arith. 24 (1973), 33--6.} 正如我们稍后将看到的，这些结果在与丢番图问题的研究联系中具有特殊的价值.
+
+需要指出的是，由\autoref{thm:ch3_1}中 $n = 1$ 的情况，对于任何非 $0$ 且非 $1$ 的代数数\index{algebraic number} $\alpha$，以及对于所有次数至多为 $d$、高度至多为 $B \ (\ge 2)$ 的代数数\index{algebraic number} $\beta$，我们有
+\[
+|\log \alpha - \beta| > B^{-C}
+\]
+成立，其中 $C$ 仅依赖于 $d$ 和 $\alpha$；特别地，对于仅依赖于 $d$ 的某个 $C$，我们有
+\[
+|\pi - \beta| > B^{-C}
+\]
+成立. 事实上，在一般结果出现之前很久，人们就已经推导出了后一种类型的估计，并给出了 $C$ 的精确值. 事实上，Feldman\index{Feldman, N. I.},\footnote{I.A.N. 24 (1960), 357--68, 475--92.} 在推广 Mahler\index{Mahler, K.}\footnote{J.M. 166 (1932), 118--60.} 的工作时，在假设 $B$ 足够大的前提下，得到了第一个不等式且其 $C$ 的阶为 $(d \log d)^2$，而第二个不等式的 $C$ 阶为 $d \log d$. 此外，当 $\beta$ 为有理数时，一些引人注目的形如
+\[
+|\pi-p/q| > q^{-42},
+\]
+且对所有有理数 $p/q \ (q \ge 2)$ 均成立的不等式，已由 Mahler\index{Mahler, K.}\footnote{Philos. Trans. Roy. Soc. London, A 245 (1953), 371--98; I.M. 15 (1953), 30--42.} 建立；更近一些时候，通过类似的方法，在关于某些有理数 $\alpha$ 的对数逼近中，推导出了任意接近于猜想最佳值 $d+1$ 的 $C$ 值.\footnote{Acta Arith. 10 (1964), 315--23.} 在\autoref{thm:ch3_1}之后引用的结果还提供了若干其他这种特征的估计，在经典上被称为超越性度量. 例如，它们意味着，在定理 \ref{thm:ch2_3} 或 \ref{thm:ch2_4} 的假设下，对于所有高度至多为 $H \ (\ge 4)$ 的代数数\index{algebraic number} $\gamma$，我们有
+\[
+|e^{\beta_0}\alpha_1^{\beta_1}\dots\alpha_n^{\beta_n}-\gamma| > H^{-C\log\log H}
+\]
+成立，其中 $C$ 仅依赖于 $\alpha$、$\beta$ 以及 $\gamma$ 的次数；特别地，对所有有理数 $p/q \ (q \ge 4)$ 都有
+\[
+|e^\pi - p/q| > q^{-c \log \log q}
+\]
+其中 $c$ 表示一个绝对常数，而这是迄今为止得到的关于 $e^\pi$ 的最佳无理性度量\index{measure of irrationality}.
+
+在此我们仅证明\autoref{thm:ch3_1}；其他结果的论证与此相似，尽管底层的辅助函数\index{auxiliary function}有所修改，论证的归纳性质更为复杂，并且在阐述的后半部分，使用了属于 Kummer 理论\index{Kummer theory}的某些引理来代替此处出现的行列式. 读者可参阅原始论文以获取详细细节. 这些结果在数论各个分支中的应用将在随后的章节中进行讨论.
+
+\section{预备知识}\label{sec:ch3_2}
+
+我们首先对代数数\index{algebraic number}的高度进行一些观察. 首先，我们指出，如果 $\alpha$ 是一个次数为 $d$ 且高度为 $H$ 的代数数\index{algebraic number}，那么 $|\alpha| \le dH$；因为如果 $\alpha$ 满足
+\[
+a_0\alpha^d + a_1\alpha^{d-1} + \dots + a_d = 0,
+\]
+其中 $a_j$ 表示绝对值至多为 $H$ 的有理整数，且 $a_0 \ge 1$，那么要么 $|\alpha| < 1$，要么
+\[
+|\alpha| \le |a_0\alpha| = |a_1 + a_2\alpha^{-1} + \dots + a_d\alpha^{-d+1}| \le dH.
+\]
+
+其次，我们观察到，如果 $\alpha, \beta$ 是次数至多为 $d$ 且高度至多为 $H$ 的代数数\index{algebraic number}，那么 $\alpha\beta$ 和 $\alpha + \beta$ 的次数至多为 $d^2$，高度至多为 $H'$，其中 $\log H'/\log H$ 被一个仅依赖于 $d$ 的数控制上界. 因为令 $\alpha^{(i)}, \beta^{(j)}$ 分别表示 $\alpha$ 和 $\beta$ 的共轭. 那么 $\alpha\beta$ 和 $\alpha + \beta$ 分别是多项式
+\[
+(ab)^{d^2} \prod_{i,j} (x - \alpha^{(i)}\beta^{(j)}), \quad (ab)^{d^2} \prod_{i,j} (x - \alpha^{(i)} - \beta^{(j)})
+\]
+的零点，上述多项式显然具有整系数，且次数至多为 $d^2$. 因此，$\alpha\beta$ 和 $\alpha + \beta$ 的极小定义多项式\index{minimal polynomial of algebraic number}的零点由 $\alpha^{(i)}\beta^{(j)}$ 和 $\alpha^{(i)}+\beta^{(j)}$ 的某些子集给出，且首项系数整除 $(ab)^{d^2}$. 注意到 $\alpha^{(i)}, \beta^{(j)}$ 的绝对值至多为 $dH$，上述断言即成立.
+
+对于任何整数 $k \ge 1, l \ge 0$，我们用 $\nu(l;k)$ 表示 $l+1, \dots, l+k$ 的最小公倍数. 此外，为简便起见，我们将写出
+\[
+\Delta(x; k) = (x+1) \dots (x+k)/k!,
+\]
+并置
+\[
+\Delta(x; k, l, m) = \frac{1}{m!} \frac{d^m}{dx^m} (\Delta(x; k))^l.
+\]
+这些函数具有以下性质：
+
+\begin{mylemma}{}{ch3_1}
+当 $x$ 为正整数时，$(\nu(x;k))^m \Delta(x;k,l,m)$ 也是一个正整数，且我们有
+\[
+\Delta(x; k, l, m) \le 4^{l(x+k)}, \quad \nu(x; k) \le \{c(x+k)/k\}^{2k}
+\]
+对某个绝对常数 $c$ 成立.
+\end{mylemma}
+
+\begin{proof}
+首先，我们观察到
+\[
+\Delta(x; k, l, m) = (\Delta(x; k))^l \sum \{(x+j_1) \dots (x+j_m)\}^{-1},
+\]
+其中求和是对从集合 $1, \dots, k$ 重复 $l$ 次中选择 $m$ 个整数 $j_1, \dots, j_m$ 的所有选法进行的，且如果 $m > kl$，则右端读为 $0$. 显然对每个 $r$，$x+j_r$ 整除 $\nu(x;k)$，由于 $\Delta(x;k)$ 必定是有理整数，命题的第一部分随之成立. 此外，我们看到
+\[
+\Delta(x; k, l, m) \le \binom{x+k}{k}^l \binom{kl}{m} \le 2^{l(x+k)+kl},
+\]
+这给出了所需的估计.
+
+为了得到 $\nu$ 的估计，我们写出 $\nu(x; k) = \nu' \nu''$，其中 $\nu', \nu''$ 的所有素因子分别 $\le k$ 以及 $> k$. 由于素数 $p$ 整除 $\nu'$ 的指数至多为 $\log (x+k)/\log p$，我们有
+\[
+\log \nu' \le \sum \log (x+k) \le c' k \log (x+k)/\log k
+\]
+其中求和是对所有素数 $p \le k$ 进行的，并且与下文的 $c, c'', c'''$ 类似，$c'$ 表示绝对常数. 现在，我们可以假设 $k > c''$ 并且 $x > c''k$ 对于某个足够大的 $c''$ 成立，因为否则所需的结论将立即由 $\nu(x;k)$ 的简单上界 $(x+k)^k$ 和 $c^{x+k}$ 导出. 因此，我们看到
+\[
+\nu' \le \{c'''(x+k)/k\}^k.
+\]
+但显然 $\nu''$ 整除 $\Delta(x; k)$，且这不超过 $(x+k)^k/k!$；所需的估计现在就很明显了. 指数 $2$ 实际上很容易减少到 $1$，这是最佳结果，但此处不需要这种改进.
+\end{proof}
+
+\begin{mylemma}{}{ch3_2}
+若 $P(x)$ 是一个次数为 $n > 0$ 的多项式，且 $K$ 是包含其系数的域，则对于满足 $0 \le m \le n$ 的任何整数 $m$，多项式 $P(x), P(x+1), \dots, P(x+m)$ 以及 $1, x, \dots, x^{n-m-1}$ 在 $K$ 上线性无关.
+\end{mylemma}
+
+\begin{proof}
+对于 $n = 1$，该断言很容易验证. 我们假设结果对 $n = n'$ 成立，然后证明其对 $n = n' + 1$ 的有效性. 因此，假设 $0 \le m \le n' + 1$，$P(x)$ 是一个次数为 $n' + 1$ 的多项式，且对于 $K$ 的某些元素 $\lambda_j$，
+\[
+R(x) = \lambda_0 P(x) + \lambda_1 P(x+1) + \dots + \lambda_m P(x+m)
+\]
+的次数至多为 $n'-m$. 我们有
+\[
+R(x) = (\lambda_0 + \dots + \lambda_m) P(x+m+1) + \sum_{j=0}^m (\lambda_0 + \lambda_1 + \dots + \lambda_j) Q(x+j),
+\]
+where $Q(x) = P(x) - P(x+1)$. 然而 $Q(x)$ 的次数为 $n'$，且由于 $P(x+m+1)$ 的次数为 $n'+1$，我们看到 $\lambda_0 + \dots + \lambda_m = 0$. 由归纳假设得
+\[
+\lambda_0 + \lambda_1 + \dots + \lambda_j = 0 \quad (0 \le j \le m),
+\]
+从而有 $\lambda_0 = \dots = \lambda_m = 0$，正如所求.
+\end{proof}
+
+\begin{mylemma}{}{ch3_3}
+设 $\omega_0, \dots, \omega_{l-1}$ 是任何互不相同的非零复数\index{numbers}，则在第 $(i+1)$ 行、第 $(j+1)$ 列中元素为 $i^r\omega_s^i$ 的 $kl$ 阶行列式不为零，其中 $j=r+sk$ $(0 \le r < k, 0 \le s < l)$ 且此处的指数满足 $i^0 = 1$.\footnote{此处对于包括 $i=0$ 在内的所有 $i$ 均有 $i^0 = 1$.}
+\end{mylemma}
+
+\begin{proof}
+所讨论的行列式 $\Omega$ 显然可以表示为关于 $\omega$ 且具有整系数的多项式 $\Omega(\omega_0, \dots, \omega_{l-1})$. 我们写出
+\[
+\Omega(z) = \Omega(z, \omega_1, \dots, \omega_{l-1}),
+\]
+并且通过 $\Omega$ 的 Laplace 展开（选取由前 $k$ 列组成的子式），我们观察到 $\Omega(z)$ 是关于 $z$ 的多项式，其次项次数至多为
+\[
+\sum_{i=1}^k (kl - j) = k^2 l - \frac{1}{2} k(k+1),
+\]
+此外，它含有一个因子 $z^{\frac{1}{4}k(k-1)}$. 我们稍后将证明，对于满足 $1 \le s < l$ 的每个 $s$，它还含有一个因子 $(z-\omega_s)^{k^2}$. 这给出
+\[
+\Omega(z) = C z^{\frac{1}{2}k(k-1)} \prod_{s=1}^{l-1} (z - \omega_s)^{k^2},
+\]
+其中 $C$ 是 $\Omega(z)$ 中 $z$ 的最高次项的系数. 很容易验证，$C$ 是典型元素为 $(k(l-1)+i)^j$ 的 $k$ 阶 Vandermonde 行列式与形如 $\Omega$（即典型元素为 $i^r\omega_s^i$，其中现在 $1 \le s < l$）的 $k(l-1)$ 阶行列式的乘积. 该引理通过归纳法即得.
+
+为了证明上述命题，我们首先注意到 $\Omega(z)$ 的 $m$ 阶导数 $\Omega_m(z)$ 由
+\[
+\sum (m!/(m_0! \dots m_{k-1}!))\Omega'(m_0, \dots, m_{k-1}, z),
+\]
+给出，其中求和是对和为 $m$ 的所有非负整数 $m_0, \dots, m_{k-1}$ 进行的，并且 $\Omega'(m_0, \dots, m_{k-1}, z)$ 是通过将 $j < k$ 时 $\Omega(z)$ 中第 $(i+1)$ 行、第 $(j+1)$ 列的元素替换为
+\[
+i^{r+1}(i-1)\dots(i-m_r+1)z^{i-m_r}
+\]
+而得到的. 现在只需证明，若 $m < k^2$，则 $2k$ 个多项式 $1, x, \dots, x^{k-1}$ 以及
+\[
+x^{r+1}(x-1)\dots(x-m_r+1) \quad (0 \le r < k)
+\]
+是线性相关的；因为此时，由 $j < k$ 以及 $j = r + (s-1)k$ 给出的 $\Omega'(m_0, \dots, m_{k-1}, \omega_s)$ 的 $2k$ 个列的某个非平凡线性组合将消亡，从而有 $\Omega_m(\omega_s) = 0$. 为了确立线性相关性，我们按升序排列这些多项式的次数，设为 $n_1 \le n_2 \le \dots \le n_{2k}$，并观察到它们的和为
+\[
+\tfrac{1}{2}k(k-1) + \sum_{r=0}^{k-1} (r+m_r) = k(k-1) + m < 2k^2 - k.
+\]
+因此，对某个 $j$ 我们有 $n_j < j-1$；这意味着在原始集合中存在 $j$ 个多项式，每个的次数至多为 $j-2$，而这些多项式显然是线性相关的. 上述论证显然给出了 $\Omega$ 的一个显式值，但此处只需要其不消亡性.
+\end{proof}
+
+\section{辅助函数}\label{sec:ch3_3}
+
+现在我们开始证明\autoref{thm:ch3_1}，并相应地假设 $\alpha_1, \dots, \alpha_n$ 是非零代数数\index{algebraic number}，其次数和高度分别至多为 $d$ 和 $A$. 我们用 $C, c, c_1, c_2, \dots$ 表示大于 $1$ 的数\index{numbers}，它们仅依赖于 $n, d, A$ 以及给定的 $\alpha$ 的对数确定方式. 我们假设 $\beta_0, \dots, \beta_{n-1}$ 为代数数\index{algebraic number}，其次数和高度分别至多为 $d$ 和 $B \ (\ge 2)$，满足
+\begin{equation} \label{eq:ch3_1}\tag{1}
+|\beta_0 + \beta_1 \log \alpha_1 + \dots + \beta_{n-1} \log \alpha_{n-1} - \log \alpha_n| < B^{-C},
+\end{equation}
+对于某个足够大的 $C$ 成立，然后我们着手证明存在不全为 $0$ 且绝对值至多为 $c_1$ 的有理整数 $b'_1, \dots, b'_n$，满足
+\begin{equation} \label{eq:ch3_2}\tag{2}
+b'_1 \log \alpha_1 + \dots + b'_n \log \alpha_n = 0.
+\end{equation}
+此后的归纳论证将完成该定理的证明.
+
+接下来的工作基于类似于在\autoref{ch:2}的\autoref{lem:ch2_2}中得到的辅助函数\index{auxiliary function}的构造. 我们用 $k$ 表示一个超过上述足够大数 $c$ 的整数，并写出
+\[
+h = [\log (kB)], \quad L_{-1} = h-1, \quad L = L_0 = \dots = L_n = \left[k^{1-1/(4n)}\right].
+\]
+关于偏导数，我们采用\autoref{ch:2}中的记号.
+
+\begin{mylemma}{}{ch3_4}
+存在不全为 $0$ 且绝对值至多为 $c_2^{hk}$ 的整数 $p(\lambda_{-1}, \dots, \lambda_n)$，使得函数
+\begin{align*}
+\Phi(z_0, \dots, z_{n-1}) &= \sum_{\lambda_{-1}=0}^{L_{-1}} \dots \sum_{\lambda_n=0}^{L_n} p(\lambda_{-1}, \dots, \lambda_n) \\
+&\quad \times (\Delta(z_0 + \lambda_{-1}; h))^{\lambda_0 + 1} e^{\lambda_n \beta_0 z_0} \alpha_1^{\gamma_1 z_1} \dots \alpha_{n-1}^{\gamma_{n-1} z_{n-1}},
+\end{align*}
+其中 $\gamma_r = \lambda_r + \lambda_n \beta_r \ (1 \le r < n)$，满足
+\begin{equation} \label{eq:ch3_3}\tag{3}
+|\Phi_{m_0, \dots, m_{n-1}}(l, \dots, l)| < B^{-\frac{1}{2}C}
+\end{equation}
+对于所有满足 $1 \le l \le h$ 的整数 $l$ 以及所有满足 $m_0 + \dots + m_{n-1} \le k$ 的非负整数 $m_0, \dots, m_{n-1}$ 均成立.
+\end{mylemma}
+
+\begin{proof}
+我们确定 $p(\lambda_{-1}, \dots, \lambda_n)$ 使得
+\begin{equation} \label{eq:ch3_4}\tag{4}
+\sum_{\lambda_{-1}=0}^{L_{-1}} \dots \sum_{\lambda_n=0}^{L_n} p(\lambda_{-1}, \dots, \lambda_n) q(\lambda_{-1}, \lambda_0, \lambda_n, l) \alpha_1^{\lambda_1 l} \dots \alpha_n^{\lambda_n l} \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}} = 0
+\end{equation}
+对于上述范围内的 $l$ 以及 $m_0, \dots, m_{n-1}$ 成立，其中
+\[
+q(\lambda_{-1}, \lambda_0, \lambda_n, z) = \sum_{\mu_0=0}^{m_0} \binom{m_0}{\mu_0} \mu_0! \Delta(z + \lambda_{-1}; h, \lambda_0 + 1, \mu_0) (\lambda_n \beta_0)^{m_0 - \mu_0}.
+\]
+我们随后将验证 \eqref{eq:ch3_4} 可以推出 \eqref{eq:ch3_3}. 仿照\autoref{ch:2}的\autoref{lem:ch2_2}的证明，并如那里一样定义 $a, b$ 以及 $P'$，我们导出了与那里相同的涉及对 $s_1, \dots, s_n, t_0, \dots, t_{n-1}$ 求和的方程，但其中
+\[
+A(s,t) = \sum_{\lambda_{-1}=0}^{L_{-1}} \dots \sum_{\lambda_n=0}^{L_n} \sum_{\mu_0=0}^{m_0} \dots \sum_{\mu_{n-1}=0}^{m_{n-1}} p(\lambda_{-1}, \dots, \lambda_n) q' q'' q''',
+\]
+此时
+\[
+q''' = \binom{m_0}{\mu_0} \mu_0! \Delta(l+\lambda_{-1}; h, \lambda_0+1, \mu_0) \lambda_n^{m_0-\mu_0} b_n^{\mu_0} b_{0, t_0}^{(m_0-\mu_0)}
+\]
+且 $b_{rt}^{(j)}$ 的绝对值至多为 $(2B)^j$. 因此，我们断定如果这 $d^{2n}$ 个方程 $A(s,t)=0$ 成立，那么 \eqref{eq:ch3_4} 将得到满足.
+
+现在，这些代表了关于 $N = (L_{-1} + 1) \dots (L_n + 1)$ 个未知数 $p(\lambda_{-1}, \dots, \lambda_n)$ 的 $M \le d^{2n}h(k+1)^n$ 个线性方程\index{linear equations}. 此外，\autoref{lem:ch3_1}表明，在乘以 $(\nu(0; 3h))^{m_0}$ 之后，这些方程中的系数将是有理整数. 此外，我们有
+\[
+\Delta(l+\lambda_{-1}; h, \lambda_0+1, \mu_0) \le c_3^{Lh},
+\]
+且由于 $kB \le e^{h+1}$，我们看到
+\begin{align*}
+|q'| &\le c_4^{Lh}, \quad |q''| \le e^{2h(m_1 + \dots + m_{n-1})}, \\
+|q'''| &\le 2^{m_0} (\mu_0 b_n)^{\mu_0} (2B\lambda_n)^{m_0 - \mu_0} c_2^{Lh} \le e^{2hm_0} c_2^{Lh}.
+\end{align*}
+由于还有 $\nu(0;3h) \le c_5^h$，由此可知系数的绝对值至多为 $U = c_5^{hk}$. 由于 $N > hk^{n+1/2} > 2M$，因此由\autoref{ch:2}的\autoref{lem:ch2_1}，方程组 $A(s,t)=0$ 可以非平凡地求解，并且可以选择整数 $p(\lambda_{-1}, \dots, \lambda_n)$，使其绝对值至多为 $NU \le c_2^{hk}$.
+
+现在只需验证 \eqref{eq:ch3_4} 可以推出 \eqref{eq:ch3_3}. 此时，\eqref{eq:ch3_4} 的左端是通过将 $\alpha'_n = e^{\beta_0} \alpha_1^{\beta_1} \dots \alpha_{n-1}^{\beta_{n-1}}$ 替换为 $\alpha_n$，从 \eqref{eq:ch3_3} 左端的数（省略绝对值符号与因子 $P = (\log \alpha_1)^{m_1} \dots (\log \alpha_{n-1})^{m_{n-1}}$）中得到的. 由 \eqref{eq:ch3_1}，对于第一个对数的某一分支，我们有
+\[
+|\log \alpha_n' - \log \alpha_n| < B^{-C},
+\]
+且由于对任何复数 $z$ 均有 $|e^z-1| \le |z| e^{|z|}$，我们得到
+\begin{equation} \label{eq:ch3_5}\tag{5}
+|\alpha_n' - \alpha_n| < B^{-\frac{1}{4}C}.
+\end{equation}
+同时我们有
+\[
+\left|\alpha_n^{\prime\,\lambda_n\,l} - \alpha_n^{\lambda_n\,l}\right| \le c_7^{Ll} |\alpha_n' - \alpha_n|,
+\]
+且类似于上面采用的估计表明
+\[
+|P| \le c_8^k, \quad |q(\lambda_{-1}, \lambda_0, \lambda_n, l)| \le c_9^{(L+m_0)h}, \quad |\gamma_r| \le e^{2h}, \quad |\alpha_r^{\lambda_r l}| \le c_{10}^{Lh}.
+\]
+    因此，我们看到 \eqref{eq:ch3_3} 左端的数至多为 $N c_{11}^{hk} B^{-\frac{3}{4}C}$；但显然 $N \le e^{2hn}$ 且 $h \le \log(kB)$，从而当 $C > c_{12}k \log k$ 时，\eqref{eq:ch3_3} 随之成立.
+\end{proof}
+
+\begin{mylemma}{}{ch3_5}
+设 $m_0, \dots, m_{n-1}$ 为任何满足
+\[
+m_0 + \dots + m_{n-1} \le k,
+\]
+的非负整数，并令
+\[
+f(z) = \Phi_{m_0, \dots, m_{n-1}}(z, \dots, z).
+\]
+则对于任何数 $z$，我们有 $|f(z)| \le c_{13}^{hk+L|z|}$. 此外，对于任何满足 $h < l \le hk^{8n}$ 的整数 $l$，或者 $|f(l)| < B^{-\frac{1}{2}C}$，或者
+\begin{equation} \label{eq:ch3_6}\tag{6}
+|f(l)| > c_{14}^{-hk(1+\log(l/h))-Ll}.
+\end{equation}
+\end{mylemma}
+
+\begin{proof}
+函数 $f(z)$ 由
+\begin{align*}
+P \sum_{\lambda_{-1}=0}^{L_{-1}} \dots \sum_{\lambda_n=0}^{L_n} p(\lambda_{-1}, \dots, \lambda_n) \, q(\lambda_{-1}, \lambda_0, \lambda_n, z) \\
+\times e^{\lambda_n \beta_0 z} \alpha_1^{\gamma_1 z} \dots \alpha_{n-1}^{\gamma_{n-1} z} \gamma_1^{m_1} \dots \gamma_{n-1}^{m_{n-1}},
+\end{align*}
+给出，其中 $P$ 与 $q(\lambda_{-1}, \lambda_0, \lambda_n, z)$ 的定义与\autoref{lem:ch3_4}中相同. 由于 \eqref{eq:ch3_5} 意味着 $|\alpha_n'^z| \le c_1^{|z|}$，并且显然有
+\[
+\left|\alpha_1^{\lambda_1 z} \dots \alpha_{n-1}^{\lambda_{n-1} z}\right| \le c_{16}^{L|z|}.
+\]
+此外，由于
+\[
+|z+\lambda_{-1}| \le [|z|]+h,
+\]
+我们由\autoref{lem:ch3_1}推导出
+\[
+|\Delta(z+\lambda_{-1}; h, \lambda_0+1, \mu_0)| \le c_{12}^{L(|z|+h)}.
+\]
+这给出
+\[
+|q(\lambda_{-1}, \lambda_0, \lambda_n, z)| \le e^{2hm_0} c_{17}^{L(|z|+h)},
+\]
+所需的估计现在很容易像\autoref{ch:2}的\autoref{lem:ch2_4}的证明后半部分一样得出.
+
+为了证明第二个断言，我们首先指出 \eqref{eq:ch3_4} 左端的表达式（记作 $Q$）是一个次数至多为 $d^{2n}$ 的代数数\index{algebraic number}. 此外，通过类似于上面给出的估计，很容易验证通过为 $\alpha$ 和 $\beta$ 代入任意共轭而得到的 $Q$ 的每个共轭，其绝对值至多为 $c_{18}^{hk+Ll}$. 此外，由\autoref{lem:ch3_1}，我们看到将 $Q$ 乘以
+\[
+(\nu(l;2h))^{m_0} P' \le (c_{19} l/h)^{4hm_0} c_{20}^{hk+Ll},
+\]
+可以得到一个代数整数\index{algebraic integer}. 因此我们断定或者 $Q=0$，或者 $|Q| \ge c_{21}^{-hk-Ll} (l/h)^{-c_{22}hm_0}$.
+由于 $m_0 \le k$，在选择适当 of $c_{14}$ 时，上一个不等式右端的数超过了 \eqref{eq:ch3_6} 的右端. 此外，如上所述，我们很容易从 \eqref{eq:ch3_5} 推导出 $P^{-1} f(l)$ 与 $Q$ 的偏差至多为 $c_{23}^{lk} B^{-\frac{3}{4}C}$. 然而，如果 $l \le hk^{8n}$ 且 $C > k^{8n+2}$，那么这至多为 $\frac{1}{2}|Q|$，因此如果 $Q \neq 0$，我们便得到 $|f(l)| > \frac{1}{2}|PQ|$，从而给出了 \eqref{eq:ch3_6}.
+\end{proof}
+
+\begin{mylemma}{}{ch3_6}
+假设对于某个足够大的 $c$，我们有 $0 < \epsilon < c^{-1}$. 则对于满足 $0 \le J < 8n/\epsilon$ 的任何整数 $J$，\eqref{eq:ch3_3} 对所有满足 $1 \le l \le h k^{\epsilon J}$ 的整数 $l$ 以及所有满足 $m_0 + \dots + m_{n-1} \le k/2^J$ 的非负整数 $m_0, \dots, m_{n-1}$ 均成立.
+\end{mylemma}
+
+\begin{proof}
+由\autoref{lem:ch3_4}，该引理对 $J=0$ 成立. 我们假设 $K$ 是满足 $0 \le K \le (8n/\epsilon) - 1$ 的整数，并假设该引理对 $J=0,1,\dots,K$ 已被验证. 我们着手证明命题对 $J=K+1$ 成立.
+
+现在只需证明，对于任何满足 $R_K < l \le R_{K+1}$ 的整数 $l$ 以及任何满足 $m_0 + \dots + m_{n-1} \le S_{K+1}$ 的非负整数集合 $m_0, \dots, m_{n-1}$，我们有 $|f(l)| < B^{-\frac{1}{2}C}$，其中 $f(z)$ 的定义与\autoref{lem:ch3_5}中相同，且
+\[
+R_J = \left[hk^{\epsilon J}\right], \quad S_J = \left[k/2^J\right] \quad (J = 0, 1, \dots).
+\]
+从我们的归纳假设中，我们可以像\autoref{ch:2}的\autoref{lem:ch2_4}中那样推导出
+\begin{equation} \label{eq:ch3_7}\tag{7}
+|f_m(r)| < n^k B^{-\frac{1}{2}C} \quad (1 \le r \le R_K, 0 \le m \le S_{K+1}).
+\end{equation}
+为了简便起见，我们写出
+\[
+F(z) = \{(z-1) \dots (z-R_K)\}^{S+1},
+\]
+其中 $S = S_{K+1}$，我们用 $\Gamma$ 表示复平面中以原点为中心、半径为 $R = R_{K+1} k^{1/(8n)}$ 的逆时针方向圆周. 根据 Cauchy 留数定理\index{Cauchy's residue theorem}，我们有
+\begin{equation} \label{eq:ch3_8}\tag{8}
+\frac{1}{2\pi i} \int_{\Gamma} \frac{f(z) \, dz}{(z-l) F(z)} = \frac{f(l)}{F(l)} + \frac{1}{2\pi i} \sum_{r=1}^{R_K} \sum_{m=0}^{S} \frac{f_m(r)}{m!} \int_{\Gamma_r} \frac{(z-r)^m \, dz}{(z-l) F(z)},
+\end{equation}
+其中 $\Gamma_r$ 表示复平面中以 $r$ 为中心、半径为 $\frac{1}{2}$ 的逆时针方向圆周；因为左侧被积函数在 $z=r$ 处的极点留数由在 $z=r$ 处求值的
+\[
+\frac{1}{S!} \frac{d^S}{dz^S} \left\{ \frac{(z-r)^{S+1} f(z)}{(z-l) F(z)} \right\},
+\]
+给出，而右侧在 $\Gamma_r$ 上的积分由同样在 $z=r$ 处求值的
+\[
+\frac{2\pi i}{(S-m)!} \frac{d^{S-m}}{dz^{S-m}} \left\{ \frac{(z-r)^{S+1}}{(z-l)F(z)} \right\},
+\]
+给出，且 \eqref{eq:ch3_8} 现由 Leibnitz 定理\index{Leibnitz's theorem}得出. 由于对 $\Gamma_r$ 上的 $z$，我们有
+\[
+\left|(z-r)^m/F(z)\right| \le \left\{\frac{1}{8}(R_K-r-1)! (r-2)!\right\}^{-S-1} \le 8^{R_K S} (R_K!)^{-S-1},
+\]
+我们从 \eqref{eq:ch3_7} 推导出 \eqref{eq:ch3_8} 右端双重和的绝对值至多为
+\[
+R_K (S+1) 8^{R_K S+1} (R_K!)^{-S-1} B^{-\frac{1}{2}C}.
+\]
+此外，对于满足 $R_K < l \le R_{K+1}$ 的 $l$，我们有
+\[
+|F(l)| = \left\{ (l-1)! / (l-R_K-1)! \right\}^{S+1} \le (2^{R_{K+1}} R_K!)^{S+1},
+\]
+并且由于 $R_{K+1} \le hk^{8n}$，我们看到如果 \eqref{eq:ch3_6} 成立，那么 $|f(l)| > B^{-\frac{1}{2}C}$，从而 \eqref{eq:ch3_8} 右端的数超过了 $\frac{1}{2}|f(l)/F(l)|$. 我们着手证明 \eqref{eq:ch3_6} 有效的假设会导致矛盾.
+
+令 $\theta$ 和 $\Theta$ 分别表示 $z$ 在 $\Gamma$ 上时 $|f(z)|$ 的上界与 $|F(z)|$ 的下界. 由于对 $\Gamma$ 上的 $z$，$2|z-l|$ 超过了 $\Gamma$ 的半径，我们从 \eqref{eq:ch3_8} 得到
+\begin{equation} \label{eq:ch3_9}\tag{9}
+4\theta |F(l)| > \Theta |f(l)|.
+\end{equation}
+现在显然有 $\Theta \ge (\frac{1}{2}R)^{R_K(S+1)}$，从而
+\begin{equation} \label{eq:ch3_10}\tag{10}
+\log \left(\Theta |F(l)|^{-1}\right) \ge R_K(S+1)\log \left(\frac{1}{2}k^{1/(8n)}\right).
+\end{equation}
+此外，由\autoref{lem:ch3_5}，我们看到 $\theta \le c_{13}^{hk+LR}$，从而借助于 \eqref{eq:ch3_6}，我们有
+\begin{equation} \label{eq:ch3_11}\tag{11}
+\log (\theta |f(l)|^{-1}) \le c_{25} \{ LR + hk \log (R_{K+1}/h) \}.
+\end{equation}
+然而，\eqref{eq:ch3_10} 右端的数至少为
+\[
+2^{-K-6}n^{-1} h k^{\epsilon K+1} \log k,
+\]
+而 \eqref{eq:ch3_11} 右端的数至多为
+\[
+c_{25} h k \{\epsilon(K+1)\log k + k^{\epsilon(K+1)-1/(8n)}\}.
+\]
+如果 $e^{-1} > \epsilon > 2^{2}n c_{25}$ 且 $k$ 足够大，上述估计显然是不相容的. 这一矛盾意味着 \eqref{eq:ch3_3} 的有效性，该引理通过归纳法即得.
+\end{proof}
+
+\begin{mylemma}{}{ch3_7}
+对所有满足 $0 \le l \le hk^{4n}$ 的整数 $l$，我们有
+\begin{equation} \label{eq:ch3_12}\tag{12}
+\sum_{\lambda_{-1}=0}^{L_{-1}} \dots \sum_{\lambda_n=0}^{L_n} p(\lambda_{-1}, \dots, \lambda_n) \left( \Delta(\lambda_{-1} + l/k; h) \right)^{\lambda_0+1} \alpha_1^{\lambda_1 l/k} \dots \alpha_n^{\lambda_n l/k} = 0.
+\end{equation}
+\end{mylemma}
+
+\begin{proof}
+由\autoref{lem:ch3_6}我们看到，\eqref{eq:ch3_3} 对所有满足 $1 \le l \le X$ 的整数 $l$ 以及所有满足
+\[
+m_0 + \dots + m_{n-1} \le Y,
+\]
+的非负整数 $m_0, \dots, m_{n-1}$ 均成立，其中
+\[
+X = [hk^{7n}], \quad Y = [c_{26}^{-1}k],
+\]
+且 $c_{26} = 2^{8n/\epsilon}$. 类似于\autoref{lem:ch3_6}的证明，可以得出
+\[
+f(z) = \Phi(z, \dots, z)
+\]
+满足
+\begin{equation} \label{eq:ch3_13}\tag{13}
+|f_m(r)| < n^k B^{-\frac{1}{2}C} \quad (1 \le r \le X, \ 0 \le m \le Y).
+\end{equation}
+现在令 $l$ 为任何满足 $0 \le l \le hk^{4n}$ 的整数，并定义
+\[
+E(z) = \{(z-1) \dots (z-X)\}^{Y+1},
+\]
+其限制条件是：如果 $l/k$ 为整数，则排除因子 $(z-l/k)$. 我们用 $\Gamma$ 表示复平面中以原点为中心、半径为 $R = Xk^{1/(8n)}$ 的逆时针方向圆周，根据 Cauchy 留数定理\index{Cauchy's residue theorem}，我们推导出
+\[
+\frac{1}{2\pi i} \int_{\Gamma} \frac{f(z) \, dz}{(z - l/k) E(z)} = \frac{f(l/k)}{E(l/k)} + \frac{1}{2\pi i} \sum_{r=1}^{X'} \sum_{m=0}^Y \frac{f_m(r)}{m!} \int_{\Gamma_r} \frac{(z - r)^m \, dz}{(z - l/k) E(z)},
+\]
+其中撇号表示如果 $r=l/k$ 为整数，则在求和中将其排除，并且 $\Gamma_r$ 表示复平面中以 $r$ 为中心、半径为 $1/(2k)$ 的逆时针方向圆周. 由于对 $\Gamma_r$ 上的 $z$，有
+\[
+\left| (z-r)^m/E(z) \right| \le \left\{ (8kX)^{-1} (X-r-1)! (r-2)! \right\}^{-Y-1} \le 8^{3XY} (X!)^{-Y-1},
+\]
+从 \eqref{eq:ch3_13} 导出，上述方程右侧双重和的绝对值至多为
+\[
+X(Y+1) 8^{3XY}(X!)^{-Y-1} B^{-\frac{1}{4}C}.
+\]
+此外，借助于\autoref{lem:ch3_5}，对于 $\Gamma$ 上的任何 $z$，我们有 $|f(z)| < c_{13}^{hk+LR}$，并且显然有 $|E(z)| \ge (\frac{1}{2}R)^{(X-1)(Y+1)}$，
+\[
+|E(l/k)| \le (2X)^{X(Y+1)} \le 8^{X(Y+1)}(X!)^{Y+1}.
+\]
+因此我们得到
+\[
+|f(l/k)| < c_{13}^{hk+LR} (8^{-3}k^{1/(8n)})^{-XY} + B^{-\frac{1}{2}C},
+\]
+且由于 $Lk^{1/(8n)} < k$，我们很容易推导出右端的数至多为 $e^{-XY}$.
+
+现在，显然 \eqref{eq:ch3_12} 的左端（记作 $Q$）是一个次数至多为 $(dk)^n$ 的代数数\index{algebraic number}，并且其每个共轭的绝对值至多为 $c_2^{hk^{4n}}$. 此外，容易验证，在将 $Q$ 乘以
+\[
+(a_1 \dots a_n)^{Ll} k^{2h(L+1)} \le c_{28}^{hk^{4n+1}}
+\]
+后，可以得到一个代数整数\index{algebraic integer}；因为在化为最简分数后，不论是 $k^h/h!$ 还是 $\Delta(\lambda_{-1}+l/k;h)$ 的分母，显然都不含有某个给定的素因子 $p$，这取决于 $p$ 是否整除 $k$. 因此，若 $Q \neq 0$，我们有 $|Q| > c_{29}^{-hk^{4n}}$. 但从 \eqref{eq:ch3_5} 很容易看出
+\[
+|Q - f(l/k)| < B^{-\frac{1}{2}C},
+\]
+从而有 $|f(l/k)| > \frac{1}{2}|Q|$. 上面给出的 $|Q|$ 的估计显然与此前得到的 $|f(l/k)|$ 的上界 $e^{-XY}$ 不相容，从而我们断定 $Q = 0$，正如所求.
+\end{proof}
+
+\section{主定理的证明}
+
+首先，我们观察到借助于\autoref{lem:ch3_2}，多项式
+\[
+(\Delta(\lambda_{-1}+x; h))^{\lambda_0+1} \quad (0 \le \lambda_{-1} \le L_{-1}, 0 \le \lambda_0 \le L_0)
+\]
+在有理数域上是线性无关的. 因此，写成
+\[
+\sum_{\lambda_{-1}=0}^{L_{-1}} \sum_{\lambda_0=0}^{L_0} p(\lambda_{-1}, \dots, \lambda_n) (\Delta(\lambda_{-1}+x; h))^{\lambda_0+1} = \sum_{\lambda'=0}^{L'} p'(\lambda', \lambda_1, \dots, \lambda_n) x^{\lambda'},
+\]
+其中 $L' = h(L+1)$，我们看到在 $L'' = (L'+1)(L+1)^n$ 个数\index{numbers} $p'(\lambda', \lambda_1, \dots, \lambda_n)$ 中至少有一个不为 $0$. 现在，\eqref{eq:ch3_12} 可以写成
+\[
+\sum_{\lambda'=0}^{L'} \sum_{\lambda_1=0}^{L_1} \dots \sum_{\lambda_n=0}^{L_n} p'(\lambda', \lambda_1, \dots, \lambda_n) (l/k)^{\lambda'} (\alpha_1^{\lambda_1/k} \dots \alpha_n^{\lambda_n/k})^l = 0,
+\]
+并且由\autoref{lem:ch3_7}，该方程特别地对于 $0 \le l < L''$ 成立. 由此可知，由仅包含 $l$ 的项给出的 $L''$ 阶行列式消亡. 然而，该行列式属于\autoref{lem:ch3_3}中指出的类型，由此我们断定
+\[
+\alpha_1^{\lambda_1/k} \dots \alpha_n^{\lambda_n/k} = \alpha_1^{\lambda_1'/k} \dots \alpha_n^{\lambda_n'/k}
+\]
+对于某些互不相同的数组 $\lambda_1, \dots, \lambda_n$ 与 $\lambda'_1, \dots, \lambda'_n$ 成立. 这给出
+\[
+b'_1 \log \alpha_1 + \dots + b'_n \log \alpha_n = 2\pi ijk
+\]
+对于某个有理整数 $j$ 成立，其中 $b'_r = \lambda_r - \lambda'_r$. 显然我们有 $|b'_r| \le 2L$，且由于 $L < k^{1-1/(4n)}$，由此可知左端的数绝对值小于 $2nk$. 因此我们断定 $j = 0$，从而 \eqref{eq:ch3_2} 成立，正如所求.
+
+该定理的证明现在通过归纳法完成. 假设 $\beta_0, \dots, \beta_n$ 按照定理叙述中给出，且对于某个足够大的 $C$，满足 $0 < |\Lambda| < B^{-2C}$. 那么 $\beta_1, \dots, \beta_n$ 中至少有一个不为 $0$，并且我们可以设实际上有 $\beta_n \neq 0$. 由\autoref{sec:ch3_2}中的预备性观察，我们看到当将 $\beta_j \ (1 \le j < n)$ 替换为 $\beta'_j = -\beta_j/\beta_n$ 时，\eqref{eq:ch3_1} 仍然成立，此外，对于仅由 $d$ 决定的某个 $c$，$\beta'_j$ 的次数至多为 $d^2$，高度至多为 $B' \le B^c$. 因此，我们断定，对于如\autoref{sec:ch3_3}中所指出的某些 $b'_1, \dots, b'_n$，\eqref{eq:ch3_2} 成立. 现在，若 $b'_n \neq 0$，我们有
+\[
+0 < |\Lambda'| < c_1 B^{-C},
+\]
+其中 $\Lambda'$ 是通过将 $\beta_j$ 替换为
+\[
+\beta''_j = b'_n \beta_j - b'_j \beta_n \quad (0 \le j < n)
+\]
+而从 $\Lambda$ 中得到的，此处 $b'_0$ 被定义为 $0$. 此外，\autoref{sec:ch3_2}中的观察表明，对于某个 $c = c(n, d, A)$，$\beta''_j$ 的次数至多为 $d^2$，高度至多为 $B'' \le B^c$. 此外，我们有 $\beta''_n = 0$；但是该定理显然对 $n = 0$ 有效，并且如果我们假设它对少于 $n$ 个对数的情况成立，那么上述结果表明它对 $n$ 个对数也成立，这就确立了该结果.
+
+需要指出的是，若 $\log \alpha_1, \dots, \log \alpha_n$ 在有理数域上线性无关，则不需要归纳论证；此外，若 $\alpha_1, \dots, \alpha_n$ 乘法无关，则不需要\autoref{lem:ch3_7}.

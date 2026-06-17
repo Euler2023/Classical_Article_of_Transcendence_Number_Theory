@@ -1,0 +1,211 @@
+%\# -*- coding: utf-8-unix -*-
+
+\chapter{虚二次域的类数}\label{ch:5}
+
+
+\section{引言}\label{sec:ch5_1}
+
+二元二次型理论是现代二次域理论的前身，其基础由 Gauss\index{Gauss, C. F.} 在其著名的《算术研究》（\textit{Disquisitiones Arithmeticae}）中奠定. Gauss\index{Gauss, C. F.} 除了其他成果外，还展示了如何将所有二元二次型的集合划分为类（classes），使得两个型属于同一个类当且仅当存在一个将它们联系起来的整单模变换，并且他还展示了如何将这些类合并为亏格\index{genera}，使得两个型在同一个亏格中当且仅当它们是有理等价的. 他还提出了许多著名难题；特别地，在第 303 条中，他猜测与任何给定的类数相关联的负判别式只有有限多个，并且他在较小类数\index{numbers}情形下所制定的判别式表实际上是完整的. 在 Hecke\index{Hecke, E.}、Mordell\index{Mordell, L. J.} 和 Deuring\index{Deuring, M.} 的早期工作之后，该猜测的第一部分由 Heilbronn\index{Heilbronn, H.}\footnote{Quart. J. Math. Oxford Ser. 5 (1934), 150--60.} 于 1934 年证明，这些技术后来由 Siegel\index{Siegel, C. L.} 和 Brauer\index{Brauer, R.}\index{Brauer, A.} 进行了深入发展，从而给出了一个通用的渐近类数公式；但这些论证是非有效的，无法实现 Gauss\index{Gauss, C. F.} 所寻求的类数表的验证. 1966 年，人们发现了两种不同的算法来确定所有类数为 1 的虚二次域，这相当于证实了该猜测 second 部分的最简单情形.
+
+\begin{mythm}{}{ch5_1}
+类数为 1 的唯一虚二次域 $Q(\sqrt{-d})$（其中 $d$ 是无平方因子的正整数）由 $d = 1, 2, 3, 7, 11, 19, 43, 67, 163$ 给出.
+\end{mythm}
+
+最初的证明方法之一（也是我们在此采用的方法）是基于第 \ref{ch:2} 章和第 \ref{ch:3} 章的工作，以及 Gelfond\index{Gelfond, A. O.} 和 Linnik\index{Linnik, Yu. V.}\footnote{D.A.N. 61 (1948), 773--6.} 的一个想法；另一种方法归功于 Stark\index{Stark, H. M.}\footnote{Michigan Math. J. 14 (1967), 1--27.}，其灵感源于 Heegner\index{Heegner, K.}\footnote{M.Z. 56 (1952), 227--53.} 早期的一篇论文，该论文将此问题与椭圆模函数\index{elliptic modular function}的研究以及某些丢番图方程\index{Diophantine equations}的求解联系起来. 然而，前一种方法最近已被推广以解决类数为 2 的类似问题，我们将在第 5 节中描述该解法. 不过，这两种方法似乎都难以轻易推广到更高的类数\index{numbers}.
+
+尽管如此，超越数\index{transcendental number}理论已在几个相关课题中带来了新的成果. 例如，它已被 Anferteva\index{Anferteva, E. A.} 和 Chudakov\index{Chudakov, N. G.}\footnote{Mat. Sb. 82 (1970), 55--66; = 11 (1970), 47--58.} 用于使 Linnik\index{Linnik, Yu. V.} 关于给定类中理想上的范数函数最小值的平均值的某些定理有效化，并且它已被 Schinzel\index{Schinzel, A.} 和作者用于与 Euler\index{Euler, L.} 的“便利数\index{numeri idonei}”（\textit{\lq numeri idonei\index{numeri idonei}\rq}）相关的研究中.\footnote{Acta Arith. 18 (1971), 137--144.} 此外，它还被应用于否定地解决 Chowla\index{Chowla, S.}\index{Chowla, P.} 的一个著名问题，即是否存在一个有理值函数 $f(n)$，它以素数 $p$ 为周期且满足 $\sum f(n)/n = 0$.\footnote{J. Number Th. 5 (1973), 224--36.} 事实上，它给出了对所有取代数值且以任意模 $q$ 为周期的此类函数 $f$ 的描述；因此，特别地，它揭示了只要满足 $(q, \phi(q)) = 1$，对所有非主特征 $\chi \pmod q$ 取的数\index{numbers} $L(1,\chi)$ 在有理数域上线性无关，这显然推广了 Dirichlet\index{Dirichlet, P. G. L.} 关于 $L(1,\chi)$ 非零性的著名结果. 了解当
+
+\[(q,\phi(q))>1.\]
+
+时该定理是否依然成立将是很有意义的. 一些进一步的结果将在 \autoref{sec:ch5_5} 中提及.
+
+\section{$L$-函数}\label{sec:ch5_2}
+
+我们在此记录关于 Dirichlet\index{Dirichlet, P. G. L.} 的 $L$-函数\index{L-functions}\index{L-function} 乘积的一些初步观察.
+
+设 $-d < 0$ 和 $k > 0$ 分别表示二次域 $Q(\sqrt{-d})$ 和 $Q(\sqrt{k})$ 的判别式，并假设 $(k,d) = 1$. 令
+
+\[ \chi(n) = \left(\frac{k}{n}\right), \quad \chi'(n) = \left(\frac{-d}{n}\right) \]
+为通常的 Kronecker\index{Kronecker, L.} 符号. 那么对于任何 $s > 1$，我们有
+
+\begin{equation}\tag{1}\label{eq:ch5_eq1}
+L(s,\chi)L(s,\chi\chi') = \frac{1}{2}\sum_{f}\sum_{x,y}\chi(f)f^{-s},
+\end{equation}
+
+其中 $x, y$ 跑遍所有不全为 0 的整数，并且
+
+\[f = f(x, y) = ax^2 + bxy + cy^2\]
+
+跑遍判别式为 $-d$ 的不等价二次型的一组完全代表系.\footnote{参见 Landau\index{Landau, E.} 的《数论讲义》（\textit{Vorlesungen über Zahlentheorie}，莱比锡，1927），Satz 204.} 为了验证这一断言，我们注意到 \eqref{eq:ch5_eq1} 的左边由下式给出：
+
+\[\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left(\frac{k}{m}\right)\left(\frac{-kd}{n}\right)(mn)^{-s}=\sum_{l=1}^{\infty}\left(\frac{k}{l}\right)l^{-s}\sum_{n|l}\left(\frac{-d}{n}\right),\]
+
+而最后一个和正是 $l$ 被二次型 $f$ 表示的方法数的一半.
+
+现在，\eqref{eq:ch5_eq1} 的右边可以写为
+
+\[\sum_{f} \sum_{x=1}^{\infty} \chi(ax^2) (ax^2)^{-s} + \sum_{f} \sum_{y=1}^{\infty} \sum_{x=-\infty}^{\infty} \chi(f) f^{-s}.\]
+
+这里的第一个项为
+
+\[\zeta(2s) \prod_{p|k} (1-p^{-2s}) \sum_{f} \chi(a) a^{-s},\]
+
+而第二个项可以展开为 Fourier 级数\index{Fourier series}
+
+\[\sum_{f} \sum_{r=-\infty}^{\infty} A_r(s) e^{\pi i r b/(ka)},\]
+
+其中
+
+\[A_r(s) = k^{-1} \int_0^k \sum_{y=1}^{\infty} \sum_{x=-\infty}^{\infty} \chi(f) g^{-s} e^{-2\pi i r v/k} dv,\]
+
+并且
+
+\[g = g(v) = a(x+vy)^2 + (d/4a)y^2\]
+
+使得 $f = g(b/(2a))$. 通过方程
+
+\[x+vy=uy(\sqrt{d}/(2a)),\]
+
+作变量替换将 $v$ 换为 $u$，写入 $x = m + kyn$（其中 $0 \le m < ky$），并交换积分与求和的顺序（这可由控制收敛定理保证），我们得到
+
+\[ A_r(s) = k^{-1} a^{-s} (\sqrt{d}/(2a))^{1-2s} I_r(s) \sum_{y=1}^{\infty} \sigma(y) \, y^{-2s}, \]
+其中
+\[ I_r(s) = \int_{-\infty}^{\infty} \frac{e^{-\pi i u r \sqrt{d}/(ka)}}{(u^2+1)^s} \, du \]
+以及
+\[\sigma(y) = \sum_{m=0}^{ky-1} \chi(f(m,y)) e^{2\pi i r m/(ky)};\]
+
+该积分实际上是由从 $c_n$ 到 $c_{n+1}$ 的部分积分关于 $n$ 求和得到的，其中
+
+\[c_n = 2a(m + kyn)/(y\sqrt{d}).\]
+
+令 $m = j + kl$（其中 $1 \le j \le k$），可以看出，若 $y$ 整除 $r$，则
+
+\[\sigma(y) = y \sum_{j=1}^{k} \chi(f(j,y)) e^{2\pi i r j/(ky)}\]
+
+否则 $\sigma(y) = 0$，这便完成了初步观察.
+
+\section{极限公式}\label{sec:ch5_3}
+
+迄今为止，类数为 1 问题的所有解法都依赖于经典 Kronecker\index{Kronecker, L.} 极限公式\index{limit formula}在 $L$-函数\index{L-functions}\index{L-function} 乘积上的一个类似物. 利用前一节的记号，令
+
+\[A_0 = \lim_{s \to 1} A_0(s), \quad A_r = A_r(1) \quad (r \neq 0),\]
+
+并在 $s \to 1$ 时取极限，我们得到
+
+\begin{equation}\tag{2}\label{eq:ch5_eq2}
+L(1,\chi)L(1,\chi\chi') = \frac{\pi^2}{6} \prod_{p|k} \left(1 - \frac{1}{p^2}\right) \sum_{f} \frac{\chi(a)}{a} + \sum_{f} \sum_{r=-\infty}^{\infty} A_r e^{\pi i r b/(ka)}.
+\end{equation}
+
+我们在此处的目的是证明：对于 $r \neq 0$，有
+
+\[\left|A_r\right|\le \frac{2\pi}{\sqrt{d}}\left|r\right|e^{-\pi|r|\sqrt{d}/(ka)}\]
+
+且若 $k$ 是素数 $p$ 的乘幂，则
+
+\[A_0 = \frac{-2\pi}{k\sqrt{d}} \chi(a) \log p\]
+
+否则 $A_0 = 0$.
+
+首先，我们注意到对于 $r \neq 0$，有
+
+\[A_r = (\frac{1}{2}k\sqrt{d})^{-1}I_r(1)\sum_{y}\sum_{j=1}^k y^{-1}\chi(f(j,y))e^{2\pi i r j/(ky)},\]
+
+其中 $y$ 跑遍 $r$ 的所有正约数. 容易确认
+
+\[ I_r(1) = \pi e^{-\pi |r| \sqrt{d}/(ka)}, \]
+
+且显然 $A_r$ 中关于 $y$ 的求和的绝对值至多为 $k|r|$. 第一个断言立即成立. 为了建立第二个断言，我们注意到
+
+\[A_0(s) = k^{-1}a^{s-1}(\tfrac{1}{2}\sqrt{d})^{1-2s}I_0(s)\sum_{y=1}^{\infty}y^{1-2s}\sum_{j=1}^k\chi(f(j,y)),\]
+
+以及
+
+\[I_0(s) = \sqrt{\pi} \, \Gamma(s - \frac{1}{2}) / \Gamma(s).\]
+
+此外，根据高斯和的著名估计，对于任何正整数 $y$ 和任意奇数 $k$，我们得到
+
+\[\sum_{j=1}^{k} \chi(f(j,y)) = \chi(a) \sum_{j=1}^{k} \chi(j^{2}) e^{2\pi i j y/k};\]
+
+我们在下文中将仅关注奇数 $k$，但该等式实际上对偶数 $k$ 也成立，正如 Stark\index{Stark, H. M.}\footnote{Acta Arith. 14 (1968), 36--60.} 所表明的那样. 右边关于 $j$ 的求和可以等价地表示为关于 $k$ 和 $y$ 的所有公约数\footnote{参见 Hardy 和 Wright 的《数论导引》（\textit{An introduction to the theory of numbers}，牛津，1960），定理 271.} $d$ 的项 $d \mu(k/d)$ 的求和，因此我们看到，上述 $A_0(s)$ 表达式中关于 $y$ 的求和由下式给出：
+
+\[\chi(a) \zeta(2s-1) k^{2-2s} \prod_{p|k} (1-p^{2s-2}).\]
+
+现在，所需要的结果很容易验证.
+
+\section{类数为 1}\label{sec:ch5_4}
+
+假设 $Q(\sqrt{-d})$ 的类数为 1. 那么，根据亏格\index{genera}理论，$d$ 是满足 $d \equiv 3 \pmod 4$ 的素数，并且恰好有一个型 $f$，可以取为
+
+\[x^2 + xy + \frac{1}{4}(1+d)y^2.\]
+
+我们选择 $k = 21$，并注意到 $Q(\sqrt{k})$ 的类数为 1，且基本单位为 $\epsilon = \frac{1}{2}(5 + \sqrt{21})$. 此外，我们注意到当 $d > k$ 时 $(k,d) = 1$，且有 $A_0 = 0$. 因此，\eqref{eq:ch5_eq2} 右侧的双重和的绝对值至多为
+
+\[(4\pi/\sqrt{d})\sum_{r=1}^{\infty}r\eta^{r},\]
+
+其中 $\eta = e^{-\pi\sqrt{d}/k}$. 关于 $r$ 的和恰好为 $\eta/(1-\eta)^2$，并且若 $\sqrt{d} > k$ 则 $\eta < \frac{1}{2}$；从而上述表达式至多为
+
+\[ 16\pi \eta / \sqrt{d}. \]
+
+现在 Dirichlet\index{Dirichlet, P. G. L.} 的经典结果给出
+
+\[L(1,\chi) = 2\log \epsilon/\sqrt{k}, \quad L(1,\chi\chi') = h\pi/\sqrt{kd},\]
+
+其中 $h$ 表示 $Q(\sqrt{-kd})$ 的类数. 代入 \eqref{eq:ch5_eq2} 后，我们容易在设 $d > 10^{20}$ 下导出不等式
+
+\[\left|h\log\epsilon - \frac{32}{21}\pi\sqrt{d}\right| < e^{-\pi\sqrt{d}/100}.\]
+
+但 $\pi = -2i\log i$，因而在左边我们得到了关于两个对数的一个线性型 $\Lambda$，它属于 \autoref{thm:ch3_1} 中所考虑的类型；由于显然有 $h < 4\sqrt{d}$ 且 $\log \epsilon$, $\log i$ 是线性无关的，我们断定，若 $d$ 大于某个有效可计算的数，该不等式是无法成立的. 为了计算后者，方便的做法是考虑来自 $k = 33$ 的 \eqref{eq:ch5_eq2} 得到的第二个不等式，即
+
+\[ |h'\log\epsilon' - \frac{80}{33}\pi\sqrt{d}| < e^{-\pi\sqrt{d}/100}, \]
+
+其中 $h'$, $\epsilon'$ 与上述 $h$, $\epsilon$ 在新 $k$ 值下类似地定义. 通过两式相减，我们得到
+
+\[|b\log\epsilon + b'\log\epsilon'| < e^{-\delta B},\]
+
+其中 $\delta^{-1} = 14 \times 10^3, B = 140\sqrt{d}, b = 35h, b' = -22h'$，显然 $b, b'$ 的绝对值至多为 $B$. 此外，由于 $\epsilon$, $\epsilon'$ 是乘法独立的，我们可以利用第 \ref{ch:4} 章第 5 节中引用的结果（取 $n=2, d=4, A=46$），从而得到 $B<10^{250}$. 这给出了 $d<10^{500}$，而在该限制下确定上述不等式的解是完全可行的. 但实际上，在此不需要该计算，因为 Heilbronn\index{Heilbronn, H.} 和 Linfoot\index{Linfoot, E. H.}\footnote{Quart. J. Math. Oxford Ser. 5 (1934), 293--301.} 在 1934 年证明，除了 \autoref{thm:ch5_1} 中列出的九个判别式外，至多只能有再多一个，并且计算\footnote{Trans. Amer. Math. Soc. 122 (1966), 112--19 (H. M. Stark\index{Stark, H. M.}).}已经表明，第十个 $d$ 如果存在，必然超过 $\exp(10^7)$.
+
+上述论证与 Gelfond\index{Gelfond, A. O.} 和 Linnik\index{Linnik, Yu. V.} 在 1949 年所描述的论证相似，但他们当时仅拥有对于素数 $k$ 值的 \autoref{sec:ch5_3} 中的公式，此时 $A_0$ 不为 0；因此，他们被引向了一个包含三个代数数对数\index{logarithms of algebraic numbers}\index{algebraic number}的不等式，而这在当时无法得到有效解决. 这是一个非凡的巧合：关于合数 $k$ 的公式以及所需的包含三个对数的有效不等式在 1966 年同时问世.
+
+\section{类数为 2}\label{sec:ch5_5}
+
+我们现在简要指出，如何将上述论证推广到处理类数为 2 的类似问题\footnote{最初的解法见 Ann. Math. 94 (1971), 139-62 (A. Baker\index{Baker, R. C.}\index{Baker, A.}); 163-73 (H. M. Stark\index{Stark, H. M.}).}.
+
+如果 $Q(\sqrt{-d})$ 的类数为 2 且 $d > 15$，那么 $d$ 模 8 同余于 3 或 4；因为若 $d \equiv 7 \pmod 8$，则存在三个判别式为 $-d$ 的不等价二次型，即
+
+\[ x^2 + xy + \frac{1}{4}(1+d)y^2, \quad 2x^2 \pm xy + \frac{1}{8}(1+d)y^2. \]
+
+当 $d \equiv 4 \pmod 8$ 时，两个判别式为 $-d$ 的不等价二次型由 $x^2 + \frac{1}{2}dy^2$ 以及
+
+\[ 2x^2 + 2xy + \frac{1}{8}(4+d)y^2 \quad \text{或} \quad 2x^2 + \frac{1}{2}dy^2, \]
+
+具体取决于 $\frac{1}{8}d \equiv 1$ 还是 $2 \pmod 4$；而 \autoref{thm:ch5_1} 的证明方法在仅作简单修改后即可适用.\footnote{参见 Bull. Lond. Math. Soc. 1 (1969), 98--102.} 剩下的则是 $d \equiv 3 \pmod 8$ 的情形. 亏格\index{genera}理论表明，此时 $d = pq$，其中 $p, q$ 分别是模 4 依次同余于 1 和 3 的素数. 设 $\chi'(n)$ 表示与判别式为 $-d$ 的二次型相关联的亏格特征\index{generic character}之一，并令
+
+\[\chi_{pq}(n) = \left(\frac{-pq}{n}\right), \quad \chi_p(n) = \left(\frac{p}{n}\right), \quad \chi_q(n) = \left(\frac{-q}{n}\right), \quad \chi(n) = \left(\frac{k}{n}\right),\]
+
+其中 $k \equiv 1 \pmod 4$ 且 $(k, pq) = 1$，我们从 Dirichlet\index{Dirichlet, P. G. L.} 和 Kronecker\index{Kronecker, L.} 的经典结果中推导出
+
+\[ L(1,\chi)L(1,\chi\chi_{pq}) + L(1,\chi\chi_p)L(1,\chi\chi_q) = \frac{1}{2} \sum_F \sum_{x,y} (\chi(F) + \chi\chi'(F))(F(x,y))^{-1}, \]
+
+其中 $F$ 跑遍判别式为 $-d$ 的一对不等价二次型 $f, f'$，且 $x, y$ 取不全为 0 的所有整数值. 我们可以假设 $f$ 是主型，由此对于所有的 $x, y$ 有 $\chi'(f) = 1, \chi'(f') = -1$. 借助于 Dirichlet\index{Dirichlet, P. G. L.} 的公式，我们从而得到
+
+\[(k/2\pi)\sqrt{pq}\sum_{x,y}\chi(f)/f=h(k)h(-kpq)\log\epsilon+h(kp)h(-kq)\log\eta,\]
+
+其中 $h(l)$ 表示 $Q(\sqrt{l})$ 的类数，而 $\epsilon, \eta$ 分别表示 $Q(\sqrt{k})$， $Q(\sqrt{kp})$ 中的基本单位. 最后取 $k=21$ 并采用与 \autoref{thm:ch5_1} 证明中类似的论证，我们得到不等式
+
+\[|h(-21d)\log \epsilon + h(21p)h(-21q)\log \eta - \frac{64}{21}\pi\sqrt{d}| < e^{-(1/10)\sqrt{d}}.\]
+
+这具有形式
+
+\[\left|\beta\log\alpha+\beta'\log\alpha'+\beta''\log\alpha''\right|< e^{-\delta B},\]
+
+其中 $\beta$ 们表示次数至多为 2 的代数数\index{algebraic number}，并且 $\alpha = \eta, \alpha' = \epsilon, \alpha'' = -1, B = \sqrt{d}, \delta = \frac{1}{10}$. 显然，各 $\beta$ 的高度被 $B$ 的绝对幂限制了上界，且对于某个绝对常数 $c$，$\alpha$ 的高度 $A$ 被限制在 $p^{c\sqrt{p}}$ 之下. 若 $q \le d^{\frac{1}{4}}$，那么我们可以将 $f'$ 取为
+
+\[ qx^2 + qxy + \frac{1}{4}(p+q)y^2, \]
+
+此时 \autoref{thm:ch5_1} 的证明方法同样适用. 因此我们可假设 $q > d^{\frac{1}{4}}$，由此得 $p < d^{\frac{1}{4}}$. 我们现在利用 \autoref{thm:ch3_1} 发表后所记录的关于 $|\Lambda|$ 的第一个不等式，注意到 $\alpha', \alpha''$ 高度的最大值 $A'$ 是绝对有界的，我们断定，对于任意 $\zeta > 0$，有 $B < C(\log A)^{1+\zeta}$，其中 $C = C(\zeta)$ 是有效可计算 of. 从而我们有
+
+\[\sqrt{d} < C(c\sqrt{p}\log p)^{1+\zeta}\]
+
+并且注意到 $p < d^{\frac{1}{4}}$，当 $\zeta < \frac{1}{3}$ 时，这显然给出了 $d$ 的一个有效上界估计. 在实践中\footnote{Ann. Math. 96 (1972), 174--209 (H. M. Stark\index{Stark, H. M.}).}，对于 $d$ 的界限制最后稍大于 $10^{1000}$，而针对 $\zeta$-函数零点的计算工作已经求出了该数值以下所有待考的 $d$；从而已经核实，使得 $Q(\sqrt{-d})$ 具有类数 2 的最大 $d$ 为 427.
+
+在此课题以及代数数对数的线性型\index{logarithms of algebraic numbers}\index{algebraic number}理论的其他应用领域的进展仍在继续. 在结束本章之前，我们记录借助于它所取得的五个进一步结果. 第一，它已被 E. E. Whitacker\index{Whittaker, E. E.}\footnote{Ph.D. Thesis, University of Maryland, 1972.} 用于确定以 Klein 四元群\index{Klein four-group}作为类群的某些虚二次域. 第二，它已被 K. Ramachandra\index{Ramachandra, K.} 和 T. N. Shorey\index{Shorey, T. N.}\footnote{Acta Arith. 24 (1973), 99--111; 25 (1974), 365--373.} 用于研究素数理论中的一个 Erdős 问题；特别地，他们证明了，若 $k$ 是一个自然数，且若 $n_1, n_2, \dots$ 是按升序排列的所有至少有一个超过 $k$ 的素因子的自然数\index{numbers}序列，那么 $n_{i+1} - n_i$ ($i = 1, 2, \dots$) 的最大值 $f(k)$ 满足当 $k \to \infty$ 时有 $f(k) \log k/k \to 0$. 第三，在类似背景下，R. Tijdeman\index{Tijdeman, R.}\footnote{P.C.P.S. 68 (1970), 105--123 (J. Coates\index{Coates, J.}).} 已经应用 \autoref{thm:ch3_1} 之后所给出的那种形式的关于 $|\Lambda|$ 的不等式，肯定地解决了 Wintner\index{Wintner, question of} 的一个问题，即是否存在一个素数序列，使得由它们幂乘积组成的所有自然数\index{numbers}的序列 $n_1, n_2, \dots$ 满足当 $i \to \infty$ 时有 $n_{i+1} - n_i \to \infty$. 第四，A. Schinzel\index{Schinzel, A.}\footnote{P.C.P.S. 67 (1970), 595--602.} 应用 \autoref{thm:ch3_1} 之后记录的关于 $|\Lambda|$ 的第二个不等式，解决了一个关于 $\alpha^n - \beta^n$ 的本原素因子\index{primitive prime factors}的古老难题. 最后，我们要提到，在 1967 年，A. Brumer\index{Brumer, A.}\footnote{Mathematika, 14 (1967), 121--124.} 获得了 \autoref{thm:ch3_1} 早期版本的一个自然的 $p$-进类似物，它结合 Ax\index{Ax, J.}\footnote{Illinois J. Math. 9 (1965), 584--589.} 的工作，解决了一个著名的 Leopoldt\index{Leopoldt, problem of} 问题，即关于阿贝尔数域的 $p$-进调节子的非零性问题.
