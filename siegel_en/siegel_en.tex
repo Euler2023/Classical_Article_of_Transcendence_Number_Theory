@@ -1,0 +1,60 @@
+%# -*- coding: utf-8-unix -*-
+%======================================================================
+% qbook.tex for Qbook Template (English Version)
+%======================================================================
+\documentclass{qbook}
+
+% Autoref names (English)
+\AtBeginDocument{%
+  \def\chapterautorefname{Chapter}%
+  \def\sectionautorefname{\S}%
+  \def\subsectionautorefname{\S}%
+  \def\equationautorefname{Equation}%
+  \def\theoremautorefname{Theorem}%
+  \def\lemmaautorefname{Lemma}%
+  \def\definitionautorefname{Definition}%
+}
+
+\begin{document}
+\begin{sloppypar}	
+	\pagestyle{empty}
+	\input{tex/cover} % Load cover
+	
+	\begin{center}
+		\Large{\sffamily\bfseries Version 1.0} \\ \vspace{2em}
+		\Large{\sffamily\bfseries Build Date: \today} \\ \vspace{1em}
+		\Large{\sffamily\bfseries Any suggestions or bug reports please contact:} \\
+		\text{https://github.com/Euler2023}
+	\end{center} 
+	\vfill
+	\vspace{30em}
+	% \begin{tabular*}{\textwidth}{ccc}
+	% 	\includegraphics{figure/by-nc.eps}
+	% 	& \begin{minipage}[b]{0.6\textwidth}
+	% 		\small\sffamily
+	% 		This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+	% 	\end{minipage}
+	% \end{tabular*}  
+	\thispagestyle{empty}
+	\frontmatter  % Use Roman numerals for front matter (Preface and Table of Contents)
+	\pagestyle{empty}
+	\include{tex/preface}
+	\tableofcontents
+	\cleardoublepage
+	\mainmatter	  % Use Arabic numerals for main body text
+	%======================================================================
+	% Main Chapters
+	\pagestyle{fancy}
+	\setcounter{page}{0}
+	\include{tex/chapter1}
+	\include{tex/chapter2}
+	\include{tex/chapter3}
+	\include{tex/chapter4}
+	\renewcommand{\bibname}{Bibliography}
+	\cleardoublepage     % Ensure starting on odd page with correct numbering
+	\phantomsection      % Ensure PDF bookmarks jump to the exact location
+	\addcontentsline{toc}{chapter}{Bibliography} % Add Bibliography to TOC
+	\include{tex/ref}
+	\backmatter	
+\end{sloppypar}
+\end{document}

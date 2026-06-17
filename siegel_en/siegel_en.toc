@@ -1,0 +1,44 @@
+\let \CTEX@spaceChar \relax 
+\contentsline {chapter}{Preface}{i}{chapter*.1}%
+\contentsline {chapter}{\numberline {Chapter 1}THE EXPONENTIAL FUNCTION}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}The irrationality of $e$}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}The operator $f(D)$}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Approximation to $e^x$ by rational functions}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}The irrationality of $e^a$ for rational $a \neq 0$}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}The irrationality of $\pi $}{5}{section.1.5}%
+\contentsline {section}{\numberline {1.6}The irrationality of $\tan a$ for rational $a \ne 0$}{6}{section.1.6}%
+\contentsline {section}{\numberline {1.7}The function $P_1 e^{\rho _1 X} + \dots + P_m e^{\rho _m X}$}{7}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Estimation of $R(1)$}{9}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Estimation of $P_k(1)$ and its denominator}{10}{section.1.9}%
+\contentsline {section}{\numberline {1.10}The transcendency of $e^a$ for real algebraic $a \neq 0$}{10}{section.1.10}%
+\contentsline {section}{\numberline {1.11}The determinant of m approximation forms}{11}{section.1.11}%
+\contentsline {section}{\numberline {1.12}Algebraic independence}{12}{section.1.12}%
+\contentsline {section}{\numberline {1.13}Another expression for the remainder term $R(x)$}{14}{section.1.13}%
+\contentsline {section}{\numberline {1.14}The interpolation formula}{16}{section.1.14}%
+\contentsline {section}{\numberline {1.15}Concluding remarks}{18}{section.1.15}%
+\contentsline {chapter}{\numberline {Chapter 2}SOLUTIONS OF LINEAR DIFFERENTIAL EQUATIONS}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Functions of type E}{20}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Arithmetical lemmas}{21}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Approximation forms}{23}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Normal systems}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.5}The coefficient matrix of the approximation forms}{27}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Estimation of $R_k$ and $P_{kl}$}{28}{section.2.6}%
+\contentsline {section}{\numberline {2.7}The rank of $E_1(\alpha ), \dots , E_m(\alpha )$}{30}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Algebraic independence}{31}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Hypergeometric E-functions}{32}{section.2.9}%
+\contentsline {section}{\numberline {2.10}The Bessel differential equation}{35}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Determination of the exceptional case}{37}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Algebraic relations involving different Bessel functions}{39}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Normality --- Bessel functions}{41}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Additional remarks}{43}{section.2.14}%
+\contentsline {chapter}{\numberline {Chapter 3}THE TRANSCENDENCY OF $a^b$ FOR IRRATIONAL ALGEBRAIC $b$ AND ALGEBRAIC $a \neq 0, 1$}{45}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Schneider's proof}{46}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Gelfond's proof}{48}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Additional remarks}{50}{section.3.3}%
+\contentsline {chapter}{\numberline {Chapter 4}ELLIPTIC FUNCTIONS}{51}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Abelian differentials}{51}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Elliptic integrals}{52}{section.4.2}%
+\contentsline {section}{\numberline {4.3}The approximation form}{54}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Conclusion of the proof}{55}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Some other results}{57}{section.4.5}%
+\contentsline {chapter}{Bibliography}{61}{section*.138}%

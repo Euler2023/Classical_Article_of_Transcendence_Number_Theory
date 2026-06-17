@@ -1,0 +1,337 @@
+\chapter{ELLIPTIC FUNCTIONS}\label{sec:chapter4}
+
+The last chapter will be devoted to some of the deep results concerning elliptic functions obtained by Schneider in 1937.
+
+\section{Abelian differentials}\label{sec:4.1}
+
+Let $\varphi(\xi, \eta) = 0$ be the equation of an irreducible algebraic curve $C$ of genus $p$. We consider $\xi$ as the independent variable and introduce the Riemann surface $\mathfrak{R}$ corresponding to the algebraic function $\eta$. The field of all single-valued meromorphic functions on $\mathfrak{R}$ is identical with the field $\Omega$ of all rational functions $R(\xi, \eta)$ of $\xi$ and $\eta$ on $C$ which are not identically $\infty$. The expression
+\begin{equation}
+dw = \psi(\xi, \eta) d\xi \tag{120}\label{eq:120}
+\end{equation}
+is called an abelian differential on $\mathfrak{R}$.
+
+At every point $P$ on $\mathfrak{R}$ we have a local uniformizing parameter $t$ which maps a neighborhood of this point onto a simple neighborhood of $0$ in the $t$-plane. Inserting for $\xi$ and $\eta$ their power series in $t$, we obtain from\eqref{eq:120} an expansion
+\[
+\frac{dw}{dt} = \sum_{n=-\infty}^{\infty} c_n t^n
+\]
+where only finitely many $c_n$ with negative subscript $n$ are $\neq 0$; of course, the coefficients $c_n$ depend upon $P$. The abelian differential $dw$ is called of the first kind, if $c_n = 0$ for all $n < 0$ and all $P$; it is of the second kind, if $c_{-1} = 0$ everywhere on $\mathfrak{R}$; in the remaining case, when there is no condition, one speaks of the third kind. Introducing the abelian integrals $w$ one can characterize the three cases in the following way: The abelian integral $w$ is of the first kind, if it is everywhere finite; it is of the second kind, if it has no other singularities on $\mathfrak{R}$ than poles; it is of the third kind, if it may have logarithmic branch points.
+
+If $dw_1$ and $dw_2$ are abelian differentials on $\mathfrak{R}$ of the same kind, then also $\lambda_1 dw_1 + \lambda_2 dw_2$ is, for any constants $\lambda_1, \lambda_2$. We shall restrict ourselves to differentials of the first and second kind. The structure of the corresponding additive groups is described by the following classical results: There exist $p$, and not more than $p$, linearly independent differentials $du_1, \dots, du_p$ of the first kind; there exist $p$ differentials of the second kind $dv_1, \dots, dv_p$ such that any differential of the second kind on $\mathfrak{R}$ can be uniquely expressed in the form
+\begin{equation}
+dw = (\lambda_1 du_1 + \dots + \lambda_p du_p) + (\mu_1 dv_1 + \dots + \mu_p dv_p) + d\chi, \tag{121}\label{eq:121}
+\end{equation}
+where $\lambda_1, \dots, \lambda_p$ and $\mu_1, \dots, \mu_p$ are constants, and $\chi = \chi(\xi, \eta)$ lies in $\Omega$.
+
+In the preceding definitions and statements it is not necessary to assume that the underlying field of constants in $\Omega$ comprises all complex numbers, but it is important that this field is algebraically closed. From now on we shall restrict the coefficients of $\varphi$ and $\chi$ to algebraic numbers and speak of $\Omega$ in this new meaning; then also $\lambda_1, \dots, \lambda_p$ and $\mu_1, \dots, \mu_p$ in\eqref{eq:121} are algebraic numbers.
+
+\section{Elliptic integrals}\label{sec:4.2}
+
+In the elliptic case $p=1$ the curve $\varphi(\xi, \eta) = 0$ can be mapped by an appropriate birational transformation
+\[
+x = \psi_1(\xi, \eta), \quad y = \psi_2(\xi, \eta) \qquad (\psi_1, \psi_2 \text{ in } \Omega)
+\]
+onto the normal cubic curve
+\[
+y^2 = 4x^3 - g_2 x - g_3
+\]
+with algebraic constants $g_2, g_3$ and $g_2^3 - 27g_3^2 = \Delta \neq 0$. Then
+\[
+dz = -\frac{dx}{y}, \quad d\zeta = \frac{x dx}{y}
+\]
+are differentials of the first and second kind, and any elliptic integral $w$ of the second kind satisfies, in virtue of\eqref{eq:121}, the decomposition formula
+\begin{equation}
+dw = \lambda dz + \mu d\zeta + d\chi, \tag{122}\label{eq:122}
+\end{equation}
+where $\lambda, \mu$ are algebraic constants and $\chi(x, y)$ is a rational function of $x$ and $y$ with algebraic coefficients.
+
+The Weierstrassian functions $\wp(z)$ and $\zeta(z)$ are defined by
+\[
+z = \int_{x}^{\infty} \frac{dx}{y}, \quad x = \wp(z), \quad y = \wp'(z) = -\frac{dx}{dz},
+\]
+\[
+\zeta'(z) = \frac{d\zeta}{dz} = \frac{d\zeta}{dx} \cdot \frac{dx}{dz} = -x = -\wp(z), \qquad \zeta(-z) = -\zeta(z).
+\]
+Introduce the odd function
+\[
+q(z) = \lambda z + \mu \zeta(z),
+\]
+then the decomposition\eqref{eq:122} takes the form
+\begin{equation}
+dw = dq + d\chi. \tag{123}\label{eq:123}
+\end{equation}
+We shall have to make use of the addition theorem for the elliptic integral $w$ of the second kind; because of\eqref{eq:123}, it is an immediate consequence of the addition theorem for $q$, namely
+\begin{equation}
+q(z+z_0) - q(z) - q(z_0) = \frac{\mu}{2} \frac{\wp'(z) - \wp'(z_0)}{\wp(z) - \wp(z_0)}, \tag{124}\label{eq:124}
+\end{equation}
+where $z$ and $z_0$ are independent variables in the complex plane. The addition theorem for $\zeta(z)$ follows from\eqref{eq:124} by differentiation with respect to $z$, in view of the differential equation
+\[
+\wp'(z) = \left(4 \wp^3(z) - g_2 \wp(z) - g_3\right)^{\frac{1}{2}}.
+\]
+Besides\eqref{eq:124} we need some other well known properties of the elliptic functions: There exist two basic periods $\omega_1, \omega_2$ of $\wp(z)$ such that any period $\omega$ can be uniquely expressed as $\omega = g_1 \omega_1 + g_2 \omega_2$ with rational integral $g_1, g_2$; the ratio $\omega_2 / \omega_1$ is not real; the function $\zeta(z)$ has poles of first order at all period points $z = \omega$ and is regular at all other finite points in the $z$-plane; finally,
+\begin{equation}
+q(z+\omega) - q(z) = \eta, \tag{125}\label{eq:125}
+\end{equation}
+where $\eta$ depends upon the period $\omega$ and not upon $z$. Our main object is the proof of the following theorem by Schneider:
+
+\begin{mythm*}{Schneider's Theorem}
+Let $P_1 = P_1(\xi_1, \eta_1)$ and $P_2 = P_2(\xi_2, \eta_2)$ be two points on the Riemann surface $\mathfrak{R}$ of the curve $\varphi(\xi, \eta) = 0$ of genus $1$, whose coordinates $\xi_1, \eta_1$ and $\xi_2, \eta_2$ are algebraic numbers, and let $w(P)$ be an indefinite elliptic integral of the second kind which is regular at $P_1, P_2$ and does not reduce to a rational function of $\xi$ and $\eta$; then the value of the definite elliptic integral
+\begin{equation}
+w(P_2) - w(P_1) = \int_{P_1}^{P_2} dw \tag{126}\label{eq:126}
+\end{equation}
+is transcendental, except when $P_1, P_2$ coincide and the path of integration on $\mathfrak{R}$ is homologous to $0$.
+\end{mythm*}
+
+It should be mentioned, since $w(P)$ is not single-valued on $\mathfrak{R}$, that the theorem holds for any path of integration $L$ on $\mathfrak{R}$ with the end points $P_1$ and $P_2$. For the proof of the theorem we may exclude the trivial case that $L$ is closed on $\mathfrak{R}$ and homologous to $0$; then $L$ is the image of a path in the $z$-plane with different end points $z_1$ and $z_2$. The difference
+\[
+z_2 - z_1 = z_0 \neq 0
+\]
+is a period $\omega$ only in case $L$ is closed on $\mathfrak{R}$. In this case we may suppose, for the proof of the theorem, that $L$ is not homologous to twice a closed curve on $\mathfrak{R}$; then $\frac{\omega}{2}$ is not a period and, because of\eqref{eq:123} and\eqref{eq:125},
+\begin{equation}
+2q\left(\frac{\omega}{2}\right) = \eta = \int_{L} dq = \int_{L} dw, \quad \wp'\left(\frac{\omega}{2}\right) = 0. \tag{127}\label{eq:127}
+\end{equation}
+If $L$ is not closed, then $z_0$ is not a period and we may apply\eqref{eq:124}, with $z = z_1$ or $z$ tending to $z_1$, and\eqref{eq:123}. By the assumptions in the theorem concerning $P_1$ and $P_2$, it follows that the difference of $q(z_0)$ and the elliptic integral\eqref{eq:126} is an algebraic number. This result, together with\eqref{eq:127}, shows that it suffices to prove the following statement:
+
+Let $\lambda, \mu, g_2, g_3, \wp(z_0)$ be algebraic numbers and $\lambda, \mu$ not both $0$; then $q(z_0) = \lambda z_0 + \mu \zeta(z_0)$ is transcendental.
+
+\section{The approximation form}\label{sec:4.3}
+
+Suppose that $\lambda, \mu, g_2, g_3, \wp(z_0), \wp'(z_0)$ and $q(z_0)$ lie in an algebraic number field $K$ of degree $h$ and put
+\[
+m = 16h + 1.
+\]
+Consider the multiples $z_0, 2z_0, 3z_0, \dots$ of $z_0$; since $z_0$ is not a period, we may choose $m$ of these multiples, say $z_1, \dots, z_m$, which are no periods. It follows from the addition theorem of $q(z)$ and $\wp(z)$ that all $3m$ numbers $\wp(z_k), \wp'(z_k), q(z_k)$ ($k = 1, \dots, m$) lie in $K$.
+
+If $a$ and $b$ are any constants $\neq 0$ in $K$, we may perform the substitutions $a^2 x \to x$, $a^3 y \to y$, $a^4 g_2 \to g_2$, $a^6 g_3 \to g_3$, $a^{-1} z \to z$, $ab \lambda \to \lambda$, $a^{-1} b \mu \to \mu$, $a \zeta \to \zeta$, $b q \to q$, which simply express the group property of abelian differentials. A suitable choice of $a$ and $b$ then allows us to assume that the $3m+4$ numbers $\lambda, \mu, g_2, g_3, \wp(z_k), \wp'(z_k), q(z_k)$ ($k=1, \dots, m$) all are integers in $K$. It follows from the formulas $q' = \lambda - \mu \wp$, $\wp'' = 6 \wp^2 - \frac{1}{2} g_2$ that also all derivatives of $\wp$ and $q$ are integers in $K$, for $z = z_1, \dots, z_m$, and the same then holds obviously for all derivatives of the power products
+\[
+f(z) = f_{\alpha\beta}(z) = \wp^{\alpha}(z)q^{\beta}(z) \qquad (\alpha, \beta=0,1,\dots)
+\]
+To obtain an upper estimate of the absolute values of these derivatives we use Cauchy's formula
+\[
+f^{(l)}(z_k) = \frac{l!}{2\pi i} \int_C \frac{f(z)}{(z-z_k)^{l+1}} \, dz \qquad (l=0,1,\dots),
+\]
+taking for $C$ a circle with center $z_k$ and sufficiently small radius, so that all period points stay outside. On $C$ we have $f(z) = O(c_1^{\alpha+\beta})$ where $c_1$ is independent of $\alpha, \beta$; hence
+\begin{equation}
+f_{\alpha\beta}^{(l)}(z_k) = l! \, O(c_2^{\alpha+\beta+l}) \tag{129}\label{eq:129}
+\end{equation}
+for $k=1, \dots, m$ and all $\alpha, \beta, l = 0, 1, \dots$.
+
+A corresponding estimate for the conjugates of $f_{\alpha\beta}^{(l)}(z_k)$ can be obtained by the following trick. Let $\bar{K}$ be any of the $h$ conjugates of $K$. Since $\Delta = g_2^3 - 27g_3^2 \neq 0$, also $\bar{\Delta} \neq 0$; therefore we may introduce the $\wp$-function with the invariants $\bar{g}_2, \bar{g}_3$, and we denote it by $\bar{\wp}(z)$. For fixed $k$ we define a complex number $\bar{z}_k$ by the condition that $\bar{\wp}(\bar{z}_k) = \overline{\wp(z_k)}$ and $\bar{\wp}'(\bar{z}_k) = \overline{\wp'(z_k)}$; this determines $\bar{z}_k$ only up to an arbitrary additive period of the function $\bar{\wp}(z)$, and we choose a fixed $\bar{z}_k$. Finally we define the function $\bar{q}(z)$ uniquely by the condition that $\bar{q}'(z) = \bar{\lambda} - \bar{\mu} \bar{\wp}(z)$ and $\bar{q}(\bar{z}_k) = \overline{q(z_k)}$. Then $\bar{q}(z)$ has all the properties of $q(z)$ needed for the proof of\eqref{eq:129}, and $\bar{f}_{\alpha\beta}^{(l)}(\bar{z}_k) = \overline{f_{\alpha\beta}^{(l)}(z_k)}$. Therefore
+\begin{equation}
+\overline{|f_{\alpha\beta}^{(l)}(z_k)|} = l! \, O(c_3^{\alpha+\beta+l}) \tag{130}\label{eq:130}
+\end{equation}
+for $k=1, \dots, m$ and all $\alpha, \beta, l = 0, 1, \dots$.
+
+Let $r^2$ be a positive rational integral square divisible by $2m$ and put
+\[
+n = \frac{r^2}{2m}.
+\]
+Consider the polynomial $R(\wp, q)$ in $\wp$ and $q$, of degree $< r$ in each variable, with $r^2$ indeterminate coefficients. Under the condition that $R(\wp, q)$, as a function of $z$, vanishes at all $m$ points $z = z_1, \dots, z_m$ of order $n$ at least, we obtain $mn$ homogeneous linear equations with integral numerical coefficients in $K$ whose conjugates, because of the estimate\eqref{eq:130} for $\alpha < r, \beta < r, l < n$, all are $O(c_4^n n^n)$. Applying\mylem{lem:2} we see that we can satisfy our condition by a polynomial $R(\wp, q)$ with integral coefficients in $K$, not all $0$, whose conjugates are $O(c_5^n n^n)$.
+
+\section{Conclusion of the proof}\label{sec:4.4}
+
+We shall first prove that the function $q(z)$ is not an algebraic function of $\wp(z)$. Otherwise there would exist an equation of smallest degree $\rho \ge 1$,
+\begin{equation}
+q^{\rho} + A_1 q^{\rho-1} + \dots + A_{\rho} = 0, \tag{131}\label{eq:131}
+\end{equation}
+where $A_1, \dots, A_\rho$ are rational functions of $\wp(z)$ and $\wp'(z)$. Since $q'(z) = \lambda - \mu \wp(z)$, differentiation of\eqref{eq:131} with respect to $z$ gives an equation of degree $\rho - 1$ in $q$ and therefore an identity in $q$. Let $j$ be an indeterminate, independent of $z$. It follows that the expression
+\[
+(q+j)^{\rho} + A_1(q+j)^{\rho-1} + \dots + A_{\rho}, \quad q=q(z),
+\]
+does not depend upon $z$. Derivation with respect to $j$ gives an equation of degree $\rho - 1$ for $q(z)$; hence $\rho = 1$, and $q(z)$ is an elliptic function. But $q(z)$ has at most one pole in the period parallelogram, namely the pole of first order at $z=0$ in case $\mu \neq 0$. Therefore $q(z)$ is constant, and this is a contradiction, $\lambda$ and $\mu$ being not both $0$.
+
+Now we know that the meromorphic function
+\[
+R(\wp, q) = g(z)
+\]
+cannot vanish identically in $z$. Determine the integer $s$ such that all derivatives $g(z), g'(z), \dots, g^{(s-1)}(z)$ vanish at the $m$ points $z = z_1, \dots, z_m$, but
+\[
+\gamma = g^{(s)}(z_k) \neq 0,
+\]
+for some $k=1, \dots, m$. Plainly, $s \ge n$. The number $\gamma$ is an integer in $K$, so that
+\begin{equation}
+|N(\gamma)| \ge 1. \tag{132}\label{eq:132}
+\end{equation}
+On the other hand, because of\eqref{eq:130},
+\begin{equation}
+\overline{|\gamma|} = s! \, O(c_6^s n^n). \tag{133}\label{eq:133}
+\end{equation}
+It remains to find an appropriate upper estimate of $|\gamma|$ itself. Let $\nu$ be a positive rational integer which shall tend to $\infty$ with $n$, and define
+\[
+A(z) = \prod_{g_1, g_2 = -\nu}^{\nu} (z - g_1 \omega_1 - g_2 \omega_2)^{3r},
+\]
+\[
+B(z) = \prod_{l=1}^{m} (z-z_l)^{s},
+\]
+where $\omega_1, \omega_2$ are basic periods of $\wp(z)$. The function
+\[
+f(z) = \frac{A(z)}{B(z)} g(z)
+\]
+is regular in the parallelogram $F_\nu$ defined by
+\[
+z = x_{1}\omega_{1} + x_{2}\omega_{2}
+\]
+\[
+(-\nu - \frac{1}{2} \le x_{1} \le \nu + \frac{1}{2}; \quad -\nu - \frac{1}{2} \le x_{2} \le \nu + \frac{1}{2}).
+\]
+Choose $n$ already so large that $z_1, \dots, z_m$ are inner points of $F_{\nu}$. On the frontier of $F_{\nu}$ we have the following estimates, because of\eqref{eq:125} and the periodicity of $\wp(z)$:
+\[
+g(z) = r^2 (c_7 \nu)^r O(c_5^n n^n),
+\]
+\[
+A(z) = O((c_8 \nu)^{3r(2\nu+1)^2}) = O(c_9^{r\nu^2} \nu^{12r\nu^2}),
+\]
+\[
+\frac{1}{B(z)} = O\left(\left(\frac{c_{10}}{\nu}\right)^{ms}\right),
+\]
+hence
+\[
+f(z) = O(c_{11}^s c_9^{r\nu^2} n^n \nu^{28r\nu^2 - ms}).
+\]
+Furthermore, we have at the point $z=z_k$ of $F_{\nu}$
+\[
+f(z_k) = A(z_k) \lim_{z \to z_k} \frac{g(z)}{B(z)} = \frac{A(z_k)g^{(s)}(z_k)}{s! \prod_{\substack{l=1\\l \neq k}}^{m} (z_k-z_l)^s},
+\]
+\[
+\frac{1}{A(z_k)} = O(c_{12}^{r\nu^2} \nu^{-12r\nu^2}), \qquad \prod_{\substack{l=1\\l \neq k}}^m (z_k - z_l)^s = O(c_{13}^s).
+\]
+The maximum property of the absolute value of an analytic function now yields the estimate
+\[
+\gamma = s! c_{12}^{r\nu^2} \nu^{-12r\nu^2} c_{13}^s O(c_{11}^s c_9^{r\nu^2} n^n \nu^{28r\nu^2 - ms})
+\]
+\[
+= O(c_{14}^s c_{15}^{r\nu^2} s^{2s} \nu^{28r\nu^2 - ms}).
+\]
+Let $m > 112$ and choose
+\[
+\nu = \left[ \sqrt{\frac{ms}{56r}} \right] \ge \left[ \sqrt{\frac{r}{112}} \right] \to \infty \quad (n \to \infty);
+\]
+then
+\[
+\gamma = O(c_{15}^s s^{2s} \nu^{-\frac{ms}{2}})
+\]
+and
+\[
+= O\left(c_{16}^s s^{2s} \left(\frac{s}{\sqrt{n}}\right)^{-\frac{ms}{4}}\right) = O\left(c_{16}^s s^{2s-\frac{ms}{8}}\right).
+\]
+Therefore, in view of\eqref{eq:132} and\eqref{eq:133},
+\[
+|N(\gamma)| = O\left(c_{17}^s s^{2hs - \frac{ms}{8}}\right) = O\left(c_{17}^s s^{-\frac{s}{8}}\right) \to 0 \quad (n \to \infty),
+\]
+in contradiction to\eqref{eq:132}. It follows that our assumption at the beginning of \S 3 was false, and $q(z_0)$ is transcendental whenever $\lambda, \mu, g_2, g_3, \wp(z_0)$ are algebraic, $\lambda, \mu$ not both 0.
+
+\section{Some other results}\label{sec:4.5}
+
+Let us consider some examples for Schneider's theorem. If $(\xi_1, \eta_1)$ and $(\xi, \eta)$ are two real points on the ellipse
+\[
+\frac{\xi^2}{a^2} + \frac{\eta^2}{b^2} = 1 \qquad (0 < b < a),
+\]
+then the arc length
+\[
+s(\xi, \xi_1) = \int_{\xi_1}^{\xi} \sqrt{\frac{a^2 - \epsilon^2 \xi^2}{a^2 - \xi^2}} \, d\xi \qquad \left(\epsilon^2 = 1 - \frac{b^2}{a^2}\right)
+\]
+is an elliptic integral of the second kind, and not a rational function of $\xi$ and $\eta$. Therefore $s$ is transcendental if $a, b, \xi_1, \xi$ are algebraic numbers, except in the trivial case that $s=0$. In particular, the perimeter of the ellipse is transcendental for algebraic $a$ and $b$. The corresponding results for the circle, $a=b$, are contained in Lindemann's theorem.
+
+The arc length of the lemniscate
+\[
+(\xi^2 + \eta^2)^2 = 2a^2(\xi^2 - \eta^2) \qquad (a > 0)
+\]
+is given by
+\[
+s(\xi, \xi_1) = a\sqrt{2} \int_{t_1}^{t} \frac{dt}{\sqrt{1-t^4}} \qquad \left(t^2 = \frac{\xi^2 - \eta^2}{\xi^2 + \eta^2}\right).
+\]
+As a function of $t$, this is an elliptic integral of the first kind. It follows for algebraic $a$ that the arc length on the lemniscate, between points with algebraic coordinates $\xi, \eta$, is transcendental, except in the trivial case $s=0$. In particular, the perimeter of the lemniscate is transcendental for algebraic $a$. Since
+\[
+4 \int_{0}^{1} \frac{dt}{\sqrt{1-t^{4}}} = \int_{0}^{1} u^{-\frac{3}{4}} (1-u)^{-\frac{1}{2}} \, du
+\]
+\[
+= B \left(\frac{1}{4}, \frac{1}{2}\right) = \frac{\Gamma \left(\frac{1}{4}\right) \Gamma \left(\frac{1}{2}\right)}{\Gamma \left(\frac{3}{4}\right)} = (2 \pi)^{-\frac{1}{2}} \Gamma^{2} \left(\frac{1}{4}\right),
+\]
+the perimeter, for $a=1$, equals $(2\pi)^{-\frac{1}{2}} \Gamma^2(\frac{1}{4})$. Therefore the number $\pi^{-\frac{1}{4}} \Gamma(\frac{1}{4})$ is transcendental. We do not know, however, whether $\Gamma(\frac{1}{4})$ itself is irrational.
+
+All our transcendency proofs made essential use of the fact that the problem can be reduced to the proof of a property of entire functions. This is the reason why the known methods do not work for elliptic integrals of the third kind and not even for integrals of the third kind in the still simpler case of curves of genus 0. For instance, it is not known whether the number
+\[
+\int_0^1 \frac{dx}{1+x^3} = \frac{1}{3} \left(\log 2 + \frac{\pi}{\sqrt{3}}\right)
+\]
+is irrational.
+
+Concerning elliptic functions Schneider discovered another interesting theorem which we shall mention without proof:
+
+\begin{mythm*}{Schneider's Theorem on Elliptic Functions}
+Let $\wp(z) = \wp(z, g_2, g_3)$ and $\wp^*(z) = \wp(z, g_2^*, g_3^*)$ be two algebraically independent $\wp$-functions with the invariants $g_2, g_3$ and $g_2^*, g_3^*$; then at least one of the 6 numbers $g_2, g_3, g_2^*, g_3^*, \wp(z_0), \wp^*(z_0)$ is transcendental, for any $z_0$ which is not a period for one of the functions.
+\end{mythm*}
+
+It is known that $\wp(z)$ and $\wp^*(z)$ are related by an algebraic equation with constant coefficients, if and only if their period lattices are commensurable; this means that
+\begin{equation}
+\omega_1^* = \alpha \omega_1 + \beta \omega_2, \qquad \omega_2^* = \gamma \omega_1 + \delta \omega_2 \tag{134}\label{eq:134}
+\end{equation}
+with rational $\alpha, \beta, \gamma, \delta$, where $\omega_1, \omega_2$ and $\omega_1^*, \omega_2^*$ are basic periods. As an application of the theorem, suppose that both
+\[
+\frac{\omega_2}{\omega_1} = \tau, \qquad \frac{g_2^3}{g_2^3 - 27g_3^2} = j(\tau)
+\]
+are algebraic numbers. We have
+\[
+g_2 = 60 \sum_{\omega \neq 0} \omega^{-4}, \qquad g_3 = 140 \sum_{\omega \neq 0} \omega^{-6},
+\]
+where $\omega$ runs over all periods $\neq 0$ of $\wp(z, g_2, g_3)$. Replacing $\omega$ by $\lambda\omega$ with suitably chosen constant $\lambda \neq 0$, we may prescribe $g_3=1$ in case $j(\tau)=0$ and $g_2=1$ otherwise, so that now $g_2$ and $g_3$ both are algebraic numbers. Define
+\begin{equation}
+g_{2}^{*} = \tau^{-4} g_{2}, \qquad g_{3}^{*} = \tau^{-6} g_{3}, \tag{135}\label{eq:135}
+\end{equation}
+\[
+\omega_{1}^{*} = \tau \omega_{1}, \qquad \omega_{2}^{*} = \tau \omega_{2},
+\]
+then
+\[
+\wp^*(\tau z) = \tau^{-2} \wp(z)
+\]
+and, in particular
+\[
+\wp^*\left(\frac{\omega_2}{2}\right) = \tau^{-2} \wp\left(\frac{\omega_1}{2}\right).
+\]
+Since now the 6 numbers $g_2, g_3, g_2^*, g_3^*, \wp(\frac{\omega_1}{2}), \wp^*(\frac{\omega_2}{2})$ are algebraic, the functions $\wp(z)$ and $\wp^*(z)$ must be algebraically dependent. Therefore their period lattices are commensurable, and we have\eqref{eq:134}. This implies $\tau \omega_1 = \alpha \omega_1 + \beta \omega_2$ and $\tau \omega_2 = \gamma \omega_1 + \delta \omega_2$, which yields
+\[
+(\tau - \alpha)(\tau - \delta) = \beta \gamma,
+\]
+so that $\tau$ is a quadratic irrationality.
+
+This shows that the elliptic modular function $j(\tau)$ is transcendental for every algebraic number $\tau$ in the upper half-plane which is not an imaginary quadratic irrationality. On the other hand, it is known from the theory of complex multiplication that $j(\tau)$ is algebraic for any imaginary quadratic $\tau$.
+
+In 1941 Schneider extended one of his results concerning elliptic integrals to abelian integrals on Riemann surfaces $\mathfrak{R}$ of genus $p \ge 1$:
+
+\begin{mythm*}{Schneider's Theorem on Abelian Integrals}
+Let $w$ be an abelian integral of the first or second kind and not an algebraic function, and suppose that $L_1, \dots, L_p$ are retrosections on $\mathfrak{R}$ which leave $\mathfrak{R}$ connected; then at least one of the $p$ integrals
+\[
+\eta_{k} = \int_{L_{k}} dw \qquad (k=1,\dots,p)
+\]
+is transcendental; in particular, there exists on $\mathfrak{R}$ a closed curve $L$ such that
+\begin{equation}
+\eta = \int_{L} dw \tag{136}\label{eq:136}
+\end{equation}
+is transcendental.
+\end{mythm*}
+
+It should be mentioned that the last formula on p. 126 of Schneider's paper is wrong; however, it is not hard to complete the proof by using Cauchy's formula only for one single variable.
+
+An interesting example is provided by
+\[
+w = \int x^{\alpha-1} (1-x)^{\beta-1} \, dx
+\]
+where $\alpha, \alpha+\beta$ are rational, but not integral. Then for any closed curve $L$ the corresponding period $\eta$ in\eqref{eq:136} takes the form $\rho B(\alpha, \beta)$, where $\rho$ is a number in the cyclotomic field generated by $e^{2\pi i \alpha}$ and $e^{2\pi i \beta}$.
+
+Therefore Schneider's result implies that the number
+\[
+B(\alpha, \beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
+\]
+is transcendental, whenever $\alpha, \beta, \alpha+\beta$ are rational and non-integral. It follows from the transcendency of $\pi$ that the case $\alpha+\beta = 1, 2, \dots$ is no real exception. Choosing $\alpha = \beta$ we see that at least one of the two numbers $\Gamma(\alpha), \Gamma(2\alpha)$ is transcendental for all rational non-integral $\alpha$. But we do not know, for instance, whether $\Gamma(\frac{1}{3})$ is irrational.
+
+As a geometric application of the result concerning $B(\alpha, \beta)$, consider in the complex $z$-plane the curve consisting of all points $z$ with the property that the product of the $n$ distances $|z - a \epsilon^k|$ from $z$ to the $n$ vertices $a \epsilon^k$ ($k=1, \dots, n; \epsilon = e^{\frac{2\pi i}{n}}; a > 0$) of a regular polygon equals $a^n$. For $n=1$ and $n=2$ we obtain circle and lemniscate. A simple calculation shows that the perimeter of the curve has the value
+\[
+s = 2^{\frac{1}{n}} a B\left(\frac{1}{2}, \frac{1}{2n}\right);
+\]
+therefore the ratio $s/a$ is transcendental. Another example is provided by the domain
+\[
+|x|^{\frac{1}{\alpha}} + |y|^{\frac{1}{\beta}} < 1
+\]
+in the $(x,y)$ plane, where $\alpha, \beta$ are positive rational non-integral numbers; its area has the transcendental value
+\[
+J = 4 \frac{\alpha \beta}{\alpha + \beta} B(\alpha, \beta).
+\]
