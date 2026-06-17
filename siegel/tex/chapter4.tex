@@ -1,0 +1,333 @@
+\chapter{椭圆函数}\label{sec:chapter4}
+
+最后一章将致力于介绍 Schneider 在 1937 年获得的关于椭圆函数的一些深奥结果.
+
+\section{阿贝尔微分}\label{sec:4.1}
+
+设 $\varphi(\xi, \eta) = 0$ 为亏格为 $p$ 的不可约代数曲线 $C$ 的方程. 我们将 $\xi$ 视为自变量，并引入对应于代数函数 $\eta$ 的 Riemann 面 $\mathfrak{R}$. $\mathfrak{R}$ 上所有单值亚纯函数构成的域与 $C$ 上所有不恒等于 $\infty$ 的 $\xi$ 和 $\eta$ 的有理函数 $R(\xi, \eta)$ 构成的域 $\Omega$ 是等同的. 表达式
+\begin{equation}
+dw = \psi(\xi, \eta) d\xi \tag{120}\label{eq:120}
+\end{equation}
+称为 $\mathfrak{R}$ 上的阿贝尔微分.
+
+在 $\mathfrak{R}$ 上的每个点 $P$ 处，我们有一个局部单值化参数 $t$，它将该点的一个邻域映射到 $t$ 平面中 $0$ 的一个单邻域. 将 $\xi$ 和 $\eta$ 关于 $t$ 的幂级数代入，我们从\eqref{eq:120}中得到一个展开式
+\[
+\frac{dw}{dt} = \sum_{n=-\infty}^{\infty} c_n t^n
+\]
+其中只有有限个具有负下标 $n$ 的 $c_n$ 不等于 $0$; 当然，系数 $c_n$ 取决于 $P$. 若对于所有 $P$ 及所有 $n < 0$ 均有 $c_n = 0$，则称阿贝尔微分 $dw$ 为第一类的; 若在 $\mathfrak{R}$ 上处处有 $c_{-1} = 0$，则称其为第二类的; 在其余没有限制条件的情况下，称为第三类的. 引入阿贝尔积分 $w$，我们可以用以下方式刻画这三种情形：若阿贝尔积分 $w$ 处处有限，则它是第一类的; 若它在 $\mathfrak{R}$ 上除了极点外没有其他奇点，则它是第二类的; 若它可能具有对数支点，则它是第三类的.
+
+设 $dw_1$ 和 $dw_2$ 为 $\mathfrak{R}$ 上同类的阿贝尔微分，则对于任意常数 $\lambda_1, \lambda_2$，$\lambda_1 dw_1 + \lambda_2 dw_2$ 亦为同类微分. 我们将仅讨论第一类和第二类的微分. 对应的加法群的结构由以下经典结果描述：存在且仅存在 $p$ 个线性无关的第一类微分 $du_1, \dots, du_p$; 存在 $p$ 个第二类微分 $dv_1, \dots, dv_p$，使得 $\mathfrak{R}$ 上的任何第二类微分均可唯一地表示为
+\begin{equation}
+dw = (\lambda_1 du_1 + \dots + \lambda_p du_p) + (\mu_1 dv_1 + \dots + \mu_p dv_p) + d\chi, \tag{121}\label{eq:121}
+\end{equation}
+其中 $\lambda_1, \dots, \lambda_p$ 和 $\mu_1, \dots, \mu_p$ 是常数，且 $\chi = \chi(\xi, \eta)$ 属于 $\Omega$.
+
+在上述定义和陈述中，没有必要假设 $\Omega$ 中作为基础的常数域包含所有复数，但重要的是该域是代数封闭的. 从现在起，我们将 $\varphi$ 和 $\chi$ 的系数限制为代数数，并在这种新意义下讨论 $\Omega$; 那么\eqref{eq:121}中的 $\lambda_1, \dots, \lambda_p$ 和 $\mu_1, \dots, \mu_p$ 亦为代数数.
+
+\section{椭圆积分}\label{sec:4.2}
+
+在椭圆情形 $p=1$ 下，曲线 $\varphi(\xi, \eta) = 0$ 可以通过适当的双有理变换 $x = \psi_1(\xi, \eta), y = \psi_2(\xi, \eta)$ ($\psi_1, \psi_2$ 属于 $\Omega$) 映射到正规三次曲线
+\[
+y^2 = 4x^3 - g_2 x - g_3
+\]
+上，其中 $g_2, g_3$ 为代数常数，且 $g_2^3 - 27g_3^2 = \Delta \neq 0$. 此时
+\[
+dz = -\frac{dx}{y}, \quad d\zeta = \frac{x dx}{y}
+\]
+分别是第一类和第二类的微分，且根据\eqref{eq:121}，任何第二类椭圆积分 $w$ 均满足分解公式
+\begin{equation}
+dw = \lambda dz + \mu d\zeta + d\chi, \tag{122}\label{eq:122}
+\end{equation}
+其中 $\lambda, \mu$ 为代数常数，且 $\chi(x, y)$ 是 $x$ 和 $y$ 的具有代数系数的有理函数.
+
+Weierstrass 函数 $\wp(z)$ 和 $\zeta(z)$ 定义为
+\[
+z = \int_{x}^{\infty} \frac{dx}{y}, \quad x = \wp(z), \quad y = \wp'(z) = -\frac{dx}{dz},
+\]
+\[
+\zeta'(z) = \frac{d\zeta}{dz} = \frac{d\zeta}{dx} \cdot \frac{dx}{dz} = -x = -\wp(z), \qquad \zeta(-z) = -\zeta(z).
+\]
+引入奇函数
+\[
+q(z) = \lambda z + \mu \zeta(z),
+\]
+那么分解\eqref{eq:122}具有以下形式：
+\begin{equation}
+dw = dq + d\chi. \tag{123}\label{eq:123}
+\end{equation}
+我们需要使用第二类椭圆积分 $w$ 的加法定理; 归功于\eqref{eq:123}，它是 $q$ 的加法定理的直接推论，即：
+\begin{equation}
+q(z+z_0) - q(z) - q(z_0) = \frac{\mu}{2} \frac{\wp'(z) - \wp'(z_0)}{\wp(z) - \wp(z_0)}, \tag{124}\label{eq:124}
+\end{equation}
+其中 $z$ 和 $z_0$ 是复平面上的自变量. 结合微分方程
+\[
+\wp'(z) = \left(4 \wp^3(z) - g_2 \wp(z) - g_3\right)^{\frac{1}{2}},
+\]
+对\eqref{eq:124}关于 $z$ 求导，即可得到 $\zeta(z)$ 的加法定理.
+
+除\eqref{eq:124}外，我们还需要椭圆函数的一些其他众所周知的性质：存在 $\wp(z)$ 的两个基本周期 $\omega_1, \omega_2$，使得任何周期 $\omega$ 均可唯一地表示为 $\omega = g_1 \omega_1 + g_2 \omega_2$（其中 $g_1, g_2$ 为有理整数）; 比值 $\omega_2 / \omega_1$ 不是实数; 函数 $\zeta(z)$ 在所有周期点 $z = \omega$ 处均有一阶极点，并在 $z$ 平面内的所有其他有限点处正则; 最后，
+\begin{equation}
+q(z+\omega) - q(z) = \eta, \tag{125}\label{eq:125}
+\end{equation}
+其中 $\eta$ 仅取决于周期 $\omega$ 而与 $z$ 无关. 我们的主要目标是证明以下 Schneider 定理：
+
+\begin{mythm*}{Schneider 定理}
+设 $P_1 = P_1(\xi_1, \eta_1)$ 和 $P_2 = P_2(\xi_2, \eta_2)$ 为亏格为 $1$ 的曲线 $\varphi(\xi, \eta) = 0$ 的 Riemann 面 $\mathfrak{R}$ 上的两个点，其坐标 $\xi_1, \eta_1$ 和 $\xi_2, \eta_2$ 是代数数，并设 $w(P)$ 是在 $P_1, P_2$ 处正则且不退化为 $\xi$ 和 $\eta$ 的有理函数的第二类不定椭圆积分; 那么定椭圆积分的值
+\begin{equation}
+w(P_2) - w(P_1) = \int_{P_1}^{P_2} dw \tag{126}\label{eq:126}
+\end{equation}
+是超越数，除非 $P_1, P_2$ 重合且 $\mathfrak{R}$ 上的积分路径同调于 $0$.
+\end{mythm*}
+
+应当提及的是，由于 $w(P)$ 在 $\mathfrak{R}$ 上不是单值的，该定理对于以 $P_1$ 和 $P_2$ 为端点的 $\mathfrak{R}$ 上的任何积分路径 $L$ 均成立. 为了证明该定理，我们可以排除 $L$ 在 $\mathfrak{R}$ 上封闭且同调于 $0$ 的平凡情形; 此时 $L$ 是 $z$ 平面中具有不同端点 $z_1$ 和 $z_2$ 的一条路径的像. 差值
+\[
+z_2 - z_1 = z_0 \neq 0
+\]
+仅在 $L$ 在 $\mathfrak{R}$ 上封闭时才是一个周期 $\omega$. 在此情形下，为了证明该定理，我们可以假设 $L$ 不同调于 $\mathfrak{R}$ 上某个封闭曲线的两倍; 那么 $\frac{\omega}{2}$ 不是周期，且根据\eqref{eq:123}和\eqref{eq:125}，有：
+\begin{equation}
+2q\left(\frac{\omega}{2}\right) = \eta = \int_{L} dq = \int_{L} dw, \quad \wp'\left(\frac{\omega}{2}\right) = 0. \tag{127}\label{eq:127}
+\end{equation}
+若 $L$ 不封闭，则 $z_0$ 不是周期，我们可以将\eqref{eq:124}（其中 $z = z_1$ 或 $z$ 趋于 $z_1$）与\eqref{eq:123}结合使用. 根据定理中关于 $P_1$ 和 $P_2$ 的假设，可以推得 $q(z_0)$ 与椭圆积分\eqref{eq:126}的差值是一个代数数. 该结果与\eqref{eq:127}共同表明，只需证明以下陈述：
+
+设 $\lambda, \mu, g_2, g_3, \wp(z_0)$ 是代数数，且 $\lambda, \mu$ 不全为 $0$; 那么 $q(z_0) = \lambda z_0 + \mu \zeta(z_0)$ 是超越数.
+
+\section{逼近形式}\label{sec:4.3}
+
+假设 $\lambda, \mu, g_2, g_3, \wp(z_0), \wp'(z_0)$ 和 $q(z_0)$ 属于一个 $h$ 次代数数域 $K$，并令
+\[
+m = 16h + 1.
+\]
+考虑 $z_0$ 的倍数 $z_0, 2z_0, 3z_0, \dots$; 由于 $z_0$ 不是周期，我们可以选择其中的 $m$ 个倍数（不妨设为 $z_1, \dots, z_m$），使其均不是周期. 由 $q(z)$ 和 $\wp(z)$ 的加法定理可知，所有这 $3m$ 个数 $\wp(z_k), \wp'(z_k), q(z_k)$ ($k = 1, \dots, m$) 均属于 $K$.
+
+设 $a$ 和 $b$ 为 $K$ 中任意非零常数，我们可以进行代换：$a^2 x \to x$，$a^3 y \to y$，$a^4 g_2 \to g_2$，$a^6 g_3 \to g_3$，$a^{-1} z \to z$，$ab \lambda \to \lambda$，$a^{-1} b \mu \to \mu$，$a \zeta \to \zeta$，$b q \to q$，这只是简单地表达了阿贝尔微分的群性质. 通过适当选择 $a$ 和 $b$，我们可以假设这 $3m+4$ 个数 $\lambda, \mu, g_2, g_3, \wp(z_k), \wp'(z_k), q(z_k)$ ($k=1, \dots, m$) 均为 $K$ 中的代数整数. 由公式 $q' = \lambda - \mu \wp$、$\wp'' = 6 \wp^2 - \frac{1}{2} g_2$ 可知，当 $z = z_1, \dots, z_m$ 时，$\wp$ 和 $q$ 的所有导数亦为 $K$ 中的代数整数; 那么对于幂乘积
+\[
+f(z) = f_{\alpha\beta}(z) = \wp^{\alpha}(z)q^{\beta}(z) \qquad (\alpha, \beta=0,1,\dots)
+\]
+的所有导数，显然同样成立.
+
+为了获得这些导数绝对值的上界估计，我们使用 Cauchy 公式
+\[
+f^{(l)}(z_k) = \frac{l!}{2\pi i} \int_C \frac{f(z)}{(z-z_k)^{l+1}} \, dz \qquad (l=0,1,\dots),
+\]
+其中以 $z_k$ 为圆心且具有足够小的半径选取圆 $C$，使得所有的周期点都落在圆外. 在 $C$ 上我们有 $f(z) = O(c_1^{\alpha+\beta})$，其中 $c_1$ 与 $\alpha, \beta$ 无关; 因此：
+\begin{equation}
+f_{\alpha\beta}^{(l)}(z_k) = l! \, O(c_2^{\alpha+\beta+l}) \tag{129}\label{eq:129}
+\end{equation}
+对于 $k=1, \dots, m$ 及所有 $\alpha, \beta, l = 0, 1, \dots$ 成立.
+
+对于 $f_{\alpha\beta}^{(l)}(z_k)$ 共轭元的相应估计，可以通过以下技巧获得. 设 $\bar{K}$ 为 $K$ 的 $h$ 个共轭域中的任意一个. 由于 $\Delta = g_2^3 - 27g_3^2 \neq 0$，亦有 $\bar{\Delta} \neq 0$; 因此我们可以引入具有不变量 $\bar{g}_2, \bar{g}_3$ 的 $\wp$ 函数，并将其记为 $\bar{\wp}(z)$. 对于固定的 $k$，我们通过条件 $\bar{\wp}(\bar{z}_k) = \overline{\wp(z_k)}$ 和 $\bar{\wp}'(\bar{z}_k) = \overline{\wp'(z_k)}$ 来定义一个复数 $\bar{z}_k$; 这在相差函数 $\bar{\wp}(z)$ 的任意加法周期下确定了 $\bar{z}_k$，我们选取一个固定的 $\bar{z}_k$. 最后，我们通过条件 $\bar{q}'(z) = \bar{\lambda} - \bar{\mu} \bar{\wp}(z)$ 且 $\bar{q}(\bar{z}_k) = \overline{q(z_k)}$ 唯一地定义函数 $\bar{q}(z)$. 那么 $\bar{q}(z)$ 具有证明\eqref{eq:129}所需之 $q(z)$ 的所有性质，且 $\bar{f}_{\alpha\beta}^{(l)}(\bar{z}_k) = \overline{f_{\alpha\beta}^{(l)}(z_k)}$; 因此：
+\begin{equation}
+\overline{|f_{\alpha\beta}^{(l)}(z_k)|} = l! \, O(c_3^{\alpha+\beta+l}) \tag{130}\label{eq:130}
+\end{equation}
+对于 $k=1, \dots, m$ 及所有 $\alpha, \beta, l = 0, 1, \dots$ 成立.
+
+设 $r^2$ 为可被 $2m$ 整除的正有理整数平方，并令
+\[
+n = \frac{r^2}{2m}.
+\]
+考虑关于 $\wp$ 和 $q$ 的多项式 $R(\wp, q)$，其在每个变量中的次数均 $< r$，并具有 $r^2$ 个未定系数. 在要求作为 $z$ 的函数的 $R(\wp, q)$ 在所有 $m$ 个点 $z = z_1, \dots, z_m$ 处消亡至至少 $n$ 阶的条件下，我们得到 $mn$ 个在 $K$ 中具有整数值系数的齐次线性方程组，由于对 $\alpha < r, \beta < r, l < n$ 的估计\eqref{eq:130}，它们的所有共轭元均为 $O(c_4^n n^n)$. 应用\mylem{lem:2}，我们看到可以通过一个在 $K$ 中不全为 $0$ 和其共轭元为 $O(c_5^n n^n)$ 的整系数多项式 $R(\wp, q)$ 来满足该条件.
+
+\section{证明的完成}\label{sec:4.4}
+
+我们首先证明函数 $q(z)$ 不是 $\wp(z)$ 的代数函数. 否则，将存在一个最小次数 $\rho \ge 1$ 的方程：
+\begin{equation}
+q^{\rho} + A_1 q^{\rho-1} + \dots + A_{\rho} = 0, \tag{131}\label{eq:131}
+\end{equation}
+其中 $A_1, \dots, A_\rho$ 是 $\wp(z)$ 和 $\wp'(z)$ 的有理函数. 由于 $q'(z) = \lambda - \mu \wp(z)$，将\eqref{eq:131}关于 $z$ 求导会得到一个关于 $q$ 的 $\rho - 1$ 次方程，因此它是关于 $q$ 的恒等式. 设 $j$ 是独立于 $z$ 的未定元. 由此推得，表达式
+\[
+(q+j)^{\rho} + A_1(q+j)^{\rho-1} + \dots + A_{\rho}, \quad q=q(z),
+\]
+不依赖于 $z$. 关于 $j$ 求导会得到一个关于 $q(z)$ 的 $\rho - 1$ 次方程; 故必有 $\rho = 1$，即 $q(z)$ 是一个椭圆函数. 但是 $q(z)$ 在周期平行四边形内至多只有一个极点（在 $\mu \neq 0$ 的情形下为 $z=0$ 处的一阶极点）. 因此 $q(z)$ 是常数，这与 $\lambda$ 和 $\mu$ 不全为 $0$ 的假设矛盾.
+
+现在我们知道亚纯函数
+\[
+R(\wp, q) = g(z)
+\]
+关于 $z$ 不恒等于 0. 确定整数 $s$，使得所有导数 $g(z), g'(z), \dots, g^{(s-1)}(z)$ 在这 $m$ 个点 $z = z_1, \dots, z_m$ 处消亡，但对于某个 $k=1, \dots, m$，有：
+\[
+\gamma = g^{(s)}(z_k) \neq 0.
+\]
+显然有 $s \ge n$. 数 $\gamma$ 是 $K$ 中的代数整数，因此：
+\begin{equation}
+|N(\gamma)| \ge 1. \tag{132}\label{eq:132}
+\end{equation}
+另一方面，根据\eqref{eq:130}，有：
+\begin{equation}
+\overline{|\gamma|} = s! \, O(c_6^s n^n). \tag{133}\label{eq:133}
+\end{equation}
+剩下的是寻找 $|\gamma|$ 本身的一个适当上界估计. 设 $\nu$ 为随 $n$ 趋于 $\infty$ 的正有理整数，并定义：
+\[
+A(z) = \prod_{g_1, g_2 = -\nu}^{\nu} (z - g_1 \omega_1 - g_2 \omega_2)^{3r},
+\]
+\[
+B(z) = \prod_{l=1}^{m} (z-z_l)^{s},
+\]
+其中 $\omega_1, \omega_2$ 是 $\wp(z)$ 的基本周期. 函数
+\[
+f(z) = \frac{A(z)}{B(z)} g(z)
+\]
+在由以下平行区域定义的世界平行四边形 $F_\nu$ 内正则：
+\[
+z = x_{1}\omega_{1} + x_{2}\omega_{2}
+\]
+\[
+(-\nu - \frac{1}{2} \le x_{1} \le \nu + \frac{1}{2}; \quad -\nu - \frac{1}{2} \le x_{2} \le \nu + \frac{1}{2}).
+\]
+选取已足够大的 $n$，使得 $z_1, \dots, z_m$ 是 $F_{\nu}$ 的内点. 在 $F_{\nu}$ 的边界上，由\eqref{eq:125}及 $\wp(z)$ 的周期性，我们有以下估计：
+\[
+g(z) = r^2 (c_7 \nu)^r O(c_5^n n^n),
+\]
+\[
+A(z) = O((c_8 \nu)^{3r(2\nu+1)^2}) = O(c_9^{r\nu^2} \nu^{12r\nu^2}),
+\]
+\[
+\frac{1}{B(z)} = O\left(\left(\frac{c_{10}}{\nu}\right)^{ms}\right),
+\]
+故而
+\[
+f(z) = O(c_{11}^s c_9^{r\nu^2} n^n \nu^{28r\nu^2 - ms}).
+\]
+此外，在 $F_{\nu}$ 中的点 $z=z_k$ 处，我们有：
+\[
+f(z_k) = A(z_k) \lim_{z \to z_k} \frac{g(z)}{B(z)} = \frac{A(z_k)g^{(s)}(z_k)}{s! \prod_{\substack{l=1\\l \neq k}}^{m} (z_k-z_l)^s},
+\]
+\[
+\frac{1}{A(z_k)} = O(c_{12}^{r\nu^2} \nu^{-12r\nu^2}), \qquad \prod_{\substack{l=1\\l \neq k}}^m (z_k - z_l)^s = O(c_{13}^s).
+\]
+解析函数绝对值的最大模原理现在给出以下估计：
+\[
+\gamma = s! c_{12}^{r\nu^2} \nu^{-12r\nu^2} c_{13}^s O(c_{11}^s c_9^{r\nu^2} n^n \nu^{28r\nu^2 - ms})
+\]
+\[
+= O(c_{14}^s c_{15}^{r\nu^2} s^{2s} \nu^{28r\nu^2 - ms}).
+\]
+设 $m > 112$ 且选择
+\[
+\nu = \left[ \sqrt{\frac{ms}{56r}} \right] \ge \left[ \sqrt{\frac{r}{112}} \right] \to \infty \quad (n \to \infty);
+\]
+则有
+\[
+\gamma = O(c_{15}^s s^{2s} \nu^{-\frac{ms}{2}})
+\]
+并且
+\[
+= O\left(c_{16}^s s^{2s} \left(\frac{s}{\sqrt{n}}\right)^{-\frac{ms}{4}}\right) = O\left(c_{16}^s s^{2s-\frac{ms}{8}}\right).
+\]
+因此，根据\eqref{eq:132}和\eqref{eq:133}，有：
+\[
+|N(\gamma)| = O\left(c_{17}^s s^{2hs - \frac{ms}{8}}\right) = O\left(c_{17}^s s^{-\frac{s}{8}}\right) \to 0 \quad (n \to \infty),
+\]
+这与\eqref{eq:132}矛盾. 由此可知，我们在第 \S 3 开头所作的假设是错误的; 即只要 $\lambda, \mu, g_2, g_3, \wp(z_0)$ 为代数数，且 $\lambda, \mu$ 不全为 0，则 $q(z_0)$ 就是超越数.
+
+\section{其他一些结果}\label{sec:4.5}
+
+我们来考虑 Schneider 定理的一些例子. 如果 $(\xi_1, \eta_1)$ 和 $(\xi, \eta)$ 是椭圆
+\[
+\frac{\xi^2}{a^2} + \frac{\eta^2}{b^2} = 1 \qquad (0 < b < a)
+\]
+上的两个实点，那么弧长
+\[
+s(\xi, \xi_1) = \int_{\xi_1}^{\xi} \sqrt{\frac{a^2 - \epsilon^2 \xi^2}{a^2 - \xi^2}} \, d\xi \qquad \left(\epsilon^2 = 1 - \frac{b^2}{a^2}\right)
+\]
+是第二类椭圆积分，而不是 $\xi$ 和 $\eta$ 的有理函数. 因此，只要 $a, b, \xi_1, \xi$ 是代数数，除非属于 $s=0$ 的平凡情形外，弧长 $s$ 就是超越数. 特别地，当 $a$ 和 $b$ 为代数数时，椭圆的周长是超越数. 对应于圆 $a=b$ 的结果包含在 Lindemann 定理中.
+
+双纽线的弧长
+\[
+(\xi^2 + \eta^2)^2 = 2a^2(\xi^2 - \eta^2) \qquad (a > 0)
+\]
+由下式给出：
+\[
+s(\xi, \xi_1) = a\sqrt{2} \int_{t_1}^{t} \frac{dt}{\sqrt{1-t^4}} \qquad \left(t^2 = \frac{\xi^2 - \eta^2}{\xi^2 + \eta^2}\right).
+\]
+作为 $t$ 的函数，这是第一类椭圆积分. 由此可知，对于代数数 $a$，双纽线上代数坐标点 $\xi, \eta$ 之间的弧长是超越数（在 $s=0$ 的平凡情形外）. 特别地，当 $a$ 为代数数时，双纽线的周长是超越数. 由于
+\[
+4 \int_{0}^{1} \frac{dt}{\sqrt{1-t^{4}}} = \int_{0}^{1} u^{-\frac{3}{4}} (1-u)^{-\frac{1}{2}} \, du
+\]
+\[
+= B \left(\frac{1}{4}, \frac{1}{2}\right) = \frac{\Gamma \left(\frac{1}{4}\right) \Gamma \left(\frac{1}{2}\right)}{\Gamma \left(\frac{3}{4}\right)} = (2 \pi)^{-\frac{1}{2}} \Gamma^{2} \left(\frac{1}{4}\right),
+\]
+当 $a=1$ 时，双纽线的周长等于 $(2\pi)^{-\frac{1}{2}} \Gamma^2(\frac{1}{4})$. 因此，数 $\pi^{-\frac{1}{4}} \Gamma(\frac{1}{4})$ 是超越数. 然而，我们还不知道 $\Gamma(\frac{1}{4})$ 本身是否为无理数.
+
+我们所有的超越性证明都本质地利用了这一事实：即问题可以归结为整函数性质的证明. 这这就是已知方法对第三类椭圆积分不起作用的原因，甚至对于亏格为 $0$ 的更简单曲线上的第三类积分也是如此. 例如，目前还不知道数
+\[
+\int_0^1 \frac{dx}{1+x^3} = \frac{1}{3} \left(\log 2 + \frac{\pi}{\sqrt{3}}\right)
+\]
+是否为无理数.
+
+关于椭圆函数，Schneider 还发现了另一个有趣的定理，我们在不予证明的情况下予以提及：
+
+\begin{mythm*}{Schneider 椭圆函数定理}
+设 $\wp(z) = \wp(z, g_2, g_3)$ 和 $\wp^*(z) = \wp(z, g_2^*, g_3^*)$ 是两个代数无关的 $\wp$ 函数，其不变量分别为 $g_2, g_3$ 和 $g_2^*, g_3^*$; 那么对于任何不是这两个函数之一的周期的 $z_0$，这 6 个数 $g_2, g_3, g_2^*, g_3^*, \wp(z_0), \wp^*(z_0)$ 中至少有一个是超越数.
+\end{mythm*}
+
+众所周知，$\wp(z)$ 和 $\wp^*(z)$ 满足一个具有常数系数的代数方程，当且仅当它们的周期格是可公度的; 这意味着：
+\begin{equation}
+\omega_1^* = \alpha \omega_1 + \beta \omega_2, \qquad \omega_2^* = \gamma \omega_1 + \delta \omega_2 \tag{134}\label{eq:134}
+\end{equation}
+其中 $\alpha, \beta, \gamma, \delta$ 为有理数，而 $\omega_1, \omega_2$ 和 $\omega_1^*, \omega_2^*$ 是基本周期. 作为该定理的一个应用，假设 $\frac{\omega_2}{\omega_1} = \tau$ 和 $\frac{g_2^3}{g_2^3 - 27g_3^2} = j(\tau)$ 都是代数数. 我们有
+\[
+g_2 = 60 \sum_{\omega \neq 0} \omega^{-4}, \qquad g_3 = 140 \sum_{\omega \neq 0} \omega^{-6},
+\]
+其中 $\omega$ 遍历 $\wp(z, g_2, g_3)$ 的所有非零周期. 用 $\lambda\omega$ 代替 $\omega$（其中 $\lambda \neq 0$ 为适当选择的常数），我们可以在 $j(\tau)=0$ 的情况下规定 $g_3=1$，而在其他情况下规定 $g_2=1$，从而使 $g_2$ 和 $g_3$ 此时都是代数数. 定义
+\begin{equation}
+g_{2Silent}^{*} = \tau^{-4} g_{2}, \qquad g_{3}^{*} = \tau^{-6} g_{3}, \tag{135}\label{eq:135}
+\end{equation}
+\[
+\omega_{1}^{*} = \tau \omega_{1}, \qquad \omega_{2}^{*} = \tau \omega_{2},
+\]
+则有
+\[
+\wp^*(\tau z) = \tau^{-2} \wp(z)
+\]
+并且，特别地，
+\[
+\wp^*\left(\frac{\omega_2}{2}\right) = \tau^{-2} \wp\left(\frac{\omega_1}{2}\right).
+\]
+由于此时 6 个数 $g_2, g_3, g_2^*, g_3^*, \wp(\frac{\omega_1}{2}), \wp^*(\frac{\omega_2}{2})$ 均为代数数，函数 $\wp(z)$ 和 $\wp^*(z)$ 必须代数相关. 因此它们的周期格是可公度的，且我们有\eqref{eq:134}. 这蕴含了 $\tau \omega_1 = \alpha \omega_1 + \beta \omega_2$ 以及 $\tau \omega_2 = \gamma \omega_1 + \delta \omega_2$，从而推出
+\[
+(\tau - \alpha)(\tau - \delta) = \beta \gamma,
+\]
+因此 $\tau$ 是二次无理数.
+
+这表明椭圆模函数 $j(\tau)$ 对于上半平面内除虚二次无理数外的每个代数数 $\tau$ 都是超越数. 另一方面，由复乘理论可知，对任何虚二次 $\tau$，$j(\tau)$ 都是代数数.
+
+在 1941 年，Schneider 将其关于椭圆积分的结果之一推广到了亏格为 $p \ge 1$ 的 Riemann 面 $\mathfrak{R}$ 上的阿贝尔积分：
+
+\begin{mythm*}{Schneider 阿贝尔积分定理}
+设 $w$ 是一个不是代数函数的第一类或第二类阿贝尔积分，并假设 $L_1, \dots, L_p$ 是 $\mathfrak{R}$ 上保持 $\mathfrak{R}$ 连通的剖线; 那么这 $p$ 个积分
+\[
+\eta_{k} = \int_{L_{k}} dw \qquad (k=1,\dots,p)
+\]
+中至少有一个是超越数; 特别地，在 $\mathfrak{R}$ 上存在一条封闭曲线 $L$，使得
+\begin{equation}
+\eta = \int_{L} dw \tag{136}\label{eq:136}
+\end{equation}
+是超越数.
+\end{mythm*}
+
+需要指出的是，Schneider 论文中第 126 页的最后一个公式是错误的; 然而，仅对单个变量使用 Cauchy 公式来完成证明并不困难.
+
+一个有趣的例子是由下式提供的：
+\[
+w = \int x^{\alpha-1} (1-x)^{\beta-1} \, dx
+\]
+其中 $\alpha, \alpha+\beta$ 为有理数但不是整数. 那么对于任何封闭曲线 $L$，\eqref{eq:136}中对应的周期 $\eta$ 具有 $\rho B(\alpha, \beta)$ 的形式，其中 $\rho$ 是由 $e^{2\pi i \alpha}$ 和 $e^{2\pi i \beta}$ 生成的分圆域中的数.
+
+因此，Schneider 的结果意味着，只要 $\alpha, \beta, \alpha+\beta$ 是有理数且不是整数，数
+\[
+B(\alpha, \beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
+\]
+就是超越数. 由 $\pi$ 的超越性可知，$\alpha+\beta = 1, 2, \dots$ 的情形并非真正的例外. 选择 $\alpha = \beta$，我们看到对于所有非整数有理数 $\alpha$，两个数 $\Gamma(\alpha), \Gamma(2\alpha)$ 中至少有一个是超越数. 但例如，我们目前仍不知道 $\Gamma(\frac{1}{3})$ 是否为无理数.
+
+作为关于 $B(\alpha, \beta)$ 的结果的一个几何应用，考虑复 $z$ 平面中的曲线，其由具有以下性质的所有点 $z$ 组成：到正多边形的 $n$ 个顶点 $a \epsilon^k$ ($k=1, \dots, n; \epsilon = e^{\frac{2\pi i}{n}}; a > 0$) 的 $n$ 个距离之积 $|z - a \epsilon^k|$ 等于 $a^n$. 对于 $n=1$ and $n=2$，我们得到圆和双纽线. 简单的计算表明，该曲线的周长为：
+\[
+s = 2^{\frac{1}{n}} a B\left(\frac{1}{2}, \frac{1}{2n}\right);
+\]
+因此，比值 $s/a$ 是超越数. 另一个例子是由 $(x,y)$ 平面内的区域
+\[
+|x|^{\frac{1}{\alpha}} + |y|^{\frac{1}{\beta}} < 1
+\]
+提供的，其中 $\alpha, \beta$ 是正的有理非整数字; 它的面积具有超越数值：
+\[
+J = 4 \frac{\alpha \beta}{\alpha + \beta} B(\alpha, \beta).
+\]

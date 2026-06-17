@@ -1,0 +1,217 @@
+\chapter{当 $b$ 为无理代数数且 $a \neq 0, 1$ 为代数数时 $a^b$ 的超越性}
+
+设 $p$ 为任意非零复数，使得 $e^p = a$ 是代数数，并设 $\beta$ 为任意无理数，使得 $e^{p\beta} = a^\beta = c$ 亦为代数数. 由于函数 $f(x) = e^{px} = a^x$ 满足加法定理 $f(x+y) = f(x)f(y)$，因此对于所有 $x = p + \beta q$ ($p, q = 0, \pm 1, \pm 2, \dots$)，$f(x)$ 均取代数数值 $a^p c^q$. 由于 $\beta$ 是无理数，这些 $x$ 彼此互不相同.
+
+1929 年，Gelfond 做出了一项重要发现：$\beta$ 不能是非实二次无理数；这意味着对于每一个虚二次无理数 $\beta$ 和每一个不等于 $0, 1$ 的代数数 $a$（除了 $\log a = 0$ 的情形外），数 $a^\beta = e^{\beta \log a}$ 是超越数. 在他的证明中，Gelfond 将第一章 \S 14 中的插值公式应用于特殊情况 $f(z) = a^z = e^{z \log a}$，以及由按某种顺序排列的点 $p + \beta q$ ($p, q = 0, \pm 1, \pm 2, \dots$) 组成的序列 $z_1, z_2, \dots$. 展开式
+\[
+f(z) = a_{0}F_{0}(z) + a_{1}F_{1}(z) + \dots,
+\]
+\[
+F_{n}(z) = \prod_{l=1}^{n} (z-z_{l})
+\]
+中的系数 $a_0, a_1, \dots$ 由
+\[
+a_{n-1} = \frac{1}{2\pi i} \int_{C} \frac{f(z)}{F_{n}(z)} \, dz = \sum_{k=1}^{n} \frac{f(z_{k})}{F_{n}'(z_{k})},
+\]
+\[
+F_{n}'(z_{k}) = \prod_{\substack{l=1\\l \neq k}}^{n} (z_{k} - z_{l})
+\]
+给出，这表明它们是生成自 $a, \beta, a^\beta$ 的域 $K$ 中的数. 一方面，由 $a_{n-1}$ 的积分公式可知，当 $n \to \infty$ 时，系数迅速趋近于 0；另一方面，若 $K$ 是一个代数数域，则可以获得对 $|a_n|$ 及其分母的估计. 在 $\beta$ 为虚二次数的情况下，这些估计表明对所有足够大的 $n$，均有 $a_n = 0$. 这是矛盾的，因为 $f(z)$ 不是多项式.
+
+1930 年，Kusmin 将 Gelfond 的证明推广到了实二次无理数 $\beta$ 的情形. 然而，当 $\beta$ 是次数 $h > 2$ 的代数无理数时，该方法将失效；它仅能给出较弱的结论，即在 $h-1$ 个数 $a^\beta, a^{\beta^2}, \dots, a^{\beta^{h-1}}$ 中至少有一个是超越数.
+
+1934 年，Gelfond 和 Schneider 独立地解决了任意无理代数数 $\beta$ 时 $a^\beta$ 超越性的通用问题. 两个证明都利用了第二章 \S 2 中的算术引理，以构造合适的逼近形式. 由于 Schneider 的证明与第二章的其他思想联系更为紧密，我们先介绍它. 至于 Gelfond 的证明，我们将以一种简化的形式给出，这使得它比 Schneider 的证明稍微短一些.
+
+\section{Schneider 的证明}\label{sec:1}
+
+假设 $b$ 是无理数，且三个数 $b$、 $a \neq 0$、 $c = a^b = e^{b \log a}$ ($\log a \neq 0$) 均属于一个 $h$ 次代数数域 $K$. 若 $a$ 是单位根，则 $c$ 不是单位根；此时，我们用 $c, b^{-1}, a$ 代替 $a, b, c$，从而使新的 $a$ 不是单位根.
+
+定义
+\[
+m = 4h + 3, \quad n = \frac{q^2}{m},
+\]
+其中 $q$ 是一个正整有理数，使得 $q^2$ 可被 $m$ 整除. 我们现在应用第二章 \S 2 中的\mylem{lem:2}，来确定 $m$ 个在 $K$ 中具有整系数、次数 $\le 2n - 1$ 且不全为 $0$ 的多项式 $P_1(x), \dots, P_m(x)$，使得整函数
+\[
+R(x) = P_1(x)a^{(m-1)x} + P_2(x)a^{(m-2)x} + \dots + P_m(x)
+\]
+在 $q^2 = mn$ 个不同的点 $x = \lambda + \mu b$ ($\lambda, \mu = 1, 2, \dots, q$) 处消亡. 这一条件为 $P_1, \dots, P_m$ 中的 $2mn$ 个待定系数提供了 $mn$ 个齐次线性方程组. 这些方程的数值系数均属于 $K$，且它们的所有共轭元的绝对值均 $\le (c_1 q)^{2n-1} (c_2^q)^m = O(c_3^n n^n)$，其中 $c_1, c_2, \dots$ 表示与 $n$ 无关的正整有理数；此外，还存在一个公分母 $c_4^{2n-1} c_5^{q(m-1)}$. 根据该引理，我们获得一个非平凡解，使得 $P_1, \dots, P_m$ 中的所有系数及其共轭元皆为 $O(c_6^n n^n)$.
+
+令
+\begin{equation}
+P_{kl}(x) = a^{(m-l)k} P_l(x+k) \qquad (k, l = 1, \dots, m), \tag{110}\label{eq:110}
+\end{equation}
+我们有
+\begin{equation}
+R(x+k) = P_{k1}(x)a^{(m-1)x} + \dots + P_{km}(x). \tag{111}\label{eq:111}
+\end{equation}
+
+假设 $P_{\nu_1}(x), \dots, P_{\nu_g}(x)$ ($1 \le \nu_1 < \nu_2 < \dots < \nu_g \le m$) 不恒等于 0，而所有其他的 $P_l(x) = 0$. 若
+\[
+P_{\nu_l}(x) = \alpha_l x^{r_l} + \dots, \quad \alpha_l \neq 0 \quad (l=1,\dots,g),
+\]
+其中 $r_l \ge 0$ 表示 $P_{\nu_l}(x)$ 的确切次数，则由
+\[
+v = |a^{(m-\nu_l)k}|_{k,l=1,\dots,g} = \prod_{k > l} (a^{m-\nu_l} - a^{m-\nu_k}) \neq 0
+\]
+可知，$g$ 阶行列式
+\[
+\Delta(x) = | P_{k \nu_l}(x) |_{k,l=1,\dots,g} = \alpha_1 \dots \alpha_g v x^{r_1+\dots+r_g} + \dots
+\]
+不恒等于 $0$，因为 $a$ 不是单位根. $\Delta(x)$ 的次数为 $r_1+\dots+r_g \le m(2n-1) < 2mn$. 因此，我们可以在这 $2q^2 = 2mn$ 个数
+\[
+x = \lambda + \mu b \quad (\lambda = 1, \dots, 2q; \mu = 1, \dots, q)
+\]
+中至少找到一个数，设为 $x = \xi$，使得
+\[
+\Delta(\xi) \neq 0.
+\]
+由\eqref{eq:110}和\eqref{eq:111}可知，$m$ 个数 $R(\xi + k)$ ($k = 1, \dots, m$) 中至少有一个不等于 $0$. 假设
+\[
+R(\xi + k) = \gamma \neq 0,
+\]
+则 $c_4^{2n-1} c_5^{(m-1)(3q+m)} \gamma$ 是一个代数整数，从而
+\begin{equation}
+|N(\gamma)| > c_7^{-n}. \tag{112}\label{eq:112}
+\end{equation}
+
+另一方面，利用我们先前对 $P_l$ 系数的估计，可得
+\begin{equation}
+\overline{|\gamma|} \le 2mn(c_8 q)^{2n-1} c_9^q O(c_6^n n^n) = O(c_{10}^n n^{2n}). \tag{113}\label{eq:113}
+\end{equation}
+
+接下来只需找到 $|\gamma|$ 自身的足够好的上界估计. 将 Cauchy 定理应用于整函数
+\[
+S(x) = R(x) \prod_{\lambda, \mu = 1}^{q} \frac{\xi+k - \lambda - \mu b}{x - \lambda - \mu b}
+\]
+该函数在 $x = \xi + k$ 处的值为 $\gamma$；那么
+\[
+\gamma = \frac{1}{2\pi i} \int_{C} \frac{S(x)}{x - \xi - k} \, dx,
+\]
+其中 $C$ 是包含 $\xi + k$ 于其内部的正向简单闭曲线. 取 $C$ 为圆周
+\[
+|x| = n + m + q(2+|b|) = n + O(\sqrt{n})
+\]
+我们有
+\[
+|R(x)| \le 2mn(c_{11}n)^{2n-1} c_{12}^n O(c_6^n n^n) = O(c_{13}^n n^{3n}),
+\]
+\[
+|x-\xi-k| \ge n > \frac{|x|}{c_{14}}, \qquad |x-\lambda-\mu b| > n \quad (\lambda, \mu=1,\dots,q),
+\]
+\[
+\prod_{\lambda, \mu = 1}^{q} \frac{\xi+k-\lambda-\mu b}{x-\lambda-\mu b} = n^{-q^2} O((c_{15}q)^{q^2}) = O(c_{16}^n n^{-\frac{mn}{2}}),
+\]
+因此
+\begin{equation}
+\gamma = O(c_{13}^n n^{3n}) O(c_{16}^n n^{-\frac{mn}{2}}) = O(c_{17}^n n^{(3-\frac{m}{2})n}). \tag{114}\label{eq:114}
+\end{equation}
+
+由\eqref{eq:113}和\eqref{eq:114}可知，
+\begin{equation}
+|N(\gamma)| = O\left(c_{18}^n n^{(3-\frac{m}{2})n+2(h-1)n}\right). \tag{115}\label{eq:115}
+\end{equation}
+这里 $n$ 的指数等于
+\[
+(3 - \frac{m}{2}) n + 2(h-1)n = -\frac{n}{2},
+\]
+因此当 $n \to \infty$ 时，\eqref{eq:112} 与\eqref{eq:115} 相互矛盾.
+
+\section{Gelfond 的证明}\label{sec:2}
+
+我们所使用的 $a, b, c, h, K$ 的含义与\autoref{sec:1}中相同：三个数 $a, b$ 和 $c = a^b = e^{b \log a}$ 属于一个 $h$ 次代数数域；数 $b$ 是无理数，$a$ 和 $\log a$ 均不等于 0. 然而，在此处我们不需要假设 $a$ 不是单位根.
+
+逼近形式的构造方式有所不同. 令
+\[
+m = 2h + 2,
+\]
+\[
+n = \frac{q^2}{2m},
+\]
+其中 $t = q^2$ 是一个能被 $2m$ 整除的正整有理平方数，并令
+\[
+\rho_1, \rho_2, \dots, \rho_t
+\]
+为数
+\[
+(\lambda + \mu b) \log a \qquad (\lambda, \mu = 1, \dots, q).
+\]
+引入整函数
+\[
+R(x) = \eta_1 e^{\rho_1 x} + \dots + \eta_t e^{\rho_t x}
+\]
+其系数 $\eta_1, \dots, \eta_t$ 为待定元，并考虑关于这 $2mn = t$ 个未知量 $\eta_1, \dots, \eta_t$ 的 $mn$ 个齐次线性方程组
+\[
+(\log a)^{-k} R^{(k)}(l) = 0 \qquad (k=0,\dots,n-1; l=1,\dots,m).
+\]
+这些方程的数值系数均属于 $K$，且有一个数
+\[
+c_1^{n-1+2mq} = O(c_2^n)
+\]
+作为公分母，它们的所有共轭元均为 $O((c_3 q)^{n-1} c_4^q) = O(c_5^n n^{\frac{n}{2}})$. 由\mylem{lem:2}可知，该方程组在 $K$ 的整数中有一个非平凡解 $\eta_1, \dots, \eta_t$，满足
+\[
+\overline{|\eta_k|} = O(c_6^n n^{\frac{n}{2}}) \qquad (k=1,\dots,t).
+\]
+
+由于这 $t$ 个数 $\rho_k$ 互不相同，函数 $R(x)$ 不恒等于 0. 选择 $p$ 使得对 $k = 0, 1, \dots, p-1$ 和 $l = 1, \dots, m$ 均有 $R^{(k)}(l) = 0$，但对于某个 $l = 1, \dots, m$ 有 $R^{(p)}(l) \neq 0$. 显然有 $p \ge n$. 考虑数
+\begin{equation}
+(\log a)^{-p} R^{(p)}(l) = \gamma \neq 0; \tag{116}\label{eq:116}
+\end{equation}
+它属于 $K$，且 $c_1^{p+2mq} \gamma$ 是代数整数，因此
+\begin{equation}
+|N(\gamma)| > c_7^{-p}. \tag{117}\label{eq:117}
+\end{equation}
+此外，
+\begin{equation}
+\overline{|\gamma|} = t (c_8 q)^p c_9^q O(c_6^n n^{\frac{n}{2}}) = O(c_{10}^p p^{\frac{p}{2}}). \tag{118}\label{eq:118}
+\end{equation}
+
+为了再次找到 $|\gamma|$ 自身的合适上界估计，我们引入整函数
+\[
+S(x) = p! \frac{R(x)}{(x-l)^p} \prod_{\substack{k=1\\k\neq l}}^m \left(\frac{l-k}{x-k}\right)^p;
+\]
+那么
+\[
+\gamma = (\log a)^{-p} S(l)
+\]
+且
+\[
+S(l) = \frac{1}{2\pi i} \int_{C} \frac{S(x)}{x-l} \, dx,
+\]
+其中我们取 $C$ 为圆周
+\[
+|x| = m\left(1 + \frac{p}{q}\right).
+\]
+我们得到
+\[
+|R(x)| \le t c_{11}^{p+q} O(c_6^n n^{\frac{n}{2}}) = O(c_{12}^p p^{\frac{p}{2}}),
+\]
+\[
+|x-l| \ge |x| \frac{p}{p+q}, \quad |x-k| \ge m \frac{p}{q} \quad (k=1,\dots,m),
+\]
+\[
+|x-l|^{-p} \prod_{\substack{k=1 \\ k\neq l}}^{m} \left|\frac{l-k}{x-k}\right|^{p} = O\left(c_{13}^p p^{-p} \left(\frac{q}{p}\right)^{mp}\right),
+\]
+\[
+|S(x)| \le p! c_{13}^p p^{-p} \left(\frac{q}{p}\right)^{mp} O\left(c_{12}^p p^{\frac{p}{2}}\right) = O\left(c_{14}^p p^{\frac{3-m}{2}p}\right);
+\]
+由此
+\[
+\gamma = O\left(c_{15}^p p^{\frac{3-m}{2}p}\right)
+\]
+且根据\eqref{eq:118}，有
+\begin{equation}
+|N(\gamma)| = O\left(c_{16}^p p^{(h-1)p + \frac{3-m}{2}p}\right). \tag{119}\label{eq:119}
+\end{equation}
+$p$ 的指数等于
+\[
+(h-1)p + \frac{3-m}{2}p = -\frac{p}{2},
+\]
+因为 $p \ge n$，所以当 $n$ 足够大时，\eqref{eq:117} 与\eqref{eq:119} 相互矛盾.
+
+\section{附加评注}\label{sec:3}
+
+这两个证明的主要区别在于获取非零代数数 $\gamma \neq 0$ 的方法. Schneider 利用了函数方程 $a^{x+y} = a^x a^y$ 以构造行列式不为零的 $g$ 个逼近形式，而不等式 $\gamma \neq 0$ 则源于代数原因，这与我们在第二章 \S 4 和 \S 5 中的做法类似. Gelfond 则仅利用了这样一个事实：不是多项式的解析函数的 Taylor 级数必须包含无穷多个非零系数. 由于该方法是间接的，它没有直接给出\eqref{eq:116}中 $p$ 的一个显式有限上界；尽管这可以通过更深入的研究来确定. Gelfond 的证明版本适用于解决关于椭圆函数的类似问题，我们将在第四章中对此进行研究.
+
+我们关于 $a^b$ 超越性的结论也可以这样表述：若 $a$ 和 $c$ 是代数数，且 $a, c \neq 0$，$\log a \neq 0$，则比值 $\log c / \log a$ 要么是有理数，要么是超越数. 换句话说：任意代数数相对于任意代数底数的对数要么是有理数，要么是超越数. 然而，在商 $\log c / \log a$ 为无理数的情况下，目前尚不清楚 $\log c$ 与 $\log a$ 是否代数无关；我们甚至不知道是否不可能存在一个具有二次无理数 $\alpha$ 和 $\gamma$ 的非齐次线性关系 $\alpha \log a + \gamma \log c = 1$. 另一个展示我们对超越数知识之局限性的例子如下：由于 $e$ 是超越数，数 $e + \pi$ 和 $e \pi$ 不能同时为代数数；但我们甚至不知道 $e + \pi$ 或 $e \pi$ 是否为无理数.
+
+由于 $e^{\pi i} = -1$，因此 $e^\pi$ 的超越性已包含在 Gelfond 于 1929 年关于代数数 $a \neq 0$、$\log a \neq 0$ 且 $\beta$ 为虚二次无理数时 $a^\beta$ 超越性的结论中. 在此发现之前，例如证明 $2^{\sqrt{2}}$ 的无理数性质被认为极其困难，以至于 Hilbert 喜欢将其提及为一个解决时间甚至比 Riemann 猜想或 Fermat 大定理的证明还要遥远的问题. 这表明，在解决一个问题之前，人们是无法预知其真正的困难所在的.

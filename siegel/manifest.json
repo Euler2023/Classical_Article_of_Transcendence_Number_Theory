@@ -1,0 +1,55 @@
+{
+  "document": "Transcendental Numbers by Carl Ludwig Siegel",
+  "template": "Qbook (Siegel) Template",
+  "generated_tex": "output/siegel/siegel_Chn.tex",
+  "generated_pdf": "output/siegel/siegel_Chn.pdf",
+  "source_ledger": "output/siegel/work/source-ledger.md",
+  "summary": {
+    "total_chapters": 4,
+    "total_sections": 25,
+    "total_equations": 77,
+    "total_lemmas": 2,
+    "total_theorems": 3,
+    "total_remarks": 1,
+    "total_examples": 1,
+    "total_proofs": 15
+  },
+  "sections": [
+    {
+      "id": "chapter_1",
+      "title": "指数函数",
+      "sections": 15,
+      "equations": 46,
+      "proofs": 11,
+      "remarks": 1
+    },
+    {
+      "id": "chapter_2",
+      "title": "线性微分方程的解",
+      "sections": 2,
+      "equations": 5,
+      "lemmas": 2,
+      "proofs": 4
+    },
+    {
+      "id": "chapter_3",
+      "title": "当 $b$ 为无理代数数且 $a \\neq 0, 1$ 为代数数时 $a^b$ 的超越性",
+      "sections": 3,
+      "equations": 10,
+      "proofs": 0
+    },
+    {
+      "id": "chapter_4",
+      "title": "椭圆函数",
+      "sections": 5,
+      "equations": 16,
+      "theorems": 3,
+      "proofs": 0
+    }
+  ],
+  "bibliography": {
+    "count": 21,
+    "style": "manual references (thebibliography in tex/ref.tex)",
+    "references_bib": "output/siegel/bib/references.bib"
+  }
+}

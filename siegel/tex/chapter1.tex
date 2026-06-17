@@ -1,0 +1,444 @@
+\chapter{指数函数}
+
+关于超越数最广为人知的结论是 Lindemann 在 1882 年证明的 $e$ 的超越性. 他的方法基于 Hermite 先前的工作，后者在 1873 年发现了 $e$ 的超越性. 这两个结论都包含在更一般的 Lindemann-Weierstrass 定理中，该定理将在 \S 12 中予以证明. 我们将从一些更简单的问题开始，即 $e$ 的无理数性质及相关问题.
+
+\section{e 的无理数性质}
+
+关于 $e$ 的无理数性质的常用证明如下. 从级数
+\[ e = \sum_{k=0}^{\infty} \frac{1}{k!} \]
+我们得到分解
+\[ e = s_n + r_n, \quad s_n = \sum_{k=0}^{n} \frac{1}{k!}, \quad r_n = \sum_{k=n+1}^{\infty} \frac{1}{k!} \quad (n=1, 2, \dots). \]
+由于
+\[ r_n = \frac{1}{(n+1)!} \left( 1 + \frac{1}{n+2} + \frac{1}{(n+2)(n+3)} + \dots \right) < \frac{e-1}{(n+1)!} \]
+我们发现
+\[ e = s_1 + r_1 < 2 + \frac{e-1}{2}, \quad e < 3; \]
+因此
+\[ 0 < r_n < \frac{2}{(n+1)!}. \]
+设
+\[ n! s_n = a_n, \quad n! r_n = b_n, \]
+则数 $a_n$ 为整数且
+\[ 0 < b_n < \frac{2}{n+1} \le 1 \]
+对于 $n=1, 2, \dots$. 这证明了 $n! e = a_n + b_n$，因而更强地，$n! e$ 永远不可能是整数. 换句话说，$e$ 是无理数.
+
+如果使用 $e^{-1}$ 的级数代替 $e$，证明会更加简单. 此时
+\[ e^{-1} = \sigma_n + \rho_n, \quad \sigma_n = \sum_{k=0}^{n} \frac{(-1)^k}{k!}, \quad \rho_n = \sum_{k=n+1}^{\infty} \frac{(-1)^k}{k!} \quad (n=1, 2, \dots) \]
+且
+\[ 0 < (-1)^{n+1} \rho_n = \frac{1}{(n+1)!} - \frac{1}{(n+2)!} + \dots < \frac{1}{(n+1)!}. \]
+定义
+\[ n! \sigma_n = \alpha_n, \quad n! \rho_n = \beta_n, \]
+我们看到 $\alpha_n$ 是整数且
+\[ 0 < (-1)^{n+1} \beta_n < \frac{1}{n+1} < 1. \]
+因此 $n! e^{-1} = \alpha_n + \beta_n$，因而更强地，$n! e^{-1}$ 永远不可能是整数.
+
+我们可以证明更多一点的结论，即 $e$ 不是具有不全为零的整数系数 $a, b, c$ 的二次方程 $ax^2 + bx + c = 0$ 的根. 考虑表达式
+\[ E_n = n! (ae + ce^{-1}) \]
+其中 $a$ 和 $c$ 是不全为零的整数. 那么
+\[ E_n = S_n + R_n, \quad S_n = a a_n + c \alpha_n, \quad R_n = a b_n + c \beta_n \]
+其中 $S_n$ 是整数，且其绝对值
+\[ |R_n| \leq |ab_n| + |c\beta_n| < \frac{2|a|+|c|}{n+1}, \]
+从而
+\[ |R_n| < 1 \]
+对所有 $n \ge 2|a|+|c|$ 成立. 另一方面，我们有递推公式
+\[ \begin{aligned} R_{n-1} - R_n &= a(nb_{n-1} - b_n) + c(n\beta_{n-1} - \beta_n) \\ &= a + (-1)^{n}c. \end{aligned} \]
+由此可知，$R_{n-1}$、$R_n$、$R_{n+1}$ 这三个数中至少有一个不等于 0，因为否则的话将会有 $a+c=0$，$a-c=0$，从而 $a=0$，$c=0$. 这表明存在一个正整数 $\nu$ 使得 $E_{\nu}$ 不是整数，从而对于所有整数 $b$，数
+\[ b + \frac{E_{\nu}}{\nu!} = ae + b + ce^{-1} \]
+不等于 0. 这意味着
+\[ ae^2 + be + c \neq 0 \]
+对于任意不全为 0 的整数 $a, b, c$ 成立. 换句话说，$e$ 不是二次无理数.
+
+\section{算子 f(D)}
+
+我们用 $D$ 表示对变量 $x$ 的微分. 如果
+\[ f(t) = a_0 + a_1 t + a_2 t^2 + \dots \]
+是一个具有实或复系数 $a_0, a_1, \dots$ 的幂级数，而 $\varphi = \varphi(x)$ 是 $x$ 的一个函数，我们定义
+\begin{equation} f(D)\varphi = \sum_{n=0}^{\infty} a_n D^n \varphi = \sum_{n=0}^{\infty} a_n \frac{d^n \varphi}{dx^n}. \tag{1}\label{eq:1} \end{equation}
+为了避免收敛性和可微性的问题，我们将只在两种情况下应用算子 $f(D)$: 一种是 $\varphi$ 是多项式，另一种是 $f$ 是多项式且 $\varphi$ 具有任意阶导数. 在这两种情况下，级数\eqref{eq:1}都是有限项和.
+
+显然，对于两个幂级数 $f_1(t)$ and $f_2(t)$，有
+\begin{equation} f_1(D)(f_2(D)\varphi) = (f_1 f_2)(D)\varphi \tag{2}\label{eq:2} \end{equation}
+此外，如果 $a_0 \neq 0$，则
+\[ f^{-1}(t) = b_0 + b_1 t + \dots \quad (b_0 = a_0^{-1}) \]
+存在，且由\eqref{eq:2}，对于多项式 $\varphi$ 恒成立：
+\[ f^{-1}(D)(f(D)\varphi) = \varphi. \]
+
+如果幂级数 $f$ 和多项式 $\varphi$ 具有整数系数，则 $f(D)\varphi$ 也具有整数系数; 且在 $a_0 = \pm 1$ 的情况下，对 $f^{-1}(D)\varphi$ 同样成立.
+
+我们定义
+\[ J \varphi = \int_0^x \varphi(t) dt \]
+从而有
+\[ D J \varphi = \varphi(x), \qquad J D \varphi = \varphi(x) - \varphi(0) \]
+以及
+\begin{equation} J^{n+1} \varphi = \int_0^x \frac{(x-t)^n}{n!} \varphi(t) dt \quad (n = 0,1,\dots). \tag{3}\label{eq:3} \end{equation}
+我们特别感兴趣的是 $\varphi = e^{\lambda x} P$ 的情形，其中 $\lambda$ 是常数，而 $P = P(x)$ 是多项式. 由于
+\[ D(e^{\lambda x} P) = e^{\lambda x} (\lambda + D)P, \]
+我们有
+\begin{equation} D^{n}(e^{\lambda x}P) = e^{\lambda x}(\lambda + D)^{n}P \qquad (n=1,2,\dots) \tag{4}\label{eq:4} \end{equation}
+且
+\begin{equation} (\lambda + D)^{n}P = Q(x) \tag{5}\label{eq:5} \end{equation}
+也是一个多项式. 反之，如果任意给定 $\lambda \neq 0$ 以及多项式 $Q$，那么\eqref{eq:5}蕴含了
+\[ P = (\lambda + D)^{-n}Q \]
+且这是微分方程
+\[ D^{n}(e^{\lambda x}P) = e^{\lambda x}Q \]
+的唯一多项式解.
+
+在 $\lambda = \pm 1$ 的情况下，若 $Q$ 具有整数系数，则多项式 $P$ 也具有整数系数.
+
+\section{用有理函数逼近 $e^x$}
+
+我们将确定两个次数为 $n$ 的多项式 $A = A(x)$、$B = B(x)$，使得和 $B e^x + A$ 在 $x = 0$ 处达到 $2n + 1$ 阶零点. 这一条件蕴含了
+\begin{equation} B e^x + A = R = c x^{2n+1} + \dots \tag{6}\label{eq:6} \end{equation}
+其中 $R = R(x)$ 是以 $2n+1$ 阶项开始的幂级数. 将 $A$ 和 $B$ 用待定系数法表示，并令\eqref{eq:6}中 $0, 1, \dots, 2n$ 阶的项相等，我们就得到了关于 $A$ 和 $B$ 的 $2n+2$ 个未知系数的 $2n+1$ 个齐次线性方程组. 这证明了\eqref{eq:6}必有一个非平凡解 $A, B$. 之后将会表明 $c \neq 0$.
+
+为了得到 $A$ 和 $B$ 的显式公式，我们将\eqref{eq:6}微分 $n+1$ 次; 那么
+\[ D^{n+1}(B e^x) = D^{n+1}R \]
+\begin{equation} e^x(1+D)^{n+1}B = D^{n+1}R = c_0 x^n + \dots \tag{7}\label{eq:7} \end{equation}
+其中
+\[ c_0 = (2n+1) \dots (n+1)c. \]
+因此
+\begin{equation} (1+D)^{n+1}B = e^{-x}(c_0 x^n + \dots) = c_0 x^n + \dots = c_0 x^n \tag{8}\label{eq:8} \end{equation}
+因为 $(1+D)^{n+1}B$ 是一个次数至多为 $n$ 的多项式，且
+\[ B = c_0(1+D)^{-n-1}x^n. \]
+
+为了求 $A$，我们以同样的方式得到
+\[ D^{n+1}(A e^{-x}) = D^{n+1}(R e^{-x}) \]
+\[ e^{-x}(-1+D)^{n+1}A = c_0 x^n + \dots \]
+\[ (-1+D)^{n+1}A = e^x(c_0 x^n + \dots) = c_0 x^n + \dots = c_0 x^n \]
+\[ A = c_0(-1+D)^{-n-1}x^n. \]
+这证明了除了任意常数因子 $c_0$ 之外，$A$ 和 $B$ 是唯一的. 选择 $c_0 = 1$，则
+\begin{equation} A(x) = (-1+D)^{-n-1}x^n, \quad B(x) = (1+D)^{-n-1}x^n \tag{9}\label{eq:9} \end{equation}
+具有整数系数. 此外，由\eqref{eq:7}和\eqref{eq:8}，
+\[ D^{n+1}R = x^n e^x. \]
+由于 $R$ 及其前 $n$ 阶导数在 $x = 0$ 处均为 $0$，由\eqref{eq:3}我们得到
+\[ R = J^{n+1}D^{n+1}R = \frac{1}{n!} \int_{0}^{x} (x-t)^{n}t^{n}e^{t}dt \]
+\begin{equation} R(x) = \frac{x^{2n+1}}{n!} \int_0^1 t^n (1-t)^n e^{tx} dt \tag{10}\label{eq:10} \end{equation}
+对于 $n=0,1,\dots$. 将 $t$ 替换为 $1-t$，我们发现
+\[ R(x) = \frac{x^{2n+1}}{n!} \int_0^1 t^n (1-t)^n e^{(1-t)x} dt \]
+从而有
+\begin{equation} R(x) = \frac{x^{2n+1}}{n!} e^{\frac{x}{2}} \int_{0}^{1} t^{n} (1-t)^{n} \cosh\left\{\left(t-\frac{1}{2}\right)x\right\} dt \quad (n = 0, 1, \dots). \tag{11}\label{eq:11} \end{equation}
+
+\section{当有理数 $a \neq 0$ 时 $e^a$ 的无理数性质}
+
+由\eqref{eq:10}，
+\begin{equation} |R(x)| \leq \frac{|x|^{2n+1}}{n!} e^{|x|}, \tag{12}\label{eq:12} \end{equation}
+对所有复数 $x$ 成立，且
+\begin{equation} R(x) > 0, \tag{13}\label{eq:13} \end{equation}
+对所有正数 $x$ 成立.
+
+现在令 $x = m$ 为一正整数; 则数 $A(m)$ 和 $B(m)$ 是整数. 假设 $e^m$ 是有理数，并记其分母为 $q > 0$. 由\eqref{eq:6}，数
+\[ q R(m) = r \]
+是整数. 由\eqref{eq:12}和\eqref{eq:13}，
+\[ 0 < r \leq q \frac{m^{2n+1}}{n!} e^m = q m e^m \frac{m^{2n}}{n!} < 1 \]
+对所有足够大的 $n$ 成立. 这产生了一个矛盾.
+
+因此，所有幂次 $e^m$ ($m=1,2,\dots$) 都是无理数. 如果 $a$ 是任意不等于 $0$ 的有理数，我们可将其写作 $a=\frac{m}{r}$，其中整数 $m>0, r \neq 0$. 由于 $e^m=(e^a)^r$，由此可知，对于所有有理数 $a \neq 0$，$e^a$ 是无理数.
+
+\section{$\pi$ 的无理数性质}
+
+我们知道次数为 $n$ 的多项式 $A(x)$ 和 $B(x)$ 被以下公式唯一确定
+\begin{equation} B(x)e^{x} + A(x) = R(x) = cx^{2n+1} + \dots, \tag{14}\label{eq:14} \end{equation}
+其中 $c \neq 0$ 是给定的. 将 $x$ 替换为 $-x$ 并且乘以 $e^{x}$; 那么
+\[ A(-x)e^{x} + B(-x) = e^{x}R(-x) = -cx^{2n+1} + \dots, \]
+由此得到
+\begin{equation} A(-x) = -B(x). \tag{15}\label{eq:15} \end{equation}
+这也可以通过使用 $A$ 和 $B$ 的表达式\eqref{eq:9}来证明.
+
+选择 $x=\pi i$ 并应用\eqref{eq:11}、\eqref{eq:14}和\eqref{eq:15}; 那么
+\[ e^{\frac{x}{2}} = i, \quad \cosh \left\{\left(t-\frac{1}{2}\right)x\right\} = \cos \left\{\left(t-\frac{1}{2}\right)\pi\right\} = \sin \pi t \]
+\begin{equation} A(\pi i) + A(-\pi i) = R(\pi i) \tag{16}\label{eq:16} \end{equation}
+且
+\begin{equation} R(\pi i) = (-1)^{n+1} \frac{\pi^{2n+1}}{n!} \int_0^1 t^n (1-t)^n \sin \pi t \, dt. \tag{17}\label{eq:17} \end{equation}
+被积函数在区间 $0 < t < 1$ 内是正的，因此
+\[ R(\pi i) \neq 0. \]
+函数 $A(x) + A(-x)$ 是关于变量 $x^2$、次数为 $\nu = \left[\frac{n}{2}\right]$ 的具有整数系数的多项式. 如果 $\pi^2$ 是一个有理数，且其分母为 $q > 0$，那么由\eqref{eq:16}，数
+\begin{equation} q^{\nu} R(\pi i) = j \tag{18}\label{eq:18} \end{equation}
+是整数. 然而，由\eqref{eq:17}和\eqref{eq:18}可知
+\[ 0 < |j| \leq \frac{q^{\frac{n}{2}} \pi^{2n+1}}{n!} < 1 \]
+对所有足够大的 $n$ 值成立.
+
+这一矛盾证明了 $\pi^2$ 是无理数，因而更强地，$\pi$ 本身也是无理数.
+
+\section{当有理数 $a \neq 0$ 时 $\tan a$ 的无理数性质}
+
+定义
+\[ A(x) - A(-x) = x P(x^2), \quad A(x) + A(-x) = Q(x^2), \]
+从而 $P=P(x^2), Q=Q(x^2)$ 是关于 $x^2$ 的多项式，次数分别为 $[\frac{n-1}{2}]$ 和 $[\frac{n}{2}] = \nu$，且具有整数系数，并且有
+\[ 2A(x) = Q+xP, \quad 2A(-x) = Q-xP. \]
+将\eqref{eq:14}乘以 $e^{-\frac{x}{2}}$ 并应用\eqref{eq:11}和\eqref{eq:15}; 那么
+\begin{equation} \begin{aligned} A(x) e^{-\frac{x}{2}} - A(-x)e^{\frac{x}{2}} &= R(x) e^{-\frac{x}{2}} \\ xP \cosh \frac{x}{2} - Q \sinh \frac{x}{2} &= R(x)e^{-\frac{x}{2}} \\ &= \frac{x^{2n+1}}{n!} \int_{0}^{1} t^{n} (1-t)^{n} \cosh\left\{\left(t-\frac{1}{2}\right)x\right\} dt \\ &= S(x), \end{aligned} \tag{19}\label{eq:19} \end{equation}
+记之.
+
+现在，设 $a^2=\pm b$ 是一个非零有理数，且假设 $\frac{\tanh a}{a}$ 也是有理数. 令 $x=2a$，并记 $x^2=4a^2=\pm 4b$ 的分母为 $q > 0$. 那么
+\[ x\cosh \frac{x}{2}=\gamma r, \quad \sinh \frac{x}{2}=\gamma s \]
+其中 $r, s$ 是整数且 $\gamma \neq 0$，数 $q^\nu P(x^2), q^\nu Q(x^2)$ 是整数，且\eqref{eq:19}表明，数
+\[ \gamma^{-1} q^{\nu} S(x) = j \]
+也是一个整数，然而
+\[ |j| \leq \left| \frac{x}{\gamma} \right| e^{\frac{|x|}{2}}  \frac{q^{\frac{n}{2}}|x|^{2n}}{n!} \longrightarrow 0 \quad (n \longrightarrow \infty). \]
+如果我们能证明 $R(x) \neq 0$，就能获得所需的矛盾. 这一不等式在 $x^2 \geq -\pi^2$ 的情况下是显而易见的，因为此时\eqref{eq:19}中的被积函数对 $0 < t < 1$ 是正的. 为了完成在剩余情形下证明，我们将 $A, B, R, c$ 更显式地写为 $A_n, B_n, R_n, c_n$; 那么
+\[ \begin{aligned} B_n e^{x} + A_n &= R_n = c_n x^{2n+1} + \dots, \\ B_{n-1} e^{x} + A_{n-1} &= R_{n-1} = c_{n-1} x^{2n-1} + \dots, \quad (n = 1, 2, \dots) \end{aligned} \]
+\begin{equation} \begin{aligned} A_{n-1} B_n - A_n B_{n-1} &= R_{n-1} B_n - R_n B_{n-1} \\ &= c_{n-1} B_n(0) x^{2n-1} + \dots \\ &= c_{n-1} B_n(0) x^{2n-1}, \end{aligned} \tag{20}\label{eq:20} \end{equation}
+因为 $A_{n-1} B_n - A_n B_{n-1}$ 是关于 $x$ 的次数为 $2n-1$ 的多项式. 如果 $B_n(0) = 0$，则同样有 $A_n(0) = B_n(0) - R_n(0) = 0$，而公式
+\[ (B_{n-1} + x^{-1}B_n)e^{x} + (A_{n-1} + x^{-1}A_n) = c_{n-1}x^{2n-1} + \dots \]
+将与 $A_{n-1}, B_{n-1}$ 的唯一性相矛盾. 因此 $B_n(0) \neq 0$. 这也可以从 $B(x) = (1+D)^{-n-1}x^n$ 中得出，即 $B_{n}(0)= \binom{-n-1}{n}n! \neq 0$.
+
+现在，我们从\eqref{eq:20}推知，对于所有 $x \neq 0$，有 $R_{n-1}B_n - R_nB_{n-1} \neq 0$，从而 $R_{n-1}(x), R_n(x)$ 这两个数中至少有一个不等于 0. 这对完成证明已经足够了.
+
+将实数和虚数的情况分开讨论，我们看到对于所有正有理数 $b$，$\frac{\tanh \sqrt{b}}{\sqrt{b}}$ 和 $\frac{\tan \sqrt{b}}{\sqrt{b}}$ 都是无理数. 特别地，对于所有有理数 $a \neq 0$，$\tan a$ 是无理数. 这包含了 $\pi$ 的无理数性质，因为 $\tan \frac{\pi}{4} = 1$ 是有理数.
+
+\begin{remark} 注：Siegel 在原文中用 $\text{tg}(x)$ 表示 $\tan(x)$，我们采用了现代符号. \end{remark}
+
+\section{函数 $P_1 e^{\rho_1 X} + \dots + P_m e^{\rho_m X}$}
+
+我们将解决以下问题：设给定 $m$ 个不同的复常数 $\rho_1,\ldots,\rho_m$ 以及 $m$ 个非负整数 $n_1,\ldots,n_m$，且令
+\begin{equation} \sum_{k=1}^{m} (n_k + 1) = N + 1 \tag{21}\label{eq:21} \end{equation}
+确定 $m$ 个次数分别为 $n_1,\ldots,n_m$ 的多项式 $P_1(x),\ldots, P_m(x)$，使得函数
+\begin{equation} R = P_{1}e^{\rho_{1}x} + \dots + P_{m}e^{\rho_{m}x} \tag{22}\label{eq:22} \end{equation} 
+在 $x=0$ 处具有 $N$ 阶零点. 对于 $m=2$、$n_1=n_2=n$、$\rho_1=1$、$\rho_2=0$ 的特殊情况，此问题的解已在 \S 3 中给出.
+
+将 $P_1, \dots, P_m$ 用待定系数法表示，并考虑 $R$ 的幂级数展开式中次数为 $0, 1, \dots, N-1$ 的项，我们就得到了关于 $(n_1+1) + \dots + (n_m+1)$ 个未知系数的 $N$ 个齐次线性方程组. 由于\eqref{eq:21}，这些方程组必有一个非平凡解. 这证明了存在 $m$ 个不全恒为 0 且次数 $\leq n_k$ 的多项式 $P_k$ ($k=1,\dots,m$)，使得 $R$ 的幂级数具有如下形式
+\begin{equation} R = c \frac{x^{N}}{N!} + \dots \tag{23}\label{eq:23} \end{equation}
+其中 $c$ 为某个常数.
+
+在 $m=1$ 的情况下，解显然为
+\[ P_1 = c \frac{x^{n_1}}{n_1!}, \]
+因此 $c \neq 0$. 之后将会表明，对于每个 $m$，\eqref{eq:23} 中的常数 $c$ 都不等于 0; 且对于任何给定的 $c \neq 0$，解都是唯一的.
+
+更显式地写作 $N=N_m$ 并假设 $m > 1$. 由\eqref{eq:4}和\eqref{eq:22}，
+\begin{equation} \begin{aligned} D^{n_m+1}(Re^{-\rho_m x}) &= \sum_{k=1}^{m} D^{n_m+1}(e^{(\rho_k-\rho_m)x}P_k) \\ &= \sum_{k=1}^{m-1} e^{(\rho_k-\rho_m)x}(\rho_k-\rho_m+D)^{n_m+1}P_k; \end{aligned} \tag{24}\label{eq:24} \end{equation}
+由\eqref{eq:23}，
+\begin{equation} \begin{aligned} D^{n_m+1}(Re^{-\rho_m x}) &= c D^{n_m+1}\left(\frac{x^{N_m}}{N_m!}e^{-\rho_m x}\right) \\ &= c\frac{x^{N_{m-1}}}{N_{m-1}!} + \dots \end{aligned} \tag{25}\label{eq:25} \end{equation}
+由于这 $m-1$ 个多项式
+\[ Q_k = (\rho_k - \rho_m + D)^{n_m+1} P_k \quad (k=1,\dots,m-1) \]
+与 $P_k$ 具有完全相同的次数，所以它们不全恒为 0. 由\eqref{eq:24}和\eqref{eq:25}可知，函数
+\[ S = D^{n_m+1} (Re^{-\rho_m x}) = Q_1 e^{(\rho_1-\rho_m)x} + \dots + Q_{m-1} e^{(\rho_{m-1}-\rho_m)x} \]
+为 $m-1$ 个以及 $\rho_1 - \rho_m, \ldots, \rho_{m-1} - \rho_m$ 代替 $m$ 和 $\rho_1, \ldots, \rho_m$ 时解决了这一问题，且常数 $c$ 保持相同. 我们现在得到
+\[ P_k = (\rho_k - \rho_m + D)^{-n_m-1} Q_k \quad (k=1,\dots,m-1) \]
+并且，由\eqref{eq:3}，
+\begin{equation} R = e^{\rho_m x} J^{n_m+1} S = e^{\rho_m x} \int_0^x \frac{(x-t)^{n_m}}{n_m!} S(t) dt. \tag{26}\label{eq:26} \end{equation}
+
+对 $m$ 应用数学归纳法，我们看到我们可以规定 $c=1$，从而
+\[ P_1 = \prod_{l=2}^{m} \left( \rho_1 - \rho_l + D \right)^{-n_l-1} \frac{x^{n_1}}{n_1!}, \]
+更一般地，有
+\begin{equation} P_k = \prod_{\substack{l=1\\l \neq k}}^{m} (\rho_k - \rho_l + D)^{-n_l-1} \frac{x^{n_k}}{n_k!} \quad (k=1,\dots,m). \tag{27}\label{eq:27} \end{equation}
+
+为了显式地确定 $R$，我们首先考虑 $m=2$ 的情形. 由\eqref{eq:26}，
+\[ \begin{aligned} R &= e^{\rho_2 x} \int_0^x \frac{(x-t)^{n_2}}{n_2!} e^{(\rho_1 - \rho_2)t} \frac{t^{n_1}}{n_1!} dt \\ &= \int_{\substack{t_1 + t_2 = x \\ t_1 > 0, t_2 > 0}} \frac{t_1^{n_1} t_2^{n_2}}{n_1! n_2!} e^{\rho_1 t_1 + \rho_2 t_2} dt_1 \qquad (x>0). \end{aligned} \]
+假设对于 $m-1 \geq 1$，公式
+\begin{equation} R(x) = \int \dots \int_{\substack{t_1 + \dots + t_m = x \\ t_1 > 0, \dots, t_m > 0}} \prod_{k=1}^{m} \left( \frac{t_k^{n_k}}{n_k!} e^{\rho_k t_k} \right) dt_1 \dots dt_{m-1} \quad (x>0) \tag{28}\label{eq:28} \end{equation}
+是正确的 (用 $m-1$ 代替 $m$). 那么
+\[ S(t) = \int \dots \int_{\substack{t_1 + \dots + t_{m-1} = t \\ t_1 > 0, \dots, t_{m-1} > 0}} \prod_{k=1}^{m-1} \left( \frac{t_k^{n_k}}{n_k!} e^{(\rho_k - \rho_m)t_k} \right) dt_1 \dots dt_{m-2} \quad (t > 0). \]
+代入\eqref{eq:26}并定义 $t_m=x-t$，我们便得到了关于 $m$ 的\eqref{eq:28}.
+
+我们称 $R = P_1 e^{\rho_1 x} + \dots + P_m e^{\rho_m x}$ 为一个逼近型 (approximation form).
+
+\section{$R(1)$ 的估计}
+
+由\eqref{eq:28}我们可以得出两个重要结论：对于任意复数 $\rho_1,\ldots,\rho_m$，我们有上界估计
+\begin{equation} |R(1)| \leq \frac{e^{|\rho_1| + \dots + |\rho_m|}}{n_1! \dots n_m!}, \tag{29}\label{eq:29} \end{equation}
+而对于\textit{实数} $\rho_1, \dots, \rho_m$，我们有\textit{下界}估计
+\begin{equation} R(1) > 0. \tag{30}\label{eq:30} \end{equation}
+
+\section{$P_k(1)$ 及其分母的估计}
+
+我们应用展开式
+\begin{equation} (\omega + D)^{-n-1} = \omega^{-n-1} \sum_{r=0}^{\infty} \binom{-n-1}{r} \omega^{-r} D^r \quad (\omega \neq 0) \tag{31}\label{eq:31} \end{equation}
+以寻求\eqref{eq:27}中 $P_k$ 的估计. 记 $M$ 为这 $m(m-1)$ 个数 $\frac{1}{|\rho_k - \rho_l|}$ ($1 \leq k, l \leq m, k \neq l$) 的最大值. 那么
+\[ |P_{k}(x)| \le (M^{-1} - D)^{n_{k} - N} \frac{x^{n_{k}}}{n_{k}!} \quad (x>0), \]
+因为作为 $x$ 的多项式，右端项优于 $P_k(x)$. 此外，
+\[ \begin{aligned} (M^{-1} - D)^{n_k - N} \frac{x^{n_k}}{n_k!} &= M^{N - n_k} \sum_{r=0}^{n_k} \binom{N - n_k + r - 1}{r} M^r D^r \frac{x^{n_k}}{n_k!} \\ &\leq \sum_{r=0}^{n_k} \binom{N}{r} M^{N-n_k+r} \frac{x^{n_k-r}}{(n_k-r)!} \\ &\leq (1+1)^N (M+x)^N = (2M+2x)^N \quad (x>0), \end{aligned} \]
+从而
+\begin{equation} |P_{k}(1)| \le (2M+2)^{N} \quad (k=1,\dots,m). \tag{32}\label{eq:32} \end{equation}
+
+如果 $\rho_1, \dots, \rho_m$ 是代数数，那么 $P_k(1)$ 也是代数数. 为了寻求 $P_k(1)$ 的分母估计，我们选择一个正有理整数 $q$，使得这 $m(m-1)$ 个代数数 $q(\rho_k - \rho_l)^{-1}$ ($1 \leq k, l \leq m, k \neq l$) 均为整代数数. 由\eqref{eq:27}和\eqref{eq:31}可知，数 $n_k! q^N P_k(1)$ 是整代数数.
+
+\section{当实代数数 $a \neq 0$ 时 $e^a$ 的超越性}
+
+设 $a \neq 0$ 为一个实代数数，且假设 $e^a$ 也是代数数. 我们引入由 $a$ 和 $e^a$ 生成的代数数域 $K$，并记 $h$ 为其在有理数域上的次数. 如果 $\xi$ 是 $K$ 中的任意数，范数 $\mathfrak{N}(\xi) = \xi^{(1)} \dots \xi^{(h)}$ 表示 $\xi$ 的所有 $h$ 个共轭 $\xi^{(1)}, \dots, \xi^{(h)}$ 的乘积，我们定义
+\[ \overline{|\xi|} = \max (|\xi^{(1)}|, \ldots, |\xi^{(h)}|). \]
+
+取 $m=h+1$、$\rho_k=(k-1)a$ ($k=1,\dots,m$)、$n_1=n_2=\dots=n_m=n \geq 1$. 数 $n$ 可以任意大，而我们将用 $c_1, c_2, \dots$ 表示与 $n$ 无关的正有理整数.
+
+现在数 $P_k(1)$ 属于 $K$. 在这 $h$ 个共轭域上利用\eqref{eq:27}，我们由\eqref{eq:32}得到
+\begin{equation} \overline{|P_{k}(1)|} < c_{1}^{n}, \tag{33}\label{eq:33} \end{equation}
+因为 $N=m(n+1)-1=mn+h < c_2 n$. 另外
+\[ R(1) = P_1(1) e^{\rho_1} + \dots + P_m(1) e^{\rho_m} \]
+也属于 $K$. 凭借我们先前对 $P_k(1)$ 分母的估计，我们可以确定一个数
+\begin{equation} T = c_3^n n! \tag{34}\label{eq:34} \end{equation}
+使得
+\[ \xi = TR(1) \]
+是 $K$ 中的一个\textit{代数整数}. 由\eqref{eq:30}，该整数不为 0; 因此
+\begin{equation} |\mathfrak{N}(\xi)| \geq 1. \tag{35}\label{eq:35} \end{equation}
+
+另一方面，由\eqref{eq:29}和\eqref{eq:34}，我们有
+\[ |\xi| < c_4^n(n!)^{-h} \]
+对\textit{某一个}共轭成立 (不妨记为 $\xi = \xi^{(1)}$)，但对其他任何共轭 $\xi^{(2)}, \ldots, \xi^{(h)}$ 并不必然成立，因为 $h-1$ 个数 $e^x$ ($x=\rho_k^{(2)},\ldots,\rho_k^{(h)}$) 也许并不共轭于 $e^{\rho_k}$. 然而，由\eqref{eq:33}和\eqref{eq:34}，我们对 $\xi$ 的\textit{所有}共轭均可得到估计
+\[ \overline{|\xi|} < c_5^n n!. \]
+于是
+\[ |\mathfrak{N}(\xi)| < c_4^n(n!)^{-h}(c_5^n n!)^{h-1} = \frac{c_6^n}{n!} < 1, \]
+对于所有足够大的 $n$ 成立，这与\eqref{eq:35}矛盾.
+
+这证明了对于所有实代数数 $a \neq 0$，$e^a$ 是一个超越数. 特别地，数 $e$ 本身是超越数.
+
+\section{$m$ 个逼近型的行列式}
+
+先前证明的关键点在于代数整数 $\xi$ 不为 0，这由\eqref{eq:30}得出. 如果 $\rho_1, \dots, \rho_m$ 又是任意不同的复数，我们无法再断言 $R(1) \neq 0$. 为了克服这一困难，我们采用如下方法.
+
+对于任何固定的 $k=1, 2, \dots, m$，我们取 $n_l = n \geq 1$ ($l=1, \dots, k$) 且 $n_l = n-1$ ($l=k+1, \dots, m$)，并将对应的逼近型记作
+\[ R_{k} = P_{k1} e^{\rho_{1}x} + \dots + P_{km} e^{\rho_{m}x} \quad (k=1,\dots,m). \]
+多项式 $P_{kl}$ 的次数为 $n_l$，且根据 $k \geq l$ 或 $k < l$，此数分别等于 $n$ 或 $n-1$. 现在考虑 $P_{kl}$ 的行列式 $\Delta = \Delta(x)$. 它的 $m!$ 项都是关于 $x$ 的多项式，除对应主对角线的项次数为 $mn$ 之外，所有其他项的次数均 $< mn$. 由此可知，多项式 $\Delta$ 的次数恰好为 $mn$.
+
+将 $\Delta$ 中第一列元素的余子式记作 $\Delta_1, \dots, \Delta_m$，我们有
+\begin{equation} \Delta = (\Delta_1 R_1 + \dots + \Delta_m R_m) e^{-\rho_1 x}. \tag{36}\label{eq:36} \end{equation}
+函数 $R_k$ 在 $x=0$ 处达到的零点阶数为
+\[ (n_1 + \dots + n_m) + m-1 = mn + k-1 \geq mn; \]
+因此 $\Delta$ 在 $x=0$ 处至少有 $mn$ 阶零点. 这证明了
+\[ \Delta(x) = \gamma x^{mn}, \quad \Delta(1) = \gamma \neq 0. \]
+
+现由\eqref{eq:36}可知，$R_k(1)$ ($k=1,\dots,m$) 这 $m$ 个数中至少有一个不为 0，这特别对于将 \S 10 的证明推广到复代数数 $a \neq 0$ 的情形已经足够了.
+
+\section{代数无关性}
+
+假设 $p$ 个代数数 $a_1, \dots, a_p$ 满足一个系数不全为零的齐次线性方程 $g_1 a_1 + \dots + g_p a_p = 0$，其中 $g_1, \dots, g_p$ 是有理整数. 那么这 $p$ 个数 $\eta_k = e^{a_k}$ ($k=1,\dots,p$) 满足具有有理数系数的代数方程 $\eta_1^{g_1} \dots \eta_p^{g_p} = 1$. 我们将证明其逆命题：如果 $a_1, \dots, a_p$ 是代数数，且除 $g_1=0, \dots, g_p=0$ 外，对所有有理整数 $g_1, \dots, g_p$ 均有 $g_1 a_1 + \dots + g_p a_p \neq 0$，那么这 $p$ 个数 $e^{a_1}, \dots, e^{a_p}$ 满足的任何具有代数系数的代数关系式都不成立. 这在 $p=1$ 的情况下意味着：当代数数 $a_1 \neq 0$ 时，$e^{a_1}$ 是超越数. 特别地，$e$ 是超越数，因为 $1 \neq 0$.
+
+假设上述声明不成立; 那么存在一个关于 $p$ 个变量 $y_1, \dots, y_p$ 且系数为不全为 0 的代数整数的多项式 $G = G(y_1, \dots, y_p)$，使得当 $y_k = e^{a_k} \quad (k=1,\dots,p)$ 时 $G$ 消失.
+
+令 $d$ 为 $G(y_1, \dots, y_p)$ 的总次数，并用 $h$ 表示由 $a_1, \dots, a_p$ 极其 $G$ 的系数所生成的代数数域 $K$ 的次数. 我们选择一个有理整数 $f > d$ 满足
+\begin{equation} \prod_{k=1}^{p} (f-d+k) > \left(1-\frac{1}{h}\right) \prod_{k=1}^{p} (f+k); \tag{37}\label{eq:37} \end{equation}
+这是可能的，因为这两个关于 $f$ 的多项式之差的首项系数为正，即 $\frac{1}{h}$.
+
+所有总次数 $\leq f$ 或 $\leq f-d$ 的单项式 $y_1^{g_1} \dots y_p^{g_p}$ 的个数分别为 $m = \binom{f+p}{p}$ 和 $r = \binom{f-d+p}{p}$. 将它们分别记作 $Y_1, \dots, Y_m$ 以及 $Z_{m-r+1}, \dots, Z_m$，我们得到
+\[ Z_k G = \alpha_{k1} Y_1 + \dots + \alpha_{km} Y_m \quad (k=m-r+1,\dots,m), \]
+其中 $\alpha_{kl}$ 是 0 或 $G$ 的一个系数. 显然，这个 $r$ 行的系数矩阵 $(\alpha_{kl})$ 的秩为 $r$，因为多项式 $Z_k G$ 之间不满足任何常数系数不全为 0 的齐次线性方程.
+
+设
+\[ Y_l = y_1^{g_{l1}} \dots y_p^{g_{lp}}, \quad \rho_l = g_{l1} a_1 + \dots + g_{lp} a_p \quad (l=1,\dots,m). \]
+那么 $\rho_1, \dots, \rho_m$ 是 $K$ 中的 $m$ 个不同的数，且
+\[ \alpha_{k1} e^{\rho_1} + \dots + \alpha_{km} e^{\rho_m} = 0 \quad (k=m-r+1,\dots,m). \]
+
+现在考虑 \S 11 中的 $m$ 个逼近型
+\[ R_k(x) = P_{k1}(x) e^{\rho_1 x} + \dots + P_{km}(x) e^{\rho_m x} \quad (k=1,\dots,m) \]
+我们知道 $m$ 行矩阵 $(P_{kl}(1))$ 拥有不为零的行列式 $\Delta(1)$，因此我们可以找到 $m-r$ 行 (不妨设对应 $k=k_1, \dots, k_{m-r}$)，它们与矩阵 $(\alpha_{kl})$ 的 $r$ 行合在一起构成一个非零的行列式. 记
+\[ P_{k_t l}(1) = \alpha_{tl}, \quad R_{k_t}(1) = \beta_t \quad (t=1,\dots,m-r); \]
+那么
+\[ \alpha_{k1} e^{\rho_1} + \dots + \alpha_{km} e^{\rho_m} = \beta_k \quad (k=1,\dots,m) \]
+其中对 $k=m-r+1, \dots, m$ 有 $\beta_k = 0$. 设 $\Delta$ 为 $\alpha_{kl}$ 的行列式，而 $\Delta_1, \dots, \Delta_m$ 是对应第一列的余子式. 由此可知
+\begin{equation} 0 \neq \Delta = (\Delta_1 \beta_1 + \dots + \Delta_{m-r} \beta_{m-r}) e^{-\rho_1}. \tag{38}\label{eq:38} \end{equation}
+
+现在我们将应用 \S 9 的结果. 由于 $n_l = n$ 或 $n-1$，我们可以确定一个数
+\[ T = c_7^n n! \]
+使得这 $(m-r)m$ 个数 $T\alpha_{kl}$ ($k=1,\dots,m-r; l=1,\dots,m$) 都是 $K$ 中的代数整数. 这意味着 $T^{m-r}\Delta$ 也是代数整数，从而
+\begin{equation} |\mathfrak{N}(\Delta)| \geq T^{h(r-m)} = c_8^{-n}(n!)^{h(r-m)}. \tag{39}\label{eq:39} \end{equation}
+
+此外，由\eqref{eq:32}，
+\begin{equation} \overline{|\alpha_{kl}|} < c_9^n \quad (k=1,\dots,m; l=1,\dots,m), \tag{40}\label{eq:40} \end{equation}
+\begin{equation} \overline{|\Delta|} < c_{10}^n. \tag{41}\label{eq:41} \end{equation}
+
+另一方面，由\eqref{eq:29}，
+\[ |\beta_t| < c_{11}^n (n!)^{-m} < c_{12}^n (n!)^{-m} \quad (t=1,\dots,m-r), \]
+因此，由\eqref{eq:38}和\eqref{eq:40}，
+\begin{equation} |\Delta| < c_{13}^n (n!)^{-m}. \tag{42}\label{eq:42} \end{equation}
+
+估计\eqref{eq:41}和\eqref{eq:42}蕴含了
+\[ |\mathfrak{N}(\Delta)| < c_{14}^n (n!)^{-m}. \]
+
+令 $n \to \infty$ 并与\eqref{eq:39}比较，我们看到
+\[ m \leq h(m-r), \]
+\[ r \leq \left(1-\frac{1}{h}\right)m. \]
+由 $m$ 和 $r$ 的定义，这与\eqref{eq:37}矛盾.
+
+这一结果可以用另一种方式表述. 假设 $b_1, \dots, b_r$ 是不同的代数数. 如果这 $r$ 个数中恰有 $p$ 个在有理数域上线性无关，那么我们可以找到 $p$ 个线性无关的代数数 $a_1, \dots, a_p$，使得
+\[ b_k = g_{k1}a_1 + \dots + g_{kp}a_p \quad (k=1,\dots,r) \]
+具有有理整数系数 $g_{kl}$. 现在考虑关于变量 $y_1, \dots, y_p$ 且系数为不全为 0 的代数数 $c_1, \dots, c_r$ 的有理函数
+\[ f(y_1, \dots, y_p) = \sum_{k=1}^r c_k y_1^{g_{k1}} \dots y_p^{g_{kp}} \]
+它不可能在 $y_1, \dots, y_p$ 上恒等于 0，因为对 $k=1, \dots, r$，指数序列 $g_{k1}, \dots, g_{kp}$ 是互不相同的. 此时，我们的结果表明，当 $y_1=e^{a_1}, \dots, y_p=e^{a_p}$ 时 $f$ 不能等于 0; 因此
+\begin{equation} c_1 e^{b_1} + \dots + c_r e^{b_r} \neq 0. \tag{43}\label{eq:43} \end{equation}
+
+这就是 Lindemann-Weierstrass 定理：如果 $b_1, \dots, b_r$ 是互不相同的代数数，那么 $e^{b_1}, \dots, e^{b_r}$ 不满足任何具有不全为零的代数系数的齐次线性方程.
+
+反之，该定理也包含了我们先前的结果，因为 $e^{a_1}, \dots, e^{a_p}$ 之间具有代数系数的代数方程将意味着某个多项式 $f(y_1, \dots, y_p)$ 在 $y_1 = e^{a_1}, \dots, y_p = e^{a_p}$ 处消失. 由于 $a_1, \dots, a_p$ 在有理数域上是线性无关的，我们将得到与\eqref{eq:43}的矛盾.
+
+\section{余项 $R(x)$ 的另一种表示}
+
+在本章的其余部分，我们将更仔细地研究逼近型的解析性质. 我们从复积分开始
+\begin{equation} J = \frac{1}{2\pi i} \int_C \frac{e^{xz}}{Q(z)} dz, \quad Q(z) = \prod_{k=1}^{m} (z - \rho_k)^{n_k+1}, \tag{44}\label{eq:44} \end{equation}
+其中 $\rho_k$ 和 $n_k$ 具有它们先前的含义，而 $C$ 是包围 $\rho_1, \ldots, \rho_m$ 于其内部的正向单闭曲线. 代入
+\[ e^{xz} = e^{x\rho_k} \sum_{l=0}^{\infty} \frac{x^l (z-\rho_k)^l}{l!} \]
+我们看到被积函数在 $z=\rho_k$ 处的留数具有 $Q_k e^{\rho_k x}$ 的形式，其中 $Q_k=Q_k(x)$ 是关于 $x$ 的次数 $\leq n_k$ 的多项式. 那么，根据留数定理，
+\[ J = Q_1 e^{\rho_1 x} + \dots + Q_m e^{\rho_m x}. \]
+
+另一方面，
+\[ J = \sum_{l=0}^{\infty} a_l \frac{x^l}{l!}, \quad a_l = \frac{1}{2\pi i} \int_C \frac{z^l}{Q(z)} dz. \]
+
+如果我们选择一条其内部包含整个圆盘 $|z| \leq |\rho_k|$ ($k=1,\dots,m$) 的曲线 $C$，我们可以使用降幂级数展开
+\[ \frac{1}{Q(z)} = z^{-N-1} \prod_{k=1}^{m} \left(1 - \frac{\rho_k}{z}\right)^{-n_k-1} = z^{-N-1} + \dots \]
+这证明了
+\[ a_l = 0 \quad (l=0,1,\dots,N-1), \quad a_N = 1. \]
+
+现在 \S 7 中的唯一性定理表明 $Q_k(x) = P_k(x)$ 且 $J = R(x)$.
+
+表达式
+\begin{equation} R(x) = \frac{1}{2\pi i} \int_C \frac{e^{xz}}{Q(z)} dz \tag{45}\label{eq:45} \end{equation}
+将余项表示为单复积分，比\eqref{eq:28}中作为 $(m-1)$ 重实积分的表示更具美感，但如果想要证明 \S 8 的结果，则其并不方便. 在不使用唯一性定理的情况下，我们可以通过如下方式将\eqref{eq:45}转化为\eqref{eq:28}. 假设 $x>0$，那么 $C$ 可以变形为一条自 $c-i\infty$ 至 $c+i\infty$ 的直线 $L$，其中 $c$ 是一个大于所有 $\rho_k$ 实部的实数. 代入
+\[ (z-\rho_k)^{-n_k-1} = \frac{1}{n_k!} \int_0^\infty t_k^{n_k} e^{(\rho_k-z)t_k} dt_k \quad (k=1,\dots,m-1) \]
+并交换积分顺序; 那么
+\[ R(x) = \int_0^{\infty} \dots \int_0^{\infty} \left\{ \frac{1}{2\pi i} \int_L \frac{e^{(x-t_1-\dots-t_{m-1})z}}{(z-\rho_m)^{n_m+1}} dz \right\} \prod_{k=1}^{m-1} \frac{t_k^{n_k}}{n_k!} e^{\rho_k t_k} dt_k. \]
+但是
+\[ \frac{1}{2\pi i} \int_L \frac{e^{tz}}{(z-\rho_m)^{n_m+1}} dz = \begin{cases} \frac{t^{n_m}}{n_m!} e^{\rho_m t} & (t>0) \\ 0 & (t<0), \end{cases} \]
+从而立即得出\eqref{eq:28}.
+
+摆脱\eqref{eq:28}中对 $x>0$ 的限制非常简单：将 $t_k$ 替换为 $t_k x$，那么
+\begin{equation} R(x) = x^N \int \dots \int_{\substack{t_1 + \dots + t_m = 1 \\ t_1 > 0, \dots, t_m > 0}} \prod_{k=1}^{m} \left( \frac{t_k^{n_k}}{n_k!} e^{\rho_k t_k x} \right) dt_1 \dots dt_{m-1}, \tag{46}\label{eq:46} \end{equation}
+且此式对任意复数 $x$ 均成立. 由于 $R(x) = \frac{x^N}{N!} + \dots$，\eqref{eq:46}中的积分在 $x=0$ 处的值为 $\frac{1}{N!}$; 从而
+\[ |R(x)| \le \frac{|x|^N}{N!} e^{\rho|x|}, \qquad \rho = \max(|\rho_1|, \dots, |\rho_m|), \]
+这是\eqref{eq:29}的细化.
+
+现在剩下从目前的观点来证明关于 $P_k(x)$ 的公式\eqref{eq:27}. 我们知道 $P_k(x)$ 是函数
+\[ f_k(z) = e^{x(z-\rho_k)} \prod_{\substack{l=1\\l\neq k}}^m (z-\rho_l)^{-n_l-1} \]
+在点 $z=\rho_k$ 处的幂级数展开式中 $(z-\rho_k)^{n_k}$ 的系数，即
+\[ P_k(x) = \frac{1}{n_k!} \{D_z^{n_k} f_k(z)\}_{z=\rho_k}. \]
+令
+\[ \prod_{\substack{l=1\\ l \neq k}}^{m} (z - \rho_l)^{-n_l-1} = g(z), \]
+我们获得
+\[ D_z^{n_k} f_k(z) = e^{x(z-\rho_k)} (x+D_z)^{n_k} g(z). \]
+
+现在，对于任何多项式 $\varphi(x)$，更一般地考虑表达式 $\varphi(x+D_z)g(z)$. 那么，根据泰勒公式，
+\[ \varphi(x+D_z)g(z) = \sum_{l=0}^{\infty} \frac{D_x^l \varphi(x) D_z^l g(z)}{l!} = g(z+D_x)\varphi(x). \]
+由此可知
+\[ P_k(x) = g(\rho_k+D) \frac{x^{n_k}}{n_k!} = \prod_{\substack{l=1\\l\neq k}}^{m} (\rho_k-\rho_l+D)^{-n_l-1} \frac{x^{n_k}}{n_k!}; \]
+证毕.
+
+\section{插值公式}
+
+在解决如下插值问题时，\S 13 中的积分 $J$ 也会出现：设解析函数 $f(z)$ 在复 $z$ 平面的区域 $D$ 内正则，并给定 $D$ 中的 $n$ 个点 $z_1, \ldots, z_n$; 确定一个次数 $\leq n-1$ 的多项式 $H_{n-1}$，使得式子
+\[ T_n(z) = \frac{f(z) - H_{n-1}(z)}{\prod_{k=1}^n (z - z_k)} \]
+在 $D$ 内正则.
+
+显然解至多只能有一个，因为两个解 $H_{n-1}$ 的差将是一个次数 $< n$ 且能被次数为 $n$ 的多项式 $\prod_{k=1}^n (z - z_k)$ 整除的多项式.
+
+设
+\[ F_k(z) = (z-z_1) \dots (z-z_k) \quad (k=0,\dots,n), \]
+从而有
+\begin{equation} \begin{aligned} F_k(z) &= (z-z_k)F_{k-1}(z) \quad (k=1,\dots,n), \\ (z-z_k)F_{k-1}(\zeta) - F_k(\zeta) &= (z-\zeta)F_{k-1}(\zeta), \\ \frac{1}{z-\zeta} \left( \frac{F_{k-1}(\zeta)}{F_{k-1}(z)} - \frac{F_k(\zeta)}{F_k(z)} \right) &= \frac{F_{k-1}(\zeta)}{F_k(z)}. \end{aligned} \tag{47}\label{eq:47} \end{equation}
+
+设 $\zeta$ 也位于 $D$ 中，并考虑 $D$ 中的一条单闭曲线 $C$，其内部包含在 $D$ 内且包含这 $n+1$ 个点 $z_1, \ldots, z_n, \zeta$. 定义
+\begin{equation} \begin{aligned} a_{k-1} &= \frac{1}{2\pi i} \int_C \frac{f(z)}{F_k(z)} dz, \\ G_k(\zeta) &= \frac{1}{2\pi i} \int_C \frac{F_k(\zeta)}{F_k(z)} \frac{f(z)}{z-\zeta} dz; \end{aligned} \tag{48}\label{eq:48} \end{equation}
+那么
+\[ G_0(\zeta) = f(\zeta) \]
+且由\eqref{eq:47}，
+\[ G_{k-1}(\zeta) - G_k(\zeta) = a_{k-1}F_{k-1}(\zeta) \quad (k=1,\dots,n); \]
+由此得到
+\[ f(\zeta) = a_0 F_0(\zeta) + a_1 F_1(\zeta) + \dots + a_{n-1} F_{n-1}(\zeta) + G_n(\zeta). \]
+
+因此插值问题的解由下式给出
+\[ \begin{aligned} H_{n-1}(\zeta) &= a_0 F_0(\zeta) + a_1 F_1(\zeta) + \dots + a_{n-1} F_{n-1}(\zeta), \\ T_n(\zeta) &= \frac{G_n(\zeta)}{F_n(\zeta)} = \frac{1}{2\pi i} \int_C \frac{f(z)}{F_n(z)} \frac{dz}{z - \zeta}. \end{aligned} \]
+
+现在考虑 $D$ 中的无穷点序列 $z_1, z_2, \dots$，并假设对子域 $D_0 \subset D$ 中的所有 $z$ 均有 $\lim_{n \to \infty} G_n(z) = 0$. 那么
+\[ f(z) = a_0 F_0(z) + a_1 F_1(z) + \dots \quad (z \text{ 属于 } D_0) \]
+由此可知，除非 $f(z)$ 是多项式，否则对无穷多个 $n$ 必有 $a_n \neq 0$.
+
+我们将此应用于特殊情况 $f(z) = e^{xz}$，并取 $z_1, \dots, z_{N+1}$ 为由 $n_k+1$ 个点 $\rho_k$ ($k=1,\dots,m$) 构成的多重集. 由\eqref{eq:44}和\eqref{eq:48}，我们看到系数 $a_N$ 恰好是 \S 13 中的积分 $J = R(x)$. 特别地，选择 $n_k = n$ ($k=1,\dots,r+1$) 且 $n_k = n-1$ ($k=r+2,\dots,m$)，并取 $n = 0, 1, \dots$; $r = 0, 1, \dots, m-1$，从而 $N = mn+r = 0, 1, \dots$. 从 $G_N(z)$ 的表达式很容易看出，对所有 $z$ 均有 $\lim_{N \to \infty} G_N(z) = 0$. 由于 $e^{xz}$ 不是多项式，这蕴含了对无穷多个 $N$ 均有 $R(1) \neq 0$. \S 11 中更精细的代数方法表明，对于每个 $n \geq 0$，区间 $mn \leq N < m(n+1)$ 至少包含一个使得 $R(1) \neq 0$ 的 $N$; 虽然这一事实在证明代数数 $a \neq 0$ 的 $e^a$ 超越性时并非必需，但它在解决 \S 12 中更一般的问题时非常重要.
+
+\section{结束语}
+
+应当指出，前述关于 $e$ 和 $\pi$ 的超越性，以及对线性无关的代数数 $\alpha_1, \dots, \alpha_p$ 其 $e^{\alpha_1}, \dots, e^{\alpha_p}$ 代数无关性的证明，并不是文献中能找到的最简单的. 我们的证明与 Hermite 的原始工作有关; 然而，我们在构造逼近型时的步骤在某种程度上更偏代数化，这对于我们在下一章中将研究的推广是决定性的.
+
+在我们的证明中使用了指数函数 $y = e^x$ 的两个特征性质，即微分方程 $y' = y$ 和加法定理 $e^{x+t} = e^x e^t$. 我们的推广将朝着两个不同的方向进行：要么我们考虑线性微分方程的解而不假设加法定理，要么我们处理满足代数加法定理的函数. 在第一种情况下，我们被引向第二章中考虑的问题. 第二种情况将我们引向最后一章中从算术角度对椭圆函数的研究，以及在第三章中对代数数 $a \neq 0$ 时函数 $a^x$ 的研究.

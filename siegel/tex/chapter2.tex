@@ -1,0 +1,686 @@
+\chapter{线性微分方程的解}
+
+有理数 $a^2 \neq 0$ 对应的 $\frac{\tan a}{a}$ 的无理数性质，其中包含了 $\pi$ 的无理数性质，是 Lambert 在近两百年前发现的. Lambert 的工作被 Legendre 推广，后者考虑了幂级数
+\[
+y = f_{\alpha}(x) = \sum_{n=0}^{\infty} \frac{x^n}{n! \alpha(\alpha+1) \cdots (\alpha+n-1)} \quad (\alpha \neq 0, -1, -2, \ldots)
+\]
+满足二阶线性微分方程
+\[xy'' + \alpha y' = y.\]
+他得到了连分数展开式
+\[\frac{y}{y'} = \alpha + \frac{x}{\alpha + 1 + \frac{x}{\alpha + 2 + \cdots}}\]
+并证明了对所有有理数 $x \neq 0$ 及所有有理数 $\alpha \neq 0, -1, -2, \ldots$，$y/y'$ 的无理数性质. 在特殊情况 $\alpha = \frac{1}{2}$ 下，我们有
+\[y = \cosh (2\sqrt{x}), \quad y' = \sinh (2\sqrt{x})/\sqrt{x},\]
+因此 Legendre 定理包含了有理数 $a^2 \neq 0$ 时 $\frac{\tan a}{a}$ 的无理数性质. 在更近的时期，Stridsberg 分别证明了在有理数 $x \neq 0$ 和有理数 $\alpha \neq 0, -1, \ldots$ 下 $y$ 和 $y'$ 的无理数性质; 并且 Maier 表明 $y$ 和 $y'$ 都不是二次无理数. Maier 的工作启发了引入更一般的逼近形式的想法，这使我能够证明：对于任意代数数 $x \neq 0$ 和任意有理数 $\alpha \neq 0, \pm \frac{1}{2}, -1, \pm \frac{3}{2}, \ldots$，数 $y$ 和 $y'$ 不满足任何具有代数系数的代数方程. 被排除的半整数 $+ \frac{1}{2}$ 的情况确实是一个例外，因为此时函数 $f_{\alpha}(x)$ 满足一个一阶代数微分方程，其系数是具有有理数系数的 $x$ 的多项式; 这可以从以下显式公式得出：
+\[f_{k+\frac{1}{2}} = \frac{1}{2} \cdot \frac{3}{2} \cdot \cdots \cdot \left(k - \frac{1}{2}\right) D^{k} \cosh (2\sqrt{x}),\]
+\[f_{\frac{1}{2}-k} = \frac{(-1)^{k} x^{k+\frac{1}{2}}}{\frac{1}{2} \cdot \frac{3}{2} \cdot \cdots \cdot \left(k - \frac{1}{2}\right)} D^{k+1} \sinh (2\sqrt{x})\]
+\[(k=0,1,2,\ldots).\]
+例如，在 $\alpha = \frac{1}{2}$ 的情况下，微分方程为
+\[y^2 - xy'^2 = 1.\]
+然而，在被排除的情况下，Lindemann 定理表明，对于任何代数数 $x \neq 0$，$y$ 和 $y'$ 都是超越数.
+
+我们现在将发展一种涉及线性微分方程解的超越性证明的通用方法，并将其应用于函数 $y=f_{\alpha}(x)$.
+
+\section{E 型函数}
+
+如果幂级数
+\[f(x) = \sum_{n=0}^{\infty} c_n \frac{x^n}{n!}\]
+满足以下三个条件，则称函数 $y = f(x)$ 为 E 型函数，或 E-函数：
+
+1) 所有系数 $c_n$ 属于同一个在有理数域上具有有限次数的代数数域.
+2) 如果 $\epsilon$ 是任意正数，则当 $n \to \infty$ 时，$\overline{|c_n|} = O(n^{n\epsilon})$.
+3) 存在一个正整有理数序列 $q_0, q_1, \ldots$ 使得对于 $k = 0, 1, \ldots, n$ 和 $n = 0, 1, 2, \ldots$，$q_n c_k$ 为整代数数，且 $q_n = O(n^{n\epsilon})$.
+
+我们将回忆，符号 $\overline{|c_n|}$ 表示代数数 $c_n$ 的所有共轭元的绝对值的最大值. 第二个条件意味着 $\overline{|c_n|}$ 作为 $n$ 的函数，其增长速度慢于 $n^n$ 的任何正幂. 这特别意味着 $y$ 是 $x$ 的整函数. 第三个条件表明 $c_0, \ldots, c_n$ 的最小公有理分母的增长速度慢于 $n^n$ 的任何正幂.
+
+显然，任何具有代数系数的多项式和指数函数 $e^x$ 都是 E-函数的例子.
+
+显而易见，E-函数的导数 $y'$ 仍为 E-函数. 同样显然的是，两个 E-函数的和仍为 E-函数. 乘积也是如此：如果
+\[g(x) = \sum_{n=0}^{\infty} d_n \frac{x^n}{n!}\]
+也是一个 E-函数，并且 $r_n$ 表示 $d_0, d_1, \ldots, d_n$ 的最小正整有理公分母，那么
+\[
+\begin{split} f(x)g(x) &= \sum_{n=0}^{\infty} e_n \frac{x^n}{n!}, \\ e_n &= \sum_{k=0}^{n} \binom{n}{k} c_k d_{n-k}, \end{split}
+\]
+从而
+\[|e_n| \le (1+1)^n \max_{k \le n} \overline{|c_k d_{n-k}|} = 2^n O(n^{2n\epsilon}) = O(n^{3n\epsilon}),\]
+且正整有理数
+\[q_n r_n = O(n^{2n\epsilon})\]
+是 $e_0, \ldots, e_n$ 的公分母. 这表明 E-函数构成一个环. 最后，对于任何代数常数 $a$，$f(ax)$ 也是 E 型的.
+
+稍后我们将研究满足一阶齐次线性微分方程组的 E-函数 $y_1 = E_1, \ldots, y_m = E_m$：
+\begin{equation}
+y'_{k} = \sum_{l=1}^{m} Q_{kl}(x) y_{l} \quad (k=1,\ldots,m) \tag{49}\label{eq:49}
+\end{equation}
+其中系数 $Q_{kl}$ 是 $x$ 的有理函数. 设多项式 $T(x)$ 是这 $m^2$ 个有理函数 $Q_{kl}(x)$ 的最小公分母，并将 $T(x)$ 和 $T(x) Q_{kl}(x)$ 的数值系数视为未知量. 如果我们代入幂级数 $E_1, \ldots, E_m$，那么微分方程\eqref{eq:49}就变成了一个关于这些有限个未知量的、具有代数系数的可数无穷个齐次线性方程组. 因此，我们可以假设它们的数值系数在 $K$ 中是整数，$K$ 是由 $E_1, \ldots, E_m$ 的所有系数共同生成的代数数域.
+
+不难证明，对于\eqref{eq:49}的幂级数解，关于 E 型函数的第一个条件（即系数 $c_n$ 属于同一个有限次代数数域 $K$）可以减弱为 $E_1, \ldots, E_m$ 的所有系数均为代数数. 作为\eqref{eq:49}的一个推论，可以证明由所有系数生成的域 $K$ 是有限次的. 然而，我们不需要这个性质，故省略其证明.
+
+众所周知，方程组\eqref{eq:49}拥有一组由 $m$ 个解 $y_{kl}$ ($k=1,\ldots,m$) 组成的基，其中 $l=1,\dots,m$. 当然，并非所有的 $E_{kl}$ 一般都是 E 型的; 但所有的 $E_{kl}$ 在不同于多项式 $T(x)$ 的零点的所有有限复数点 $x=a$ 处都是正则的，并且 $E_{kl}$ 的行列式在 $x=a$ 处不为零. \eqref{eq:49}的任意解都具有 $y_k = c_1 E_{k1} + \dots + c_m E_{km}$ 的形式，其中 $c_1, \dots, c_m$ 为常数.
+
+\section{算术引理}
+
+考虑具有 $q$ 个未知数 $x_1, \ldots, x_q$ 和整有理数系数的 $p$ 个齐次线性方程. 如果 $p < q$，则它们有一个非平凡的整有理数解. 出于不同的目的，根据系数的界限来获得 $x_1, \ldots, x_q$ 绝对值的上界估计是有用的.
+
+\begin{mylemma}{}{1}
+设
+\begin{equation}
+y_k = a_{k1}x_1 + \cdots + a_{kq}x_q \quad (k=1,\ldots,p) \tag{50}\label{eq:50}
+\end{equation}
+为具有整有理数系数和 $q$ 个变量的 $p$ 个线性形式，其中 $0 < p < q$，并假设所有 $a_{kl}$ 的绝对值都不大于给定的正整有理数 $A$; 则存在 $y_1 = 0, \ldots, y_p = 0$ 的一个非平凡整有理数解 $x_1, \ldots, x_q$，满足条件
+\[|x_k| < 1 + (qA)^{\frac{p}{q-p}} \quad (k=1,\ldots,q).\]
+\end{mylemma}
+
+\begin{proof}
+设 $H$ 为一个正整有理数，并在\eqref{eq:50}中为 $x_1, \ldots, x_q$ 独立地代入 $2H+1$ 个值 $0, \pm 1, \ldots, \pm H$. 我们得到 $(2H+1)^q$ 个具有整数坐标 $y_1, \ldots, y_p$ 的点，它们都位于超立方体
+\[-qAH \le y_k \le qAH \quad (k=1,\ldots,p)\]
+中. 由于该超立方体中恰好有 $(2qAH + 1)^p$ 个具有整数坐标的不同点，因此，如果
+\begin{equation}
+(2qAH+1)^p < (2H+1)^q \tag{51}\label{eq:51}
+\end{equation}
+则至少有两个不同的系统 $x_1, \dots, x_q$ 具有相同的像点 $y_1, \dots, y_p$. 在这个条件下，我们通过相减得到 $y_1 = 0, \dots, y_p = 0$ 的一个非平凡整有理数解 $x_1, \dots, x_q$，满足不等式
+\begin{equation}
+|x_k| \le 2H \quad (k=1,\ldots,q). \tag{52}\label{eq:52}
+\end{equation}
+现在在区间
+\[(qA)^{\frac{p}{q-p}} - 1 \le 2H \le (qA)^{\frac{p}{q-p}} + 1\]
+中选择偶数 $2H$，该区间的长度为 2; 那么由于
+\[(2qAH+1)^p < (qA)^p (2H+1)^p \le (2H+1)^{q-p}(2H+1)^p = (2H+1)^q\]
+使得\eqref{eq:51}得以满足，从而引理由\eqref{eq:52}推出.
+\end{proof}
+
+现在我们将\mylem{lem:1}推广到代数数域 $K$.
+
+\begin{mylemma}{}{2}
+假设 $p$ 个线性形式 $a_{k1}x_1 + \cdots + a_{kq}x_q$ ($k=1, \ldots, p; p < q$) 的系数是 $K$ 中的整数，且设 $\overline{|a_{kl}|} \le A$; 则在 $K$ 中存在 $y_1 = 0, \ldots, y_p = 0$ 的一个非平凡整解 $x_1, \ldots, x_q$，使得
+\begin{equation}
+\overline{|x_k|} < c + (c q A)^{\frac{p}{q-p}} \tag{53}\label{eq:53}
+\end{equation}
+其中 $c$ 是仅依赖于 $K$ 的正常数.
+\end{mylemma}
+
+\begin{proof}
+选择 $K$ 中整数相对于有理数域的一组基 $b_1, \ldots, b_h$. 那么 $K$ 中的任何整数 $\alpha$ 都具有 $\alpha = g_1 b_1 + \cdots + g_h b_h$ 的形式，其中 $g_1, \ldots, g_h$ 为整有理数. 从关于 $\alpha$ 的共轭元的 $h$ 个方程中解出 $g_1, \dots, g_h$，可得 $|g_l| \le \gamma_1 \overline{|\alpha|}$，其中 $\gamma_1$ 仅取决于基的选择. 现在写出 $x_k = x_{k1} b_1 + \cdots + x_{kh} b_h$，其中 $x_{k1}, \ldots, x_{kh}$ 为整有理数，并将所有 $pqh$ 个乘积 $a_{kl} b_r$ 也用该基表示; 那么关于 $x_1, \ldots, x_q$ 的 $p$ 个方程 $y_1 = 0, \dots, y_p = 0$ 变成关于 $qh$ 个整有理数 $x_{11}, \dots, x_{qh}$ 的 $ph$ 个齐次线性方程，其整有理数系数的绝对值小于 $\gamma_1 \max \overline{|a_{kl} b_r|} \le \gamma_2 A$，其中 $\gamma_2$ 是取决于该基的正整有理数. 应用\mylem{lem:1}，我们获得一个非平凡解，满足
+\[|x_{kl}| < 1 + (\gamma_2 hqA)^{\frac{p}{q-p}} \quad (k=1,\ldots,q; l=1,\ldots,h),\]
+这便导出了\eqref{eq:53}.
+\end{proof}
+
+\section{逼近形式}
+
+考虑 $m$ 个幂级数 $E_1, \dots, E_m$ 以及 $m$ 个次数 $\le \nu$ 且系数为不定元的多项式 $P_1(x), \dots, P_m(x)$. 显然，我们可以选择这 $m(\nu+1)$ 个不全为 0 的系数，使得逼近形式 $P_1 E_1 + \dots + P_m E_m$ 在 $x=0$ 处达到至少 $m(\nu+1)-1$ 阶的零点. 出于进一步的目的，我们对 $E_1, \dots, E_m$ 为 E 型函数的情形感兴趣; 此时 $P_1, \dots, P_m$ 的系数可以取为由 $E_1, \dots, E_m$ 的系数所生成的代数数域 $K$ 中的整数. \mylem{lem:2} 给出了 $P_1, \dots, P_m$ 系数及其共轭元绝对值的上界估计; 然而，\mylem{lem:2} 中的估计仅在比率 $p/q$ 不太接近其上界 1 时才有用. 因此，我们现在减弱关于逼近形式在 $x=0$ 处达到最高可能阶零点的条件.
+
+\begin{mylemma}{}{3}
+设 $E_1, \dots, E_m$ 是系数在 $K$ 中的 E-函数，并给定一个整数 $n=1,2,\dots$. 存在 $m$ 个次数 $\le 2n-1$ 的多项式 $P_1(x), \dots, P_m(x)$，具有以下三个性质：
+
+1) $P_1, \dots, P_m$ 的系数是 $K$ 中的整数且不全为 0，并且对于每个给定的正数 $\epsilon$ 和 $n \to \infty$，其所有共轭元的绝对值的最大值为 $O(n^{(2+\epsilon)n})$.
+
+2) 逼近形式
+\begin{equation}
+R = P_1 E_1 + \dots + P_m E_m = \sum_{\nu=0}^{\infty} a_{\nu} \frac{x^{\nu}}{\nu!} \tag{54}\label{eq:54}
+\end{equation}
+在 $x=0$ 处达到至少 $(2m-1)n$ 阶的零点，从而有
+\begin{equation}
+a_{\nu} = 0 \qquad (\nu = 0, 1, \dots, 2mn-n-1). \tag{55}\label{eq:55}
+\end{equation}
+
+3) $R$ 的系数 $a_{\nu}$ 满足条件
+\[a_{\nu} = \nu^{\epsilon \nu} O(n^{2n}) \qquad (\nu \ge 2mn-n)\]
+关于 $\nu$ 是一致的.
+\end{mylemma}
+
+\begin{proof}
+设
+\[E_{k} = \sum_{\nu=0}^{\infty} c_{k\nu} \frac{x^{\nu}}{\nu!} \qquad (k=1,\dots,m)\]
+以及
+\begin{equation}
+P_{k} = (2n-1)! \sum_{\nu=0}^{2n-1} g_{k\nu} \frac{x^{\nu}}{\nu!} \tag{56}\label{eq:56}
+\end{equation}
+其中 $g_{k\nu}$ 为 $K$ 中的整数，从而 $P_k$ 是一个次数 $\le 2n-1$ 且系数在 $K$ 中的整数多项式. 计算表达式\eqref{eq:54}中的系数 $a_{\nu}$，我们发现
+\begin{equation}
+P_{k}E_{k} = (2n-1)! \sum_{\nu=0}^{\infty} d_{k\nu} \frac{x^{\nu}}{\nu!}, \tag{57}\label{eq:57}
+\end{equation}
+\[d_{k\nu} = \sum_{\rho=0}^{2n-1} \binom{\nu}{\rho} g_{k\rho} c_{k,\nu-\rho}\]
+\begin{equation}
+a_{\nu} = (2n-1)!(d_{1\nu} + \dots + d_{m\nu}) \qquad (\nu = 0, 1, \dots). \tag{58}\label{eq:58}
+\end{equation}
+条件\eqref{eq:55}产生关于 $2mn$ 个未知量 $g_{k\rho}$ ($k=1,\dots,m$; $\rho=0,\dots,2n-1$) 的 $(2m-1)n$ 个齐次线性方程. 确定一个正整有理数 $q_n$，使得对于 $k=1,\dots,m$ 和 $\nu=0,\dots,2mn-n-1$，$q_n c_{k\nu}$ 为整数; 根据 E 型函数定义中的条件 3)，我们可以选择 $q_n = O(n^{\epsilon n})$. 将方程 $a_{\nu}=0$ 乘以 $q_n/(2n-1)!$; 那么 $g_{k\rho}$ 的系数 $q_n \binom{\nu}{\rho} c_{k,\nu-\rho}$ 属于 $K$，并且由于
+\begin{equation}
+\binom{\nu}{\rho} \le 2^{\nu}, \quad \overline{|c_{k\nu}|} = O(\nu^{\epsilon \nu}) \tag{59}\label{eq:59}
+\end{equation}
+以及 $\nu < (2m-1)n$，其所有共轭元再次为 $O(n^{\epsilon n})$. 应用\mylem{lem:2}，其中 $p=(2m-1)n$，$q=2mn$，$A=O(n^{\epsilon n})$，我们可以在 $K$ 中找到不全为 0 的整数 $g_{k\nu}$ ($k=1,\dots,m$; $\nu=0,\dots,2n-1$)，使得\eqref{eq:55}得以满足，且
+\[\overline{|g_{k\nu}|} = O(n^{\epsilon n}),\]
+这是因为 $\frac{p}{q-p} = 2m-1 = O(1)$. 引理的其余陈述很容易从\eqref{eq:56}、\eqref{eq:57}、\eqref{eq:58}、\eqref{eq:59}以及估计 $(2n-1)! = O(n^{2n})$ 中得出.
+\end{proof}
+
+\section{正规系统}
+
+假设 E-函数 $E_1, \dots, E_m$ 满足一阶齐次线性微分方程组\eqref{eq:49}，其系数 $Q_{kl}$ 是有理函数，数值系数在由 $E_1, \dots, E_m$ 的所有系数生成的代数数域 $K$ 中为整数. 矩阵 $Q=(Q_{kl})$ 可能会分解为 $r$ 个分块 $Q_t=(Q_{kl,t})$ ($t=1,\dots,r$)，其行数分别为 $m_1,\dots,m_r$，使得 $k,l=1,\dots,m_t$ 且 $m_1+\dots+m_r=m$. 这意味着这些分块排列在 $Q$ 的对角线上，而 $Q$ 位于这些分块之外的所有元素均为 0. 如果我们选择 $r$ 尽可能大，则这种分解是唯一的; 此时我们称 $Q_t$ 为 $Q$ 的本原部分. 当然，也有可能 $r=1$ 且 $Q$ 本身是本原的.
+
+对应于 $Q$ 分解为本原部分，方程组\eqref{eq:49}分裂为 $r$ 个独立的方程组
+\begin{equation}
+y_{k,t}' = \sum_{l=1}^{m_t} Q_{kl,t}(x)y_{l,t} \qquad (k=1,\dots,m_t; t=1,\dots,r). \tag{60}\label{eq:60}
+\end{equation}
+设 $y_{l,t} = (y_{kl,t})_{k=1,\dots,m_t}$ （其中 $l=1,\dots,m_t$）为\eqref{eq:60}的解的一组基; 那么由 $r$ 个分块 $Y_t=(y_{kl,t})$ 组成的 $m$ 行矩阵 $Y$ 是\eqref{eq:49}的一个解矩阵.
+
+现在考虑\eqref{eq:49}的任意解 $y_1, \dots, y_m$，并引入和式
+\begin{equation}
+R = P_1 y_1 + \dots + P_m y_m \tag{61}\label{eq:61}
+\end{equation}
+其系数 $P_1, \dots, P_m$ 是 $x$ 的任意多项式. 我们对 $R$ 关于 $x$ 恒等于 0 的情形感兴趣. 利用 $Q$ 的分块分解，我们用 $P_{k,t}^*$ ($k=1,\dots,m_t$; $t=1,\dots,r$) 代替 $P_1, \dots, P_m$. 用基表示该解，我们便得到
+\begin{equation}
+R = \sum_{k,l,t} P_{k,t}^* c_{l,t} y_{kl,t}, \tag{62}\label{eq:62}
+\end{equation}
+其中 $k,l=1,\dots,m_t$ 且 $t=1,\dots,r$，其中 $P_{k,t}^*$ 为多项式，$c_{l,t}$ 为常数. 如果所有乘积 $P_{k,t}^* c_{l,t}$ 均为 0，或者换句话说，如果对于每个 $t=1,\dots,r$，要么所有多项式 $P_{k,t}^*$ 均恒等于 0，要么所有常数 $c_{l,t}$ 均为 0，那么和式 $R$ 平凡地等于 0. 我们称分块 $Y_t$ 是独立的，如果除了平凡情形外，$R$ 关于 $x$ 不恒等于 0.
+
+若分块 $Q_t$ 给定，则解分块 $Y_t$ 仅在右乘一个因子 $C_t$ 的意义下被确定，其中 $C_t$ 是任意 $m_t$ 行非奇异常数矩阵; 但从 $Y_t$ 到 $Y_t C_t$ 的过渡并不影响其独立性.
+
+我们将研究解分块独立性的代数意义. 通过\eqref{eq:61}定义 $R_1 = R$，且定义
+\begin{equation}
+R_{k+1} = T R_k' \qquad (k=1,2,\dots) \tag{63}\label{eq:63}
+\end{equation}
+其中 $T(x)$ 是 $Q_{kl}(x)$ 的最小公分母. 归功于\eqref{eq:49}，我们可以写出
+\begin{equation}
+R_{k} = P_{k1}y_{1} + \dots + P_{km}y_{m} \qquad (k=1,2,\dots), \tag{64}\label{eq:64}
+\end{equation}
+其中
+\begin{equation}
+P_{k+1,l} = T \left( P_{kl}' + \sum_{g=1}^{m} P_{kg}Q_{gl} \right) \qquad (l=1,\dots,m) \tag{65}\label{eq:65}
+\end{equation}
+且
+\begin{equation}
+P_{1l} = P_l. \tag{66}\label{eq:66}
+\end{equation}
+
+显然，所有的 $P_{kl}$ 都是 $x$ 的多项式. 用 $\Delta = \Delta(x)$ 表示以 $P_{kl}$ ($k,l=1,\dots,m$) 为元素的行列式，并用 $\Delta_{kl}$ 表示 $P_{kl}$ 的余子式; 则\eqref{eq:64}蕴含
+\begin{equation}
+\Delta y_{k} = \sum_{l=1}^{m} \Delta_{kl} R_{l} \qquad (k=1,\dots,m). \tag{67}\label{eq:67}
+\end{equation}
+
+在以下两种情况下，我们可以立即确信 $\Delta(x)$ 关于 $x$ 恒等于 0：如果在\eqref{eq:62}中，对于至少一个 $t$，所有的 $P_{k,t}^*$ （$k=1,\dots,m_t$）都恒等于 0，那么 $Q$ 的分块分解结合\eqref{eq:65}表明 $\Delta$ 的 $m_t$ 列为 0; 如果 $R$ 恒等于 0，导致并非所有的 $y_1, \dots, y_m$ 都恒等于 0，那么\eqref{eq:63}和\eqref{eq:64}蕴含 $\Delta = 0$. 排除第一种情况; 那么在第二种情况的假设下，由\eqref{eq:62}可知，这意味着分块是不独立的. 现在我们证明，在所有其他情况下，多项式 $\Delta(x)$ 都不恒等于 0.
+
+\begin{mylemma}{}{4}
+假设这些分块是独立的，并且对于每个 $t=1,\dots,r$，并非所有的 $P_{k,t}^*$ ($k=1,\dots,m_t$) 都恒等于 0; 则 $\Delta(x)$ 不恒等于 0.
+\end{mylemma}
+
+\begin{proof}
+如果 $\Delta = 0$，那么我们可以确定 $\mu$ 个多项式 $A_1, \dots, A_{\mu}$ 使得
+\[A_1 P_{1l} + \dots + A_{\mu} P_{\mu l} = 0 \qquad (l=1,\dots,m), \quad A_{\mu} \neq 0.\]
+设 $y_1, \dots, y_m$ 为\eqref{eq:49}的完全任意的解，并使用记号\eqref{eq:61} and \eqref{eq:62}. 由\eqref{eq:63} and \eqref{eq:64}可知
+\[A_1 R_1 + \dots + A_{\mu} R_{\mu} = 0\]
+\begin{equation}
+B_1 R^{(\mu-1)} + B_2 R^{(\mu-2)} + \dots + B_{\mu} R = 0, \tag{68}\label{eq:68}
+\end{equation}
+其中 $B_1 = A_{\mu} T^{\mu-1}$，且 $B_2, \dots, B_{\mu}$ 为 $x$ 的多项式. 将 $y_1, \dots, y_m$ 取为这 $m$ 个基本解，我们看到这 $m$ 个函数
+\[R_{l,t} = \sum_{k=1}^{m_t} P_{k,t}^* y_{kl,t} \qquad (l=1,\dots,m_t; t=1,\dots,r)\]
+中的每一个都满足阶数 $\mu-1 < m$ 的齐次线性微分方程\eqref{eq:68}. 因此，我们有一个非平凡的齐次线性关系
+\begin{equation}
+\sum_{l,t} c_{l,t} R_{l,t} = 0 \tag{69}\label{eq:69}
+\end{equation}
+具有常数系数 $c_{l,t}$. 但是这 $r$ 个分块是独立的，并且并非所有的乘积 $P_{k,t}^* c_{l,t}$ ($k,l=1,\dots,m_t$; $t=1,\dots,r$) 都为 0，因为对于每个 $t$，至少有一个 $P_{k,t}^* \neq 0$. 因此\eqref{eq:69}是不可能的.
+\end{proof}
+
+我们将 E 型的 $m$ 个函数 $E_1, \dots, E_m$ 称为正规系统，若它们均不恒等于 0，且满足系数为代数数值系数的有理函数 $Q_{kl}(x)$ 的 $m$ 个微分方程\eqref{eq:49}，并且它们的解块是独立的. 这一正规性条件在证明第 I 章第 11 节结果的推广中将起决定性作用，该结果导出了 Lindemann-Weierstrass 定理.
+
+\section{逼近形式的系数矩阵}
+
+从现在开始，我们将假设 E-函数 $E_1, \dots, E_m$ 形成一个正规系统，并且 $P_1, \dots, P_m$ 是逼近形式\eqref{eq:54}中的多项式. 多项式 $P_{kl} \ (k = 1, 2, \dots; l = 1, \dots, m)$ 再次如\eqref{eq:64}和\eqref{eq:66}中所定义，因此逼近形式
+\[R_{k} = P_{k1} E_{1} + \dots + P_{km}E_{m} \quad (k=1,2,\dots)\]
+满足方程
+\begin{equation}
+R_1 = R, \quad R_{k+1} = T R_k' \tag{70}\label{eq:70}
+\end{equation}
+函数 $E_1, \dots, E_m$ 均不恒等于 0. 假设导数 $E_l^{(k)}(x)$ （对于 $k = 0, \dots, p-1$ 和 $l = 1, \dots, m$）在 $x=0$ 处消亡，但非所有的 $E_l^{(p)}(0) \ (l=1, \dots, m)$ 均消亡. 当然，$p$ 可以是 0. 我们用 $q$ 表示这 $m^2+1$ 个多项式 $T$ 和 $T_{kl} \ (k, l = 1, \dots, m)$ 的最大次数，并定义
+\[t = n + p + q \frac{m(m-1)}{2} - 1\]
+
+\begin{mylemma}{}{5}
+设 $\alpha$ 是不同于 0 且不等于多项式 $T(x)$ 的零点的任意复数，并假设
+\begin{equation}
+n \ge p + q \frac{m(m-1)}{2} \tag{71}\label{eq:71}
+\end{equation}
+那么矩阵
+\begin{equation}
+\left( P_{kl}(\alpha) \right)_{\substack{k = 1, \dots, m + t \\ l = 1, \dots, m}} \tag{72}\label{eq:72}
+\end{equation}
+的秩为 $m$.
+\end{mylemma}
+
+\begin{proof}
+我们使用方程组\eqref{eq:49}的分块分解，并再次更显式地用 $P_{k,t} \ (k=1, \dots, m_t; t= 1, \dots, r)$ 代替 $P_1, \dots, P_m$. 归功于\mylem{lem:3}，并非所有的 $P_{k,t}$ 都恒等于 0. 我们可以选择记号使得当 $k=1, \dots, m_t$ 且 $t=\mu+1, \dots, r$ 时 $P_{k,t} = 0$; 而对于每个 $t \le \mu$，至少有一个 $P_{k,t} \neq 0$. 令 $m_1 + \dots + m_\mu = \mu$; 那么 $1 \le \mu \le m$. 我们首先证明 $\mu = m$.
+
+我们将\mylem{lem:4}应用于 $\mu$ 代替 $m$ 的情形. 假设得以满足，因为 $E_1, \dots, E_\mu$ 显然形成一个正规系统. 用 $\Delta = \Delta(x)$ 表示 $P_{kl} \ (k, l = 1, \dots, \mu)$ 的行列式，我们看到 $\Delta$ 关于 $x$ 不恒等于 0. 由\eqref{eq:73}，
+\begin{equation}
+\Delta y_k = \sum_{l=1}^{\mu} \Delta_{kl} (P_{l1}y_1 + \dots + P_{l\mu} y_{\mu}) \quad (k=1,\dots,\mu) \tag{73}\label{eq:73}
+\end{equation}
+关于 $x$ 和 $y_1, \dots, y_\mu$ 恒成立，特别是
+\begin{equation}
+\Delta E_{k} = \sum_{l=1}^{\mu} \Delta_{kl} R_{l} \tag{74}\label{eq:74}
+\end{equation}
+归功于\mylem{lem:3}，幂级数 $R$ 在 $x=0$ 处达到至少 $(2m-1)n$ 阶的零点，因此根据\eqref{eq:70}，$R_l$ 在该处消亡的阶数 $\ge (2m-1)n - l + 1$. 选择 $k$ 使得 $E_k^{(p)}(0) \neq 0$; 那么\eqref{eq:74}蕴含
+\begin{equation}
+\Delta(x) = x^{(2m-1)n - \mu + 1 - p} \Delta_0(x), \tag{75}\label{eq:75}
+\end{equation}
+where $\Delta_0(x)$ 再次为一个多项式且不恒等于 0. 另一方面，由\eqref{eq:65}和\mylem{lem:3}，$P_{kl}$ 的次数 $\le 2n - 1 + (k-1)q$; 因此这个 $\mu$ 阶行列式 $\Delta$ 的次数 $\le (2n-1)\mu + q \frac{\mu(\mu-1)}{2}$. 如果用 $b$ 表示 $\Delta_0$ 的次数，那么
+\begin{equation}
+0 \le b \le (2n-1)\mu + q\frac{\mu(\mu-1)}{2} - \left((2m-1)n - \mu + 1 - p\right) \tag{76}\label{eq:76}
+\end{equation}
+\[= -2n(m-\mu) + n + p + q\frac{\mu(\mu-1)}{2} - 1.\]
+由于条件\eqref{eq:71}，若 $m - \mu \ge 1$，则\eqref{eq:76}的右侧将为负数. 这证明了 $\mu = m$ 并且
+\begin{equation}
+b \le t \tag{77}\label{eq:77}
+\end{equation}
+引理陈述中的数 $\alpha$ 满足 $\alpha T(\alpha) \neq 0$. 如果 $\Delta(x)$ 在 $x=\alpha$ 处消亡的阶数为 $a$，那么根据\eqref{eq:75} and \eqref{eq:77}，
+\begin{equation}
+0 \le a \le t \tag{78}\label{eq:78}
+\end{equation}
+暂时将\eqref{eq:73}中的不定元 $y_1, \dots, y_m$ 视为\eqref{eq:49}的任意解，并应用 $a$ 次算子 $TD$. 我们随后获得公式
+\begin{equation}
+\begin{aligned}
+& T^{a}(x) \Delta^{(a)}(x)y_{k} + \sum_{l=0}^{a-1} \Delta^{(l)}(x)L_{kl} \\
+& \quad = \sum_{l=1}^{m+a} M_{kl}(x) \left(P_{l1}(x)y_{1} + \dots + P_{lm}(x)y_{m}\right) \quad (k=1,\dots,m),
+\end{aligned}
+\tag{79}\label{eq:79}
+\end{equation}
+关于 $x$ 和不定元 $y_1, \dots, y_m$ 恒成立，其中 $L_{kl}$ 是关于 $y_1, \dots, y_m$ 的线性形式，其系数为 $x$ 的多项式，且 $M_{kl}$ 为 $x$ 的多项式. 现在代入 $x = \alpha$; 那么
+\[T^{a}(\alpha) \Delta^{(a)}(\alpha) = \beta \neq 0\]
+且\eqref{eq:79}的左侧简化为 $\beta y_k$. 由此可知，$y_1, \dots, y_m$ 可以表示为 $m+a$ 个线性形式 $P_{l1}(\alpha)y_1 + \dots + P_{lm}(\alpha)y_m \ (l = 1, \dots, m+a)$ 的线性组合. 结合\eqref{eq:78}，这便包含了引理的陈述.
+\end{proof}
+
+\section{$R_k$ 与 $P_{kl}$ 的估计}
+
+$E_1, \dots, E_m$、$T$ 以及 $T Q_{kl}$ ($k, l = 1, \dots, m$) 的系数位于某个有限次的代数数域 $K$ 中. 根据\eqref{eq:65}和\mylem{lem:3}，所有多项式 $P_{kl}$ ($k=1, 2, \dots; l=1, \dots, m$) 的系数全部位于 $K$ 中.
+
+\begin{mylemma}{}{6}
+设 $\alpha$ 是 $K$ 中的一个数，且 $k \le m+t$，那么
+\[|R_{k}(\alpha)| = O \left(n^{(3+\epsilon)n - (2m-2)n}\right)\]
+\[\overline{|P_{kl}(\alpha)|} = O \left(n^{(3+\epsilon)n}\right) \qquad (l=1,\dots,m).\]
+\end{mylemma}
+
+\begin{proof}
+如果两个幂级数 $A=\alpha_0+\alpha_1x+\dots$ 和 $B=\beta_0+\beta_1x+\dots$ 的系数满足条件 $|\alpha_k| \le \beta_k$ （对于 $k=0,1,\dots$），我们将写为 $A \prec B$. 显然，对于某个正常数 $c$，有 $T \prec c(1+x)^q$ 以及 $T Q_{kl} \prec c(1+x)^q$. 我们将通过归纳法证明
+\begin{equation}
+R_{k+1} \prec c^k (1+x)^{kq} \prod_{\nu=0}^{k-1} (\nu q + D) \hat{R} \qquad (k=0,1,\dots) \tag{80}\label{eq:80}
+\end{equation}
+以及
+\begin{equation}
+P_{k+1,l} \prec c^{k} (1+x)^{kq+2n-1} \prod_{\nu=0}^{k-1} (\nu q + m + 2n-1) O(n^{(2+\epsilon)n}) \qquad (l=1,\dots,m), \tag{81}\label{eq:81}
+\end{equation}
+其中
+\begin{equation}
+\hat{R} = \sum_{\nu=0}^{\infty} |a_{\nu}| \frac{x^{\nu}}{\nu!} = \sum_{\nu=(2m-1)n}^{\infty} \nu^{\epsilon \nu} \frac{x^{\nu}}{\nu!} O(n^{2n}), \tag{82}\label{eq:82}
+\end{equation}
+并且如果将 $P_{k+1,l}$ 的系数替换为其共轭元，估计式\eqref{eq:81}依然有效.
+
+归功于\mylem{lem:3}，该陈述对于 $k=0$ 成立. 如果对于 $k-1 \ge 0$ 代替 $k$ 的情形已证，我们由\eqref{eq:63} and \eqref{eq:65}可得
+\[
+\begin{aligned}
+R_{k+1} &= T R'_{k} \prec c(1+x)^{q} c^{k-1} \left\{ (k-1)q(1+x)^{(k-1)q-1} + (1+x)^{(k-1)q}D \right\} \prod_{\nu=0}^{k-2} (\nu q+D) \hat{R} \\
+&\prec c^{k} (1+x)^{kq} \prod_{\nu=0}^{k-1} (\nu q+D) \hat{R},
+\end{aligned}
+\]
+\[
+\begin{aligned}
+P_{k+1,l} &\prec c(1+x)^{q} c^{k-1} \prod_{\nu=0}^{k-2} (\nu q + m + 2n - 1) O(n^{(2+\epsilon)n}) (m+D)(1+x)^{(k-1)q+2n-1} \\
+&\prec c^k (1+x)^{kq+2n-1} \prod_{\nu=0}^{k-1} (\nu q + m + 2n-1) O(n^{(2+\epsilon)n}),
+\end{aligned}
+\]
+这正是所需的结果.
+
+如果 $k \le m+t = n+O(1)$，那么由\eqref{eq:82}，
+\[
+\begin{aligned}
+\prod_{\nu=0}^{k-1} (\nu q + D) \hat{R} &= O(n^{(3+\epsilon)n}) \sum_{\rho=0}^{k} \binom{k}{\rho} \sum_{\nu=(2m-1)n}^{\infty} \nu^{\epsilon\nu} \frac{x^{\nu-\rho}}{(\nu-\rho)!} \\
+&\prec O(n^{(3+\epsilon)n}) 2^{k} \sum_{\nu=(2m-1)n-k}^{\infty} (\nu+k)^{\epsilon(\nu+k)} \frac{x^{\nu}}{\nu!} \\
+&\prec O(n^{(3+\epsilon)n}) 2^{k} \sum_{\nu=(2m-1)n-k}^{\infty} \{(2\nu)^{2\epsilon\nu} + (2k)^{2\epsilon k}\} \frac{x^{\nu}}{\nu!}
+\end{aligned}
+\]
+从而
+\begin{equation}
+\left( \prod_{\nu=0}^{k-1} (\nu q + D) \hat{R} \right)_{x=\alpha} = O(n^{(3+\epsilon)n}) O(n^{\epsilon n - (2m-2)n}). \tag{83}\label{eq:83}
+\end{equation}
+该引理现在可以由\eqref{eq:80}、\eqref{eq:81}以及\eqref{eq:83}直接得出.
+\end{proof}
+
+\section{$E_1(\alpha), \ldots, E_m(\alpha)$ 的秩}
+
+设 $\omega_1, \dots, \omega_m$ 为任意复数. 如果它们满足且仅满足 $m-r$ 个线性独立的齐次线性方程
+\[\lambda_{k1} \omega_1 + \dots + \lambda_{km} \omega_m = 0 \qquad (k=1,\dots,m-r)\]
+（其系数 $\lambda_{kl}$ 在代数数域 $K$ 中），我们就称它们相对于代数数域 $K$ 具有秩 $r$. 换句话说，集合 $\omega_1, \dots, \omega_m$ 包含且仅包含 $r$ 个在 $K$ 上线性独立的数.
+
+\begin{mylemma}{}{7}
+假设 $\alpha$ 和 $E_1, \dots, E_m$ 的所有系数都位于次数为 $h$ 的代数数域 $K$ 中. 如果 $E_1, \dots, E_m$ 形成一个正规系统，并且 $\alpha T(\alpha) \neq 0$，那么 $E_1(\alpha), \dots, E_m(\alpha)$ 相对于 $K$ 的秩至少为 $\frac{m}{2h}$.
+\end{mylemma}
+
+\begin{proof}
+由于 $\alpha$ 是\eqref{eq:49}中系数 $Q_{kl}$ 的一个正则点，因此并非所有的 $E_k(\alpha)=0$ ($k=1,\dots,m$). 假设
+\begin{equation}
+\lambda_{k1} E_1(\alpha) + \dots + \lambda_{km} E_m(\alpha) = 0 \qquad (k=1,\dots,m-r) \tag{84}\label{eq:84}
+\end{equation}
+是关于 $E_1(\alpha), \dots, E_m(\alpha)$ 的 $m-r$ 个线性独立的方程，其整系数 $\lambda_{kl}$ 在 $K$ 中. 由于并非所有的 $E_k(\alpha)=0$，我们有 $r \ge 1$.
+
+现在应用\mylem{lem:5}，并确定矩阵\eqref{eq:72}的 $r$ 行，例如 $k=k_1,\dots,k_r$，使得这 $r$ 个线性形式
+\begin{equation}
+P_{k1}(\alpha) E_1(\alpha) + \dots + P_{km}(\alpha) E_m(\alpha) = R_k(\alpha) \qquad (k=k_1,\dots,k_r) \tag{85}\label{eq:85}
+\end{equation}
+连同\eqref{eq:84}中的 $m-r$ 个线性形式是线性独立的. 将\eqref{eq:85}写在\eqref{eq:84}之前，用 $\Lambda$ 表示这 $m^2$ 个系数 $P_{kl}$ 和 $\lambda_{kl}$ 的行列式，并用 $\Lambda_{kl}$ 表示 $\Lambda$ 的第 $k$ 行第 $l$ 列元素的余子式; 那么
+\[\Lambda E_{l}(\alpha) = \sum_{g=1}^{r} \Lambda_{gl} R_{k_{g}}(\alpha) \qquad (l=1,\dots,m).\]
+归功于\mylem{lem:6}，
+\[R_{k_{g}}(\alpha) = O(n^{(3+\epsilon)n-(2m-2)n}) \qquad (g=1,\dots,r)\]
+\[\overline{|P_{k_g l}(\alpha)|} = O(n^{(3+\epsilon)n}) \qquad (l=1,\dots,m);\]
+therefore
+\[\Lambda_{gl} = O \left( n^{(3+\epsilon)n(r-1)} \right)\]
+\[\Lambda E_{l}(\alpha) = O \left( n^{(3+\epsilon)rn-(2m-2)n} \right)\]
+\[\overline{|\Lambda|} = O \left( n^{(3+\epsilon)rn} \right)\]
+\[E_{l}(\alpha) \mathfrak{N}(\Lambda) = O \left( n^{(3+\epsilon)rhn-(2m-2)n} \right).\]
+选择一个正有理整数 $v$ 使得 $v \alpha$ 为整代数数; 那么对于 $k=1, 2, \dots$ 和 $l=1, \dots, m$，$v^{2n-1} P_l(\alpha)$ 和 $v^{2n-1+(k-1)q} P_{kl}(\alpha)$ 为整代数数. 由于 $\Lambda \neq 0$，可知
+\[v^{O(n)} \mathfrak{N}(\Lambda) \ge 1.\]
+最后，令 $n \to \infty$. 对于某个 $l$，有 $E_l(\alpha) \neq 0$; 因此
+\[3rh \ge 2m-2\]
+\[r \ge \frac{2m-2}{3h}\]
+现在，在 $m \ge 3$ 的情况下，由于 $h \ge 1$，结论成立. 如果 $m \ge 3$，我们有 $\frac{2m-2}{3h} \ge \frac{m}{2h}$，对于整数 $r, h$，这等同于 $r \ge \frac{m}{2h}$. 在其余的 $m=1, 2$ 情况下，由于 $r \ge 1$，结论是平凡的.
+\end{proof}
+
+\section{代数无关性}
+
+考虑方程组\eqref{eq:49}的任意解 $y_1, \dots, y_m$. 如果给定了任意的正有理整数 $\nu$，那么乘积
+\[Y = y_1^{\nu_1} y_2^{\nu_2} \dots y_m^{\nu_m}\]
+的个数（其中非负整有理数指数满足 $\nu_1 + \dots + \nu_m \le \nu$）等于
+\[\mu = \mu_{\nu} = \binom{m+\nu}{m}.\]
+由于
+\[D \log Y = \sum_{k=1}^{m} \nu_k D \log y_k,\]
+这 $\mu$ 个函数 $Y$ 满足一个关于这 $\mu$ 个一阶齐次线性微分方程的方程组，其系数是具有整有理数系数的 $Q_{kl}$ 的齐次线性函数.
+
+\begin{mythm*}{}
+设 E-函数 $E_1, \dots, E_m$ 是一阶齐次线性微分方程组的解，其系数是具有代数数值系数的有理函数，并假设对于所有 $\nu = 1, 2, \dots$，这 $\mu_{\nu}$ 个幂乘积 $E_1^{\nu_1} \dots E_m^{\nu_m}$ （$\nu_1 + \dots + \nu_m \le \nu$）形成一个正规系统. 如果 $\alpha$ 是不同于 0 且不等于 $Q_{kl}$ 的极点的任意代数数，那么这 $m$ 个数 $E_1(\alpha), \dots, E_m(\alpha)$ 之间不满足任何具有代数系数的代数方程.
+\end{mythm*}
+
+\begin{proof}
+设 $S(y_1, \dots, y_m)$ 是关于 $y_1, \dots, y_m$ 的不全为 0 且具有代数数系数的多项式. 用 $s$ 表示 $S$ 的总次数，取 $\nu \ge s$ 并考虑多项式 $y_1^{\nu_1} \dots y_m^{\nu_m} S$，其中
+\[\nu_1 + \dots + \nu_m \le \nu - s.\]
+它们的个数等于
+\[\mu_{\nu-s} = \binom{m-s+\nu}{m}\]
+并且它们的总次数 $\le \nu$. 如果 $S$ 以 $y_1 = E_1(\alpha), \dots, y_m = E_m(\alpha)$ 为零点，那么我们就得到了关于 $\mu_{\nu}$ 个数 $E_1^{\nu_1}(\alpha) \dots E_m^{\nu_m}(\alpha)$ （$\nu_1 + \dots + \nu_m \le \nu$）的 $\mu_{\nu-s}$ 个线性独立的齐次线性关系，其系数位于由 $E_1, \dots, E_m$、$Q_{kl}$、$S$ 的系数以及数 $\alpha$ 所生成的代数数域 $K$ 中.
+
+现在应用\mylem{lem:7}，其中用 $\mu_{\nu}$ 和幂乘积 $E_1^{\nu_1} \dots E_m^{\nu_m}$ 代替 $m$ 和 $E_1, \dots, E_m$. 归功于正规性假设，我们推得
+\begin{equation}
+\mu_{\nu} - \mu_{\nu-s} \ge \frac{\mu_{\nu}}{2h}, \tag{86}\label{eq:86}
+\end{equation}
+其中 $h$ 是数域 $K$ 的次数. 但是 $\mu_{\nu}$ 和 $\mu_{\nu-s}$ 是关于 $\nu$ 的 $m$ 次多项式，且它们都以 $\frac{\nu^m}{m!}$ 为最高次项; 因此当 $\nu \to \infty$ 时，\eqref{eq:86}包含了一个矛盾.
+\end{proof}
+
+该定理的重要性在于，它将 $E_1(\alpha), \dots, E_m(\alpha)$ 的代数无关性这一算术问题，归结为函数 $E_1(x), \dots, E_m(x)$ 的幂乘积的正规性这一分析问题.
+
+最简单的例子是 $E_k = e^{\alpha_k x}$ ($k=1, \dots, m$)，其中 $\alpha_1, \dots, \alpha_m$ 是在有理数域上线性独立的代数数. 这 $\mu$ 个幂乘积随后具有 $e^{\beta_k x}$ ($k=1, \dots, \mu$) 的形式，其中包含 $\mu$ 个不同的代数数 $\beta_k$. 相应的方程组\eqref{eq:49}现在简单地为 $y_k' = \alpha_k y_k$ ($k=1, \dots, m$)，从而所有分块都是一行的，并且正规性意味着任何带有非零多项式 $P_k$ 的方程 $P_1 e^{\beta_1 x} + \dots + P_{\mu} e^{\beta_{\mu} x} = 0$ 均蕴含 $P_1 = 0, \dots, P_{\mu} = 0$，这是极易证明的. 这表明 Lindemann-Weierstrass 定理包含在我们的定理中.
+
+\section{超几何 E 型函数}
+
+为了获得定理的更一般的应用，我们必须寻找满足齐次线性微分方程（其系数为有理函数）的 E-函数. 我们目前还没有找到所有此类函数的方法，我们仅知道以下相当专门的构造方式.
+
+设
+\[[\alpha, \nu] = \alpha(\alpha + 1) \dots (\alpha + \nu - 1) \qquad (\nu = 0, 1, \dots)\]
+从而有 $[\alpha, 0] = 1$ 以及 $[\alpha, \nu+1] = (\alpha+\nu)[\alpha, \nu]$. 设 $a_1, \dots, a_g$ 和 $b_1, \dots, b_m$ 为有理数，$b_k \neq 0, -1, -2, \dots$ ($k=1, \dots, m$)，且 $m-g=t > 0$. 定义
+\[c_{n} = \frac{[a_{1},n][a_{2},n]\dots[a_{g},n]}{[b_{1},n][b_{2},n]\dots[b_{m},n]}\]
+\[y = \sum_{n=0}^{\infty} c_{n}x^{n} \qquad (n=0,1,\dots)\]
+并引入算子
+\[\Delta_{\lambda} f(x) = D(x^{1+\lambda t} f(x)),\]
+\[A = \Delta_{a_1 - a_2} \Delta_{a_2 - a_3} \dots \Delta_{a_{g-1} - a_g} \Delta_{a_g},\]
+\[B = \Delta_{b_1 - b_2} \Delta_{b_2 - b_3} \dots \Delta_{b_{m-1} - b_m} \Delta_{b_m - 1},\]
+那么
+\[A x^{tn-1} = (a_1+n)(a_2+n) \dots (a_g+n)t^g x^{t(a_1+n)-1},\]
+\[B x^{tn-1} = (b_1+n-1)(b_2+n-1) \dots (b_m+n-1)t^m x^{t(b_1+n-1)-1},\]
+所以
+\[A \left(\frac{y}{x}\right) = t^g x^{ta_1-1} \sum_{n=0}^{\infty} (a_1+n)(a_2+n) \dots (a_g+n)c_n x^{tn}\]
+\[B \left(\frac{y}{x}\right) = t^{m} x^{tb_{1}-1} \sum_{n=-1}^{\infty} (b_{1}+n)(b_{2}+n) \dots (b_{m}+n) c_{n+1} x^{tn}.\]
+由于
+\[(a_1+n)\dots(a_g+n)c_n = (b_1+n)\dots(b_m+n)c_{n+1} \qquad (n=0,1,\dots),\]
+我们得到
+\[x^{1-g}(x^{-tb_1}B - t^t x^{-ta_1}A) \left(\frac{y}{x}\right) = t^m(b_1-1)(b_2-1)\dots(b_m-1)x^{-m}.\]
+左侧具有以下形式
+\[W = y^{(m)} + Q_1 y^{(m-1)} + \dots + Q_{m-1} y' + Q_m y,\]
+其中 $Q_1, \dots, Q_m$ 是关于 $x^{-1}$ 具有有理系数的多项式. 如果这 $m$ 个数 $b_1, \dots, b_m$ 中有一个等于 1，那么 $y$ 满足一个 $m$ 阶齐次线性微分方程 $W=0$. 如果对所有 $k=1,\dots,m$ 均有 $b_k \neq 1$，我们将 $g,m$ 分别替换为 $g+1, m+1$ 并定义 $a_{g+1}=b_{m+1}=1$; 这将产生一个 $m+1$ 阶的齐次线性微分方程 $W=0$.
+
+现在我们将证明 $y$ 是一个 E-函数. 写为
+\[y = \sum_{\nu=0}^{\infty} d_{\nu} \frac{x^{\nu}}{\nu!}\]
+我们有
+\begin{equation}
+d_{tn} = (tn)! c_{n} = \frac{[a_{1},n]\dots[a_{g},n][1,n]\dots[1,n]}{[b_{1},n]\dots[b_{g},n][b_{g+1},n]\dots[b_{m},n]} \cdot \frac{(tn)!}{(n!)^{t}} \qquad (n=0,1,\dots) \tag{87}\label{eq:87}
+\end{equation}
+并且在其他情况下 $d_{\nu} = 0$. 显然，对于任意给定的 $\epsilon > 0$ 和 $n \to \infty$，有
+\[\frac{[a,n]}{[b,n]} = \prod_{k=1}^{n} \left\{ \left(1 + \frac{a-1}{k}\right) \Big/ \left(1 + \frac{b-1}{k}\right) \right\} = O(e^{\epsilon n}) \qquad (b \neq 0, -1, -2, \dots),\]
+并且
+\[\frac{(tn)!}{(n!)^{t}} \le (1+\dots+1)^{tn} = t^{nt};\]
+因此
+\[d_n = O(n^{\epsilon n}).\]
+
+余下的步骤是证明 E-函数定义中的第三个条件得以满足，即有理数 $d_0,\dots,d_n$ 的最小公分母为 $O(n^{\epsilon n})$. 由于 $(tn)!/(n!)^t$ 是整数，归功于\eqref{eq:87}，只需证明对于任意有理数 $a,b$ 且 $b \neq 0,-1,-2,\dots$，这 $n+1$ 个数 $[a,k] / [b,k]$ ($k=0,\dots,n$) 的最小公分母为 $O(n^{\epsilon n})$. 设 $a=\alpha/\beta$，$b=\gamma/\delta$，其中 $(\alpha,\beta)=1$，$(\gamma,\delta)=1, \delta>0$，那么
+\[\frac{\beta^{2k}[a,k]}{\delta^{k}[b,k]} = \frac{\beta^{k}\alpha(\alpha+\beta) (\alpha+2\beta)\dots(\alpha+(k-1)\beta)}{\gamma(\gamma+\delta) (\gamma+2\delta)\dots(\gamma+(k-1)\delta)} = \frac{M_{k}}{N_{k}} \qquad (k=0,\dots,n),\]
+比方说. 考虑 $N_k$ 的任意素因子 $p$; 那么 $(p,\delta)=1$. 如果 $\nu$ 跑过 $p^l$ 个连续的有理整数，那么这 $p^l$ 个对应的整数 $\gamma+\nu\delta$ 中有且仅有一个能被 $p^l$ 整除（对于 $l=1,2,\dots$）. 因此，在 $N_k$ 中的 $k$ 个因子 $\gamma,\gamma+\delta,\dots,\gamma+(k-1)\delta$ 中，至少有 $[kp^{-l}]$ 个、至多有 $1+[kp^{-l}]$ 个能被 $p^l$ 整除. 在 $p^l > |\gamma|+(k-1)\delta$ 的情况下，这些因子中没有一个能被 $p^l$ 整除. 假设 $N_k$ 能被 $p^s$ 整除但不能被 $p^{s+1}$ 整除，那么
+\[\sum_{l} [kp^{-l}] \le s \le \sum_{l} (1+[kp^{-l}]),\]
+其中 $l=1,2,\dots$ 被条件限制为
+\[1 \le \frac{\log (|\gamma| + (k-1)\delta)}{\log p}.\]
+因此
+\begin{equation}
+\left[\frac{k}{p}\right] \le s \le \left[\frac{k}{p}\right] + O\left(\frac{k}{p^{2}}\right) + O\left(\frac{\log(k+1)}{\log p}\right) \tag{88}\label{eq:88}
+\end{equation}
+并且
+\[p \le |\gamma| + (k-1)\delta.\]
+在 $(p,\beta)=1$ 的情况下，\eqref{eq:88}中的左侧估计表明分子也能被 $p^{[k/p]}$ 整除，并且对于 $\beta$ 的素因子这也成立，因为 $M_k$ 中含有因子 $\beta^k$. 用 $r_p$ 表示数 $M_k/N_k$ 的约简分母中 $p$ 的指数; 那么对于 $k=0,1,\dots,n$，有
+\[r_{p} = O\left(\frac{n}{p^{2}}\right) + O\left(\frac{\log n}{\log p}\right).\]
+因此，$[a,k] / [b,k]$ ($k=0,\dots,n$) 的最小公分母 $q_n$ 满足
+\[\log q_n = O(n) + \sum_{p=O(n)} \left\{ O\left(\frac{n}{p^2}\right) + O\left(\frac{\log n}{\log p}\right) \right\} \log p\]
+\[= O(n) + \pi(O(n)) O(\log n) = O(n).\]
+这里我们使用了素数计数函数的初等上界估计 $\pi(x) = O\left(\frac{x}{\log x}\right)$. 这便完成了证明.
+
+由于对于 $c_n = \frac{[\alpha, n][\beta, n]}{[\gamma, n][1, n]}$，$\sum_{n=0}^{\infty} c_n x^n$ 是超几何级数，我们将本节中定义的函数 $y$ 称为超几何 E 型函数. 对于任意代数数 $\lambda$ 进行代换 $x \to \lambda x$，并且取具有代数系数的 $x$ 和有限个超几何 E-函数的任意多项式，我们再次得到一个满足齐次线性微分方程（其系数为 $x$ 的有理函数）的 E-函数. 弄清楚是否所有此类 E-函数都可以通过上述方式构造，将是一个很有意义的课题.
+
+\section{Bessel 微分方程}
+
+我们将我们的定理应用于以下特定的函数
+\begin{equation}
+\mathbf{K} = \mathbf{K}_{\lambda} (\mathbf{x}) = \sum_{n=0}^{\infty} \frac{(-1)^n}{n! (\lambda + 1)(\lambda + 2) \dots (\lambda + n)} \left(\frac{\mathbf{x}}{2}\right)^{2n} \quad (\lambda \neq -1, -2, \dots) \tag{89}\label{eq:89}
+\end{equation}
+这是第 9 节中引入的超几何 E-函数的一个特例：选择 $q=0, m=2, b_1=1, b_2=\lambda+1$，并用 $-\frac{x^2}{4}$ 代替 $x$. 那么关于 $K$ 的微分方程为
+\[K'' + \frac{2\lambda + 1}{x} K' + K = 0,\]
+因此这两个 E-函数 $y_1 = K, y_2 = K'$ 是方程组
+\[y_1' = y_2, \quad y_2' = -y_1 - \frac{2\lambda + 1}{x} y_2\]
+的解. 我们必须调查这些函数是否满足定理中的正规性条件. 这需要详细的讨论，这本身就很令人感兴趣. 答案将在第 13 节中给出，结果表明，对于所有有理数 $\lambda \neq \pm \frac{1}{2}, \pm \frac{3}{2}, \dots$，该正规性条件均能得以满足.
+
+考虑关于 $y = x^\lambda K$ 的微分方程，而不是关于 $K$ 的微分方程，在实际操作中是更方便的. 这便给出了 Bessel 微分方程
+\begin{equation}
+y'' + \frac{1}{x} y' + \left(1 - \frac{\lambda^2}{x^2}\right)y = 0 \tag{90}\label{eq:90}
+\end{equation}
+它具有特殊解
+\begin{equation}
+J_{\lambda}(x) = \frac{1}{\Gamma(\lambda+1)} \left(\frac{x}{2}\right)^{\lambda} K_{\lambda}(x), \tag{91}\label{eq:91}
+\end{equation}
+即指标为 $\lambda$ 的 Bessel 函数. 对于接下来的目的，\eqref{eq:90}中的参数 $\lambda$ 可以是任何复数，而不必是有理数. 设给定\eqref{eq:90}的任意不恒等于 0 的解 $y$. 这一函数在除了可能为 $0$ 和 $\infty$ 的点之外的所有点上都是正则的. 我们的首要目标是证明，这三个函数 $x, y, y'$ 之间不满足任何具有常数系数的代数方程，除非 $2\lambda$ 是奇数.
+
+我们首先证明一个相当平凡的陈述：$y$ 不是 $x$ 的代数函数. 否则，在 $x=\infty$ 附近将存在一个收敛的展开式
+\[y = \sum_{k=0}^{\infty} c_k x^{r_k}\]
+其中有理数指数递减 $r_0 > r_1 > \dots$ 且 $c_0 \neq 0$. 代入\eqref{eq:90}，我们得到了矛盾 $c_0=0$.
+
+现在更一般地考虑一个任意的二阶齐次线性微分方程
+\begin{equation}
+w'' + A(x)w' + B(x)w = 0 \tag{92}\label{eq:92}
+\end{equation}
+其系数 $A$ 和 $B$ 属于给定的由 $x$ 的解析函数构构成并关于微分封闭的域 $L$. 我们将假设 $L$ 关于微分是封闭的，换句话说，$L$ 包含其所有元素的导数. 例如，$L$ 可以是关于 $x$ 的有理函数域. 现在假设\eqref{eq:92}有一个特殊解 $w_0$，它在 $L$ 上不是代数的，但满足一个一阶代数微分方程，其系数在 $L$ 中. 我们将证明，此时也存在\eqref{eq:92}的一个解，其对数导数在 $L$ 上是代数的. 我们的假设意味着，可以找到关于两个不定元 $y,z$ 且系数在 $L$ 中的多项式 $P(y,z)$，使得关于 $x$ 恒有 $P(w_0, w_0') = 0$; 此外，$P$ 本身不独立于 $z$.
+
+如果 $Q(y,z)$ 是关于 $y,z$ 且系数在 $L$ 中的任意多项式，我们定义
+\begin{equation}
+Q^*(y,z) = Q_x + zQ_y - (Az+By)Q_z; \tag{93}\label{eq:93}
+\end{equation}
+那么 $Q^*(y,z)$ 再次是关于 $y,z$ 且系数在 $L$ 中的多项式，并且对\eqref{eq:92}的每个解 $w$ 都有
+\begin{equation}
+\frac{d}{dx} Q(w,w') = Q^*(w,w') \tag{94}\label{eq:94}
+\end{equation}
+我们可以假设 $P(y,z)$ 是不可约的. 将 $P(y,z)$ 和 $P^*(y,z)$ 仅视为关于 $z$ 的多项式，并引入它们的消元式（判别式） $R(y)$; 这是一个关于 $y$ 且系数在 $L$ 中的多项式. 归功于\eqref{eq:94}，微分方程 $P(w_0,w_0')=0$ 蕴含 $P^*(w_0,w_0')=0$，从而 $R(w_0)=0$. 但是 $w_0$ 在 $L$ 上不是代数的，因此 $R(y)$ 关于 $y$ 恒等于 0. 这证明了 $P$ 和 $P^*$ 作为关于 $z$ 的多项式不是互素的. 由于 $P$ 是不可约的，我们得到
+\begin{equation}
+P^*(y,z) = T(y,z) P(y,z) \tag{95}\label{eq:95}
+\end{equation}
+其中 $T$ 是关于 $y,z$ 且系数在 $L$ 中的多项式. 现在在 $P(y,z)$ 中取关于 $y,z$ 的最高总次数的项的总和 $H(y,z)$，从而 $H$ 是次数为 $t > 0$ 且系数在 $L$ 中且不全为 0 的齐次多项式. 定义\eqref{eq:93}表明 $H^*$ 再次是关于 $y,z$ 的 $t$ 次齐次多项式，并且 $P^*-H^*=(P-H)^*$ 的总次数 $< t$. 比较\eqref{eq:95}中的次数，我们看到 $T$ 的总次数不能为正; 因此 $T$ 独立于 $y,z$ 且为 $L$ 中的函数; 此外
+\begin{equation}
+H^*(y,z) = T H(y,z). \tag{96}\label{eq:96}
+\end{equation}
+
+考虑一阶齐次线性微分方程
+\begin{equation}
+v' = Tv \tag{97}\label{eq:97}
+\end{equation}
+其通解为 $v = c v_0$，其中 $v_0 \neq 0$ 是一个特殊解，且 $c$ 为任意常数. 归功于\eqref{eq:94}和\eqref{eq:96}，对于满足\eqref{eq:92}的每个 $w$，函数 $H(w,w')$ 是\eqref{eq:97}的一个解. 选择\eqref{eq:92}的两个独立解 $w_1, w_2$，那么 $w= \lambda_1 w_1 + \lambda_2 w_2$ 是\eqref{eq:92}的通解，其中 $\lambda_1, \lambda_2$ 为任意常数. 因此
+\[H(\lambda_1 w_1 + \lambda_2 w_2, \lambda_1 w_1' + \lambda_2 w_2') = c(\lambda_1, \lambda_2) v_0\]
+其中 $c(\lambda_1, \lambda_2)$ 与 $x$ 无关. 但是左侧是关于 $\lambda_1, \lambda_2$ 的 $t$ 次齐次多项式; 因此
+\[c(\lambda_1, \lambda_2) = c_0 \lambda_1^{t} + c_1 \lambda_1^{t-1} \lambda_2 + \dots + c_t \lambda_2^{t}\]
+具有常数系数 $c_0, \dots, c_t$.
+
+最后，确定不全为 0 的两个常数值 $\lambda_1, \lambda_2$ 使得 $c(\lambda_1, \lambda_2)=0$. 那么\eqref{eq:92}的对应的特殊解 $w=\lambda_1 w_1 + \lambda_2 w_2$ 满足微分方程
+\[H\left(1,\frac{w'}{w}\right) = 0.\]
+这意味着 $w$ 的对数导数在 $L$ 上是代数的.
+
+\section{例外情形的确定}
+
+我们将第 10 节的结果应用于 Bessel 微分方程\eqref{eq:90}，并将 $L$ 取为关于 $x$ 的有理函数域. 假设 $y_0 \neq 0$ 是\eqref{eq:90}的一个解，满足代数微分方程 $P(y_0,y'_0)=0$，其系数是关于 $x$ 的不全为 0 的多项式. 从我们的结果可知，\eqref{eq:90}随后有另一个特殊解 $y \neq 0$，其对数导数 $\frac{y'}{y} = u$ 是 $x$ 的代数函数. 函数 $y$ 对所有 $x \neq 0, \infty$ 都是正则的; 因此 $u$ 的唯一可能的分支点位于 $0$ 和 $\infty$. 我们将证明 $u$ 的任何分支在 $\infty$ 处都不分歧. 这意味着 $0$ 也不是分支点，因而 $u$ 必须是 $x$ 的有理函数.
+
+设
+\begin{equation}
+u = \sum_{k=0}^{\infty} c_k x^{r_k} \tag{98}\label{eq:98}
+\end{equation}
+是 $u$ 在 $x=\infty$ 附近的任意分支的幂级数展开，其中有理数指数满足 $r_0 > r_1 > \dots$ 且 $c_0 \neq 0$. 归功于\eqref{eq:90}，函数 $u$ 满足特殊的 Riccati 微分方程
+\[u' + u^2 + \frac{1}{x}u = \frac{\lambda^2}{x^2} - 1;\]
+因此
+\begin{equation}
+\sum_{k=0}^{\infty} (r_k+1)c_k x^{r_k-1} + \sum_{k,l=0}^{\infty} c_k c_l x^{r_k+r_l} = \frac{\lambda^2}{x^2} - 1. \tag{99}\label{eq:99}
+\end{equation}
+比较系数，我们得到
+\[r_0 = 0, \quad c_0 = \pm i.\]
+对于任意 $n=1,2,\dots$，双重求和中对应于 $k=0, l=n$ and $k=n, l=0$ 的两项为\eqref{eq:99}的左侧贡献了 $2 c_0 c_n x^{r_n}$. 如果 $c_n \neq 0$，指数 $r_n$ 必须等于指数 $r_k-1 \ (k < n)$、$r_k+r_l \ (k, l < n)$ 和 $-2$ 中的一个. 我们通过归纳推得，我们可以将指数限制为整有理数序列 $-k \ (k=0,1,\dots)$. 特别地，$r_1 = -1$ 并且
+\[2c_0c_1 + c_0 = 0, \quad c_1 = -\frac{1}{2}.\]
+因此
+\begin{equation}
+u = \pm i - \frac{1}{2x} + \dots \tag{100}\label{eq:100}
+\end{equation}
+在 $\infty$ 处是正则且不分歧的.
+
+现在我们知道 $u$ 是 $x$ 的有理函数. 将\eqref{eq:98} and \eqref{eq:99}应用于 $u$ 在 $x=0$ 附近的幂级数展开，使得指数 $r_k$ 为按升序排列的连续整数. 由此可知，该幂级数具有如下形式
+\begin{equation}
+u = \pm \frac{\lambda}{x} + \dots \tag{101}\label{eq:101}
+\end{equation}
+如果 $x_0 \neq 0, \infty$ 是 $y$ 的 $a \ge 1$ 阶零点，那么 $u$ 在 $x=x_0$ 处有一个带有留数 $a$ 的一阶极点. 由于 $u$ 是有理函数，$y$ 仅有有限多个 $\neq 0, \infty$ 的零点，假设为 $x_1, \dots, x_h$ （计入重数）. 函数 $u$ 在所有其他 $\neq 0$ 的点处都是正则的. 从\eqref{eq:100} and \eqref{eq:101}可以得出
+\[u = \pm i \pm \frac{\lambda}{x} + \sum_{k=1}^{h} \frac{1}{x-x_k}\]
+是 $u$ 的部分分式展开，并且有
+\[h \pm \lambda = -\frac{1}{2}.\]
+因此 $2\lambda = \pm (2h+1)$ 是一个奇数.
+
+我们已经达到了第 10 节中宣布的首个目标，即我们已经证明了，只要 $2\lambda$ 不是奇数，Bessel 微分方程的任何不恒等于 0 的解都不满足其系数为 $x$ 的多项式的一阶代数微分方程. 众所周知， $2\lambda = \pm (2h+1)$ 的情形确实是例外. 对于任何给定的 $h=0,1,\dots$，函数
+\[y_{1} = x^{h+\frac{1}{2}} \frac{d^{h}}{d(x^{2})^{h}} \frac{e^{ix}}{x},\]
+\[y_{2} = x^{h+\frac{1}{2}} \frac{d^{h}}{d(x^{2})^{h}} \frac{e^{-ix}}{x}\]
+是\eqref{eq:90}当 $\lambda = \pm (h + \frac{1}{2})$ 时的两个独立解. 此时每个解都具有以下形式
+\[y = x^{-h-\frac{1}{2}} (Ae^{ix} + Be^{-ix})\]
+其中 $A(x)$ 和 $B(x)$ 是某些多项式. 计算 $y^2$、$yy'$、$(y')^2$ 并消去 $e^{2ix}$、$e^{-2ix}$，我们可以得到一阶二次微分方程
+\[C_1 y^2 + C_2 yy' + C_3 (y')^2 = C_4\]
+其中 $C_1, C_2, C_3, C_4$ 是关于 $x$ 的不全为 0 的多项式. 从现在起，我们将排除这种例外情形.
+
+\section{涉及不同 Bessel 函数的代数关系}
+
+设给定 Bessel 微分方程的两个独立解 $y_1, y_2$. 那么函数 $y_1 y_2' - y_2 y_1' = \Delta$ 满足 $\Delta' = -\frac{\Delta}{x}$，由此可得
+\begin{equation}
+y_1 y_2' - y_2 y_1' = \frac{c}{x} \tag{102}\label{eq:102}
+\end{equation}
+其中 $c \neq 0$ 为常数. 这表明这五个函数 $y_1, y_1', y_2, y_2'$ 和 $x$ 是代数相关的.
+
+我们将证明，这四个函数 $y_1, y_1', y_2, x$ 是代数无关的. 根据第 11 节的结果，我们只需证明 $y_2$ 在由 $y_1, y_1', x$ 的有理函数构成的域 $M$ 上不是代数的. 假设存在一个不可约多项式
+\[P(t) = t^n + \dots\]
+其系数在 $M$ 中，使得关于 $x$ 恒有
+\[P(y_2) = 0.\]
+我们定义
+\begin{equation}
+P^*(t) = \left(\frac{y_1'}{y_1} t + \frac{c}{x y_1}\right) P_t(t) + \frac{dP(t)}{dx} \tag{103}\label{eq:103}
+\end{equation}
+\[= n \frac{y_1'}{y_1} t^n + \dots;\]
+这再次是关于 $t$ 的 $n$ 次多项式，其系数在 $M$ 中. 对于任意常数 $\lambda$，函数 $y_0 = y_2 + \lambda y_1$ 是一阶线性微分方程
+\[y_0' = \frac{y_1'}{y_1} y_0 + \frac{c}{x y_1}\]
+的一个解. 定义\eqref{eq:103}蕴含
+\begin{equation}
+P^*(y_0) = \frac{dP(y_0)}{dx} \tag{104}\label{eq:104}
+\end{equation}
+并且特别地，有
+\[P^*(y_2) = 0.\]
+由此可知 $P^*(t)$ 能被 $P(t)$ 整除，从而有
+\[P^*(t) = n \frac{y_1'}{y_1} P(t)\]
+并且由于\eqref{eq:104}，有
+\begin{equation}
+P(y_0) = b y_1^n \tag{105}\label{eq:105}
+\end{equation}
+其中 $b$ 与 $x$ 无关. 函数 $P(y_2 + \lambda y_1)$ 是关于 $\lambda$ 的 $n$ 次多项式; 因此有 $b = b_0 + b_1 \lambda + \dots + b_n \lambda^n$ 具有常数系数 $b_0, \dots, b_n$，并且有
+\[P_t(y_2) = b_1 y_1^{n-1}.\]
+这是关于 $y_2$ 的次数为 $n-1$ 且系数在 $M$ 中的代数方程; 因此 $n=1$ 且 $y_2$ 本身位于 $M$ 中，所以有
+\[y_2 = \frac{f}{g}\]
+where $f$ 和 $g$ 是关于 $y_1, y_1'$ 和 $x$ 的多项式. 在 $f$ 和 $g$ 中分别取关于 $y_1, y_1'$ 的最高总次数的齐次项，设 $f_0$ 的次数为 $\phi$ 且 $g_0$ 的次数为 $\gamma$，并引入差值 $\delta = \phi - \gamma$ 作为比率 $f/g$ 的总次数.
+
+设 $f_0/g_0 = v$; 那么 $v$ 关于 $y_1, y_1'$ 是 $\delta$ 次齐次的，且差值 $f/g - v$ 的总次数 $< \delta$. 归功于微分方程\eqref{eq:90}，关于 $v'$ 和 $(f/g)' - v'$ 同样如此. 将\eqref{eq:105}代入\eqref{eq:102}，我们得到了关于 $y_1, y_1', x$ 的恒等式. 在\eqref{eq:102}的左侧，最高总次数的项给出 $y_1 v' - v y_1'$，其次数为 $\delta + 1$，而右侧的总次数为 0. 因此 $\delta \ge -1$.
+
+假设首先 $\delta > -1$; 那么有 $y_1 v' - v y_1' = 0$，从而有 $v = c_1 y_1$ 具有常数 $c_1$，且 $\delta = 1$. 用 $y_2 + c_1 y_1$ 代替 $y_2$，我们必须用 $f/g + v$ 代替 $f/g$，而新的 $f/g$ 的总次数将 $< 1$. 这便留下了 $\delta = -1$ 的情形，且有
+\[y_1 v' - v y_1' = \frac{c}{x},\]
+所以 $v$ 是关于 $x, y_1, y_1'$ 的有理函数，且关于 $y_1, y_1'$ 是 $-1$ 次齐次的，并且满足 Bessel 微分方程. 写为 $v = v(y_1, y_1')$. 再次利用 $x, y_1, y_1'$ 的代数无关性，我们看到对于任意常数 $\lambda_1$ 和 $\lambda_2$，$v(\lambda_1 y_1 + \lambda_2 y_2, \lambda_1 y_1' + \lambda_2 y_2')$ 也是\eqref{eq:90}的解. 因此
+\begin{equation}
+v(\lambda_1 y_1 + \lambda_2 y_2, \lambda_1 y_1' + \lambda_2 y_2') = \Lambda_1 y_1 + \Lambda_2 y_2, \tag{106}\label{eq:106}
+\end{equation}
+其中 $\Lambda_1, \Lambda_2$ 与 $x$ 无关. 由于
+\[v y_2' - y_2 v' = \frac{c \Lambda_1}{x}, \quad y_1 v' - v y_1' = \frac{c \Lambda_2}{x},\]
+可知 $\Lambda_1$ 和 $\Lambda_2$ 是关于 $\lambda_1$ 和 $\lambda_2$ 的有理函数，是 $-1$ 次齐次的，不全为 0，且具有常数系数. 设 $\Lambda_0$ 是 $\Lambda_1$ 和 $\Lambda_2$ 的最小公分母; 这是一个次数 $\ge 1$ 的齐次多项式. 现在将\eqref{eq:106}乘以 $\Lambda_0 g_0$，并为不全为 0 的 $\lambda_1, \lambda_2$ 选择两个数使得 $\Lambda_0 = 0$. 随后可得，\eqref{eq:90}的特定的解 $y = \lambda_1 y_1 + \lambda_2 y_2$ 满足代数微分方程 $g_0(y, y') = 0$，这是不可能的.
+
+\section{正规性 --- Bessel 函数}
+
+现在我们最终来证明，在两个 E-函数 $E_1 = K_\lambda(x), E_2 = K_\lambda'(x)$ 的情况下，定理的正规性条件是满足的，其中 $K_\lambda(x)$ 在\eqref{eq:89}中定义，且 $\lambda$ 表示一个有理数 $\neq -1, -2, \dots$. 我们有 $E_1' = E_2, E_2' = -E_1 - \frac{2\lambda+1}{x} E_2$; 因此，对于每个给给定的 $q=0,1,2,\dots$，这 $q+1$ 个函数 $z_{kq} = \frac{1}{k!} E_1^{q-k} E_2^k \ (k=0,\dots,q)$ 满足微分方程组
+\begin{equation}
+z_{kq}' = k z_{k-1, q} - (q-k) \frac{2\lambda+1}{x} z_{kq} - (q-k) z_{k+1, q} \tag{107}\label{eq:107}
+\end{equation}
+\[(k=0,\dots,q)\]
+其中 $z_{-1, q}$ 和 $z_{q+1, q}$ 意指 $0$. 我们的问题是证明，对每个 $\nu=0,1,2,\dots$，这 $\frac{(\nu+1)(\nu+2)}{2}$ 个函数 $z_{kq} \ (k=0,\dots,q; q=0,\dots,\nu)$ 构成一个正规系统.
+
+如果 $z$ 是
+\begin{equation}
+Z'' + \frac{2\lambda+1}{x} Z' + Z = 0 \tag{108}\label{eq:108}
+\end{equation}
+的任意解，那么这 $q+1$ 个函数 $\frac{1}{k!} z^{q-k} (z')^k \ (k=0,\dots,q)$ 形成\eqref{eq:107}的一个解. 取 $z = \rho_1 z_1 + \rho_2 z_2$，其中 $z_1, z_2$ 是\eqref{eq:108}的两个独立解，且 $\rho_1, \rho_2$ 为任意常数，并定义
+\begin{equation}
+\frac{1}{k!} z^{q-k} (z')^k = \sum_{l=0}^q \rho_1^l \rho_2^{q-l} \psi_{kl,q}; \tag{109}\label{eq:109}
+\end{equation}
+那么这 $q+1$ 个函数 $\psi_{kl,q} \ (k=0,\dots,q)$ 对于每个 $l=0,\dots,q$ 构成\eqref{eq:107}的一个解. 由于 $\psi_{0l,q} = \binom{q}{l} z_1^l z_2^{q-l}$，这 $q+1$ 个解是线性独立的，因为否则的话，人们将获得关于 $z_1, z_2$ 且系数不全为 0 的 $q$ 次齐次代数方程，这与 $z_1$ 和 $z_2$ 的独立性相矛盾.
+
+这表明 $\psi_{kl,q}$ 是关于 $y_1, y_1^{-1}, y_1', y_2'$ 的多项式，其系数是 $x$ 的代数函数，因为 $\lambda$ 是有理数.
+
+现在假设 $R=0$ 关于 $x$ 恒成立. 第 12 节的结果蕴含，此时 $R$ 关于 $x, y_1, y_1', y_2$ 恒等于 0. 如果对于 $k,l=0,\dots,q$ 且 $q=\mu+1,\dots,\nu$，所有乘积 $P_{kq} c_{lq} = 0$，我们在 $R$ 中考虑关于 $y_1, y_1', y_2$ 的总次数为 $\mu$ 的项. 归功于\eqref{eq:109}，我们从 $\psi_{kl,\mu}$ 获得了贡献 $\binom{\mu}{l} x^{-\lambda q} \left(\frac{y_1'}{y_1} - \frac{\lambda}{x}\right)^{\mu-k} y_1^l y_2^{\mu-l}$. 因此
+\[\sum_{0 \le k, l \le \mu} P_{k\mu} c_{l\mu} \binom{\mu}{l} \left( \frac{y_1'}{y_1} - \frac{\lambda}{x} \right)^{\mu - k} \left( \frac{y_2}{y_1} \right)^{\mu - l} = 0\]
+关于 $x, y_1, y_1', y_2$ 恒成立，这蕴含 $P_{k\mu} c_{l\mu} = 0 \ (k,l=0,\dots,\mu)$. 由此可知所有的 $P_{kq} c_{lq}$ 均为 0，证明完成.
+
+对于有限的 $x$，微分方程\eqref{eq:108}中系数的唯一奇点是 $x=0$. 设 $\alpha$ 是任意 $\neq 0$ 的代数数，且 $\lambda$ 是有理数 $\neq \pm \frac{1}{2}, -1, \pm \frac{3}{2}, -2, \dots$. 由该定理可知，值 $K_\lambda(\alpha)$ 和 $K_\lambda'(\alpha)$ 之间不满足任何具有代数系数的代数方程. 特别地，$K_\lambda(\alpha)$ 本身是超越数. 这意味着 $K_\lambda(\alpha)$ 的所有零点都是超越数，并且归功于\eqref{eq:91}，这对于 Bessel 函数 $J_\lambda(x)$ 的 $\neq 0$ 的零点同样成立.
+
+令
+\[w = f_\lambda(x) = \sum_{n=0}^\infty \frac{x^n}{n!(\lambda+1)\dots(\lambda+n)}\]
+我们有
+\[K_\lambda(x) = f_\lambda\left(-\frac{x^2}{4}\right)\]
+以及微分方程
+\[x w'' + (\lambda + 1) w' = w,\]
+这导出了连分数
+\[\frac{w}{w'} = \lambda + 1 + \frac{x}{\lambda + 2 + \frac{x}{\lambda + 3 + \dots}}\]
+由于
+\[\frac{w'}{w} = \frac{-1}{\sqrt{-x}} \frac{K_\lambda'(2\sqrt{-x})}{K_\lambda(2\sqrt{-x})},\]
+由此可知，对于所有代数数 $x \neq 0$ 和所有有理数 $\lambda$，该连分数的值都是超越数. 在这一陈述中，包含了值 $\lambda = \pm \frac{1}{2}, \pm \frac{3}{2}, \dots$，因为第 11 节末尾的注记表明，在这种情况下，其超越性可由 $e^x$ 的超越性得出.
+
+特别地，数
+\[1 + \frac{1}{2 + \frac{1}{3 + \dots}}\]
+是超越数.
+
+\section{附加注记}
+
+前述 Bessel 微分方程的例子清楚地表明，将定理应用于给定的一阶线性微分方程组需要详细研究其解的代数和解析性质. 当然，也有可能正规性条件未被满足. 最简单的例子是由\eqref{eq:89}中当 $\lambda = -\frac{1}{2}$ 时的特殊情形提供; 此时 $K = \cos x, K' = -\sin x, K'' = -K$，并且其解块
+\[Y = \begin{pmatrix} \cos x & \sin x \\ -\sin x & \cos x \end{pmatrix}\]
+在第 4 节的意义下不是独立的，因为有 $\cos^2 x + \sin^2 x - 1 = 0$. 其内在原因是代换 $z_1 = y_1 - i y_2, z_2 = y_1 + i y_2$ 将方程组 $y_1' = y_2, y_2' = -y_1$ 转换为 $z_1' = i z_1, z_2' = -i z_2$，而转换后的 $Y$ 分裂为两个分块 $e^{ix}, e^{-ix}$. 这使得我们在第 4 节中讨论的解分块的独立性很有可能可以表示为关于线性变换环 $P$ 的一种性质：
+\[y_k = A_{k1} y_1 + \dots + A_{km} y_m \quad (k=1,\dots,m),\]
+其系数为 $x$ 的有理函数，并且它将微分方程组\eqref{eq:49}的解的线性集合映射到其自身. 如果利用 A. Loewy 关于齐次线性微分方程的结果，不难找到这种联系. 然而，我们在应用于 Bessel 函数时不需要 $P$，所以我们在这里仅提及它.
+
+关于 $K_\lambda(\alpha)$ 的结果可以按如下方式推广. 我们考虑这 $m=2r$ 个函数 $K_\lambda(\alpha_l x), K_\lambda'(\alpha_l x) \ (l=1,\dots,r)$，其中 $\alpha_1, \dots, \alpha_r$ 是给定的代数数，它们的平方均互不相同且均不为 0. 如果 $2\lambda$ 不是奇数，则可以证明定理中的条件是满足的; 因此这 $2r$ 个数 $K_\lambda(\alpha_1), K_\lambda'(\alpha_1), \dots, K_\lambda(\alpha_r), K_\lambda'(\alpha_r)$ 之间不满足任何具有代数系数的代数方程. 这又是以下陈述的特例：设 $\lambda_1, \dots, \lambda_s$ 为有理数，不同于 $-1, \pm \frac{1}{2}, -2, \pm \frac{3}{2}, \dots$，且数 $\pm \lambda_k \pm \lambda_l \ (1 \le k < l \le s)$ 均不是整数; 那么这 $2rs$ 个数 $K_\lambda(\alpha), K_\lambda'(\alpha) \ (\lambda = \lambda_1, \dots, \lambda_s; \alpha = \alpha_1, \dots, \alpha_r)$ 是代数无关的. 这一证明尚未详细完成，我们将其留作一个有趣的练习.
+
+另一个练习是由超几何 E-函数提供
+\[y = 1 + \frac{\kappa}{\lambda} \cdot \frac{x}{1!} + \frac{\kappa(\kappa+1)}{\lambda(\lambda+1)} \cdot \frac{x^2}{2!} + \dots\]
+\[= \int_0^1 t^{\kappa-1} (1-t)^{\lambda-\kappa-1} e^{tx} dt \Big/ \int_0^1 t^{\kappa-1} (1-t)^{\lambda-\kappa-1} dt\]
+具有有理数 $\kappa, \lambda \neq 0, -1, -2, \dots$，它是
+\[x y'' + (\lambda - x) y' = \kappa y\]
+的解. 将第 10、11、12、13 节的研究推广到阶数大于二的线性微分方程似乎更加困难，但非常值得一试.
